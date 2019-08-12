@@ -1,0 +1,93 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "FØLER SOM"
+},
+"translationKey2": {
+"stringId" : "HeadsUp.WeekendForecast",
+"translation" : "VÆRVARSEL FOR HELGEN"
+},
+"translationKey3": {
+"stringId" : "HeadsUp.Precip",
+"translation" : "NEDBØR"
+},
+"translationKey4": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "LYNNEDSLAG"
+},
+"translationKey5": {
+"stringId" : "General.ClearIcon",
+"translation" : "KLART"
+},
+"translationKey6": {
+"stringId" : "Units.AM",
+"translation" : "AM"
+},
+"translationKey7": {
+"stringId" : "Units.PM",
+"translation" : "PM"
+},
+"translationKey8": {
+"stringId" : "DDI.RoadConditions",
+"translation" : "VEIFORHOLD"
+},
+"translationKey9": {
+"stringId" : "General.Tonight",
+"translation" : "I KVELD"
+},
+"translationKey10": {
+"stringId" : "General.Tomorrow",
+"translation" : "I MORGEN"
+},
+"translationKey11": {
+"stringId" : "General.Today",
+"translation" : "I DAG"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.Rain",
+"translation" : "REGN"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "MULIGHET FOR REGN"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "SANNSYNLIGHET FOR REGN"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.Snow",
+"translation" : "SNØ"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "MULIGHETER FOR SNØ"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "SANNSYNLIGVIS SNØ"
+},
+"translationKey18": {
+"stringId" : "HeadsUp.LightWintryMix",
+"translation" : "LETT VINTERLIG BLANDING"
+},
+"translationKey19": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "FØLES SOM"
+},
+"translationKey20": {
+"stringId" : "General.Sunrise",
+"translation" : "SOLOPPGANG"
+},
+"translationKey21": {
+"stringId" : "General.Sunset",
+"translation" : "SOLNEDGANG"
+}
+}

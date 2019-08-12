@@ -1,0 +1,16 @@
+{
+	"experiment": "<none>",
+	"features": {
+		"ns1.F1": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"ns1.F2": {
+			"featureIsReported": false,
+			"isON": false
+		}
+	},
+	"inputFieldsForAnalytics": {
+	},
+	"variant": "Default"
+}

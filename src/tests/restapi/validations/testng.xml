@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Airlock_REST_API_fields_validation" verbose="1">
+		<parameter name="url" value="http://localhost:9090/airlock/api/admin"></parameter>		
+		<parameter name="translationsUrl" value="http://localhost:9090/airlock/api/translations"></parameter>
+		<parameter name="analyticsUrl" value="http://localhost:9090/airlock/api/analytics"></parameter>
+		<parameter name="configPath" value="./configFiles/unitest/"></parameter>
+		<parameter name="sessionToken" value=""/>
+		<parameter name="operationsUrl" value="http://localhost:9090/airlock/api/ops"></parameter>
+		<parameter name="excludeProductsDelete" value=""/>
+		<parameter name="productsToDeleteFile" value="./src/tests/productsToDelete.txt" />
+		<parameter name="deleteAll" value="false" />
+		<parameter name="seasonVersion" value="3.0" />
+		<parameter name="userName" value=""></parameter>
+		<parameter name="userPassword" value=""></parameter>
+		<parameter name="appName" value=" "/>
+
+	<listeners>
+        <listener class-name="tests.testng.ExecOrderReporter" />
+        <listener class-name="tests.testng.ExecOrderEmailReporter" />
+    </listeners>
+    
+	<test name="BeforeSuite"  enabled="true"> 
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteSetup"></class> 
+    	</classes> 
+	</test> 
+	 
+	<test name="Airlock REST API validation class" enabled="false">
+		<classes>
+			<class name="tests.restapi.validations.season.SeasonValidateJsonStructure">
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Airlock_REST_API_validations_experiments" enabled="false">
+    	<packages>
+      		<package name="tests.restapi.validations.airlock_notification" />
+  	 	</packages>
+	</test>
+
+	<test name="Airlock_REST_API_validations_utilities" enabled="false">
+    	<packages>
+      		<package name="tests.restapi.validations.experiments" />
+  	 	</packages>
+	</test>
+	
+		<test name="Airlock_REST_API_validations_strings" enabled="false">
+    	<packages>
+      		<package name="tests.restapi.validations.strings" />
+  	 	</packages>
+	</test>
+
+	<test name="Airlock_REST_API_validations_feature" enabled="false">
+    	<packages>
+      		<package name="tests.restapi.validations.feature" />
+  	 	</packages>
+	</test>	
+	
+	<test name="Airlock_REST_API_validations_season" enabled="false">
+    	<packages>
+      		<package name="tests.restapi.validations.season" />
+  	 	</packages>
+	</test>	
+	
+	<test name="Airlock_REST_API_validations_product" enabled="false">
+    	<packages>
+      		<package name="tests.restapi.validations.product" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_validations_inputschema" enabled="false">
+    	<packages>
+      		<package name="tests.restapi.validations.inputschema" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_validations_configuration" enabled="false">
+    	<packages>
+      		<package name="tests.restapi.validations.configuration" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_validations_webhooks" enabled="false">
+    	<packages>
+      		<package name="tests.restapi.validations.webhooks" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_validations_purOpt" enabled="true">
+    	<packages>
+      		<package name="tests.restapi.validations.purchaseOptions" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_validations_inapppurcahse" enabled="false">
+    	<packages>
+      		<package name="tests.restapi.validations.inAppPurchase" />
+  	 	</packages>
+	</test>
+	
+	
+	  <test name="AfterSuite"  enabled="true"> 
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteCleanup"></class> 
+    	</classes> 
+	</test> 
+</suite>

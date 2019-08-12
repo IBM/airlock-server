@@ -1,0 +1,781 @@
+{
+	"experiment": "exp1",
+	"experimentList": [
+		"EXPERIMENT_exp1",
+		"VARIANT_exp1_var1"
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"root": {
+		"features": [
+			{
+				"appliedReorderingRules": [
+					"defaultConfiguration",
+					"nsF1.OrderingRule2"
+				],
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F1B",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F1C",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F1A",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "ns.F1",
+				"reorderedChildren": [
+					"ns.F1B",
+					"ns.F1C",
+					"ns.F1A"
+				],
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"reportedOrderingNames": {
+					"nsF1.OrderingRule1": false,
+					"nsF1.OrderingRule2": true
+				},
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"appliedReorderingRules": [
+									"defaultConfiguration",
+									"nsF2SubB.OrderingRule1"
+								],
+								"featureAttributes": "{}",
+								"features": [
+									{
+										"appliedReorderingRules": [
+											"defaultConfiguration",
+											"nsF2SubB3.OrderingRule1"
+										],
+										"featureAttributes": "{}",
+										"features": [
+											{
+												"featureAttributes": "{}",
+												"features": [
+												],
+												"isON": true,
+												"name": "ns.F2SubB.3b",
+												"reportedConfigurationNames": {
+												},
+												"reportedConfigurationValues": {
+												},
+												"resultTrace": "Configurations: [defaultConfiguration]",
+												"type": "FEATURE"
+											},
+											{
+												"featureAttributes": "{}",
+												"features": [
+												],
+												"isON": true,
+												"name": "ns.F2SubB.3a",
+												"reportedConfigurationNames": {
+												},
+												"reportedConfigurationValues": {
+												},
+												"resultTrace": "Configurations: [defaultConfiguration]",
+												"type": "FEATURE"
+											}
+										],
+										"isON": true,
+										"name": "ns.F2SubB.3",
+										"reorderedChildren": [
+											"ns.F2SubB.3b",
+											"ns.F2SubB.3a"
+										],
+										"reportedConfigurationNames": {
+										},
+										"reportedConfigurationValues": {
+										},
+										"reportedOrderingNames": {
+										},
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": true,
+										"name": "ns.F2SubB.2",
+										"reportedConfigurationNames": {
+										},
+										"reportedConfigurationValues": {
+										},
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": true,
+										"name": "ns.F2SubB.1",
+										"reportedConfigurationNames": {
+										},
+										"reportedConfigurationValues": {
+										},
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									}
+								],
+								"isON": true,
+								"name": "ns.F2SubB",
+								"reorderedChildren": [
+									"ns.F2SubB.3",
+									"ns.F2SubB.2",
+									"ns.F2SubB.1"
+								],
+								"reportedConfigurationNames": {
+								},
+								"reportedConfigurationValues": {
+								},
+								"reportedOrderingNames": {
+								},
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							}
+						],
+						"isON": true,
+						"name": "ns.F2SubA",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "ns.F2",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"featureIsReported": true,
+						"features": [
+						],
+						"isON": true,
+						"name": "nf.F3.1",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "nf.F3.2",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "nf.F3.3",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 3,
+				"name": "mx.6d66a88a-15bd-4924-bd0c-ff7570bbfe5e",
+				"reorderedChildren": [
+					"nf.F3.1",
+					"nf.F3.2",
+					"nf.F3.3"
+				],
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "nf.F5.3",
+								"reportedConfigurationNames": {
+								},
+								"reportedConfigurationValues": {
+								},
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "nf.F5.2",
+								"reportedConfigurationNames": {
+								},
+								"reportedConfigurationValues": {
+								},
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "nf.F5.4",
+								"reportedConfigurationNames": {
+								},
+								"reportedConfigurationValues": {
+								},
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 3,
+						"name": "mx.487a73a2-b97e-48cb-a6b8-9145a127be7e",
+						"reorderedChildren": [
+							"nf.F5.3",
+							"nf.F5.2",
+							"nf.F5.4"
+						],
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					}
+				],
+				"isON": true,
+				"name": "nf.F5.1",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"appliedReorderingRules": [
+					"defaultConfiguration",
+					"nsF1.OrderingRule6.2"
+				],
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F6A",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F6C",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F6B",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "ns.F6",
+				"reorderedChildren": [
+					"ns.F6A",
+					"ns.F6C",
+					"ns.F6B"
+				],
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"reportedOrderingNames": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"appliedReorderingRules": [
+					"OR1.OrderingRule7.3",
+					"defaultConfiguration"
+				],
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F7C",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F7B",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F7A",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "ns.F7",
+				"reorderedChildren": [
+					"ns.F7C",
+					"ns.F7B",
+					"ns.F7A"
+				],
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"reportedOrderingNames": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"features": [
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "mtx4.F4.3",
+								"reportedConfigurationNames": {
+								},
+								"reportedConfigurationValues": {
+								},
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "mtx4.F4.4",
+								"reportedConfigurationNames": {
+								},
+								"reportedConfigurationValues": {
+								},
+								"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 1,
+						"name": "mx.739b8f32-3a9e-45e5-a227-a4677172b7c1",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					},
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "nf.F4.1",
+								"reportedConfigurationNames": {
+								},
+								"reportedConfigurationValues": {
+								},
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "nf.F4.2",
+								"reportedConfigurationNames": {
+								},
+								"reportedConfigurationValues": {
+								},
+								"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 1,
+						"name": "mx.76e2231f-9d6a-4286-9558-792b279d83e9",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					}
+				],
+				"maxFeaturesOn": 2,
+				"name": "mx.f8ef4ca2-3bc7-4819-8c52-75f104ca5aec",
+				"reorderedChildren": [
+					"mx.739b8f32-3a9e-45e5-a227-a4677172b7c1",
+					"mx.76e2231f-9d6a-4286-9558-792b279d83e9"
+				],
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"appliedReorderingRules": [
+					"defaultConfiguration",
+					"nsF1.OrderingRule1.dev"
+				],
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F1B.dev",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F1C.dev",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F1A.dev",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "ns.F1.dev",
+				"reorderedChildren": [
+					"ns.F1B.dev",
+					"ns.F1C.dev",
+					"ns.F1A.dev"
+				],
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"reportedOrderingNames": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"featureIsReported": true,
+				"features": [
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "nf.F5.3.dev",
+								"reportedConfigurationNames": {
+								},
+								"reportedConfigurationValues": {
+								},
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "nf.F5.2.dev",
+								"reportedConfigurationNames": {
+								},
+								"reportedConfigurationValues": {
+								},
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "nf.F5.4.dev",
+								"reportedConfigurationNames": {
+								},
+								"reportedConfigurationValues": {
+								},
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 3,
+						"name": "mx.5d521bb6-8e4b-4144-84b1-3561fd416534",
+						"reorderedChildren": [
+							"nf.F5.3.dev",
+							"nf.F5.2.dev",
+							"nf.F5.4.dev"
+						],
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					}
+				],
+				"isON": true,
+				"name": "nf.F5.1.dev",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"appliedReorderingRules": [
+					"defaultConfiguration",
+					"nsF1.OrderingRule1.subOR"
+				],
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F1B.subOR",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F1A.subOR",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "ns.F1.subOR",
+				"reorderedChildren": [
+					"ns.F1B.subOR",
+					"ns.F1A.subOR"
+				],
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"reportedOrderingNames": {
+					"nsF1OrderingRule1subOR.SubOR1a": false
+				},
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"value\":\"F5Config1\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "ns1.F5prodWithConfig",
+				"reportedConfigurationNames": {
+					"ns1F5prodWithConfig.F5Config1": true,
+					"ns1F5prodWithConfig.F5Config2": false
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, ns1F5prodWithConfig.F5Config1]",
+				"type": "FEATURE"
+			},
+			{
+				"appliedReorderingRules": [
+					"defaultConfiguration",
+					"nsF1.OrderingRule2.10"
+				],
+				"featureAttributes": "{\"value\":\"Config1.10\"}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F1A.10",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F1C.10",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{\"value\":\"Config1B.10\"}",
+						"features": [
+						],
+						"isON": true,
+						"name": "ns.F1B.10",
+						"reportedConfigurationNames": {
+						},
+						"reportedConfigurationValues": {
+						},
+						"resultTrace": "Configurations: [defaultConfiguration, nsF1B10.Config1B.10]",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "ns.F1.10",
+				"reorderedChildren": [
+					"ns.F1A.10",
+					"ns.F1C.10",
+					"ns.F1B.10"
+				],
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"reportedOrderingNames": {
+					"nsF1.OrderingRule1.10": false,
+					"nsF1.OrderingRule2.10": true
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, nsF110.Config1.10]",
+				"type": "FEATURE"
+			}
+		]
+	},
+	"variant": "var1"
+}

@@ -1,0 +1,655 @@
+{
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "ads.Main Feed Ads",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "ads.Main Screen Banner",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "ads.Airlock Control Over Ads",
+				"resultTrace": "Rule disabled",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "modules.Breaking News",
+								"resultTrace": "Rule returned false",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{\"id\":\"current-conditions\",\"adSlot\":\"weather.bb\",\"description\":\"Displays current conditions.\",\"beacon\":\"weather:current:conditions:displayed\",\"type\":\"native\"}",
+								"features": [
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": true,
+										"name": "modules.Video Enabled",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									}
+								],
+								"isON": true,
+								"name": "modules.Right Now",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{\"id\":\"hourly\",\"adSlot\":\"weather.hourly\",\"description\":\"Displays hourly weather information.\",\"beacon\":\"weather:hourly:displayed\",\"type\":\"native\"}",
+								"features": [
+								],
+								"isON": true,
+								"name": "modules.Hourly",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{\"id\":\"ten-day\",\"adSlot\":\"weather.10day\",\"days\":15,\"description\":\"Displays ten day forecast.\",\"beacon\":\"weather:10-day:displayed\",\"type\":\"native\"}",
+								"features": [
+								],
+								"isON": true,
+								"name": "modules.Daily",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{\"id\":\"video3\",\"adSlot\":\"\",\"description\":\"Displays video module with 3 thumbnails.\",\"beacon\":\"video:video:displayed\",\"type\":\"native\"}",
+								"features": [
+								],
+								"isON": true,
+								"name": "modules.Video",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{\"id\":\"map\",\"adSlot\":\"weather.maps\",\"description\":\"Displays radar map.\",\"beacon\":\"map:map:displayed\",\"type\":\"native\"}",
+								"features": [
+								],
+								"isON": true,
+								"name": "modules.Radar Maps",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{\"id\":\"driving-difficulty\",\"adSlot\":\"weather.maps\",\"description\":\"Displays radar map.\",\"beacon\":\"map:map:displayed\",\"type\":\"native\"}",
+								"features": [
+								],
+								"isON": true,
+								"name": "modules.Road Conditions",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{\"id\":\"news\",\"adSlot\":\"weather.articles\",\"description\":\"Displays news.\",\"beacon\":\"news:news:displayed\",\"type\":\"native\"}",
+								"features": [
+								],
+								"isON": true,
+								"name": "modules.News",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{\"id\":\"hurricane\",\"adSlot\":\"weather.maps\",\"description\":\"Displays Hurricane Central\",\"beacon\":\"map:map:displayed\",\"type\":\"native\"}",
+								"features": [
+								],
+								"isON": true,
+								"name": "modules.Hurricane Central",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{\"id\":\"health\",\"adSlot\":\"\",\"description\":\"Displays health information.\",\"beacon\":\"pollen:pollen:displayed\",\"type\":\"native\",\"adjacentAdParameters\":{\"ch\":\"pollencast\",\"fam\":\"hlth,allergy\"}}",
+								"features": [
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "healthmodule.Allergy1Up",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": true,
+										"name": "healthmodule.AllergyMaps",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									}
+								],
+								"isON": true,
+								"name": "modules.Health",
+								"resultTrace": "Configurations: [defaultConfiguration, modulesHealth.Config7.7]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{\"id\":\"outdoor\",\"adSlot\":\"\",\"hideable\":false,\"description\":\"Displays run weather index information.\",\"sponsored\":false,\"type\":\"native\"}",
+								"features": [
+								],
+								"isON": true,
+								"name": "modules.Outdoor",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "modules.Boat",
+								"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 12,
+						"name": "mx.8a42fd08-4abb-43da-894c-939b1f114648",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					}
+				],
+				"isON": true,
+				"name": "modules.Airlock Control Over Modules",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "bespoke.Allergy",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "bespoke.ColdFlu",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "bespoke.HealthSubmodules",
+				"resultTrace": "Rule disabled",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "sample.ViewedCountryUS",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "sample.ViewedCountryNonUS",
+						"resultTrace": "Rule returned false",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "sample.ConnectionTypeWiFi",
+						"resultTrace": "Rule returned false",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "sample.ConnectionType4G",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "sample.Common",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "performance.limit.weatherdata",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "performance.limit.data",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "performance.limit.location",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "performance.Limit",
+				"resultTrace": "Rule returned false",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "modules.Video Module Autoplay",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "modules.Breaking News Video Autoplay",
+						"resultTrace": "Rule disabled",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "modules.Right Now Video Autoplay",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "modules.Video Autoplay",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "headsup.Alert",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							}
+						],
+						"isON": false,
+						"name": "headsup.HeadsUpDev",
+						"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"features": [
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "HeadsUpB.Expanded hourly forecast",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Hourly",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Daily",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.RadarB",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									}
+								],
+								"maxFeaturesOn": 3,
+								"name": "mx.4bd8d38d-0089-4608-858b-68c6921bb36e",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							}
+						],
+						"isON": false,
+						"name": "headsup.HeadsUpB",
+						"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"features": [
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Breaking News Video",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Real Time Lightning",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Winter Storm Impacted Now",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.T Storm Impacted Now",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Radar",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"tiletype\":\"video\",\"preferredTileIndex\":-1,\"clickthrough\":{\"playlist\":null,\"destination\":\"content_feed\"}}",
+										"features": [
+										],
+										"isON": true,
+										"name": "headsup.Top Video",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"icon\":{\"resourceName\":\"home_rain_icon\"},\"tiletype\":\"datapoint\",\"descriptor\":\"RAIN POSSIBLE\",\"analyticsTileName\":\"Precip Start\",\"value\":\"9:15 AM\",\"clickthrough\":{\"destination\":\"hourly\"}}",
+										"features": [
+										],
+										"isON": true,
+										"name": "headsup.Precip Start",
+										"resultTrace": "Configurations: [defaultConfiguration, headsupPrecipStart.Basic, headsupPrecipStart.Rain Possible]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Precip End",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Forecasted Snow Accumulation",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Winter Storm Forecast",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.T Storm Impact Soon",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"icon\":{\"resourceName\":\"home_car_icon\"},\"tiletype\":\"datapoint\",\"descriptor\":\"ROAD CONDITIONS\",\"analyticsTileName\":\"Road Conditions\",\"value\":\"WET\",\"clickthrough\":{\"destination\":\"driving_condition\"}}",
+										"features": [
+										],
+										"isON": true,
+										"name": "headsup.Road Conditions",
+										"resultTrace": "Configurations: [defaultConfiguration, headsupRoadConditions.WET]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Editorial Calendar",
+										"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.GoRun",
+										"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Feels Like Message",
+										"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Tomorrow Forecast",
+										"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Weekend Forecast",
+										"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Sunrise Sunset Message",
+										"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Expanded hourly forecast",
+										"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Watch My Weather",
+										"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+										"type": "FEATURE"
+									}
+								],
+								"maxFeaturesOn": 3,
+								"name": "mx.eb2876c6-5441-4515-999b-06456ceb96aa",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							}
+						],
+						"isON": true,
+						"name": "headsup.HeadsUp",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.d151cc3b-4609-4d14-a795-2585566c748c",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{\"Temperature\":72,\"Location\":\"25.77,-80.19\",\"StaticText\":\"This is a static text\",\"StateName\":\"FL\"}",
+						"features": [
+						],
+						"isON": true,
+						"name": "analytics.BigStates",
+						"resultTrace": "Configurations: [defaultConfiguration, analyticsBigStates.StateName, analyticsBigStates.StaticText, analyticsBigStates.Location, analyticsBigStates.Fahrenheit]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{\"NightPrecipType\":\"rain\",\"NightPrecipPercentage\":40,\"Region\":\"FL\",\"nearestStartPrecip\":\"2017-02-22T09:15:00-05:00\",\"PhenomenaCode\":\"FF\",\"isGPSenabled\":false,\"SignificanceCode\":\"B\",\"Location\":\"25.77, -80.19\",\"FeelsLikeTemperature\":72,\"Country\":\"US\",\"WetPrecipCode\":27}",
+						"features": [
+						],
+						"isON": true,
+						"name": "analytics.WeatherData",
+						"resultTrace": "Configurations: [defaultConfiguration, analyticsWeatherData.AddObservationData, analyticsWeatherData.AddViewedLocationData, analyticsWeatherData.AddAlertData, analyticsWeatherData.AddPrecipData, analyticsWeatherData.PrecipNight, analyticsWeatherData.FeelsLikeInFahrenheit]",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "airlock.Rollout Beacon",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": true,
+				"name": "airlock.Send Airlock Bar Data",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "headsup.Now",
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "analytics.SmartRatings",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

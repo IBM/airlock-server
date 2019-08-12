@@ -1,0 +1,6 @@
+{
+
+	"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+	"features": [],
+	"maxFeaturesOn": 1
+}

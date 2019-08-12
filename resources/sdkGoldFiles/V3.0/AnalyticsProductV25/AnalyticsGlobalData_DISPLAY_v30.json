@@ -1,0 +1,456 @@
+{
+  "rule": {
+    "ruleString": "true"
+  },
+  "lastModified": 1499599028978,
+  "rolloutPercentage": 100,
+  "analyticsDataCollection": {
+    "analyticsDataCollectionByFeatureNames": [
+      {
+        "name": "airlock.Rollout Beacon",
+        "branchName": "MASTER",
+        "id": "5526a529-3141-46c9-bd9c-97adb57f570e",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "analytics.BigStates",
+        "branchName": "MASTER",
+        "attributes": [
+          {
+            "name": "StateName",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "StaticText",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          }
+        ],
+        "id": "b75f7c38-7847-4103-8105-ebf0ceb505b5",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "ads.Airlock Control Over Ads",
+        "branchName": "MASTER",
+        "id": "1f842a61-52bd-452d-a28a-8449910b9b63",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "ads.Main Feed Ads",
+        "branchName": "MASTER",
+        "id": "a8818416-d109-47eb-9fb5-811730bff4b8",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "ads.Main Screen Banner",
+        "branchName": "MASTER",
+        "id": "db55691d-f190-43a5-8c5b-073afbee8d74",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "tr.FeatureProdMTXDev12b",
+        "branchName": "MASTER",
+        "id": "d92861fc-89b0-455f-bb63-0ead6ccc4940",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "tr.FeatureProdMTXDevProd12",
+        "branchName": "MASTER",
+        "id": "d55349c9-a0fa-4a97-8049-931d589272b5",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "tr.FeatureProdMTXDev11b",
+        "branchName": "MASTER",
+        "id": "39d16da7-5ee0-4892-b8ef-90c61ddcc558",
+        "sendToAnalytics": true
+      },
+      {
+        "configurationRules": [
+          {
+            "name": "analyticsWeatherData.AddAlertData",
+            "branchName": "MASTER"
+          },
+          {
+            "name": "analyticsWeatherData.AddViewedLocationData",
+            "branchName": "MASTER"
+          }
+        ],
+        "name": "analytics.WeatherData",
+        "attributes": [
+          {
+            "name": "Country",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "DayPrecipPercentage",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "DayPrecipType",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "FeelsLikeTemperature",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "Location",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "NightPrecipPercentage",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "NightPrecipType",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "PhenomenaCode",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "Region",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "SignificanceCode",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "WetPrecipCode",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "isGPSenabled",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "nearestStartPrecip",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          }
+        ],
+        "id": "d7a126d4-5fb1-46ce-8f0c-fcd0f01d5604",
+        "sendToAnalytics": false
+      },
+      {
+        "name": "tr.MTXinMTXConfigsProdDefaultOff",
+        "attributes": [
+          {
+            "name": "dvalue1",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "dvalue2",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "dvalue3",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value10",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value2",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value30",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value4",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          }
+        ],
+        "id": "b36cdf74-8625-44f4-8d15-9c7b30df2b42",
+        "sendToAnalytics": false
+      },
+      {
+        "configurationRules": [
+          {
+            "name": "group1feature1.FeatureProdMTXConfigProd15a",
+            "branchName": "MASTER"
+          }
+        ],
+        "name": "group1.FeatureProdMTXConfigProdDev15",
+        "attributes": [
+          {
+            "name": "value",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value1",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value2",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value3",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          }
+        ],
+        "id": "3d8f89e8-7976-411b-9e04-03cf4ae524b1",
+        "sendToAnalytics": false
+      },
+      {
+        "name": "ns.CustomArray",
+        "attributes": [
+          {
+            "name": "moreArrays[0-2].color",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArray[2]",
+            "branchName": "MASTER",
+            "warning": "myArray[2] is not of type ARRAY.",
+            "type": "ARRAY"
+          }
+        ],
+        "id": "02d3b99e-59f9-44f9-bc27-6d23858f7dbf",
+        "sendToAnalytics": false
+      },
+      {
+        "name": "ns.Array3",
+        "attributes": [
+          {
+            "name": "appStoreLink",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "customObjFromArray.a",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "customValObj.a",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "customValObj2.b",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "customValStr",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "feedbackButton",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "feedbackEmail",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "myArrayOfNormalObjects[0-2].a",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArrayOfObjects[0-2].a.aa",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArrayOfObjects[0-2].b",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArrayOfObjects[0-2].c",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArrayOfObjects[0-2].d",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArrayOfObjects[0-2].e",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArray[0-2]",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          }
+        ],
+        "id": "4467be0f-ac27-4668-9303-5251d7e85022",
+        "sendToAnalytics": false
+      },
+      {
+        "name": "ns.Arrays",
+        "attributes": [
+          {
+            "name": "colors[0-4]",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          }
+        ],
+        "id": "c6e49185-16f4-4407-bdb6-5fc6b5edebd5",
+        "sendToAnalytics": false
+      },
+      {
+        "name": "elik.Array2",
+        "attributes": [
+          {
+            "name": "ArrayOfArrayOfObject[0,1][0,1].key0",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          }
+        ],
+        "id": "edad079e-b124-41f7-9062-28c4f8946bf7",
+        "sendToAnalytics": false
+      }
+    ],
+    "inputFieldsForAnalytics": [
+      {
+        "name": "context.device.localeCountryCode",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.device.localeLanguage",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.device.hockeyUserID",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.device.datetime",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.device.osVersion",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.device.screenHeight",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.device.locale",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.turbo.vt1dailyforecast.night.dayPartName[0]",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.viewedLocation.country",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.observation.skyCode",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.observation.obsTime",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.observation.weekDay",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.pollenData[0].night.grassIndex",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.pollenData[0].night.daypartName",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.pollenData[0].night.treeIndex",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestWinterStormAlert.endTime",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestWinterStormAlert.phenomenaCode",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestWinterStormAlert.severityCode",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.viewedLocation.lon",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.viewedLocation.region",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.observation.basedGPS",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestStartPrecip.severity",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestStartPrecip.imminence",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestStartPrecip.startTime",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestStartPrecip.endTime",
+        "branchName": "MASTER"
+      }
+    ],
+    "developmentItemsReportedToAnalytics": 104,
+    "productionItemsReportedToAnalytics": 89
+  }
+}

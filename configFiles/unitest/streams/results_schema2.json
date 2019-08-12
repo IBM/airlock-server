@@ -1,0 +1,22 @@
+{
+		"properties": {
+			"adsNumberOfSessionPerDay": {
+				"type": ["string",
+					"null"
+				]
+			},
+			"adsTotalNumberOfSession": {
+				"type": ["string",
+					"null"
+				]
+			}
+		},
+		"required": [
+			"adsNumberOfSessionPerDay",
+			"adsTotalNumberOfSession"
+
+		],
+		"type": ["object",
+			"null"
+		]
+	}

@@ -1,0 +1,204 @@
+{
+	"events": [{
+			"eventData": {
+				"foreground": true,
+				"method": "return",
+				"target": null
+			},
+			"name": "app-launch"
+		},
+		{
+			"eventData": {
+				"seasonId": "d30f6620-4d1c-48c2-a501-7d60dde35dd0",
+				"context_weatherSummary_tomorrowForecast_night_precipType": "rain",
+				"context_weatherSummary_closestLightning_distance": "null",
+				"context_weatherSummary_todayForecast_day_precipType": "null",
+				"context_weatherSummary_nearestWinterStormAlert_phenomenaCode": "null",
+				"feature_test_TestVideoPlayedStream_conf_title": "46",
+				"context_weatherSummary_closestLightning_strikeTime": "null",
+				"context_weatherSummary_todayForecast_night_precipType": "rain",
+				"feature_test_TestAdViewedStream_conf_title": "1232",
+				"context_weatherSummary_observation_skyCode": "26",
+				"context_weatherSummary_observation_feelsLikeTemperature": "74",
+				"feature_test_TestVideoAutoPlayedStream": "On",
+				"context_app_af_status": "Organic",
+				"context_weatherSummary_nearestStartPrecip_startTime": "2017-08-27T23:45:00-10:00",
+				"context_weatherSummary_todayForecast_night_precipPercentage": "60",
+				"context_weatherSummary_todayForecast_day_precipPercentage": "null",
+				"context_weatherSummary_contentMode_mode": "severe2",
+				"feature_test_TestAdViewedStream": "On",
+				"feature_test_TestVideoAutoPlayedStream_conf_title": "49",
+				"airlockVersion": "V2.5",
+				"context_device_daysSinceAppInstall": "6",
+				"feature_test_TestVideoPlayedStream_conf_countprevious": "46",
+				"feature_headsup_HeadsUpDynamic": "On",
+				"context_weatherSummary_nearestWinterStormAlert_severityCode": "null",
+				"feature_modules_Breaking-News": "On",
+				"feature_ads_AdsConfig": "On",
+				"context_weatherSummary_nearestWinterStormAlert_significanceCode": "null",
+				"context_weatherSummary_nearestStartPrecip_eventType": "1",
+				"context_app_media_source": "null",
+				"productId": "2dda96ae-213c-4014-89e3-4582bfc2dd23",
+				"context_weatherSummary_nearestStartPrecip_severity": "1",
+				"context_weatherSummary_observation_temperature": "74",
+				"context_weatherSummary_tomorrowForecast_day_precipType": "rain",
+				"context_weatherSummary_tomorrowForecast_night_precipPercentage": "20",
+				"context_weatherSummary_tomorrowForecast_day_precipPercentage": "20",
+				"feature_headsup_HOURLY-FORECAST-TABLEDynamic": "On",
+				"feature_headsup_Tomorrow-ForecastDynamic": "Off",
+				"feature_headsup_Precip-EndDynamic": "Off",
+				"feature_headsup_Weekend-ForecastDynamic": "Off",
+				"feature_headsup_Precip-StartDynamic": "Off",
+				"context_app_campaign": "null"
+			},
+			"name": "airlock-config"
+		},
+		{
+			"eventData": {
+				"locationId": "USHI0022:1:US"
+			},
+			"name": "location-displayed"
+		},
+		{
+			"eventData": {
+				"clicked": false,
+				"slot": "weather.feed1",
+				"successful": true,
+				"source": "5589db1c891745c78ab6e32c6f4eda1b",
+				"type": "ban"
+			},
+			"name": "ad-viewed"
+		},
+		{
+			"eventData": {
+				"name": "video",
+				"sub": "pl-hurricane-harvey"
+			},
+			"name": "detail-viewed"
+		},
+		{
+			"eventData": {
+				"exit": true
+			},
+			"name": "app-exit"
+		},
+		{
+			"eventData": {
+				"id": "1a0b134e-8c13-4a0d-bc50-05c08787eae8",
+				"source": "videodetails",
+				"pos": 1,
+				"playlist": "pl-editor-picks",
+				"playMethod": "user",
+				"caption": "New Orleans Could be in Big Trouble",
+				"thumbnailURL": "https://dsx.weather.com//util/image/v/nawleeeeans.jpg?v\u003dat\u0026w\u003d650\u0026h\u003d366\u0026api\u003d7db9fe61-7414-47b5-9871-e17d87b8b6a0",
+				"adSecs": 20,
+				"contentSecs": 85,
+				"watchedSecs": 0,
+				"adWatchedSecs": 0,
+				"autoplayWatchedSecs": 0,
+				"autoplayClicked": false,
+				"adClicked": false
+			},
+			"name": "video-played"
+		},
+		{
+			"eventData": {
+				"name": "breaking-news"
+			},
+			"name": "module-viewed"
+		},
+		{
+			"eventData": {
+				"action": "user-viewed"
+			},
+			"name": "module-viewed"
+		},
+		{
+			"eventData": {
+				"purchase": false
+			},
+			"name": "module-viewed"
+		},
+		{
+			"eventData": {
+				"id": "7743b1f3-cbee-426a-87ee-81b097ce926e",
+				"variantId": "59a3f850fb8b84515de2f7a0",
+				"source": "rightnow",
+				"pos": 1,
+				"playlist": "pl-hurricane-harvey",
+				"caption": "TS Irma Could Form Off Coast",
+				"thumbnailURL": "https://dsx.weather.com//util/image/v/irma.jpg?v\u003dap\u0026w\u003d980\u0026h\u003d551\u0026api\u003d7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+			},
+			"name": "content-viewed"
+		},
+		{
+			"eventData": {
+				"articleURL": "/storms/hurricane/news/how-you-can-help-hurricane-harvey-victims",
+				"caption": "How You Can Help Harvey Victims",
+				"contentSecs": 10,
+				"id": "08e601ea-5cb6-4f02-aaf2-53f34131892c",
+				"source": "newsmodule",
+				"thumbnailURL": "https://dsx.weather.com//util/image/w/827rescue20.jpg?v\u003dat\u0026w\u003d650\u0026h\u003d366\u0026api\u003d7db9fe61-7414-47b5-9871-e17d87b8b6a0"
+			},
+			"name": "article-read"
+		},
+		{
+			"name": "alert-managed",
+			"eventData": {
+				"alert": "severe-wx",
+				"oldValue": false,
+				"newValue": true,
+				"locations": ["30339:4:US"]
+			}
+		},
+		{
+			"eventData": {
+				"crash": true
+			},
+			"name": "app-crash"
+		},
+		{
+			"name": "call-to-action",
+			"eventData": {
+				"name": "select-map-alert-layer",
+				"source": "maps",
+				"oldValue": "severe storms",
+				"newValue": "winter"
+			}
+		},
+		{
+			"name": "in-app-purchase",
+			"eventData": {
+				"entitlement": "one-year-ad-free",
+				"completed": false
+			}
+		},
+		{
+			"name": "page-load",
+			"eventData": {
+				"responseEnd": 1111111,
+				"domInteractive": 1111111,
+				"domContentLoadedEventStart": 1111111,
+				"domContentLoadedEventEnd": 1111111,
+				"domComplete": 1111111,
+				"loadEventStart": 1111111,
+				"loadEventEnd": 1111111
+			}
+		},
+		{
+			"name": "profile-signup",
+			"eventData": {
+				"service": "fb",
+				"completed": true
+			}
+		},
+		{
+			"name": "smart-prompt-displayed",
+			"eventData": {
+				"answer": "yes"
+			}
+		}
+
+
+	]
+}

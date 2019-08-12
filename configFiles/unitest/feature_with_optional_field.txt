@@ -1,0 +1,27 @@
+{
+				"additionalInfo": {
+				},
+				"configurationSchema": null,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "7.5",
+				"name": "Distance",
+				"namespace": "tr",
+				"noCachedResults": false,
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rule": {
+					"force": false,
+					"ruleString": "(context && context.userPreferences && context.userPreferences.unitsOfMeasure == 'metric') == true"
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+			}

@@ -1,0 +1,86 @@
+{
+	"inputFieldsForAnalytics": [
+	],
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{\"color\":\"black\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"hellow world\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CME.contextViewedLocationCountryNoME",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, contextViewedLocationCountryCME.US]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"color\":\"black\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"hellow world\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CME.contextViewedLocationCountry",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, contextViewedLocationCountryCME.NY1]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"color\":\"green\",\"size\":1,\"alert\":false,\"background\":\"white\",\"icon\":\"c.jpg\",\"text\":\"welcome\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CME.contextViewedLocationCountry1",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, contextViewedLocationCountry1CME.alerts.phenomenaCode]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextDeviceIL",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Rule returned false",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextDeviceIL2",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Rule returned false",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"color\":\"blue\",\"title\":\"Example Schema\",\"type\":\"object\",\"properties\":{\"color\":{\"type\":\"string\"},\"size\":{\"description\":\"Text size\",\"type\":\"integer\",\"minimum\":1},\"alert\":{\"type\":\"boolean\"},\"background\":{\"type\":\"string\"},\"icon\":{\"type\":\"string\"},\"text\":{\"type\":\"string\"}}}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CME.maxFeatureOn2",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, maxFeatureOn2CME.config3, maxFeatureOn2CME.config2, maxFeatureOn2CME.config1]",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

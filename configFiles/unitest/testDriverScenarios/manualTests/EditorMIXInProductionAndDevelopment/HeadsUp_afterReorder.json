@@ -1,0 +1,1748 @@
+{
+  "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+  "root": {
+    "features": [
+      {
+        "features": [
+          {
+            "displayName": null,
+            "rule": {
+              "ruleString": "true",
+              "force": false
+            },
+            "description": "If ON, Airlock will control HeadUp display. If OFF, the previous version of HeadUp will be displayed.",
+            "type": "FEATURE",
+            "enabled": true,
+            "defaultConfiguration": null,
+            "features": [
+              {
+                "features": [
+                  {
+                    "displayName": null,
+                    "rule": {
+                      "ruleString": "context.device.locale == \"en_US\"  &&\ncontext.viewedLocation.country == \"US\" && \ncontext.weatherSummary.observation !== null &&\ncontext.weatherSummary.observation.basedGPS == true &&\ncontext.weatherSummary.closestLightning !== null &&\ncontext.weatherSummary.closestLightning.distance !== null && \ncontext.weatherSummary.closestLightning.strikeTime != null",
+                      "force": false
+                    },
+                    "description": "",
+                    "type": "FEATURE",
+                    "enabled": true,
+                    "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\",\n\t\t\"layer\":\"lightning\"\n\t},\n\t\"descriptor\":\"LIGHTNING STRIKE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_lightning_icon\"\n\t},\n\t\"analyticsTileName\":\"lightning\"\n}",
+                    "features": [],
+                    "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "additionalInfo": {},
+                    "minAppVersion": "7.6",
+                    "noCachedResults": true,
+                    "owner": "Itai Gordon",
+                    "creator": "Itai Gordon",
+                    "internalUserGroups": [
+                      "DEV",
+                      "QA",
+                      "Analytics"
+                    ],
+                    "rolloutPercentage": 100,
+                    "creationDate": 1486635544129,
+                    "rolloutPercentageBitmap": "////////////////Dw==",
+                    "stage": "DEVELOPMENT",
+                    "configurationRules": [
+                      {
+                        "owner": "Josemina Magdalen",
+                        "creator": "Josemina Magdalen",
+                        "internalUserGroups": [
+                          "QA",
+                          "DEV"
+                        ],
+                        "configuration": "{\t\n    \"descriptor\":translate(\"HeadsUp.LightningStrike\"),\n  \"value\": Math.round(context.weatherSummary.closestLightning.distance*10)/10 + \" \" + getDistanceUnit() + \" \" + context.weatherSummary.closestLightning.cardinalDirection\n}",
+                        "rule": {
+                          "ruleString": "",
+                          "force": false
+                        },
+                        "description": "",
+                        "type": "CONFIGURATION_RULE",
+                        "rolloutPercentage": 100,
+                        "creationDate": 1486635544910,
+                        "rolloutPercentageBitmap": "////////////////Dw==",
+                        "enabled": true,
+                        "stage": "DEVELOPMENT",
+                        "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                        "configurationRules": [],
+                        "name": "Basic",
+                        "namespace": "headsupRealTimeLightning",
+                        "minAppVersion": "7.6",
+                        "lastModified": 1486635544910,
+                        "uniqueId": "39b0467d-726e-4324-9975-41e031e65c9b",
+                        "noCachedResults": false
+                      }
+                    ],
+                    "name": "Real Time Lightning",
+                    "namespace": "headsup",
+                    "configurationSchema": {
+                      "$schema": "http://json-schema.org/draft-04/schema#",
+                      "anyOf": [
+                        {
+                          "additionalProperties": false,
+                          "type": "object",
+                          "properties": {
+                            "analyticsTileName": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "preferredTileIndex": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ],
+                              "minimum": -1
+                            },
+                            "icon": {
+                              "additionalProperties": false,
+                              "type": [
+                                "object",
+                                "null"
+                              ],
+                              "properties": {
+                                "width": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ],
+                                  "minimum": 0
+                                },
+                                "resourceName": {
+                                  "type": "string",
+                                  "enum": [
+                                    "home_lightning_icon",
+                                    "ic_radar_light",
+                                    "home_rain_icon",
+                                    "ic_twc_severe_circle",
+                                    "ic_sev_generic",
+                                    "ic_twc_snow",
+                                    "home_car_icon",
+                                    "ic_twc_temperature",
+                                    "home_sunsrise_sunset_icon",
+                                    "home_tonight_tomorrow_icon"
+                                  ]
+                                },
+                                "height": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ],
+                                  "minimum": 0
+                                }
+                              },
+                              "required": [
+                                "resourceName"
+                              ]
+                            },
+                            "clickthrough": {
+                              "$ref": "#/definitions/clickthrough"
+                            },
+                            "descriptor": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "tiletype": {
+                              "type": [
+                                "string"
+                              ],
+                              "enum": [
+                                "datapoint"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "tiletype",
+                            "descriptor",
+                            "value"
+                          ]
+                        },
+                        {
+                          "additionalProperties": false,
+                          "type": "object",
+                          "properties": {
+                            "analyticsTileName": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "preferredTileIndex": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ],
+                              "minimum": -1
+                            },
+                            "clickthrough": {
+                              "$ref": "#/definitions/clickthrough"
+                            },
+                            "title": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "tiletype": {
+                              "type": "string",
+                              "enum": [
+                                "video"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "tiletype"
+                          ]
+                        }
+                      ],
+                      "definitions": {
+                        "clickthrough": {
+                          "anyOf": [
+                            {
+                              "type": "null"
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "winter_storm",
+                                    "driving_condition",
+                                    "hourly",
+                                    "now",
+                                    "tornado_central"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "dayIndex": {
+                                  "maximum": 14,
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ],
+                                  "minimum": 0
+                                },
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "fifteen_day"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "playlist": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "content_feed"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "radar_map"
+                                  ]
+                                },
+                                "layer": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ],
+                                  "enum": [
+                                    null,
+                                    "twcRadarMosaic",
+                                    "lightning",
+                                    "sat",
+                                    "satrad",
+                                    "temp",
+                                    "feelsLike",
+                                    "uv",
+                                    "precip24hr",
+                                    "snow24hr",
+                                    "snow1hrCumulativePrecipFcst"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "lastModified": 1486635544910,
+                    "uniqueId": "9e52b116-21fc-4073-8321-baf0b34c82a9"
+                  },
+                  {
+                    "displayName": null,
+                    "rule": {
+                      "ruleString": "\nfunction isTStormInDayPart(daypart){\n    \n    var thunderEnumCodes = [3, 4, 5];\n    return daypart.dayPartTitle !== null && thunderEnumCodes.indexOf(daypart.thunderEnum) != -1;\n}\n\nfunction isSevereTStormImpactedNow(){\n    \n    if(context.turbo.vt1dailyforecast.night.dayPartName !== null && context.turbo.vt1dailyforecast.night.dayPartName.length>0){\n        context.weatherSummary.tomorrowForecast.night.dayPartTitle = context.turbo.vt1dailyforecast.night.dayPartName[1]; \n    }\n    if(context.turbo.vt1dailyforecast.day.dayPartName !== null && context.turbo.vt1dailyforecast.day.dayPartName.length>0){\n        context.weatherSummary.tomorrowForecast.day.dayPartTitle = context.turbo.vt1dailyforecast.day.dayPartName[1]; \n    }\n    \n    if (isTStormInDayPart(context.weatherSummary.dayForecast.day)){\n        return true;\n    } else if (isTStormInDayPart(context.weatherSummary.dayForecast.night)){\n        return true;    \n    } else if (context.weatherSummary.dayForecast.day.dayPartTitle == null && isTStormInDayPart(context.weatherSummary.tomorrowForecast.day)){\n        return true;\n    }\n    return false;\n}\n\nisSevereTStormImpactedNow();\n",
+                      "force": false
+                    },
+                    "description": "",
+                    "type": "FEATURE",
+                    "enabled": true,
+                    "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"descriptor\":\"SEVERE T-STORM NOW\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"T-Storm Now\"\n}",
+                    "features": [],
+                    "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "additionalInfo": {},
+                    "minAppVersion": "7.6",
+                    "noCachedResults": true,
+                    "owner": "Denis Voloshin",
+                    "creator": "Denis Voloshin",
+                    "internalUserGroups": [
+                      "DEV",
+                      "QA",
+                      "Analytics"
+                    ],
+                    "rolloutPercentage": 100,
+                    "creationDate": 1486635549072,
+                    "rolloutPercentageBitmap": "////////////////Dw==",
+                    "stage": "DEVELOPMENT",
+                    "configurationRules": [
+                      {
+                        "owner": "Josemina Magdalen",
+                        "creator": "Josemina Magdalen",
+                        "internalUserGroups": [
+                          "DEV"
+                        ],
+                        "configuration": "{\n\t\"descriptor\": translate(\"HeadsUp.SevereTStorm\"),\n\t\"value\" : translate (\"HeadsUp.Soon\")\n}",
+                        "rule": {
+                          "ruleString": "",
+                          "force": false
+                        },
+                        "description": "",
+                        "type": "CONFIGURATION_RULE",
+                        "rolloutPercentage": 100,
+                        "creationDate": 1486635549949,
+                        "rolloutPercentageBitmap": "////////////////Dw==",
+                        "enabled": true,
+                        "stage": "DEVELOPMENT",
+                        "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                        "configurationRules": [],
+                        "name": "Basic",
+                        "namespace": "headsupTStormImpactedNow",
+                        "minAppVersion": "7.6",
+                        "lastModified": 1486635549949,
+                        "uniqueId": "b788c8cf-5015-4c45-8de4-9c9b52a19838",
+                        "noCachedResults": false
+                      },
+                      {
+                        "maxFeaturesOn": 1,
+                        "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                        "configurationRules": [
+                          {
+                            "owner": "Denis Voloshin",
+                            "creator": "Denis Voloshin",
+                            "internalUserGroups": [
+                              "DEV",
+                              "QA"
+                            ],
+                            "configuration": "{\n\t\"clickthrough\":{\n\t\t\"destination\":\"tornado_central\"\n\t}\n}",
+                            "rule": {
+                              "ruleString": "context.viewedLocation.country == \"US\"",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635550989,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Viewing US",
+                            "namespace": "headsupTStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635550989,
+                            "uniqueId": "f646e712-ffb1-4c91-9e5f-9558a616d44e",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Denis Voloshin",
+                            "creator": "Denis Voloshin",
+                            "internalUserGroups": [
+                              "DEV",
+                              "QA"
+                            ],
+                            "configuration": "{\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t}\n}",
+                            "rule": {
+                              "ruleString": "context.viewedLocation.country !== \"US\"",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635551850,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Viewing Non US",
+                            "namespace": "headsupTStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635551850,
+                            "uniqueId": "63404757-5524-46a6-a6af-d179e03bc335",
+                            "noCachedResults": false
+                          }
+                        ],
+                        "lastModified": 1486635551850,
+                        "type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+                        "uniqueId": "ddd65950-2d49-4872-be13-29722d97a65f"
+                      },
+                      {
+                        "maxFeaturesOn": 1,
+                        "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                        "configurationRules": [
+                          {
+                            "owner": "Denis Voloshin",
+                            "creator": "Denis Voloshin",
+                            "internalUserGroups": [
+                              "DEV",
+                              "QA"
+                            ],
+                            "configuration": "{\n\t\t\n\t\t\n\t\"descriptor\": translate(\"HeadsUp.SevereTStormsPossible\"),\n\t\t\n\t\t\n\t\"value\":context.weatherSummary.dayForecast.day.dayPartTitle.toUpperCase()\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.dayForecast.day.dayPartTitle !== null &&\ncontext.weatherSummary.dayForecast.day.thunderEnum == 3",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635553115,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Possible Today",
+                            "namespace": "headsupTStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635553115,
+                            "uniqueId": "3de0a86b-add2-45de-9287-a0cbdda7c068",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Denis Voloshin",
+                            "creator": "Denis Voloshin",
+                            "internalUserGroups": [
+                              "DEV",
+                              "QA"
+                            ],
+                            "configuration": "{\n\t\t\n\t\t\n\t\"descriptor\": translate(\"HeadsUp.SevereTStormsPossible\"),\n\t\t\n\t\t\n\t  \n\t\"value\":context.weatherSummary.dayForecast.night.dayPartTitle.toUpperCase()\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.dayForecast.night.dayPartTitle !== null &&\ncontext.weatherSummary.dayForecast.night.thunderEnum == 3",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635553920,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Possible Tonight",
+                            "namespace": "headsupTStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635553920,
+                            "uniqueId": "8d63dbbf-6dfa-4106-b0bd-0663ba27b46f",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Denis Voloshin",
+                            "creator": "Denis Voloshin",
+                            "internalUserGroups": [
+                              "DEV",
+                              "QA"
+                            ],
+                            "configuration": "{\n\t\t\n\t\t\n\t\"descriptor\":translate(\"HeadsUp.SevereTStormsPossible\"),\n\t\t\n\t \t\n\t\"value\":context.weatherSummary.tomorrowForecast.day.dayPartTitle.toUpperCase()\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.tomorrowForecast.day.dayPartTitle !== null &&\ncontext.weatherSummary.tomorrowForecast.day.thunderEnum == 3",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635555103,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Possible Tomorrow",
+                            "namespace": "headsupTStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635555103,
+                            "uniqueId": "bf729df2-dacc-40a6-9004-52288a4072c7",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Denis Voloshin",
+                            "creator": "Denis Voloshin",
+                            "internalUserGroups": [
+                              "DEV",
+                              "QA"
+                            ],
+                            "configuration": "{\n\t\t\n\t\t\n\t\"descriptor\": translate(\"HeadsUp.SevereTStormsLikely\"),\n\t\t\n\t \t\n\t\"value\":context.weatherSummary.dayForecast.day.dayPartTitle.toUpperCase()\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.dayForecast.day.dayPartTitle !== null &&\ncontext.weatherSummary.dayForecast.day.thunderEnum == 4",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635556742,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Likely Today",
+                            "namespace": "headsupTStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635556742,
+                            "uniqueId": "51939cfe-8829-4f4d-8d8c-3a0af61e7a3a",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Denis Voloshin",
+                            "creator": "Denis Voloshin",
+                            "internalUserGroups": [
+                              "DEV",
+                              "QA"
+                            ],
+                            "configuration": "{\n\t\t\n\t\t\n\t\"descriptor\": translate(\"HeadsUp.SevereTStormsLikely\"),\n\t\t\n\t \n\t\"value\":context.weatherSummary.dayForecast.night.dayPartTitle.toUpperCase()\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.dayForecast.night.dayPartTitle !== null &&\ncontext.weatherSummary.dayForecast.night.thunderEnum == 4",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635557526,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Likely Tonight",
+                            "namespace": "headsupTStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635557526,
+                            "uniqueId": "6adb983d-20c0-419b-9722-433b4c414845",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Denis Voloshin",
+                            "creator": "Denis Voloshin",
+                            "internalUserGroups": [
+                              "DEV",
+                              "QA"
+                            ],
+                            "configuration": "{\n\t\t\n\t\t\n\t\"descriptor\": translate(\"HeadsUp.SevereTStormsLikely\"),\n\t\t\n\t \n\t\"value\":context.weatherSummary.tomorrowForecast.day.dayPartTitle.toUpperCase()\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.tomorrowForecast.day.dayPartTitle !== null &&\ncontext.weatherSummary.tomorrowForecast.day.thunderEnum == 4",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635558419,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Likely Tomorrow",
+                            "namespace": "headsupTStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635558419,
+                            "uniqueId": "b880d5e7-6174-483d-a651-487a45d6069c",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Denis Voloshin",
+                            "creator": "Denis Voloshin",
+                            "internalUserGroups": [
+                              "DEV",
+                              "QA"
+                            ],
+                            "configuration": "{\t\n\t\t\n\t\t\n\t\"descriptor\": translate(\"HeadsUp.SevereTStormsHighRisk\"),\t\n\t\t\n\t  \t\n\t\"value\":context.weatherSummary.dayForecast.day.dayPartTitle.toUpperCase()\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.dayForecast.day.dayPartTitle !== null &&\ncontext.weatherSummary.dayForecast.day.thunderEnum == 5;",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635559240,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "High Risk Today",
+                            "namespace": "headsupTStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635559240,
+                            "uniqueId": "fb99aa58-89b0-40c3-b620-8d2ca5d0a18a",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Denis Voloshin",
+                            "creator": "Denis Voloshin",
+                            "internalUserGroups": [
+                              "DEV",
+                              "QA"
+                            ],
+                            "configuration": "{\n\t\t\n\t\t\n\t\"descriptor\":  translate(\"HeadsUp.SevereTStormsHighRisk\"),\n\t\t\n\t  \n\t\"value\":context.weatherSummary.dayForecast.night.dayPartTitle.toUpperCase()\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.dayForecast.night.dayPartTitle !== null &&\ncontext.weatherSummary.dayForecast.night.thunderEnum == 5",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635560046,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "High Risk Tonight",
+                            "namespace": "headsupTStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635560046,
+                            "uniqueId": "a85e369b-71be-4a19-b2c0-8a3b9467edc9",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Denis Voloshin",
+                            "creator": "Denis Voloshin",
+                            "internalUserGroups": [
+                              "DEV",
+                              "QA"
+                            ],
+                            "configuration": "{\n\t\t\n\t\t\n\t\"descriptor\":  translate(\"HeadsUp.SevereTStormsHighRisk\"),\n\t\t\n\t  \n\t\"value\":context.weatherSummary.tomorrowForecast.day.dayPartTitle.toUpperCase()\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.tomorrowForecast.day.dayPartTitle !== null &&\ncontext.weatherSummary.tomorrowForecast.day.thunderEnum == 5",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635561277,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "High Risk Tomorrow",
+                            "namespace": "headsupTStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635561277,
+                            "uniqueId": "9699d925-6007-49e8-8822-76a0d84fa199",
+                            "noCachedResults": false
+                          }
+                        ],
+                        "lastModified": 1486635561277,
+                        "type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+                        "uniqueId": "43c6c1c4-0282-4a0e-8c56-bdae4b542aa3"
+                      }
+                    ],
+                    "name": "T Storm Impacted Now",
+                    "namespace": "headsup",
+                    "configurationSchema": {
+                      "$schema": "http://json-schema.org/draft-04/schema#",
+                      "anyOf": [
+                        {
+                          "additionalProperties": false,
+                          "type": "object",
+                          "properties": {
+                            "analyticsTileName": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "preferredTileIndex": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ],
+                              "minimum": -1
+                            },
+                            "icon": {
+                              "additionalProperties": false,
+                              "type": [
+                                "object",
+                                "null"
+                              ],
+                              "properties": {
+                                "width": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ],
+                                  "minimum": 0
+                                },
+                                "resourceName": {
+                                  "type": "string",
+                                  "enum": [
+                                    "home_lightning_icon",
+                                    "ic_radar_light",
+                                    "home_rain_icon",
+                                    "ic_twc_severe_circle",
+                                    "ic_sev_generic",
+                                    "ic_twc_snow",
+                                    "home_car_icon",
+                                    "ic_twc_temperature",
+                                    "home_sunsrise_sunset_icon",
+                                    "home_tonight_tomorrow_icon"
+                                  ]
+                                },
+                                "height": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ],
+                                  "minimum": 0
+                                }
+                              },
+                              "required": [
+                                "resourceName"
+                              ]
+                            },
+                            "clickthrough": {
+                              "$ref": "#/definitions/clickthrough"
+                            },
+                            "descriptor": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "tiletype": {
+                              "type": [
+                                "string"
+                              ],
+                              "enum": [
+                                "datapoint"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "tiletype",
+                            "descriptor",
+                            "value"
+                          ]
+                        },
+                        {
+                          "additionalProperties": false,
+                          "type": "object",
+                          "properties": {
+                            "analyticsTileName": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "preferredTileIndex": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ],
+                              "minimum": -1
+                            },
+                            "clickthrough": {
+                              "$ref": "#/definitions/clickthrough"
+                            },
+                            "title": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "tiletype": {
+                              "type": "string",
+                              "enum": [
+                                "video"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "tiletype"
+                          ]
+                        }
+                      ],
+                      "definitions": {
+                        "clickthrough": {
+                          "anyOf": [
+                            {
+                              "type": "null"
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "winter_storm",
+                                    "driving_condition",
+                                    "hourly",
+                                    "now",
+                                    "tornado_central"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "dayIndex": {
+                                  "maximum": 14,
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ],
+                                  "minimum": 0
+                                },
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "fifteen_day"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "playlist": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "content_feed"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "radar_map"
+                                  ]
+                                },
+                                "layer": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ],
+                                  "enum": [
+                                    null,
+                                    "twcRadarMosaic",
+                                    "lightning",
+                                    "sat",
+                                    "satrad",
+                                    "temp",
+                                    "feelsLike",
+                                    "uv",
+                                    "precip24hr",
+                                    "snow24hr",
+                                    "snow1hrCumulativePrecipFcst"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "lastModified": 1486635552095,
+                    "uniqueId": "ec2da3e3-77c7-4e16-a50f-197cde18afc5"
+                  },
+                  {
+                    "displayName": null,
+                    "rule": {
+                      "ruleString": "function isStormNow(){\n var winterPhenomenaCode = [\"BZ\", \"WS\",\"LE\",\"IS\",\"blizzard\",\"freezeRain\",\"TSI\", \"snowSquall\", \"snowFall\",\"winterStorm\"]\n\n return (context.weatherSummary.nearestWinterStormAlert !== null) && \n  (context.weatherSummary.nearestSnowAccumulation !== null) && \n  (winterPhenomenaCode.indexOf(context.weatherSummary.nearestWinterStormAlert.phenomenaCode) !== -1) &&\n  (context.weatherSummary.nearestWinterStormAlert.significanceCode == \"W\") && \n  context.weatherSummary.nearestSnowAccumulation.snowRange !== null &&\n  context.weatherSummary.nearestSnowAccumulation.snowRange !== \"0\"\t\n \n}\n\nisStormNow()",
+                      "force": false
+                    },
+                    "description": "",
+                    "type": "FEATURE",
+                    "enabled": true,
+                    "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"winter_storm\"\n\t},\n\t\"descriptor\":\"WINTER STORM LIKELY\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"Winter Storm Now\"\n}",
+                    "features": [],
+                    "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "additionalInfo": {},
+                    "minAppVersion": "7.6",
+                    "noCachedResults": true,
+                    "owner": "Itai Gordon",
+                    "creator": "Itai Gordon",
+                    "internalUserGroups": [
+                      "QA",
+                      "test",
+                      "Analytics"
+                    ],
+                    "rolloutPercentage": 100,
+                    "creationDate": 1486635545572,
+                    "rolloutPercentageBitmap": "////////////////Dw==",
+                    "stage": "PRODUCTION",
+                    "configurationRules": [
+                      {
+                        "owner": "Esteban Zia",
+                        "creator": "Esteban Zia",
+                        "internalUserGroups": [
+                          "AndroidDEV",
+                          "DEV",
+                          "QA"
+                        ],
+                        "configuration": "{\t\n\t\"descriptor\":translate(\"HeadsUp.WinterStormLikely\")\n}",
+                        "rule": {
+                          "ruleString": "",
+                          "force": false
+                        },
+                        "description": "",
+                        "type": "CONFIGURATION_RULE",
+                        "rolloutPercentage": 100,
+                        "creationDate": 1486635546415,
+                        "rolloutPercentageBitmap": "////////////////Dw==",
+                        "enabled": true,
+                        "stage": "PRODUCTION",
+                        "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                        "configurationRules": [],
+                        "name": "Basic",
+                        "namespace": "headsupWinterStormImpactedNow",
+                        "minAppVersion": "7.6",
+                        "lastModified": 1486636476366,
+                        "uniqueId": "1a5ff967-b07a-4634-b4aa-589f62909ce2",
+                        "noCachedResults": false
+                      },
+                      {
+                        "maxFeaturesOn": 1,
+                        "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                        "configurationRules": [
+                          {
+                            "owner": "Josemina Magdalen",
+                            "creator": "Josemina Magdalen",
+                            "internalUserGroups": [
+                              "QA",
+                              "DEV"
+                            ],
+                            "configuration": "{\n\t\"value\" : translate(\"General.Today\")\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.nearestSnowAccumulation.dayPart == \"day\"",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635547544,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "PRODUCTION",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Today",
+                            "namespace": "headsupWinterStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486636485642,
+                            "uniqueId": "8ea37f6c-493a-4a1d-96d8-1f019dfa5969",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Josemina Magdalen",
+                            "creator": "Josemina Magdalen",
+                            "internalUserGroups": [
+                              "QA",
+                              "DEV"
+                            ],
+                            "configuration": "{\n\t\"value\" : translate(\"General.Tonight\")\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.nearestSnowAccumulation.dayPart == \"night\"",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635548402,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "PRODUCTION",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Tonight",
+                            "namespace": "headsupWinterStormImpactedNow",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486636494652,
+                            "uniqueId": "1d0b17a0-3d88-44a5-8dfb-ca54e23c9b78",
+                            "noCachedResults": false
+                          }
+                        ],
+                        "lastModified": 1486635548402,
+                        "type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+                        "uniqueId": "656b5972-ee8a-44d1-a589-96a6f7dbdb49"
+                      }
+                    ],
+                    "name": "Winter Storm Impacted Now",
+                    "namespace": "headsup",
+                    "configurationSchema": {
+                      "$schema": "http://json-schema.org/draft-04/schema#",
+                      "anyOf": [
+                        {
+                          "additionalProperties": false,
+                          "type": "object",
+                          "properties": {
+                            "analyticsTileName": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "preferredTileIndex": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ],
+                              "minimum": -1
+                            },
+                            "icon": {
+                              "additionalProperties": false,
+                              "type": [
+                                "object",
+                                "null"
+                              ],
+                              "properties": {
+                                "width": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ],
+                                  "minimum": 0
+                                },
+                                "resourceName": {
+                                  "type": "string",
+                                  "enum": [
+                                    "home_lightning_icon",
+                                    "ic_radar_light",
+                                    "home_rain_icon",
+                                    "ic_twc_severe_circle",
+                                    "ic_sev_generic",
+                                    "ic_twc_snow",
+                                    "home_car_icon",
+                                    "ic_twc_temperature",
+                                    "home_sunsrise_sunset_icon",
+                                    "home_tonight_tomorrow_icon"
+                                  ]
+                                },
+                                "height": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ],
+                                  "minimum": 0
+                                }
+                              },
+                              "required": [
+                                "resourceName"
+                              ]
+                            },
+                            "clickthrough": {
+                              "$ref": "#/definitions/clickthrough"
+                            },
+                            "descriptor": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "tiletype": {
+                              "type": [
+                                "string"
+                              ],
+                              "enum": [
+                                "datapoint"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "tiletype",
+                            "descriptor",
+                            "value"
+                          ]
+                        },
+                        {
+                          "additionalProperties": false,
+                          "type": "object",
+                          "properties": {
+                            "analyticsTileName": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "preferredTileIndex": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ],
+                              "minimum": -1
+                            },
+                            "clickthrough": {
+                              "$ref": "#/definitions/clickthrough"
+                            },
+                            "title": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "tiletype": {
+                              "type": "string",
+                              "enum": [
+                                "video"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "tiletype"
+                          ]
+                        }
+                      ],
+                      "definitions": {
+                        "clickthrough": {
+                          "anyOf": [
+                            {
+                              "type": "null"
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "winter_storm",
+                                    "driving_condition",
+                                    "hourly",
+                                    "now",
+                                    "tornado_central"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "dayIndex": {
+                                  "maximum": 14,
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ],
+                                  "minimum": 0
+                                },
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "fifteen_day"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "playlist": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "content_feed"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "radar_map"
+                                  ]
+                                },
+                                "layer": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ],
+                                  "enum": [
+                                    null,
+                                    "twcRadarMosaic",
+                                    "lightning",
+                                    "sat",
+                                    "satrad",
+                                    "temp",
+                                    "feelsLike",
+                                    "uv",
+                                    "precip24hr",
+                                    "snow24hr",
+                                    "snow1hrCumulativePrecipFcst"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "lastModified": 1486636465240,
+                    "uniqueId": "6ab83351-1fc8-4b5c-a9b1-33df0cb3fcc7"
+                  },
+                  {
+                    "displayName": null,
+                    "rule": {
+                      "ruleString": "function statescodes() \n{ \n    var allRadarStates = [\"US\", \"AS\", \"GM\", \"NL\", \"LU\", \"BE\", \"FR\", \"UK\", \"EI\", \"LS\", \"SZ\", \"AN\", \"MN\"];\n    \n    return context.device !== null && \n            context.viewedLocation !== null &&\n            allRadarStates.indexOf(context.viewedLocation.country) !== -1 &&\n            context.weatherSummary.nearestStartPrecip !== null &&\n            context.weatherSummary.observation !== null &&\n            context.weatherSummary.nearestStartPrecip.eventType !== null &&\n            context.weatherSummary.nearestStartPrecip.eventType !== 0 &&\n            (new Date(context.weatherSummary.nearestStartPrecip.startTime) - \n                new Date(context.weatherSummary.observation.obsTime) <= 3*1000*60*60 )\n}\n\nstatescodes()",
+                      "force": false
+                    },
+                    "description": "",
+                    "type": "FEATURE",
+                    "enabled": true,
+                    "defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\"\n\t},\n\t\"descriptor\":\"PRECIPITATION\",\n\t\"value\":\"SEE RADAR\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_radar_light\"\n\t},\n\t\"analyticsTileName\":\"radar\"\n}",
+                    "features": [],
+                    "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "additionalInfo": {},
+                    "minAppVersion": "7.6",
+                    "noCachedResults": false,
+                    "owner": "Itai Gordon",
+                    "creator": "Itai Gordon",
+                    "internalUserGroups": [
+                      "DEV",
+                      "QA",
+                      "Analytics"
+                    ],
+                    "rolloutPercentage": 100,
+                    "creationDate": 1486635561943,
+                    "rolloutPercentageBitmap": "////////////////Dw==",
+                    "stage": "PRODUCTION",
+                    "configurationRules": [
+                      {
+                        "owner": "Esteban Zia",
+                        "creator": "Esteban Zia",
+                        "internalUserGroups": [
+                          "AndroidDEV",
+                          "DEV",
+                          "QA"
+                        ],
+                        "configuration": "{\n\t\"descriptor\": translate(\"HeadsUp.Precipitation\"),\n\t\"value\": translate(\"HeadsUp.SeeRadar\")\n}",
+                        "rule": {
+                          "ruleString": "",
+                          "force": false
+                        },
+                        "description": "",
+                        "type": "CONFIGURATION_RULE",
+                        "rolloutPercentage": 100,
+                        "creationDate": 1486635562831,
+                        "rolloutPercentageBitmap": "////////////////Dw==",
+                        "enabled": true,
+                        "stage": "PRODUCTION",
+                        "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                        "configurationRules": [],
+                        "name": "Basic",
+                        "namespace": "headsupRadar",
+                        "minAppVersion": "7.6",
+                        "lastModified": 1486636524592,
+                        "uniqueId": "960903f7-b1e7-4019-8268-c3c14e2ff39f",
+                        "noCachedResults": false
+                      },
+                      {
+                        "maxFeaturesOn": 1,
+                        "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                        "configurationRules": [
+                          {
+                            "owner": "Josemina Magdalen",
+                            "creator": "Josemina Magdalen",
+                            "internalUserGroups": [
+                              "QA",
+                              "DEV"
+                            ],
+                            "configuration": "{\n\t\"descriptor\": translate(\"HeadsUp.InView\", translate(\"HeadsUp.Rain\"))\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.nearestStartPrecip.eventType == 1",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635563947,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Rain",
+                            "namespace": "headsupRadar",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635563947,
+                            "uniqueId": "d1039bb2-cd94-4fb5-b274-82403350938f",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Josemina Magdalen",
+                            "creator": "Josemina Magdalen",
+                            "internalUserGroups": [
+                              "QA",
+                              "DEV"
+                            ],
+                            "configuration": "{\n\t\"descriptor\": translate(\"HeadsUp.InView\",  translate(\"HeadsUp.Snow\"))\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.nearestStartPrecip.eventType == 2",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635565241,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Snow",
+                            "namespace": "headsupRadar",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635565241,
+                            "uniqueId": "162ce4fa-77df-41b3-94f1-43e81a1a15be",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Josemina Magdalen",
+                            "creator": "Josemina Magdalen",
+                            "internalUserGroups": [
+                              "QA",
+                              "DEV"
+                            ],
+                            "configuration": "{\t\n\t\"descriptor\": translate(\"HeadsUp.InView\",\n\t  translate(\"HeadsUp.WintryMix\"))\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.nearestStartPrecip.eventType == 3",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635566138,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Mix",
+                            "namespace": "headsupRadar",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635566138,
+                            "uniqueId": "5230b40c-5cd5-4cc9-8073-7a845c4e8495",
+                            "noCachedResults": false
+                          },
+                          {
+                            "owner": "Josemina Magdalen",
+                            "creator": "Josemina Magdalen",
+                            "internalUserGroups": [
+                              "QA",
+                              "DEV"
+                            ],
+                            "configuration": "{\n\t\"descriptor\": translate(\"HeadsUp.InView\",\ttranslate(\"HeadsUp.Storms\"))\n}",
+                            "rule": {
+                              "ruleString": "context.weatherSummary.nearestStartPrecip.eventType == 4",
+                              "force": false
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 100,
+                            "creationDate": 1486635567005,
+                            "rolloutPercentageBitmap": "////////////////Dw==",
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                            "configurationRules": [],
+                            "name": "Storm",
+                            "namespace": "headsupRadar",
+                            "minAppVersion": "7.6",
+                            "lastModified": 1486635567005,
+                            "uniqueId": "0565a35c-6633-457e-ac75-59ce632bde57",
+                            "noCachedResults": false
+                          }
+                        ],
+                        "lastModified": 1486635567005,
+                        "type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+                        "uniqueId": "1c95273e-2b29-4f55-9ac0-77f94714af7b"
+                      }
+                    ],
+                    "name": "Radar",
+                    "namespace": "headsup",
+                    "configurationSchema": {
+                      "$schema": "http://json-schema.org/draft-04/schema#",
+                      "anyOf": [
+                        {
+                          "additionalProperties": false,
+                          "type": "object",
+                          "properties": {
+                            "analyticsTileName": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "preferredTileIndex": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ],
+                              "minimum": -1
+                            },
+                            "icon": {
+                              "additionalProperties": false,
+                              "type": [
+                                "object",
+                                "null"
+                              ],
+                              "properties": {
+                                "width": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ],
+                                  "minimum": 0
+                                },
+                                "resourceName": {
+                                  "type": "string",
+                                  "enum": [
+                                    "home_lightning_icon",
+                                    "ic_radar_light",
+                                    "home_rain_icon",
+                                    "ic_twc_severe_circle",
+                                    "ic_sev_generic",
+                                    "ic_twc_snow",
+                                    "home_car_icon",
+                                    "ic_twc_temperature",
+                                    "home_sunsrise_sunset_icon",
+                                    "home_tonight_tomorrow_icon"
+                                  ]
+                                },
+                                "height": {
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ],
+                                  "minimum": 0
+                                }
+                              },
+                              "required": [
+                                "resourceName"
+                              ]
+                            },
+                            "clickthrough": {
+                              "$ref": "#/definitions/clickthrough"
+                            },
+                            "descriptor": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            },
+                            "tiletype": {
+                              "type": [
+                                "string"
+                              ],
+                              "enum": [
+                                "datapoint"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "tiletype",
+                            "descriptor",
+                            "value"
+                          ]
+                        },
+                        {
+                          "additionalProperties": false,
+                          "type": "object",
+                          "properties": {
+                            "analyticsTileName": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "preferredTileIndex": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ],
+                              "minimum": -1
+                            },
+                            "clickthrough": {
+                              "$ref": "#/definitions/clickthrough"
+                            },
+                            "title": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "tiletype": {
+                              "type": "string",
+                              "enum": [
+                                "video"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "tiletype"
+                          ]
+                        }
+                      ],
+                      "definitions": {
+                        "clickthrough": {
+                          "anyOf": [
+                            {
+                              "type": "null"
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "winter_storm",
+                                    "driving_condition",
+                                    "hourly",
+                                    "now",
+                                    "tornado_central"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "dayIndex": {
+                                  "maximum": 14,
+                                  "type": [
+                                    "integer",
+                                    "null"
+                                  ],
+                                  "minimum": 0
+                                },
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "fifteen_day"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "playlist": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ]
+                                },
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "content_feed"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            },
+                            {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "destination": {
+                                  "type": "string",
+                                  "enum": [
+                                    "radar_map"
+                                  ]
+                                },
+                                "layer": {
+                                  "type": [
+                                    "string",
+                                    "null"
+                                  ],
+                                  "enum": [
+                                    null,
+                                    "twcRadarMosaic",
+                                    "lightning",
+                                    "sat",
+                                    "satrad",
+                                    "temp",
+                                    "feelsLike",
+                                    "uv",
+                                    "precip24hr",
+                                    "snow24hr",
+                                    "snow1hrCumulativePrecipFcst"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "destination"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "lastModified": 1486636513894,
+                    "uniqueId": "46bbe740-de92-40ca-9c6d-c106e2cd9b1e"
+                  }
+                ],
+                "maxFeaturesOn": 3,
+                "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+                "lastModified": 1486636811525,
+                "type": "MUTUAL_EXCLUSION_GROUP",
+                "uniqueId": "010a837d-09f0-4e52-a3f9-501b1483866d"
+              }
+            ],
+            "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+            "defaultIfAirlockSystemIsDown": false,
+            "additionalInfo": {},
+            "minAppVersion": "7.6",
+            "noCachedResults": true,
+            "owner": "Itai Gordon",
+            "creator": "Itai Gordon",
+            "internalUserGroups": [
+              "AndroidDEV",
+              "DEV",
+              "QA",
+              "Analytics",
+              "REGRESSION",
+              "Amanda"
+            ],
+            "rolloutPercentage": 100,
+            "creationDate": 1486635538944,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "stage": "PRODUCTION",
+            "configurationRules": [],
+            "name": "HeadsUp",
+            "namespace": "headsup",
+            "configurationSchema": null,
+            "lastModified": 1486636453125,
+            "uniqueId": "c24d2c5a-9b97-4616-8b8a-f1e3c86185c9"
+          }
+        ],
+        "maxFeaturesOn": 1,
+        "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+        "lastModified": 1486635661335,
+        "type": "MUTUAL_EXCLUSION_GROUP",
+        "uniqueId": "5e177a64-5546-4d41-9c3a-53e7da181e80"
+      }
+    ],
+    "seasonId": "96d3916e-46bd-4f93-8a62-a5e1fc9f89c5",
+    "lastModified": 1486635533731,
+    "type": "ROOT",
+    "uniqueId": "6f26d6fd-0988-4fee-b20e-67778a67f64d"
+  }
+}

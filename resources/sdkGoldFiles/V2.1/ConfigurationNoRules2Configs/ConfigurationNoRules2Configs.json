@@ -1,0 +1,453 @@
+{
+	"maxVersion": null,
+	"minVersion": "1.0",
+	"productId": "b95a2076-8ea7-4b2f-af49-efe7e744c1e7",
+	"root": {
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": {
+							"alert": true,
+							"background": "black",
+							"color": "green",
+							"icon": "b.jpg",
+							"size": 1,
+							"text": "hello world"
+						},
+						"configurationRules": [
+						],
+						"creationDate": 1480582343203,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1480582373195,
+						"minAppVersion": "7.5",
+						"name": "CompleteOverwrite1",
+						"namespace": "ConfigCompleteOverwriteCNR2C",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "3c77c4e5-4043-4302-bfc2-a1329c0c4033",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "64839f2a-4ddd-403f-9ed7-bc4789533521"
+					},
+					{
+						"configuration": {
+							"alert": true,
+							"background": "magenta",
+							"color": "yellow",
+							"icon": "c.jpg",
+							"size": 3,
+							"text": "welcome to paradise"
+						},
+						"configurationRules": [
+						],
+						"creationDate": 1480582388567,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1480582418088,
+						"minAppVersion": "7.5",
+						"name": "CompleteOverwrite2",
+						"namespace": "ConfigCompleteOverwriteCNR2C",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "3c77c4e5-4043-4302-bfc2-a1329c0c4033",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "d255a1a7-e8e7-41cb-b75e-acced97da13d"
+					}
+				],
+				"configurationSchema": {
+					"properties": {
+						"alert": {
+							"type": "boolean"
+						},
+						"background": {
+							"type": "string"
+						},
+						"color": {
+							"type": "string"
+						},
+						"icon": {
+							"type": "string"
+						},
+						"size": {
+							"description": "Text size",
+							"minimum": 1,
+							"type": "integer"
+						},
+						"text": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"color",
+						"text"
+					],
+					"title": "Example Schema",
+					"type": "object"
+				},
+				"creationDate": 1480582307418,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": {
+					"alert": false,
+					"background": "white",
+					"color": "red",
+					"icon": "a.jpg",
+					"size": 2,
+					"text": "welcome to hell"
+				},
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1480582388567,
+				"minAppVersion": "7.5",
+				"name": "ConfigCompleteOverwrite",
+				"namespace": "CNR2C",
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "3c77c4e5-4043-4302-bfc2-a1329c0c4033",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "3c873113-9d07-42d8-80d7-03e626fa38d7"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": {
+							"alert": false,
+							"background": "white",
+							"color": "green",
+							"icon": "a.jpg",
+							"size": 2,
+							"text": "welcome to hell"
+						},
+						"configurationRules": [
+						],
+						"creationDate": 1480582492474,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1480582503328,
+						"minAppVersion": "7.5",
+						"name": "Overwrite1Param1",
+						"namespace": "ConfigOverwrite1ParamCNR2C",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "3c77c4e5-4043-4302-bfc2-a1329c0c4033",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "fe9a6443-9f8e-4707-96f3-e1ba4a1e9cc2"
+					},
+					{
+						"configuration": {
+							"alert": false,
+							"background": "white",
+							"color": "blue",
+							"icon": "a.jpg",
+							"size": 2,
+							"text": "welcome to hell"
+						},
+						"configurationRules": [
+						],
+						"creationDate": 1480582526299,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1480582540651,
+						"minAppVersion": "7.5",
+						"name": "Overwrite1Param2",
+						"namespace": "ConfigOverwrite1ParamCNR2C",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "3c77c4e5-4043-4302-bfc2-a1329c0c4033",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "eabaf96b-b5a7-4092-b7bf-6e090a27adb7"
+					},
+					{
+						"configuration": {
+							"alert": false,
+							"background": "white",
+							"color": "yellow",
+							"icon": "a.jpg",
+							"size": 2,
+							"text": "welcome to hell"
+						},
+						"configurationRules": [
+						],
+						"creationDate": 1480582568056,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1480582579814,
+						"minAppVersion": "7.5",
+						"name": "Overwrite1Param",
+						"namespace": "ConfigOverwrite1ParamCNR2C",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "3c77c4e5-4043-4302-bfc2-a1329c0c4033",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "984db67a-16e7-4414-94ff-e54f92987c3f"
+					}
+				],
+				"configurationSchema": {
+					"properties": {
+						"alert": {
+							"type": "boolean"
+						},
+						"background": {
+							"type": "string"
+						},
+						"color": {
+							"type": "string"
+						},
+						"icon": {
+							"type": "string"
+						},
+						"size": {
+							"description": "Text size",
+							"minimum": 1,
+							"type": "integer"
+						},
+						"text": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"color",
+						"text"
+					],
+					"title": "Example Schema",
+					"type": "object"
+				},
+				"creationDate": 1480582446291,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": {
+					"alert": false,
+					"background": "white",
+					"color": "red",
+					"icon": "a.jpg",
+					"size": 2,
+					"text": "welcome to hell"
+				},
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1480582568056,
+				"minAppVersion": "7.5",
+				"name": "ConfigOverwrite1Param",
+				"namespace": "CNR2C",
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "3c77c4e5-4043-4302-bfc2-a1329c0c4033",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "167b211b-9336-4f26-9ecd-654f55b9a7cd"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": {
+							"alert": false,
+							"background": "white",
+							"color": "green",
+							"icon": "a.jpg",
+							"size": 2,
+							"text": "welcome to hell"
+						},
+						"configurationRules": [
+						],
+						"creationDate": 1480582667441,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1480582677568,
+						"minAppVersion": "7.5",
+						"name": "OverwriteDifferentParam",
+						"namespace": "ConfigOverwriteDifferentParamCNR2C",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "3c77c4e5-4043-4302-bfc2-a1329c0c4033",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "0046aa23-10f8-4f03-b779-0f40748400fa"
+					},
+					{
+						"configuration": {
+							"alert": false,
+							"background": "white",
+							"color": "green",
+							"icon": "a.jpg",
+							"size": 3,
+							"text": "welcome to hell"
+						},
+						"configurationRules": [
+						],
+						"creationDate": 1480582696249,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1480582714604,
+						"minAppVersion": "7.5",
+						"name": "OverwriteDifferentParam2",
+						"namespace": "ConfigOverwriteDifferentParamCNR2C",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "3c77c4e5-4043-4302-bfc2-a1329c0c4033",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "e15ae243-5d0d-4253-8f8c-a129cceb9f81"
+					}
+				],
+				"configurationSchema": {
+					"properties": {
+						"alert": {
+							"type": "boolean"
+						},
+						"background": {
+							"type": "string"
+						},
+						"color": {
+							"type": "string"
+						},
+						"icon": {
+							"type": "string"
+						},
+						"size": {
+							"description": "Text size",
+							"minimum": 1,
+							"type": "integer"
+						},
+						"text": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"color",
+						"text"
+					],
+					"title": "Example Schema",
+					"type": "object"
+				},
+				"creationDate": 1480582600836,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": {
+					"alert": false,
+					"background": "white",
+					"color": "red",
+					"icon": "a.jpg",
+					"size": 2,
+					"text": "welcome to hell"
+				},
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1480582696249,
+				"minAppVersion": "7.5",
+				"name": "ConfigOverwriteDifferentParam",
+				"namespace": "CNR2C",
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "3c77c4e5-4043-4302-bfc2-a1329c0c4033",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "4b9c6872-6997-41d8-9849-8f29d1f835d1"
+			}
+		],
+		"lastModified": 1480582600836,
+		"seasonId": "3c77c4e5-4043-4302-bfc2-a1329c0c4033",
+		"type": "ROOT",
+		"uniqueId": "97a1d13c-168c-44cc-b6fd-099ed95f946a"
+	},
+	"seasonId": "3c77c4e5-4043-4302-bfc2-a1329c0c4033",
+	"version": "V2"
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Airlock REST API Stresstest" verbose="1">
+		<parameter name="url" value="http://localhost:9090/airlock/api/admin"></parameter>	
+		<parameter name="testUrl" value="http://localhost:9090/airlock/api/test/import"></parameter>	
+		<parameter name="analyticsUrl" value="http://localhost:9090/airlock/api/analytics"></parameter>
+		<parameter name="translationsUrl" value="http://localhost:9090/airlock/api/translations"></parameter>
+		<parameter name="configPath" value="./configFiles/unitest/"></parameter>
+		<parameter name="userGroups" value="./src/tests/restapi/stresstests/userGroups.txt"></parameter>
+		<parameter name="sessionToken" value="123"/>
+		<parameter name="productsToDeleteFile" value="./src/tests/productsToDelete.txt" />
+		<parameter name="seasonVersion" value="3.0" />
+		<parameter name="firstIteration" value="50" />
+		<parameter name="secondIteration" value="50" />
+		<parameter name="deleteAll" value="false" />
+		<parameter name="featureToCheckoutProd" value="22a378af-1591-4508-b98f-412df8174625" />
+		<parameter name="featureToCheckoutDev" value="63431403-c411-4ee2-8a0b-3996bf2062bd" />
+		<parameter name="stringToUpdate" value="084fb11c-0e43-4fb3-aa79-e4050c0178e8" />
+	<parameter name="userName" value=""></parameter>
+	<parameter name="userPassword" value=""></parameter>
+	<parameter name="appName" value=" "/>
+	
+	<test name="BeforeSuite"  enabled="true">
+		<classes>
+			<class name="tests.restapi.SuiteSetup"></class>
+		</classes>
+	</test>	
+	
+	<test name="Airlock REST API Performance3.0" enabled="true">
+		<classes>
+			<class name="tests.restapi.stresstests.ConcurrentS3Lock">
+			</class>
+		</classes>
+	</test>
+	
+	 <test name="AfterSuite"  enabled="true">
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteCleanup"></class> 
+    	</classes> 
+	</test> 
+				
+</suite>
+
+

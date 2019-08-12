@@ -1,0 +1,9 @@
+{
+		"key": "app.fallback",
+		"value": "fall",
+		"owner": "Mary",
+		"internationalFallback": "back",
+		"minAppVersion":"0.1",
+		"stage":"PRODUCTION",
+		"creator":"vicky"
+	}

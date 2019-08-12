@@ -1,0 +1,457 @@
+{
+	"maxVersion": null,
+	"minVersion": "7.6",
+	"productId": "bc479db5-ff58-4138-b5e4-a8400a1f78d5",
+	"root": {
+		"features": [
+{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1486474092478,
+				"creator": "Yoav BenYair",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"displayName": null,
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"configurationRules": [
+							{
+								"configuration": "{\t\n\t\t\n\t\"StateName\":context.viewedLocation.region\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1487689070194,
+								"creator": "Josemina Magdalen",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"lastModified": 1487855532304,
+								"minAppVersion": "7.7",
+								"name": "StateName",
+								"namespace": "analyticsBigStates",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "(context.viewedLocation &&\ncontext.viewedLocation.region) === true"
+								},
+								"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "7cbc7c08-6451-4752-9953-e5965b4c9b7c"
+							},
+							{
+								"configuration": "{\n\t\"StaticText\":\"This is a static text\"\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1487689270605,
+								"creator": "Josemina Magdalen",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"lastModified": 1487785363328,
+								"minAppVersion": "7.7",
+								"name": "StaticText",
+								"namespace": "analyticsBigStates",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": ""
+								},
+								"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "7e3b3048-1151-4137-8592-0dd733f171dd"
+							},
+							{
+								"configuration": "{\n\t\t\n\t\"Location\" : context.viewedLocation.lat + \",\" + context.viewedLocation.lon\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1487689535224,
+								"creator": "Josemina Magdalen",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"lastModified": 1487855576588,
+								"minAppVersion": "7.7",
+								"name": "Location",
+								"namespace": "analyticsBigStates",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "(context.viewedLocation &&\ncontext.viewedLocation.lat &&\ncontext.viewedLocation.lon) === true"
+								},
+								"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "2804ee4c-9ce5-429a-b5a6-311e0691b641"
+							},
+							{
+								"configuration": "{\t\n\t\t\n\"Temperature\" : Math.round(Unit(context.weatherSummary.observation.temperature, \"fahrenheit\"))\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1487845798190,
+								"creator": "Josemina Magdalen",
+								"description": "Temperature in Fahrenheit",
+								"enabled": true,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"lastModified": 1487855624387,
+								"minAppVersion": "7.7",
+								"name": "Fahrenheit",
+								"namespace": "analyticsBigStates",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "(context.weatherSummary &&\ncontext.weatherSummary.observation && \ncontext.weatherSummary.observation.temperature) === true"
+								},
+								"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "ee47dd01-597b-47cd-a625-6f40c44beb05"
+							},
+							{
+								"configuration": "{\n\t\t\n\"Temperature\" : Math.round(Unit(\n\t context.weatherSummary.observation.temperature, \"fahrenheit\"))\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1487845874601,
+								"creator": "Josemina Magdalen",
+								"description": "Temperature is converted from Celsius to Fahrenheit",
+								"enabled": false,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"lastModified": 1487855396072,
+								"minAppVersion": "7.7",
+								"name": "Celsius",
+								"namespace": "analyticsBigStates",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": ""
+								},
+								"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "c8ca99dc-a4cb-495f-93e6-c52dbb132e87"
+							}
+						],
+						"configurationSchema": null,
+						"creationDate": 1487688845119,
+						"creator": "Josemina Magdalen",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "",
+						"displayName": null,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"Lioz"
+						],
+						"lastModified": 1487861597603,
+						"minAppVersion": "7.7",
+						"name": "BigStates",
+						"namespace": "analytics",
+						"noCachedResults": false,
+						"owner": "Josemina Magdalen",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": "context.viewedLocation !== null &&\ncontext.viewedLocation.region !== null &&\n(context.viewedLocation.region == \"NY\" ||\ncontext.viewedLocation.region == \"CA\" ||\ncontext.viewedLocation.region == \"FL\" ||\ncontext.viewedLocation.region == \"TX\")"
+						},
+						"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "deaa67bd-87c5-48c9-9121-c7ce8e7621e7"
+					},
+					{
+						"additionalInfo": {
+						},
+						"configurationRules": [
+							{
+								"configuration": "{\t\n\t\t\n \"isGPSenabled\":context.weatherSummary.observation.basedGPS,\t\n\t\t\n \"WetPrecipCode\" : context.weatherSummary.observation.skyCode   \n}",
+								"configurationRules": [
+								],
+								"creationDate": 1487787688887,
+								"creator": "Josemina Magdalen",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"lastModified": 1487865161627,
+								"minAppVersion": "7.7",
+								"name": "AddObservationData",
+								"namespace": "analyticsWeatherData",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary !== null &&\ncontext.weatherSummary.observation !== null &&\ncontext.weatherSummary.observation.basedGPS !== null &&\ncontext.weatherSummary.observation.skyCode !== null"
+								},
+								"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "a62cdcaa-62f4-413a-8d29-8760c3ff4646"
+							},
+							{
+								"configuration": "{\n\t\t\n\t\"Location\": context.viewedLocation.lat + \", \" + context.viewedLocation.lon,\t\n\t\t\n    \"Region\":context.viewedLocation.region,\t\n\t\t\n    \"Country\": context.viewedLocation.country\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1487856911519,
+								"creator": "Yoav BenYair",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"lastModified": 1487865334424,
+								"minAppVersion": "7.7",
+								"name": "AddViewedLocationData",
+								"namespace": "analyticsWeatherData",
+								"noCachedResults": false,
+								"owner": "Yoav BenYair",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.viewedLocation !== null &&\ncontext.viewedLocation.lat !== null  &&\ncontext.viewedLocation.lon !== null &&\ncontext.viewedLocation.region !== null &&\ncontext.viewedLocation.country !== null"
+								},
+								"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "8e7cc41f-738b-4329-a7a8-648641a28766"
+							},
+							{
+								"configuration": "{\t\n\t\"PhenomenaCode\" :context.weatherSummary.nearestWinterStormAlert.phenomenaCode,\t\n\t\"SignificanceCode\":context.weatherSummary.nearestWinterStormAlert.significanceCode\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1487857100838,
+								"creator": "Yoav BenYair",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"lastModified": 1487865376878,
+								"minAppVersion": "7.7",
+								"name": "AddAlertData",
+								"namespace": "analyticsWeatherData",
+								"noCachedResults": false,
+								"owner": "Yoav BenYair",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary !== null &&\ncontext.weatherSummary.nearestWinterStormAlert !== null &&\ncontext.weatherSummary.nearestWinterStormAlert.significanceCode !== null &&\ncontext.weatherSummary.nearestWinterStormAlert.phenomenaCode!== true"
+								},
+								"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "a403002b-17a7-4df7-8bc6-d72f5099cc05"
+							},
+							{
+								"configuration": "{\t\n\t\"nearestStartPrecip\":context.weatherSummary.nearestStartPrecip.startTime\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1487857237643,
+								"creator": "Yoav BenYair",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"lastModified": 1487865405736,
+								"minAppVersion": "7.7",
+								"name": "AddPrecipData",
+								"namespace": "analyticsWeatherData",
+								"noCachedResults": false,
+								"owner": "Yoav BenYair",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary !== null  &&\ncontext.weatherSummary.nearestStartPrecip !== null &&\ncontext.weatherSummary.nearestStartPrecip.startTime !== null"
+								},
+								"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "ba07f56c-5395-45ae-99b5-ceb7a9b3e269"
+							},
+							{
+								"configuration": "{\t\n\t\n\t\"NightPrecipPercentage\" : context.weatherSummary.dayForecast.night.precipPercentage,\t\n\t\n\t\"NightPrecipType\" : context.weatherSummary.dayForecast.night.precipType\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1487847609568,
+								"creator": "Josemina Magdalen",
+								"description": "Add the percentage and type of the  Precipitation  during the night",
+								"enabled": true,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"lastModified": 1487865467025,
+								"minAppVersion": "7.7",
+								"name": "PrecipNight",
+								"namespace": "analyticsWeatherData",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary !== null &&\r\ncontext.weatherSummary.dayForecast !== null &&\r\ncontext.weatherSummary.dayForecast.night !== null &&\r\ncontext.weatherSummary.dayForecast.night.precipPercentage !== null &&\r\ncontext.weatherSummary.dayForecast.night.precipType !== null &&\r\ncontext.weatherSummary.dayForecast.night.precipPercentage > 0"
+								},
+								"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "8ea52ebc-78a4-42df-bd59-5b4031221286"
+							},
+							{
+								"configuration": "{\n\t\t\n\t\"DayPrecipPercentage\" : context.weatherSummary.dayForecast.day.precipPercentage,\n\t\t\n\t\"DayPrecipType\" : context.weatherSummary.dayForecast.day.precipType\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1487847660665,
+								"creator": "Josemina Magdalen",
+								"description": "Add the percentage and type of the  Precipitation  during the day",
+								"enabled": true,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"lastModified": 1487865522609,
+								"minAppVersion": "7.7",
+								"name": "PrecipDay",
+								"namespace": "analyticsWeatherData",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary !== null &&\r\ncontext.weatherSummary.dayForecast !== null &&\r\ncontext.weatherSummary.dayForecast.day !== null &&\r\ncontext.weatherSummary.dayForecast.day.precipPercentage !== null &&\r\ncontext.weatherSummary.dayForecast.day.precipType !== null &&\r\ncontext.weatherSummary.dayForecast.day.precipPercentage > 0"
+								},
+								"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "8c4d43b5-9938-40ed-9e3a-94eeba8474d0"
+							},
+							{
+								"configuration": "{\t\n\t\t\n\"FeelsLikeTemperature\" :  Unit(\t context.weatherSummary.observation.feelsLikeTemperature, \"fahrenheit\")\n}",
+								"configurationRules": [
+								],
+								"creationDate": 1487848897794,
+								"creator": "Josemina Magdalen",
+								"description": "FeelsLike temperature in Fahrenheit",
+								"enabled": true,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"lastModified": 1487865584357,
+								"minAppVersion": "7.7",
+								"name": "FeelsLikeInFahrenheit",
+								"namespace": "analyticsWeatherData",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary !== null &&\ncontext.weatherSummary.observation !== null &&\ncontext.weatherSummary.observation.feelsLikeTemperature !== null "
+								},
+								"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "ef2b4586-6472-4c1e-aa92-9fd60a35081c"
+							}
+						],
+						"configurationSchema": null,
+						"creationDate": 1487787541707,
+						"creator": "Josemina Magdalen",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "",
+						"displayName": null,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"Lioz"
+						],
+						"lastModified": 1487865610444,
+						"minAppVersion": "7.7",
+						"name": "WeatherData",
+						"namespace": "analytics",
+						"noCachedResults": false,
+						"owner": "Josemina Magdalen",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": "function reportWeatherDataWithin20min() \n{\n    if (context.weatherSummary == null || \n    context.weatherSummary.observation == null || \n    context.weatherSummary.observation.obsTime == null ||\n    context.device == null ||\n    context.device.datetime == null) {\n        return false;\n    }\n    \n    var obsTime = new Date(context.weatherSummary.observation.obsTime);\n    var deviceTime =  new Date(context.device.datetime);\n\n    var timeToObs = deviceTime - obsTime\n    var min = Math.round(timeToObs \/ 60000)\n\n    return ( min <= 20 );\n}\n \nreportWeatherDataWithin20min()\n"
+						},
+						"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "7fac999f-c5b7-43f3-b1c0-853577bf675d"
+					}
+				],
+				"internalUserGroups": [
+					"DEV",
+					"Lioz"
+				],
+				"lastModified": 1487801868892,
+				"minAppVersion": "7.7",
+				"name": "Rollout Beacon",
+				"namespace": "airlock",
+				"noCachedResults": false,
+				"owner": "Yoav BenYair",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "0eb85225-01da-4021-abc1-3aaac465c561"
+			}
+					],
+		"lastModified": 1487949335973,
+		"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+		"type": "ROOT",
+		"uniqueId": "5420a7a5-eab3-4c75-9b2a-7fc5bc07d03e"
+	},
+	"seasonId": "b51c1b5c-981c-4f4b-bdb8-65ffb6bc625c",
+	"version": "V2"
+}

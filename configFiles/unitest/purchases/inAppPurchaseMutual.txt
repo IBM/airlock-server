@@ -1,0 +1,6 @@
+{
+
+	"type": "ENTITLEMENT_MUTUAL_EXCLUSION_GROUP",
+	"entitlements": [],
+	"maxFeaturesOn": 1
+}

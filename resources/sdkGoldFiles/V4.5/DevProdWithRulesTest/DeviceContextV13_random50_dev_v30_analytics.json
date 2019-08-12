@@ -1,0 +1,28 @@
+{
+	"experiment": "exp11",
+	"experimentList": [
+		"EXPERIMENT_exp11",
+		"VARIANT_exp11_exp113"
+	],
+	"features": {
+		"ns1.f1": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns1.f2": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		}
+	},
+	"inputFieldsForAnalytics": {
+	},
+	"variant": "exp113"
+}

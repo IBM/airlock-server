@@ -1,0 +1,20 @@
+{
+            "enabled": true,
+            "type": "CONFIGURATION_RULE",
+            "stage": "DEVELOPMENT",
+            "creator": "Joe",
+            "namespace": "ns1",
+            "internalUserGroups": [
+              "QA",
+              "DEV"
+            ],
+            "description": "",
+            "name": "CR4",
+            "minAppVersion": "1.0",
+            "rule": {
+              "ruleString": null
+            },
+            "features": [],
+            "rolloutPercentage": 10,
+            "configuration": {}
+}

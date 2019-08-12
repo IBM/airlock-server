@@ -1,0 +1,33 @@
+{
+				"additionalInfo": {
+				},
+				"configurationSchema": null,
+				"creationDate": 1483466962720,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": false,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"lastModified": 1483543829447,
+				"minAppVersion": "7.5",
+				"name": "Distance",
+				"namespace": "tr",
+				"noCachedResults": false,
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "b0595a2e-0a0c-44dd-80bc-d77e897e51c6",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "f72fff1a-c7cb-4e01-9939-005395e4ae73",
+				"configurationRules": []
+			}

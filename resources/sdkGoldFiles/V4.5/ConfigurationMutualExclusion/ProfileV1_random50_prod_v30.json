@@ -1,0 +1,86 @@
+{
+	"inputFieldsForAnalytics": [
+	],
+	"root": {
+		"features": [
+			{
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextViewedLocationCountryNoME",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "9d069956-c264-4c1d-a9c3-0c5957b56599"
+			},
+			{
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextViewedLocationCountry",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "693bd157-d860-4540-a13d-c909460aac22"
+			},
+			{
+				"defaultConfiguration": "{}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextViewedLocationCountry1",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "68149a30-dc63-42a1-85db-60b16e856244"
+			},
+			{
+				"defaultConfiguration": "{}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextDeviceIL",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "310a8c8e-4b51-4ed8-8807-2b56de8bdc41"
+			},
+			{
+				"defaultConfiguration": "{}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextDeviceIL2",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "d7e1edea-2be0-4676-8d91-24b5aed38e07"
+			},
+			{
+				"defaultConfiguration": "{\n\t\"title\":\"Example Schema\",\n\t\"type\":\"object\",\n\t\"properties\":{\n\t\t\"color\":{\n\t\t\t\"type\":\"string\"\n\t\t},\n\t\t\"size\":{\n\t\t\t\"description\":\"Text size\",\n\t\t\t\"type\":\"integer\",\n\t\t\t\"minimum\":1\n\t\t},\n\t\t\"alert\":{\n\t\t\t\"type\":\"boolean\"\n\t\t},\n\t\t\"background\":{\n\t\t\t\"type\":\"string\"\n\t\t},\n\t\t\"icon\":{\n\t\t\t\"type\":\"string\"\n\t\t},\n\t\t\"text\":{\n\t\t\t\"type\":\"string\"\n\t\t}\n\t}\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{\n\t\"title\":\"Example Schema\",\n\t\"type\":\"object\",\n\t\"properties\":{\n\t\t\"color\":{\n\t\t\t\"type\":\"string\"\n\t\t},\n\t\t\"size\":{\n\t\t\t\"description\":\"Text size\",\n\t\t\t\"type\":\"integer\",\n\t\t\t\"minimum\":1\n\t\t},\n\t\t\"alert\":{\n\t\t\t\"type\":\"boolean\"\n\t\t},\n\t\t\"background\":{\n\t\t\t\"type\":\"string\"\n\t\t},\n\t\t\"icon\":{\n\t\t\t\"type\":\"string\"\n\t\t},\n\t\t\"text\":{\n\t\t\t\"type\":\"string\"\n\t\t}\n\t}\n}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.maxFeatureOn2",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "c392544a-e807-419a-8b60-82f6e9e38c65"
+			}
+		]
+	}
+}

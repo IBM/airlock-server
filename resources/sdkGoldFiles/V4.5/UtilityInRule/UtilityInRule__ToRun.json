@@ -1,0 +1,30 @@
+[
+	{
+		"context": "ProfileV1.json",
+		"locale": "en",
+		"minAppVer": "5.0",
+		"output": "ProfileV1_random50_prod_v30.json",
+		"productId": "568ddbeb-7d0c-442c-9b65-dec2d9504862",
+		"randomMap": "randomMap50.json",
+		"s3_url": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/DEVAUTH2\/seasons\/568ddbeb-7d0c-442c-9b65-dec2d9504862\/90b0d000-30c9-4df0-942e-155653ca7dd5",
+		"seasonId": "90b0d000-30c9-4df0-942e-155653ca7dd5",
+		"stage": "PRODUCTION",
+		"testName": "ProfileV1_prod",
+		"url": "http:\/\/airlock-devauth2-adminapi-2.eu-west-1.elasticbeanstalk.com\/airlock\/api\/admin\/",
+		"usergroups": ""
+	},
+	{
+		"context": "ProfileV1.json",
+		"locale": "en",
+		"minAppVer": "5.0",
+		"output": "ProfileV1_random50_dev_v30.json",
+		"productId": "568ddbeb-7d0c-442c-9b65-dec2d9504862",
+		"randomMap": "randomMap50.json",
+		"s3_url": "https:\/\/s3-eu-west-1.amazonaws.com\/airlockdev\/DEVAUTH2\/seasons\/568ddbeb-7d0c-442c-9b65-dec2d9504862\/90b0d000-30c9-4df0-942e-155653ca7dd5",
+		"seasonId": "90b0d000-30c9-4df0-942e-155653ca7dd5",
+		"stage": "DEVELOPMENT",
+		"testName": "ProfileV1_dev",
+		"url": "http:\/\/airlock-devauth2-adminapi-2.eu-west-1.elasticbeanstalk.com\/airlock\/api\/admin\/",
+		"usergroups": "AndroidDEV,DEV,DEV.QA,QA,test"
+	}
+]

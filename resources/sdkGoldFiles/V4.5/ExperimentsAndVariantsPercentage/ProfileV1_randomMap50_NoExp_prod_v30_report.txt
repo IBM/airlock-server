@@ -1,0 +1,60 @@
+Original master and branches:
+{
+	"branches": [
+	],
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "9.0",
+	"productId": "e5a3759a-6be6-4791-aac0-62a658706d53",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "c2e36b40-3996-432b-829a-c976e02a92ba"
+	},
+	"seasonId": "3a48de16-0ed5-4091-9d02-a4fcb73300c0",
+	"serverVersion": "V4.1",
+	"version": "V2.5"
+}
+===========================================
+Experiment trace:
+[
+]
+===========================================
+Experiments found:
+[]
+===========================================
+Runtime tree:
+{
+	"branches": [
+	],
+	"experiment": "<none>",
+	"experiments": {
+		"experiments": [
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "9.0",
+	"productId": "e5a3759a-6be6-4791-aac0-62a658706d53",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+		],
+		"type": "ROOT",
+		"uniqueId": "c2e36b40-3996-432b-829a-c976e02a92ba"
+	},
+	"seasonId": "3a48de16-0ed5-4091-9d02-a4fcb73300c0",
+	"serverVersion": "V4.1",
+	"variant": "Default",
+	"version": "V2.5"
+}

@@ -1,0 +1,201 @@
+{
+	"context": {
+		"currentLocation": {
+			"country": "LK",
+			"lat": -97588808,
+			"lon": -49022190,
+			"region": "irure aliqua et"
+		},
+		"device": {
+			"connectionType": "anim",
+			"datetime": "2353-09-02T14:39:00.940Z",
+			"locale": "fr_ca",
+			"localeCountryCode": "NF",
+			"localeLanguage": "wo",
+			"osVersion": "nostrud Excepteur non sed Duis",
+			"screenHeight": 9556554,
+			"screenWidth": 47055023,
+			"version": "sed esse e"
+		},
+		"profile": {
+		},
+		"streams": {
+			"GoRunTomorrowCounter": {
+				"count": 7
+			},
+			"GoRunTomorrowCounterFilterEmpty": {
+				"count": 21
+			},
+			"GoRunTomorrowCounterFilterFalse": {
+				"count": 0
+			},
+			"GoRunTomorrowCounterFilterTrue": {
+				"count": 21
+			},
+			"VladAdinaStream": {
+				"clicked": 0,
+				"errors": [
+				],
+				"failed": 3,
+				"hasCreateId": 1,
+				"successful": 0,
+				"total": 3,
+				"types": {
+					"ban": 1,
+					"bbg": 1,
+					"pre": 1,
+					"vbbg": 0
+				}
+			},
+			"adViewedCounter": {
+				"adViewedCount": 5
+			},
+			"contentViewed10": {
+				"contentViewedModulus5": 5
+			},
+			"contentViewed10InUtility": {
+				"contentViewedModulus5": 5
+			},
+			"streamNoEvent": {
+			},
+			"videoPlayedCounter": {
+				"count": 2
+			},
+			"video_auto_play": {
+				"count": 2
+			}
+		},
+		"testData": {
+			"dsx": {
+				"effectiveDateTime": "4568-05-12T15:13:44.149Z",
+				"eventName": "eiusmod adipisicing commodo",
+				"mode": "consequat non laborum do Lorem",
+				"teaserTitle": "mollit esse est nulla ut"
+			},
+			"precipitationForecast": [
+				{
+					"characteristic": -19809694,
+					"eventEnd": -20172996,
+					"eventEndLocal": "2381-11-09T20:30:25.634Z",
+					"eventStart": 72192901,
+					"eventStartLocal": "3911-03-09T11:59:45.506Z",
+					"eventType": 17859496,
+					"imminence": -81272494,
+					"intensity": -38786942,
+					"severity": 42526101
+				},
+				{
+					"characteristic": 50941673,
+					"eventEnd": -71664652,
+					"eventEndLocal": "4489-07-24T23:56:52.304Z",
+					"eventStart": -49681401,
+					"eventStartLocal": "5098-06-03T05:57:34.865Z",
+					"eventType": -57769224,
+					"imminence": -69984312,
+					"intensity": 22794998,
+					"severity": 63007148
+				},
+				{
+					"characteristic": -62101014,
+					"eventEnd": 39565149,
+					"eventEndLocal": "4337-05-09T12:27:49.414Z",
+					"eventStart": 92149600,
+					"eventStartLocal": "2068-11-11T10:15:27.728Z",
+					"eventType": -42408477,
+					"imminence": 50832862,
+					"intensity": 68974786,
+					"severity": 11035266
+				},
+				{
+					"characteristic": -1552630,
+					"eventEnd": 21060105,
+					"eventEndLocal": "2624-10-02T05:22:48.807Z",
+					"eventStart": -67202039,
+					"eventStartLocal": "3641-08-28T18:55:02.526Z",
+					"eventType": 68458403,
+					"imminence": 92317139,
+					"intensity": 26934714,
+					"severity": 11797132
+				},
+				{
+					"characteristic": -86977838,
+					"eventEnd": -90301636,
+					"eventEndLocal": "4401-10-15T10:21:54.980Z",
+					"eventStart": 60559774,
+					"eventStartLocal": "2578-01-30T12:37:34.581Z",
+					"eventType": 9377000,
+					"imminence": -14671966,
+					"intensity": -63946475,
+					"severity": 86013239
+				}
+			]
+		},
+		"userPreferences": {
+			"is24HourFormat": true,
+			"unitsOfMeasure": "metric"
+		},
+		"viewedLocation": {
+			"country": "US",
+			"lat": -81074759,
+			"lon": 83611007,
+			"region": "US"
+		},
+		"weatherSummary": {
+			"closestLightning": {
+				"cardinalDirection": "ENE",
+				"distance": 86921532,
+				"lat": 13877548,
+				"lon": -1355067,
+				"strikeTime": "3778-09-04T23:58:17.800Z"
+			},
+			"contentMode": {
+				"effectiveDateTime": "4908-10-15T20:41:12.985Z",
+				"eventName": "adipisicing cupidatat anim",
+				"mode": "sint tempor"
+			},
+			"lifeStyleIndices": {
+				"drivingDifficultyIndex": 0
+			},
+			"nearestSnowAccumulation": {
+				"dayPart": "night",
+				"snowRange": "culpa"
+			},
+			"nearestStartPrecip": {
+				"endTime": "5020-03-19T19:28:18.598Z",
+				"eventType": 26782274,
+				"imminence": -93318771,
+				"severity": 44767725,
+				"startTime": "3309-12-01T12:10:55.774Z"
+			},
+			"nearestWinterStormAlert": {
+				"endTime": "2236-01-21T23:39:27.338Z",
+				"phenomenaCode": "FF",
+				"severityCode": 47343195,
+				"significanceCode": "L"
+			},
+			"observation": {
+				"basedGPS": true,
+				"dayPart": "day",
+				"feelsLikeTemperature": -83375469,
+				"nextSunrise": "4857-03-05T04:01:42.321Z",
+				"nextSunset": "2045-06-09T09:23:09.907Z",
+				"obsTime": "3606-03-20T22:05:28.892Z",
+				"skyCode": -73295571,
+				"temperature": -83,
+				"weekDay": "Wednesday"
+			},
+			"tomorrowForecast": {
+				"day": {
+					"dayPart": "day",
+					"precipPercentage": "laboris adipisicin",
+					"precipType": "snow"
+				},
+				"night": {
+					"dayPart": "night",
+					"precipPercentage": "et dolor nisi mollit Duis",
+					"precipType": "rain"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,57 @@
+{
+	"enabled": true,
+	"type": "FEATURE",
+	"stage": "DEVELOPMENT",
+	"additionalInfo": {
+		"aaa": "bbb"
+	},
+	"namespace": "ns1",
+	"creator": "Philip",
+	"internalUserGroups": [
+		"QA",
+		"DEV"
+	],
+	"description": "F21 desc",
+	"rule": {
+		"ruleString": ""
+	},
+	"minAppVersion": "0.1",
+	"name": "FCR1",
+	"seasonId": null,
+	"features": [],
+	"configurationRules":[
+	{
+		"enabled": true,
+		"type": "CONFIGURATION_RULE",
+		"stage": "DEVELOPMENT",
+		"creator": "Joe",
+		"namespace": "ns1",
+		"internalUserGroups": [
+			"QA",
+			"DEV"
+		],
+		"description": "",
+		"name": "FCR2",
+		"minAppVersion": null,
+		"rule": {
+			"ruleString": null
+		},
+		"features": [],
+		"rolloutPercentage": 10,
+		"configuration": null
+	}],
+	"owner": "Norman",
+	"defaultIfAirlockSystemIsDown": false,
+	"rolloutPercentage": 10,
+	"configurationSchema": {
+		"color": {
+			"type": "string"
+		}
+	},
+	"defaultConfiguration": {
+
+		"color": "red",
+		"text": "this is a comment",
+		"icon": "a.jpg"
+	}
+}

@@ -1,0 +1,293 @@
+{
+  "seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+  "rule": {
+    "ruleString": "true"
+  },
+  "lastModified": 1491138668705,
+  "rolloutPercentage": 100,
+  "analyticsDataCollection": {
+    "inputFieldsForAnalytics": [
+      "context.device.localeCountryCode",
+      "context.device.localeLanguage",
+      "context.device.hockeyUserID",
+      "context.device.datetime",
+      "context.device.osVersion",
+      "context.device.screenHeight",
+      "context.device.locale",
+      "context.turbo.vt1dailyforecast.night.dayPartName[0]",
+      "context.viewedLocation.country",
+      "context.weatherSummary.observation.skyCode",
+      "context.weatherSummary.observation.obsTime",
+      "context.weatherSummary.observation.weekDay",
+      "context.weatherSummary.pollenData[0].night.grassIndex",
+      "context.weatherSummary.pollenData[0].night.daypartName",
+      "context.weatherSummary.pollenData[0].night.treeIndex",
+      "context.weatherSummary.nearestWinterStormAlert.endTime",
+      "context.weatherSummary.nearestWinterStormAlert.phenomenaCode",
+      "context.weatherSummary.nearestWinterStormAlert.severityCode",
+      "context.viewedLocation.lon",
+      "context.viewedLocation.region",
+      "context.weatherSummary.observation.basedGPS",
+      "context.weatherSummary.nearestStartPrecip.severity",
+      "context.weatherSummary.nearestStartPrecip.imminence",
+      "context.weatherSummary.nearestStartPrecip.startTime",
+      "context.weatherSummary.nearestStartPrecip.endTime"
+    ],
+    "featuresAttributesForAnalytics": [
+      {
+        "name": "analytics.WeatherData",
+        "attributes": [
+          {
+            "name": "Country",
+            "type": "REGULAR"
+          },
+          {
+            "name": "DayPrecipPercentage",
+            "type": "REGULAR"
+          },
+          {
+            "name": "DayPrecipType",
+            "type": "REGULAR"
+          },
+          {
+            "name": "FeelsLikeTemperature",
+            "type": "REGULAR"
+          },
+          {
+            "name": "Location",
+            "type": "REGULAR"
+          },
+          {
+            "name": "NightPrecipPercentage",
+            "type": "REGULAR"
+          },
+          {
+            "name": "NightPrecipType",
+            "type": "REGULAR"
+          },
+          {
+            "name": "PhenomenaCode",
+            "type": "REGULAR"
+          },
+          {
+            "name": "Region",
+            "type": "REGULAR"
+          },
+          {
+            "name": "SignificanceCode",
+            "type": "REGULAR"
+          },
+          {
+            "name": "WetPrecipCode",
+            "type": "REGULAR"
+          },
+          {
+            "name": "isGPSenabled",
+            "type": "REGULAR"
+          },
+          {
+            "name": "nearestStartPrecip",
+            "type": "REGULAR"
+          }
+        ],
+        "id": "9a0b1579-d0bc-4581-9e31-032263420546"
+      },
+      {
+        "name": "tr.MTXinMTXConfigsProdDefaultOff",
+        "attributes": [
+          {
+            "name": "dvalue2",
+            "type": "REGULAR"
+          },
+          {
+            "name": "dvalue3",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value10",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value2",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value30",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value4",
+            "type": "REGULAR"
+          }
+        ],
+        "id": "fd7654a3-eac4-4f7f-9ef9-5c2d3341110f"
+      },
+      {
+        "name": "analytics.BigStates",
+        "attributes": [
+          {
+            "name": "StateName",
+            "type": "REGULAR"
+          },
+          {
+            "name": "StaticText",
+            "type": "REGULAR"
+          }
+        ],
+        "id": "f6b138f2-7e45-448a-858d-465859b9a9c4"
+      },
+      {
+        "name": "group1.FeatureProdMTXConfigProdDev15",
+        "attributes": [
+          {
+            "name": "value",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value1",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value2",
+            "type": "REGULAR"
+          },
+          {
+            "name": "value3",
+            "type": "REGULAR"
+          }
+        ],
+        "id": "61b861cc-fbf3-4166-b50f-e955e660aeaf"
+      },
+      {
+        "name": "ns.CustomArray",
+        "attributes": [
+          {
+            "name": "moreArrays[0-2].color",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArray[2]",
+            "type": "ARRAY"
+          }
+        ],
+        "id": "cbabc757-746c-4b0e-be6f-6d227ac84e68"
+      },
+      {
+        "name": "ns.Array3",
+        "attributes": [
+          {
+            "name": "appStoreLink",
+            "type": "REGULAR"
+          },
+          {
+            "name": "customObjFromArray.a",
+            "type": "REGULAR"
+          },
+          {
+            "name": "customValObj.a",
+            "type": "REGULAR"
+          },
+          {
+            "name": "customValObj2.b",
+            "type": "REGULAR"
+          },
+          {
+            "name": "customValStr",
+            "type": "REGULAR"
+          },
+          {
+            "name": "feedbackButton",
+            "type": "REGULAR"
+          },
+          {
+            "name": "feedbackEmail",
+            "type": "REGULAR"
+          },
+          {
+            "name": "myArrayOfNormalObjects[0-2].a",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArrayOfObjects[0-2].a.aa",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArrayOfObjects[0-2].b",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArrayOfObjects[0-2].c",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArrayOfObjects[0-2].d",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArrayOfObjects[0-2].e",
+            "type": "ARRAY"
+          },
+          {
+            "name": "myArray[0-2]",
+            "type": "ARRAY"
+          }
+        ],
+        "id": "878047be-e53f-402d-8b56-5a59686f7150"
+      }
+    ],
+    "featuresAndConfigurationsForAnalytics": [
+      {
+        "name": "airlock.Rollout Beacon",
+        "id": "ae4b3704-3c41-477f-ab75-b5e8fb672145"
+      },
+      {
+        "name": "analyticsBigStates.StaticText",
+        "id": "e4e66c80-754c-4fa3-9b45-dc2d805a4eb0"
+      },
+      {
+        "name": "analyticsWeatherData.AddViewedLocationData",
+        "id": "f825ca57-af3e-4bd8-8446-230dd270a2ea"
+      },
+      {
+        "name": "analytics.BigStates",
+        "id": "f6b138f2-7e45-448a-858d-465859b9a9c4"
+      },
+      {
+        "name": "ads.Airlock Control Over Ads",
+        "id": "860e2ea8-eef2-44d7-b097-df4555ec07f1"
+      },
+      {
+        "name": "ads.Main Feed Ads",
+        "id": "0e5f635d-b472-4a2e-855b-9480246aa412"
+      },
+      {
+        "name": "ads.Main Screen Banner",
+        "id": "1d3244c2-f564-4e8f-9d9e-85374dcc023b"
+      },
+      {
+        "name": "tr.FeatureProdMTXDev12b",
+        "id": "ac3915d1-365c-4da5-803d-cf5e926a93c7"
+      },
+      {
+        "name": "tr.FeatureProdMTXDevProd12",
+        "id": "34dfe5bf-c0e4-4be8-a741-811e4cabfb91"
+      },
+      {
+        "name": "tr.FeatureProdMTXDev11b",
+        "id": "43b05687-0574-4fcb-b805-2b83d2329cdf"
+      },
+      {
+        "name": "group1feature1.FeatureProdMTXConfigProd15a",
+        "id": "cee56ce9-020b-494d-9d18-298d330dc867"
+      },
+      {
+        "name": "trMTXinMTXConfigsProdDefaultOff.Config2",
+        "id": "ece9d1fe-ed60-428f-96ed-91ebb44edbe6"
+      }
+    ]
+  }
+}

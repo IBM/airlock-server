@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "type": "FEATURE",
+  "stage": "DEVELOPMENT",
+  "additionalInfo": {
+    "aaa": "bbb"
+  },
+  "namespace": "ns2",
+  "creator": "Philip",
+  "internalUserGroups": [
+    "QA",
+    "DEV"
+  ],
+  "description": "hello, feature description follows here",
+  "rule": {
+    "ruleString": ""
+  },
+  "minAppVersion": "0.1",
+  "name": "Feature5",
+  "displayName": "Feature number five",
+  "seasonId": null,
+  "features": [],
+  "owner": "Norman",
+  "defaultIfAirlockSystemIsDown": false,
+  "rolloutPercentage": 10,
+  "noCachedResults": false,
+  "defaultConfiguration": "{\"color\":\"red\"}"
+}

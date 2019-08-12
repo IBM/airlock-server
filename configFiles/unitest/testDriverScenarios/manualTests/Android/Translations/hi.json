@@ -1,0 +1,373 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "ऐसा लगता है"
+},
+"translationKey2": {
+"stringId" : "HeadsUp.WeekendForecast",
+"translation" : "सप्ताहांत पूर्वानुमान"
+},
+"translationKey3": {
+"stringId" : "HeadsUp.Precip",
+"translation" : "वर्षण"
+},
+"translationKey4": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "बिजली का गिरना"
+},
+"translationKey5": {
+"stringId" : "Units.AM",
+"translation" : "पूर्वाह्न"
+},
+"translationKey6": {
+"stringId" : "Units.PM",
+"translation" : "अपराह्न"
+},
+"translationKey7": {
+"stringId" : "DDI.RoadConditions",
+"translation" : "सड़क की स्थिति"
+},
+"translationKey8": {
+"stringId" : "General.Tonight",
+"translation" : "आज रात"
+},
+"translationKey9": {
+"stringId" : "General.Tomorrow",
+"translation" : "आने वाला कल"
+},
+"translationKey10": {
+"stringId" : "General.Today",
+"translation" : "आज"
+},
+"translationKey11": {
+"stringId" : "HeadsUp.Rain",
+"translation" : "वर्षा"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "बारिश संभव"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "वर्षा की संभावना"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.Snow",
+"translation" : "हिमपात"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "हिमपात की संभावना"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "हिमपात की संभावना"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.LightWintryMix",
+"translation" : "हल्के तौर पर वर्षा, जमाने वाली वर्षा, ओलावृष्टि और हिमपात"
+},
+"translationKey18": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "ऐसा लगता है"
+},
+"translationKey19": {
+"stringId" : "General.Sunrise",
+"translation" : "सूर्योदय"
+},
+"translationKey20": {
+"stringId" : "General.Sunset",
+"translation" : "सूर्यास्त"
+},
+"translationKey21": {
+"stringId" : "HeadsUp.WinterStormLikely",
+"translation" : "सर्द हवाएँ चलने की संभावना है"
+},
+"translationKey22": {
+"stringId" : "HeadsUp.WinterStormPossible",
+"translation" : "बर्फीला तूफान आना संभव"
+},
+"translationKey23": {
+"stringId" : "HeadsUp.InView",
+"translation" : "[[[1]]] दृश्यता"
+},
+"translationKey24": {
+"stringId" : "HeadsUp.Next48Hours",
+"translation" : "अगले 48 घंटे"
+},
+"translationKey25": {
+"stringId" : "DDI.Good",
+"translation" : "अच्छा"
+},
+"translationKey26": {
+"stringId" : "DDI.Foggy",
+"translation" : "कुहरा है"
+},
+"translationKey27": {
+"stringId" : "DDI.Icy",
+"translation" : "बर्फ गिर रहा है"
+},
+"translationKey28": {
+"stringId" : "DDI.Ponding",
+"translation" : "तालाब"
+},
+"translationKey29": {
+"stringId" : "DDI.Snowy",
+"translation" : "हिमपात हो रहा है"
+},
+"translationKey30": {
+"stringId" : "DDI.Wet",
+"translation" : "गीला"
+},
+"translationKey31": {
+"stringId" : "HeadsUp.Accumulation",
+"translation" : "जमाव"
+},
+"translationKey32": {
+"stringId" : "HeadsUp.RainStarting",
+"translation" : "बारिश शुरू हो रही है"
+},
+"translationKey33": {
+"stringId" : "HeadsUp.RainEnding",
+"translation" : "बारिश बंद हो रही है"
+},
+"translationKey34": {
+"stringId" : "HeadsUp.SnowStarting",
+"translation" : "बर्फ गिरना शुरू हो रहा है"
+},
+"translationKey35": {
+"stringId" : "HeadsUp.SnowEnding",
+"translation" : "हिमपात बंद हो रहा है"
+},
+"translationKey36": {
+"stringId" : "HeadsUp.MixStarting",
+"translation" : "मिश्रित बारिश शुरू हो रही है"
+},
+"translationKey37": {
+"stringId" : "HeadsUp.MixEnding",
+"translation" : "मिश्रित बारिश बंद हो रही है"
+},
+"translationKey38": {
+"stringId" : "HeadsUp.WintryMixStarting",
+"translation" : "बर्फीली मिश्रित बारिश होने लगी"
+},
+"translationKey39": {
+"stringId" : "HeadsUp.WintryMixEnding",
+"translation" : "विंटरी मिक्स रुकने वाला है"
+},
+"translationKey40": {
+"stringId" : "HeadsUp.StormsStarting",
+"translation" : "तूफान आ रहा है"
+},
+"translationKey41": {
+"stringId" : "HeadsUp.StormsEnding",
+"translation" : "तूफान रुकने वाला है"
+},
+"translationKey42": {
+"stringId" : "HeadsUp.Storms",
+"translation" : "तूफान"
+},
+"translationKey43": {
+"stringId" : "HeadsUp.StormsLikely",
+"translation" : "तूफान की संभावना"
+},
+"translationKey44": {
+"stringId" : "HeadsUp.StormsPossible",
+"translation" : "तूफान आने की संभावना"
+},
+"translationKey45": {
+"stringId" : "HeadsUp.Precipitation",
+"translation" : "बारिश"
+},
+"translationKey46": {
+"stringId" : "HeadsUp.LookAhead",
+"translation" : "आगे देखें"
+},
+"translationKey47": {
+"stringId" : "HeadsUp.Clear",
+"translation" : "साफ़"
+},
+"translationKey48": {
+"stringId" : "Units.CM",
+"translation" : "सेमी"
+},
+"translationKey49": {
+"stringId" : "Units.KMH",
+"translation" : "किमी प्रति घंटा"
+},
+"translationKey50": {
+"stringId" : "Units.MPH",
+"translation" : "मील प्रति घंटा"
+},
+"translationKey51": {
+"stringId" : "Units.InchMercury",
+"translation" : "में"
+},
+"translationKey52": {
+"stringId" : "Units.Inches",
+"translation" : "में"
+},
+"translationKey53": {
+"stringId" : "Units.MiliBars",
+"translation" : "MB"
+},
+"translationKey54": {
+"stringId" : "Units.Feet",
+"translation" : "FT"
+},
+"translationKey55": {
+"stringId" : "Units.Meter",
+"translation" : "सोम"
+},
+"translationKey56": {
+"stringId" : "Units.Miles",
+"translation" : "MI"
+},
+"translationKey57": {
+"stringId" : "Units.KM",
+"translation" : "किलोमीटर"
+},
+"translationKey58": {
+"stringId" : "DDI.Windy",
+"translation" : "तेज हवाएं चल रही हैं"
+},
+"translationKey59": {
+"stringId" : "DDI.Wind",
+"translation" : "हवा"
+},
+"translationKey60": {
+"stringId" : "General.Weekend",
+"translation" : "सप्ताहांत"
+},
+"translationKey61": {
+"stringId" : "HeadsUp.SevereTStormImpactedNow",
+"translation" : "अब प्रचंड आँधी-तूफान ने असर डाला "
+},
+"translationKey62": {
+"stringId" : "HeadsUp.SevereTStormsPossible",
+"translation" : "प्रचंड आँधी-तूफान आना संभव है"
+},
+"translationKey63": {
+"stringId" : "HeadsUp.SevereTStormsLikely",
+"translation" : "प्रचंड आँधी-तूफान की संभावना"
+},
+"translationKey64": {
+"stringId" : "HeadsUp.SevereTStormsHighRisk",
+"translation" : "गंभीर आँधी-तूफान का उच्च जोखिम"
+},
+"translationKey65": {
+"stringId" : "HeadsUp.SevereTStormNow",
+"translation" : "गंभीर टी-तूफान आ गया"
+},
+"translationKey66": {
+"stringId" : "HeadsUp.PrecipStart",
+"translation" : "बारिश शुरू"
+},
+"translationKey67": {
+"stringId" : "HeadsUp.PrecipEnd",
+"translation" : "बारिश बंद"
+},
+"translationKey68": {
+"stringId" : "HeadsUp.WinterStormStarting",
+"translation" : "बर्फीला तूफान आ रहा है"
+},
+"translationKey69": {
+"stringId" : "HeadsUp.WinterStormEnding",
+"translation" : "बर्फीला तूफान समाप्त हो रहा है"
+},
+"translationKey70": {
+"stringId" : "HeadsUp.WintryMix",
+"translation" : "विंटर मिक्स"
+},
+"translationKey71": {
+"stringId" : "HeadsUp.WintryMixLikely",
+"translation" : "शीतकालीन मिश्रित बारिश संभव"
+},
+"translationKey72": {
+"stringId" : "HeadsUp.WintryMixPossible",
+"translation" : "परीवर्तनीय वर्षण संभव है"
+},
+"translationKey73": {
+"stringId" : "HeadsUp.Mix",
+"translation" : "मिश्रित"
+},
+"translationKey74": {
+"stringId" : "HeadsUp.MixLikely",
+"translation" : "मिश्रित होने की संभावना है"
+},
+"translationKey75": {
+"stringId" : "HeadsUp.MixPossible",
+"translation" : "मिश्रित हो सकता है"
+},
+"translationKey76": {
+"stringId" : "HeadsUp.48Hrs",
+"translation" : "आगे 48 घंटे"
+},
+"translationKey77": {
+"stringId" : "HeadsUp.SevereTStormSoon",
+"translation" : "गंभीर टी-तूफान जल्द आ रहा है"
+},
+"translationKey78": {
+"stringId" : "HeadsUp.Soon",
+"translation" : "जल्द ही"
+},
+"translationKey79": {
+"stringId" : "HeadsUp.Forecasted",
+"translation" : "पूर्वानुमान किया गया"
+},
+"translationKey80": {
+"stringId" : "HeadsUp.SevereTStorm",
+"translation" : "गंभीर टी-तूफान"
+},
+"translationKey81": {
+"stringId" : "HeadsUp.SeeRadar",
+"translation" : "राडार देखें"
+},
+"translationKey82": {
+"stringId" : "HeadsUp.LightSnow",
+"translation" : "हल्की बर्फबारी"
+},
+"translationKey83": {
+"stringId" : "HeadsUp.LightSnowLikely",
+"translation" : "हल्का बर्फीला तूफान"
+},
+"translationKey84": {
+"stringId" : "HeadsUp.LightSnowPossible",
+"translation" : "हल्की बर्फबारी संभव है"
+},
+"translationKey85": {
+"stringId" : "HeadsUp.LightSnowStarting",
+"translation" : "हल्की बर्फबारी होने लगी है"
+},
+"translationKey86": {
+"stringId" : "HeadsUp.LightSnowEnding",
+"translation" : "हल्की बर्फबारी बंद हो रही है"
+},
+"translationKey87": {
+"stringId" : "ProfileSettings.AlertsCTA",
+"translation" : "वास्तविक-समय मौसम संबंधी अलर्ट पाएँ"
+},
+"translationKey88": {
+"stringId" : "HeadsUp.RadarBRadarMap",
+"translation" : "रडार मानचित्र"
+},
+"translationKey89": {
+"stringId" : "GoRun.ExcellentRunningConditions",
+"translation" : "दौड़ने की बेहतरीन स्थितियाँ"
+},
+"translationKey90": {
+"stringId" : "GoRun.GoodRunningConditions",
+"translation" : "दौड़ने की अच्छी स्थितियाँ"
+},
+"translationKey91": {
+"stringId" : "GoRun.GoRun",
+"translation" : "दौड़े"
+}
+}

@@ -1,0 +1,21 @@
+{
+	"tr.Distance": 720938,
+	"trDistance.formatAMPM": 135990,
+	"trDistance.getDistanceShortUnit": 933531,
+	"trDistance.getDistanceUnit": 28458,
+	"trDistance.getHours": 834916,
+	"trDistance.getLengthUnit": 599749,
+	"trDistance.getMinutes": 254135,
+	"trDistance.getPressureUnit": 929691,
+	"trDistance.getTemperatureUnit": 444594,
+	"trDistance.getTimeStr": 326246,
+	"trDistance.getVelocityUnit": 191221,
+	"trDistance.inFahrenheit": 472153,
+	"trDistance.inInches": 943429,
+	"trDistance.inMPH": 643913,
+	"trDistance.inMiles": 879332,
+	"trDistance.isCelsius": 508337,
+	"trDistance.isKMH": 869803,
+	"trDistance.isMetric": 17944,
+	"trDistance.toDate": 699015
+}

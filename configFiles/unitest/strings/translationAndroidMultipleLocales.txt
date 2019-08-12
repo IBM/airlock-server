@@ -1,0 +1,42 @@
+{"iw":
+		{
+			"smartling": {
+				"translate_mode": "custom",
+				"translate_paths": ["* /translation"],
+				"source_key_paths": ["{*}/translation"],
+				"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+				"variants_enabled": true
+			},
+			"translationKey1": {
+				"stringId": "app.hello",
+				"translation": "shalom"
+			}
+		},
+"zh_CN"	:	{
+			"smartling": {
+				"translate_mode": "custom",
+				"translate_paths": ["* /translation"],
+				"source_key_paths": ["{*}/translation"],
+				"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+				"variants_enabled": true
+			},
+			"translationKey1": {
+				"stringId": "app.hello",
+				"translation": "Shensheng"
+			}
+		},
+"zh_TW":		{
+			"smartling": {
+				"translate_mode": "custom",
+				"translate_paths": ["* /translation"],
+				"source_key_paths": ["{*}/translation"],
+				"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+				"variants_enabled": true
+			},
+			"translationKey1": {
+				"stringId": "app.hello",
+				"translation": "halo"
+			}
+		}
+	
+}

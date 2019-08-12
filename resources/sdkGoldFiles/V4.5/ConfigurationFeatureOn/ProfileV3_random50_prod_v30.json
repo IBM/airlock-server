@@ -1,0 +1,73 @@
+{
+	"inputFieldsForAnalytics": [
+	],
+	"root": {
+		"features": [
+			{
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"features": [
+				],
+				"isON": false,
+				"name": "cfo.turnOffNoDefault",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "99c4a6af-8fbb-4379-a7fd-8cb79144b0f1"
+			},
+			{
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":true,\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":true,\"text\":\"welcome to hell\"}",
+				"features": [
+				],
+				"isON": false,
+				"name": "cfo.turnOffWithDefaultON",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "943093ba-d9b2-4256-9ab2-9f7254d60309"
+			},
+			{
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":false,\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"featureON\":false,\"text\":\"welcome to hell\"}",
+				"features": [
+				],
+				"isON": false,
+				"name": "cfo.turnOffOn",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "1af0254e-dc68-4a92-9b52-3a5cb9df481e"
+			},
+			{
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"features": [
+				],
+				"isON": false,
+				"name": "cfo.disabledFeature",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "586a3448-f0ce-4791-b81e-7b30aaa0f6b9"
+			},
+			{
+				"defaultConfiguration": "{\n\t\"color\":\"red\"\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{\n\t\"color\":\"red\"\n}",
+				"features": [
+				],
+				"isON": false,
+				"name": "cfo.runtimeError",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "016f3bf3-4a7c-43ed-9334-c2d42e6e3bf2"
+			}
+		]
+	}
+}

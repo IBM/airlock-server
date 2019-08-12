@@ -1,0 +1,10 @@
+{
+		"key": "app.helloProd",
+		"value": "Hello",
+		"owner": "Mary",
+		"internationalFallback": "Hello",
+		"minAppVersion":"0.1",
+		 "translationInstruction": "long",
+		"stage":"PRODUCTION",
+		"creator":"vicky"
+	}

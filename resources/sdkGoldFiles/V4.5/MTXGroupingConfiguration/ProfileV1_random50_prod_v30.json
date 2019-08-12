@@ -1,0 +1,99 @@
+{
+	"inputFieldsForAnalytics": [
+	],
+	"root": {
+		"features": [
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "group1.feature1",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "6e5498eb-7f11-43a1-baa2-e1d2b532b911"
+			},
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature2.feature2",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "2cded67d-2c0f-4f7d-ac18-ee16ed7f6832"
+			},
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature3.feature3",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "1107f8fd-a0e1-4650-88e7-37d5981364cc"
+			},
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature4.feature4",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "e91c3846-f744-481f-8268-0a749e31bc6e"
+			},
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature5.feature5",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "05a04c8a-2f7c-4a73-91c4-fee6b1f42152"
+			},
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature6.feature6",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "29589144-eba7-4dc1-9026-2108ec3c9d97"
+			},
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature7.feature7",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "33af2ab2-6502-4354-929b-97d10f554010"
+			}
+		]
+	}
+}

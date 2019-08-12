@@ -1,0 +1,5 @@
+function countModulus(){
+if (typeof cache.sum == 'undefined'){cache.sum = 0}
+cache.sum = cache.sum + events.length;
+result.contentViewedModulus5 = cache.sum;
+}

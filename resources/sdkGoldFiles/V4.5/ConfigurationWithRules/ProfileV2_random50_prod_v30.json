@@ -1,0 +1,60 @@
+{
+	"inputFieldsForAnalytics": [
+	],
+	"root": {
+		"features": [
+			{
+				"defaultConfiguration": "{\n\t\"color\":\"red\",\n\t\"size\":2,\n\t\"alert\":false,\n\t\"background\":\"white\",\n\t\"icon\":\"a.jpg\",\n\t\"text\":\"welcome to hell\"\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{\n\t\"color\":\"red\",\n\t\"size\":2,\n\t\"alert\":false,\n\t\"background\":\"white\",\n\t\"icon\":\"a.jpg\",\n\t\"text\":\"welcome to hell\"\n}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CWR.contextUserLocationRegion",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "003e6c8a-6037-4da9-a7d4-77d5c7e9a6e2"
+			},
+			{
+				"defaultConfiguration": "{\"color\":\"blue\",\"size\":2,\"alert\":false,\"background\":\"red\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{\"color\":\"blue\",\"size\":2,\"alert\":false,\"background\":\"red\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CWR.contextWeatherLightningDistanceKm",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "18b6c560-a1fc-4b71-9341-d3fd3dc2bae4"
+			},
+			{
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CWR.contextWeatherDsxTeaserTitle",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "4d1c1474-ebee-4397-81a6-e8cec8098a77"
+			},
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CWR.contextWeatherPrecipitationForecast",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "8b7bea5d-0c2c-4666-a955-0142d4a1621c"
+			}
+		]
+	}
+}

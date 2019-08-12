@@ -1,0 +1,6 @@
+{
+      "description": "QA Translations product",
+      "name": "QA.TRProduct",
+      "codeIdentifier": "QATRPoduct123",
+      "uniqueId": null
+    }

@@ -1,0 +1,742 @@
+{
+	"maxVersion": null,
+	"minVersion": "1.0",
+	"productId": "4b851730-040f-4e34-b3a9-e1bd6d0d0178",
+	"root": {
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": {
+							"color": "blue",
+							"text": "welcome"
+						},
+						"configurationRules": [
+						],
+						"creationDate": 1480584783481,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1480585003884,
+						"minAppVersion": "7.5",
+						"name": "AZ",
+						"namespace": "contextViewedLocationCountryCME",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": "context.currentLocation.region == 'AZ'"
+						},
+						"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "42e546ac-77e6-4156-9d85-68ce5b24b10e"
+					},
+					{
+						"configuration": {
+							"color": "black",
+							"text": "hellow world"
+						},
+						"configurationRules": [
+						],
+						"creationDate": 1480585046042,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1480585083499,
+						"minAppVersion": "7.5",
+						"name": "US",
+						"namespace": "contextViewedLocationCountryCME",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": "context.viewedLocation.country == 'US'"
+						},
+						"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "7619ae4d-90ad-4e50-9ac8-2327a7058cbe"
+					}
+				],
+				"configurationSchema": {
+					"properties": {
+						"alert": {
+							"type": "boolean"
+						},
+						"background": {
+							"type": "string"
+						},
+						"color": {
+							"type": "string"
+						},
+						"icon": {
+							"type": "string"
+						},
+						"size": {
+							"description": "Text size",
+							"minimum": 1,
+							"type": "integer"
+						},
+						"text": {
+							"type": "string"
+						}
+					},
+					"title": "Example Schema",
+					"type": "object"
+				},
+				"creationDate": 1480584767140,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": {
+					"alert": false,
+					"background": "white",
+					"color": "red",
+					"icon": "a.jpg",
+					"size": 2,
+					"text": "welcome to hell"
+				},
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1480585777086,
+				"minAppVersion": "7.5",
+				"name": "contextViewedLocationCountryNoME",
+				"namespace": "CME",
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "55e916ab-9ce8-4278-8dbc-d41f26404e37"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configurationRules": [
+							{
+								"configuration": {
+									"color": "black",
+									"text": "hellow world"
+								},
+								"configurationRules": [
+								],
+								"creationDate": 1480585884555,
+								"creator": "Esteban Zia",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1480585906463,
+								"minAppVersion": "7.5",
+								"name": "NY1",
+								"namespace": "contextViewedLocationCountryCME",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.viewedLocation.country == 'US'"
+								},
+								"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "91cd4a6f-fbdb-44eb-9859-b43b6a5b08b8"
+							},
+							{
+								"configuration": {
+									"color": "blue",
+									"text": "welcome"
+								},
+								"configurationRules": [
+								],
+								"creationDate": 1480585836061,
+								"creator": "Esteban Zia",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1480585863798,
+								"minAppVersion": "7.5",
+								"name": "AZ1",
+								"namespace": "contextViewedLocationCountryCME",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.currentLocation.region == 'AZ'"
+								},
+								"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "e54435e7-5cb8-4add-abb4-7d91781c4cb6"
+							}
+						],
+						"lastModified": 1480585910809,
+						"maxFeaturesOn": 1,
+						"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "3edde47c-2121-4c90-96de-38e191b7d5db"
+					}
+				],
+				"configurationSchema": {
+					"properties": {
+						"alert": {
+							"type": "boolean"
+						},
+						"background": {
+							"type": "string"
+						},
+						"color": {
+							"type": "string"
+						},
+						"icon": {
+							"type": "string"
+						},
+						"size": {
+							"description": "Text size",
+							"minimum": 1,
+							"type": "integer"
+						},
+						"text": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"color",
+						"text"
+					],
+					"title": "Example Schema",
+					"type": "object"
+				},
+				"creationDate": 1480585151525,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": {
+					"alert": false,
+					"background": "white",
+					"color": "red",
+					"icon": "a.jpg",
+					"size": 2,
+					"text": "welcome to hell"
+				},
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1480585910809,
+				"minAppVersion": "7.5",
+				"name": "contextViewedLocationCountry",
+				"namespace": "CME",
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "bc363d2d-a140-4457-b032-7fa9decec2e8"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configurationRules": [
+							{
+								"configuration": {
+									"color": "red",
+									"text": "welcome to paradise"
+								},
+								"configurationRules": [
+								],
+								"creationDate": 1480586065252,
+								"creator": "Esteban Zia",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1480586142202,
+								"minAppVersion": "7.5",
+								"name": "lifeStyleIndices",
+								"namespace": "contextViewedLocationCountry1CME",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary.lifeStyleIndices.drivingDifficultyIndex <= 1 && !context.currentLocation.region.startsWith('NY')"
+								},
+								"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "5e83e032-e7fd-43e1-b73d-e2acfb47901e"
+							},
+							{
+								"configuration": {
+									"alert": false,
+									"background": "white",
+									"color": "green",
+									"icon": "c.jpg",
+									"size": 1,
+									"text": "welcome"
+								},
+								"configurationRules": [
+								],
+								"creationDate": 1480586022707,
+								"creator": "Esteban Zia",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1480586048852,
+								"minAppVersion": "7.5",
+								"name": "alerts.phenomenaCode",
+								"namespace": "contextViewedLocationCountry1CME",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary.nearestWinterStormAlert.phenomenaCode.startsWith('FF') && context.weatherSummary.nearestWinterStormAlert.severityCode == 1"
+								},
+								"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "ac64d8f4-a2a0-40d6-9689-90a07c62105c"
+							}
+						],
+						"lastModified": 1480586149096,
+						"maxFeaturesOn": 1,
+						"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "69140eb3-d732-4dd6-a61b-7bbd7179f75d"
+					}
+				],
+				"configurationSchema": {
+				},
+				"creationDate": 1480585978146,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": {
+				},
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1480586149096,
+				"minAppVersion": "7.5",
+				"name": "contextViewedLocationCountry1",
+				"namespace": "CME",
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": "context.viewedLocation.country == 'US'  &&  context.currentLocation.country == 'US'"
+				},
+				"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "8b4bce8b-4679-404b-8ee4-cfeeb28711d4"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configurationRules": [
+							{
+								"configuration": {
+									"color": "black",
+									"text": "this is hell"
+								},
+								"configurationRules": [
+								],
+								"creationDate": 1480586315978,
+								"creator": "Esteban Zia",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1480586385138,
+								"minAppVersion": "7.5",
+								"name": "distanceKm",
+								"namespace": "contextDeviceILCME",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary.closestLightning.distance>=5"
+								},
+								"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "28a1e163-e397-4314-8173-223e4079147a"
+							},
+							{
+								"configuration": {
+									"color": "red",
+									"text": "welcome"
+								},
+								"configurationRules": [
+								],
+								"creationDate": 1480586253224,
+								"creator": "Esteban Zia",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1480586324539,
+								"minAppVersion": "7.5",
+								"name": "distanceMiles",
+								"namespace": "contextDeviceILCME",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary.closestLightning.distance <= 3"
+								},
+								"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "9e47c94d-cf22-47bb-8de8-ec112373772f"
+							}
+						],
+						"lastModified": 1480586391066,
+						"maxFeaturesOn": 1,
+						"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "860044b9-f720-44b8-9c49-d0b6c351cdf7"
+					}
+				],
+				"configurationSchema": {
+				},
+				"creationDate": 1480586205030,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": {
+				},
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1480586391066,
+				"minAppVersion": "7.5",
+				"name": "contextDeviceIL",
+				"namespace": "CME",
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": "context.device.locale==\"he_IL\""
+				},
+				"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "46b6a411-10e8-472e-b363-7e8f98fc1bf1"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configurationRules": [
+							{
+								"configuration": {
+									"color": "red",
+									"text": "welcome"
+								},
+								"configurationRules": [
+								],
+								"creationDate": 1480586545088,
+								"creator": "Esteban Zia",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1480586566709,
+								"minAppVersion": "7.5",
+								"name": "distanceMiles2",
+								"namespace": "contextDeviceIL2CME",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary.closestLightning.distance <= 5"
+								},
+								"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "b5cee1f2-9287-4961-9408-abcb607c45ca"
+							},
+							{
+								"configuration": {
+									"color": "black",
+									"text": "this is hell"
+								},
+								"configurationRules": [
+								],
+								"creationDate": 1480586492612,
+								"creator": "Esteban Zia",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1480586516512,
+								"minAppVersion": "7.5",
+								"name": "distanceKm2",
+								"namespace": "contextDeviceIL2CME",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary.closestLightning.distance>5"
+								},
+								"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "7b319a55-d383-4b0d-9a4f-17ff69856118"
+							}
+						],
+						"lastModified": 1480586586878,
+						"maxFeaturesOn": 1,
+						"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "5dd07bab-435c-4040-9940-19de92f107c1"
+					}
+				],
+				"configurationSchema": {
+				},
+				"creationDate": 1480586459586,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": {
+				},
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1480586573379,
+				"minAppVersion": "7.5",
+				"name": "contextDeviceIL2",
+				"namespace": "CME",
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": "context.device.locale==\"he_IL\""
+				},
+				"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "220a92bd-b917-4f30-aa72-a573413ef170"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": {
+							"color": "red"
+						},
+						"configurationRules": [
+						],
+						"creationDate": 1480586699501,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1480586764668,
+						"minAppVersion": "7.5",
+						"name": "config3",
+						"namespace": "maxFeatureOn2CME",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "208cfe72-36c4-4c32-a09c-86136f806bd8"
+					},
+					{
+						"configurationRules": [
+							{
+								"configuration": {
+									"color": "green"
+								},
+								"configurationRules": [
+								],
+								"creationDate": 1480586684788,
+								"creator": "Esteban Zia",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1480586773804,
+								"minAppVersion": "7.5",
+								"name": "config2",
+								"namespace": "maxFeatureOn2CME",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": ""
+								},
+								"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "79508a1f-ff2b-44a9-8577-b945d6598196"
+							},
+							{
+								"configuration": {
+									"color": "blue"
+								},
+								"configurationRules": [
+								],
+								"creationDate": 1480586676045,
+								"creator": "Esteban Zia",
+								"description": "",
+								"enabled": true,
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1480586782969,
+								"minAppVersion": "7.5",
+								"name": "config1",
+								"namespace": "maxFeatureOn2CME",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": ""
+								},
+								"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+								"stage": "DEVELOPMENT",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "fcca6f75-9f9b-4768-86a2-67f85ca8e356"
+							}
+						],
+						"lastModified": 1480586800019,
+						"maxFeaturesOn": 2,
+						"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "ce441b14-fc98-4edf-b45c-9d992b4e53ae"
+					}
+				],
+				"configurationSchema": {
+					"alert": false,
+					"background": "white",
+					"color": "red",
+					"icon": "a.jpg",
+					"size": 2,
+					"text": "welcome to hell"
+				},
+				"creationDate": 1480586618764,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": {
+					"properties": {
+						"alert": {
+							"type": "boolean"
+						},
+						"background": {
+							"type": "string"
+						},
+						"color": {
+							"type": "string"
+						},
+						"icon": {
+							"type": "string"
+						},
+						"size": {
+							"description": "Text size",
+							"minimum": 1,
+							"type": "integer"
+						},
+						"text": {
+							"type": "string"
+						}
+					},
+					"title": "Example Schema",
+					"type": "object"
+				},
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1480586711208,
+				"minAppVersion": "7.5",
+				"name": "maxFeatureOn2",
+				"namespace": "CME",
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": "context.viewedLocation.country == 'US'  &&  context.currentLocation.country == 'US'"
+				},
+				"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "b83c750f-3096-42b8-a247-c2f237c23fc6"
+			}
+		],
+		"lastModified": 1480586618764,
+		"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+		"type": "ROOT",
+		"uniqueId": "0f83a38b-8a71-42b7-afdb-030875a664ba"
+	},
+	"seasonId": "098c2bec-9974-46df-8eec-25d0c09bede8",
+	"version": "V2"
+}

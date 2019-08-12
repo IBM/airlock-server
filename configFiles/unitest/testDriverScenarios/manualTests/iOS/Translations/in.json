@@ -1,0 +1,373 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "TERASA"
+},
+"translationKey2": {
+"stringId" : "HeadsUp.WeekendForecast",
+"translation" : "PRAKIRAAN AKHIR PEKAN"
+},
+"translationKey3": {
+"stringId" : "HeadsUp.Precip",
+"translation" : "PRESIP"
+},
+"translationKey4": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "SAMBARAN KILAT"
+},
+"translationKey5": {
+"stringId" : "Units.AM",
+"translation" : "AM"
+},
+"translationKey6": {
+"stringId" : "Units.PM",
+"translation" : "PM"
+},
+"translationKey7": {
+"stringId" : "DDI.RoadConditions",
+"translation" : "KONDISI JALAN"
+},
+"translationKey8": {
+"stringId" : "General.Tonight",
+"translation" : "MALAM INI"
+},
+"translationKey9": {
+"stringId" : "General.Tomorrow",
+"translation" : "BESOK"
+},
+"translationKey10": {
+"stringId" : "General.Today",
+"translation" : "HARI INI"
+},
+"translationKey11": {
+"stringId" : "HeadsUp.Rain",
+"translation" : "HUJAN"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "MUNGKIN HUJAN"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "SANGAT MUNGKIN HUJAN"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.Snow",
+"translation" : "SALJU"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "MUNGKIN TURUN SALJU"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "SANGAT MUNGKIN BERSALJU"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.LightWintryMix",
+"translation" : "HUJAN SALJU RINGAN"
+},
+"translationKey18": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "TERASA"
+},
+"translationKey19": {
+"stringId" : "General.Sunrise",
+"translation" : "MATAHARI TERBIT"
+},
+"translationKey20": {
+"stringId" : "General.Sunset",
+"translation" : "MATAHARI TERBENAM"
+},
+"translationKey21": {
+"stringId" : "HeadsUp.WinterStormLikely",
+"translation" : "HAMPIR PASTI BADAI MUSIM DGN"
+},
+"translationKey22": {
+"stringId" : "HeadsUp.WinterStormPossible",
+"translation" : "KEMUNGKINAN BADAI MUSIM DINGIN"
+},
+"translationKey23": {
+"stringId" : "HeadsUp.InView",
+"translation" : "[[[1]]] DALAM TAMPILAN"
+},
+"translationKey24": {
+"stringId" : "HeadsUp.Next48Hours",
+"translation" : "48 JAM BERIKUTNYA"
+},
+"translationKey25": {
+"stringId" : "DDI.Good",
+"translation" : "BAIK"
+},
+"translationKey26": {
+"stringId" : "DDI.Foggy",
+"translation" : "BERKABUT"
+},
+"translationKey27": {
+"stringId" : "DDI.Icy",
+"translation" : "LICIN KARENA ES"
+},
+"translationKey28": {
+"stringId" : "DDI.Ponding",
+"translation" : "KUBANGAN"
+},
+"translationKey29": {
+"stringId" : "DDI.Snowy",
+"translation" : "BERSALJU"
+},
+"translationKey30": {
+"stringId" : "DDI.Wet",
+"translation" : "BASAH"
+},
+"translationKey31": {
+"stringId" : "HeadsUp.Accumulation",
+"translation" : "AKUMULASI"
+},
+"translationKey32": {
+"stringId" : "HeadsUp.RainStarting",
+"translation" : "MULAI HUJAN"
+},
+"translationKey33": {
+"stringId" : "HeadsUp.RainEnding",
+"translation" : "HUJAN BERAKHIR"
+},
+"translationKey34": {
+"stringId" : "HeadsUp.SnowStarting",
+"translation" : "MULAI BERSALJU"
+},
+"translationKey35": {
+"stringId" : "HeadsUp.SnowEnding",
+"translation" : "SALJU BERAKHIR"
+},
+"translationKey36": {
+"stringId" : "HeadsUp.MixStarting",
+"translation" : "MULAI CAMPURAN"
+},
+"translationKey37": {
+"stringId" : "HeadsUp.MixEnding",
+"translation" : "CAMPURAN SELESAI"
+},
+"translationKey38": {
+"stringId" : "HeadsUp.WintryMixStarting",
+"translation" : "MULAI CAMPURAN MUSIM DINGIN"
+},
+"translationKey39": {
+"stringId" : "HeadsUp.WintryMixEnding",
+"translation" : "HUJAN SALJU BERAKHIR"
+},
+"translationKey40": {
+"stringId" : "HeadsUp.StormsStarting",
+"translation" : "MULAI BADAI"
+},
+"translationKey41": {
+"stringId" : "HeadsUp.StormsEnding",
+"translation" : "BADAI BERAKHIR"
+},
+"translationKey42": {
+"stringId" : "HeadsUp.Storms",
+"translation" : "BADAI"
+},
+"translationKey43": {
+"stringId" : "HeadsUp.StormsLikely",
+"translation" : "SANGAT MUNGKIN BADAI"
+},
+"translationKey44": {
+"stringId" : "HeadsUp.StormsPossible",
+"translation" : "MUNGKIN BADAI"
+},
+"translationKey45": {
+"stringId" : "HeadsUp.Precipitation",
+"translation" : "CURAH HUJAN"
+},
+"translationKey46": {
+"stringId" : "HeadsUp.LookAhead",
+"translation" : "LIHAT KE DEPAN"
+},
+"translationKey47": {
+"stringId" : "HeadsUp.Clear",
+"translation" : "CERAH"
+},
+"translationKey48": {
+"stringId" : "Units.CM",
+"translation" : "CM"
+},
+"translationKey49": {
+"stringId" : "Units.KMH",
+"translation" : "KMH"
+},
+"translationKey50": {
+"stringId" : "Units.MPH",
+"translation" : "MPH"
+},
+"translationKey51": {
+"stringId" : "Units.InchMercury",
+"translation" : "IN"
+},
+"translationKey52": {
+"stringId" : "Units.Inches",
+"translation" : "IN"
+},
+"translationKey53": {
+"stringId" : "Units.MiliBars",
+"translation" : "MB"
+},
+"translationKey54": {
+"stringId" : "Units.Feet",
+"translation" : "KAKI"
+},
+"translationKey55": {
+"stringId" : "Units.Meter",
+"translation" : "M"
+},
+"translationKey56": {
+"stringId" : "Units.Miles",
+"translation" : "MIL"
+},
+"translationKey57": {
+"stringId" : "Units.KM",
+"translation" : "KM"
+},
+"translationKey58": {
+"stringId" : "DDI.Windy",
+"translation" : "BERANGIN"
+},
+"translationKey59": {
+"stringId" : "DDI.Wind",
+"translation" : "ANGIN"
+},
+"translationKey60": {
+"stringId" : "General.Weekend",
+"translation" : "AKHIR PEKAN"
+},
+"translationKey61": {
+"stringId" : "HeadsUp.SevereTStormImpactedNow",
+"translation" : "HUJAN BADAI KENCANG BERDAMPAK SEKARANG"
+},
+"translationKey62": {
+"stringId" : "HeadsUp.SevereTStormsPossible",
+"translation" : "MUNGKIN HUJAN BADAI KENCANG"
+},
+"translationKey63": {
+"stringId" : "HeadsUp.SevereTStormsLikely",
+"translation" : "KMUNGKINAN BSR HJN BADAI KNCNG"
+},
+"translationKey64": {
+"stringId" : "HeadsUp.SevereTStormsHighRisk",
+"translation" : "RISIKO TNG HUJAN BADAI KENCANG"
+},
+"translationKey65": {
+"stringId" : "HeadsUp.SevereTStormNow",
+"translation" : "HUJAN BADAI KENCANG SEKARANG"
+},
+"translationKey66": {
+"stringId" : "HeadsUp.PrecipStart",
+"translation" : "AWAL CURAH HUJAN"
+},
+"translationKey67": {
+"stringId" : "HeadsUp.PrecipEnd",
+"translation" : "AKHIR CURAH HUJAN"
+},
+"translationKey68": {
+"stringId" : "HeadsUp.WinterStormStarting",
+"translation" : "BADAI MUSIM DINGIN DIMULAI"
+},
+"translationKey69": {
+"stringId" : "HeadsUp.WinterStormEnding",
+"translation" : "BADAI MUSIM DINGIN BERAKHIR"
+},
+"translationKey70": {
+"stringId" : "HeadsUp.WintryMix",
+"translation" : "HJN SALJU"
+},
+"translationKey71": {
+"stringId" : "HeadsUp.WintryMixLikely",
+"translation" : "MUNGKIN HUJAN SALJU"
+},
+"translationKey72": {
+"stringId" : "HeadsUp.WintryMixPossible",
+"translation" : "MUNGKIN HUJAN SALJU"
+},
+"translationKey73": {
+"stringId" : "HeadsUp.Mix",
+"translation" : "CAMPURAN"
+},
+"translationKey74": {
+"stringId" : "HeadsUp.MixLikely",
+"translation" : "KEMUNGKINAN BESAR CAMPUR"
+},
+"translationKey75": {
+"stringId" : "HeadsUp.MixPossible",
+"translation" : "KEMUNGKINAN CAMPUR"
+},
+"translationKey76": {
+"stringId" : "HeadsUp.48Hrs",
+"translation" : "48 J KE DPN"
+},
+"translationKey77": {
+"stringId" : "HeadsUp.SevereTStormSoon",
+"translation" : "HUJAN BADAI KENCANG SEGERA"
+},
+"translationKey78": {
+"stringId" : "HeadsUp.Soon",
+"translation" : "SEGERA"
+},
+"translationKey79": {
+"stringId" : "HeadsUp.Forecasted",
+"translation" : "DIPERKIRAKAN"
+},
+"translationKey80": {
+"stringId" : "HeadsUp.SevereTStorm",
+"translation" : "HUJAN BADAI KENCANG"
+},
+"translationKey81": {
+"stringId" : "HeadsUp.SeeRadar",
+"translation" : "LIHAT RADAR"
+},
+"translationKey82": {
+"stringId" : "HeadsUp.LightSnow",
+"translation" : "SALJU RGN"
+},
+"translationKey83": {
+"stringId" : "HeadsUp.LightSnowLikely",
+"translation" : "KEMUNGKINAN BESAR SALJU RINGAN"
+},
+"translationKey84": {
+"stringId" : "HeadsUp.LightSnowPossible",
+"translation" : "KEMUNGKINAN SALJU RINGAN"
+},
+"translationKey85": {
+"stringId" : "HeadsUp.LightSnowStarting",
+"translation" : "SALJU RINGAN MULAI TURUN"
+},
+"translationKey86": {
+"stringId" : "HeadsUp.LightSnowEnding",
+"translation" : "SALJU RINGAN BERHENTI"
+},
+"translationKey87": {
+"stringId" : "ProfileSettings.AlertsCTA",
+"translation" : "DAPATKAN PERINGATAN CUACA SECARA REAL-TIME"
+},
+"translationKey88": {
+"stringId" : "HeadsUp.RadarBRadarMap",
+"translation" : "PETA RADAR"
+},
+"translationKey89": {
+"stringId" : "GoRun.ExcellentRunningConditions",
+"translation" : "KONDISI YANG SANGAT BAIK UNTUK BERLARI"
+},
+"translationKey90": {
+"stringId" : "GoRun.GoodRunningConditions",
+"translation" : "KONDISI YANG BAIK UNTUK BERLARI"
+},
+"translationKey91": {
+"stringId" : "GoRun.GoRun",
+"translation" : "BERLARILAH"
+}
+}

@@ -1,0 +1,23 @@
+{
+	"experiment": "<none>",
+	"inputFieldsForAnalytics": [
+	],
+	"root": {
+		"features": [
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "f1.F1",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "55871a0f-afed-4281-8dd3-27848ea2f8b6"
+			}
+		]
+	},
+	"variant": "Default"
+}

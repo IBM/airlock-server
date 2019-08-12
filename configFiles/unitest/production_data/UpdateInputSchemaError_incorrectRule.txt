@@ -1,0 +1,21 @@
+function isStreamOn(){
+   if(context.streams === undefined || context.streams.TheWeatherChecker === undefined || context.streams.TheWeatherChecker === null && context.streams.TheWeatherChecker.label === undefined){
+       return true;
+   } else {
+       return !(context.streams.TheWeatherChecker.label === "video-none");
+   }
+}
+
+function eventCount(){
+    return context.streams.TheWeatherChecker.label + " " + context.streams.TheWeatherChecker.count;
+}
+
+function isFeatureOn(){
+    if(context.streams.TheWeatherChecker.label === "video-none"){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+isStreamOn()|| true

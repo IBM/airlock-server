@@ -1,0 +1,18 @@
+{
+	"stage": "DEVELOPMENT",
+	"name": "video played",
+	"description": "stream description",
+	"enabled": true,
+	"creator": "vicky",
+	"internalUserGroups": ["QA", "DEV"],
+	"rolloutPercentage": 100.0,
+	"minAppVersion": "5.0",
+	"filter": "event.name === \"empty\"",
+	"processor": "function streamFunc(){results.count = 1}",
+	"cacheSizeKB": 1024,
+	"queueSizeKB": 1024,
+	"maxQueuedEvents": 2,
+	"owner": "vicky",
+	"resultsSchema":{}
+
+}

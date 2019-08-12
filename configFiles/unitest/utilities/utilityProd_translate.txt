@@ -1,0 +1,4 @@
+utility=function translateProd() {translate(\"app.fallback\")};
+minAppVersion=0.1
+stage=PRODUCTION
+name=utilityProd

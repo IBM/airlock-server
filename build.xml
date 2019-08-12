@@ -1,0 +1,323 @@
+
+<project name="AirLock" basedir="." default="usage">
+    <!-- usage statement -->
+    <target name="usage">
+        <echo message="To compile and create war, execute: ant all" />
+        <echo message="To clean up all target files/directories, execute: ant clean" />
+    </target>
+	
+	<!-- Load properties -->
+	<property environment="env"/>
+    <property file="build.properties" />
+    <property file="default_build.properties" />
+    <property name="JAVA_HOME"       value="${java.home}" />
+    <property name="build.tools"     value="${basedir}/build/tools" />
+	<property name="air_lock_war" value="airlock.war" />
+	<property name="air_lock_jar" value="airlockRuleTester.jar" />
+	<property name="qa_jar" value="qa_utils.jar" />
+	<property name="build.number" value="${env.BUILD_NUMBER}"/>
+	<property name="airlock.version" value="${env.AIRLOCK_MAIN_VERSION}"/>
+	<property name="qa_src" location="src/tests/com/ibm"/>
+	<property name="test_src" location="src/tests"/>
+
+    <echo message="base directory is ${basedir}" />
+    <echo message="JAVA_HOME is ${java.home}" />
+		
+	
+    <!-- Project classpath -->
+    <path id="classpath">
+        <!-- 3rd party jars -->
+        <fileset dir="${lib}">
+            <include name="*.jar" />
+        </fileset>     
+    	   <fileset dir="${basedir}/lib">
+           <include name="*.jar" />
+       </fileset> 
+    </path>
+	
+  
+    <!--
+    =========================================================================
+       Target:  clean
+      Purpose:  Clean build tree.
+    =========================================================================
+    -->
+    <target name="clean" description="Cleans build tree">
+    	<delete dir="${output}" failonerror="false" />
+    </target>
+
+    <!--
+    =========================================================================
+      Target:  prepare
+      
+      Purpose:  Performs initialization for full build.
+    =========================================================================
+    -->
+    <target name="prepare" depends="clean" description="Prepares build environment">
+        <mkdir dir="${output}" />
+        <mkdir dir="${output}/src" />
+    	<mkdir dir="${output}/qa_src" />
+    	<mkdir dir="${output}/test_src" />
+
+    <!-- <copy file="resources/initFeaturesDb.txt" todir="${output}"/>
+    	<copy file="resources/initProductsDb.txt" todir="${output}/src"/> -->
+    	
+        <tstamp>
+            <format property="build.timestamp" pattern="yyyy/MM/dd HH:mm:ss.SSS" />
+        </tstamp>
+        <tstamp>
+            <format property="build.timestamp.ms" pattern="yyyyMMddHHmmssSSS" />
+        </tstamp>
+
+        <echo level="info" message="Build version:   ${build.version}" />
+    	
+    	<echo level="info" message="Airlock Main version:   ${airlock.version}" />
+        <echo level="info" message="Build number:    ${build.number}" />
+        <echo level="info" message="Build timestamp: ${build.timestamp}" />
+        <echo level="info" message="ANT_HOME:     ${ant.home}" />
+        <echo level="info" message="JAVA_HOME:    ${JAVA_HOME}" />
+ 
+    </target>
+	
+	
+    <!--
+    =========================================================================
+       Target:  compile
+       Project: AirLock
+       Purpose: Compiles AirLock java classes
+    =========================================================================
+    -->
+
+    <target name="compile" depends="prepare" description="Compiles classes">
+     	
+    	<!-- <javac srcdir="${src}" destdir="${output}/src" debug="true" target="${build.target.level}" source="${build.source.level}" encoding="${build.encoding}" deprecation="${build.deprecation}" includeantruntime="false"> -->
+    	<javac debug="true" srcdir="${src}" destdir="${output}/src" encoding="utf-8" includeantruntime="false">
+    	           <classpath refid="classpath" />
+    		<include name="**/*.java"/> 
+    		<exclude name="**/tests/**" />
+    		<exclude name="**/samples/**" />
+        </javac>
+    </target>
+		
+ 	
+    <!--
+    =========================================================================
+       Target:  war
+       Project: AirLock 
+       Purpose: Creates AirLock web container
+    =========================================================================
+    -->
+    <target name="war" depends="compile, jar" description="Creates a war">    	
+    	<war destfile="${output}/${air_lock_war}" webxml="${webInf}/web.xml">    	      	 
+          <lib dir="${lib}">
+          	  <exclude name="javax.servlet-api-3.0.1.jar"/>
+    	  </lib>
+    	  <classes dir="${output}/src">
+    	  	 <exclude name="**/engine_dev/**" />
+    	  	 <!--exclude name="**/utilities/**" /-->
+    	   </classes>
+
+    	  <webinf dir="WebContent/WEB-INF">
+    	  	<include name="minimal_profile.json"/>
+    	  	<include name="saml/**"/>
+    	  	<include name="azureADKeys/**"/>
+    	  	<include name="blueIDKeys/**"/>    	  	    	  	
+    	  	<include name="scripts/**"/>
+    	  </webinf>
+
+
+    	  <fileset dir="WebContent">
+    	     <exclude name="WEB-INF/**" />
+    	  </fileset>
+    		
+    		
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Product-Name" value="Airlock API"/>				  
+				<attribute name="Build-Number" value="${airlock.version}.${build.number}"/>
+				<attribute name="Build-Date" value="${TODAY}"/>				
+			</manifest>	
+    	</war>
+    	<copy file="ROOT.war" todir="${output}"/>
+    	
+    	<zip destfile="${output}/airlock.zip">
+    	    <zipfileset dir="${output}" includes="*.war"/>
+    		<zipfileset dir="" includes=".ebextensions/"/>
+    	</zip>
+		<unwar src="${output}/${air_lock_war}" dest="${output}/airlock"/>
+    </target>
+
+	 <!--
+    ===========================================================================
+       Target:  jar
+       Project: AirLock 
+       Purpose: Creates AirLock Rule Builder jar
+    ===========================================================================
+    -->
+	 <target name="jar" depends="compile" description="Creates a jar">    	
+    	<jar destfile="${output}/${air_lock_jar}"
+    		basedir="${output}/src">    	      	     	 
+ 
+    	</jar>
+    	
+   </target>
+
+	
+   <!--
+	=========================================================================
+	  Target:  build
+	  Project: AirLock
+	  Purpose: Builds
+	=========================================================================
+	    -->
+	    <target name="build" depends="war" description="AirLock full build">
+
+	    </target>
+
+	   <!--
+	    =========================================================================
+	       Target:  buildQA
+	       Project: AirLock
+	       Purpose: Builds QA
+	    =========================================================================
+	    -->
+
+		<target name="compileQA" depends="build" description="Compiles qa classes">
+
+		<!-- <javac srcdir="${qa_src}" destdir="${output}/qa_src" debug="true" target="${build.target.level}" source="${build.source.level}" encoding="${build.encoding}" deprecation="${build.deprecation}" includeantruntime="false"> -->
+		<javac srcdir="${qa_src}" destdir="${output}/qa_src" encoding="utf-8" includeantruntime="false">
+
+		<classpath>
+		      <fileset dir="${lib}">
+		            <include name="*.jar" />
+		       </fileset>    
+			  <pathelement location="${output}/airlockRuleTester.jar"/>
+		  </classpath>
+
+		<!-- 
+		<classpath>
+				<pathelement location="${basedir}/${lib}/commons-lang3-3.4.jar" />
+				<pathelement location="${basedir}/${lib}/wink-1.4.jar" />
+				<pathelement location="${output}/airlockRuleTester.jar"/>
+		</classpath>
+		-->
+
+		<include name="**/*.java"/> 
+		</javac>
+		  	    	
+		</target>
+
+		<target name="create_qa_jar" depends="compileQA" description="Creates a jar">    	
+	   	<jar destfile="${output}/${qa_jar}"
+	   		basedir="${output}/qa_src">    	      	     	 
+	   	</jar>
+		</target>
+
+		<target name="buildQA" depends="compileQA, create_qa_jar" description="Cleans, builds" />
+	
+	   <!--
+	    =========================================================================
+	       Target:  buildTest
+	       Project: AirLock
+	       Purpose: Builds airlock tests
+	    =========================================================================
+	    -->
+
+	<target name="compileTest" depends="buildQA" description="Compiles test classes">
+
+	<!-- <javac srcdir="${test_src}" destdir="${output}/test_src" debug="true" target="${build.target.level}" source="${build.source.level}" encoding="${build.encoding}" deprecation="${build.deprecation}" includeantruntime="false"> -->
+	<javac srcdir="${test_src}" destdir="${output}/test_src" encoding="utf-8" includeantruntime="false">
+
+		<exclude name="**/qautils/**"/>
+		<classpath>
+		<!-- <pathelement location="${lib}/commons-lang3-3.4.jar" />
+			<pathelement location="${lib}/testng.jar" />
+			<pathelement location="${lib}/wink-1.4.jar" />
+			<pathelement location="${lib}/utils.jar" />
+			<pathelement location="${lib}/commons-lang-2.4.jar" /> -->
+
+			<!-- TODO use just one commons-lang -->
+			<pathelement location="${basedir}/${lib}/commons-lang3-3.4.jar" />
+			<pathelement location="${basedir}/${lib}/commons-lang-2.4.jar" /> 
+			
+			<pathelement location="${basedir}/${lib}/javax.servlet-api-3.0.1.jar" />
+			
+			<pathelement location="${output}/airlockRuleTester.jar" />
+		    <pathelement location="${output}/qa_utils.jar"/>
+		    <fileset dir="${basedir}/lib">
+		            <include name="*.jar" />
+		     </fileset> 
+	  </classpath>
+	</javac>
+	</target>
+<!--		
+		<target name="compileTest" depends="buildQA">
+			<echo message="Compiling the test code into the bin folder"/>
+			<mkdir dir="${bin}"/>
+			<javac srcdir="${src}" destdir="${bin}"  encoding="utf-8">
+				<classpath>
+					<pathelement location="${lib}/commons-lang3-3.4.jar" />
+					<pathelement location="${lib}/testng.jar" />
+					<pathelement location="${lib}/qa_utils.jar" />
+					<pathelement location="${lib}/wink-1.4.jar" />
+					<pathelement location="${lib}/utils.jar" />
+					<pathelement location="${lib}/commons-lang-2.4.jar" />
+					<pathelement location="${output}/airlockRuleTester.jar" />
+				</classpath>
+			</javac>
+		</target>	
+		-->
+		
+		<target name="create-test-jar-file" depends="compileTest">
+			<echo message="Create a jar file of the compiled test code"/>
+			<jar jarfile="${output}/airlockrestapi_tests.jar" basedir="${output}/test_src"></jar>
+			<!--<jar jarfile="${output}/airlockrestapi_tests.jar" basedir="${output}"></jar> -->
+		</target>
+		
+		<!-- ==================== Package Target ================================== -->
+		<target name="packageTest" depends="create-test-jar-file" description="Package.">
+
+			<copy todir="${output}/lib">
+				<fileset dir="${output}/../lib" includes="*.jar"/>
+			</copy>
+
+			<copy todir="${output}/jars">
+				<fileset dir="${output}" includes="*.jar"/>
+			</copy>
+	
+			<!-- for andrei -->
+			<copy todir="${output}/lib">
+				<fileset dir="${output}" includes="*.jar"/>
+			</copy>
+
+			<copy todir="${output}/src/com">
+					<fileset dir="${output}/src/com" includes="*.class"/>
+			</copy>
+
+			<copy todir="${output}/configFiles">
+				<fileset dir="${basedir}/configFiles" />
+			</copy>
+			<copy file="${test_src}/runme.bat" todir="${output}"/>
+			<copy file="${test_src}/runme.sh" todir="${output}"/>
+			<copy file="${test_src}/testng.xml" todir="${output}"/>
+
+			<!-- src was previously included by mistake.
+			 built jars have been moved to the jars/ folder since that's what the scripts expect -->
+
+			<zip destfile="${output}/testNG.zip"
+	             basedir="${output}"
+				 excludes="**.jar, *.war, *.zip, , src/**, qa_src/**, test_src/**"
+	        />
+		</target>
+
+	<target name="buildTest" depends="packageTest" description="Cleans, builds" />
+	<!--
+    =========================================================================
+      Target:  all
+      Project: ICM Web Container
+      Purpose: Cleans, builds
+    =========================================================================
+    -->    
+	<target name="all" depends="clean, build, buildQA, buildTest" description="Cleans, builds" />
+
+</project>

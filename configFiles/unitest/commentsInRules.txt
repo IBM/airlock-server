@@ -1,0 +1,8 @@
+a= '//context.viewedLocation.country'; true; 
+/*context.viewedLocation.field*/ true;
+"//context.viewedLocation"; true; 
+"/*context.viewedLocation.field*/"; true;
+a='context.viewedLocation.field'; true;
+context.weatherSummary.tomorrowForecast.day[0] == "night"
+context.viewedLocation.country.replace(/[\\]/g, '\\$&'); true;
+

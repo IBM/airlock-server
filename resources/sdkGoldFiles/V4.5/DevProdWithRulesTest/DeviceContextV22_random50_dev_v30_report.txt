@@ -1,0 +1,793 @@
+Original master and branches:
+{
+	"branches": [
+		{
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeatureParentName": "ROOT",
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"description": "F21 desc 1",
+					"enabled": true,
+					"features": [
+					],
+					"minAppVersion": "0.1",
+					"name": "f1",
+					"namespace": "ns1",
+					"orderingRules": [
+					],
+					"rolloutPercentage": 100.0,
+					"type": "FEATURE",
+					"uniqueId": "8ac7a313-21d4-4184-a718-ffc65263daeb"
+				}
+			],
+			"name": "branch1",
+			"uniqueId": "0763a3c6-8ccc-4fbf-b582-545fcc6ad140"
+		},
+		{
+			"features": [
+				{
+					"additionalInfo": {
+					},
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeatureParentName": "ROOT",
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"description": "F21 desc 2",
+					"features": [
+					],
+					"minAppVersion": "0.1",
+					"name": "f2",
+					"namespace": "ns1",
+					"orderingRules": [
+					],
+					"rolloutPercentage": 100.0,
+					"type": "FEATURE",
+					"uniqueId": "02344111-8b66-448e-8586-a1506a9a7a12"
+				}
+			],
+			"name": "branch2",
+			"uniqueId": "23fa9c7c-286d-4f90-9e52-dc4e6f89f908"
+		}
+	],
+	"experiments": {
+		"experiments": [
+			{
+				"analytics": {
+					"featuresAndConfigurationsForAnalytics": [
+					],
+					"featuresAttributesForAnalytics": [
+					],
+					"inputFieldsForAnalytics": [
+					]
+				},
+				"controlGroupVariants": [
+				],
+				"enabled": true,
+				"indexExperiment": false,
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"maxVersion": "9.0",
+				"minVersion": "1.1",
+				"name": "exp0",
+				"owner": null,
+				"productId": "c09eb7b7-b0c3-4934-8ae9-c80f8ec11979",
+				"ranges": [
+				],
+				"rolloutPercentage": 87.8,
+				"rule": {
+					"ruleString": "context.ExperimentNo == 0"
+				},
+				"stage": "DEVELOPMENT",
+				"uniqueId": "49141952-529b-4d72-ae04-353b09a78d30",
+				"variants": [
+					{
+						"branchName": "branch1",
+						"enabled": true,
+						"experimentId": "49141952-529b-4d72-ae04-353b09a78d30",
+						"experimentName": "exp0",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var1",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 1"
+						},
+						"stage": "DEVELOPMENT",
+						"uniqueId": "0cd3fe99-3ba4-45b4-8c77-cbd0fcd36239"
+					},
+					{
+						"branchName": "branch2",
+						"enabled": true,
+						"experimentId": "49141952-529b-4d72-ae04-353b09a78d30",
+						"experimentName": "exp0",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var2",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 2"
+						},
+						"stage": "DEVELOPMENT",
+						"uniqueId": "27de50ed-162f-4cd5-a4ac-8b30c3aaa83b"
+					}
+				]
+			},
+			{
+				"analytics": {
+					"featuresAndConfigurationsForAnalytics": [
+					],
+					"featuresAttributesForAnalytics": [
+					],
+					"inputFieldsForAnalytics": [
+					]
+				},
+				"controlGroupVariants": [
+				],
+				"enabled": true,
+				"indexExperiment": false,
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"maxVersion": "9.0",
+				"minVersion": "1.1",
+				"name": "exp1",
+				"owner": null,
+				"productId": "c09eb7b7-b0c3-4934-8ae9-c80f8ec11979",
+				"ranges": [
+				],
+				"rolloutPercentage": 87.8,
+				"rule": {
+					"ruleString": "context.ExperimentNo == 1"
+				},
+				"stage": "PRODUCTION",
+				"uniqueId": "8671d8ab-2ac4-4c0d-ac96-800f075c5d61",
+				"variants": [
+					{
+						"branchName": "branch1",
+						"enabled": true,
+						"experimentId": "8671d8ab-2ac4-4c0d-ac96-800f075c5d61",
+						"experimentName": "exp1",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var1",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 1"
+						},
+						"stage": "PRODUCTION",
+						"uniqueId": "25680b55-0e3b-4bce-8c7c-b21fb25615f5"
+					},
+					{
+						"branchName": "branch2",
+						"enabled": true,
+						"experimentId": "8671d8ab-2ac4-4c0d-ac96-800f075c5d61",
+						"experimentName": "exp1",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var2",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 2"
+						},
+						"stage": "PRODUCTION",
+						"uniqueId": "39804db7-9e46-4ae7-a63e-b4ba411881ce"
+					}
+				]
+			},
+			{
+				"analytics": {
+					"featuresAndConfigurationsForAnalytics": [
+					],
+					"featuresAttributesForAnalytics": [
+					],
+					"inputFieldsForAnalytics": [
+					]
+				},
+				"controlGroupVariants": [
+				],
+				"enabled": true,
+				"indexExperiment": false,
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"maxVersion": "9.0",
+				"minVersion": "1.1",
+				"name": "exp2",
+				"owner": null,
+				"productId": "c09eb7b7-b0c3-4934-8ae9-c80f8ec11979",
+				"ranges": [
+				],
+				"rolloutPercentage": 87.8,
+				"rule": {
+					"ruleString": "context.ExperimentNo == 2"
+				},
+				"stage": "PRODUCTION",
+				"uniqueId": "edf636b8-29d8-4db8-bb30-a9535b706a38",
+				"variants": [
+					{
+						"branchName": "branch1",
+						"enabled": true,
+						"experimentId": "edf636b8-29d8-4db8-bb30-a9535b706a38",
+						"experimentName": "exp2",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var1",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 1"
+						},
+						"stage": "PRODUCTION",
+						"uniqueId": "871682c2-fe34-43d9-8653-2e0b3781484f"
+					},
+					{
+						"branchName": "branch2",
+						"enabled": true,
+						"experimentId": "edf636b8-29d8-4db8-bb30-a9535b706a38",
+						"experimentName": "exp2",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var2",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 2"
+						},
+						"stage": "DEVELOPMENT",
+						"uniqueId": "a56f210f-bbe3-48d8-a4ed-b74739327789"
+					}
+				]
+			},
+			{
+				"analytics": {
+					"featuresAndConfigurationsForAnalytics": [
+					],
+					"featuresAttributesForAnalytics": [
+					],
+					"inputFieldsForAnalytics": [
+					]
+				},
+				"controlGroupVariants": [
+				],
+				"enabled": true,
+				"indexExperiment": false,
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"maxVersion": "9.0",
+				"minVersion": "1.1",
+				"name": "exp3",
+				"owner": null,
+				"productId": "c09eb7b7-b0c3-4934-8ae9-c80f8ec11979",
+				"ranges": [
+				],
+				"rolloutPercentage": 87.8,
+				"rule": {
+					"ruleString": "context.ExperimentNo == 3"
+				},
+				"stage": "PRODUCTION",
+				"uniqueId": "37672648-69d5-4193-abb5-534da0f6de68",
+				"variants": [
+					{
+						"branchName": "branch1",
+						"enabled": true,
+						"experimentId": "37672648-69d5-4193-abb5-534da0f6de68",
+						"experimentName": "exp3",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var1",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 1"
+						},
+						"stage": "DEVELOPMENT",
+						"uniqueId": "bb42997c-6abb-45d6-b49c-d650e87373ee"
+					},
+					{
+						"branchName": "branch2",
+						"enabled": true,
+						"experimentId": "37672648-69d5-4193-abb5-534da0f6de68",
+						"experimentName": "exp3",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var2",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 2"
+						},
+						"stage": "PRODUCTION",
+						"uniqueId": "0cbb5ed4-9183-469e-afe3-47cb9b0fed3f"
+					}
+				]
+			},
+			{
+				"analytics": {
+					"featuresAndConfigurationsForAnalytics": [
+					],
+					"featuresAttributesForAnalytics": [
+					],
+					"inputFieldsForAnalytics": [
+					]
+				},
+				"controlGroupVariants": [
+				],
+				"enabled": true,
+				"indexExperiment": false,
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"maxVersion": "9.0",
+				"minVersion": "1.1",
+				"name": "exp4",
+				"owner": null,
+				"productId": "c09eb7b7-b0c3-4934-8ae9-c80f8ec11979",
+				"ranges": [
+				],
+				"rolloutPercentage": 87.8,
+				"rule": {
+					"ruleString": "context.ExperimentNo == 4"
+				},
+				"stage": "PRODUCTION",
+				"uniqueId": "fd2b4b09-b37d-4028-b74b-007a5538d9c9",
+				"variants": [
+					{
+						"branchName": "branch1",
+						"enabled": true,
+						"experimentId": "fd2b4b09-b37d-4028-b74b-007a5538d9c9",
+						"experimentName": "exp4",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var1",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 1"
+						},
+						"stage": "PRODUCTION",
+						"uniqueId": "56780837-101a-4b74-b3bc-0fa32baee4cf"
+					},
+					{
+						"branchName": "branch2",
+						"enabled": true,
+						"experimentId": "fd2b4b09-b37d-4028-b74b-007a5538d9c9",
+						"experimentName": "exp4",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var2",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 2"
+						},
+						"stage": "DEVELOPMENT",
+						"uniqueId": "23ff6e76-4c77-48b6-afdb-34454aa2c001"
+					}
+				]
+			},
+			{
+				"analytics": {
+					"featuresAndConfigurationsForAnalytics": [
+					],
+					"featuresAttributesForAnalytics": [
+					],
+					"inputFieldsForAnalytics": [
+					]
+				},
+				"controlGroupVariants": [
+				],
+				"enabled": true,
+				"indexExperiment": false,
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"maxVersion": "9.0",
+				"minVersion": "1.1",
+				"name": "exp5",
+				"owner": null,
+				"productId": "c09eb7b7-b0c3-4934-8ae9-c80f8ec11979",
+				"ranges": [
+				],
+				"rolloutPercentage": 87.8,
+				"rule": {
+					"ruleString": "context.ExperimentNo == 5"
+				},
+				"stage": "PRODUCTION",
+				"uniqueId": "7da87956-d111-4818-9882-d4633a1e6fc1",
+				"variants": [
+					{
+						"branchName": "branch1",
+						"enabled": true,
+						"experimentId": "7da87956-d111-4818-9882-d4633a1e6fc1",
+						"experimentName": "exp5",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var1",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 1"
+						},
+						"stage": "DEVELOPMENT",
+						"uniqueId": "76d34184-8ab0-445d-a8b6-c223af69cbc8"
+					},
+					{
+						"branchName": "branch2",
+						"enabled": true,
+						"experimentId": "7da87956-d111-4818-9882-d4633a1e6fc1",
+						"experimentName": "exp5",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var2",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 2"
+						},
+						"stage": "DEVELOPMENT",
+						"uniqueId": "710c4eb3-4f89-46ef-aaaa-6879fec16857"
+					},
+					{
+						"branchName": "branch2",
+						"enabled": true,
+						"experimentId": "7da87956-d111-4818-9882-d4633a1e6fc1",
+						"experimentName": "exp5",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var3",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 3"
+						},
+						"stage": "PRODUCTION",
+						"uniqueId": "a3efc6ac-6d4b-4087-8d58-d0366076b479"
+					}
+				]
+			},
+			{
+				"analytics": {
+					"featuresAndConfigurationsForAnalytics": [
+					],
+					"featuresAttributesForAnalytics": [
+					],
+					"inputFieldsForAnalytics": [
+					]
+				},
+				"controlGroupVariants": [
+				],
+				"enabled": true,
+				"indexExperiment": false,
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"maxVersion": "9.0",
+				"minVersion": "1.1",
+				"name": "exp6",
+				"owner": null,
+				"productId": "c09eb7b7-b0c3-4934-8ae9-c80f8ec11979",
+				"ranges": [
+				],
+				"rolloutPercentage": 87.8,
+				"rule": {
+					"ruleString": "context.ExperimentNo == 6"
+				},
+				"stage": "DEVELOPMENT",
+				"uniqueId": "d1177503-10ee-4a4b-8d35-2884e62ff6ee",
+				"variants": [
+					{
+						"branchName": "branch1",
+						"enabled": true,
+						"experimentId": "d1177503-10ee-4a4b-8d35-2884e62ff6ee",
+						"experimentName": "exp6",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var1",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 1"
+						},
+						"stage": "DEVELOPMENT",
+						"uniqueId": "2b6e9505-4fc9-4149-a776-bcb2d9cad86a"
+					},
+					{
+						"branchName": "branch2",
+						"enabled": true,
+						"experimentId": "d1177503-10ee-4a4b-8d35-2884e62ff6ee",
+						"experimentName": "exp6",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"name": "var2",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 2"
+						},
+						"stage": "DEVELOPMENT",
+						"uniqueId": "7039b350-c75f-49c1-9af3-a034acb3066d"
+					}
+				]
+			},
+			{
+				"analytics": {
+					"featuresAndConfigurationsForAnalytics": [
+					],
+					"featuresAttributesForAnalytics": [
+					],
+					"inputFieldsForAnalytics": [
+					]
+				},
+				"controlGroupVariants": [
+				],
+				"enabled": true,
+				"indexExperiment": false,
+				"internalUserGroups": [
+					"DEV",
+					"QA"
+				],
+				"maxVersion": null,
+				"minVersion": "1.1",
+				"name": "exp11",
+				"owner": null,
+				"productId": "c09eb7b7-b0c3-4934-8ae9-c80f8ec11979",
+				"ranges": [
+					{
+						"end": null,
+						"start": 1516032789677
+					}
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": "context.ExperimentNo == 1"
+				},
+				"stage": "DEVELOPMENT",
+				"uniqueId": "296e7bb6-a723-4fcc-8d2a-c39448b9b332",
+				"variants": [
+					{
+						"branchName": "branch1",
+						"enabled": true,
+						"experimentId": "296e7bb6-a723-4fcc-8d2a-c39448b9b332",
+						"experimentName": "exp11",
+						"internalUserGroups": [
+							"DEV",
+							"QA"
+						],
+						"name": "exp113",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 3"
+						},
+						"stage": "DEVELOPMENT",
+						"uniqueId": "1b8dfc17-545f-44d4-922a-e64f787d1efc"
+					},
+					{
+						"branchName": "branch2",
+						"enabled": true,
+						"experimentId": "296e7bb6-a723-4fcc-8d2a-c39448b9b332",
+						"experimentName": "exp11",
+						"internalUserGroups": [
+							"DEV",
+							"QA"
+						],
+						"name": "exp114",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "context.VariantNo == 4"
+						},
+						"stage": "DEVELOPMENT",
+						"uniqueId": "c34332b1-eb9f-450b-8acb-ee0fa3bb7c3c"
+					}
+				]
+			}
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+	],
+	"maxVersion": null,
+	"minVersion": "8.0",
+	"productId": "c09eb7b7-b0c3-4934-8ae9-c80f8ec11979",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": false,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"minAppVersion": "0.1",
+				"name": "f1",
+				"namespace": "ns1",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "8ac7a313-21d4-4184-a718-ffc65263daeb"
+			},
+			{
+				"additionalInfo": {
+					"aaa": "bbb"
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"minAppVersion": "0.1",
+				"name": "f2",
+				"namespace": "ns1",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "02344111-8b66-448e-8586-a1506a9a7a12"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "4d44c33b-2935-43ab-a899-4382c68eefb6"
+	},
+	"seasonId": "e73fe6cf-253f-4f9b-a063-6ec26d4403ca",
+	"serverVersion": "V3.0",
+	"version": "V2.5"
+}
+===========================================
+Experiment trace:
+[
+	"exp0: Status: OFF, Trace: Rule returned false",
+	"exp1: Status: OFF, Trace: Rule returned false",
+	"exp2: Status: ON",
+	"exp2.var1: Status: OFF, Trace: Rule returned false",
+	"exp2.var2: Status: ON"
+]
+===========================================
+Experiments found:
+[Experiment: exp2, variant: var2, branch: branch2]
+===========================================
+Runtime tree:
+{
+	"experiment": "exp2",
+	"experimentList": [
+		"EXPERIMENT_exp2",
+		"VARIANT_exp2_var2"
+	],
+	"inputFieldsForAnalytics": [
+	],
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": false,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"minAppVersion": "0.1",
+				"name": "f1",
+				"namespace": "ns1",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "8ac7a313-21d4-4184-a718-ffc65263daeb"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchConfigurationRuleItems": [
+				],
+				"branchFeatureParentName": "ROOT",
+				"branchFeaturesItems": [
+				],
+				"branchStatus": "CHECKED_OUT",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "F21 desc 2",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"minAppVersion": "0.1",
+				"name": "f2",
+				"namespace": "ns1",
+				"noCachedResults": false,
+				"orderingRules": [
+				],
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "02344111-8b66-448e-8586-a1506a9a7a12"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "4d44c33b-2935-43ab-a899-4382c68eefb6"
+	},
+	"variant": "var2"
+}

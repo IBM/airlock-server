@@ -1,0 +1,60 @@
+{
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{\"icon\":\"a.jpg\",\"text\":\"welcome to hell\",\"color\":\"red\",\"alert\":false,\"background\":\"white\",\"size\":2}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CME.contextViewedLocationCountryNoME",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"icon\":\"a.jpg\",\"text\":\"welcome to hell\",\"color\":\"red\",\"alert\":false,\"background\":\"white\",\"size\":2}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CME.contextViewedLocationCountry",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.contextViewedLocationCountry1",
+				"resultTrace": "Rule returned false",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"text\":\"welcome\",\"color\":\"red\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CME.contextDeviceIL",
+				"resultTrace": "Configurations: [defaultConfiguration, contextDeviceILCME.distanceMiles]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"text\":\"welcome\",\"color\":\"red\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CME.contextDeviceIL2",
+				"resultTrace": "Configurations: [defaultConfiguration, contextDeviceIL2CME.distanceMiles2]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "CME.maxFeatureOn2",
+				"resultTrace": "Rule returned false",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

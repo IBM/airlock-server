@@ -1,0 +1,476 @@
+{
+	"experiment": "Experiment1",
+	"experimentList": [
+		"EXPERIMENT_Experiment1",
+		"VARIANT_Experiment1_Variant1"
+	],
+	"features": {
+		"group1.FeatureProd3Configurations1": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"group1.FeatureProd3Configurations1NOMTX": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"group1.FeatureProdMTXConfig17": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"group1.FeatureProdMTXConfig18": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"group1.FeatureProdMTXConfigDEVPROD16": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"group1.FeatureProdMTXConfigProdDev15": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.ConfigSetFeatureOffMIXOfConfigs": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"ns.FeatureEnabled": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"ns.FeatureON1": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.FeatureON2": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.FeatureToMove1": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"ns.FeatureToMove1a": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"ns.MTXInMTXInBranch1": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"ns.MTXInMTXInBranch2": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.MTXInMTXInBranch2a": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"ns.MTXInMTXInBranch2b": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns1.ConfigProdSetFeatureOff": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns1.ConfigSetFeatureOff": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureDevOFF": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureDevON": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureDevSchemaProd3": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureDevSchemaProd7": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureDevSchemaProd8": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureDevUtilityProd4": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureProd9": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureProdMTXDev11b": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureProdMTXDev12b": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureProdMTXDevProd12": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"tr.FeatureProdMTXProd11a": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"tr.FeatureProdMTXProd12a": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"tr.FeatureProdMTXProdDev11": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"tr.FeatureProdOFF": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureProdON": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"tr.FeatureProdSchema10": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureProdSchemaProdUtilityProd6": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.FeatureProdUtilityProd5": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXDevProd14a": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"tr.MTXDevProd14b": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXProdDev13a": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXProdDev13b": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"tr.MTXinMTXConfigsDevDefaultOff": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXConfigsDevDefaultOn": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXConfigsProdDefaultOff": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXConfigsProdDefaultOn": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"tr.MTXinMTXFeaturesDevFail1": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesDevFail1a": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesDevFail1b": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesDevFail2": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesDevFail2a": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesDevFail2b": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesDevPass1": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesDevPass1a": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesDevPass1b": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesDevPass2": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesDevPass2a": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesDevPass2b": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesProdFail1": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesProdFail1a": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesProdFail1b": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesProdFail2": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"tr.MTXinMTXFeaturesProdFail2a": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesProdFail2b": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesProdPass1": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesProdPass1a": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesProdPass1b": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.MTXinMTXFeaturesProdPass2": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"tr.MTXinMTXFeaturesProdPass2a": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"tr.MTXinMTXFeaturesProdPass2b": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.StringsInProd1": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"tr.StringsInProd2": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureDevSubConfigsFailDefaultOff": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureDevSubConfigsFailDefaultOff2": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureDevSubConfigsFailDefaultOff3": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureDevSubConfigsFailDefaultOn": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureDevSubConfigsFailDefaultOn2": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureDevSubConfigsFailDefaultOn3": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureProdSchemasProdStringUtil": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureProdSingleConfigFail": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"trDistance.FeatureProdSubConfigsFailDefaultOff": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureProdSubConfigsFailDefaultOff2": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureProdSubConfigsFailDefaultOff3": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureProdSubConfigsFailDefaultOn": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"trDistance.FeatureProdSubConfigsFailDefaultOn2": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"trDistance.FeatureProdSubConfigsFailDefaultOn3": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"trDistance.FeatureProdTwoConfigFail": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"trDistance.FeatureProdTwoConfigNoDefault": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureSingleConfigFail": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureTwoConfigFail": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"trDistance.FeatureTwoConfigNoDefault": {
+			"featureIsReported": false,
+			"isON": false
+		}
+	},
+	"inputFieldsForAnalytics": {
+	},
+	"variant": "Variant1"
+}

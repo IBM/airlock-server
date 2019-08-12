@@ -1,0 +1,152 @@
+{
+	"experiment": "Branch2",
+	"experimentList": [
+		"EXPERIMENT_Branch2",
+		"VARIANT_Branch2_Branch2Variant"
+	],
+	"features": {
+		"ns.ParentFeature": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.ParentFeature2": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.ParentFeatureWithMTX": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.ParentFeatureWithMTX2": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.ParentFeatureWithSubFeatures": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.ParentFeatureWithSubFeatures3": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.ParentFeatureWithSubSubFeature": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.ParentSubFeature1": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.SubFeature1": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"ns.SubFeature1a": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.SubFeature2a": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.SubFeature3a": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.SubFeature3b": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.SubFeatureInMTX1": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.SubFeatureInMTX12": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.SubFeatureInMTX2": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"ns.SubFeatureInMTX22": {
+			"featureIsReported": false,
+			"isON": false
+		},
+		"ns.SubFeatureInMTX3": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns.SubSubFeature1": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		}
+	},
+	"inputFieldsForAnalytics": {
+	},
+	"variant": "Branch2Variant"
+}

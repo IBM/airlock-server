@@ -1,0 +1,373 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "FØLES SOM"
+},
+"translationKey2": {
+"stringId" : "HeadsUp.WeekendForecast",
+"translation" : "WEEKENDVEJR"
+},
+"translationKey3": {
+"stringId" : "HeadsUp.Precip",
+"translation" : "NEDBØR"
+},
+"translationKey4": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "LYNNEDSLAG"
+},
+"translationKey5": {
+"stringId" : "Units.AM",
+"translation" : "AM"
+},
+"translationKey6": {
+"stringId" : "Units.PM",
+"translation" : "PM"
+},
+"translationKey7": {
+"stringId" : "DDI.RoadConditions",
+"translation" : "FORHOLD PÅ VEJENE"
+},
+"translationKey8": {
+"stringId" : "General.Tonight",
+"translation" : "I AFTEN"
+},
+"translationKey9": {
+"stringId" : "General.Tomorrow",
+"translation" : "I MORGEN"
+},
+"translationKey10": {
+"stringId" : "General.Today",
+"translation" : "I DAG"
+},
+"translationKey11": {
+"stringId" : "HeadsUp.Rain",
+"translation" : "REGN"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "MULIGHED FOR REGN"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "SANDSYNLIGVIS REGN"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.Snow",
+"translation" : "SNE"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "MULIGHED FOR SNE"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "SANDSYNLIGVIS SNE"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.LightWintryMix",
+"translation" : "LET BLANDET VINTERVEJR"
+},
+"translationKey18": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "FØLES SOM"
+},
+"translationKey19": {
+"stringId" : "General.Sunrise",
+"translation" : "SOLOPGANG"
+},
+"translationKey20": {
+"stringId" : "General.Sunset",
+"translation" : "SOLNEDGANG"
+},
+"translationKey21": {
+"stringId" : "HeadsUp.WinterStormLikely",
+"translation" : "SANDSYNLIGHED FOR VINTERSTORM"
+},
+"translationKey22": {
+"stringId" : "HeadsUp.WinterStormPossible",
+"translation" : "MULIGHED FOR VINTERSTORM"
+},
+"translationKey23": {
+"stringId" : "HeadsUp.InView",
+"translation" : "[[[1]]] I SYNE"
+},
+"translationKey24": {
+"stringId" : "HeadsUp.Next48Hours",
+"translation" : "NÆSTE 48 T."
+},
+"translationKey25": {
+"stringId" : "DDI.Good",
+"translation" : "GODE"
+},
+"translationKey26": {
+"stringId" : "DDI.Foggy",
+"translation" : "TÅGET"
+},
+"translationKey27": {
+"stringId" : "DDI.Icy",
+"translation" : "ISGLAT"
+},
+"translationKey28": {
+"stringId" : "DDI.Ponding",
+"translation" : "VANDSAML."
+},
+"translationKey29": {
+"stringId" : "DDI.Snowy",
+"translation" : "SNE"
+},
+"translationKey30": {
+"stringId" : "DDI.Wet",
+"translation" : "VÅDT"
+},
+"translationKey31": {
+"stringId" : "HeadsUp.Accumulation",
+"translation" : "OPHOBNING"
+},
+"translationKey32": {
+"stringId" : "HeadsUp.RainStarting",
+"translation" : "REGN BEGYNDER"
+},
+"translationKey33": {
+"stringId" : "HeadsUp.RainEnding",
+"translation" : "REGN SLUTTER"
+},
+"translationKey34": {
+"stringId" : "HeadsUp.SnowStarting",
+"translation" : "SNE BEGYNDER"
+},
+"translationKey35": {
+"stringId" : "HeadsUp.SnowEnding",
+"translation" : "SNE SLUTTER"
+},
+"translationKey36": {
+"stringId" : "HeadsUp.MixStarting",
+"translation" : "BLANDET VEJR BEGYNDER"
+},
+"translationKey37": {
+"stringId" : "HeadsUp.MixEnding",
+"translation" : "BLANDET VEJR SLUTTER"
+},
+"translationKey38": {
+"stringId" : "HeadsUp.WintryMixStarting",
+"translation" : "BLANDET VINTERVEJR BEGYNDER"
+},
+"translationKey39": {
+"stringId" : "HeadsUp.WintryMixEnding",
+"translation" : "BLANDET VINTERVEJR SLUTTER"
+},
+"translationKey40": {
+"stringId" : "HeadsUp.StormsStarting",
+"translation" : "STORMVEJR BEGYNDER"
+},
+"translationKey41": {
+"stringId" : "HeadsUp.StormsEnding",
+"translation" : "STORME SLUTTER"
+},
+"translationKey42": {
+"stringId" : "HeadsUp.Storms",
+"translation" : "STORMVEJR"
+},
+"translationKey43": {
+"stringId" : "HeadsUp.StormsLikely",
+"translation" : "SANDSYNLIGHED FOR STORMVEJR"
+},
+"translationKey44": {
+"stringId" : "HeadsUp.StormsPossible",
+"translation" : "MULIGHED FOR STORMVEJR"
+},
+"translationKey45": {
+"stringId" : "HeadsUp.Precipitation",
+"translation" : "NEDBØR"
+},
+"translationKey46": {
+"stringId" : "HeadsUp.LookAhead",
+"translation" : "SE FORUD"
+},
+"translationKey47": {
+"stringId" : "HeadsUp.Clear",
+"translation" : "KLART"
+},
+"translationKey48": {
+"stringId" : "Units.CM",
+"translation" : "CM"
+},
+"translationKey49": {
+"stringId" : "Units.KMH",
+"translation" : "KMT"
+},
+"translationKey50": {
+"stringId" : "Units.MPH",
+"translation" : "MPH"
+},
+"translationKey51": {
+"stringId" : "Units.InchMercury",
+"translation" : "TM"
+},
+"translationKey52": {
+"stringId" : "Units.Inches",
+"translation" : "TM"
+},
+"translationKey53": {
+"stringId" : "Units.MiliBars",
+"translation" : "MB"
+},
+"translationKey54": {
+"stringId" : "Units.Feet",
+"translation" : "FOD"
+},
+"translationKey55": {
+"stringId" : "Units.Meter",
+"translation" : "M"
+},
+"translationKey56": {
+"stringId" : "Units.Miles",
+"translation" : "MIL"
+},
+"translationKey57": {
+"stringId" : "Units.KM",
+"translation" : "KM"
+},
+"translationKey58": {
+"stringId" : "DDI.Windy",
+"translation" : "BLÆSENDE"
+},
+"translationKey59": {
+"stringId" : "DDI.Wind",
+"translation" : "VIND"
+},
+"translationKey60": {
+"stringId" : "General.Weekend",
+"translation" : "WEEKEND"
+},
+"translationKey61": {
+"stringId" : "HeadsUp.SevereTStormImpactedNow",
+"translation" : "VOLDSOMT TORDENVEJR RAMTE NU"
+},
+"translationKey62": {
+"stringId" : "HeadsUp.SevereTStormsPossible",
+"translation" : "VOLDSOMT TORDENVEJR MULIGT"
+},
+"translationKey63": {
+"stringId" : "HeadsUp.SevereTStormsLikely",
+"translation" : "VOLDSOMT TORDENVEJR MULIGT"
+},
+"translationKey64": {
+"stringId" : "HeadsUp.SevereTStormsHighRisk",
+"translation" : "HØJ RISIKO F. HÅRDT TORDENVEJR"
+},
+"translationKey65": {
+"stringId" : "HeadsUp.SevereTStormNow",
+"translation" : "VOLDSOMT TORDENVEJR NU"
+},
+"translationKey66": {
+"stringId" : "HeadsUp.PrecipStart",
+"translation" : "NEDBØR BEGYNDER"
+},
+"translationKey67": {
+"stringId" : "HeadsUp.PrecipEnd",
+"translation" : "NEDBØR SLUTTER"
+},
+"translationKey68": {
+"stringId" : "HeadsUp.WinterStormStarting",
+"translation" : "VINTERSTORM BEGYNDER"
+},
+"translationKey69": {
+"stringId" : "HeadsUp.WinterStormEnding",
+"translation" : "VINTERSTORM SLUTTER"
+},
+"translationKey70": {
+"stringId" : "HeadsUp.WintryMix",
+"translation" : "BL. VINTER"
+},
+"translationKey71": {
+"stringId" : "HeadsUp.WintryMixLikely",
+"translation" : "BLANDET VINTERVEJR SANDSYNLIGT"
+},
+"translationKey72": {
+"stringId" : "HeadsUp.WintryMixPossible",
+"translation" : "BLANDET VINTERVEJR SANDSYNLIGT"
+},
+"translationKey73": {
+"stringId" : "HeadsUp.Mix",
+"translation" : "BLANDET"
+},
+"translationKey74": {
+"stringId" : "HeadsUp.MixLikely",
+"translation" : "SANDSYNLIGHED FOR BLANDET VEJR"
+},
+"translationKey75": {
+"stringId" : "HeadsUp.MixPossible",
+"translation" : "MULIGHED FOR BLANDET VEJR"
+},
+"translationKey76": {
+"stringId" : "HeadsUp.48Hrs",
+"translation" : "NÆSTE 48 T."
+},
+"translationKey77": {
+"stringId" : "HeadsUp.SevereTStormSoon",
+"translation" : "SNART VOLDSOMT TORDENVEJR"
+},
+"translationKey78": {
+"stringId" : "HeadsUp.Soon",
+"translation" : "SNART"
+},
+"translationKey79": {
+"stringId" : "HeadsUp.Forecasted",
+"translation" : "VARSLET"
+},
+"translationKey80": {
+"stringId" : "HeadsUp.SevereTStorm",
+"translation" : "VOLDSOMT TORDENVEJR"
+},
+"translationKey81": {
+"stringId" : "HeadsUp.SeeRadar",
+"translation" : "SE RADAR"
+},
+"translationKey82": {
+"stringId" : "HeadsUp.LightSnow",
+"translation" : "LET SNE"
+},
+"translationKey83": {
+"stringId" : "HeadsUp.LightSnowLikely",
+"translation" : "SANDSYNLIGHED FOR LET SNE"
+},
+"translationKey84": {
+"stringId" : "HeadsUp.LightSnowPossible",
+"translation" : "MULIGHED FOR LET SNE"
+},
+"translationKey85": {
+"stringId" : "HeadsUp.LightSnowStarting",
+"translation" : "LET SNE BEGYNDER"
+},
+"translationKey86": {
+"stringId" : "HeadsUp.LightSnowEnding",
+"translation" : "LET SNE SLUTTER"
+},
+"translationKey87": {
+"stringId" : "ProfileSettings.AlertsCTA",
+"translation" : "FÅ VARSLER OM VEJRET I REALTID"
+},
+"translationKey88": {
+"stringId" : "HeadsUp.RadarBRadarMap",
+"translation" : "RADARKORT"
+},
+"translationKey89": {
+"stringId" : "GoRun.ExcellentRunningConditions",
+"translation" : "FANTASTISKE LØBEFORHOLD"
+},
+"translationKey90": {
+"stringId" : "GoRun.GoodRunningConditions",
+"translation" : "GODE LØBEFORHOLD"
+},
+"translationKey91": {
+"stringId" : "GoRun.GoRun",
+"translation" : "LØB EN TUR"
+}
+}

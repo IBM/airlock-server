@@ -1,0 +1,55 @@
+context.device.appVersion == "7.8"
+context.device.isLowPowerMode === true
+context.device.locale == "US"
+context.profile.demographics.userName == "John Smith"
+context.profile.demographics.acceptedTerms === true
+context.profile.preferences.language == "en"
+context.profile.demographics.gender == "M"
+context.profile.demographics.dob == "enabled"
+#context.profile.settings.segmentation.avr-i == "avr" // not valid, replaced by the following line
+context.profile.settings.segmentation["avr-i"] == "avr"
+context.profile.userId == "123456"
+context.profile.roles == "admin"
+context.weatherSummary.pollen[0].day.daypartName == "day"
+context.turbo.vt1pollenobs.reportDate == "date"
+context.turbo.vt1alerts.endTime == "date"
+context.turbo.vt1observation.feelsLike == 15
+context.turbo.vt1observation.barometerTrend == "Steady"
+context.turbo.vt1dailyforecast.sunrise == "May 20, 1990"
+context.turbo.vt1dailyforecast.day.dayPartName[0] == "day"
+context.turbo.vt1daypart.day.dayPartName[0] == "night"
+context.turbo.vt1hourlyforecast.temperature[0] == 25
+context.turbo.vt1hourlyforecast.severity[0] == 1
+context.turbo.vt1fifteenminute.dayOfWeek[0] == "Monday"
+context.turbo.vt1fifteenminute.temperature[0] == 25
+context.turbo.vt1flu.activityLevel == "high"
+context.turbo.vt1pastflu.stateCode[0] == "NJ"
+context.turbo.vt1sickWeatherColdFluSickScore.sickscore == "test"
+context.turbo.vt1wwir.precipDay == "Sunday"
+context.turbo.vt1precipitation.severity[0] == 1
+context.turbo.vt1pastflu.stateCode[0] == "NJ"
+context.turbo.vt1sickWeatherColdFluSickScore.sickscore == "test"
+context.turbo.vt1wwir.precipDay == "Sunday"
+context.turbo.vt1precipitation.severity[0] == 1
+context.turbo.vt1contentMode.effectiveDateTime == "Today"
+context.turbo.vt1nowcast.processTime == "12345"
+context.turbo.vt1idxBreathingDaypart.day.daypartName[0] == "day"
+context.turbo.vt1idxPollenDaypart.day.daypartName[0] == "day"
+context.userLocation.country == "US"
+context.viewedLocation.country == "US"
+context.weatherSummary.closestLightning.distance < 2	
+context.weatherSummary.tomorrowForecast.day.dayPartTitle == "night"
+context.weatherSummary.observation.temperature < 15
+context.weatherSummary.flux[0].fluxDayPrecipType == "rain"
+context.weatherSummary.lifeStyleIndices.drivingDifficultyIndex > 0
+#context.UserPreferences.isEasternArabicNumerals === false // it's optional
+context.viewedLocation.country == "US"
+context.weatherSummary.closestLightning.distance < 2
+context.weatherSummary.tomorrowForecast.night.dayPartTitle == "day"
+context.weatherSummary.tomorrowForecast.day.dayPartTitle == "night"
+context.weatherSummary.observation.temperature < 15
+context.weatherSummary.flux[0].fluxDayPrecipType == "rain"
+context.weatherSummary.lifeStyleIndices.drivingDifficultyIndex > 0
+#context.profile.settings.segmentation.avr-i == "ar"
+context.profile.settings.segmentation["avr-i"] == "ar"
+

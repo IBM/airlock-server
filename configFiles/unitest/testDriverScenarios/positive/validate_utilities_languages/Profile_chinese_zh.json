@@ -1,0 +1,314 @@
+{
+  "context": {
+    "testData": {
+      "precipitationForecast": [
+        {
+          "intensity": 40000000,
+          "severity": 40000000,
+          "eventStartLocal": "4188-03-18T04:26:40.000Z",
+          "eventEnd": 40000000,
+          "eventStart": 40000000,
+          "imminence": 40000000,
+          "eventType": 40000000,
+          "characteristic": 40000000,
+          "eventEndLocal": "4188-03-18T04:26:40.000Z"
+        },
+        {
+          "intensity": 40000000,
+          "severity": 40000000,
+          "eventStartLocal": "4188-03-18T04:26:40.000Z",
+          "eventEnd": 40000000,
+          "eventStart": 40000000,
+          "imminence": 40000000,
+          "eventType": 40000000,
+          "characteristic": 40000000,
+          "eventEndLocal": "4188-03-18T04:26:40.000Z"
+        },
+        {
+          "intensity": 40000000,
+          "severity": 40000000,
+          "eventStartLocal": "4188-03-18T04:26:40.000Z",
+          "eventEnd": 40000000,
+          "eventStart": 40000000,
+          "imminence": 40000000,
+          "eventType": 40000000,
+          "characteristic": 40000000,
+          "eventEndLocal": "4188-03-18T04:26:40.000Z"
+        },
+        {
+          "intensity": 40000000,
+          "severity": 40000000,
+          "eventStartLocal": "4188-03-18T04:26:40.000Z",
+          "eventEnd": 40000000,
+          "eventStart": 40000000,
+          "imminence": 40000000,
+          "eventType": 40000000,
+          "characteristic": 40000000,
+          "eventEndLocal": "4188-03-18T04:26:40.000Z"
+        }
+      ],
+      "dsx": {
+        "mode": "Lorem ipsum laborum dolor",
+        "effectiveDateTime": "4188-03-18T04:26:40.000Z",
+        "teaserTitle": "Lorem ipsum laborum dolor",
+        "eventName": "Lorem ipsum laborum dolor"
+      }
+    },
+    "viewedLocation": {
+      "country": "PF",
+      "dmaCode": 40000000,
+      "lon": 40000000,
+      "region": "Lorem ipsum laborum dolor",
+      "lat": 40000000
+    },
+    "profile": {},
+    "turbo": {
+      "vt1dailyforecast": {
+        "night": {
+          "dayPartName": [
+            "Friday night",
+            "Friday night",
+            "Friday night",
+            "Friday night"
+          ]
+        },
+        "day": {
+          "dayPartName": [
+            "Friday",
+            "Friday",
+            "Friday",
+            "Friday"
+          ]
+        }
+      }
+    },
+    "userPreferences": {
+      "is24HourFormat": false,
+      "unitsOfMeasure": "hybrid",
+      "isEasternArabicNumerals": false
+    },
+    "weatherSummary": {
+      "tomorrowForecast": {
+        "night": {
+          "dayPartTitle": "Lorem ipsum laborum dolor",
+          "precipType": "rain",
+          "thunderEnum": "4",
+          "dayPart": "day",
+          "precipPercentage": 70,
+          "snowRange": "Lorem ipsum laborum dolor"
+        },
+        "day": {
+          "dayPartTitle": "Lorem ipsum laborum dolor",
+          "precipType": "rain",
+          "thunderEnum": "4",
+          "dayPart": "day",
+          "precipPercentage": 70,
+          "snowRange": "Lorem ipsum laborum dolor"
+        }
+      },
+      "nearestSnowAccumulation": {
+        "dayPart": "night",
+        "snowRange": "Lorem ipsum laborum dolor"
+      },
+      "pollen": [
+        {
+          "night": {
+            "ragweedIndex": 40000000,
+            "grassIndex": 40000000,
+            "daypartName": "Lorem ipsum laborum dolor",
+            "treeIndex": 40000000
+          },
+          "day": {
+            "ragweedIndex": 40000000,
+            "grassIndex": 40000000,
+            "daypartName": "Lorem ipsum laborum dolor",
+            "treeIndex": 40000000
+          }
+        },
+        {
+          "night": {
+            "ragweedIndex": 40000000,
+            "grassIndex": 40000000,
+            "daypartName": "Lorem ipsum laborum dolor",
+            "treeIndex": 40000000
+          },
+          "day": {
+            "ragweedIndex": 40000000,
+            "grassIndex": 40000000,
+            "daypartName": "Lorem ipsum laborum dolor",
+            "treeIndex": 40000000
+          }
+        },
+        {
+          "night": {
+            "ragweedIndex": 40000000,
+            "grassIndex": 40000000,
+            "daypartName": "Lorem ipsum laborum dolor",
+            "treeIndex": 40000000
+          },
+          "day": {
+            "ragweedIndex": 40000000,
+            "grassIndex": 40000000,
+            "daypartName": "Lorem ipsum laborum dolor",
+            "treeIndex": 40000000
+          }
+        },
+        {
+          "night": {
+            "ragweedIndex": 40000000,
+            "grassIndex": 40000000,
+            "daypartName": "Lorem ipsum laborum dolor",
+            "treeIndex": 40000000
+          },
+          "day": {
+            "ragweedIndex": 40000000,
+            "grassIndex": 40000000,
+            "daypartName": "Lorem ipsum laborum dolor",
+            "treeIndex": 40000000
+          }
+        }
+      ],
+      "contentMode": {
+        "mode": "Lorem ipsum laborum dolor",
+        "effectiveDateTime": "4188-03-18T04:26:40.000Z",
+        "eventName": "Lorem ipsum laborum dolor"
+      },
+      "observation": {
+        "skyCode": 40000000,
+        "obsTime": "4188-03-18T04:26:40.000Z",
+        "weekDay": "Thursday",
+        "nextSunrise": "4188-03-18T04:26:40.000Z",
+        "temperature": 56,
+        "dayPart": "night",
+        "basedGPS": true,
+        "nextSunset": "4188-03-18T04:26:40.000Z",
+        "feelsLikeTemperature": 40000000
+      },
+      "runWeatherIndex": [
+        {
+          "localDateTime": "4188-03-18T04:26:40.000Z",
+          "shortRunWeatherIndex": 40000000,
+          "dayIndicator": "Lorem ipsum laborum dolor",
+          "cloudCover": 40000000,
+          "temperature": 40000000,
+          "precipChance": 40000000,
+          "dewPoint": 40000000,
+          "windSpeed": 40000000,
+          "longRunWeatherIndex": 40000000
+        },
+        {
+          "localDateTime": "4188-03-18T04:26:40.000Z",
+          "shortRunWeatherIndex": 40000000,
+          "dayIndicator": "Lorem ipsum laborum dolor",
+          "cloudCover": 40000000,
+          "temperature": 40000000,
+          "precipChance": 40000000,
+          "dewPoint": 40000000,
+          "windSpeed": 40000000,
+          "longRunWeatherIndex": 40000000
+        },
+        {
+          "localDateTime": "4188-03-18T04:26:40.000Z",
+          "shortRunWeatherIndex": 40000000,
+          "dayIndicator": "Lorem ipsum laborum dolor",
+          "cloudCover": 40000000,
+          "temperature": 40000000,
+          "precipChance": 40000000,
+          "dewPoint": 40000000,
+          "windSpeed": 40000000,
+          "longRunWeatherIndex": 40000000
+        },
+        {
+          "localDateTime": "4188-03-18T04:26:40.000Z",
+          "shortRunWeatherIndex": 40000000,
+          "dayIndicator": "Lorem ipsum laborum dolor",
+          "cloudCover": 40000000,
+          "temperature": 40000000,
+          "precipChance": 40000000,
+          "dewPoint": 40000000,
+          "windSpeed": 40000000,
+          "longRunWeatherIndex": 40000000
+        }
+      ],
+      "closestLightning": {
+        "distance": 40000000,
+        "cardinalDirection": "SSE",
+        "lon": 40000000,
+        "lat": 40000000,
+        "strikeTime": "4188-03-18T04:26:40.000Z"
+      },
+      "nearestWinterStormAlert": {
+        "phenomenaCode": "FF",
+        "endTime": "4188-03-18T04:26:40.000Z",
+        "severityCode": 40000000,
+        "significanceCode": "O"
+      },
+      "dayForecast": {
+        "night": {
+          "dayPartTitle": "Lorem ipsum laborum dolor",
+          "precipType": "rain",
+          "thunderEnum": "4",
+          "dayPart": "day",
+          "precipPercentage": 70,
+          "snowRange": "Lorem ipsum laborum dolor"
+        },
+        "day": {
+          "dayPartTitle": "Lorem ipsum laborum dolor",
+          "precipType": "rain",
+          "thunderEnum": "4",
+          "dayPart": "day",
+          "precipPercentage": 70,
+          "snowRange": "Lorem ipsum laborum dolor"
+        }
+      },
+      "nearestStartPrecip": {
+        "severity": 40000000,
+        "imminence": 40000000,
+        "startTime": "4188-03-18T04:26:40.000Z",
+        "endTime": "4188-03-18T04:26:40.000Z",
+        "eventType": 40000000
+      },
+      "lifeStyleIndices": {
+        "drivingDifficultyIndex": 4
+      },
+      "todayForecast": {
+        "night": {
+          "dayPartTitle": "Lorem ipsum laborum dolor",
+          "precipType": "rain",
+          "thunderEnum": "4",
+          "dayPart": "day",
+          "precipPercentage": 70,
+          "snowRange": "Lorem ipsum laborum dolor"
+        },
+        "day": {
+          "dayPartTitle": "Lorem ipsum laborum dolor",
+          "precipType": "rain",
+          "thunderEnum": "4",
+          "dayPart": "day",
+          "precipPercentage": 70,
+          "snowRange": "Lorem ipsum laborum dolor"
+        }
+      }
+    },
+    "userLocation": {
+      "country": "PF",
+      "dmaCode": 40000000,
+      "lon": 40000000,
+      "region": "Lorem ipsum laborum dolor",
+      "lat": 40000000
+    },
+    "device": {
+      "localeCountryCode": "PF",
+      "datetime": "4188-03-18T04:26:40.000Z",
+      "screenWidth": 40000000,
+      "isLowPowerMode": true,
+      "osVersion": "Lorem ipsum laborum dolor",
+      "localeLanguage": "zh",
+      "hockeyUserID": "Lorem ipsum laborum dolor",
+      "screenHeight": 40000000,
+      "locale": "it_it",
+      "connectionType": "Lorem ipsum laborum dolor",
+      "version": "Lorem ipsum laborum dolor"
+    }
+  }
+}

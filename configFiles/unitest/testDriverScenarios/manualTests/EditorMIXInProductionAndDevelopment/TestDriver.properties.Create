@@ -1,0 +1,9 @@
+url = http://arlock-devauth1-adminapi.eu-west-1.elasticbeanstalk.com/airlock/api/
+stage=DEVELOPMENT
+sessionToken=eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0ODY2NDU4ODEsImlhdCI6MTQ4NjY0MjI4MSwianRpIjoiamVycWEudXNlcjJAd2VhdGhlci5jb20iLCJ1c2VyQXR0cmlidXRlcyI6eyJFbWFpbCI6WyJqZXJxYS51c2VyMkB3ZWF0aGVyLmNvbSJdLCJGaXJzdE5hbWUiOlsiamVycWEudXNlcjIiXSwiTGFzdE5hbWUiOlsiamVycWEudXNlcjIiXX0sInVzZXJSb2xlcyI6WyJWaWV3ZXIiLCJFZGl0b3IiXX0.ZrccCQeiEKt5oJNhbc5Nw64dgh__SUWItR2YFtxN-dc
+#product = 
+productId = new
+seasonId = new
+#productId = 25550d9b-e30e-4677-b2f8-072821230a19
+#seasonId = 190cfaa6-10e8-4d14-b38e-3758f9054a9e
+seasonMinVer = 7.6

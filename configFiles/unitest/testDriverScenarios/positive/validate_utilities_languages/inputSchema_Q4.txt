@@ -1,0 +1,1728 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "definitions": {
+      "cardinalDirectionDef": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "N",
+          "NE",
+          "E",
+          "SE",
+          "S",
+          "SW",
+          "W",
+          "NW",
+          "NNE",
+          "ENE",
+          "ESE",
+          "SSE",
+          "SSW",
+          "WSW",
+          "NNW",
+          "WNW"
+        ]
+      },
+      "forecastPartDef": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "dayPartTitle": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "precipType": {
+            "type": "string",
+            "enum": [
+              "snow",
+              "rain"
+            ]
+          },
+          "thunderEnum": {
+            "type": "string",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ]
+          },
+          "dayPart": {
+            "type": "string",
+            "enum": [
+              "night",
+              "day"
+            ]
+          },
+          "precipPercentage": {
+            "maximum": 100,
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "snowRange": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "precipPercentage",
+          "precipType",
+          "dayPart",
+          "thunderEnum",
+          "dayPartTitle",
+          "snowRange"
+        ]
+      },
+      "dayOfWeek": {
+        "default": "Sunday",
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ]
+      },
+      "dayPartNameDay": {
+        "default": "Today",
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "Today",
+          "Tomorrow",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ]
+      },
+      "dayPartNameNight": {
+        "default": "Today",
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "Tonight",
+          "Tomorrow night",
+          "Monday night",
+          "Tuesday night",
+          "Wednesday night",
+          "Thursday night",
+          "Friday night",
+          "Saturday night",
+          "Sunday night"
+        ]
+      },
+      "significanceCodeDef": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "W",
+          "A",
+          "Y",
+          "L",
+          "O",
+          "S",
+          "B"
+        ]
+      },
+      "localeCountryCodeDef": {
+        "default": "US",
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "AD",
+          "AE",
+          "AF",
+          "AG",
+          "AI",
+          "AL",
+          "AM",
+          "AO",
+          "AQ",
+          "AR",
+          "AS",
+          "AT",
+          "AU",
+          "AW",
+          "AX",
+          "AZ",
+          "BA",
+          "BB",
+          "BD",
+          "BE",
+          "BF",
+          "BG",
+          "BH",
+          "BI",
+          "BJ",
+          "BL",
+          "BM",
+          "BN",
+          "BO",
+          "BQ",
+          "BR",
+          "BS",
+          "BT",
+          "BV",
+          "BW",
+          "BY",
+          "BZ",
+          "CA",
+          "CC",
+          "CD",
+          "CF",
+          "CG",
+          "CH",
+          "CI",
+          "CK",
+          "CL",
+          "CM",
+          "CN",
+          "CO",
+          "CR",
+          "CU",
+          "CV",
+          "CW",
+          "CX",
+          "CY",
+          "CZ",
+          "DE",
+          "DJ",
+          "DK",
+          "DM",
+          "DO",
+          "DZ",
+          "EC",
+          "EE",
+          "EG",
+          "EH",
+          "ER",
+          "ES",
+          "ET",
+          "FI",
+          "FJ",
+          "FK",
+          "FM",
+          "FO",
+          "FR",
+          "GA",
+          "GB",
+          "GD",
+          "GE",
+          "GF",
+          "GG",
+          "GH",
+          "GI",
+          "GL",
+          "GM",
+          "GN",
+          "GP",
+          "GQ",
+          "GR",
+          "GS",
+          "GT",
+          "GU",
+          "GW",
+          "GY",
+          "HK",
+          "HM",
+          "HN",
+          "HR",
+          "HT",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IM",
+          "IN",
+          "IO",
+          "IQ",
+          "IR",
+          "IS",
+          "IT",
+          "JE",
+          "JM",
+          "JO",
+          "JP",
+          "KE",
+          "KG",
+          "KH",
+          "KI",
+          "KM",
+          "KN",
+          "KP",
+          "KR",
+          "KW",
+          "KY",
+          "KZ",
+          "LA",
+          "LB",
+          "LC",
+          "LI",
+          "LK",
+          "LR",
+          "LS",
+          "LT",
+          "LU",
+          "LV",
+          "LY",
+          "MA",
+          "MC",
+          "MD",
+          "ME",
+          "MF",
+          "MG",
+          "MH",
+          "MK",
+          "ML",
+          "MM",
+          "MN",
+          "MO",
+          "MP",
+          "MQ",
+          "MR",
+          "MS",
+          "MT",
+          "MU",
+          "MV",
+          "MW",
+          "MX",
+          "MY",
+          "MZ",
+          "NA",
+          "NC",
+          "NE",
+          "NF",
+          "NG",
+          "NI",
+          "NL",
+          "NO",
+          "NP",
+          "NR",
+          "NU",
+          "NZ",
+          "OM",
+          "PA",
+          "PE",
+          "PF",
+          "PG",
+          "PH",
+          "PK",
+          "PL",
+          "PM",
+          "PN",
+          "PR",
+          "PS",
+          "PT",
+          "PW",
+          "PY",
+          "QA",
+          "RE",
+          "RO",
+          "RS",
+          "RU",
+          "RW",
+          "SA",
+          "SB",
+          "SC",
+          "SD",
+          "SE",
+          "SG",
+          "SH",
+          "SI",
+          "SJ",
+          "SK",
+          "SL",
+          "SM",
+          "SN",
+          "SO",
+          "SR",
+          "SS",
+          "ST",
+          "SV",
+          "SX",
+          "SY",
+          "SZ",
+          "TC",
+          "TD",
+          "TF",
+          "TG",
+          "TH",
+          "TJ",
+          "TK",
+          "TL",
+          "TM",
+          "TN",
+          "TO",
+          "TR",
+          "TT",
+          "TV",
+          "TW",
+          "TZ",
+          "UA",
+          "UG",
+          "UM",
+          "US",
+          "UY",
+          "UZ",
+          "VA",
+          "VC",
+          "VE",
+          "VG",
+          "VI",
+          "VN",
+          "VU",
+          "WF",
+          "WS",
+          "YE",
+          "YT",
+          "ZA",
+          "ZM",
+          "ZW"
+        ]
+      },
+      "localeDef": {
+        "default": "en_US",
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "da_dk",
+          "de_at",
+          "de_ch",
+          "de_de",
+          "en_au",
+          "en_gb",
+          "en_us",
+          "es_es",
+          "fi_fi",
+          "fr_be",
+          "fr_ca",
+          "fr_ch",
+          "fr_fr",
+          "is_is",
+          "it_it",
+          "nl_be",
+          "nl_nl",
+          "no_no",
+          "pt_br",
+          "pt_pt",
+          "sv_se"
+        ]
+      },
+      "locationDef": {
+        "properties": {
+          "country": {
+            "$ref": "#/definitions/localeCountryCodeDef"
+          },
+          "dmaCode": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "lon": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "region": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lat": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "country",
+          "region",
+          "lon",
+          "lat",
+          "dmaCode"
+        ]
+      },
+      "fields": {
+        "night": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "dayPartName": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "$ref": "#/definitions/dayPartNameNight"
+              }
+            }
+          },
+          "required": [
+            "dayPartName"
+          ]
+        },
+        "day": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "dayPartName": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "$ref": "#/definitions/dayPartNameDay"
+              }
+            }
+          },
+          "required": [
+            "dayPartName"
+          ]
+        }
+      },
+      "localeLanguageDef": {
+        "default": "US",
+        "type": [
+          "string",
+          "null"
+        ],
+        "enum": [
+          "aa",
+          "ab",
+          "af",
+          "ak",
+          "sq",
+          "am",
+          "ar",
+          "an",
+          "hy",
+          "as",
+          "av",
+          "ae",
+          "ay",
+          "az",
+          "ba",
+          "bm",
+          "eu",
+          "be",
+          "bn",
+          "bh",
+          "bi",
+          "bo",
+          "bs",
+          "br",
+          "bg",
+          "my",
+          "ca",
+          "cs",
+          "ch",
+          "ce",
+          "cu",
+          "cv",
+          "kw",
+          "co",
+          "cr",
+          "cy",
+          "da",
+          "de",
+          "dv",
+          "nl",
+          "dz",
+          "el",
+          "en",
+          "eo",
+          "et",
+          "ee",
+          "fo",
+          "fa",
+          "fj",
+          "fi",
+          "fr",
+          "fy",
+          "ff",
+          "ka",
+          "gd",
+          "ga",
+          "gl",
+          "gv",
+          "gn",
+          "gu",
+          "ht",
+          "ha",
+          "he",
+          "hz",
+          "hi",
+          "ho",
+          "hr",
+          "hu",
+          "ig",
+          "is",
+          "io",
+          "ii",
+          "iu",
+          "ie",
+          "ia",
+          "id",
+          "ik",
+          "it",
+          "jv",
+          "ja",
+          "kl",
+          "kn",
+          "ks",
+          "kr",
+          "kk",
+          "km",
+          "ki",
+          "rw",
+          "ky",
+          "kv",
+          "kg",
+          "ko",
+          "kj",
+          "ku",
+          "lo",
+          "la",
+          "lv",
+          "li",
+          "ln",
+          "lt",
+          "lb",
+          "lu",
+          "lg",
+          "mk",
+          "mh",
+          "ml",
+          "mi",
+          "mr",
+          "ms",
+          "mg",
+          "mt",
+          "mn",
+          "na",
+          "nv",
+          "nr",
+          "nd",
+          "ng",
+          "ne",
+          "nn",
+          "nb",
+          "no",
+          "ny",
+          "oc",
+          "oj",
+          "or",
+          "om",
+          "os",
+          "pa",
+          "pi",
+          "pl",
+          "pt",
+          "ps",
+          "qu",
+          "rm",
+          "ro",
+          "rn",
+          "ru",
+          "sg",
+          "sa",
+          "si",
+          "sk",
+          "sl",
+          "se",
+          "sm",
+          "sn",
+          "sd",
+          "so",
+          "st",
+          "es",
+          "sc",
+          "sr",
+          "ss",
+          "su",
+          "sw",
+          "sv",
+          "ty",
+          "ta",
+          "tt",
+          "te",
+          "tg",
+          "tl",
+          "th",
+          "ti",
+          "to",
+          "tn",
+          "ts",
+          "tk",
+          "tr",
+          "tw",
+          "ug",
+          "uk",
+          "ur",
+          "uz",
+          "ve",
+          "vi",
+          "vo",
+          "wa",
+          "wo",
+          "xh",
+          "yi",
+          "yo",
+          "za",
+          "zh",
+          "zu"
+        ]
+      }
+    },
+    "properties": {
+      "context": {
+        "type": "object",
+        "properties": {
+          "testData": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "precipitationForecast": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "intensity": {
+                      "stage": "PRODUCTION",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "severity": {
+                      "stage": "PRODUCTION",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "eventStartLocal": {
+                      "stage": "PRODUCTION",
+                      "format": "date-time",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "eventEnd": {
+                      "stage": "PRODUCTION",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "eventStart": {
+                      "stage": "PRODUCTION",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "imminence": {
+                      "stage": "PRODUCTION",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "eventType": {
+                      "stage": "PRODUCTION",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "characteristic": {
+                      "stage": "PRODUCTION",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "eventEndLocal": {
+                      "stage": "PRODUCTION",
+                      "format": "date-time",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "eventType",
+                    "eventStart",
+                    "eventEnd",
+                    "eventStartLocal",
+                    "eventEndLocal",
+                    "intensity",
+                    "severity",
+                    "characteristic",
+                    "imminence"
+                  ]
+                }
+              },
+              "dsx": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "mode": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "effectiveDateTime": {
+                    "stage": "PRODUCTION",
+                    "format": "date-time",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "teaserTitle": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "eventName": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "teaserTitle",
+                  "mode",
+                  "effectiveDateTime",
+                  "eventName"
+                ]
+              }
+            },
+            "required": [
+              "dsx",
+              "precipitationForecast"
+            ]
+          },
+          "viewedLocation": {
+            "stage": "PRODUCTION",
+            "minAppVersion": "7.5",
+            "$ref": "#/definitions/locationDef"
+          },
+          "profile": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {}
+          },
+          "turbo": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "vt1dailyforecast": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "night": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "$ref": "#/definitions/fields/night"
+                  },
+                  "day": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "$ref": "#/definitions/fields/day"
+                  }
+                },
+                "required": [
+                  "day",
+                  "night"
+                ]
+              }
+            },
+            "required": [
+              "vt1dailyforecast"
+            ]
+          },
+          "userPreferences": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "is24HourFormat": {
+                "stage": "PRODUCTION",
+                "minAppVersion": "7.5",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "unitsOfMeasure": {
+                "stage": "PRODUCTION",
+                "minAppVersion": "7.5",
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "imperial",
+                  "metric",
+                  "hybrid"
+                ]
+              },
+			  "isEasternArabicNumerals": {
+                "stage": "DEVELOPMENT",
+                "minAppVersion": "7.5",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "is24HourFormat",
+              "unitsOfMeasure",
+			  "isEasternArabicNumerals"
+            ]
+          },
+          "weatherSummary": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "tomorrowForecast": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "night": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "$ref": "#/definitions/forecastPartDef"
+                  },
+                  "day": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "$ref": "#/definitions/forecastPartDef"
+                  }
+                },
+                "required": [
+                  "day",
+                  "night"
+                ]
+              },
+              "nearestSnowAccumulation": {
+                "type": "object",
+                "properties": {
+                  "dayPart": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "enum": [
+                      "day",
+                      "night"
+                    ]
+                  },
+                  "snowRange": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "snowRange",
+                  "dayPart"
+                ]
+              },
+              "contentMode": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "mode": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "effectiveDateTime": {
+                    "stage": "PRODUCTION",
+                    "format": "date-time",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "eventName": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "mode",
+                  "effectiveDateTime",
+                  "eventName"
+                ]
+              },
+              "observation": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "skyCode": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "obsTime": {
+                    "stage": "PRODUCTION",
+                    "format": "date-time",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "weekDay": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "enum": [
+                      "Sunday",
+                      "Monday",
+                      "Tuesday",
+                      "Wednesday",
+                      "Thursday",
+                      "Friday",
+                      "Saturday"
+                    ]
+                  },
+                  "nextSunrise": {
+                    "stage": "PRODUCTION",
+                    "format": "date-time",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "temperature": {
+                    "stage": "PRODUCTION",
+                    "maximum": 140,
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": -140
+                  },
+                  "dayPart": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "enum": [
+                      "day",
+                      "night"
+                    ]
+                  },
+                  "basedGPS": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "boolean",
+                      "null"
+                    ]
+                  },
+                  "nextSunset": {
+                    "stage": "PRODUCTION",
+                    "format": "date-time",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "feelsLikeTemperature": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "obsTime",
+                  "temperature",
+                  "feelsLikeTemperature",
+                  "skyCode",
+                  "dayPart",
+                  "weekDay",
+                  "basedGPS",
+                  "nextSunrise",
+                  "nextSunset"
+                ]
+              },
+              "runWeatherIndex": {
+                "type": [
+                  "array"
+                ],
+                "items": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "localDateTime": {
+                      "stage": "DEVELOPMENT",
+                      "format": "date-time",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "shortRunWeatherIndex": {
+                      "stage": "DEVELOPMENT",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "dayIndicator": {
+                      "stage": "DEVELOPMENT",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "temperature": {
+                      "stage": "DEVELOPMENT",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "cloudCover": {
+                      "stage": "DEVELOPMENT",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "precipChance": {
+                      "stage": "DEVELOPMENT",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "dewPoint": {
+                      "stage": "DEVELOPMENT",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    },
+                    "windSpeed": {
+                      "stage": "DEVELOPMENT",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "longRunWeatherIndex": {
+                      "stage": "DEVELOPMENT",
+                      "minAppVersion": "7.5",
+                      "type": [
+                        "integer",
+                        "null"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "dayIndicator",
+                    "longRunWeatherIndex",
+                    "shortRunWeatherIndex",
+                    "localDateTime",
+                    "temperature",
+                    "dewPoint",
+                    "windSpeed",
+                    "cloudCover",
+                    "precipChance"
+                  ]
+                }
+              },
+              "closestLightning": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "distance": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "cardinalDirection": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "$ref": "#/definitions/cardinalDirectionDef"
+                  },
+                  "lon": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "lat": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "strikeTime": {
+                    "stage": "PRODUCTION",
+                    "format": "date-time",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "distance",
+                  "strikeTime",
+                  "lon",
+                  "lat",
+                  "cardinalDirection"
+                ]
+              },
+              "pollen": {
+                "type": [
+                  "array"
+                ],
+                "items": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "night": {
+                      "type": [
+                        "object",
+                        "null"
+                      ],
+                      "properties": {
+                        "ragweedIndex": {
+                          "stage": "DEVELOPMENT",
+                          "minAppVersion": "7.5",
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "grassIndex": {
+                          "stage": "DEVELOPMENT",
+                          "minAppVersion": "7.5",
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "daypartName": {
+                          "stage": "DEVELOPMENT",
+                          "minAppVersion": "7.5",
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "treeIndex": {
+                          "stage": "DEVELOPMENT",
+                          "minAppVersion": "7.5",
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "grassIndex",
+                        "treeIndex",
+                        "ragweedIndex",
+                        "daypartName"
+                      ]
+                    },
+                    "day": {
+                      "type": [
+                        "object",
+                        "null"
+                      ],
+                      "properties": {
+                        "ragweedIndex": {
+                          "stage": "DEVELOPMENT",
+                          "minAppVersion": "7.5",
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "grassIndex": {
+                          "stage": "DEVELOPMENT",
+                          "minAppVersion": "7.5",
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        },
+                        "daypartName": {
+                          "stage": "DEVELOPMENT",
+                          "minAppVersion": "7.5",
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "treeIndex": {
+                          "stage": "DEVELOPMENT",
+                          "minAppVersion": "7.5",
+                          "type": [
+                            "integer",
+                            "null"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "grassIndex",
+                        "treeIndex",
+                        "ragweedIndex",
+                        "daypartName"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "day",
+                    "night"
+                  ]
+                }
+              },
+              "nearestWinterStormAlert": {
+                "type": "object",
+                "properties": {
+                  "phenomenaCode": {
+                    "default": "FF",
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "enum": [
+                      "FF"
+                    ]
+                  },
+                  "endTime": {
+                    "stage": "PRODUCTION",
+                    "format": "date-time",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "severityCode": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "significanceCode": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "$ref": "#/definitions/significanceCodeDef"
+                  }
+                },
+                "required": [
+                  "significanceCode",
+                  "phenomenaCode",
+                  "endTime",
+                  "severityCode"
+                ]
+              },
+              "dayForecast": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "night": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "$ref": "#/definitions/forecastPartDef"
+                  },
+                  "day": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "$ref": "#/definitions/forecastPartDef"
+                  }
+                },
+                "required": [
+                  "day",
+                  "night"
+                ]
+              },
+              "nearestStartPrecip": {
+                "type": "object",
+                "properties": {
+                  "severity": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "imminence": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  },
+                  "startTime": {
+                    "stage": "PRODUCTION",
+                    "format": "date-time",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "endTime": {
+                    "stage": "PRODUCTION",
+                    "format": "date-time",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "eventType": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "integer",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "eventType",
+                  "imminence",
+                  "severity",
+                  "startTime",
+                  "endTime"
+                ]
+              },
+              "lifeStyleIndices": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "drivingDifficultyIndex": {
+                    "stage": "PRODUCTION",
+                    "maximum": 6,
+                    "minAppVersion": "7.5",
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "drivingDifficultyIndex"
+                ]
+              },
+              "todayForecast": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "night": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "$ref": "#/definitions/forecastPartDef"
+                  },
+                  "day": {
+                    "stage": "PRODUCTION",
+                    "minAppVersion": "7.5",
+                    "$ref": "#/definitions/forecastPartDef"
+                  }
+                },
+                "required": [
+                  "day",
+                  "night"
+                ]
+              }
+            },
+            "required": [
+              "contentMode",
+              "closestLightning",
+              "nearestStartPrecip",
+              "nearestWinterStormAlert",
+              "nearestSnowAccumulation",
+              "lifeStyleIndices",
+              "observation",
+              "tomorrowForecast",
+              "dayForecast",
+              "runWeatherIndex",
+              "pollen"
+            ]
+          },
+          "userLocation": {
+            "stage": "PRODUCTION",
+            "minAppVersion": "7.5",
+            "$ref": "#/definitions/locationDef"
+          },
+          "device": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "localeCountryCode": {
+                "stage": "PRODUCTION",
+                "minAppVersion": "7.5",
+                "$ref": "#/definitions/localeCountryCodeDef"
+              },
+              "datetime": {
+                "stage": "PRODUCTION",
+                "format": "date-time",
+                "minAppVersion": "7.5",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "screenWidth": {
+                "stage": "PRODUCTION",
+                "minAppVersion": "7.5",
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "osVersion": {
+                "stage": "PRODUCTION",
+                "minAppVersion": "7.5",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "localeLanguage": {
+                "stage": "PRODUCTION",
+                "minAppVersion": "7.5",
+                "$ref": "#/definitions/localeLanguageDef"
+              },
+              "screenHeight": {
+                "stage": "PRODUCTION",
+                "minAppVersion": "7.5",
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "hockeyUserID": {
+                "stage": "DEVELOPMENT",
+                "minAppVersion": "7.5",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "locale": {
+                "stage": "PRODUCTION",
+                "minAppVersion": "7.5",
+                "$ref": "#/definitions/localeDef"
+              },
+              "connectionType": {
+                "stage": "PRODUCTION",
+                "minAppVersion": "7.5",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "version": {
+                "stage": "PRODUCTION",
+                "minAppVersion": "7.5",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+			  "isLowPowerMode": {
+                "stage": "DEVELOPMENT",
+                "minAppVersion": "7.5",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "datetime",
+              "localeCountryCode",
+              "localeLanguage",
+              "locale",
+              "osVersion",
+              "connectionType",
+              "version",
+              "screenWidth",
+              "screenHeight",
+              "hockeyUserID",
+			  "isLowPowerMode"
+            ]
+          }
+        },
+        "required": [
+          "userPreferences",
+          "viewedLocation",
+          "userLocation",
+          "device",
+          "weatherSummary",
+          "profile",
+          "testData",
+          "turbo"
+        ]
+      }
+    },
+    "required": [
+      "context"
+    ]
+  }

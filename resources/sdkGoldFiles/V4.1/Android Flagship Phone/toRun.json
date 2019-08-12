@@ -1,0 +1,42 @@
+[
+	{
+		"context": "ProfileV1.json",
+		"locale": "en",
+		"minAppVer": "8.5",
+		"output": "ProfileV1_dev_v41.json",
+		"randomMap": "randomMap50.json",
+		"stage": "DEVELOPMENT",
+		"testName": "profile1_dev_calculate_features",
+		"usergroups": "AndroidDEV,DEV,DEV.QA,QA,test"
+	},
+	{
+		"context": "ProfileV1.json",
+		"locale": "en",
+		"minAppVer": "8.5",
+		"output": "ProfileV1_prod_v41.json",
+		"randomMap": "randomMap50.json",
+		"stage": "PRODUCTION",
+		"testName": "profile1_prod_calculate_features",
+		"usergroups": ""
+	},
+	{
+		"context": "ProfileV1.json",
+		"locale": "en",
+		"minAppVer": "8.5",
+		"output": "ProfileV1_dev_v41_do_experiment.json",
+		"randomMap": "randomMap50.json",
+		"stage": "DEVELOPMENT",
+		"testName": "profile1_dev_do_experiment",
+		"usergroups": "AndroidDEV,DEV,DEV.QA,QA,test"
+	},
+	{
+		"context": "ProfileV1.json",
+		"locale": "en",
+		"minAppVer": "8.5",
+		"output": "ProfileV1_prod_v41_do_experiment.json",
+		"randomMap": "randomMap50.json",
+		"stage": "PRODUCTION",
+		"testName": "profile1_prod_do_experiment",
+		"usergroups": ""
+	}
+]

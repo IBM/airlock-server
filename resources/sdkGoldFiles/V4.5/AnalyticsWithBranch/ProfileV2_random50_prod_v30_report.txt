@@ -1,0 +1,1909 @@
+Original master and branches:
+{
+	"branches": [
+		{
+			"features": [
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeatureParentName": "ROOT",
+					"branchFeaturesItems": [
+						"analytics.BigStates",
+						"analytics.WeatherData"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"features": [
+						{
+							"branchConfigurationRuleItems": [
+								"analyticsBigStates.StaticText"
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configuration": "{\n\t\"StaticText\":\"This is a static text\"\n}",
+									"configurationRules": [
+									],
+									"enabled": true,
+									"internalUserGroups": [
+										"Lioz"
+									],
+									"minAppVersion": "8.0",
+									"name": "StaticText",
+									"namespace": "analyticsBigStates",
+									"noCachedResults": false,
+									"rolloutPercentage": 100.0,
+									"rule": {
+										"ruleString": ""
+									},
+									"stage": "PRODUCTION",
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "8e11f22c-d616-4345-8f3b-8d6c07b84ed8"
+								}
+							],
+							"features": [
+							],
+							"minAppVersion": "8.0",
+							"name": "BigStates",
+							"namespace": "analytics",
+							"rolloutPercentage": 100.0,
+							"type": "FEATURE",
+							"uniqueId": "79dd224d-a343-4be9-b07b-24ff405b2200"
+						},
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"features": [
+							],
+							"minAppVersion": "8.0",
+							"name": "WeatherData",
+							"namespace": "analytics",
+							"rolloutPercentage": 100.0,
+							"type": "FEATURE",
+							"uniqueId": "282c66a8-a0dc-41e8-8a54-49178a5a7945"
+						}
+					],
+					"minAppVersion": "8.0",
+					"name": "Rollout Beacon",
+					"namespace": "airlock",
+					"rolloutPercentage": 100.0,
+					"type": "FEATURE",
+					"uniqueId": "3b064bcb-a754-4080-9510-596465f44d8a"
+				},
+				{
+					"branchConfigurationRuleItems": [
+						"mx.d3501048-8488-4cfe-a462-a11fc4daeb13"
+					],
+					"branchFeatureParentName": "ROOT",
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+						{
+							"branchConfigurationRuleItems": [
+								"trMTXinMTXConfigsProdDefaultOff.Config2"
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+										"mx.4622ecdd-8948-447d-97ed-f4ce3389b6ec"
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configurationRules": [
+										{
+											"branchConfigurationRuleItems": [
+												"trMTXinMTXConfigsProdDefaultOffConfig2.Config2a",
+												"trMTXinMTXConfigsProdDefaultOffConfig2.Config2b"
+											],
+											"branchFeaturesItems": [
+											],
+											"branchStatus": "CHECKED_OUT",
+											"configurationRules": [
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Config2a",
+													"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "bb53cfa6-e2eb-482f-ae5f-010fbcb8ff8c"
+												},
+												{
+													"branchConfigurationRuleItems": [
+													],
+													"branchFeaturesItems": [
+													],
+													"branchStatus": "CHECKED_OUT",
+													"configurationRules": [
+													],
+													"minAppVersion": "8.0",
+													"name": "Config2b",
+													"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+													"rolloutPercentage": 100.0,
+													"type": "CONFIGURATION_RULE",
+													"uniqueId": "0c95808f-5dd9-484d-b980-c651ff215bda"
+												}
+											],
+											"maxFeaturesOn": 1,
+											"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+											"uniqueId": "4622ecdd-8948-447d-97ed-f4ce3389b6ec"
+										}
+									],
+									"minAppVersion": "8.0",
+									"name": "Config2",
+									"namespace": "trMTXinMTXConfigsProdDefaultOff",
+									"rolloutPercentage": 100.0,
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "b50f600c-0301-486d-a967-94177d609290"
+								}
+							],
+							"maxFeaturesOn": 1,
+							"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+							"uniqueId": "d3501048-8488-4cfe-a462-a11fc4daeb13"
+						}
+					],
+					"description": "asds",
+					"features": [
+					],
+					"minAppVersion": "8.0",
+					"name": "MTXinMTXConfigsProdDefaultOff",
+					"namespace": "tr",
+					"rolloutPercentage": 100.0,
+					"type": "FEATURE",
+					"uniqueId": "6f11f88c-95eb-41fe-984c-56a9b81d6fbb"
+				},
+				{
+					"branchConfigurationRuleItems": [
+						"mx.26f16a33-f97d-4aa3-93f8-75e40d927fcc"
+					],
+					"branchFeatureParentName": "ROOT",
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+						{
+							"branchConfigurationRuleItems": [
+								"group1feature1.FeatureProdMTXConfigProd15a",
+								"group1feature1.FeatureProdMTXConfigDev15b"
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configuration": "{\n\t\"value\":\"config2a\",\n\t\"value1\":\"value12\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+									"configurationRules": [
+									],
+									"description": "d",
+									"minAppVersion": "8.0",
+									"name": "FeatureProdMTXConfigProd15a",
+									"namespace": "group1feature1",
+									"rolloutPercentage": 100.0,
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "9b009ffa-5345-459b-9f4e-d7745af92255"
+								},
+								{
+									"branchConfigurationRuleItems": [
+									],
+									"branchFeaturesItems": [
+									],
+									"branchStatus": "CHECKED_OUT",
+									"configuration": "{\n\t\"valueConfigb1\":\"configba\",\n\t\"valueConfigb2\":\"value1b\",\n\t\"valueConfigb3\":\"value2b\",\n\t\"valueConfigb4\":\"value3b\"\n}",
+									"configurationRules": [
+									],
+									"enabled": true,
+									"internalUserGroups": [
+										"AndroidDEV"
+									],
+									"minAppVersion": "8.0",
+									"name": "FeatureProdMTXConfigDev15b",
+									"namespace": "group1feature1",
+									"noCachedResults": false,
+									"rolloutPercentage": 100.0,
+									"rule": {
+										"ruleString": "context.viewedLocation.country==\"FR\""
+									},
+									"stage": "PRODUCTION",
+									"type": "CONFIGURATION_RULE",
+									"uniqueId": "9dcb682d-0e1a-456a-80f3-68a5fa869df1"
+								}
+							],
+							"maxFeaturesOn": 1,
+							"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+							"uniqueId": "26f16a33-f97d-4aa3-93f8-75e40d927fcc"
+						}
+					],
+					"features": [
+					],
+					"minAppVersion": "8.0",
+					"name": "FeatureProdMTXConfigProdDev15",
+					"namespace": "group1",
+					"rolloutPercentage": 100.0,
+					"type": "FEATURE",
+					"uniqueId": "fc204198-3ecc-4696-af76-7d40e245f62a"
+				},
+				{
+					"additionalInfo": null,
+					"branchConfigurationRuleItems": [
+						"nsFeatureInBranch1.FeatureInBranch1Config1"
+					],
+					"branchFeatureParentName": "ROOT",
+					"branchStatus": "NEW",
+					"configurationRules": [
+						{
+							"branchStatus": "NEW",
+							"configuration": "{\n\t\"value1\":\"FeatureInBranch1Config1\",\n\t\n\t\"colors\":[\"red\",\n\t\"green\",\n\t\"blue\",\n\t\"white\"]\n\n}",
+							"configurationRules": [
+							],
+							"enabled": true,
+							"internalUserGroups": [
+								"DEV",
+								"QA"
+							],
+							"minAppVersion": "8.0",
+							"name": "FeatureInBranch1Config1",
+							"namespace": "nsFeatureInBranch1",
+							"noCachedResults": false,
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": ""
+							},
+							"stage": "PRODUCTION",
+							"type": "CONFIGURATION_RULE",
+							"uniqueId": "e2374a14-7dfb-41db-8b92-c11106c37cdd"
+						}
+					],
+					"defaultConfiguration": null,
+					"defaultIfAirlockSystemIsDown": false,
+					"enabled": true,
+					"features": [
+					],
+					"internalUserGroups": [
+						"DEV",
+						"QA"
+					],
+					"minAppVersion": "8.0",
+					"name": "FeatureInBranch1",
+					"namespace": "ns",
+					"noCachedResults": false,
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"stage": "PRODUCTION",
+					"type": "FEATURE",
+					"uniqueId": "ff41cb24-bac0-4ff6-8462-faec13573944"
+				},
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeatureParentName": "ROOT",
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"defaultConfiguration": "{\n\t\"colors\":\"array was here once\"\n}",
+					"features": [
+					],
+					"minAppVersion": "8.0",
+					"name": "Arrays",
+					"namespace": "ns",
+					"rolloutPercentage": 100.0,
+					"type": "FEATURE",
+					"uniqueId": "3ffbc33d-5de5-4b85-988e-ba8ba2ce2498"
+				},
+				{
+					"additionalInfo": {
+					},
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeatureParentName": "ROOT",
+					"branchFeaturesItems": [
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"defaultConfiguration": null,
+					"defaultIfAirlockSystemIsDown": false,
+					"enabled": true,
+					"features": [
+					],
+					"internalUserGroups": [
+						"QA"
+					],
+					"minAppVersion": "8.0",
+					"name": "Array2",
+					"namespace": "elik",
+					"noCachedResults": false,
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"stage": "PRODUCTION",
+					"type": "FEATURE",
+					"uniqueId": "1763c2fa-6d3b-411f-baf8-b4ba1af3c4bb"
+				},
+				{
+					"additionalInfo": {
+					},
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeatureParentName": "ROOT",
+					"branchFeaturesItems": [
+						"ads.Main Feed Ads",
+						"ads.Main Screen Banner"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"defaultConfiguration": null,
+					"defaultIfAirlockSystemIsDown": false,
+					"enabled": true,
+					"features": [
+						{
+							"additionalInfo": {
+							},
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+							],
+							"branchStatus": "CHECKED_OUT",
+							"configurationRules": [
+							],
+							"defaultConfiguration": null,
+							"defaultIfAirlockSystemIsDown": false,
+							"enabled": true,
+							"features": [
+							],
+							"internalUserGroups": [
+								"QA",
+								"DEV"
+							],
+							"minAppVersion": "8.0",
+							"name": "Main Screen Banner",
+							"namespace": "ads",
+							"noCachedResults": false,
+							"rolloutPercentage": 100.0,
+							"rule": {
+								"ruleString": "true"
+							},
+							"stage": "PRODUCTION",
+							"type": "FEATURE",
+							"uniqueId": "2f6a7453-4a9e-40e3-aa93-eaad765a6130"
+						}
+					],
+					"internalUserGroups": [
+						"QA",
+						"DEV"
+					],
+					"minAppVersion": "8.0",
+					"name": "Airlock Control Over Ads",
+					"namespace": "ads",
+					"noCachedResults": false,
+					"rolloutPercentage": 100.0,
+					"rule": {
+						"ruleString": ""
+					},
+					"stage": "PRODUCTION",
+					"type": "FEATURE",
+					"uniqueId": "c3fb3fa9-5e62-4a08-9a6b-ec6ed1eed3c5"
+				},
+				{
+					"branchConfigurationRuleItems": [
+					],
+					"branchFeatureParentName": "ROOT",
+					"branchFeaturesItems": [
+						"mx.3a05bca3-a938-49e0-acd3-927510096b2f"
+					],
+					"branchStatus": "CHECKED_OUT",
+					"configurationRules": [
+					],
+					"features": [
+						{
+							"branchConfigurationRuleItems": [
+							],
+							"branchFeaturesItems": [
+								"ns.NewFeatureInBranch",
+								"tr.FeatureProdMTXProd11a",
+								"tr.FeatureProdMTXDev11b"
+							],
+							"branchStatus": "CHECKED_OUT",
+							"features": [
+								{
+									"additionalInfo": null,
+									"branchStatus": "NEW",
+									"configurationRules": [
+									],
+									"defaultConfiguration": null,
+									"defaultIfAirlockSystemIsDown": false,
+									"enabled": true,
+									"features": [
+									],
+									"internalUserGroups": [
+										"DEV",
+										"QA"
+									],
+									"minAppVersion": "8.0",
+									"name": "NewFeatureInBranch",
+									"namespace": "ns",
+									"noCachedResults": false,
+									"rolloutPercentage": 100.0,
+									"rule": {
+										"ruleString": ""
+									},
+									"stage": "PRODUCTION",
+									"type": "FEATURE",
+									"uniqueId": "9c6a5f43-2085-4bd5-b0f9-3e7ce4bb61a6"
+								}
+							],
+							"maxFeaturesOn": 1,
+							"type": "MUTUAL_EXCLUSION_GROUP",
+							"uniqueId": "3a05bca3-a938-49e0-acd3-927510096b2f"
+						}
+					],
+					"minAppVersion": "8.0",
+					"name": "FeatureProdMTXProdDev11",
+					"namespace": "tr",
+					"rolloutPercentage": 100.0,
+					"type": "FEATURE",
+					"uniqueId": "ba876d94-d965-4bc3-8a5e-e63881df758a"
+				}
+			],
+			"name": "Branch1",
+			"uniqueId": "87c2672f-8e6e-4aad-9912-327cdc51b3b4"
+		}
+	],
+	"experiments": {
+		"experiments": [
+			{
+				"analytics": {
+					"featuresAndConfigurationsForAnalytics": [
+						"ads.Main Feed Ads",
+						"trMTXinMTXConfigsProdDefaultOff.Config3",
+						"ns.NewFeatureInBranch",
+						"group1feature1.FeatureProdMTXConfigProd15a",
+						"airlock.Rollout Beacon",
+						"ns.FeatureInBranch1",
+						"ads.Airlock Control Over Ads",
+						"tr.FeatureProdMTXDev12b",
+						"tr.FeatureProdMTXDevProd12",
+						"analytics.WeatherData",
+						"tr.FeatureProdMTXDev11b",
+						"analyticsBigStates.StaticText",
+						"analyticsWeatherData.AddViewedLocationData",
+						"ads.Main Screen Banner",
+						"analytics.BigStates",
+						"trMTXinMTXConfigsProdDefaultOff.Config2",
+						"analyticsWeatherData.AddAlertData"
+					],
+					"featuresAttributesForAnalytics": [
+						{
+							"attributes": [
+								"ArrayOfArrayOfObject[0][0].key0",
+								"ArrayOfArrayOfObject[0][1].key0",
+								"ArrayOfArrayOfObject[0][2].key0",
+								"ArrayOfArrayOfObject[1][0].key0",
+								"ArrayOfArrayOfObject[1][1].key0",
+								"ArrayOfArrayOfObject[1][2].key0",
+								"arrayOfObjects[0].att1",
+								"arrayOfObjects[0].att2",
+								"arrayOfObjects[1].att1",
+								"arrayOfObjects[1].att2",
+								"arrayOfObjects[2].att1",
+								"arrayOfObjects[2].att2",
+								"complexObject.compAtt1",
+								"complexObject.compAtt2",
+								"complexObject.compAtt3"
+							],
+							"name": "elik.Array2"
+						},
+						{
+							"attributes": [
+								"valueConfigb1",
+								"valueConfigb2",
+								"valueConfigb3",
+								"valueConfigb4"
+							],
+							"name": "group1.FeatureProdMTXConfigProdDev15"
+						},
+						{
+							"attributes": [
+								"colors",
+								"colors[0]",
+								"colors[1]",
+								"colors[2]"
+							],
+							"name": "ns.Arrays"
+						},
+						{
+							"attributes": [
+								"colors[0]",
+								"colors[1]",
+								"colors[2]",
+								"colors[3]",
+								"value1"
+							],
+							"name": "ns.FeatureInBranch1"
+						},
+						{
+							"attributes": [
+								"Country"
+							],
+							"name": "analytics.WeatherData"
+						},
+						{
+							"attributes": [
+								"value1",
+								"value2",
+								"value3a",
+								"value3b"
+							],
+							"name": "tr.MTXinMTXConfigsProdDefaultOff"
+						}
+					],
+					"inputFieldsForAnalytics": [
+						"context.weatherSummary.nearestWinterStormAlert.endTime",
+						"context.viewedLocation.region",
+						"context.weatherSummary.observation.skyCode",
+						"context.device.osVersion",
+						"context.weatherSummary.observation.obsTime",
+						"context.device.localeCountryCode",
+						"context.weatherSummary.pollenData[0].night.daypartName",
+						"context.weatherSummary.nearestStartPrecip.startTime",
+						"context.userPreferences.unitsOfMeasure",
+						"context.device.localeLanguage",
+						"context.turbo.vt1dailyforecast.night.dayPartName[0]",
+						"context.device.datetime",
+						"context.device.version",
+						"context.weatherSummary.pollenData[0].night.grassIndex",
+						"context.weatherSummary.nearestStartPrecip.endTime",
+						"context.weatherSummary.observation.basedGPS",
+						"context.device.screenWidth",
+						"context.device.hockeyUserID",
+						"context.viewedLocation.country",
+						"context.weatherSummary.nearestWinterStormAlert.phenomenaCode",
+						"context.device.connectionType",
+						"context.device.screenHeight",
+						"context.device.locale",
+						"context.weatherSummary.nearestStartPrecip.severity",
+						"context.userPreferences.isEasternArabicNumerals",
+						"context.weatherSummary.observation.weekDay",
+						"context.weatherSummary.pollenData[0].night.treeIndex",
+						"context.userPreferences.is24HourFormat",
+						"context.weatherSummary.nearestWinterStormAlert.severityCode",
+						"context.viewedLocation.lon",
+						"context.weatherSummary.nearestStartPrecip.imminence"
+					]
+				},
+				"enabled": true,
+				"internalUserGroups": [
+					"DEV",
+					"QA"
+				],
+				"maxVersion": null,
+				"minVersion": "8.0",
+				"name": "Experiment1",
+				"productId": "b2c04456-3969-467d-b6c0-5949b5361a4c",
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": "true"
+				},
+				"stage": "PRODUCTION",
+				"uniqueId": "c82062d9-5c1d-4ba0-86f6-85bad0f86e85",
+				"variants": [
+					{
+						"branchName": "Branch1",
+						"enabled": true,
+						"experimentId": "c82062d9-5c1d-4ba0-86f6-85bad0f86e85",
+						"experimentName": "Experiment1",
+						"internalUserGroups": [
+							"DEV",
+							"QA"
+						],
+						"name": "Variant1",
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "true"
+						},
+						"stage": "PRODUCTION",
+						"uniqueId": "0cef45b7-65aa-4725-9c91-7394f5c4a0de"
+					}
+				]
+			}
+		],
+		"maxExperimentsOn": 1
+	},
+	"inputFieldsForAnalytics": [
+		"context.device.localeCountryCode",
+		"context.device.localeLanguage",
+		"context.device.hockeyUserID",
+		"context.device.datetime",
+		"context.device.osVersion",
+		"context.device.screenHeight",
+		"context.device.locale",
+		"context.turbo.vt1dailyforecast.night.dayPartName[0]",
+		"context.viewedLocation.country",
+		"context.weatherSummary.observation.skyCode",
+		"context.weatherSummary.observation.obsTime",
+		"context.weatherSummary.observation.weekDay",
+		"context.weatherSummary.pollenData[0].night.grassIndex",
+		"context.weatherSummary.pollenData[0].night.daypartName",
+		"context.weatherSummary.pollenData[0].night.treeIndex",
+		"context.weatherSummary.nearestWinterStormAlert.endTime",
+		"context.weatherSummary.nearestWinterStormAlert.phenomenaCode",
+		"context.weatherSummary.nearestWinterStormAlert.severityCode",
+		"context.viewedLocation.lon",
+		"context.viewedLocation.region",
+		"context.weatherSummary.observation.basedGPS",
+		"context.weatherSummary.nearestStartPrecip.severity",
+		"context.weatherSummary.nearestStartPrecip.imminence",
+		"context.weatherSummary.nearestStartPrecip.startTime",
+		"context.weatherSummary.nearestStartPrecip.endTime"
+	],
+	"maxVersion": null,
+	"minVersion": "8.0",
+	"productId": "b2c04456-3969-467d-b6c0-5949b5361a4c",
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"Lioz"
+						],
+						"minAppVersion": "8.0",
+						"name": "BigStates",
+						"namespace": "analytics",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"sendToAnalytics": true,
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "79dd224d-a343-4be9-b07b-24ff405b2200"
+					},
+					{
+						"additionalInfo": {
+						},
+						"branchStatus": "NONE",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"Lioz"
+						],
+						"minAppVersion": "8.0",
+						"name": "WeatherData",
+						"namespace": "analytics",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "282c66a8-a0dc-41e8-8a54-49178a5a7945"
+					}
+				],
+				"internalUserGroups": [
+					"DEV",
+					"Lioz"
+				],
+				"minAppVersion": "8.0",
+				"name": "Rollout Beacon",
+				"namespace": "airlock",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"sendToAnalytics": true,
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "3b064bcb-a754-4080-9510-596465f44d8a"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configurationRules": [
+							{
+								"branchStatus": "NONE",
+								"configuration": "{\n\t\"value\":\"config2\"\n}",
+								"configurationRules": [
+									{
+										"branchStatus": "NONE",
+										"configurationRules": [
+											{
+												"branchStatus": "NONE",
+												"configuration": "{\n\t\"value\":\"config2a\",\n\t\"value1\":\"value1\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+												"configurationRules": [
+												],
+												"enabled": true,
+												"internalUserGroups": [
+													"AndroidDEV"
+												],
+												"minAppVersion": "8.0",
+												"name": "Config2a",
+												"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+												"noCachedResults": false,
+												"rolloutPercentage": 100.0,
+												"rule": {
+													"ruleString": "context.weatherSummary.tomorrowForecast.day.dayPart == \"day\""
+												},
+												"stage": "PRODUCTION",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "bb53cfa6-e2eb-482f-ae5f-010fbcb8ff8c"
+											},
+											{
+												"branchStatus": "NONE",
+												"configuration": "{\n\t\"value\":\"config2b-day\",\n\t\"value10\":\"value10\",\n\t\"value2\":\"value2\",\n\t\"value30\":\"value30\",\n\t\"value4\":\"value4\"\n}",
+												"configurationRules": [
+												],
+												"enabled": true,
+												"internalUserGroups": [
+													"AndroidDEV"
+												],
+												"minAppVersion": "8.0",
+												"name": "Config2b",
+												"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+												"noCachedResults": false,
+												"rolloutPercentage": 100.0,
+												"rule": {
+													"ruleString": ""
+												},
+												"stage": "PRODUCTION",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "0c95808f-5dd9-484d-b980-c651ff215bda"
+											}
+										],
+										"maxFeaturesOn": 1,
+										"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+										"uniqueId": "4622ecdd-8948-447d-97ed-f4ce3389b6ec"
+									}
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "Config2",
+								"namespace": "trMTXinMTXConfigsProdDefaultOff",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "context.viewedLocation.country == \"FR\""
+								},
+								"sendToAnalytics": true,
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "b50f600c-0301-486d-a967-94177d609290"
+							}
+						],
+						"maxFeaturesOn": 1,
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "d3501048-8488-4cfe-a462-a11fc4daeb13"
+					}
+				],
+				"defaultConfiguration": "{\n\t\"value\":\"defaultvalue\",\n\t\"dvalue1\":\"defaultvalue\",\n\t\"dvalue2\":\"defaultvalue\",\n\t\"dvalue3\":\"defaultvalue\"\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "MTXinMTXConfigsProdDefaultOff",
+				"namespace": "tr",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "6f11f88c-95eb-41fe-984c-56a9b81d6fbb"
+			},
+			{
+				"additionalInfo": null,
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configurationRules": [
+							{
+								"branchStatus": "NONE",
+								"configuration": "{\n\t\"value\":\"config2a\",\n\t\"value1\":\"value1\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+								"configurationRules": [
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "FeatureProdMTXConfigProd15a",
+								"namespace": "group1feature1",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "context.viewedLocation.country==\"US\""
+								},
+								"sendToAnalytics": true,
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "9b009ffa-5345-459b-9f4e-d7745af92255"
+							}
+						],
+						"maxFeaturesOn": 1,
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "26f16a33-f97d-4aa3-93f8-75e40d927fcc"
+					}
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "FeatureProdMTXConfigProdDev15",
+				"namespace": "group1",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "fc204198-3ecc-4696-af76-7d40e245f62a"
+			},
+			{
+				"additionalInfo": null,
+				"branchStatus": "NONE",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+					{
+						"branchStatus": "NONE",
+						"features": [
+							{
+								"additionalInfo": {
+								},
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "FeatureProdMTXProd11a",
+								"namespace": "tr",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "true;"
+								},
+								"stage": "PRODUCTION",
+								"type": "FEATURE",
+								"uniqueId": "021c9c9e-46ab-46ee-a94a-700e2dfff456"
+							},
+							{
+								"additionalInfo": {
+								},
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "FeatureProdMTXDev11b",
+								"namespace": "tr",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "false;"
+								},
+								"sendToAnalytics": true,
+								"stage": "PRODUCTION",
+								"type": "FEATURE",
+								"uniqueId": "69a997d6-c025-4431-8577-c14b0c93597b"
+							}
+						],
+						"maxFeaturesOn": 1,
+						"type": "MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "3a05bca3-a938-49e0-acd3-927510096b2f"
+					}
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "FeatureProdMTXProdDev11",
+				"namespace": "tr",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "ba876d94-d965-4bc3-8a5e-e63881df758a"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configAttributesForAnalytics": [
+					"colors[0]",
+					"colors[1]",
+					"colors[2]"
+				],
+				"configurationRules": [
+				],
+				"defaultConfiguration": "{\n\t\"colors\":[\"red\", \"green\", \"blue\", \"white\"]\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "Arrays",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "3ffbc33d-5de5-4b85-988e-ba8ba2ce2498"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\"name\":\"AmichaiMeirCopy\",\n\t\"myArray\":[\"1\",\n\t\"2\"],\n\t\"myArrayOfObjects\":[{\n\t\t\"a\":{\n\t\t\t\"aa\":1\n\t\t}\n\t},\n\t{\n\t\t\"b\":2\n\t},\n\t{\n\t\t\"c\":3\n\t},\n\t{\n\t\t\"d\":4\n\t},\n\t{\n\t\t\"e\":5\n\t}],\n\t\"myArrayOfNormalObjects\":[{\n\t\t\"a\":1\n\t},\n\t{\n\t\t\"a\":2\n\t},\n\t{\n\t\t\"a\":3\n\t},\n\t{\n\t\t\"a\":4\n\t},\n\t{\n\t\t\"a\":5\n\t}],\n\t\"customValObj\":getObj(),\n\t\"customValStr\":getObj().a,\n\t\"customValObj2\":getObj2(),\n\t\"customObjFromArray\":getArrayOfObjects()[0]\t\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "8.0",
+						"name": "CR1",
+						"namespace": "nsArray3",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "PRODUCTION",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "553fe628-fcab-4907-ae15-abdafad5fbda"
+					}
+				],
+				"defaultConfiguration": "{\r\n\t\"launchesUntilShow\":12,\r\n\t\"noOfDaysAfterYesPromptAgain\":60,\r\n\t\"noOfDaysAfterNoPromptAgain\":90,\r\n\t\"appStoreLink\":\"market:\/\/details?id=com.weather.Weather\",\r\n\t\"initialMessage\":\"\",\r\n\t\"initialTitle\":\"AreyouenjoyingtheTheWeatherChannelApp?\",\r\n\t\"initalYesButton\":\"YES\",\r\n\t\"initialNoButton\":\"NOTREALLY\",\r\n\t\"negativeAnswerTitle\":\"That'snotgood\",\r\n\t\"negativeAnswerMessage\":\"Pleasesendusfeedbacksowecanimprove\",\r\n\t\"feedbackButton\":\"SENDFEEDBACK\",\r\n\t\"noFeedbackButon\":\"NOTHANKS\",\r\n\t\"positiveAnswerTitle\":\"Gladtohearit!\",\r\n\t\"positiveAnswerMessage\":\"WillyousharetheloveintheGooglePlayStore?\",\r\n\t\"rateUsButton\":\"RATEUS\",\r\n\t\"noRatingButton\":\"NOTHANKS\",\r\n\t\"feedbackEmail\":\"feedback@weather.com\",\r\n\t\"emailSubject\":\"AndroidApp\"\r\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "Array3",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "11545f3a-bc52-4cb9-b0a4-cd12a3ffe6fd"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "89b7074c-56a8-4fe8-97d8-4f2ca006d0fc"
+	},
+	"seasonId": "f595a0bb-556b-44d9-819d-871fbafb3f87",
+	"serverVersion": "V3.0",
+	"version": "V2.5"
+}
+===========================================
+Experiment trace:
+[
+	"Experiment1: Status: ON",
+	"Experiment1.Variant1: Status: ON"
+]
+===========================================
+Experiments found:
+[Experiment: Experiment1, variant: Variant1, branch: Branch1]
+===========================================
+Runtime tree:
+{
+	"experiment": "Experiment1",
+	"experimentList": [
+		"EXPERIMENT_Experiment1",
+		"VARIANT_Experiment1_Variant1"
+	],
+	"inputFieldsForAnalytics": [
+		"context.device.connectionType",
+		"context.device.datetime",
+		"context.device.hockeyUserID",
+		"context.device.locale",
+		"context.device.localeCountryCode",
+		"context.device.localeLanguage",
+		"context.device.osVersion",
+		"context.device.screenHeight",
+		"context.device.screenWidth",
+		"context.device.version",
+		"context.turbo.vt1dailyforecast.night.dayPartName[0]",
+		"context.userPreferences.is24HourFormat",
+		"context.userPreferences.isEasternArabicNumerals",
+		"context.userPreferences.unitsOfMeasure",
+		"context.viewedLocation.country",
+		"context.viewedLocation.lon",
+		"context.viewedLocation.region",
+		"context.weatherSummary.nearestStartPrecip.endTime",
+		"context.weatherSummary.nearestStartPrecip.imminence",
+		"context.weatherSummary.nearestStartPrecip.severity",
+		"context.weatherSummary.nearestStartPrecip.startTime",
+		"context.weatherSummary.nearestWinterStormAlert.endTime",
+		"context.weatherSummary.nearestWinterStormAlert.phenomenaCode",
+		"context.weatherSummary.nearestWinterStormAlert.severityCode",
+		"context.weatherSummary.observation.basedGPS",
+		"context.weatherSummary.observation.obsTime",
+		"context.weatherSummary.observation.skyCode",
+		"context.weatherSummary.observation.weekDay",
+		"context.weatherSummary.pollenData[0].night.daypartName",
+		"context.weatherSummary.pollenData[0].night.grassIndex",
+		"context.weatherSummary.pollenData[0].night.treeIndex"
+	],
+	"root": {
+		"branchStatus": "NONE",
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"branchConfigurationRuleItems": [
+				],
+				"branchFeatureParentName": "ROOT",
+				"branchFeaturesItems": [
+					"analytics.BigStates",
+					"analytics.WeatherData"
+				],
+				"branchStatus": "CHECKED_OUT",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"branchConfigurationRuleItems": [
+							"analyticsBigStates.StaticText"
+						],
+						"branchFeaturesItems": [
+						],
+						"branchStatus": "CHECKED_OUT",
+						"configurationRules": [
+							{
+								"branchConfigurationRuleItems": [
+								],
+								"branchFeaturesItems": [
+								],
+								"branchStatus": "NEW",
+								"configuration": "{\n\t\"StaticText\":\"This is a static text\"\n}",
+								"configurationRules": [
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"minAppVersion": "8.0",
+								"name": "StaticText",
+								"namespace": "analyticsBigStates",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": ""
+								},
+								"sendToAnalytics": true,
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "8e11f22c-d616-4345-8f3b-8d6c07b84ed8"
+							}
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"Lioz"
+						],
+						"minAppVersion": "8.0",
+						"name": "BigStates",
+						"namespace": "analytics",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"sendToAnalytics": true,
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "79dd224d-a343-4be9-b07b-24ff405b2200"
+					},
+					{
+						"additionalInfo": {
+						},
+						"branchConfigurationRuleItems": [
+						],
+						"branchFeaturesItems": [
+						],
+						"branchStatus": "CHECKED_OUT",
+						"configAttributesForAnalytics": [
+							"Country"
+						],
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"Lioz"
+						],
+						"minAppVersion": "8.0",
+						"name": "WeatherData",
+						"namespace": "analytics",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"sendToAnalytics": true,
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "282c66a8-a0dc-41e8-8a54-49178a5a7945"
+					}
+				],
+				"internalUserGroups": [
+					"DEV",
+					"Lioz"
+				],
+				"minAppVersion": "8.0",
+				"name": "Rollout Beacon",
+				"namespace": "airlock",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"sendToAnalytics": true,
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "3b064bcb-a754-4080-9510-596465f44d8a"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchConfigurationRuleItems": [
+					"mx.d3501048-8488-4cfe-a462-a11fc4daeb13"
+				],
+				"branchFeatureParentName": "ROOT",
+				"branchFeaturesItems": [
+				],
+				"branchStatus": "CHECKED_OUT",
+				"configAttributesForAnalytics": [
+					"value1",
+					"value2",
+					"value3a",
+					"value3b"
+				],
+				"configurationRules": [
+					{
+						"branchConfigurationRuleItems": [
+							"trMTXinMTXConfigsProdDefaultOff.Config2"
+						],
+						"branchFeaturesItems": [
+						],
+						"branchStatus": "CHECKED_OUT",
+						"configurationRules": [
+							{
+								"branchConfigurationRuleItems": [
+									"mx.4622ecdd-8948-447d-97ed-f4ce3389b6ec"
+								],
+								"branchFeaturesItems": [
+								],
+								"branchStatus": "CHECKED_OUT",
+								"configuration": "{\n\t\"value\":\"config2\"\n}",
+								"configurationRules": [
+									{
+										"branchConfigurationRuleItems": [
+											"trMTXinMTXConfigsProdDefaultOffConfig2.Config2a",
+											"trMTXinMTXConfigsProdDefaultOffConfig2.Config2b"
+										],
+										"branchFeaturesItems": [
+										],
+										"branchStatus": "CHECKED_OUT",
+										"configurationRules": [
+											{
+												"branchConfigurationRuleItems": [
+												],
+												"branchFeaturesItems": [
+												],
+												"branchStatus": "CHECKED_OUT",
+												"configuration": "{\n\t\"value\":\"config2a\",\n\t\"value1\":\"value1\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+												"configurationRules": [
+												],
+												"enabled": true,
+												"internalUserGroups": [
+													"AndroidDEV"
+												],
+												"minAppVersion": "8.0",
+												"name": "Config2a",
+												"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+												"noCachedResults": false,
+												"rolloutPercentage": 100.0,
+												"rule": {
+													"ruleString": "context.weatherSummary.tomorrowForecast.day.dayPart == \"day\""
+												},
+												"stage": "PRODUCTION",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "bb53cfa6-e2eb-482f-ae5f-010fbcb8ff8c"
+											},
+											{
+												"branchConfigurationRuleItems": [
+												],
+												"branchFeaturesItems": [
+												],
+												"branchStatus": "CHECKED_OUT",
+												"configuration": "{\n\t\"value\":\"config2b-day\",\n\t\"value10\":\"value10\",\n\t\"value2\":\"value2\",\n\t\"value30\":\"value30\",\n\t\"value4\":\"value4\"\n}",
+												"configurationRules": [
+												],
+												"enabled": true,
+												"internalUserGroups": [
+													"AndroidDEV"
+												],
+												"minAppVersion": "8.0",
+												"name": "Config2b",
+												"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+												"noCachedResults": false,
+												"rolloutPercentage": 100.0,
+												"rule": {
+													"ruleString": ""
+												},
+												"stage": "PRODUCTION",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "0c95808f-5dd9-484d-b980-c651ff215bda"
+											}
+										],
+										"maxFeaturesOn": 1,
+										"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+										"uniqueId": "4622ecdd-8948-447d-97ed-f4ce3389b6ec"
+									}
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "Config2",
+								"namespace": "trMTXinMTXConfigsProdDefaultOff",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "context.viewedLocation.country == \"FR\""
+								},
+								"sendToAnalytics": true,
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "b50f600c-0301-486d-a967-94177d609290"
+							}
+						],
+						"maxFeaturesOn": 1,
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "d3501048-8488-4cfe-a462-a11fc4daeb13"
+					}
+				],
+				"defaultConfiguration": "{\n\t\"value\":\"defaultvalue\",\n\t\"dvalue1\":\"defaultvalue\",\n\t\"dvalue2\":\"defaultvalue\",\n\t\"dvalue3\":\"defaultvalue\"\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "asds",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "MTXinMTXConfigsProdDefaultOff",
+				"namespace": "tr",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "6f11f88c-95eb-41fe-984c-56a9b81d6fbb"
+			},
+			{
+				"additionalInfo": null,
+				"branchConfigurationRuleItems": [
+					"mx.26f16a33-f97d-4aa3-93f8-75e40d927fcc"
+				],
+				"branchFeatureParentName": "ROOT",
+				"branchFeaturesItems": [
+				],
+				"branchStatus": "CHECKED_OUT",
+				"configAttributesForAnalytics": [
+					"valueConfigb1",
+					"valueConfigb2",
+					"valueConfigb3",
+					"valueConfigb4"
+				],
+				"configurationRules": [
+					{
+						"branchConfigurationRuleItems": [
+							"group1feature1.FeatureProdMTXConfigProd15a",
+							"group1feature1.FeatureProdMTXConfigDev15b"
+						],
+						"branchFeaturesItems": [
+						],
+						"branchStatus": "CHECKED_OUT",
+						"configurationRules": [
+							{
+								"branchConfigurationRuleItems": [
+								],
+								"branchFeaturesItems": [
+								],
+								"branchStatus": "CHECKED_OUT",
+								"configuration": "{\n\t\"value\":\"config2a\",\n\t\"value1\":\"value12\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+								"configurationRules": [
+								],
+								"description": "d",
+								"enabled": true,
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "FeatureProdMTXConfigProd15a",
+								"namespace": "group1feature1",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "context.viewedLocation.country==\"US\""
+								},
+								"sendToAnalytics": true,
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "9b009ffa-5345-459b-9f4e-d7745af92255"
+							},
+							{
+								"branchConfigurationRuleItems": [
+								],
+								"branchFeaturesItems": [
+								],
+								"branchStatus": "NEW",
+								"configuration": "{\n\t\"valueConfigb1\":\"configba\",\n\t\"valueConfigb2\":\"value1b\",\n\t\"valueConfigb3\":\"value2b\",\n\t\"valueConfigb4\":\"value3b\"\n}",
+								"configurationRules": [
+								],
+								"enabled": true,
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "FeatureProdMTXConfigDev15b",
+								"namespace": "group1feature1",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "context.viewedLocation.country==\"FR\""
+								},
+								"stage": "PRODUCTION",
+								"type": "CONFIGURATION_RULE",
+								"uniqueId": "9dcb682d-0e1a-456a-80f3-68a5fa869df1"
+							}
+						],
+						"maxFeaturesOn": 1,
+						"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "26f16a33-f97d-4aa3-93f8-75e40d927fcc"
+					}
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "FeatureProdMTXConfigProdDev15",
+				"namespace": "group1",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "fc204198-3ecc-4696-af76-7d40e245f62a"
+			},
+			{
+				"additionalInfo": null,
+				"branchConfigurationRuleItems": [
+				],
+				"branchFeatureParentName": "ROOT",
+				"branchFeaturesItems": [
+					"mx.3a05bca3-a938-49e0-acd3-927510096b2f"
+				],
+				"branchStatus": "CHECKED_OUT",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+					{
+						"branchConfigurationRuleItems": [
+						],
+						"branchFeaturesItems": [
+							"ns.NewFeatureInBranch",
+							"tr.FeatureProdMTXProd11a",
+							"tr.FeatureProdMTXDev11b"
+						],
+						"branchStatus": "CHECKED_OUT",
+						"features": [
+							{
+								"additionalInfo": null,
+								"branchStatus": "NEW",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"DEV",
+									"QA"
+								],
+								"minAppVersion": "8.0",
+								"name": "NewFeatureInBranch",
+								"namespace": "ns",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": ""
+								},
+								"sendToAnalytics": true,
+								"stage": "PRODUCTION",
+								"type": "FEATURE",
+								"uniqueId": "9c6a5f43-2085-4bd5-b0f9-3e7ce4bb61a6"
+							},
+							{
+								"additionalInfo": {
+								},
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "FeatureProdMTXProd11a",
+								"namespace": "tr",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "true;"
+								},
+								"stage": "PRODUCTION",
+								"type": "FEATURE",
+								"uniqueId": "021c9c9e-46ab-46ee-a94a-700e2dfff456"
+							},
+							{
+								"additionalInfo": {
+								},
+								"branchStatus": "NONE",
+								"configurationRules": [
+								],
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"AndroidDEV"
+								],
+								"minAppVersion": "8.0",
+								"name": "FeatureProdMTXDev11b",
+								"namespace": "tr",
+								"noCachedResults": false,
+								"rolloutPercentage": 100.0,
+								"rule": {
+									"ruleString": "false;"
+								},
+								"sendToAnalytics": true,
+								"stage": "PRODUCTION",
+								"type": "FEATURE",
+								"uniqueId": "69a997d6-c025-4431-8577-c14b0c93597b"
+							}
+						],
+						"maxFeaturesOn": 1,
+						"type": "MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "3a05bca3-a938-49e0-acd3-927510096b2f"
+					}
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "FeatureProdMTXProdDev11",
+				"namespace": "tr",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "ba876d94-d965-4bc3-8a5e-e63881df758a"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchConfigurationRuleItems": [
+				],
+				"branchFeatureParentName": "ROOT",
+				"branchFeaturesItems": [
+				],
+				"branchStatus": "CHECKED_OUT",
+				"configAttributesForAnalytics": [
+					"colors",
+					"colors[0]",
+					"colors[1]",
+					"colors[2]"
+				],
+				"configurationRules": [
+				],
+				"defaultConfiguration": "{\n\t\"colors\":\"array was here once\"\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "Arrays",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "3ffbc33d-5de5-4b85-988e-ba8ba2ce2498"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchStatus": "NONE",
+				"configurationRules": [
+					{
+						"branchStatus": "NONE",
+						"configuration": "{\n\"name\":\"AmichaiMeirCopy\",\n\t\"myArray\":[\"1\",\n\t\"2\"],\n\t\"myArrayOfObjects\":[{\n\t\t\"a\":{\n\t\t\t\"aa\":1\n\t\t}\n\t},\n\t{\n\t\t\"b\":2\n\t},\n\t{\n\t\t\"c\":3\n\t},\n\t{\n\t\t\"d\":4\n\t},\n\t{\n\t\t\"e\":5\n\t}],\n\t\"myArrayOfNormalObjects\":[{\n\t\t\"a\":1\n\t},\n\t{\n\t\t\"a\":2\n\t},\n\t{\n\t\t\"a\":3\n\t},\n\t{\n\t\t\"a\":4\n\t},\n\t{\n\t\t\"a\":5\n\t}],\n\t\"customValObj\":getObj(),\n\t\"customValStr\":getObj().a,\n\t\"customValObj2\":getObj2(),\n\t\"customObjFromArray\":getArrayOfObjects()[0]\t\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"AndroidDEV"
+						],
+						"minAppVersion": "8.0",
+						"name": "CR1",
+						"namespace": "nsArray3",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "PRODUCTION",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "553fe628-fcab-4907-ae15-abdafad5fbda"
+					}
+				],
+				"defaultConfiguration": "{\r\n\t\"launchesUntilShow\":12,\r\n\t\"noOfDaysAfterYesPromptAgain\":60,\r\n\t\"noOfDaysAfterNoPromptAgain\":90,\r\n\t\"appStoreLink\":\"market:\/\/details?id=com.weather.Weather\",\r\n\t\"initialMessage\":\"\",\r\n\t\"initialTitle\":\"AreyouenjoyingtheTheWeatherChannelApp?\",\r\n\t\"initalYesButton\":\"YES\",\r\n\t\"initialNoButton\":\"NOTREALLY\",\r\n\t\"negativeAnswerTitle\":\"That'snotgood\",\r\n\t\"negativeAnswerMessage\":\"Pleasesendusfeedbacksowecanimprove\",\r\n\t\"feedbackButton\":\"SENDFEEDBACK\",\r\n\t\"noFeedbackButon\":\"NOTHANKS\",\r\n\t\"positiveAnswerTitle\":\"Gladtohearit!\",\r\n\t\"positiveAnswerMessage\":\"WillyousharetheloveintheGooglePlayStore?\",\r\n\t\"rateUsButton\":\"RATEUS\",\r\n\t\"noRatingButton\":\"NOTHANKS\",\r\n\t\"feedbackEmail\":\"feedback@weather.com\",\r\n\t\"emailSubject\":\"AndroidApp\"\r\n}",
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "Array3",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "11545f3a-bc52-4cb9-b0a4-cd12a3ffe6fd"
+			},
+			{
+				"additionalInfo": null,
+				"branchConfigurationRuleItems": [
+					"nsFeatureInBranch1.FeatureInBranch1Config1"
+				],
+				"branchFeatureParentName": "ROOT",
+				"branchStatus": "NEW",
+				"configAttributesForAnalytics": [
+					"colors[0]",
+					"colors[1]",
+					"colors[2]",
+					"colors[3]",
+					"value1"
+				],
+				"configurationRules": [
+					{
+						"branchStatus": "NEW",
+						"configuration": "{\n\t\"value1\":\"FeatureInBranch1Config1\",\n\t\n\t\"colors\":[\"red\",\n\t\"green\",\n\t\"blue\",\n\t\"white\"]\n\n}",
+						"configurationRules": [
+						],
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV",
+							"QA"
+						],
+						"minAppVersion": "8.0",
+						"name": "FeatureInBranch1Config1",
+						"namespace": "nsFeatureInBranch1",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": ""
+						},
+						"stage": "PRODUCTION",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "e2374a14-7dfb-41db-8b92-c11106c37cdd"
+					}
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV",
+					"QA"
+				],
+				"minAppVersion": "8.0",
+				"name": "FeatureInBranch1",
+				"namespace": "ns",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"sendToAnalytics": true,
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "ff41cb24-bac0-4ff6-8462-faec13573944"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchConfigurationRuleItems": [
+				],
+				"branchFeatureParentName": "ROOT",
+				"branchFeaturesItems": [
+				],
+				"branchStatus": "NEW",
+				"configAttributesForAnalytics": [
+					"ArrayOfArrayOfObject[0][0].key0",
+					"ArrayOfArrayOfObject[0][1].key0",
+					"ArrayOfArrayOfObject[0][2].key0",
+					"ArrayOfArrayOfObject[1][0].key0",
+					"ArrayOfArrayOfObject[1][1].key0",
+					"ArrayOfArrayOfObject[1][2].key0",
+					"arrayOfObjects[0].att1",
+					"arrayOfObjects[0].att2",
+					"arrayOfObjects[1].att1",
+					"arrayOfObjects[1].att2",
+					"arrayOfObjects[2].att1",
+					"arrayOfObjects[2].att2",
+					"complexObject.compAtt1",
+					"complexObject.compAtt2",
+					"complexObject.compAtt3"
+				],
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"minAppVersion": "8.0",
+				"name": "Array2",
+				"namespace": "elik",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "1763c2fa-6d3b-411f-baf8-b4ba1af3c4bb"
+			},
+			{
+				"additionalInfo": {
+				},
+				"branchConfigurationRuleItems": [
+				],
+				"branchFeatureParentName": "ROOT",
+				"branchFeaturesItems": [
+					"ads.Main Feed Ads",
+					"ads.Main Screen Banner"
+				],
+				"branchStatus": "NEW",
+				"configurationRules": [
+				],
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": {
+						},
+						"branchConfigurationRuleItems": [
+						],
+						"branchFeaturesItems": [
+						],
+						"branchStatus": "NEW",
+						"configurationRules": [
+						],
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"minAppVersion": "8.0",
+						"name": "Main Screen Banner",
+						"namespace": "ads",
+						"noCachedResults": false,
+						"rolloutPercentage": 100.0,
+						"rule": {
+							"ruleString": "true"
+						},
+						"sendToAnalytics": true,
+						"stage": "PRODUCTION",
+						"type": "FEATURE",
+						"uniqueId": "2f6a7453-4a9e-40e3-aa93-eaad765a6130"
+					}
+				],
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"minAppVersion": "8.0",
+				"name": "Airlock Control Over Ads",
+				"namespace": "ads",
+				"noCachedResults": false,
+				"rolloutPercentage": 100.0,
+				"rule": {
+					"ruleString": ""
+				},
+				"sendToAnalytics": true,
+				"stage": "PRODUCTION",
+				"type": "FEATURE",
+				"uniqueId": "c3fb3fa9-5e62-4a08-9a6b-ec6ed1eed3c5"
+			}
+		],
+		"type": "ROOT",
+		"uniqueId": "89b7074c-56a8-4fe8-97d8-4f2ca006d0fc"
+	},
+	"variant": "Variant1"
+}

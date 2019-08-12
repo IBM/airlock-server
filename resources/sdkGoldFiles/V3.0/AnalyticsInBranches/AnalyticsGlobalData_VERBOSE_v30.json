@@ -1,0 +1,129 @@
+{
+  "seasonId": "f595a0bb-556b-44d9-819d-871fbafb3f87",
+  "rule": {
+    "ruleString": "true"
+  },
+  "lastModified": 1498035649277,
+  "rolloutPercentage": 100,
+  "analyticsDataCollection": {
+    "inputFieldsForAnalytics": [
+      "context.device.localeCountryCode",
+      "context.device.localeLanguage",
+      "context.device.hockeyUserID",
+      "context.device.datetime",
+      "context.device.osVersion",
+      "context.device.screenHeight",
+      "context.device.locale",
+      "context.turbo.vt1dailyforecast.night.dayPartName[0]",
+      "context.viewedLocation.country",
+      "context.weatherSummary.observation.skyCode",
+      "context.weatherSummary.observation.obsTime",
+      "context.weatherSummary.observation.weekDay",
+      "context.weatherSummary.pollenData[0].night.grassIndex",
+      "context.weatherSummary.pollenData[0].night.daypartName",
+      "context.weatherSummary.pollenData[0].night.treeIndex",
+      "context.weatherSummary.nearestWinterStormAlert.endTime",
+      "context.weatherSummary.nearestWinterStormAlert.phenomenaCode",
+      "context.weatherSummary.nearestWinterStormAlert.severityCode",
+      "context.viewedLocation.lon",
+      "context.viewedLocation.region",
+      "context.weatherSummary.observation.basedGPS",
+      "context.weatherSummary.nearestStartPrecip.severity",
+      "context.weatherSummary.nearestStartPrecip.imminence",
+      "context.weatherSummary.nearestStartPrecip.startTime",
+      "context.weatherSummary.nearestStartPrecip.endTime"
+    ],
+    "featuresAttributesForAnalytics": [
+      {
+        "name": "ns.Arrays",
+        "attributes": [
+          {
+            "name": "colors[0-2]",
+            "type": "ARRAY"
+          }
+        ],
+        "id": "3ffbc33d-5de5-4b85-988e-ba8ba2ce2498"
+      },
+      {
+        "name": "elik.Array2",
+        "attributes": [
+          {
+            "name": "ArrayOfArrayOfObject[0-1][0-2].key0",
+            "type": "ARRAY"
+          },
+          {
+            "name": "arrayOfObjects[0-2].att1",
+            "type": "ARRAY"
+          },
+          {
+            "name": "arrayOfObjects[0-2].att2",
+            "type": "ARRAY"
+          },
+          {
+            "name": "complexObject.compAtt1",
+            "type": "REGULAR"
+          },
+          {
+            "name": "complexObject.compAtt2",
+            "type": "REGULAR"
+          },
+          {
+            "name": "complexObject.compAtt3",
+            "type": "REGULAR"
+          }
+        ],
+        "id": "1763c2fa-6d3b-411f-baf8-b4ba1af3c4bb"
+      }
+    ],
+    "featuresAndConfigurationsForAnalytics": [
+      {
+        "name": "airlock.Rollout Beacon",
+        "id": "3b064bcb-a754-4080-9510-596465f44d8a"
+      },
+      {
+        "name": "analyticsBigStates.StaticText",
+        "id": "8e11f22c-d616-4345-8f3b-8d6c07b84ed8"
+      },
+      {
+        "name": "analyticsWeatherData.AddViewedLocationData",
+        "id": "324086cb-eb55-4483-861e-e7589976b503"
+      },
+      {
+        "name": "analytics.BigStates",
+        "id": "79dd224d-a343-4be9-b07b-24ff405b2200"
+      },
+      {
+        "name": "ads.Airlock Control Over Ads",
+        "id": "c3fb3fa9-5e62-4a08-9a6b-ec6ed1eed3c5"
+      },
+      {
+        "name": "ads.Main Feed Ads",
+        "id": "4aaf38a5-7a8b-4012-a8ef-8b7102d55b89"
+      },
+      {
+        "name": "ads.Main Screen Banner",
+        "id": "2f6a7453-4a9e-40e3-aa93-eaad765a6130"
+      },
+      {
+        "name": "tr.FeatureProdMTXDev12b",
+        "id": "571701bd-2362-4517-abf7-621cb6f36f8f"
+      },
+      {
+        "name": "tr.FeatureProdMTXDevProd12",
+        "id": "596f9c9b-ab33-42ce-9c62-ddc9103440b7"
+      },
+      {
+        "name": "tr.FeatureProdMTXDev11b",
+        "id": "69a997d6-c025-4431-8577-c14b0c93597b"
+      },
+      {
+        "name": "group1feature1.FeatureProdMTXConfigProd15a",
+        "id": "9b009ffa-5345-459b-9f4e-d7745af92255"
+      },
+      {
+        "name": "trMTXinMTXConfigsProdDefaultOff.Config2",
+        "id": "b50f600c-0301-486d-a967-94177d609290"
+      }
+    ]
+  }
+}

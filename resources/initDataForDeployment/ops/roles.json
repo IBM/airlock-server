@@ -1,0 +1,92 @@
+{
+	"lastModified": 1471854855249,
+	"roles": [{
+		"role": "Administrator",
+		"actions": ["OperationsServices.setRoles", 
+		"OperationsServices.setAirlockUsers", "OperationsServices.setAirlockServers", "ProductServices.upgradeSeason", 
+		"ProductServices.deleteProduct", "AnalyticsServices.setAnalyticsQuota",
+		"TestServices.importSeason","TestServices.setTestMails","TestServices.getTestMails","TestServices.deleteTestMails",
+		"TestServices.setTestTranslations","TestServices.getTestTranslations","TestServices.wakeupTranslations",
+		"TranslationServices.addSupportedLocale", "TranslationServices.removeSupportedLocale", "ProductServices.setStreamsEvents",
+		"OperationsServices.setAirlockCapabilities",
+		"OperationsServices.upgradeServer","ProductServices.resetEncryptionKey","ProductServices.addSeasonWithId", "ProductServices.addProductWithId",
+		"OperationsServices.setProductAirlockUsers", "OperationsServices.addUserRoleSet", "OperationsServices.addUserRoleSetToProduct",
+		"OperationsServices.deleteUserRoleSet", "OperationsServices.updateUserRoleSet",
+		"OperationsServices.addWebhook", "OperationsServices.getWebhooks", "OperationsServices.updateWebhook", "OperationsServices.deleteWebhook"]
+	}, {
+		"role": "ProductLead",
+		"actions": ["ProductServices.addSeason", "ProductServices.updateInputSchema",
+					"ProductServices.updateProduct", "ProductServices.updateSeason", "ProductServices.deleteSeason"]
+	}, {
+		"role": "TranslationSpecialist",
+		"actions": ["TranslationServices.updateString", "TranslationServices.addString",
+		"TranslationServices.deleteString", "TranslationServices.replaceTranslation", "TranslationServices.markForTranslation",
+		"TranslationServices.overrideTranslation", "TranslationServices.cancelOverride",
+		"TranslationServices.getSmartlingStatus", "TranslationServices.updateIssueStatus",
+		"TranslationServices.createIssue","TranslationServices.updateIssue","TranslationServices.copyStrings","TranslationServices.importStrings","TranslationServices.updateTranslations",
+		"TranslationServices.addTranslations","TranslationServices.sendToTranslation", "TranslationServices.completeReview",
+		"OperationsServices.generateAirlockKey", "TranslationServices.importStringsWithFormat"]
+	}, {
+		"role": "AnalyticsViewer",
+		"actions": [ "AuthenticationServices.viewAnalytics" ]
+	 }, {
+		"role": "AnalyticsEditor",
+		"actions": [ "AuthenticationServices.editAnalytics" ]
+	 }, {
+		"role": "Editor",
+		"actions": ["ProductServices.addProduct", "ProductServices.addFeature",
+		"ProductServices.deleteFeature", "ProductServices.updateFeature",
+		"InternalUserGroupServices.setInternalUserGroups", "ProductServices.deleteUtility", 
+		"ProductServices.addUtility", "ProductServices.updateUtility", "TranslationServices.updateString", "TranslationServices.addString",
+		"TranslationServices.deleteString", "FeatureServices.copy", "FeatureServices.importFeatures","AnalyticsServices.updateGlobalDataCollection",
+		"AnalyticsServices.addFeatureToAnalytics", "AnalyticsServices.removeFeatureFromAnalytics",
+		"AnalyticsServices.updateFeatureAttributesForAnalytics", "AnalyticsServices.updateInputFieldsForAnalytics",
+		"TranslationServices.replaceTranslation", "TranslationServices.markForTranslation",
+		"TranslationServices.overrideTranslation", "TranslationServices.cancelOverride",  "TranslationServices.updateIssueStatus",
+		"TranslationServices.getSmartlingStatus", "TranslationServices.createIssue","TranslationServices.updateIssue",
+		"AnalyticsServices.addExperiment", "AnalyticsServices.deleteExperiment", "AnalyticsServices.updateExperiment", "AnalyticsServices.addVariant", 
+		"AnalyticsServices.deleteVariant", "AnalyticsServices.updateVariant", "ProductServices.addBranch", 
+		"ProductServices.deleteBranch", "ProductServices.updateBranch", "ProductServices.checkout", "ProductServices.cancelCheckout",
+		"AnalyticsServices.updateProductExperiments","TranslationServices.copyStrings","TranslationServices.importStrings",
+		"ProductServices.addStream", "ProductServices.deleteStream", "ProductServices.updateStream", "AnalyticsServices.resetExperimentDashboard",		
+		"OperationsServices.updateAirlockAPIKey", "ProductServices.addNotification", "ProductServices.updateNotification", "ProductServices.deleteNotification",
+		"ProductServices.updateNotifications",
+		"OperationsServices.generateAirlockKey", "OperationsServices.deleteAirlockAPIKey", "TranslationServices.importStringsWithFormat",
+		"ProductServices.getEncryptionKey", "ProductServices.deleteEntitlement", "ProductServices.addEntitlement", 
+		"ProductServices.updateEntitlement", "AnalyticsServices.addItemToAnalytics", "AnalyticsServices.removeItemFromAnalytics",
+		"AnalyticsServices.updateItemAttributesForAnalytics"]
+	}, {
+		"role": "Viewer",
+		"actions": ["AuthenticationServices.inspectAssertion",
+		"RunTimeServices.ping", "RunTimeServices.GetFeatures", 
+		"ProductServices.getProduct", "ProductServices.getProducts", "ProductServices.getSeasons",
+		"ProductServices.getFeatures", "ProductServices.getConstants", "ProductServices.getDefaults",
+		"ProductServices.getDocumentLinks","ProductServices.getFeature",
+		"ProductServices.getProductFollowers","ProductServices.followProduct","ProductServices.unfollowProduct",
+		"ProductServices.getFeatureFollowers","ProductServices.followFeature","ProductServices.unfollowFeature",
+		"OperationsServices.getRoles", "OperationsServices.getUserRoleSets", "OperationsServices.healthCheck",
+		"InternalUserGroupServices.getInternalUserGroups",
+		"FeatureServices.getFeatures", "OperationsServices.about", "ProductServices.getInputSchema","TranslationServices.getTranslations", 
+		"ProductServices.getUtility", "ProductServices.getUtilities", "TranslationServices.getString", "TranslationServices.getStrings",
+		"ProductServices.getUtilitiesInfo", "ProductServices.getInputSample", "TranslationServices.getStringsForTranslation",
+		"OperationsServices.getAirlockServers","ProductServices.validateInputSchema", "ProductServices.simulateUtility", 
+		"ProductServices.getFeatureAttributes","AnalyticsServices.getGlobalDataCollection",
+		"TranslationServices.getTranslationSummary", "TranslationServices.markForCorrection",
+		"TranslationServices.getStringStatuses", "TranslationServices.getNewStringsForTranslation","TranslationServices.getIssue",
+		"TranslationServices.getSupportedLocales","AnalyticsServices.getAnalyticsQuota", "TranslationServices.getStringsUsedInFeature",
+		"TranslationServices.getStringUsage","TranslationServices.getStringsByStatus","ProductServices.getServerVersion",
+		"AnalyticsServices.getExperiment","AnalyticsServices.getExperiments", "AnalyticsServices.getVariant", 
+		"ProductServices.getBranch", "ProductServices.getBranches", "AnalyticsServices.getExperimentInputSample",
+		"AnalyticsServices.getExperimentUtilitiesInfo","ProductServices.getAllFeatures","AnalyticsServices.getExperimentGlobalDataCollection",
+		"AnalyticsServices.getExperimentAnalyticsQuota", "ProductServices.getStream", "ProductServices.getStreams",
+		"ProductServices.getEventsFields", "ProductServices.getStreamsEvents","ProductServices.getEventsFields",
+		"ProductServices.getEventsFieldsByFilter", "OperationsServices.getAirlockCapabilities", "OperationsServices.getProductUserRoleSets",
+		"OperationsServices.getProductAirlockRolesForUser", "OperationsServices.getSeasonCapabilities","ProductServices.getNotificationsOutputSample",
+		"OperationsServices.getAirlockRolesForUser", "OperationsServices.getAirlockAPIKey", "OperationsServices.getAirlockAPIKeys", "ProductServices.getNotification",
+		"ProductServices.getNotifications", "FeatureServices.find","TranslationServices.getStringsInFormat","AnalyticsServices.getExperimentIndexingInfo",
+		"InternalUserGroupServices.getInternalUserGroupsUsage", "OperationsServices.getProductAirlockUsers", "OperationsServices.getUserRoleSet",
+		"OperationsServices.getAllRoleSetsForUser", "ProductServices.getEntitlements", "ProductServices.getEntitlement", "ProductServices.getItemAttributes"
+		]
+	}]
+}
+

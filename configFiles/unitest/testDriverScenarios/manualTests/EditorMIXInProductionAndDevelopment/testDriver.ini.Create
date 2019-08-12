@@ -1,0 +1,19 @@
+NEW_PRODUCT; testProduct
+NEW_SEASON; 7.6
+ADD_USER_GROUPS; test,DEV,QA,AndroidDEV
+ADD_STRINGS; StringsFlagship.v7.6.json
+#ADD_TRANSLATIONS; fr; fr.json
+ADD_UTILITIES; PRODUCTION; 7.6 ; javascriptUtilities_Q4_withTranslation.txt
+ADD_SCHEMA; inputSchema_Q4.txt
+ADD_FEATURES;  HeadsUp_beforeReorder.json
+#DELETE_UTILITY; latest
+
+#ADD_SCHEMA; updated_inputSchema_Q4.txt
+#UPDATE_UTILITY; latest; PRODUCTION; 7.5.0 ; javascriptUtilities_noTranslation.txt
+#UPDATE_FEATURE_TREE; headsup.HeadsUp; HeadsUp_beforeReorder.json
+#UPDATE_FEATURE_TREE; trDistance.English; update_configuration.json
+#CALCULATE_FEATURES; en ; 7.5.0 ; 50; AndroidDEV,DEV,QA,test ; ProfileV1.json
+#VERIFY_FEATURES; gold.txt
+#DELETE_PRODUCT;
+
+#CLEANUP; DELETE_PRODUCT;

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Airlock Analytics Tests" verbose="1">
+	<parameter name="url" value="http://localhost:9090/airlock/api/admin"></parameter>
+	<parameter name="analyticsUrl" value="http://localhost:9090/airlock/api/analytics"></parameter>
+	<parameter name="translationsUrl" value="http://localhost:9090/airlock/api/translations"></parameter>
+	<parameter name="configPath" value="./configFiles/unitest/"></parameter>
+	<parameter name="operationsUrl" value="http://localhost:9090/airlock/api/ops"></parameter>
+	<parameter name="excludeProductsDelete" value=""/>
+	<parameter name="productsToDeleteFile" value="./src/tests/productsToDelete.txt" />
+	<parameter name="deleteAll" value="false" />
+	<parameter name="notify" value="false" />
+	<parameter name="seasonVersion" value="3.0" />
+	<parameter name="userName" value=""></parameter>
+	<parameter name="userPassword" value=""></parameter>
+	<parameter name="appName" value=""/>
+	<parameter name="sessionToken" value=""/>
+
+
+	<test name="BeforeSuite"  enabled="true">
+		<classes>
+			<class name="tests.restapi.SuiteSetup"></class>
+		</classes>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_In_App_purcahse_single_test1" enabled="true">
+		<classes>
+			<class name="tests.restapi.in_app_purchases.DeleteProductWithProductionPurchaseItems"></class>
+		</classes>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_In_App_purcahse_single_test3" enabled="false">
+		<classes>
+			<class name="tests.restapi.in_app_purchases.TestInAppPurchaseInFeatureBranchMasterMix"></class>
+		</classes>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_In_App_purcahse"  enabled="false">
+		<packages>
+			<package name="tests.restapi.in_app_purchases" />
+		</packages>
+	</test>
+
+	<test name="AfterSuite"  enabled="true">
+		<classes>
+			<class name="tests.restapi.SuiteCleanup"></class>
+		</classes>
+	</test>
+</suite>
+
+

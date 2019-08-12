@@ -1,0 +1,60 @@
+{
+	"inputFieldsForAnalytics": [
+	],
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{\"color\":\"green\",\"size\":1,\"alert\":true,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"hello world\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CWR.contextUserLocationRegion",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, contextUserLocationRegionCWR.config]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"color\":\"red\",\"size\":5,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to paradise\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CWR.contextWeatherLightningDistanceKm",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, contextWeatherLightningDistanceKmCWR.config]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"color\":\"green\",\"size\":2,\"alert\":false,\"background\":\"black\",\"icon\":\"b.jpg\",\"text\":\"hellow\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CWR.contextWeatherDsxTeaserTitle",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, contextWeatherDsxTeaserTitleCWR.config]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CWR.contextWeatherPrecipitationForecast",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

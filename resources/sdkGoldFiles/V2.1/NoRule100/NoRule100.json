@@ -1,0 +1,349 @@
+{
+	"maxVersion": null,
+	"minVersion": "1.0",
+	"productId": "3bd031a0-c8bc-4cd6-b8e9-04db6f799418",
+	"root": {
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1480335801981,
+				"creator": "Joe",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "Feature in QA",
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"lastModified": 1480335801981,
+				"minAppVersion": "0.7",
+				"name": "Rule 1  ON",
+				"namespace": "ns2",
+				"owner": "Jon",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "8eac6ea2-8df8-4c8d-a1fa-43b57342b23a"
+			},
+			{
+				"additionalInfo": null,
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1480335802489,
+				"creator": "Joe",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "Rule 2 in QA",
+				"enabled": false,
+				"features": [
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"lastModified": 1480335802489,
+				"minAppVersion": "0.7",
+				"name": "Rule 2 OFF",
+				"namespace": "ns2",
+				"owner": "Jon",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "313be091-4a2c-4784-8766-7c96bc8814a6"
+			},
+			{
+				"additionalInfo": null,
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1480335802894,
+				"creator": "Joe",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+					{
+						"additionalInfo": null,
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1480335803315,
+						"creator": "Joe",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "",
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"lastModified": 1480335803315,
+						"minAppVersion": "0.7",
+						"name": "R31 ON",
+						"namespace": "ns2",
+						"owner": "Jon",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "9b403d2e-9cb3-4de8-9bbd-d98a7795ea33"
+					},
+					{
+						"additionalInfo": null,
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1480335803843,
+						"creator": "Joe",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "",
+						"enabled": false,
+						"features": [
+						],
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"lastModified": 1480335803843,
+						"minAppVersion": "0.7",
+						"name": "R32 OFF",
+						"namespace": "ns2",
+						"owner": "Jon",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "cbdb3dab-dc98-46a9-bc5b-3c5a64dd7f19"
+					},
+					{
+						"additionalInfo": null,
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1480335804365,
+						"creator": "Joe",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "",
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1480335804365,
+						"minAppVersion": "0.7",
+						"name": "R33 ON",
+						"namespace": "ns2",
+						"owner": "Jon",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "e24bf954-d4d3-4bf4-b1a7-834ac6c40886"
+					}
+				],
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"lastModified": 1480335804365,
+				"minAppVersion": "0.7",
+				"name": "R3 with L2",
+				"namespace": "ns2",
+				"owner": "Jon",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "4b1d20aa-2c40-4714-9147-7e3e04f196be"
+			},
+			{
+				"additionalInfo": null,
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1480335804887,
+				"creator": "Joe",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+					{
+						"features": [
+							{
+								"additionalInfo": null,
+								"configurationRules": [
+								],
+								"configurationSchema": null,
+								"creationDate": 1480335805720,
+								"creator": "Joe",
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA"
+								],
+								"lastModified": 1480335805720,
+								"minAppVersion": "0.7",
+								"name": "R41 ON",
+								"namespace": "ns1",
+								"owner": "Jon",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": ""
+								},
+								"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "73c58311-f4b9-4baf-a387-1b15636291c7"
+							},
+							{
+								"additionalInfo": null,
+								"configurationRules": [
+								],
+								"configurationSchema": null,
+								"creationDate": 1480335806313,
+								"creator": "Joe",
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA"
+								],
+								"lastModified": 1480335806313,
+								"minAppVersion": "0.7",
+								"name": "R42 ON",
+								"namespace": "ns1",
+								"owner": "Jon",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": ""
+								},
+								"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "7a780ee2-37c0-4262-b16d-a8b8fa795772"
+							},
+							{
+								"additionalInfo": null,
+								"configurationRules": [
+								],
+								"configurationSchema": null,
+								"creationDate": 1480335806968,
+								"creator": "Joe",
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": false,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1480335806968,
+								"minAppVersion": "0.7",
+								"name": "R43 OFF",
+								"namespace": "ns1",
+								"owner": "Jon",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": ""
+								},
+								"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "201bc896-53c2-46c2-8c8f-8cb70b9740aa"
+							}
+						],
+						"lastModified": 1480335806968,
+						"maxFeaturesOn": 1,
+						"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+						"type": "MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "aaf2fd1c-1d71-4124-bce4-5c6e284bc86e"
+					}
+				],
+				"internalUserGroups": [
+					"QA"
+				],
+				"lastModified": 1480335805217,
+				"minAppVersion": "0.7",
+				"name": "R4 with MX",
+				"namespace": "ns1",
+				"owner": "Jon",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "6a27834c-2f44-4e18-a76d-58900f146c98"
+			}
+		],
+		"lastModified": 1480335804887,
+		"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+		"type": "ROOT",
+		"uniqueId": "09757679-461c-4fe3-9cfb-619645ceec6f"
+	},
+	"seasonId": "9bc340ec-106f-4a6c-8cac-b76f2455a740",
+	"version": "V2"
+}

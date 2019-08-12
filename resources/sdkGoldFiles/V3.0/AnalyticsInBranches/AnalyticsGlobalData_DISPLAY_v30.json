@@ -1,0 +1,251 @@
+{
+  "rule": {
+    "ruleString": "true"
+  },
+  "lastModified": 1498035649277,
+  "rolloutPercentage": 100,
+  "analyticsDataCollection": {
+    "analyticsDataCollectionByFeatureNames": [
+      {
+        "name": "airlock.Rollout Beacon",
+        "branchName": "MASTER",
+        "id": "3b064bcb-a754-4080-9510-596465f44d8a",
+        "sendToAnalytics": true
+      },
+      {
+        "configurationRules": [
+          {
+            "name": "analyticsBigStates.StaticText",
+            "branchName": "MASTER"
+          }
+        ],
+        "name": "analytics.BigStates",
+        "branchName": "MASTER",
+        "id": "79dd224d-a343-4be9-b07b-24ff405b2200",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "ads.Airlock Control Over Ads",
+        "branchName": "MASTER",
+        "id": "c3fb3fa9-5e62-4a08-9a6b-ec6ed1eed3c5",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "ads.Main Feed Ads",
+        "branchName": "MASTER",
+        "id": "4aaf38a5-7a8b-4012-a8ef-8b7102d55b89",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "ads.Main Screen Banner",
+        "branchName": "MASTER",
+        "id": "2f6a7453-4a9e-40e3-aa93-eaad765a6130",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "tr.FeatureProdMTXDev12b",
+        "branchName": "MASTER",
+        "id": "571701bd-2362-4517-abf7-621cb6f36f8f",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "tr.FeatureProdMTXDevProd12",
+        "branchName": "MASTER",
+        "id": "596f9c9b-ab33-42ce-9c62-ddc9103440b7",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "tr.FeatureProdMTXDev11b",
+        "branchName": "MASTER",
+        "id": "69a997d6-c025-4431-8577-c14b0c93597b",
+        "sendToAnalytics": true
+      },
+      {
+        "name": "ns.Arrays",
+        "attributes": [
+          {
+            "name": "colors[0-2]",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          }
+        ],
+        "id": "3ffbc33d-5de5-4b85-988e-ba8ba2ce2498",
+        "sendToAnalytics": false
+      },
+      {
+        "name": "elik.Array2",
+        "attributes": [
+          {
+            "name": "ArrayOfArrayOfObject[0-1][0-2].key0",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          },
+          {
+            "name": "arrayOfObjects[0-2].att1",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          },
+          {
+            "name": "arrayOfObjects[0-2].att2",
+            "branchName": "MASTER",
+            "type": "ARRAY"
+          },
+          {
+            "name": "complexObject.compAtt1",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "complexObject.compAtt2",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          },
+          {
+            "name": "complexObject.compAtt3",
+            "branchName": "MASTER",
+            "type": "REGULAR"
+          }
+        ],
+        "id": "1763c2fa-6d3b-411f-baf8-b4ba1af3c4bb",
+        "sendToAnalytics": false
+      },
+      {
+        "configurationRules": [
+          {
+            "name": "analyticsWeatherData.AddViewedLocationData",
+            "branchName": "MASTER"
+          }
+        ],
+        "name": "analytics.WeatherData",
+        "id": "282c66a8-a0dc-41e8-8a54-49178a5a7945",
+        "sendToAnalytics": false
+      },
+      {
+        "configurationRules": [
+          {
+            "name": "group1feature1.FeatureProdMTXConfigProd15a",
+            "branchName": "MASTER"
+          }
+        ],
+        "name": "group1.FeatureProdMTXConfigProdDev15",
+        "id": "fc204198-3ecc-4696-af76-7d40e245f62a",
+        "sendToAnalytics": false
+      },
+      {
+        "configurationRules": [
+          {
+            "name": "trMTXinMTXConfigsProdDefaultOff.Config2",
+            "branchName": "MASTER"
+          }
+        ],
+        "name": "tr.MTXinMTXConfigsProdDefaultOff",
+        "id": "6f11f88c-95eb-41fe-984c-56a9b81d6fbb",
+        "sendToAnalytics": false
+      }
+    ],
+    "inputFieldsForAnalytics": [
+      {
+        "name": "context.device.localeCountryCode",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.device.localeLanguage",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.device.hockeyUserID",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.device.datetime",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.device.osVersion",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.device.screenHeight",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.device.locale",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.turbo.vt1dailyforecast.night.dayPartName[0]",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.viewedLocation.country",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.observation.skyCode",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.observation.obsTime",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.observation.weekDay",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.pollenData[0].night.grassIndex",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.pollenData[0].night.daypartName",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.pollenData[0].night.treeIndex",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestWinterStormAlert.endTime",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestWinterStormAlert.phenomenaCode",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestWinterStormAlert.severityCode",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.viewedLocation.lon",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.viewedLocation.region",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.observation.basedGPS",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestStartPrecip.severity",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestStartPrecip.imminence",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestStartPrecip.startTime",
+        "branchName": "MASTER"
+      },
+      {
+        "name": "context.weatherSummary.nearestStartPrecip.endTime",
+        "branchName": "MASTER"
+      }
+    ],
+    "developmentItemsReportedToAnalytics": 55,
+    "productionItemsReportedToAnalytics": 33
+  }
+}

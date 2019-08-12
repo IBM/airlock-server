@@ -1,0 +1,29 @@
+{
+  "enabled": true,
+  "type": "FEATURE",
+  "stage": "DEVELOPMENT",
+  "additionalInfo": {
+    "aaa": "bbb"
+  },
+  "namespace": "ns1",
+  "creator": "Philip",
+  "internalUserGroups": [
+    "QA",
+    "DEV"
+  ],
+  "description": "F21 desc",
+  "rule": {
+    "ruleString" : " if(context.testData && context.testData.dsx && context.testData.dsx.teaserTitle){context.testData.dsx.teaserTitle == \"hi\"}else{false}"
+  },
+  "minAppVersion": "1.1.1",
+  "name": "FeatureWithRuleProtected",
+  "seasonId": null,
+  "features": [],
+  "owner": "Norman",
+  "defaultIfAirlockSystemIsDown": false,
+  "rolloutPercentage": 10,
+  "noCachedResults": false
+}
+
+
+ 

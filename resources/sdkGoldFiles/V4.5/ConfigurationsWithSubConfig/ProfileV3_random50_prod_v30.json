@@ -1,0 +1,60 @@
+{
+	"inputFieldsForAnalytics": [
+	],
+	"root": {
+		"features": [
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature1.feature1.aggregate.alltrue",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "bd6032e1-1872-4224-87ae-5e362abe67e6"
+			},
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature2.feature2.overwrite.alltrue",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "80cb7b07-9968-45ad-b69c-e7d631d6b7e9"
+			},
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature3.feature3.false",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "fd0ac178-2465-473f-8991-f108cf04a0b4"
+			},
+			{
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "feature4.feature4.overwrite.hierarchy",
+				"noCachedResults": false,
+				"resultTrace": "copied from defaults",
+				"type": "FEATURE",
+				"uniqueId": "34e5e623-849d-45a6-a392-df56d6268a72"
+			}
+		]
+	}
+}

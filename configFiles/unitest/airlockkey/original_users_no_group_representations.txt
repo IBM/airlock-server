@@ -1,0 +1,73 @@
+[
+	{
+			"creator": "Jhon",
+			"firstName": "user3",
+			"identifier": "user3@weather.com",
+			"isGroupRepresentation": false,
+			"lastName": "jerqa",
+			"roles": [
+				"AnalyticsEditor",
+				"TranslationSpecialist",
+				"AnalyticsViewer",
+				"ProductLead",
+				"Editor"
+			]
+	},
+	{
+			"creator": "Jhon",
+			"firstName": "user6",
+			"identifier": "user6@weather.com",
+			"isGroupRepresentation": false,
+			"lastName": "jerqa",
+			"roles": [
+				"AnalyticsViewer"				
+			]
+	},
+	{
+			"creator": "Jhon",
+			"firstName": "user7",
+			"identifier": "user7@weather.com",
+			"isGroupRepresentation": false,
+			"lastName": "jerqa",
+			"roles": [
+				"AnalyticsEditor",
+				"AnalyticsViewer"
+			]
+	},
+	{
+			"creator": "Jhon",
+			"firstName": "user5",
+			"identifier": "user5@weather.com",
+			"isGroupRepresentation": false,
+			"lastName": "jerqa",
+			"roles": [
+				"TranslationSpecialist"
+			]
+	},
+	{
+			"creator": "Jhon",
+			"firstName": "user2",
+			"identifier": "user2@weather.com",
+			"isGroupRepresentation": false,
+			"lastName": "jerqa",
+			"roles": [
+				"Editor"
+			]
+	},
+	{
+			"creator": "Jhon",
+			"firstName": "user8",
+			"identifier": "user8@weather.com",
+			"isGroupRepresentation": false,
+			"lastName": "jerqa",
+			"roles": [
+				"Administrator",
+				"AnalyticsEditor",
+				"TranslationSpecialist",
+				"AnalyticsViewer",
+				"ProductLead",
+				"Viewer",
+				"Editor"
+			]
+	}
+]

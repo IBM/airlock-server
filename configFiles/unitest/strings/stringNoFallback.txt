@@ -1,0 +1,8 @@
+{
+		"key": "app.noFallback",
+		"value": "noFallback",
+		"owner": "Mary",
+		"minAppVersion":"0.1",
+		"stage":"PRODUCTION",
+		"creator":"vicky"
+	}

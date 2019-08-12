@@ -1,0 +1,11 @@
+{
+	"tr.Distance": 638056,
+	"trDistance.getDistanceShortUnit": 786317,
+	"trDistance.getDistanceUnit": 805764,
+	"trDistance.getLengthUnit": 911870,
+	"trDistance.getPressureUnit": 435271,
+	"trDistance.getTempratureUnit": 360183,
+	"trDistance.getVelocityUnit": 128863,
+	"trDistance.isCelsius": 443113,
+	"trDistance.isMetric": 943517
+}

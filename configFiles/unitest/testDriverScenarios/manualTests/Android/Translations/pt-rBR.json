@@ -1,0 +1,373 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "SENSAÇÃO TÉRMICA"
+},
+"translationKey2": {
+"stringId" : "HeadsUp.WeekendForecast",
+"translation" : "PREVISÃO FINAL DE SEMANA"
+},
+"translationKey3": {
+"stringId" : "HeadsUp.Precip",
+"translation" : "PRECIP."
+},
+"translationKey4": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "RELÂMPAGOS"
+},
+"translationKey5": {
+"stringId" : "Units.AM",
+"translation" : "AM"
+},
+"translationKey6": {
+"stringId" : "Units.PM",
+"translation" : "PM"
+},
+"translationKey7": {
+"stringId" : "DDI.RoadConditions",
+"translation" : "COND. DA ESTRADA"
+},
+"translationKey8": {
+"stringId" : "General.Tonight",
+"translation" : "HOJE À NOITE"
+},
+"translationKey9": {
+"stringId" : "General.Tomorrow",
+"translation" : "AMANHÃ"
+},
+"translationKey10": {
+"stringId" : "General.Today",
+"translation" : "HOJE"
+},
+"translationKey11": {
+"stringId" : "HeadsUp.Rain",
+"translation" : "CHUVA"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "POSSIBILIDADE DE CHUVA"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "PROB. DE CHUVA"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.Snow",
+"translation" : "NEVE"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "POSSIBILIDADE DE NEVE"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "PROBABILIDADE DE NEVE"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.LightWintryMix",
+"translation" : "MIX DE INVERNO LEVE"
+},
+"translationKey18": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "SENSAÇÃO TÉRMICA"
+},
+"translationKey19": {
+"stringId" : "General.Sunrise",
+"translation" : "NASCER DO SOL"
+},
+"translationKey20": {
+"stringId" : "General.Sunset",
+"translation" : "PÔR DO SOL"
+},
+"translationKey21": {
+"stringId" : "HeadsUp.WinterStormLikely",
+"translation" : "PROVÁVEL TEMPESTADE DE INVERNO"
+},
+"translationKey22": {
+"stringId" : "HeadsUp.WinterStormPossible",
+"translation" : "POSSÍVEL TEMPESTADE DE INVERNO"
+},
+"translationKey23": {
+"stringId" : "HeadsUp.InView",
+"translation" : "[[[1]]] EM VISTA"
+},
+"translationKey24": {
+"stringId" : "HeadsUp.Next48Hours",
+"translation" : "PRÓX. 48 HS"
+},
+"translationKey25": {
+"stringId" : "DDI.Good",
+"translation" : "BOAS"
+},
+"translationKey26": {
+"stringId" : "DDI.Foggy",
+"translation" : "NEBLINA"
+},
+"translationKey27": {
+"stringId" : "DDI.Icy",
+"translation" : "GELO"
+},
+"translationKey28": {
+"stringId" : "DDI.Ponding",
+"translation" : "LAGUNAS"
+},
+"translationKey29": {
+"stringId" : "DDI.Snowy",
+"translation" : "NEVADO"
+},
+"translationKey30": {
+"stringId" : "DDI.Wet",
+"translation" : "AGUANEVE"
+},
+"translationKey31": {
+"stringId" : "HeadsUp.Accumulation",
+"translation" : "ACUMULAÇÃO"
+},
+"translationKey32": {
+"stringId" : "HeadsUp.RainStarting",
+"translation" : "COMEÇO DA CHUVA"
+},
+"translationKey33": {
+"stringId" : "HeadsUp.RainEnding",
+"translation" : "FIM DA CHUVA"
+},
+"translationKey34": {
+"stringId" : "HeadsUp.SnowStarting",
+"translation" : "COMEÇO DA NEVE"
+},
+"translationKey35": {
+"stringId" : "HeadsUp.SnowEnding",
+"translation" : "FIM DA NEVE"
+},
+"translationKey36": {
+"stringId" : "HeadsUp.MixStarting",
+"translation" : "COMEÇO DA CHUVA E NEVE"
+},
+"translationKey37": {
+"stringId" : "HeadsUp.MixEnding",
+"translation" : "FINAL DO MIX DE INVERNO"
+},
+"translationKey38": {
+"stringId" : "HeadsUp.WintryMixStarting",
+"translation" : "COMEÇO DA CHUVA E NEVE"
+},
+"translationKey39": {
+"stringId" : "HeadsUp.WintryMixEnding",
+"translation" : "FINAL DA CHUVA E NEVE"
+},
+"translationKey40": {
+"stringId" : "HeadsUp.StormsStarting",
+"translation" : "COMEÇO DA TEMPESTADE"
+},
+"translationKey41": {
+"stringId" : "HeadsUp.StormsEnding",
+"translation" : "FIM DAS TEMPESTADES"
+},
+"translationKey42": {
+"stringId" : "HeadsUp.Storms",
+"translation" : "TEMPESTADES"
+},
+"translationKey43": {
+"stringId" : "HeadsUp.StormsLikely",
+"translation" : "PROVÁVEIS TEMPESTADES"
+},
+"translationKey44": {
+"stringId" : "HeadsUp.StormsPossible",
+"translation" : "POSSÍVEIS TEMPESTADES"
+},
+"translationKey45": {
+"stringId" : "HeadsUp.Precipitation",
+"translation" : "PRECIPITAÇÃO"
+},
+"translationKey46": {
+"stringId" : "HeadsUp.LookAhead",
+"translation" : "PERSPECTIVAS"
+},
+"translationKey47": {
+"stringId" : "HeadsUp.Clear",
+"translation" : "LIMPO"
+},
+"translationKey48": {
+"stringId" : "Units.CM",
+"translation" : "CM"
+},
+"translationKey49": {
+"stringId" : "Units.KMH",
+"translation" : "KM\/H"
+},
+"translationKey50": {
+"stringId" : "Units.MPH",
+"translation" : "M\/H"
+},
+"translationKey51": {
+"stringId" : "Units.InchMercury",
+"translation" : "POL"
+},
+"translationKey52": {
+"stringId" : "Units.Inches",
+"translation" : "POL"
+},
+"translationKey53": {
+"stringId" : "Units.MiliBars",
+"translation" : "MB"
+},
+"translationKey54": {
+"stringId" : "Units.Feet",
+"translation" : "PES"
+},
+"translationKey55": {
+"stringId" : "Units.Meter",
+"translation" : "M"
+},
+"translationKey56": {
+"stringId" : "Units.Miles",
+"translation" : "MI"
+},
+"translationKey57": {
+"stringId" : "Units.KM",
+"translation" : "KM"
+},
+"translationKey58": {
+"stringId" : "DDI.Windy",
+"translation" : "VENTOS"
+},
+"translationKey59": {
+"stringId" : "DDI.Wind",
+"translation" : "VENTO"
+},
+"translationKey60": {
+"stringId" : "General.Weekend",
+"translation" : "FIM DE SEM."
+},
+"translationKey61": {
+"stringId" : "HeadsUp.SevereTStormImpactedNow",
+"translation" : "INFLUÊNCIA DE FORTES TEMPESTADES NO MOMENTO"
+},
+"translationKey62": {
+"stringId" : "HeadsUp.SevereTStormsPossible",
+"translation" : "POSSÍVEIS FORTES TEMPESTADES"
+},
+"translationKey63": {
+"stringId" : "HeadsUp.SevereTStormsLikely",
+"translation" : "PROVÁVEIS FORTES TEMPESTADES"
+},
+"translationKey64": {
+"stringId" : "HeadsUp.SevereTStormsHighRisk",
+"translation" : "RISCO DE FORTES TEMPESTADES"
+},
+"translationKey65": {
+"stringId" : "HeadsUp.SevereTStormNow",
+"translation" : "FORTES TEMPESTADES AGORA"
+},
+"translationKey66": {
+"stringId" : "HeadsUp.PrecipStart",
+"translation" : "INÍCIO DA PRECIPITAÇÃO"
+},
+"translationKey67": {
+"stringId" : "HeadsUp.PrecipEnd",
+"translation" : "FINAL DA PRECIPITAÇÃO"
+},
+"translationKey68": {
+"stringId" : "HeadsUp.WinterStormStarting",
+"translation" : "INÍCIO TEMPESTADES DE INVERNO"
+},
+"translationKey69": {
+"stringId" : "HeadsUp.WinterStormEnding",
+"translation" : "FIM DA TEMPESTADE DE INVERNO"
+},
+"translationKey70": {
+"stringId" : "HeadsUp.WintryMix",
+"translation" : "CHUVA\/NEVE"
+},
+"translationKey71": {
+"stringId" : "HeadsUp.WintryMixLikely",
+"translation" : "PROVÁVEIS MIX DE CHUVA E NEVE"
+},
+"translationKey72": {
+"stringId" : "HeadsUp.WintryMixPossible",
+"translation" : "POSSÍVEL MIX DE CHUVA E NEVE"
+},
+"translationKey73": {
+"stringId" : "HeadsUp.Mix",
+"translation" : "MISTO"
+},
+"translationKey74": {
+"stringId" : "HeadsUp.MixLikely",
+"translation" : "PROVÁVEL MIX DE CHUVA E NEVE"
+},
+"translationKey75": {
+"stringId" : "HeadsUp.MixPossible",
+"translation" : "POSSÍVEL MIX DE CHUVA E NEVE"
+},
+"translationKey76": {
+"stringId" : "HeadsUp.48Hrs",
+"translation" : "PRÓX. 48 HS"
+},
+"translationKey77": {
+"stringId" : "HeadsUp.SevereTStormSoon",
+"translation" : "EM BREVE FORTES TEMPESTADES"
+},
+"translationKey78": {
+"stringId" : "HeadsUp.Soon",
+"translation" : "EM BREVE"
+},
+"translationKey79": {
+"stringId" : "HeadsUp.Forecasted",
+"translation" : "PREVISTO"
+},
+"translationKey80": {
+"stringId" : "HeadsUp.SevereTStorm",
+"translation" : "FORTES TEMPESTADES"
+},
+"translationKey81": {
+"stringId" : "HeadsUp.SeeRadar",
+"translation" : "VER RADAR"
+},
+"translationKey82": {
+"stringId" : "HeadsUp.LightSnow",
+"translation" : "NEVE LEVE"
+},
+"translationKey83": {
+"stringId" : "HeadsUp.LightSnowLikely",
+"translation" : "PROBABILIDADE DE NEVE LEVE"
+},
+"translationKey84": {
+"stringId" : "HeadsUp.LightSnowPossible",
+"translation" : "POSSIBILIDADE DE NEVE LEVE"
+},
+"translationKey85": {
+"stringId" : "HeadsUp.LightSnowStarting",
+"translation" : "COMEÇO DA NEVE LEVE"
+},
+"translationKey86": {
+"stringId" : "HeadsUp.LightSnowEnding",
+"translation" : "FINAL DA NEVE LEVE"
+},
+"translationKey87": {
+"stringId" : "ProfileSettings.AlertsCTA",
+"translation" : "RECEBA ALERTAS CLIMÁTICOS EM TEMPO REAL"
+},
+"translationKey88": {
+"stringId" : "HeadsUp.RadarBRadarMap",
+"translation" : "MAPA DO RADAR"
+},
+"translationKey89": {
+"stringId" : "GoRun.ExcellentRunningConditions",
+"translation" : "EXCELENTE CONDIÇÃO PARA CORRER"
+},
+"translationKey90": {
+"stringId" : "GoRun.GoodRunningConditions",
+"translation" : "BOAS CONDIÇÕES PARA CORRER"
+},
+"translationKey91": {
+"stringId" : "GoRun.GoRun",
+"translation" : "VÁ CORRER"
+}
+}

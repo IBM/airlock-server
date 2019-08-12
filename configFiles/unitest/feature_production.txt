@@ -1,0 +1,29 @@
+{
+ "owner": "Norman",
+  "enabled": true,
+  "parent": null,
+  "stage": "PRODUCTION",
+  "additionalInfo": {
+    "aaa": "bbb"
+  },
+  "namespace": "ns1",
+  "creator": "Philip",
+  "internalUserGroups": [
+    "QA",
+    "DEV"
+  ],
+  "description": "F21 desc",
+  "rule": {
+    "ruleString": ""
+  },
+  "minAppVersion": "0.1",
+  "name": "Feature in production",
+  "seasonId": null,
+  "features": [],
+  "defaultIfAirlockSystemIsDown": false,
+   "type": "FEATURE",
+   "rolloutPercentage": 30
+}
+
+
+ 

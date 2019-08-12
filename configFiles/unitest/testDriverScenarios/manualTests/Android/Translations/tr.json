@@ -1,0 +1,373 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "HISSEDILEN"
+},
+"translationKey2": {
+"stringId" : "HeadsUp.WeekendForecast",
+"translation" : "HAFTASONU HAVA TAHMINI"
+},
+"translationKey3": {
+"stringId" : "HeadsUp.Precip",
+"translation" : "YAĞIŞ"
+},
+"translationKey4": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "YILDIRIM ÇARPMASI"
+},
+"translationKey5": {
+"stringId" : "Units.AM",
+"translation" : "AM"
+},
+"translationKey6": {
+"stringId" : "Units.PM",
+"translation" : "PM"
+},
+"translationKey7": {
+"stringId" : "DDI.RoadConditions",
+"translation" : "YOL KOŞULLARI"
+},
+"translationKey8": {
+"stringId" : "General.Tonight",
+"translation" : "BU GECE"
+},
+"translationKey9": {
+"stringId" : "General.Tomorrow",
+"translation" : "YARIN"
+},
+"translationKey10": {
+"stringId" : "General.Today",
+"translation" : "BUGÜN"
+},
+"translationKey11": {
+"stringId" : "HeadsUp.Rain",
+"translation" : "YAĞMUR"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "YAĞMUR OLASILIĞI"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "YAĞMUR OLASILIĞI"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.Snow",
+"translation" : "KAR"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "KAR OLASILIĞI"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "KAR OLASILIĞI"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.LightWintryMix",
+"translation" : "HAFIF KIŞ HAVASI"
+},
+"translationKey18": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "HISSEDILEN"
+},
+"translationKey19": {
+"stringId" : "General.Sunrise",
+"translation" : "GÜN DOĞUMU"
+},
+"translationKey20": {
+"stringId" : "General.Sunset",
+"translation" : "GÜN BATIMI"
+},
+"translationKey21": {
+"stringId" : "HeadsUp.WinterStormLikely",
+"translation" : "KIŞ FIRTINASI OLASI"
+},
+"translationKey22": {
+"stringId" : "HeadsUp.WinterStormPossible",
+"translation" : "KIŞ FIRTINASI MUHTEMEL"
+},
+"translationKey23": {
+"stringId" : "HeadsUp.InView",
+"translation" : "GÖRÜNÜRDEKİ [[[1]]]"
+},
+"translationKey24": {
+"stringId" : "HeadsUp.Next48Hours",
+"translation" : "SONRAKİ 48 SAAT"
+},
+"translationKey25": {
+"stringId" : "DDI.Good",
+"translation" : "İYİ"
+},
+"translationKey26": {
+"stringId" : "DDI.Foggy",
+"translation" : "SİSLİ"
+},
+"translationKey27": {
+"stringId" : "DDI.Icy",
+"translation" : "BUZLU"
+},
+"translationKey28": {
+"stringId" : "DDI.Ponding",
+"translation" : "GÖLLENMELİ"
+},
+"translationKey29": {
+"stringId" : "DDI.Snowy",
+"translation" : "KARLI"
+},
+"translationKey30": {
+"stringId" : "DDI.Wet",
+"translation" : "ISLAK"
+},
+"translationKey31": {
+"stringId" : "HeadsUp.Accumulation",
+"translation" : "BİRİKME"
+},
+"translationKey32": {
+"stringId" : "HeadsUp.RainStarting",
+"translation" : "YAĞMUR BAŞLANGICI"
+},
+"translationKey33": {
+"stringId" : "HeadsUp.RainEnding",
+"translation" : "YAĞMUR BİTİŞİ"
+},
+"translationKey34": {
+"stringId" : "HeadsUp.SnowStarting",
+"translation" : "KAR BAŞLANGICI"
+},
+"translationKey35": {
+"stringId" : "HeadsUp.SnowEnding",
+"translation" : "KAR BİTİŞİ"
+},
+"translationKey36": {
+"stringId" : "HeadsUp.MixStarting",
+"translation" : "KARLA KARIŞIK YAĞMUR BAŞLANGC."
+},
+"translationKey37": {
+"stringId" : "HeadsUp.MixEnding",
+"translation" : "KARLA KARIŞIK YAĞMUR BİTİŞİ"
+},
+"translationKey38": {
+"stringId" : "HeadsUp.WintryMixStarting",
+"translation" : "KARLA KARIŞIK YAĞMUR BAŞLANGC."
+},
+"translationKey39": {
+"stringId" : "HeadsUp.WintryMixEnding",
+"translation" : "KARLA KARIŞIK YAĞMUR BİTİŞİ"
+},
+"translationKey40": {
+"stringId" : "HeadsUp.StormsStarting",
+"translation" : "FIRTINA BAŞLANGICI"
+},
+"translationKey41": {
+"stringId" : "HeadsUp.StormsEnding",
+"translation" : "FIRTINA BİTİŞİ"
+},
+"translationKey42": {
+"stringId" : "HeadsUp.Storms",
+"translation" : "FIRTINALAR"
+},
+"translationKey43": {
+"stringId" : "HeadsUp.StormsLikely",
+"translation" : "FIRTINALAR OLASI"
+},
+"translationKey44": {
+"stringId" : "HeadsUp.StormsPossible",
+"translation" : "FIRTINALAR MÜMKÜN"
+},
+"translationKey45": {
+"stringId" : "HeadsUp.Precipitation",
+"translation" : "YAĞIŞ"
+},
+"translationKey46": {
+"stringId" : "HeadsUp.LookAhead",
+"translation" : "İLERİYE YÖNELİK"
+},
+"translationKey47": {
+"stringId" : "HeadsUp.Clear",
+"translation" : "AÇIK"
+},
+"translationKey48": {
+"stringId" : "Units.CM",
+"translation" : "CM"
+},
+"translationKey49": {
+"stringId" : "Units.KMH",
+"translation" : "KM\/S"
+},
+"translationKey50": {
+"stringId" : "Units.MPH",
+"translation" : "MİL\/S"
+},
+"translationKey51": {
+"stringId" : "Units.InchMercury",
+"translation" : "İNÇ"
+},
+"translationKey52": {
+"stringId" : "Units.Inches",
+"translation" : "İNÇ"
+},
+"translationKey53": {
+"stringId" : "Units.MiliBars",
+"translation" : "MBAR"
+},
+"translationKey54": {
+"stringId" : "Units.Feet",
+"translation" : "KADEM"
+},
+"translationKey55": {
+"stringId" : "Units.Meter",
+"translation" : "PZT."
+},
+"translationKey56": {
+"stringId" : "Units.Miles",
+"translation" : "MİL"
+},
+"translationKey57": {
+"stringId" : "Units.KM",
+"translation" : "KM"
+},
+"translationKey58": {
+"stringId" : "DDI.Windy",
+"translation" : "RÜZGARLI"
+},
+"translationKey59": {
+"stringId" : "DDI.Wind",
+"translation" : "RÜZGAR"
+},
+"translationKey60": {
+"stringId" : "General.Weekend",
+"translation" : "HAFTA SONU"
+},
+"translationKey61": {
+"stringId" : "HeadsUp.SevereTStormImpactedNow",
+"translation" : "ŞIDDETLI GÖK GÜRÜLTÜLÜ SAĞANAK ŞU ANDA ETKILI"
+},
+"translationKey62": {
+"stringId" : "HeadsUp.SevereTStormsPossible",
+"translation" : "ŞİDDETLİ GÖK GÜR. SĞNK. MUHT."
+},
+"translationKey63": {
+"stringId" : "HeadsUp.SevereTStormsLikely",
+"translation" : "ŞİDDETLİ GÖK GÜR. SĞNK. OLASI"
+},
+"translationKey64": {
+"stringId" : "HeadsUp.SevereTStormsHighRisk",
+"translation" : "ŞİD. GÖK GÜR. SĞNK. YÜK. RİSKİ"
+},
+"translationKey65": {
+"stringId" : "HeadsUp.SevereTStormNow",
+"translation" : "ŞU ANDA ŞİDDETLİ G. G. SAĞANAK"
+},
+"translationKey66": {
+"stringId" : "HeadsUp.PrecipStart",
+"translation" : "YAĞIŞ BAŞLANGICI"
+},
+"translationKey67": {
+"stringId" : "HeadsUp.PrecipEnd",
+"translation" : "YAĞIŞ SONU"
+},
+"translationKey68": {
+"stringId" : "HeadsUp.WinterStormStarting",
+"translation" : "KIŞ FIRTINASI BAŞLANGICI"
+},
+"translationKey69": {
+"stringId" : "HeadsUp.WinterStormEnding",
+"translation" : "KIŞ FIRTINASI SONU"
+},
+"translationKey70": {
+"stringId" : "HeadsUp.WintryMix",
+"translation" : "K. K. YĞMR"
+},
+"translationKey71": {
+"stringId" : "HeadsUp.WintryMixLikely",
+"translation" : "KARLA KARIŞIK YAĞMUR OLASI"
+},
+"translationKey72": {
+"stringId" : "HeadsUp.WintryMixPossible",
+"translation" : "KARLA KARIŞIK YAĞMUR MÜMKÜN"
+},
+"translationKey73": {
+"stringId" : "HeadsUp.Mix",
+"translation" : "KARIŞIK"
+},
+"translationKey74": {
+"stringId" : "HeadsUp.MixLikely",
+"translation" : "KARIŞIK YAĞIŞ OLASI"
+},
+"translationKey75": {
+"stringId" : "HeadsUp.MixPossible",
+"translation" : "KARIŞIK YAĞIŞ MÜMKÜN"
+},
+"translationKey76": {
+"stringId" : "HeadsUp.48Hrs",
+"translation" : "GLCK 48 SA."
+},
+"translationKey77": {
+"stringId" : "HeadsUp.SevereTStormSoon",
+"translation" : "YAKINDA ŞİDDETLİ G. G. SAĞANAK"
+},
+"translationKey78": {
+"stringId" : "HeadsUp.Soon",
+"translation" : "YAKINDA"
+},
+"translationKey79": {
+"stringId" : "HeadsUp.Forecasted",
+"translation" : "TAHMİNİ"
+},
+"translationKey80": {
+"stringId" : "HeadsUp.SevereTStorm",
+"translation" : "ŞİDDETLİ GÖK GÜRÜLTÜLÜ SAĞANAKLAR"
+},
+"translationKey81": {
+"stringId" : "HeadsUp.SeeRadar",
+"translation" : "RADARI GÖR"
+},
+"translationKey82": {
+"stringId" : "HeadsUp.LightSnow",
+"translation" : "HAFİF KAR"
+},
+"translationKey83": {
+"stringId" : "HeadsUp.LightSnowLikely",
+"translation" : "HAFİF KAR OLASI"
+},
+"translationKey84": {
+"stringId" : "HeadsUp.LightSnowPossible",
+"translation" : "HAFİF KAR MÜMKÜN"
+},
+"translationKey85": {
+"stringId" : "HeadsUp.LightSnowStarting",
+"translation" : "HAFİF KAR BAŞLANGICI"
+},
+"translationKey86": {
+"stringId" : "HeadsUp.LightSnowEnding",
+"translation" : "HAFİF KAR BİTİŞİ"
+},
+"translationKey87": {
+"stringId" : "ProfileSettings.AlertsCTA",
+"translation" : "GERÇEK ZAMANLI HAVA UYARILARI AL"
+},
+"translationKey88": {
+"stringId" : "HeadsUp.RadarBRadarMap",
+"translation" : "RADAR HARITASI"
+},
+"translationKey89": {
+"stringId" : "GoRun.ExcellentRunningConditions",
+"translation" : "KOŞU İÇİN KOŞULLAR MÜKEMMEL"
+},
+"translationKey90": {
+"stringId" : "GoRun.GoodRunningConditions",
+"translation" : "KOŞU İÇİN KOŞULLAR İYİ"
+},
+"translationKey91": {
+"stringId" : "GoRun.GoRun",
+"translation" : "ÇIK VE KOŞ"
+}
+}

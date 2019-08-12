@@ -1,0 +1,39 @@
+{
+	"stage": "PRODUCTION",
+	"name": "ad played",
+	"description": "stream description",
+	"enabled": true,
+	"creator": "vicky",
+	"internalUserGroups": ["QA", "DEV"],
+	"rolloutPercentage": 100.0,
+	"minAppVersion": "5.0",
+	"filter": "event.name === \"ad-played\"",
+	"processor": "function streamFunc(){results.count = 1}",
+	"cacheSizeKB": 1024,
+	"queueSizeKB": 1024,
+	"maxQueuedEvents": 2,
+	"owner": "vicky",
+	"resultsSchema":{
+		"properties": {
+			"averageAdsTime": {
+				"type": ["string",
+					"null"
+				]
+			},
+			"adsNumberOfSessionPerDay": {
+				"type": ["string",
+					"null"
+				]
+			}
+		},
+		"required": [
+			"averageAdsTime",
+			"adsNumberOfSessionPerDay"
+
+		],
+		"type": ["object",
+			"null"
+		]
+	}
+
+}

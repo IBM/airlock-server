@@ -1,0 +1,12 @@
+ {
+  "capabilities": [
+    "TRANSLATIONS",
+    "NOTIFICATIONS",
+    "API_KEY_MANAGEMENT",
+    "BRANCHES",
+    "FEATURES",
+    "EXPERIMENTS",
+    "EXPORT_IMPORT",
+    "ANALYTICS"
+  ]
+ }

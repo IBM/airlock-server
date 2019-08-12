@@ -1,0 +1,9 @@
+{
+		"key": "app.hi",
+		"value": "Hi [[[1]]] [[[2]]]",
+		"owner": "Mary",
+		"internationalFallback": "Hello",
+		"minAppVersion":"0.1",
+		"stage":"DEVELOPMENT",
+		"creator":"vicky"
+	}

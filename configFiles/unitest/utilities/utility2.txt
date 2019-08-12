@@ -1,0 +1,4 @@
+utility=function isFalse() {return true};
+minAppVersion=0.1
+stage=PRODUCTION
+name=utility2

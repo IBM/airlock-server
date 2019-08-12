@@ -1,0 +1,60 @@
+{
+	"inputFieldsForAnalytics": [
+	],
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CWR.contextUserLocationRegion",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"color\":\"red\",\"size\":5,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to paradise\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CWR.contextWeatherLightningDistanceKm",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, contextWeatherLightningDistanceKmCWR.config]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"color\":\"pink\",\"size\":1,\"alert\":true,\"background\":\"brown\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CWR.contextWeatherDsxTeaserTitle",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, contextWeatherDsxTeaserTitleCWR.config2]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CWR.contextWeatherPrecipitationForecast",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

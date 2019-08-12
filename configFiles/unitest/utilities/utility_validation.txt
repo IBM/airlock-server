@@ -1,0 +1,6 @@
+utility=function isTrue() {return true};
+minAppVersion=0.1
+stage=DEVELOPMENT
+name=utility1
+
+

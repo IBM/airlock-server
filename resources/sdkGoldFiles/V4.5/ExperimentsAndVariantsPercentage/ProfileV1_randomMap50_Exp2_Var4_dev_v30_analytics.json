@@ -1,0 +1,28 @@
+{
+	"experiment": "Experiment2",
+	"experimentList": [
+		"EXPERIMENT_Experiment2",
+		"VARIANT_Experiment2_Variant4"
+	],
+	"features": {
+		"br4.FeatureInBranch4": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"f1.F1": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		}
+	},
+	"inputFieldsForAnalytics": {
+	},
+	"variant": "Variant4"
+}

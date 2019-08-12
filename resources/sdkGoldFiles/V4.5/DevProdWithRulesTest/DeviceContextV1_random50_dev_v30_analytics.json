@@ -1,0 +1,28 @@
+{
+	"experiment": "exp1",
+	"experimentList": [
+		"EXPERIMENT_exp1",
+		"VARIANT_exp1_var1"
+	],
+	"features": {
+		"ns1.f1": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		},
+		"ns1.f2": {
+			"featureIsReported": false,
+			"isON": true,
+			"reportedConfigurationNames": {
+			},
+			"reportedConfigurationValues": {
+			}
+		}
+	},
+	"inputFieldsForAnalytics": {
+	},
+	"variant": "var1"
+}

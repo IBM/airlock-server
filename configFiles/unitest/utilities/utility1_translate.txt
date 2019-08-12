@@ -1,0 +1,4 @@
+utility=function translateDev() {translate(\"app.hello\")};
+minAppVersion=0.1
+stage=DEVELOPMENT
+name=utilityTranslate

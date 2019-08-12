@@ -1,0 +1,121 @@
+{
+  "context": {
+    "testData": {
+      "precipitationForecast": [
+        {
+          "intensity": -70458858,
+          "severity": 25455826,
+          "eventStartLocal": "3163-05-20T14:59:24.325Z",
+          "eventEnd": 16725015,
+          "eventStart": -8798780,
+          "imminence": 2766736,
+          "eventType": -63583402,
+          "characteristic": 72936582,
+          "eventEndLocal": "5104-11-28T04:24:15.953Z"
+        },
+        {
+          "intensity": -8869716,
+          "severity": 96041627,
+          "eventStartLocal": "3206-02-05T04:45:21.202Z",
+          "eventEnd": 76595802,
+          "eventStart": 36112845,
+          "imminence": 16785856,
+          "eventType": -3346418,
+          "characteristic": -65054191,
+          "eventEndLocal": "4227-04-01T14:28:16.530Z"
+        }
+      ],
+      "dsx": {
+        "mode": "dolore",
+        "effectiveDateTime": "3584-04-09T08:10:03.269Z",
+        "teaserTitle": "veniam",
+        "eventName": "sed fugiat dolor enim ut"
+      }
+    },
+    "viewedLocation": {
+      "country": "BI",
+      "lon": 34687591,
+      "region": "dolore consectetur quis velit",
+      "lat": 69004357
+    },
+    "profile": {},
+    "userPreferences": {
+      "is24HourFormat": true,
+      "unitsOfMeasure": "metric"
+    },
+    "weatherSummary": {
+      "tomorrowForecast": {
+        "night": {
+          "precipType": "rain",
+          "dayPart": "night",
+          "precipPercentage": "ullamco"
+        },
+        "day": {
+          "precipType": "rain",
+          "dayPart": "day",
+          "precipPercentage": "et quis deserunt"
+        }
+      },
+      "nearestSnowAccumulation": {
+        "dayPart": "night",
+        "snowRange": "a"
+      },
+      "contentMode": {
+        "mode": "ullamco velit ex qui deserun",
+        "effectiveDateTime": "3163-07-04T12:28:13.720Z",
+        "eventName": "id ex ea fugiat"
+      },
+      "observation": {
+        "skyCode": 79456910,
+        "obsTime": "4763-04-25T17:44:47.873Z",
+        "weekDay": "Sunday",
+        "nextSunrise": "4969-08-16T17:47:46.658Z",
+        "temperature": -62,
+        "dayPart": "night",
+        "basedGPS": true,
+        "nextSunset": "2493-05-13T07:56:06.688Z",
+        "feelsLikeTemperature": 80161742
+      },
+      "closestLightning": {
+        "distance": 52862569,
+        "cardinalDirection": "SSE",
+        "lon": 97667638,
+        "lat": -92490476,
+        "strikeTime": "2283-11-03T08:22:18.442Z"
+      },
+      "nearestWinterStormAlert": {
+        "phenomenaCode": "FF",
+        "endTime": "2956-05-13T14:48:29.219Z",
+        "severityCode": -36966291,
+        "significanceCode": "S"
+      },
+      "nearestStartPrecip": {
+        "severity": -90824057,
+        "imminence": 34365516,
+        "startTime": "4433-07-12T13:03:37.731Z",
+        "endTime": "2233-07-14T08:18:22.321Z",
+        "eventType": -50086559
+      },
+      "lifeStyleIndices": {
+        "drivingDifficultyIndex": 4
+      }
+    },
+    "device": {
+      "localeCountryCode": "LI",
+      "datetime": "2881-04-16T14:33:42.055Z",
+      "screenWidth": -53457799,
+      "osVersion": "elit",
+      "localeLanguage": "ca",
+      "screenHeight": -36194373,
+      "locale": "sv_se",
+      "connectionType": "do",
+      "version": "aute ut qui magna reprehenderit"
+    },
+    "currentLocation": {
+      "country": "SN",
+      "lon": 4372949,
+      "region": "laborum proident",
+      "lat": -88147095
+    }
+  }
+}

@@ -1,0 +1,846 @@
+{
+  "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+  "root": {
+    "features": [
+      {
+        "features": [
+          {
+            "displayName": null,
+            "rule": {
+              "ruleString": "false",
+              "force": false
+            },
+            "description": "",
+            "type": "FEATURE",
+            "enabled": true,
+            "defaultConfiguration": null,
+            "features": [],
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "defaultIfAirlockSystemIsDown": false,
+            "additionalInfo": {},
+            "minAppVersion": "7.5",
+            "noCachedResults": false,
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "AndroidDEV"
+            ],
+            "rolloutPercentage": 100,
+            "creationDate": 1485178740312,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "stage": "DEVELOPMENT",
+            "configurationRules": [],
+            "name": "A",
+            "namespace": "group1",
+            "configurationSchema": null,
+            "lastModified": 1485178791143,
+            "uniqueId": "61a6bf82-3c1d-40e9-b347-1f0ba6334e88"
+          },
+          {
+            "features": [
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": {},
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178741682,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "B",
+                "namespace": "group1",
+                "configurationSchema": null,
+                "lastModified": 1485178741682,
+                "uniqueId": "66a7680e-5085-4804-b5fb-06485f73f34f"
+              },
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "false",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": {},
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178742493,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "C",
+                "namespace": "group1",
+                "configurationSchema": null,
+                "lastModified": 1485178799653,
+                "uniqueId": "c3f992fd-1e0a-43ff-8aec-0e8d078101a4"
+              },
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": null,
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178743031,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "D",
+                "namespace": "group1",
+                "configurationSchema": null,
+                "lastModified": 1485178743031,
+                "uniqueId": "6ab255eb-cb6c-47ee-8a0a-18158403f6b4"
+              }
+            ],
+            "maxFeaturesOn": 2,
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "lastModified": 1485178743031,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "fdcf6424-786b-4d9d-acdc-8119772bc16f"
+          },
+          {
+            "displayName": null,
+            "rule": {
+              "ruleString": "",
+              "force": false
+            },
+            "description": "",
+            "type": "FEATURE",
+            "enabled": true,
+            "defaultConfiguration": null,
+            "features": [],
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "defaultIfAirlockSystemIsDown": false,
+            "additionalInfo": null,
+            "minAppVersion": "7.5",
+            "noCachedResults": false,
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "AndroidDEV"
+            ],
+            "rolloutPercentage": 100,
+            "creationDate": 1485178743509,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "stage": "DEVELOPMENT",
+            "configurationRules": [],
+            "name": "E",
+            "namespace": "group1",
+            "configurationSchema": null,
+            "lastModified": 1485178743509,
+            "uniqueId": "9cf3ad35-1d96-41cf-81bf-94a6aec769da"
+          }
+        ],
+        "maxFeaturesOn": 3,
+        "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+        "lastModified": 1485178743509,
+        "type": "MUTUAL_EXCLUSION_GROUP",
+        "uniqueId": "06c5b00e-d6fc-44da-8d64-e9060c16eaf2"
+      },
+      {
+        "features": [
+          {
+            "features": [
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "false",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": {},
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178744583,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "B",
+                "namespace": "group2",
+                "configurationSchema": null,
+                "lastModified": 1485178839870,
+                "uniqueId": "f2794362-8d20-4a04-910f-6d6cb5fbb84c"
+              },
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": null,
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178745123,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "C",
+                "namespace": "group2",
+                "configurationSchema": null,
+                "lastModified": 1485178745123,
+                "uniqueId": "414a48d4-0445-4e76-9cf7-1fac2fbc89d2"
+              },
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "false",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": {},
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178746290,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "E",
+                "namespace": "group2",
+                "configurationSchema": null,
+                "lastModified": 1485178845513,
+                "uniqueId": "c4899e4e-54d9-4888-b90d-29ebac1bf005"
+              }
+            ],
+            "maxFeaturesOn": 2,
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "lastModified": 1485178746290,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "17d6cddc-d350-4307-8fea-e8ae1f4c18cb"
+          },
+          {
+            "displayName": null,
+            "rule": {
+              "ruleString": "",
+              "force": false
+            },
+            "description": "",
+            "type": "FEATURE",
+            "enabled": true,
+            "defaultConfiguration": null,
+            "features": [],
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "defaultIfAirlockSystemIsDown": false,
+            "additionalInfo": null,
+            "minAppVersion": "7.5",
+            "noCachedResults": false,
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "AndroidDEV"
+            ],
+            "rolloutPercentage": 100,
+            "creationDate": 1485178746810,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "stage": "DEVELOPMENT",
+            "configurationRules": [],
+            "name": "A",
+            "namespace": "group2",
+            "configurationSchema": null,
+            "lastModified": 1485178746810,
+            "uniqueId": "4b987db3-ee90-45c3-a7be-ca4d5850d2bd"
+          },
+          {
+            "displayName": null,
+            "rule": {
+              "ruleString": "",
+              "force": false
+            },
+            "description": "",
+            "type": "FEATURE",
+            "enabled": true,
+            "defaultConfiguration": null,
+            "features": [],
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "defaultIfAirlockSystemIsDown": false,
+            "additionalInfo": null,
+            "minAppVersion": "7.5",
+            "noCachedResults": false,
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "AndroidDEV"
+            ],
+            "rolloutPercentage": 100,
+            "creationDate": 1485178747397,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "stage": "DEVELOPMENT",
+            "configurationRules": [],
+            "name": "D",
+            "namespace": "group2",
+            "configurationSchema": null,
+            "lastModified": 1485178747397,
+            "uniqueId": "7ca5baa2-c71a-4d2b-817f-eb911fc91b6a"
+          }
+        ],
+        "maxFeaturesOn": 3,
+        "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+        "lastModified": 1485178747397,
+        "type": "MUTUAL_EXCLUSION_GROUP",
+        "uniqueId": "f65010a2-94a5-4441-9fe7-c057b178eae2"
+      },
+      {
+        "features": [
+          {
+            "displayName": null,
+            "rule": {
+              "ruleString": "",
+              "force": false
+            },
+            "description": "",
+            "type": "FEATURE",
+            "enabled": true,
+            "defaultConfiguration": null,
+            "features": [],
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "defaultIfAirlockSystemIsDown": false,
+            "additionalInfo": null,
+            "minAppVersion": "7.5",
+            "noCachedResults": false,
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "AndroidDEV"
+            ],
+            "rolloutPercentage": 100,
+            "creationDate": 1485178748373,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "stage": "DEVELOPMENT",
+            "configurationRules": [],
+            "name": "A",
+            "namespace": "group3",
+            "configurationSchema": null,
+            "lastModified": 1485178748373,
+            "uniqueId": "2e1ab244-c5aa-41c8-a8c3-751ccbfcc5b4"
+          },
+          {
+            "displayName": null,
+            "rule": {
+              "ruleString": "false",
+              "force": false
+            },
+            "description": "",
+            "type": "FEATURE",
+            "enabled": true,
+            "defaultConfiguration": null,
+            "features": [],
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "defaultIfAirlockSystemIsDown": false,
+            "additionalInfo": {},
+            "minAppVersion": "7.5",
+            "noCachedResults": false,
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "AndroidDEV"
+            ],
+            "rolloutPercentage": 100,
+            "creationDate": 1485178748972,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "stage": "DEVELOPMENT",
+            "configurationRules": [],
+            "name": "E",
+            "namespace": "group3",
+            "configurationSchema": null,
+            "lastModified": 1485178872658,
+            "uniqueId": "907bfcb6-a85d-4ad8-a674-233db40f671f"
+          },
+          {
+            "features": [
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "false",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": {},
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178749715,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "B",
+                "namespace": "group3",
+                "configurationSchema": null,
+                "lastModified": 1485178879866,
+                "uniqueId": "986dd715-ed40-49d6-9f3a-ce53b082c86b"
+              },
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": null,
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178750574,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "C",
+                "namespace": "group3",
+                "configurationSchema": null,
+                "lastModified": 1485178750574,
+                "uniqueId": "ecc201f2-354b-4473-a7b3-9c43a653ae55"
+              },
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": null,
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178751089,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "D",
+                "namespace": "group3",
+                "configurationSchema": null,
+                "lastModified": 1485178751089,
+                "uniqueId": "2641aee0-09e8-4a33-bdd5-6905f589daef"
+              }
+            ],
+            "maxFeaturesOn": 2,
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "lastModified": 1485178751089,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "8d1a4bef-9666-4f0b-9aea-e40126d47e20"
+          }
+        ],
+        "maxFeaturesOn": 3,
+        "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+        "lastModified": 1485178749182,
+        "type": "MUTUAL_EXCLUSION_GROUP",
+        "uniqueId": "96196989-6069-4f9d-a4a2-7476340bbb7f"
+      },
+      {
+        "features": [
+          {
+            "displayName": null,
+            "rule": {
+              "ruleString": "false",
+              "force": false
+            },
+            "description": "",
+            "type": "FEATURE",
+            "enabled": true,
+            "defaultConfiguration": null,
+            "features": [],
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "defaultIfAirlockSystemIsDown": false,
+            "additionalInfo": {},
+            "minAppVersion": "7.5",
+            "noCachedResults": false,
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "AndroidDEV"
+            ],
+            "rolloutPercentage": 100,
+            "creationDate": 1485178752084,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "stage": "DEVELOPMENT",
+            "configurationRules": [],
+            "name": "A",
+            "namespace": "group4",
+            "configurationSchema": null,
+            "lastModified": 1485178905558,
+            "uniqueId": "abfed49a-a11a-47f4-9510-591cc96e7878"
+          },
+          {
+            "features": [
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "false",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": {},
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178752858,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "B",
+                "namespace": "group4",
+                "configurationSchema": null,
+                "lastModified": 1485178911134,
+                "uniqueId": "5509d0e8-d001-474d-a3bf-0291319cc533"
+              },
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": null,
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178753410,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "C",
+                "namespace": "group4",
+                "configurationSchema": null,
+                "lastModified": 1485178753410,
+                "uniqueId": "13992dce-94e0-4a3f-b079-55e741f47d69"
+              }
+            ],
+            "maxFeaturesOn": 2,
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "lastModified": 1485178753410,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "261d62a9-1ce2-402b-97cd-2ce88d50234e"
+          }
+        ],
+        "maxFeaturesOn": 1,
+        "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+        "lastModified": 1485178752345,
+        "type": "MUTUAL_EXCLUSION_GROUP",
+        "uniqueId": "2722291b-8b0c-4639-af0c-97c8822c08af"
+      },
+      {
+        "features": [
+          {
+            "displayName": null,
+            "rule": {
+              "ruleString": "false",
+              "force": false
+            },
+            "description": "",
+            "type": "FEATURE",
+            "enabled": true,
+            "defaultConfiguration": null,
+            "features": [],
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "defaultIfAirlockSystemIsDown": false,
+            "additionalInfo": {},
+            "minAppVersion": "7.5",
+            "noCachedResults": false,
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "AndroidDEV"
+            ],
+            "rolloutPercentage": 100,
+            "creationDate": 1485178754463,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "stage": "DEVELOPMENT",
+            "configurationRules": [],
+            "name": "A",
+            "namespace": "group5",
+            "configurationSchema": null,
+            "lastModified": 1485178941853,
+            "uniqueId": "34e89708-373e-4b93-817f-0c070ca48bbc"
+          },
+          {
+            "features": [
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": null,
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178755432,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "E",
+                "namespace": "group5",
+                "configurationSchema": null,
+                "lastModified": 1485178755432,
+                "uniqueId": "9466c95a-84ee-4f2c-b446-84aab276cefd"
+              },
+              {
+                "features": [
+                  {
+                    "displayName": null,
+                    "rule": {
+                      "ruleString": "false",
+                      "force": false
+                    },
+                    "description": "",
+                    "type": "FEATURE",
+                    "enabled": true,
+                    "defaultConfiguration": null,
+                    "features": [],
+                    "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "additionalInfo": {},
+                    "minAppVersion": "7.5",
+                    "noCachedResults": false,
+                    "owner": "Esteban Zia",
+                    "creator": "Esteban Zia",
+                    "internalUserGroups": [
+                      "AndroidDEV"
+                    ],
+                    "rolloutPercentage": 100,
+                    "creationDate": 1485178756190,
+                    "rolloutPercentageBitmap": "////////////////Dw==",
+                    "stage": "DEVELOPMENT",
+                    "configurationRules": [],
+                    "name": "B",
+                    "namespace": "group5",
+                    "configurationSchema": null,
+                    "lastModified": 1485178947908,
+                    "uniqueId": "91987887-dc1c-4a49-a9b7-341d3f5b7c99"
+                  },
+                  {
+                    "displayName": null,
+                    "rule": {
+                      "ruleString": "",
+                      "force": false
+                    },
+                    "description": "",
+                    "type": "FEATURE",
+                    "enabled": true,
+                    "defaultConfiguration": null,
+                    "features": [],
+                    "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                    "defaultIfAirlockSystemIsDown": false,
+                    "additionalInfo": null,
+                    "minAppVersion": "7.5",
+                    "noCachedResults": false,
+                    "owner": "Esteban Zia",
+                    "creator": "Esteban Zia",
+                    "internalUserGroups": [
+                      "AndroidDEV"
+                    ],
+                    "rolloutPercentage": 100,
+                    "creationDate": 1485178756807,
+                    "rolloutPercentageBitmap": "////////////////Dw==",
+                    "stage": "DEVELOPMENT",
+                    "configurationRules": [],
+                    "name": "C",
+                    "namespace": "group5",
+                    "configurationSchema": null,
+                    "lastModified": 1485178756807,
+                    "uniqueId": "b475e73d-d236-4cbf-89fc-97f712183305"
+                  }
+                ],
+                "maxFeaturesOn": 1,
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "lastModified": 1485178756807,
+                "type": "MUTUAL_EXCLUSION_GROUP",
+                "uniqueId": "0fc47d59-0c21-45a3-9323-d4297fc8ec53"
+              },
+              {
+                "displayName": null,
+                "rule": {
+                  "ruleString": "",
+                  "force": false
+                },
+                "description": "",
+                "type": "FEATURE",
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+                "defaultIfAirlockSystemIsDown": false,
+                "additionalInfo": null,
+                "minAppVersion": "7.5",
+                "noCachedResults": false,
+                "owner": "Esteban Zia",
+                "creator": "Esteban Zia",
+                "internalUserGroups": [
+                  "AndroidDEV"
+                ],
+                "rolloutPercentage": 100,
+                "creationDate": 1485178757321,
+                "rolloutPercentageBitmap": "////////////////Dw==",
+                "stage": "DEVELOPMENT",
+                "configurationRules": [],
+                "name": "D",
+                "namespace": "group5",
+                "configurationSchema": null,
+                "lastModified": 1485178757321,
+                "uniqueId": "f0f1a7e1-be77-46fa-bcbb-64f6f48e0105"
+              }
+            ],
+            "maxFeaturesOn": 2,
+            "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+            "lastModified": 1485178757321,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "aac87d06-74cf-48fc-a670-fabbc50bbf28"
+          }
+        ],
+        "maxFeaturesOn": 4,
+        "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+        "lastModified": 1485178754811,
+        "type": "MUTUAL_EXCLUSION_GROUP",
+        "uniqueId": "70a880d8-3e79-419c-9d23-10984f53dd40"
+      }
+    ],
+    "seasonId": "939d5bf1-0ab7-4233-bf54-c156d9bdc299",
+    "lastModified": 1485178753792,
+    "type": "ROOT",
+    "uniqueId": "d1c61e76-5264-43f6-aa08-a545137e3391"
+  }
+}

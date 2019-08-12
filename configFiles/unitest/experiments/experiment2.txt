@@ -1,0 +1,16 @@
+{
+	"rule": {
+		"ruleString": "true"
+	},
+	"rolloutPercentage": 87.8,
+	"name": "experiment2",
+	"stage": "DEVELOPMENT",
+	"description": "exp2 desc",
+	"enabled": true,
+	"minVersion": "1.1",
+    "maxVersion":"3.3",
+    "hypothesis": "hypothesis1",
+    "measurements":"measurment1",
+    "creator":"irit"
+   
+}

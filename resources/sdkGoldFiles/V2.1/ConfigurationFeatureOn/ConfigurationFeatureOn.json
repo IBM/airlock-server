@@ -1,0 +1,553 @@
+{
+  "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+  "root": {
+    "features": [
+      {
+        "owner": "Esteban Zia",
+        "creator": "Esteban Zia",
+        "internalUserGroups": [
+          "DEV"
+        ],
+        "rule": {
+          "ruleString": "",
+          "force": false
+        },
+        "description": "",
+        "type": "FEATURE",
+        "rolloutPercentage": 100,
+        "creationDate": 1481457630349,
+        "rolloutPercentageBitmap": "////////////////Dw==",
+        "enabled": true,
+        "defaultConfiguration": {
+          "alert": false,
+          "background": "white",
+          "color": "red",
+          "icon": "a.jpg",
+          "size": 2,
+          "text": "welcome to hell"
+        },
+        "features": [],
+        "stage": "DEVELOPMENT",
+        "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+        "configurationRules": [
+          {
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "DEV"
+            ],
+            "configuration": {
+              "color": "red",
+              "size": 2,
+              "alert": false,
+              "background": "white",
+              "icon": "a.jpg",
+              "text": "welcome to hell",
+              "featueON": false
+            },
+            "rule": {
+              "ruleString": "",
+              "force": false
+            },
+            "description": "",
+            "type": "CONFIGURATION_RULE",
+            "rolloutPercentage": 100,
+            "creationDate": 1481457741727,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "enabled": true,
+            "stage": "DEVELOPMENT",
+            "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+            "configurationRules": [],
+            "name": "turnOff",
+            "namespace": "cfoturnOn",
+            "minAppVersion": "7.5",
+            "lastModified": 1481457887822,
+            "uniqueId": "2ee760f2-0cfe-4211-b23e-d7ed50f79798",
+            "noCachedResults": false
+          }
+        ],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "turnOffNoDefault",
+        "namespace": "cfo",
+        "configurationSchema": {
+          "properties": {
+            "alert": {
+              "type": "boolean"
+            },
+            "background": {
+              "type": "string"
+            },
+            "color": {
+              "type": "string"
+            },
+            "featureON": {
+              "type": "boolean"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "size": {
+              "description": "Text size",
+              "minimum": 1,
+              "type": "integer"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "title": "Example Schema",
+          "type": "object"
+        },
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1481457877206,
+        "uniqueId": "6580e1da-54ac-4a55-a5fc-1b01df11e8d9",
+        "noCachedResults": false
+      },
+      {
+        "owner": "Esteban Zia",
+        "creator": "Esteban Zia",
+        "internalUserGroups": [
+          "DEV"
+        ],
+        "rule": {
+          "ruleString": "context.currentLocation.region == \"NY\"",
+          "force": false
+        },
+        "description": "",
+        "type": "FEATURE",
+        "rolloutPercentage": 100,
+        "creationDate": 1481457870999,
+        "rolloutPercentageBitmap": "////////////////Dw==",
+        "enabled": true,
+        "defaultConfiguration": {
+          "color": "red",
+          "size": 2,
+          "alert": false,
+          "background": "white",
+          "icon": "a.jpg",
+          "featureON": true,
+          "text": "welcome to hell"
+        },
+        "features": [],
+        "stage": "DEVELOPMENT",
+        "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+        "configurationRules": [
+          {
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "DEV"
+            ],
+            "configuration": {
+              "color": "red",
+              "size": 2,
+              "alert": false,
+              "background": "white",
+              "icon": "a.jpg",
+              "featureON": false,
+              "text": "welcome to hell"
+            },
+            "rule": {
+              "ruleString": "",
+              "force": false
+            },
+            "description": "",
+            "type": "CONFIGURATION_RULE",
+            "rolloutPercentage": 100,
+            "creationDate": 1481457985612,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "enabled": true,
+            "stage": "DEVELOPMENT",
+            "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+            "configurationRules": [],
+            "name": "turnOff",
+            "namespace": "cfoturnOffWithDefaultON",
+            "minAppVersion": "7.5",
+            "lastModified": 1481457995343,
+            "uniqueId": "f2adc70c-024d-43da-a4f7-4428f63aa129",
+            "noCachedResults": false
+          }
+        ],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "turnOffWithDefaultON",
+        "namespace": "cfo",
+        "configurationSchema": {
+          "title": "Example Schema",
+          "type": "object",
+          "properties": {
+            "color": {
+              "type": "string"
+            },
+            "size": {
+              "description": "Text size",
+              "type": "integer",
+              "minimum": 1
+            },
+            "alert": {
+              "type": "boolean"
+            },
+            "background": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "featureON": {
+              "type": "boolean"
+            },
+            "text": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1481462029710,
+        "uniqueId": "3b1cc3b5-4cf9-4aee-a63c-7b7c7d1313b3",
+        "noCachedResults": false
+      },
+      {
+        "owner": "Esteban Zia",
+        "creator": "Esteban Zia",
+        "internalUserGroups": [
+          "DEV"
+        ],
+        "rule": {
+          "ruleString": "context.weatherSummary.closestLightning.distance > 5",
+          "force": false
+        },
+        "description": "",
+        "type": "FEATURE",
+        "rolloutPercentage": 100,
+        "creationDate": 1481458027432,
+        "rolloutPercentageBitmap": "////////////////Dw==",
+        "enabled": true,
+        "defaultConfiguration": {
+          "color": "red",
+          "size": 2,
+          "alert": false,
+          "background": "white",
+          "icon": "a.jpg",
+          "featureON": false,
+          "text": "welcome to hell"
+        },
+        "features": [],
+        "stage": "DEVELOPMENT",
+        "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+        "configurationRules": [
+          {
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "DEV"
+            ],
+            "configuration": {
+              "color": "red",
+              "size": 2,
+              "alert": false,
+              "background": "white",
+              "icon": "a.jpg",
+              "featureON": false,
+              "text": "welcome to hell"
+            },
+            "rule": {
+              "ruleString": "",
+              "force": false
+            },
+            "description": "",
+            "type": "CONFIGURATION_RULE",
+            "rolloutPercentage": 100,
+            "creationDate": 1481458097253,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "enabled": true,
+            "stage": "DEVELOPMENT",
+            "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+            "configurationRules": [],
+            "name": "turnOffOn",
+            "namespace": "cfoturnOffOn",
+            "minAppVersion": "7.5",
+            "lastModified": 1481458108113,
+            "uniqueId": "888a6389-18e9-4108-a760-a6ca10f514f1",
+            "noCachedResults": false
+          },
+          {
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "DEV"
+            ],
+            "configuration": {
+              "color": "red",
+              "size": 2,
+              "alert": false,
+              "background": "white",
+              "icon": "a.jpg",
+              "featureON": true,
+              "text": "welcome to hell"
+            },
+            "rule": {
+              "ruleString": "",
+              "force": false
+            },
+            "description": "",
+            "type": "CONFIGURATION_RULE",
+            "rolloutPercentage": 100,
+            "creationDate": 1481458124427,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "enabled": true,
+            "stage": "DEVELOPMENT",
+            "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+            "configurationRules": [],
+            "name": "turnOffOn2",
+            "namespace": "cfoturnOffOn",
+            "minAppVersion": "7.5",
+            "lastModified": 1481458139009,
+            "uniqueId": "434e5e59-9ad7-4ec4-9ea4-54b00ad5122a",
+            "noCachedResults": false
+          }
+        ],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "turnOffOn",
+        "namespace": "cfo",
+        "configurationSchema": {
+          "title": "Example Schema",
+          "type": "object",
+          "properties": {
+            "color": {
+              "type": "string"
+            },
+            "size": {
+              "description": "Text size",
+              "type": "integer",
+              "minimum": 1
+            },
+            "alert": {
+              "type": "boolean"
+            },
+            "background": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "featureON": {
+              "type": "boolean"
+            },
+            "text": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1481462079854,
+        "uniqueId": "4caad4a9-4573-4ea5-8e8e-391bdd1b51ec",
+        "noCachedResults": false
+      },
+      {
+        "owner": "Esteban Zia",
+        "creator": "Esteban Zia",
+        "internalUserGroups": [
+          "DEV"
+        ],
+        "rule": {
+          "ruleString": "",
+          "force": false
+        },
+        "description": "",
+        "type": "FEATURE",
+        "rolloutPercentage": 100,
+        "creationDate": 1481458181223,
+        "rolloutPercentageBitmap": "////////////////Dw==",
+        "enabled": false,
+        "defaultConfiguration": {
+          "color": "red",
+          "size": 2,
+          "alert": false,
+          "background": "white",
+          "icon": "a.jpg",
+          "text": "welcome to hell"
+        },
+        "features": [],
+        "stage": "DEVELOPMENT",
+        "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+        "configurationRules": [
+          {
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "DEV"
+            ],
+            "configuration": {
+              "color": "red",
+              "size": 2,
+              "alert": false,
+              "background": "white",
+              "icon": "a.jpg",
+              "featureON": true,
+              "text": "welcome to hell"
+            },
+            "rule": {
+              "ruleString": "",
+              "force": false
+            },
+            "description": "",
+            "type": "CONFIGURATION_RULE",
+            "rolloutPercentage": 100,
+            "creationDate": 1481458227445,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "enabled": true,
+            "stage": "DEVELOPMENT",
+            "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+            "configurationRules": [],
+            "name": "turnOn",
+            "namespace": "cfodisabledFeature",
+            "minAppVersion": "7.5",
+            "lastModified": 1481458238232,
+            "uniqueId": "ca724828-6aa2-4ce4-b0fe-187b073d6b4a",
+            "noCachedResults": false
+          }
+        ],
+        "defaultIfAirlockSystemIsDown": true,
+        "name": "disabledFeature",
+        "namespace": "cfo",
+        "configurationSchema": {
+          "title": "Example Schema",
+          "type": "object",
+          "properties": {
+            "color": {
+              "type": "string"
+            },
+            "size": {
+              "description": "Text size",
+              "type": "integer",
+              "minimum": 1
+            },
+            "alert": {
+              "type": "boolean"
+            },
+            "background": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "featureON": {
+              "type": "boolean"
+            },
+            "text": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1481458246739,
+        "uniqueId": "62d67ca7-4b52-4351-b027-bc234cdb2071",
+        "noCachedResults": false
+      },
+      {
+        "owner": "Esteban Zia",
+        "creator": "Esteban Zia",
+        "internalUserGroups": [
+          "DEV"
+        ],
+        "rule": {
+          "ruleString": "",
+          "force": false
+        },
+        "description": "",
+        "type": "FEATURE",
+        "rolloutPercentage": 100,
+        "creationDate": 1481458269723,
+        "rolloutPercentageBitmap": "////////////////Dw==",
+        "enabled": true,
+        "defaultConfiguration": {
+          "color": "red"
+        },
+        "features": [],
+        "stage": "DEVELOPMENT",
+        "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+        "configurationRules": [
+          {
+            "owner": "Esteban Zia",
+            "creator": "Esteban Zia",
+            "internalUserGroups": [
+              "DEV"
+            ],
+            "configuration": {
+              "color": "red",
+              "size": 2,
+              "alert": false,
+              "background": "white",
+              "icon": "a.jpg",
+              "featureON": true,
+              "text": "welcome to hell"
+            },
+            "rule": {
+              "ruleString": "context.viewedLocation.lon / 0 > 1",
+              "force": false
+            },
+            "description": "",
+            "type": "CONFIGURATION_RULE",
+            "rolloutPercentage": 100,
+            "creationDate": 1481458551916,
+            "rolloutPercentageBitmap": "////////////////Dw==",
+            "enabled": true,
+            "stage": "DEVELOPMENT",
+            "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+            "configurationRules": [],
+            "name": "runtimeErrorOn",
+            "namespace": "cforuntimeError",
+            "minAppVersion": "7.5",
+            "lastModified": 1481458575808,
+            "uniqueId": "214454ac-75ca-4abd-a060-2cbfd5ace7a9",
+            "noCachedResults": false
+          }
+        ],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "runtimeError",
+        "namespace": "cfo",
+        "configurationSchema": {
+          "title": "Example Schema",
+          "type": "object",
+          "properties": {
+            "color": {
+              "type": "string"
+            },
+            "size": {
+              "description": "Text size",
+              "type": "integer",
+              "minimum": 1
+            },
+            "alert": {
+              "type": "boolean"
+            },
+            "background": {
+              "type": "string"
+            },
+            "icon": {
+              "type": "string"
+            },
+            "featureON": {
+              "type": "boolean"
+            },
+            "text": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1481458618017,
+        "uniqueId": "e2bacc4c-f818-4cba-a6c0-cb5d0362e7d2",
+        "noCachedResults": false
+      }
+    ],
+    "seasonId": "b9a4d432-6c01-4527-b96c-13e2084020e6",
+    "lastModified": 1481458269723,
+    "type": "ROOT",
+    "uniqueId": "94606068-8482-4985-890b-918cff1653a7"
+  }
+}

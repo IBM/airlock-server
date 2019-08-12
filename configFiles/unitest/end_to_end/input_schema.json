@@ -1,0 +1,1061 @@
+ {
+		"$schema": "http://json-schema.org/draft-04/schema#",
+		"definitions": {
+			"cardinalDirectionDef": {
+				"enum": ["N", "NE", "E", "SE", "S", "SW", "W", "NW", "NNE", "ENE", "ESE", "SSE", "SSW", "WSW", "NNW", "WNW"],
+				"type": ["string", "null"]
+			},
+			"localeCountryCodeDef": {
+				"default": "US",
+				"enum": ["AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"],
+				"type": ["string", "null"]
+			},
+			"localeDef": {
+				"default": "en_US",
+				"enum": ["da_dk", "de_at", "de_ch", "de_de", "en_au", "en_gb", "en_us", "es_es", "fi_fi", "fr_be", "fr_ca", "fr_ch", "fr_fr", "is_is", "it_it", "nl_be", "nl_nl", "no_no", "pt_br", "pt_pt", "sv_se"],
+				"type": ["string", "null"]
+			},
+			"localeLanguageDef": {
+				"default": "US",
+				"enum": ["aa", "ab", "af", "ak", "sq", "am", "ar", "an", "hy", "as", "av", "ae", "ay", "az", "ba", "bm", "eu", "be", "bn", "bh", "bi", "bo", "bs", "br", "bg", "my", "ca", "cs", "ch", "ce", "cu", "cv", "kw", "co", "cr", "cy", "da", "de", "dv", "nl", "dz", "el", "en", "eo", "et", "ee", "fo", "fa", "fj", "fi", "fr", "fy", "ff", "ka", "gd", "ga", "gl", "gv", "gn", "gu", "ht", "ha", "he", "hz", "hi", "ho", "hr", "hu", "ig", "is", "io", "ii", "iu", "ie", "ia", "id", "ik", "it", "jv", "ja", "kl", "kn", "ks", "kr", "kk", "km", "ki", "rw", "ky", "kv", "kg", "ko", "kj", "ku", "lo", "la", "lv", "li", "ln", "lt", "lb", "lu", "lg", "mk", "mh", "ml", "mi", "mr", "ms", "mg", "mt", "mn", "na", "nv", "nr", "nd", "ng", "ne", "nn", "nb", "no", "ny", "oc", "oj", "or", "om", "os", "pa", "pi", "pl", "pt", "ps", "qu", "rm", "ro", "rn", "ru", "sg", "sa", "si", "sk", "sl", "se", "sm", "sn", "sd", "so", "st", "es", "sc", "sr", "ss", "su", "sw", "sv", "ty", "ta", "tt", "te", "tg", "tl", "th", "ti", "to", "tn", "ts", "tk", "tr", "tw", "ug", "uk", "ur", "uz", "ve", "vi", "vo", "wa", "wo", "xh", "yi", "yo", "za", "zh", "zu"],
+				"type": ["string", "null"]
+			},
+			"locationDef": {
+				"properties": {
+					"country": {
+						"default": "US",
+						"enum": ["AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"],
+						"type": ["string", "null"]
+					},
+					"lat": {
+						"type": ["number", "null"]
+					},
+					"lon": {
+						"type": ["number", "null"]
+					},
+					"region": {
+						"type": ["string", "null"]
+					}
+				},
+				"required": ["country", "region", "lon", "lat"]
+			},
+			"significanceCodeDef": {
+				"enum": ["W", "A", "Y", "L", "O", "S", "B"],
+				"type": ["string", "null"]
+			},
+			"tomorrowForecastPartDef": {
+				"properties": {
+					"dayPart": {
+						"enum": ["night", "day"],
+						"type": "string"
+					},
+					"precipPercentage": {
+						"type": ["string", "null"]
+					},
+					"precipType": {
+						"enum": ["snow", "rain"],
+						"type": "string"
+					}
+				},
+				"required": ["precipPercentage", "precipType", "dayPart"],
+				"type": ["object", "null"]
+			}
+		},
+		"properties": {
+			"context": {
+				"properties": {
+					"device": {
+						"properties": {
+							"connectionType": {
+								"properties": {
+									"minAppVersion": {
+										"enum": ["1.1.1"]
+									},
+									"stage": {
+										"enum": ["DEVELOPMENT"]
+									},
+									"value": {
+										"type": ["string", "null"]
+									}
+								},
+								"required": ["minAppVersion", "stage", "value"],
+								"type": ["object", "null"]
+							},
+							"datetime": {
+								"properties": {
+									"minAppVersion": {
+										"enum": ["1.1.1"]
+									},
+									"stage": {
+										"enum": ["DEVELOPMENT"]
+									},
+									"value": {
+										"format": "date-time",
+										"type": ["string", "null"]
+									}
+								},
+								"required": ["minAppVersion", "stage", "value"],
+								"type": ["object", "null"]
+							},
+							"locale": {
+								"properties": {
+									"minAppVersion": {
+										"enum": ["1.1.1"]
+									},
+									"stage": {
+										"enum": ["DEVELOPMENT"]
+									},
+									"value": {
+										"$ref": "#/definitions/localeDef"
+									}
+								},
+								"required": ["minAppVersion", "stage", "value"],
+								"type": ["object", "null"]
+							},
+							"localeCountryCode": {
+								"properties": {
+									"minAppVersion": {
+										"enum": ["1.1.1"]
+									},
+									"stage": {
+										"enum": ["DEVELOPMENT"]
+									},
+									"value": {
+										"$ref": "#/definitions/localeCountryCodeDef"
+									}
+								},
+								"required": ["minAppVersion", "stage", "value"],
+								"type": ["object", "null"]
+							},
+							"localeLanguage": {
+								"properties": {
+									"minAppVersion": {
+										"enum": ["1.1.1"]
+									},
+									"stage": {
+										"enum": ["DEVELOPMENT"]
+									},
+									"value": {
+										"$ref": "#/definitions/localeLanguageDef"
+									}
+								},
+								"required": ["minAppVersion", "stage", "value"],
+								"type": ["object", "null"]
+							},
+							"osVersion": {
+								"properties": {
+									"minAppVersion": {
+										"enum": ["1.1.1"]
+									},
+									"stage": {
+										"enum": ["DEVELOPMENT"]
+									},
+									"value": {
+										"type": ["string", "null"]
+									}
+								},
+								"required": ["minAppVersion", "stage", "value"],
+								"type": ["object", "null"]
+							},
+							"screenHeight": {
+								"properties": {
+									"minAppVersion": {
+										"enum": ["1.1.1"]
+									},
+									"stage": {
+										"enum": ["DEVELOPMENT"]
+									},
+									"value": {
+										"type": ["integer", "null"]
+									}
+								},
+								"required": ["minAppVersion", "stage", "value"],
+								"type": ["object", "null"]
+							},
+							"screenWidth": {
+								"properties": {
+									"minAppVersion": {
+										"enum": ["1.1.1"]
+									},
+									"stage": {
+										"enum": ["DEVELOPMENT"]
+									},
+									"value": {
+										"type": ["integer", "null"]
+									}
+								},
+								"required": ["minAppVersion", "stage", "value"],
+								"type": ["object", "null"]
+							},
+							"version": {
+								"properties": {
+									"minAppVersion": {
+										"enum": ["1.1.1"]
+									},
+									"stage": {
+										"enum": ["DEVELOPMENT"]
+									},
+									"value": {
+										"type": ["string", "null"]
+									}
+								},
+								"required": ["minAppVersion", "stage", "value"],
+								"type": ["object", "null"]
+							}
+						},
+						"required": ["datetime", "localeCountryCode", "localeLanguage", "locale", "osVersion", "connectionType", "version", "screenWidth", "screenHeight"],
+						"type": ["object", "null"]
+					},
+					"profile": {
+						"properties": {},
+						"type": ["object", "null"]
+					},
+					"testData": {
+						"properties": {
+							"dsx": {
+								"properties": {
+									"effectiveDateTime": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"format": "date-time",
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"eventName": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"mode": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"teaserTitle": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									}
+								},
+								"required": ["teaserTitle", "mode", "effectiveDateTime", "eventName"],
+								"type": ["object", "null"]
+							},
+							"precipitationForecast": {
+								"items": {
+									"properties": {
+										"characteristic": {
+											"properties": {
+												"minAppVersion": {
+													"enum": ["1.1.1"]
+												},
+												"stage": {
+													"enum": ["DEVELOPMENT"]
+												},
+												"value": {
+													"type": ["integer", "null"]
+												}
+											},
+											"required": ["minAppVersion", "stage", "value"],
+											"type": ["object", "null"]
+										},
+										"eventEnd": {
+											"properties": {
+												"minAppVersion": {
+													"enum": ["1.1.1"]
+												},
+												"stage": {
+													"enum": ["DEVELOPMENT"]
+												},
+												"value": {
+													"type": ["integer", "null"]
+												}
+											},
+											"required": ["minAppVersion", "stage", "value"],
+											"type": ["object", "null"]
+										},
+										"eventEndLocal": {
+											"properties": {
+												"minAppVersion": {
+													"enum": ["1.1.1"]
+												},
+												"stage": {
+													"enum": ["DEVELOPMENT"]
+												},
+												"value": {
+													"format": "date-time",
+													"type": ["string", "null"]
+												}
+											},
+											"required": ["minAppVersion", "stage", "value"],
+											"type": ["object", "null"]
+										},
+										"eventStart": {
+											"properties": {
+												"minAppVersion": {
+													"enum": ["1.1.1"]
+												},
+												"stage": {
+													"enum": ["DEVELOPMENT"]
+												},
+												"value": {
+													"type": ["integer", "null"]
+												}
+											},
+											"required": ["minAppVersion", "stage", "value"],
+											"type": ["object", "null"]
+										},
+										"eventStartLocal": {
+											"properties": {
+												"minAppVersion": {
+													"enum": ["1.1.1"]
+												},
+												"stage": {
+													"enum": ["DEVELOPMENT"]
+												},
+												"value": {
+													"format": "date-time",
+													"type": ["string", "null"]
+												}
+											},
+											"required": ["minAppVersion", "stage", "value"],
+											"type": ["object", "null"]
+										},
+										"eventType": {
+											"properties": {
+												"minAppVersion": {
+													"enum": ["1.1.1"]
+												},
+												"stage": {
+													"enum": ["DEVELOPMENT"]
+												},
+												"value": {
+													"type": ["integer", "null"]
+												}
+											},
+											"required": ["minAppVersion", "stage", "value"],
+											"type": ["object", "null"]
+										},
+										"imminence": {
+											"properties": {
+												"minAppVersion": {
+													"enum": ["1.1.1"]
+												},
+												"stage": {
+													"enum": ["DEVELOPMENT"]
+												},
+												"value": {
+													"type": ["integer", "null"]
+												}
+											},
+											"required": ["minAppVersion", "stage", "value"],
+											"type": ["object", "null"]
+										},
+										"intensity": {
+											"properties": {
+												"minAppVersion": {
+													"enum": ["1.1.1"]
+												},
+												"stage": {
+													"enum": ["DEVELOPMENT"]
+												},
+												"value": {
+													"type": ["integer", "null"]
+												}
+											},
+											"required": ["minAppVersion", "stage", "value"],
+											"type": ["object", "null"]
+										},
+										"severity": {
+											"properties": {
+												"minAppVersion": {
+													"enum": ["1.1.1"]
+												},
+												"stage": {
+													"enum": ["DEVELOPMENT"]
+												},
+												"value": {
+													"type": ["integer", "null"]
+												}
+											},
+											"required": ["minAppVersion", "stage", "value"],
+											"type": ["object", "null"]
+										}
+									},
+									"required": ["eventType", "eventStart", "eventEnd", "eventStartLocal", "eventEndLocal", "intensity", "severity", "characteristic", "imminence"],
+									"type": "object"
+								},
+								"type": ["array", "null"]
+							}
+						},
+						"required": ["dsx", "precipitationForecast"],
+						"type": ["object", "null"]
+					},
+					"currentLocation": {
+						"properties": {
+							"minAppVersion": {
+								"enum": ["1.1.1"]
+							},
+							"stage": {
+								"enum": ["DEVELOPMENT"]
+							},
+							"value": {
+								"$ref": "#/definitions/locationDef"
+							}
+						},
+						"required": ["minAppVersion", "stage", "value"],
+						"type": ["object", "null"]
+					},
+					"userPreferences": {
+						"properties": {
+							"metricSystem": {
+								"properties": {
+									"minAppVersion": {
+										"enum": ["1.1.1"]
+									},
+									"stage": {
+										"enum": ["DEVELOPMENT"]
+									},
+									"value": {
+										"type": ["boolean", "null"]
+									}
+								},
+								"required": ["minAppVersion", "stage", "value"],
+								"type": ["object", "null"]
+							},
+							"temperature": {
+								"properties": {
+									"minAppVersion": {
+										"enum": ["1.1.1"]
+									},
+									"stage": {
+										"enum": ["DEVELOPMENT"]
+									},
+									"value": {
+										"enum": ["F", "C"],
+										"type": ["string", "null"]
+									}
+								},
+								"required": ["minAppVersion", "stage", "value"],
+								"type": ["object", "null"]
+							},
+							"velocity": {
+								"properties": {
+									"minAppVersion": {
+										"enum": ["1.1.1"]
+									},
+									"stage": {
+										"enum": ["DEVELOPMENT"]
+									},
+									"value": {
+										"enum": ["MPH", "KMH"],
+										"type": ["string", "null"]
+									}
+								},
+								"required": ["minAppVersion", "stage", "value"],
+								"type": ["object", "null"]
+							}
+						},
+						"required": ["metricSystem", "temperature", "velocity"],
+						"type": ["object", "null"]
+					},
+					"viewedLocation": {
+						"properties": {
+							"minAppVersion": {
+								"enum": ["1.1.1"]
+							},
+							"stage": {
+								"enum": ["DEVELOPMENT"]
+							},
+							"value": {
+
+								"$ref": "#/definitions/locationDef"
+							}
+						},
+						"required": ["minAppVersion", "stage", "value"],
+						"type": ["object", "null"]
+					},
+					"weatherSummary": {
+						"properties": {
+							"closestLightning": {
+								"properties": {
+									"cardinalDirection": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"$ref": "#/definitions/cardinalDirectionDef"
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"distance": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["number", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"lat": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["number", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"lon": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["number", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"strikeTime": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"format": "date-time",
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									}
+								},
+								"required": ["distance", "strikeTime", "lon", "lat", "cardinalDirection"],
+								"type": ["object", "null"]
+							},
+							"contentMode": {
+								"properties": {
+									"effectiveDateTime": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"format": "date-time",
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"eventName": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"mode": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									}
+								},
+								"required": ["mode", "effectiveDateTime", "eventName"],
+								"type": ["object", "null"]
+							},
+							"lifeStyleIndices": {
+								"properties": {
+									"drivingDifficultyIndex": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"maximum": 6,
+												"minimum": 0,
+												"type": ["integer", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									}
+								},
+								"required": ["drivingDifficultyIndex"],
+								"type": ["object", "null"]
+							},
+							"nearestSnowAccumulation": {
+								"properties": {
+									"dayPartName": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"enum": ["day", "night"],
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"snowRange": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									}
+								},
+								"required": ["snowRange", "dayPartName"],
+								"type": "object"
+							},
+							"nearestStartPrecip": {
+								"properties": {
+									"endTime": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"format": "date-time",
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"evenType": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["integer", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"imminence": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["integer", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"severity": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["integer", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"startTime": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"format": "date-time",
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									}
+								},
+								"required": ["eventType", "imminence", "severity", "startTime", "endTime"],
+								"type": "object"
+							},
+							"nearestWinterStormAlert": {
+								"properties": {
+									"endTime": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"format": "date-time",
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"phenomenaCode": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"default": "FF",
+												"enum": ["FF"],
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"severityCode": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["integer", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"significanceCode": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"$ref": "#/definitions/significanceCodeDef"
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									}
+								},
+								"required": ["significanceCode", "phenomenaCode", "endTime", "severityCode"],
+								"type": "object"
+							},
+							"observation": {
+								"properties": {
+									"basedGPS": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["boolean", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"dayPart": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"enum": ["day", "night"],
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"feelsLikeTemperature": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["integer", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"nextSunrise": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"format": "date-time",
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"nextSunset": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"format": "date-time",
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"obsTime": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"format": "date-time",
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"skyCode": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"type": ["integer", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"temperature": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"maximum": 140,
+												"minimum": -140,
+												"type": ["integer", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"weekDay": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"enum": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									}
+								},
+								"required": ["obsTime", "temperature", "feelsLikeTemperature", "skyCode", "dayPart", "weekDay", "basedGPS", "nextSunrise", "nextSunset"],
+								"type": ["object", "null"]
+							},
+							"tomorrowForecast": {
+								"properties": {
+									"day": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"$ref": "#/definitions/tomorrowForecastPartDef"
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									},
+									"night": {
+										"properties": {
+											"minAppVersion": {
+												"enum": ["1.1.1"]
+											},
+											"stage": {
+												"enum": ["DEVELOPMENT"]
+											},
+											"value": {
+												"$ref": "#/definitions/tomorrowForecastPartDef"
+											}
+										},
+										"required": ["minAppVersion", "stage", "value"],
+										"type": ["object", "null"]
+									}
+								},
+								"required": ["day", "night"],
+								"type": ["object", "null"]
+							}
+						},
+						"required": ["contentMode", "closestLightning", "nearestStartPrecip", "nearestWinterStormAlert", "nearestSnowAccumulation", "lifeStyleIndices", "observation", "tomorrowForecast"],
+						"type": ["object", "null"]
+					}
+				},
+				"required": ["userPreferences", "viewedLocation", "currentLocation", "device", "weatherSummary", "profile"],
+				"type": "object"
+			}
+		},
+		"required": ["context"],
+		"type": "object"
+	}
+
+

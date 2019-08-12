@@ -1,0 +1,1112 @@
+{
+	"root": {
+		"features": [
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"features": [
+									{
+										"featureAttributes": "{\"id\":\"current-conditions\",\"platform\":\"all\",\"valid\":[\"all\"],\"languages\":[\"all\"],\"form\":\"phone\",\"description\":\"Displays current conditions.\",\"enabledFor\":100,\"sponsored\":false,\"regions\":[\"all\"],\"type\":\"native\",\"version\":\"1.0\"}",
+										"features": [
+										],
+										"isON": true,
+										"name": "modules.Current Conditions",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Breaking News",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"id\":\"right-now\",\"platform\":\"all\",\"valid\":[\"all\"],\"languages\":[\"all\"],\"form\":\"phone\",\"description\":\"Displays current conditions data.\",\"enabledFor\":100,\"sponsored\":false,\"regions\":[\"all\"],\"type\":\"native\",\"version\":\"1.0\"}",
+										"features": [
+											{
+												"featureAttributes": "{}",
+												"features": [
+													{
+														"featureAttributes": "{}",
+														"features": [
+														],
+														"isON": false,
+														"name": "modules.Right Now Video",
+														"resultTrace": "Rule returned false",
+														"type": "FEATURE"
+													}
+												],
+												"isON": true,
+												"name": "modules.Right Now Video by Airlock",
+												"resultTrace": "Configurations: [defaultConfiguration]",
+												"type": "FEATURE"
+											}
+										],
+										"isON": true,
+										"name": "modules.Right Now",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"id\":\"hourly\",\"platform\":\"all\",\"valid\":[\"all\"],\"languages\":[\"all\"],\"form\":\"phone\",\"description\":\"Displays hourly weather information.\",\"enabledFor\":100,\"sponsored\":false,\"regions\":[\"all\"],\"type\":\"native\",\"version\":\"1.0\"}",
+										"features": [
+										],
+										"isON": true,
+										"name": "modules.Hourly",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"id\":\"ten-day\",\"platform\":\"all\",\"valid\":[\"all\"],\"languages\":[\"all\"],\"form\":\"phone\",\"description\":\"Displays ten day forecast.\",\"enabledFor\":100,\"sponsored\":false,\"regions\":[\"all\"],\"type\":\"native\",\"version\":\"1.0\"}",
+										"features": [
+										],
+										"isON": true,
+										"name": "modules.Daily",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Video",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"id\":\"radar-maps\",\"platform\":\"all\",\"valid\":[\"all\"],\"languages\":[\"aa\",\"ab\",\"ae\",\"af\",\"ak\",\"am\",\"an\",\"ar\",\"as\",\"av\",\"ay\",\"az\",\"ba\",\"be\",\"bg\",\"bh\",\"bi\",\"bm\",\"bn\",\"bo\",\"br\",\"bs\",\"ca\",\"ce\",\"ch\",\"co\",\"cr\",\"cs\",\"cu\",\"cv\",\"cy\",\"da\",\"de\",\"dv\",\"dz\",\"ee\",\"el\",\"en\",\"es\",\"eo\",\"et\",\"eu\",\"fa\",\"ff\",\"fi\",\"fj\",\"fo\",\"fr\",\"fy\",\"ga\",\"gd\",\"gl\",\"gn\",\"gu\",\"gv\",\"ha\",\"he\",\"hi\",\"ho\",\"hr\",\"ht\",\"hu\",\"hy\",\"hz\",\"ia\",\"id\",\"ie\",\"ig\",\"ii\",\"ik\",\"io\",\"is\",\"it\",\"iu\",\"ja\",\"jv\",\"ka\",\"kg\",\"ki\",\"kj\",\"kk\",\"kl\",\"km\",\"kn\",\"ko\",\"kr\",\"ks\",\"ku\",\"kv\",\"kw\",\"ky\",\"la\",\"lb\",\"lg\",\"li\",\"ln\",\"lo\",\"lt\",\"lu\",\"lv\",\"mg\",\"mh\",\"mi\",\"mk\",\"ml\",\"mn\",\"mr\",\"ms\",\"mt\",\"my\",\"na\",\"nb\",\"nd\",\"ne\",\"ng\",\"nl\",\"nn\",\"no\",\"nr\",\"nv\",\"ny\",\"oc\",\"oj\",\"om\",\"or\",\"os\",\"pa\",\"pi\",\"pl\",\"ps\",\"pt\",\"qu\",\"rm\",\"rn\",\"ro\",\"ru\",\"rw\",\"sa\",\"sc\",\"sd\",\"se\",\"sg\",\"si\",\"sk\",\"sl\",\"sm\",\"sn\",\"so\",\"sq\",\"sr\",\"ss\",\"st\",\"su\",\"sv\",\"sw\",\"ta\",\"te\",\"tg\",\"th\",\"ti\",\"tk\",\"tl\",\"tn\",\"to\",\"tr\",\"ts\",\"tt\",\"tw\",\"ty\",\"ug\",\"uk\",\"ur\",\"uz\",\"ve\",\"vi\",\"vo\",\"wa\",\"wo\",\"xh\",\"yi\",\"yo\",\"za\",\"zh\"],\"form\":\"phone\",\"description\":\"Displays radar map.\",\"enabledFor\":100,\"sponsored\":false,\"regions\":[\"all\"],\"type\":\"native\",\"version\":\"1.0\"}",
+										"features": [
+										],
+										"isON": true,
+										"name": "modules.Radar Maps",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"id\":\"road-condition\",\"languages\":[\"all\"],\"name\":\"road condition\",\"regions\":[\"all\"],\"type\":\"native\",\"version\":\"1.0\"}",
+										"features": [
+										],
+										"isON": true,
+										"name": "modules.Road Conditions",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.News",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Hurricane Central",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"valid\":[\"all\"],\"platform\":\"all\",\"form\":\"phone\",\"type\":\"native\",\"regions\":[\"US\"],\"fam\":[\"hlth\"],\"version\":\"1.0\",\"id\":\"health-single\",\"languages\":[\"all\"],\"description\":\"Displays Health Information.\",\"name\":\"Health\",\"enabledFor\":100,\"ch\":[\"flu\"],\"sponsored\":true}",
+										"features": [
+										],
+										"isON": true,
+										"name": "modules.HealthAllergy",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Health",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"id\":\"outdoor-activity\",\"platform\":\"all\",\"valid\":[\"all\"],\"languages\":[\"all\"],\"form\":\"phone\",\"description\":\"Displays outdoor activities.\",\"name\":\"Outdoor Activities\",\"enabledFor\":100,\"sponsored\":false,\"regions\":[\"all\"],\"type\":\"native\",\"version\":\"1.0\"}",
+										"features": [
+										],
+										"isON": true,
+										"name": "modules.Outdoor",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									}
+								],
+								"maxFeaturesOn": 12,
+								"name": "mx.0047fb8e-0cd9-4e94-a0d5-05e368232af2",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							},
+							{
+								"features": [
+								],
+								"maxFeaturesOn": 1,
+								"name": "mx.fdc0f218-eba7-4929-a027-dcd9327d79b5",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							}
+						],
+						"isON": true,
+						"name": "modules.Airlock Control Over Modules",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.7f58a3c5-c49b-49db-9254-296c68564233",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "ads.Main Feed Ads",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "ads.Main Screen Banner",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "ads.Airlock Control Over Ads",
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "platform.Typeahead.Location.Search.v3",
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"enabledList\":[\"RU\",\"TR\",\"CN\",\"KR\",\"JP\",\"ID\",\"US\"],\"enableAll\":false}",
+				"features": [
+				],
+				"isON": true,
+				"name": "platform.Location.Services.v3",
+				"resultTrace": "Configurations: [defaultConfiguration, platform.Location.Services.v3.Whitelist]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"segmentControlLocation\":false}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "WeatherGlance.DesignUpdates",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "WeatherGlance.WeatherGlance",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Current Conditions",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Breaking News",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Right Now",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Hourly",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Daily",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Video",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Radar Maps",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Road Conditions",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.News",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.HealthAllergy",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Health",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Outdoor",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							}
+						],
+						"isON": false,
+						"name": "ads.testModules",
+						"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.0fa349aa-dad1-40e6-b16e-60b55ca961fc",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "Maps.Distance Measurement Tool",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "Maps.WSC alert card",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "Maps.Search icon",
+						"resultTrace": "Rule disabled",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "Maps.Dew point",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "Maps.Wind speed",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "Maps.Temperature change",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "Maps.No layer",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "Maps.Future 48hr Precip",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							}
+						],
+						"isON": false,
+						"name": "Maps.Q1 Map Layers",
+						"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "Maps.Airlock Control Over Maps Features",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+									{
+										"features": [
+											{
+												"featureAttributes": "{}",
+												"features": [
+												],
+												"isON": false,
+												"name": "test.subsub2",
+												"resultTrace": "Parent feature is off",
+												"type": "FEATURE"
+											},
+											{
+												"featureAttributes": "{}",
+												"features": [
+												],
+												"isON": false,
+												"name": "test.subsub1",
+												"resultTrace": "Parent feature is off",
+												"type": "FEATURE"
+											}
+										],
+										"maxFeaturesOn": 1,
+										"name": "mx.313dc5b0-2d17-44ab-8e42-15b4883bb18a",
+										"type": "MUTUAL_EXCLUSION_GROUP"
+									}
+								],
+								"isON": false,
+								"name": "test.sub3",
+								"resultTrace": "Rule disabled",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "test.sub2",
+								"resultTrace": "Rule disabled",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "test.sub1",
+								"resultTrace": "Rule disabled",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 1,
+						"name": "mx.f783dcf9-0a0c-471a-bbc3-bd66e5f584af",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					},
+					{
+						"features": [
+						],
+						"maxFeaturesOn": 1,
+						"name": "mx.e6acae07-e8b6-43f8-9705-cb5f676d03c8",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					}
+				],
+				"isON": true,
+				"name": "test.test",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "lifestyle.Allergy Detail Reskin",
+						"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "lifestyle.Hide Allergy Map For International",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "Lifestyle.Cold and Flu CDC bar chart",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "lifestyle.Lifestyle Features",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "platform.LocationManager",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "Analytics.App Source Analytics DEV",
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "profile.units",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "profile.Alerts CTA",
+						"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "profile.timezone",
+						"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "profile.Smart Ratings in Profile",
+						"resultTrace": "Application version is outside of feature version range",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "profile.Segments",
+						"resultTrace": "Application version is outside of feature version range",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "profile.Allergy Tracker Settings",
+						"resultTrace": "Application version is outside of feature version range",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "profile.Profile Settings",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": true,
+				"name": "international.JMA 10 Day Forecast Limit",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "Alerts.Notification Parsing",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "Alerts.Additional Message Options",
+						"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+						"type": "FEATURE"
+					}
+				],
+				"isON": true,
+				"name": "Alerts.Alerts",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"features": [
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.3084c630-eadb-4e25-abfb-5a6b36ccdc3f",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"features": [
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Table",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+											{
+												"featureAttributes": "{}",
+												"features": [
+												],
+												"isON": false,
+												"name": "HeadsUpB.Hourly Subfeature",
+												"resultTrace": "Parent feature is off",
+												"type": "FEATURE"
+											}
+										],
+										"isON": false,
+										"name": "headsup.Hourly",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Daily",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsupb.Radar",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									}
+								],
+								"maxFeaturesOn": 3,
+								"name": "mx.4649d9f4-2462-44c5-9930-65376f5ace42",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							},
+							{
+								"features": [
+								],
+								"maxFeaturesOn": 1,
+								"name": "mx.b51eb64c-3dc5-4730-8da2-6ebec8700462",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							}
+						],
+						"isON": false,
+						"name": "headsup.HeadsUpB",
+						"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"features": [
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Go Run",
+										"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Editorial Calendar",
+										"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Breaking News Video",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Real Time Lightning",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.T Storm Impacted Now",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Winter Storm Impacted Now",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Radar",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+											{
+												"features": [
+													{
+														"featureAttributes": "{}",
+														"features": [
+														],
+														"isON": false,
+														"name": "topvideo.Local",
+														"resultTrace": "Parent feature is off",
+														"type": "FEATURE"
+													},
+													{
+														"featureAttributes": "{}",
+														"features": [
+														],
+														"isON": false,
+														"name": "topvideo.National",
+														"resultTrace": "Parent feature is off",
+														"type": "FEATURE"
+													}
+												],
+												"maxFeaturesOn": 1,
+												"name": "mx.fe57eef3-629c-4f0f-af96-30d0c6259f8a",
+												"type": "MUTUAL_EXCLUSION_GROUP"
+											}
+										],
+										"isON": false,
+										"name": "headsup.Top Video",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"icon\":{\"resourceName\":\"home_rain_start_stop\"},\"tiletype\":\"datapoint\",\"descriptor\":\"\\u0627\\u062d\\u062a\\u0645\\u0627\\u0644 \\u0633\\u0642\\u0648\\u0637 \\u0623\\u0645\\u0637\\u0627\\u0631\",\"analyticsTileName\":\"Precip Start\",\"value\":\"9:15 \\u0635\\u0628\\u0627\\u062d\\u0627\\u064b\",\"clickthrough\":{\"destination\":\"hourly\"}}",
+										"features": [
+										],
+										"isON": true,
+										"name": "headsup.Precip Start",
+										"resultTrace": "Configurations: [defaultConfiguration, headsupPrecipStart.Basic, headsupPrecipStart.Rain Possible]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Precip End",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Forecasted Snow Accumulation",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Winter Storm Forecast",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.T Storm Impact Soon",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"icon\":{\"resourceName\":\"home_drive_condition\"},\"tiletype\":\"datapoint\",\"descriptor\":\"\\u062d\\u0627\\u0644\\u0629 \\u0627\\u0644\\u0637\\u0631\\u064a\\u0642\",\"analyticsTileName\":\"Road Conditions\",\"value\":\"\\u0631\\u0637\\u0628\",\"clickthrough\":{\"destination\":\"driving_condition\"}}",
+										"features": [
+										],
+										"isON": true,
+										"name": "headsup.Road Conditions",
+										"resultTrace": "Configurations: [defaultConfiguration, headsupRoadConditions.WET]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Feels Like Message",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Tomorrow Forecast",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{\"icon\":{\"resourceName\":\"home_tonight_tomorrow\"},\"tiletype\":\"datapoint\",\"descriptor\":\"\\u062a\\u0648\\u0642\\u0639\",\"analyticsTileName\":\"Weekend Forecast\",\"value\":\"\\u0622\\u062e\\u0631 \\u0623\\u0633\\u0628\\u0648\\u0639\",\"clickthrough\":{\"dayIndex\":3,\"destination\":\"fifteen_day\"}}",
+										"features": [
+										],
+										"isON": true,
+										"name": "headsup.Weekend Forecast",
+										"resultTrace": "Configurations: [defaultConfiguration, headsupWeekendForecast.Basic, headsupWeekendForecast.After Friday Midnight]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Sunrise Sunset Message",
+										"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+										"type": "FEATURE"
+									}
+								],
+								"maxFeaturesOn": 3,
+								"name": "mx.74c51f03-5fc5-4692-add2-1c28a7c53db8",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "headsup.AB Test demo",
+								"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+								"type": "FEATURE"
+							}
+						],
+						"isON": true,
+						"name": "headsup.HeadsUp",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.24220abd-c100-47f8-9d00-ae6f37103ab2",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "platform.SevereDailyWeatherIcon",
+				"resultTrace": "Rule disabled",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "airlock.subSubFeature",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							}
+						],
+						"isON": false,
+						"name": "airlock.Rollout subfeature",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "airlock.Rollout Beacon",
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": true,
+				"name": "apple.Apple QA Login",
+				"resultTrace": "Configurations: [defaultConfiguration]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "autoplay.Breaking News Module",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "autoplay.Right Now Module",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "autoplay.Video Module",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "autoplay.Airlock Control Over Video AutoPlay",
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "test.Josemina",
+				"resultTrace": "Rule disabled",
+				"type": "FEATURE"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "Test3.Test3",
+						"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "Test2.Test 2",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							}
+						],
+						"isON": false,
+						"name": "Test1.Test1",
+						"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.eb84b7ea-22f1-4192-be14-521a4e5dd567",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "javascript.JS Test",
+				"resultTrace": "Feature is in development and the device is not associated with any of the feature's internal user groups",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "personalization.Personalized Splash Screen",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

@@ -1,0 +1,373 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "ОЩУЩАЕТСЯ КАК"
+},
+"translationKey2": {
+"stringId" : "HeadsUp.WeekendForecast",
+"translation" : "ПРОГНОЗ НА ВЫХОДНЫЕ"
+},
+"translationKey3": {
+"stringId" : "HeadsUp.Precip",
+"translation" : "ОСАДКИ"
+},
+"translationKey4": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "УДАР МОЛНИИ"
+},
+"translationKey5": {
+"stringId" : "Units.AM",
+"translation" : "AM"
+},
+"translationKey6": {
+"stringId" : "Units.PM",
+"translation" : "PM"
+},
+"translationKey7": {
+"stringId" : "DDI.RoadConditions",
+"translation" : "УСЛОВИЯ НА ДОРОГАХ"
+},
+"translationKey8": {
+"stringId" : "General.Tonight",
+"translation" : "ВЕЧЕРОМ"
+},
+"translationKey9": {
+"stringId" : "General.Tomorrow",
+"translation" : "ЗАВТРА"
+},
+"translationKey10": {
+"stringId" : "General.Today",
+"translation" : "СЕГОДНЯ"
+},
+"translationKey11": {
+"stringId" : "HeadsUp.Rain",
+"translation" : "ДОЖДЬ"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "ВОЗМОЖЕН ДОЖДЬ"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "ОЖИДАЕТСЯ ДОЖДЬ"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.Snow",
+"translation" : "СНЕГ"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "ВОЗМОЖЕН СНЕГОПАД"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "ОЖИДАЕТСЯ СНЕГОПАД"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.LightWintryMix",
+"translation" : "НЕБОЛЬШОЙ СНЕГ С ДОЖДЕМ"
+},
+"translationKey18": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "ОЩУЩАЕТСЯ КАК"
+},
+"translationKey19": {
+"stringId" : "General.Sunrise",
+"translation" : "РАССВЕТ"
+},
+"translationKey20": {
+"stringId" : "General.Sunset",
+"translation" : "ЗАКАТ"
+},
+"translationKey21": {
+"stringId" : "HeadsUp.WinterStormLikely",
+"translation" : "ВЕРОЯТНОСТЬ БУРАНА"
+},
+"translationKey22": {
+"stringId" : "HeadsUp.WinterStormPossible",
+"translation" : "ВОЗМОЖЕН БУРАН"
+},
+"translationKey23": {
+"stringId" : "HeadsUp.InView",
+"translation" : "ПРОСМОТР [[[1]]]"
+},
+"translationKey24": {
+"stringId" : "HeadsUp.Next48Hours",
+"translation" : "ПОСЛЕДУЮЩИЕ 48 ЧАСОВ"
+},
+"translationKey25": {
+"stringId" : "DDI.Good",
+"translation" : "ХОРОШИЕ"
+},
+"translationKey26": {
+"stringId" : "DDI.Foggy",
+"translation" : "ТУМАН"
+},
+"translationKey27": {
+"stringId" : "DDI.Icy",
+"translation" : "ЛЕД"
+},
+"translationKey28": {
+"stringId" : "DDI.Ponding",
+"translation" : "ЗАТОПЛ."
+},
+"translationKey29": {
+"stringId" : "DDI.Snowy",
+"translation" : "СНЕГ"
+},
+"translationKey30": {
+"stringId" : "DDI.Wet",
+"translation" : "ВЛАЖН."
+},
+"translationKey31": {
+"stringId" : "HeadsUp.Accumulation",
+"translation" : "УРОВЕНЬ"
+},
+"translationKey32": {
+"stringId" : "HeadsUp.RainStarting",
+"translation" : "НАЧИНАЕТСЯ ДОЖДЬ"
+},
+"translationKey33": {
+"stringId" : "HeadsUp.RainEnding",
+"translation" : "ДОЖДЬ ЗАКАНЧИВАЕТСЯ"
+},
+"translationKey34": {
+"stringId" : "HeadsUp.SnowStarting",
+"translation" : "НАЧИНАЕТСЯ СНЕГ"
+},
+"translationKey35": {
+"stringId" : "HeadsUp.SnowEnding",
+"translation" : "СНЕГ ЗАКАНЧИВАЕТСЯ"
+},
+"translationKey36": {
+"stringId" : "HeadsUp.MixStarting",
+"translation" : "НАЧИНАЕТСЯ СНЕГ С ДОДЖЕМ"
+},
+"translationKey37": {
+"stringId" : "HeadsUp.MixEnding",
+"translation" : "СНЕГ С ДОЖДЕМ ЗАКАНЧИВАЕТСЯ"
+},
+"translationKey38": {
+"stringId" : "HeadsUp.WintryMixStarting",
+"translation" : "НАЧИНАЕТСЯ СНЕГ С ДОДЖЕМ"
+},
+"translationKey39": {
+"stringId" : "HeadsUp.WintryMixEnding",
+"translation" : "СНЕГ С ДОЖДЕМ ЗАКАНЧИВАЕТСЯ"
+},
+"translationKey40": {
+"stringId" : "HeadsUp.StormsStarting",
+"translation" : "НАЧИНАЕТСЯ УРАГАН"
+},
+"translationKey41": {
+"stringId" : "HeadsUp.StormsEnding",
+"translation" : "УРАГАН ЗАКАНЧИВАЕТСЯ"
+},
+"translationKey42": {
+"stringId" : "HeadsUp.Storms",
+"translation" : "УРАГАН"
+},
+"translationKey43": {
+"stringId" : "HeadsUp.StormsLikely",
+"translation" : "ВЕРОЯТНОСТЬ УРАГАНА"
+},
+"translationKey44": {
+"stringId" : "HeadsUp.StormsPossible",
+"translation" : "ВОЗМОЖЕН УРАГАН"
+},
+"translationKey45": {
+"stringId" : "HeadsUp.Precipitation",
+"translation" : "ОСАДКИ"
+},
+"translationKey46": {
+"stringId" : "HeadsUp.LookAhead",
+"translation" : "СКОРО"
+},
+"translationKey47": {
+"stringId" : "HeadsUp.Clear",
+"translation" : "ЯСНО"
+},
+"translationKey48": {
+"stringId" : "Units.CM",
+"translation" : "СМ"
+},
+"translationKey49": {
+"stringId" : "Units.KMH",
+"translation" : "КМ\/Ч"
+},
+"translationKey50": {
+"stringId" : "Units.MPH",
+"translation" : "МИЛЬ\/Ч"
+},
+"translationKey51": {
+"stringId" : "Units.InchMercury",
+"translation" : "ДЮЙМ."
+},
+"translationKey52": {
+"stringId" : "Units.Inches",
+"translation" : "ДЮЙМ."
+},
+"translationKey53": {
+"stringId" : "Units.MiliBars",
+"translation" : "МБАР"
+},
+"translationKey54": {
+"stringId" : "Units.Feet",
+"translation" : "ФУТ."
+},
+"translationKey55": {
+"stringId" : "Units.Meter",
+"translation" : "ПН"
+},
+"translationKey56": {
+"stringId" : "Units.Miles",
+"translation" : "МИЛЬ"
+},
+"translationKey57": {
+"stringId" : "Units.KM",
+"translation" : "КМ"
+},
+"translationKey58": {
+"stringId" : "DDI.Windy",
+"translation" : "ВЕТРЕНО"
+},
+"translationKey59": {
+"stringId" : "DDI.Wind",
+"translation" : "ВЕТЕР"
+},
+"translationKey60": {
+"stringId" : "General.Weekend",
+"translation" : "ВЫХОДНЫЕ"
+},
+"translationKey61": {
+"stringId" : "HeadsUp.SevereTStormImpactedNow",
+"translation" : "ПОД ВОЗДЕЙСТВИЕМ СИЛЬНОЙ ГРОЗЫ"
+},
+"translationKey62": {
+"stringId" : "HeadsUp.SevereTStormsPossible",
+"translation" : "ВОЗМОЖНЫ СИЛЬНЫЕ ГРОЗЫ"
+},
+"translationKey63": {
+"stringId" : "HeadsUp.SevereTStormsLikely",
+"translation" : "ОЖИДАЮТСЯ СИЛЬНЫЕ ГРОЗЫ"
+},
+"translationKey64": {
+"stringId" : "HeadsUp.SevereTStormsHighRisk",
+"translation" : "ВЫСОКИЙ РИСК СИЛЬНЫХ ГРОЗ"
+},
+"translationKey65": {
+"stringId" : "HeadsUp.SevereTStormNow",
+"translation" : "СИЛЬНЫЕ ГРОЗЫ СЕЙЧАС"
+},
+"translationKey66": {
+"stringId" : "HeadsUp.PrecipStart",
+"translation" : "ВЫПАДЕНИЕ ОСАДКОВ"
+},
+"translationKey67": {
+"stringId" : "HeadsUp.PrecipEnd",
+"translation" : "ПРЕКРАЩЕНИЕ ОСАДКОВ"
+},
+"translationKey68": {
+"stringId" : "HeadsUp.WinterStormStarting",
+"translation" : "НАЧИНАЕТСЯ БУРАН"
+},
+"translationKey69": {
+"stringId" : "HeadsUp.WinterStormEnding",
+"translation" : "БУРАН ЗАКАНЧИВАЕТСЯ"
+},
+"translationKey70": {
+"stringId" : "HeadsUp.WintryMix",
+"translation" : "СНЕГ+ДОЖДЬ"
+},
+"translationKey71": {
+"stringId" : "HeadsUp.WintryMixLikely",
+"translation" : "ВОЗМОЖЕН СНЕГ С ДОЖДЕМ"
+},
+"translationKey72": {
+"stringId" : "HeadsUp.WintryMixPossible",
+"translation" : "ВОЗМОЖЕН СНЕГ С ДОЖДЕМ"
+},
+"translationKey73": {
+"stringId" : "HeadsUp.Mix",
+"translation" : "СМЕШАННЫЕ"
+},
+"translationKey74": {
+"stringId" : "HeadsUp.MixLikely",
+"translation" : "ОЖИДАЕТСЯ СНЕГ С ДОЖДЕМ"
+},
+"translationKey75": {
+"stringId" : "HeadsUp.MixPossible",
+"translation" : "ВОЗМОЖЕН СНЕГ С ДОЖДЕМ"
+},
+"translationKey76": {
+"stringId" : "HeadsUp.48Hrs",
+"translation" : "СЛЕД. 48 Ч"
+},
+"translationKey77": {
+"stringId" : "HeadsUp.SevereTStormSoon",
+"translation" : "СИЛЬНЫЕ ГРОЗЫ В БЛИЖАЙШ. ВРЕМЯ"
+},
+"translationKey78": {
+"stringId" : "HeadsUp.Soon",
+"translation" : "В БЛИЖАЙШЕЕ ВРЕМЯ"
+},
+"translationKey79": {
+"stringId" : "HeadsUp.Forecasted",
+"translation" : "ПО ПРОГНОЗУ"
+},
+"translationKey80": {
+"stringId" : "HeadsUp.SevereTStorm",
+"translation" : "СИЛЬНЫЕ ГРОЗЫ"
+},
+"translationKey81": {
+"stringId" : "HeadsUp.SeeRadar",
+"translation" : "КАРТА РЛС"
+},
+"translationKey82": {
+"stringId" : "HeadsUp.LightSnow",
+"translation" : "ЛЕГК. СНЕГ"
+},
+"translationKey83": {
+"stringId" : "HeadsUp.LightSnowLikely",
+"translation" : "ОЖИДАЕТСЯ НЕБОЛЬШОЙ СНЕГ"
+},
+"translationKey84": {
+"stringId" : "HeadsUp.LightSnowPossible",
+"translation" : "ВОЗМОЖЕН НЕБОЛЬШОЙ СНЕГ"
+},
+"translationKey85": {
+"stringId" : "HeadsUp.LightSnowStarting",
+"translation" : "НАЧИНАЕТСЯ НЕБОЛЬШОЙ СНЕГ"
+},
+"translationKey86": {
+"stringId" : "HeadsUp.LightSnowEnding",
+"translation" : "НЕБОЛЬШОЙ СНЕГ ЗАКАНЧИВАЕТСЯ"
+},
+"translationKey87": {
+"stringId" : "ProfileSettings.AlertsCTA",
+"translation" : "ПОЛУЧАТЬ ОПОВЕЩЕНИЯ О ПОГОДЕ В РЕАЛЬНОМ ВРЕМЕНИ"
+},
+"translationKey88": {
+"stringId" : "HeadsUp.RadarBRadarMap",
+"translation" : "КАРТА РЛС"
+},
+"translationKey89": {
+"stringId" : "GoRun.ExcellentRunningConditions",
+"translation" : "ОТЛИЧНЫЕ УСЛОВИЯ ДЛЯ ПРОБЕЖКИ"
+},
+"translationKey90": {
+"stringId" : "GoRun.GoodRunningConditions",
+"translation" : "ХОРОШИЕ УСЛОВИЯ ДЛЯ ПРОБЕЖКИ"
+},
+"translationKey91": {
+"stringId" : "GoRun.GoRun",
+"translation" : "ПРОБЕЖКА"
+}
+}

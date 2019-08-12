@@ -1,0 +1,44 @@
+<!-- Compile and run ICMCloud tests -->
+<project name="AirLockRestApiTests" default="create-jar-file" basedir=".">
+	
+	<property name="src" location="src"/>
+	<property name="bin" location="bin"/>
+	<property name="lib" location="../../../lib"/>
+	<property name="output" location="output"/>
+		
+	<target name="clean-bin">
+		<!--<delete dir="${bin}"/>-->
+		<delete dir="${output}"/>
+	</target>
+	
+	<mkdir dir="${bin}"/>
+	
+	<target name="compile" depends="clean-bin">
+		<echo message="Compiling the test code into the bin folder"/>
+		<!-- Compile the java code from ${src} into ${bin} -->
+	
+		<!--<jvmarg value="-Dfile.encoding=UTF-8"/>-->
+		<javac srcdir="${src}" destdir="${bin}"  encoding="utf-8">
+			<classpath>
+				<pathelement location="${lib}/qa_utils.jar" />
+				<pathelement location="${lib}/wink-1.4.jar" />
+			</classpath>
+		</javac>
+	</target>	
+	
+	<target name="create-jar-file" depends="compile">
+		<echo message="Create a jar file of the compiled test code"/>
+		<jar jarfile="${output}/utils.jar" basedir="${bin}"></jar>
+	</target>
+	
+	<!-- ==================== Package Target ================================== -->
+	<target name="package" depends="create-jar-file" description="Package.">
+		<copy todir="${output}/lib">
+			<fileset dir="${lib}" includes="*.jar"/>
+		</copy>
+
+		<copy file="config.properties" todir="${output}"/>
+		<copy file="rules_config.properties" todir="${output}"/>
+		<copy file="feature_template.txt" todir="${output}"/>
+	</target>
+</project>

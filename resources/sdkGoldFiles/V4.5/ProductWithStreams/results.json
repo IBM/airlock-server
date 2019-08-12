@@ -1,0 +1,46 @@
+{
+	"GoRunTomorrowCounter": {
+		"count": 7
+	},
+	"GoRunTomorrowCounterFilterEmpty": {
+		"count": 21
+	},
+	"GoRunTomorrowCounterFilterFalse": {
+		"count": 0
+	},
+	"GoRunTomorrowCounterFilterTrue": {
+		"count": 21
+	},
+	"VladAdinaStream": {
+		"clicked": 0,
+		"errors": [
+		],
+		"failed": 3,
+		"hasCreateId": 1,
+		"successful": 0,
+		"total": 3,
+		"types": {
+			"ban": 1,
+			"bbg": 1,
+			"pre": 1,
+			"vbbg": 0
+		}
+	},
+	"adViewedCounter": {
+		"adViewedCount": 5
+	},
+	"contentViewed10": {
+		"contentViewedModulus5": 5
+	},
+	"contentViewed10InUtility": {
+		"contentViewedModulus5": 5
+	},
+	"streamNoEvent": {
+	},
+	"videoPlayedCounter": {
+		"count": 2
+	},
+	"video_auto_play": {
+		"count": 2
+	}
+}

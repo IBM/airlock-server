@@ -1,0 +1,149 @@
+apply plugin: 'war'
+apply plugin: 'com.jfrog.artifactory'
+apply plugin: 'maven-publish'
+
+sourceCompatibility = 1.7
+
+buildscript {
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '3.2.0')
+	}
+}
+
+war {
+	from 'WebContent'
+	archiveName 'airlock.war'
+	rootSpec.exclude("**/WEB-INF/lib/javax.servlet-api-3.0.1.jar")  //????
+	copy {
+		from 'ROOT.war'
+		into 'build/libs'
+	}
+}
+
+task dist(type:Zip){
+	from 'build/libs'
+}
+
+sourceSets {
+	main {
+		java {
+			srcDirs = ["src"]
+		}
+	}
+}
+
+repositories {
+	mavenCentral()
+	repositories {
+		flatDir {
+			dirs 'WebContent/WEB-INF/lib', 'lib'
+		}
+	}
+}
+
+dependencies {
+	compile fileTree(dir: 'lib', include: '*.jar')
+	compile fileTree(dir: 'WebContent/WEB-INF/lib', include: '*.jar')
+}
+
+ext {
+	//change to false to publish a release build
+	SNAPSHOT = true
+	BUILD_NUMBER = System.getenv("BUILD_NUMBER") ?: devBuildNumber
+
+	VERSION_MAJOR_SDK = 5
+	VERSION_MINOR_SDK = 0
+	VERSION_MICRO_SDK = "$BUILD_NUMBER"
+	VERSION_EXTENSION_SDK = SNAPSHOT ? "-SNAPSHOT" : ""
+	VERSION = "$VERSION_MAJOR_SDK.$VERSION_MINOR_SDK.$VERSION_MICRO_SDK$VERSION_EXTENSION_SDK-" + getDate()
+
+
+	MVN_REPO_URL_BASE = artifactory_url
+	MVN_REPO_URL = getRepositoryUrl()
+	MVN_GROUP = "com.airlock.backend.api"
+	MVN_ARTIFACT_ID = 'backend-api'
+
+	//MVN_USERNAME = artifactory_username
+	//MVN_PASSWORD = artifactory_password
+    MVN_USERNAME = 'tim.millett@us.ibm.com'
+    MVN_PASSWORD = 'AKCp5cbcrJUDpSdQH4yWWE8qY7taJ6ZS52dz7ZwUczxtG6w9rfTxK2Qw5iLWhYh38fuEKMF24'
+}
+
+def getRepositoryUrl() {
+	if (!SNAPSHOT) {
+		return ext.MVN_REPO_URL_BASE + 'releases'
+	} else {
+		return ext.MVN_REPO_URL_BASE + 'snapshots'
+	}
+}
+
+artifactoryPublish.skip = true
+
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			groupId MVN_GROUP
+			version = VERSION
+			println 'Version: ' + version
+			artifactId MVN_ARTIFACT_ID
+			artifact file("output/airlock.zip")
+			copy {
+				def artifactName = "/home/ubuntu/airlock"
+				println 'artifactName: ' + artifactName
+				from "output/airlock.zip"
+				into artifactName
+			}
+		}
+	}
+}
+
+artifactoryPublish {
+	publications(publishing.publications.mavenJava)
+}
+
+afterEvaluate {
+	artifactoryPublish.dependsOn 'generatePomFileForMavenJavaPublication'
+}
+
+artifactory {
+	clientConfig.setIncludeEnvVars(true)
+	clientConfig.info.addEnvironmentProperty('test.adding.dynVar', new Date().toString())
+
+	println 'Enter artifactory'
+	contextUrl = MVN_REPO_URL_BASE
+	println 'contextUrl: '+ MVN_REPO_URL_BASE
+	publish {
+		repository {
+			repoKey = artifactory_api_backendrepo_key // The Artifactory repository key to publish to
+			username = MVN_USERNAME // The publisher user name
+			password = MVN_PASSWORD // The publisher password
+		}
+		defaults {
+			// Reference to Gradle publications defined in the build script.
+			// This is how we tell the Artifactory Plugin which artifacts should be
+			// published to Artifactory.
+			publications('mavenJava')
+			publishArtifacts = true
+			// Properties to be attached to the published artifacts.
+			if (!SNAPSHOT) {
+				properties = ['release.type': 'release', 'team': 'airlock']
+			} else {
+				properties = ['release.type': 'dev', 'team': 'airlock']
+			}
+			publishPom = true // Publish generated POM files to Artifactory (true by default)
+		}
+	}
+	resolve {
+		repoKey = 'jcenter'
+	}
+}
+
+def getDate() {
+	def date = new Date()
+	def formattedDate = date.format('yyyy-MM-dd-HHmm')
+	return formattedDate
+}

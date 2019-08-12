@@ -1,0 +1,373 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "รู้สึกเหมือนว่า"
+},
+"translationKey2": {
+"stringId" : "HeadsUp.WeekendForecast",
+"translation" : "พยากรณ์ช่วงสุดสัปดาห์"
+},
+"translationKey3": {
+"stringId" : "HeadsUp.Precip",
+"translation" : "PRECIP"
+},
+"translationKey4": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "ฟ้าผ่า"
+},
+"translationKey5": {
+"stringId" : "Units.AM",
+"translation" : "AM"
+},
+"translationKey6": {
+"stringId" : "Units.PM",
+"translation" : "PM"
+},
+"translationKey7": {
+"stringId" : "DDI.RoadConditions",
+"translation" : "สภาพถนน"
+},
+"translationKey8": {
+"stringId" : "General.Tonight",
+"translation" : "คืนนี้"
+},
+"translationKey9": {
+"stringId" : "General.Tomorrow",
+"translation" : "พรุ่งนี้"
+},
+"translationKey10": {
+"stringId" : "General.Today",
+"translation" : "วันนี้"
+},
+"translationKey11": {
+"stringId" : "HeadsUp.Rain",
+"translation" : "ฝนตก"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "อาจมีฝนตก"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "น่าจะมีฝน"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.Snow",
+"translation" : "หิมะ"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "อาจมีหิมะ"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "น่าจะมีหิมะ"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.LightWintryMix",
+"translation" : "กึ่งหนาวน้อย"
+},
+"translationKey18": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "รู้สึกเหมือน"
+},
+"translationKey19": {
+"stringId" : "General.Sunrise",
+"translation" : "อาทิตย์ขึ้น"
+},
+"translationKey20": {
+"stringId" : "General.Sunset",
+"translation" : "อาทิตย์ตก"
+},
+"translationKey21": {
+"stringId" : "HeadsUp.WinterStormLikely",
+"translation" : "มีแนวโน้มจะเกิดพายุฤดูหนาว"
+},
+"translationKey22": {
+"stringId" : "HeadsUp.WinterStormPossible",
+"translation" : "อาจเกิดพายุฤดูหนาว"
+},
+"translationKey23": {
+"stringId" : "HeadsUp.InView",
+"translation" : "[[[1]]] ในมุมมอง"
+},
+"translationKey24": {
+"stringId" : "HeadsUp.Next48Hours",
+"translation" : "48 ชั่วโมงข้างหน้า"
+},
+"translationKey25": {
+"stringId" : "DDI.Good",
+"translation" : "ดี"
+},
+"translationKey26": {
+"stringId" : "DDI.Foggy",
+"translation" : "หมอกลง"
+},
+"translationKey27": {
+"stringId" : "DDI.Icy",
+"translation" : "มีน้ำแข็ง"
+},
+"translationKey28": {
+"stringId" : "DDI.Ponding",
+"translation" : "มีน้ำขัง"
+},
+"translationKey29": {
+"stringId" : "DDI.Snowy",
+"translation" : "มีหิมะ"
+},
+"translationKey30": {
+"stringId" : "DDI.Wet",
+"translation" : "เปียก"
+},
+"translationKey31": {
+"stringId" : "HeadsUp.Accumulation",
+"translation" : "การสะสม"
+},
+"translationKey32": {
+"stringId" : "HeadsUp.RainStarting",
+"translation" : "ฝนเริ่มตก"
+},
+"translationKey33": {
+"stringId" : "HeadsUp.RainEnding",
+"translation" : "ฝนหยุดตก"
+},
+"translationKey34": {
+"stringId" : "HeadsUp.SnowStarting",
+"translation" : "หิมะเริ่มตก"
+},
+"translationKey35": {
+"stringId" : "HeadsUp.SnowEnding",
+"translation" : "หิมะหยุดตก"
+},
+"translationKey36": {
+"stringId" : "HeadsUp.MixStarting",
+"translation" : "หิมะและฝนเริ่มตก"
+},
+"translationKey37": {
+"stringId" : "HeadsUp.MixEnding",
+"translation" : "หิมะและฝนหยุดตก"
+},
+"translationKey38": {
+"stringId" : "HeadsUp.WintryMixStarting",
+"translation" : "หิมะและฝนเริ่มตก"
+},
+"translationKey39": {
+"stringId" : "HeadsUp.WintryMixEnding",
+"translation" : "หิมะและฝนหยุดตก"
+},
+"translationKey40": {
+"stringId" : "HeadsUp.StormsStarting",
+"translation" : "พายุเริ่มต้น"
+},
+"translationKey41": {
+"stringId" : "HeadsUp.StormsEnding",
+"translation" : "พายุสิ้นสุด"
+},
+"translationKey42": {
+"stringId" : "HeadsUp.Storms",
+"translation" : "พายุ"
+},
+"translationKey43": {
+"stringId" : "HeadsUp.StormsLikely",
+"translation" : "มีแนวโน้มจะเกิดพายุ"
+},
+"translationKey44": {
+"stringId" : "HeadsUp.StormsPossible",
+"translation" : "อาจเกิดพายุ"
+},
+"translationKey45": {
+"stringId" : "HeadsUp.Precipitation",
+"translation" : "หยาดน้ำฟ้า"
+},
+"translationKey46": {
+"stringId" : "HeadsUp.LookAhead",
+"translation" : "วางแผนอนาคต"
+},
+"translationKey47": {
+"stringId" : "HeadsUp.Clear",
+"translation" : "ฟ้าโปร่ง"
+},
+"translationKey48": {
+"stringId" : "Units.CM",
+"translation" : "CM"
+},
+"translationKey49": {
+"stringId" : "Units.KMH",
+"translation" : "KMH"
+},
+"translationKey50": {
+"stringId" : "Units.MPH",
+"translation" : "MPH"
+},
+"translationKey51": {
+"stringId" : "Units.InchMercury",
+"translation" : "นิ้ว"
+},
+"translationKey52": {
+"stringId" : "Units.Inches",
+"translation" : "นิ้ว"
+},
+"translationKey53": {
+"stringId" : "Units.MiliBars",
+"translation" : "มิลลิบาร์"
+},
+"translationKey54": {
+"stringId" : "Units.Feet",
+"translation" : "ฟุต"
+},
+"translationKey55": {
+"stringId" : "Units.Meter",
+"translation" : "M"
+},
+"translationKey56": {
+"stringId" : "Units.Miles",
+"translation" : "ไมล์"
+},
+"translationKey57": {
+"stringId" : "Units.KM",
+"translation" : "KM"
+},
+"translationKey58": {
+"stringId" : "DDI.Windy",
+"translation" : "ลมแรง"
+},
+"translationKey59": {
+"stringId" : "DDI.Wind",
+"translation" : "ลม"
+},
+"translationKey60": {
+"stringId" : "General.Weekend",
+"translation" : "สุดสัปดาห์"
+},
+"translationKey61": {
+"stringId" : "HeadsUp.SevereTStormImpactedNow",
+"translation" : "พายุฝนฟ้าคะนองที่ส่งผลกระทบตอนนี้"
+},
+"translationKey62": {
+"stringId" : "HeadsUp.SevereTStormsPossible",
+"translation" : "อาจเกิดพายุฝนฟ้าคะนอง"
+},
+"translationKey63": {
+"stringId" : "HeadsUp.SevereTStormsLikely",
+"translation" : "มีแนวโน้มจะเกิดพายุฝนฟ้าคะนอง"
+},
+"translationKey64": {
+"stringId" : "HeadsUp.SevereTStormsHighRisk",
+"translation" : "เสี่ยงเกิดพายุฝนฟ้าคะนองรุนแรง"
+},
+"translationKey65": {
+"stringId" : "HeadsUp.SevereTStormNow",
+"translation" : "เกิดพายุฟ้าคะนองรุนแรงตอนนี้"
+},
+"translationKey66": {
+"stringId" : "HeadsUp.PrecipStart",
+"translation" : "เริ่มมีน้ำฟ้า"
+},
+"translationKey67": {
+"stringId" : "HeadsUp.PrecipEnd",
+"translation" : "น้ำฟ้าสิ้นสุด"
+},
+"translationKey68": {
+"stringId" : "HeadsUp.WinterStormStarting",
+"translation" : "เริ่มต้นพายุฤดูหนาว"
+},
+"translationKey69": {
+"stringId" : "HeadsUp.WinterStormEnding",
+"translation" : "สิ้นสุดพายุฤดูหนาว"
+},
+"translationKey70": {
+"stringId" : "HeadsUp.WintryMix",
+"translation" : "หิมะและฝน"
+},
+"translationKey71": {
+"stringId" : "HeadsUp.WintryMixLikely",
+"translation" : "มีแนวโน้มจะเกิดหิมะและฝน"
+},
+"translationKey72": {
+"stringId" : "HeadsUp.WintryMixPossible",
+"translation" : "อาจเกิดหิมะและฝน"
+},
+"translationKey73": {
+"stringId" : "HeadsUp.Mix",
+"translation" : "ผสม"
+},
+"translationKey74": {
+"stringId" : "HeadsUp.MixLikely",
+"translation" : "มีแนวโน้มจะเกิดหิมะและฝน"
+},
+"translationKey75": {
+"stringId" : "HeadsUp.MixPossible",
+"translation" : "อาจเกิดหิมะและฝน"
+},
+"translationKey76": {
+"stringId" : "HeadsUp.48Hrs",
+"translation" : "อีก 48 ชม."
+},
+"translationKey77": {
+"stringId" : "HeadsUp.SevereTStormSoon",
+"translation" : "พายุฝนฟ้าคะนองรุนแรงเร็วๆ นี้"
+},
+"translationKey78": {
+"stringId" : "HeadsUp.Soon",
+"translation" : "เร็วๆ นี้"
+},
+"translationKey79": {
+"stringId" : "HeadsUp.Forecasted",
+"translation" : "ที่พยากรณ์ไว้"
+},
+"translationKey80": {
+"stringId" : "HeadsUp.SevereTStorm",
+"translation" : "พายุฝนฟ้าคะนองรุนแรง"
+},
+"translationKey81": {
+"stringId" : "HeadsUp.SeeRadar",
+"translation" : "ดูเรดาร์"
+},
+"translationKey82": {
+"stringId" : "HeadsUp.LightSnow",
+"translation" : "หิมะเบาบาง"
+},
+"translationKey83": {
+"stringId" : "HeadsUp.LightSnowLikely",
+"translation" : "มีแนวโน้มจะเกิดหิมะเบาบาง"
+},
+"translationKey84": {
+"stringId" : "HeadsUp.LightSnowPossible",
+"translation" : "อาจเกิดหิมะเบาบาง"
+},
+"translationKey85": {
+"stringId" : "HeadsUp.LightSnowStarting",
+"translation" : "หิมะเบาบางเริ่มตก"
+},
+"translationKey86": {
+"stringId" : "HeadsUp.LightSnowEnding",
+"translation" : "หิมะเบาบางหยุดตก"
+},
+"translationKey87": {
+"stringId" : "ProfileSettings.AlertsCTA",
+"translation" : "รับการเตือนสภาพอากาศตามเวลาจริง"
+},
+"translationKey88": {
+"stringId" : "HeadsUp.RadarBRadarMap",
+"translation" : "แผนที่เรดาร์"
+},
+"translationKey89": {
+"stringId" : "GoRun.ExcellentRunningConditions",
+"translation" : "สภาพอากาศยอดเยี่ยมสำหรับการวิ่ง"
+},
+"translationKey90": {
+"stringId" : "GoRun.GoodRunningConditions",
+"translation" : "สภาพอากาศดีสำหรับการวิ่ง"
+},
+"translationKey91": {
+"stringId" : "GoRun.GoRun",
+"translation" : "ไปวิ่งกัน"
+}
+}

@@ -1,0 +1,1166 @@
+{
+  "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+  "root": {
+    "features": [
+      {
+        "owner": "user4 user4",
+        "creator": "user4 user4",
+        "internalUserGroups": [
+          "QA"
+        ],
+        "displayName": "",
+        "rule": {
+          "ruleString": ""
+        },
+        "description": "Feature with sub features",
+        "type": "FEATURE",
+        "rolloutPercentage": 50.5,
+        "creationDate": 1490623265097,
+        "enabled": true,
+        "defaultConfiguration": null,
+        "features": [
+          {
+            "owner": "user4 user4",
+            "creator": "user4 user4",
+            "internalUserGroups": [
+              "QA"
+            ],
+            "displayName": null,
+            "rule": {
+              "ruleString": ""
+            },
+            "description": "",
+            "type": "FEATURE",
+            "rolloutPercentage": 20,
+            "creationDate": 1490623266525,
+            "enabled": true,
+            "defaultConfiguration": null,
+            "features": [],
+            "stage": "DEVELOPMENT",
+            "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+            "configurationRules": [],
+            "defaultIfAirlockSystemIsDown": false,
+            "name": "F1a",
+            "namespace": "ns",
+            "configurationSchema": null,
+            "additionalInfo": {},
+            "minAppVersion": "7.5",
+            "lastModified": 1490623266525,
+            "uniqueId": "67c1acec-f562-4f47-838e-38473284f40d",
+            "noCachedResults": false
+          },
+          {
+            "owner": "user4 user4",
+            "creator": "user4 user4",
+            "internalUserGroups": [
+              "QA"
+            ],
+            "displayName": null,
+            "rule": {
+              "ruleString": ""
+            },
+            "description": "",
+            "type": "FEATURE",
+            "rolloutPercentage": 100,
+            "creationDate": 1490623267869,
+            "enabled": true,
+            "defaultConfiguration": null,
+            "features": [],
+            "stage": "DEVELOPMENT",
+            "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+            "configurationRules": [],
+            "defaultIfAirlockSystemIsDown": false,
+            "name": "F1b",
+            "namespace": "ns",
+            "configurationSchema": null,
+            "additionalInfo": null,
+            "minAppVersion": "7.5",
+            "lastModified": 1490623267869,
+            "uniqueId": "ba4ce61c-0ce4-4c2e-b6e7-2effa82831d7",
+            "noCachedResults": false
+          }
+        ],
+        "stage": "DEVELOPMENT",
+        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+        "configurationRules": [],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "F1",
+        "namespace": "ns",
+        "configurationSchema": null,
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1490623267869,
+        "uniqueId": "63156850-320f-48ee-986d-a38d5508d624",
+        "noCachedResults": false
+      },
+      {
+        "owner": "user4 user4",
+        "creator": "user4 user4",
+        "internalUserGroups": [
+          "QA"
+        ],
+        "displayName": null,
+        "rule": {
+          "ruleString": ""
+        },
+        "description": "Feature with MTX of subfeatures",
+        "type": "FEATURE",
+        "rolloutPercentage": 50,
+        "creationDate": 1490623269263,
+        "enabled": true,
+        "defaultConfiguration": null,
+        "features": [
+          {
+            "features": [
+              {
+                "owner": "user4 user4",
+                "creator": "user4 user4",
+                "internalUserGroups": [
+                  "QA"
+                ],
+                "displayName": null,
+                "rule": {
+                  "ruleString": ""
+                },
+                "description": "",
+                "type": "FEATURE",
+                "rolloutPercentage": 80.56,
+                "creationDate": 1490623271524,
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [
+                  {
+                    "owner": "user4 user4",
+                    "creator": "user4 user4",
+                    "internalUserGroups": [
+                      "QA"
+                    ],
+                    "displayName": null,
+                    "rule": {
+                      "ruleString": ""
+                    },
+                    "description": "",
+                    "type": "FEATURE",
+                    "rolloutPercentage": 10.05,
+                    "creationDate": 1490623272879,
+                    "enabled": true,
+                    "defaultConfiguration": null,
+                    "features": [],
+                    "stage": "DEVELOPMENT",
+                    "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                    "configurationRules": [],
+                    "defaultIfAirlockSystemIsDown": false,
+                    "name": "F2aa",
+                    "namespace": "ns",
+                    "configurationSchema": null,
+                    "additionalInfo": null,
+                    "minAppVersion": "7.5",
+                    "lastModified": 1490623272879,
+                    "uniqueId": "2d0accd3-c913-445a-a841-baad4b5ffa4a",
+                    "noCachedResults": false
+                  }
+                ],
+                "stage": "DEVELOPMENT",
+                "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                "configurationRules": [],
+                "defaultIfAirlockSystemIsDown": false,
+                "name": "F2a",
+                "namespace": "ns",
+                "configurationSchema": null,
+                "additionalInfo": null,
+                "minAppVersion": "7.5",
+                "lastModified": 1490623272879,
+                "uniqueId": "389b8a12-e302-4fe4-9bf7-342ef921f500",
+                "noCachedResults": false
+              },
+              {
+                "owner": "user4 user4",
+                "creator": "user4 user4",
+                "internalUserGroups": [
+                  "QA"
+                ],
+                "displayName": null,
+                "rule": {
+                  "ruleString": ""
+                },
+                "description": "",
+                "type": "FEATURE",
+                "rolloutPercentage": 100,
+                "creationDate": 1490623274638,
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "stage": "DEVELOPMENT",
+                "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                "configurationRules": [],
+                "defaultIfAirlockSystemIsDown": false,
+                "name": "F2b",
+                "namespace": "ns",
+                "configurationSchema": null,
+                "additionalInfo": null,
+                "minAppVersion": "7.5",
+                "lastModified": 1490623274638,
+                "uniqueId": "7014d769-38af-4a25-b6b7-c2c4e64a9958",
+                "noCachedResults": false
+              }
+            ],
+            "maxFeaturesOn": 1,
+            "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+            "lastModified": 1490623274638,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "4b11b928-3d28-438c-808c-0e70fc424308"
+          }
+        ],
+        "stage": "DEVELOPMENT",
+        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+        "configurationRules": [],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "F2",
+        "namespace": "ns",
+        "configurationSchema": null,
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1490623270204,
+        "uniqueId": "9deeedd6-2010-4e2f-bf63-b748fcdb0375",
+        "noCachedResults": false
+      },
+      {
+        "owner": "user4 user4",
+        "creator": "user4 user4",
+        "internalUserGroups": [
+          "QA"
+        ],
+        "displayName": null,
+        "rule": {
+          "ruleString": ""
+        },
+        "description": "Feature with MTX in MTX",
+        "type": "FEATURE",
+        "rolloutPercentage": 12,
+        "creationDate": 1490623276105,
+        "enabled": true,
+        "defaultConfiguration": null,
+        "features": [
+          {
+            "features": [],
+            "maxFeaturesOn": 1,
+            "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+            "lastModified": 1490623276998,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "bb763012-3d80-49df-9b7f-ece847883742"
+          },
+          {
+            "features": [
+              {
+                "owner": "user4 user4",
+                "creator": "user4 user4",
+                "internalUserGroups": [
+                  "QA"
+                ],
+                "displayName": null,
+                "rule": {
+                  "ruleString": ""
+                },
+                "description": "",
+                "type": "FEATURE",
+                "rolloutPercentage": 76.45,
+                "creationDate": 1490623279788,
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [
+                  {
+                    "features": [],
+                    "maxFeaturesOn": 1,
+                    "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                    "lastModified": 1490623280782,
+                    "type": "MUTUAL_EXCLUSION_GROUP",
+                    "uniqueId": "9230ce6b-3605-47ea-adad-43b4a9862539"
+                  },
+                  {
+                    "features": [
+                      {
+                        "owner": "user4 user4",
+                        "creator": "user4 user4",
+                        "internalUserGroups": [
+                          "QA"
+                        ],
+                        "displayName": null,
+                        "rule": {
+                          "ruleString": ""
+                        },
+                        "description": "",
+                        "type": "FEATURE",
+                        "rolloutPercentage": 0.01,
+                        "creationDate": 1490623283236,
+                        "enabled": true,
+                        "defaultConfiguration": null,
+                        "features": [],
+                        "stage": "DEVELOPMENT",
+                        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                        "configurationRules": [],
+                        "defaultIfAirlockSystemIsDown": false,
+                        "name": "F3ab",
+                        "namespace": "ns",
+                        "configurationSchema": null,
+                        "additionalInfo": null,
+                        "minAppVersion": "7.5",
+                        "lastModified": 1490623283236,
+                        "uniqueId": "4bd6ad31-63ca-4050-8874-6141528c5daa",
+                        "noCachedResults": false
+                      },
+                      {
+                        "owner": "user4 user4",
+                        "creator": "user4 user4",
+                        "internalUserGroups": [
+                          "QA"
+                        ],
+                        "displayName": null,
+                        "rule": {
+                          "ruleString": ""
+                        },
+                        "description": "",
+                        "type": "FEATURE",
+                        "rolloutPercentage": 67.99,
+                        "creationDate": 1490623284631,
+                        "enabled": true,
+                        "defaultConfiguration": null,
+                        "features": [],
+                        "stage": "DEVELOPMENT",
+                        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                        "configurationRules": [],
+                        "defaultIfAirlockSystemIsDown": false,
+                        "name": "F3aa",
+                        "namespace": "ns",
+                        "configurationSchema": null,
+                        "additionalInfo": null,
+                        "minAppVersion": "7.5",
+                        "lastModified": 1490623284631,
+                        "uniqueId": "0bb396d1-5850-4142-bd56-8ace87d726de",
+                        "noCachedResults": false
+                      }
+                    ],
+                    "maxFeaturesOn": 1,
+                    "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                    "lastModified": 1490623284631,
+                    "type": "MUTUAL_EXCLUSION_GROUP",
+                    "uniqueId": "4b1f0c90-2b6a-4792-8d5b-842e589c83eb"
+                  }
+                ],
+                "stage": "DEVELOPMENT",
+                "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                "configurationRules": [],
+                "defaultIfAirlockSystemIsDown": false,
+                "name": "F3a",
+                "namespace": "ns",
+                "configurationSchema": null,
+                "additionalInfo": {},
+                "minAppVersion": "7.5",
+                "lastModified": 1490623281848,
+                "uniqueId": "07869fb2-8305-4e42-ad9d-9f73e74fefe4",
+                "noCachedResults": false
+              },
+              {
+                "owner": "user4 user4",
+                "creator": "user4 user4",
+                "internalUserGroups": [
+                  "QA"
+                ],
+                "displayName": null,
+                "rule": {
+                  "ruleString": ""
+                },
+                "description": "",
+                "type": "FEATURE",
+                "rolloutPercentage": 100,
+                "creationDate": 1490623285969,
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "stage": "DEVELOPMENT",
+                "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                "configurationRules": [],
+                "defaultIfAirlockSystemIsDown": false,
+                "name": "F3b",
+                "namespace": "ns",
+                "configurationSchema": null,
+                "additionalInfo": {},
+                "minAppVersion": "7.5",
+                "lastModified": 1490623285969,
+                "uniqueId": "95e81091-472e-4058-bf9b-2e416394eadd",
+                "noCachedResults": false
+              }
+            ],
+            "maxFeaturesOn": 1,
+            "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+            "lastModified": 1490623285969,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "22a16b0d-a55e-445b-8c12-bb3ca18b9cf4"
+          }
+        ],
+        "stage": "DEVELOPMENT",
+        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+        "configurationRules": [],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "F3",
+        "namespace": "ns",
+        "configurationSchema": null,
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1490623278474,
+        "uniqueId": "2fea7fe2-b0ae-4b8b-8a98-5935bbc4b3fd",
+        "noCachedResults": false
+      },
+      {
+        "owner": "user4 user4",
+        "creator": "user4 user4",
+        "internalUserGroups": [
+          "QA"
+        ],
+        "displayName": null,
+        "rule": {
+          "ruleString": ""
+        },
+        "description": "Feature with configs",
+        "type": "FEATURE",
+        "rolloutPercentage": 100,
+        "creationDate": 1490623287362,
+        "enabled": true,
+        "defaultConfiguration": null,
+        "features": [],
+        "stage": "DEVELOPMENT",
+        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+        "configurationRules": [
+          {
+            "owner": "user4 user4",
+            "creator": "user4 user4",
+            "internalUserGroups": [
+              "QA"
+            ],
+            "configuration": "{\n\t\n}",
+            "rule": {
+              "ruleString": ""
+            },
+            "description": "",
+            "type": "CONFIGURATION_RULE",
+            "rolloutPercentage": 100,
+            "creationDate": 1490623288663,
+            "enabled": true,
+            "stage": "DEVELOPMENT",
+            "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+            "configurationRules": [],
+            "name": "F4a",
+            "namespace": "nsF4",
+            "minAppVersion": "7.5",
+            "lastModified": 1490623288663,
+            "uniqueId": "4cbfe0a1-b1d6-4014-87a0-0871b988a2bd",
+            "noCachedResults": false
+          },
+          {
+            "owner": "user4 user4",
+            "creator": "user4 user4",
+            "internalUserGroups": [
+              "QA"
+            ],
+            "configuration": "{}",
+            "rule": {
+              "ruleString": ""
+            },
+            "description": "",
+            "type": "CONFIGURATION_RULE",
+            "rolloutPercentage": 54.123,
+            "creationDate": 1490623290115,
+            "enabled": true,
+            "stage": "DEVELOPMENT",
+            "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+            "configurationRules": [],
+            "name": "F4b",
+            "namespace": "nsF4",
+            "minAppVersion": "7.5",
+            "lastModified": 1490623290115,
+            "uniqueId": "ed5e71d7-7292-4fa6-be56-6b94fc9e7629",
+            "noCachedResults": false
+          }
+        ],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "F4",
+        "namespace": "ns",
+        "configurationSchema": null,
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1490623290115,
+        "uniqueId": "9d0810cb-d873-4dc9-be2d-6bff1213fdbe",
+        "noCachedResults": false
+      },
+      {
+        "owner": "user4 user4",
+        "creator": "user4 user4",
+        "internalUserGroups": [
+          "QA"
+        ],
+        "displayName": null,
+        "rule": {
+          "ruleString": ""
+        },
+        "description": "Feature with MTX of configs",
+        "type": "FEATURE",
+        "rolloutPercentage": 100,
+        "creationDate": 1490623291565,
+        "enabled": true,
+        "defaultConfiguration": null,
+        "features": [],
+        "stage": "DEVELOPMENT",
+        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+        "configurationRules": [
+          {
+            "maxFeaturesOn": 1,
+            "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+            "configurationRules": [
+              {
+                "owner": "user4 user4",
+                "creator": "user4 user4",
+                "internalUserGroups": [
+                  "QA"
+                ],
+                "configuration": "{}",
+                "rule": {
+                  "ruleString": ""
+                },
+                "description": "",
+                "type": "CONFIGURATION_RULE",
+                "rolloutPercentage": 2.5,
+                "creationDate": 1490623294099,
+                "enabled": true,
+                "stage": "DEVELOPMENT",
+                "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                "configurationRules": [],
+                "name": "F5b",
+                "namespace": "nsF5",
+                "minAppVersion": "7.5",
+                "lastModified": 1490623294099,
+                "uniqueId": "58ba17c9-12e3-4197-8954-b57fe1e416ab",
+                "noCachedResults": false
+              },
+              {
+                "owner": "user4 user4",
+                "creator": "user4 user4",
+                "internalUserGroups": [
+                  "QA"
+                ],
+                "configuration": "{}",
+                "rule": {
+                  "ruleString": ""
+                },
+                "description": "",
+                "type": "CONFIGURATION_RULE",
+                "rolloutPercentage": 1,
+                "creationDate": 1490623295529,
+                "enabled": true,
+                "stage": "DEVELOPMENT",
+                "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                "configurationRules": [],
+                "name": "F5a",
+                "namespace": "nsF5",
+                "minAppVersion": "7.5",
+                "lastModified": 1490623295529,
+                "uniqueId": "1cff86fb-8811-4301-9a04-db63fb3681c9",
+                "noCachedResults": false
+              }
+            ],
+            "lastModified": 1490623295529,
+            "type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "8f4e612c-6a26-40a5-9853-5cadeff287e6"
+          }
+        ],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "F5",
+        "namespace": "ns",
+        "configurationSchema": null,
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1490623292554,
+        "uniqueId": "a9937d4e-5508-4fca-8d25-567e4fd219cf",
+        "noCachedResults": false
+      },
+      {
+        "owner": "user4 user4",
+        "creator": "user4 user4",
+        "internalUserGroups": [
+          "QA"
+        ],
+        "displayName": null,
+        "rule": {
+          "ruleString": ""
+        },
+        "description": "Feature with hierarchy of configs",
+        "type": "FEATURE",
+        "rolloutPercentage": 100,
+        "creationDate": 1490623296979,
+        "enabled": true,
+        "defaultConfiguration": null,
+        "features": [],
+        "stage": "DEVELOPMENT",
+        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+        "configurationRules": [
+          {
+            "owner": "user4 user4",
+            "creator": "user4 user4",
+            "internalUserGroups": [
+              "QA"
+            ],
+            "configuration": "{}",
+            "rule": {
+              "ruleString": ""
+            },
+            "description": "",
+            "type": "CONFIGURATION_RULE",
+            "rolloutPercentage": 0.005,
+            "creationDate": 1490623298448,
+            "enabled": true,
+            "stage": "DEVELOPMENT",
+            "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+            "configurationRules": [
+              {
+                "owner": "user4 user4",
+                "creator": "user4 user4",
+                "internalUserGroups": [
+                  "QA"
+                ],
+                "configuration": "{}",
+                "rule": {
+                  "ruleString": ""
+                },
+                "description": "",
+                "type": "CONFIGURATION_RULE",
+                "rolloutPercentage": 100,
+                "creationDate": 1490623300074,
+                "enabled": true,
+                "stage": "DEVELOPMENT",
+                "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                "configurationRules": [],
+                "name": "F6aa",
+                "namespace": "nsF6F6a",
+                "minAppVersion": "7.5",
+                "lastModified": 1490623300074,
+                "uniqueId": "04fb472b-c9c2-4def-8e03-751360ee55e0",
+                "noCachedResults": false
+              },
+              {
+                "owner": "user4 user4",
+                "creator": "user4 user4",
+                "internalUserGroups": [
+                  "QA"
+                ],
+                "configuration": "{}",
+                "rule": {
+                  "ruleString": ""
+                },
+                "description": "",
+                "type": "CONFIGURATION_RULE",
+                "rolloutPercentage": 43.1,
+                "creationDate": 1490623301819,
+                "enabled": true,
+                "stage": "DEVELOPMENT",
+                "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                "configurationRules": [],
+                "name": "F6bab",
+                "namespace": "nsF6F6a",
+                "minAppVersion": "7.5",
+                "lastModified": 1490623301819,
+                "uniqueId": "92b0a0da-8126-4c5f-bf09-d4f5afe8bae5",
+                "noCachedResults": false
+              }
+            ],
+            "name": "F6a",
+            "namespace": "nsF6",
+            "minAppVersion": "7.5",
+            "lastModified": 1490623301819,
+            "uniqueId": "bd9a50f1-cfc5-40fe-ba18-524127b77db7",
+            "noCachedResults": false
+          }
+        ],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "F6",
+        "namespace": "ns",
+        "configurationSchema": null,
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1490623298448,
+        "uniqueId": "ccd71d10-e388-48f9-a0ab-a4060cbdcb2b",
+        "noCachedResults": false
+      },
+      {
+        "owner": "user4 user4",
+        "creator": "user4 user4",
+        "internalUserGroups": [
+          "QA"
+        ],
+        "displayName": null,
+        "rule": {
+          "ruleString": ""
+        },
+        "description": "Feature with MTX of configs in hierarchy",
+        "type": "FEATURE",
+        "rolloutPercentage": 99.999,
+        "creationDate": 1490623303364,
+        "enabled": true,
+        "defaultConfiguration": null,
+        "features": [],
+        "stage": "DEVELOPMENT",
+        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+        "configurationRules": [
+          {
+            "owner": "user4 user4",
+            "creator": "user4 user4",
+            "internalUserGroups": [
+              "QA"
+            ],
+            "configuration": "{}",
+            "rule": {
+              "ruleString": ""
+            },
+            "description": "",
+            "type": "CONFIGURATION_RULE",
+            "rolloutPercentage": 99.999,
+            "creationDate": 1490623304963,
+            "enabled": true,
+            "stage": "DEVELOPMENT",
+            "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+            "configurationRules": [
+              {
+                "maxFeaturesOn": 1,
+                "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                "configurationRules": [
+                  {
+                    "owner": "user4 user4",
+                    "creator": "user4 user4",
+                    "internalUserGroups": [
+                      "QA"
+                    ],
+                    "configuration": "{}",
+                    "rule": {
+                      "ruleString": ""
+                    },
+                    "description": "",
+                    "type": "CONFIGURATION_RULE",
+                    "rolloutPercentage": 99.999,
+                    "creationDate": 1490623309297,
+                    "enabled": true,
+                    "stage": "DEVELOPMENT",
+                    "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                    "configurationRules": [],
+                    "name": "F7ab",
+                    "namespace": "nsF7F7a",
+                    "minAppVersion": "7.5",
+                    "lastModified": 1490623309297,
+                    "uniqueId": "18910f35-dee6-4267-83ee-584c90ce7310",
+                    "noCachedResults": false
+                  },
+                  {
+                    "owner": "user4 user4",
+                    "creator": "user4 user4",
+                    "internalUserGroups": [
+                      "QA"
+                    ],
+                    "configuration": "{}",
+                    "rule": {
+                      "ruleString": ""
+                    },
+                    "description": "",
+                    "type": "CONFIGURATION_RULE",
+                    "rolloutPercentage": 50,
+                    "creationDate": 1490623312245,
+                    "enabled": true,
+                    "stage": "DEVELOPMENT",
+                    "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                    "configurationRules": [],
+                    "name": "F7aa",
+                    "namespace": "nsF7F7a",
+                    "minAppVersion": "7.5",
+                    "lastModified": 1490623312245,
+                    "uniqueId": "fb0fdde5-78da-4b17-a842-f5ebd6f65e06",
+                    "noCachedResults": false
+                  }
+                ],
+                "lastModified": 1490623312245,
+                "type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+                "uniqueId": "a56d720d-edc5-43ec-a2e7-ac7d24924255"
+              }
+            ],
+            "name": "F7a",
+            "namespace": "nsF7",
+            "minAppVersion": "7.5",
+            "lastModified": 1490623307736,
+            "uniqueId": "8c233d62-19b0-4876-b38a-f0d0135adfd0",
+            "noCachedResults": false
+          }
+        ],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "F7",
+        "namespace": "ns",
+        "configurationSchema": null,
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1490623304963,
+        "uniqueId": "8a859ad4-671e-433f-b71f-3267b25911cd",
+        "noCachedResults": false
+      },
+      {
+        "owner": "user4 user4",
+        "creator": "user4 user4",
+        "internalUserGroups": [
+          "QA"
+        ],
+        "displayName": null,
+        "rule": {
+          "ruleString": ""
+        },
+        "description": "Feature with MTX of sub features with configs and sub-configs",
+        "type": "FEATURE",
+        "rolloutPercentage": 100,
+        "creationDate": 1490623313778,
+        "enabled": true,
+        "defaultConfiguration": null,
+        "features": [
+          {
+            "features": [
+              {
+                "owner": "user4 user4",
+                "creator": "user4 user4",
+                "internalUserGroups": [
+                  "QA"
+                ],
+                "displayName": null,
+                "rule": {
+                  "ruleString": ""
+                },
+                "description": "",
+                "type": "FEATURE",
+                "rolloutPercentage": 50,
+                "creationDate": 1490623316494,
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "stage": "DEVELOPMENT",
+                "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                "configurationRules": [
+                  {
+                    "owner": "user4 user4",
+                    "creator": "user4 user4",
+                    "internalUserGroups": [
+                      "QA"
+                    ],
+                    "configuration": "{}",
+                    "rule": {
+                      "ruleString": ""
+                    },
+                    "description": "",
+                    "type": "CONFIGURATION_RULE",
+                    "rolloutPercentage": 25,
+                    "creationDate": 1490623318055,
+                    "enabled": true,
+                    "stage": "DEVELOPMENT",
+                    "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                    "configurationRules": [
+                      {
+                        "owner": "user4 user4",
+                        "creator": "user4 user4",
+                        "internalUserGroups": [
+                          "QA"
+                        ],
+                        "configuration": "{}",
+                        "rule": {
+                          "ruleString": ""
+                        },
+                        "description": "",
+                        "type": "CONFIGURATION_RULE",
+                        "rolloutPercentage": 25,
+                        "creationDate": 1490623319635,
+                        "enabled": true,
+                        "stage": "DEVELOPMENT",
+                        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                        "configurationRules": [],
+                        "name": "F8b1a",
+                        "namespace": "nsF8bF8b1",
+                        "minAppVersion": "7.5",
+                        "lastModified": 1490623319635,
+                        "uniqueId": "d54598b2-0485-4f79-be36-a45a225da3d2",
+                        "noCachedResults": false
+                      }
+                    ],
+                    "name": "F8b1",
+                    "namespace": "nsF8b",
+                    "minAppVersion": "7.5",
+                    "lastModified": 1490623319635,
+                    "uniqueId": "4ec78976-cb4c-4a8d-abc0-b79614a43554",
+                    "noCachedResults": false
+                  },
+                  {
+                    "owner": "user4 user4",
+                    "creator": "user4 user4",
+                    "internalUserGroups": [
+                      "QA"
+                    ],
+                    "configuration": "{}",
+                    "rule": {
+                      "ruleString": ""
+                    },
+                    "description": "",
+                    "type": "CONFIGURATION_RULE",
+                    "rolloutPercentage": 23,
+                    "creationDate": 1490623321314,
+                    "enabled": true,
+                    "stage": "DEVELOPMENT",
+                    "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                    "configurationRules": [],
+                    "name": "F8b2",
+                    "namespace": "nsF8b",
+                    "minAppVersion": "7.5",
+                    "lastModified": 1490623321314,
+                    "uniqueId": "4b5ca21f-9d43-48b2-b14c-6aeef8289e54",
+                    "noCachedResults": false
+                  }
+                ],
+                "defaultIfAirlockSystemIsDown": false,
+                "name": "F8b",
+                "namespace": "ns",
+                "configurationSchema": null,
+                "additionalInfo": {},
+                "minAppVersion": "7.5",
+                "lastModified": 1490623321314,
+                "uniqueId": "98f5d6de-217f-4da6-aaab-10230e1e9488",
+                "noCachedResults": false
+              },
+              {
+                "owner": "user4 user4",
+                "creator": "user4 user4",
+                "internalUserGroups": [
+                  "QA"
+                ],
+                "displayName": null,
+                "rule": {
+                  "ruleString": ""
+                },
+                "description": "",
+                "type": "FEATURE",
+                "rolloutPercentage": 100,
+                "creationDate": 1490623325278,
+                "enabled": true,
+                "defaultConfiguration": null,
+                "features": [],
+                "stage": "DEVELOPMENT",
+                "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                "configurationRules": [
+                  {
+                    "maxFeaturesOn": 1,
+                    "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                    "configurationRules": [
+                      {
+                        "owner": "user4 user4",
+                        "creator": "user4 user4",
+                        "internalUserGroups": [
+                          "QA"
+                        ],
+                        "configuration": "{}",
+                        "rule": {
+                          "ruleString": ""
+                        },
+                        "description": "",
+                        "type": "CONFIGURATION_RULE",
+                        "rolloutPercentage": 60,
+                        "creationDate": 1490623327913,
+                        "enabled": true,
+                        "stage": "DEVELOPMENT",
+                        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                        "configurationRules": [
+                          {
+                            "owner": "user4 user4",
+                            "creator": "user4 user4",
+                            "internalUserGroups": [
+                              "QA"
+                            ],
+                            "configuration": "{}",
+                            "rule": {
+                              "ruleString": ""
+                            },
+                            "description": "",
+                            "type": "CONFIGURATION_RULE",
+                            "rolloutPercentage": 0.0001,
+                            "creationDate": 1490623329442,
+                            "enabled": true,
+                            "stage": "DEVELOPMENT",
+                            "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                            "configurationRules": [],
+                            "name": "F8a1a",
+                            "namespace": "nsF8aF8a1",
+                            "minAppVersion": "7.5",
+                            "lastModified": 1490623329442,
+                            "uniqueId": "a7a08f5f-6243-4087-922d-5d1c2b77b2f4",
+                            "noCachedResults": false
+                          }
+                        ],
+                        "name": "F8a1",
+                        "namespace": "nsF8a",
+                        "minAppVersion": "7.5",
+                        "lastModified": 1490623329442,
+                        "uniqueId": "0180a423-6991-4a46-9976-f3e180f2a55f",
+                        "noCachedResults": false
+                      },
+                      {
+                        "owner": "user4 user4",
+                        "creator": "user4 user4",
+                        "internalUserGroups": [
+                          "QA"
+                        ],
+                        "configuration": "{}",
+                        "rule": {
+                          "ruleString": ""
+                        },
+                        "description": "",
+                        "type": "CONFIGURATION_RULE",
+                        "rolloutPercentage": 0.0001,
+                        "creationDate": 1490623331106,
+                        "enabled": true,
+                        "stage": "DEVELOPMENT",
+                        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+                        "configurationRules": [],
+                        "name": "F8a2",
+                        "namespace": "nsF8a",
+                        "minAppVersion": "7.5",
+                        "lastModified": 1490623331106,
+                        "uniqueId": "34f9d483-1f64-4623-aea2-3620763d3090",
+                        "noCachedResults": false
+                      }
+                    ],
+                    "lastModified": 1490623331107,
+                    "type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+                    "uniqueId": "74e8ca5d-1000-446b-8c14-1a3dd14e701e"
+                  }
+                ],
+                "defaultIfAirlockSystemIsDown": false,
+                "name": "F8a",
+                "namespace": "ns",
+                "configurationSchema": null,
+                "additionalInfo": null,
+                "minAppVersion": "7.5",
+                "lastModified": 1490623326503,
+                "uniqueId": "e85e2082-f10b-4b17-9086-e753e011630c",
+                "noCachedResults": false
+              }
+            ],
+            "maxFeaturesOn": 1,
+            "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+            "lastModified": 1490623325278,
+            "type": "MUTUAL_EXCLUSION_GROUP",
+            "uniqueId": "886898eb-1b32-4566-a53c-a248f2cc92be"
+          }
+        ],
+        "stage": "DEVELOPMENT",
+        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+        "configurationRules": [],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "F8",
+        "namespace": "ns",
+        "configurationSchema": null,
+        "additionalInfo": {},
+        "minAppVersion": "7.5",
+        "lastModified": 1490623314852,
+        "uniqueId": "f434d63e-62e5-4679-97f0-a18822245c05",
+        "noCachedResults": false
+      },
+      {
+        "owner": "user4 user4",
+        "creator": "user4 user4",
+        "internalUserGroups": [
+          "QA"
+        ],
+        "displayName": null,
+        "rule": {
+          "ruleString": ""
+        },
+        "description": "",
+        "type": "FEATURE",
+        "rolloutPercentage": 0,
+        "creationDate": 1490623567762,
+        "enabled": true,
+        "defaultConfiguration": null,
+        "features": [],
+        "stage": "DEVELOPMENT",
+        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+        "configurationRules": [],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "zero percentage",
+        "namespace": "ns",
+        "configurationSchema": null,
+        "additionalInfo": null,
+        "minAppVersion": "7.5",
+        "lastModified": 1490623567762,
+        "uniqueId": "014b86a5-c476-4257-847c-a234f13ba5bf",
+        "noCachedResults": false
+      },
+      {
+        "owner": "user4 user4",
+        "creator": "user4 user4",
+        "internalUserGroups": [
+          "QA"
+        ],
+        "displayName": null,
+        "rule": {
+          "ruleString": ""
+        },
+        "description": "",
+        "type": "FEATURE",
+        "rolloutPercentage": 45.123,
+        "creationDate": 1490623600653,
+        "enabled": true,
+        "defaultConfiguration": null,
+        "features": [],
+        "stage": "DEVELOPMENT",
+        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+        "configurationRules": [],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "F10",
+        "namespace": "ns",
+        "configurationSchema": null,
+        "additionalInfo": null,
+        "minAppVersion": "7.5",
+        "lastModified": 1490623600653,
+        "uniqueId": "2a77afe3-a51c-4390-a07a-6321171b7b59",
+        "noCachedResults": false
+      },
+      {
+        "owner": "user4 user4",
+        "creator": "user4 user4",
+        "internalUserGroups": [
+          "QA"
+        ],
+        "displayName": null,
+        "rule": {
+          "ruleString": ""
+        },
+        "description": "",
+        "type": "FEATURE",
+        "rolloutPercentage": 99.9999,
+        "creationDate": 1490623894473,
+        "enabled": false,
+        "defaultConfiguration": null,
+        "features": [],
+        "stage": "DEVELOPMENT",
+        "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+        "configurationRules": [],
+        "defaultIfAirlockSystemIsDown": false,
+        "name": "disable1",
+        "namespace": "ns",
+        "configurationSchema": null,
+        "additionalInfo": null,
+        "minAppVersion": "7.5",
+        "lastModified": 1490623894473,
+        "uniqueId": "a27deffb-e3bf-4a45-8467-25ca93d4f848",
+        "noCachedResults": false
+      }
+    ],
+    "seasonId": "74920c81-c026-4fa9-87ad-e6299e470e2b",
+    "lastModified": 1490623894473,
+    "type": "ROOT",
+    "uniqueId": "f4be2020-f988-42d5-a531-47b7b82d73c6"
+  }
+}

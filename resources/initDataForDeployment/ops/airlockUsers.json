@@ -1,0 +1,54 @@
+{
+  "roles": [
+    {
+      "role": "Administrator",
+      "displayName": "Administrator",
+      "users": [
+        
+      ]
+    },
+    {
+      "role": "ProductLead",
+      "displayName": "Product Lead",
+      "users": [
+       	
+      ]
+    },
+    {
+      "role": "AnalyticsViewer",
+      "displayName": "Analytics Viewer",
+      "users": [
+        
+      ]
+    },
+    {
+      "role": "AnalyticsEditor",
+      "displayName": "Analytics Editor",
+      "users": [
+        
+      ]
+    },
+    {
+      "role": "TranslationSpecialist",
+      "displayName": "Translation Specialist",
+      "users": [
+        
+      ]
+    },
+    {
+      "role": "Editor",
+      "displayName": "Editor",
+      "users": [
+      	    
+      ]
+    },
+    {
+		"displayName": "Viewer",
+		"role": "Viewer",
+		"users": [
+			"*.aaa.com"
+		]
+	}
+  ],
+  "lastModified": 1474976623930
+}

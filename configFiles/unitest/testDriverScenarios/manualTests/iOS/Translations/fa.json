@@ -1,0 +1,373 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "مایل به"
+},
+"translationKey2": {
+"stringId" : "HeadsUp.WeekendForecast",
+"translation" : "پیش‌بینی پایان هفته"
+},
+"translationKey3": {
+"stringId" : "HeadsUp.Precip",
+"translation" : "بارش"
+},
+"translationKey4": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "وقوع صاعقه"
+},
+"translationKey5": {
+"stringId" : "Units.AM",
+"translation" : "صبح"
+},
+"translationKey6": {
+"stringId" : "Units.PM",
+"translation" : "بعد ازظهر"
+},
+"translationKey7": {
+"stringId" : "DDI.RoadConditions",
+"translation" : "وضعیت جاده"
+},
+"translationKey8": {
+"stringId" : "General.Tonight",
+"translation" : "امشب"
+},
+"translationKey9": {
+"stringId" : "General.Tomorrow",
+"translation" : "فردا"
+},
+"translationKey10": {
+"stringId" : "General.Today",
+"translation" : "امروز"
+},
+"translationKey11": {
+"stringId" : "HeadsUp.Rain",
+"translation" : "باران"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "احتمال باران وجود دارد"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "احتمال باران"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.Snow",
+"translation" : "برف"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "بارش برف ممکن است"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "احتمال باران"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.LightWintryMix",
+"translation" : "هوای زمستانی ملایم"
+},
+"translationKey18": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "اینگونه حس می‌شود"
+},
+"translationKey19": {
+"stringId" : "General.Sunrise",
+"translation" : "طلوع"
+},
+"translationKey20": {
+"stringId" : "General.Sunset",
+"translation" : "غروب"
+},
+"translationKey21": {
+"stringId" : "HeadsUp.WinterStormLikely",
+"translation" : "احتمال طوفان زمستانی"
+},
+"translationKey22": {
+"stringId" : "HeadsUp.WinterStormPossible",
+"translation" : "احتمال طوفان زمستانی"
+},
+"translationKey23": {
+"stringId" : "HeadsUp.InView",
+"translation" : "[[[1]]] در نمایش"
+},
+"translationKey24": {
+"stringId" : "HeadsUp.Next48Hours",
+"translation" : "48 ساعت آینده"
+},
+"translationKey25": {
+"stringId" : "DDI.Good",
+"translation" : "خوب"
+},
+"translationKey26": {
+"stringId" : "DDI.Foggy",
+"translation" : "مه‌آلود"
+},
+"translationKey27": {
+"stringId" : "DDI.Icy",
+"translation" : "یخ‌زدگی"
+},
+"translationKey28": {
+"stringId" : "DDI.Ponding",
+"translation" : "آبگرفتگی"
+},
+"translationKey29": {
+"stringId" : "DDI.Snowy",
+"translation" : "برفی"
+},
+"translationKey30": {
+"stringId" : "DDI.Wet",
+"translation" : "خیس"
+},
+"translationKey31": {
+"stringId" : "HeadsUp.Accumulation",
+"translation" : "تجمع"
+},
+"translationKey32": {
+"stringId" : "HeadsUp.RainStarting",
+"translation" : "شروع باران"
+},
+"translationKey33": {
+"stringId" : "HeadsUp.RainEnding",
+"translation" : "پایان بارندگی"
+},
+"translationKey34": {
+"stringId" : "HeadsUp.SnowStarting",
+"translation" : "شروع برف"
+},
+"translationKey35": {
+"stringId" : "HeadsUp.SnowEnding",
+"translation" : "پایان بارش برف"
+},
+"translationKey36": {
+"stringId" : "HeadsUp.MixStarting",
+"translation" : "شروع بارش مخلوط باران و برف"
+},
+"translationKey37": {
+"stringId" : "HeadsUp.MixEnding",
+"translation" : "پایان باراش مخلوط برف و باران"
+},
+"translationKey38": {
+"stringId" : "HeadsUp.WintryMixStarting",
+"translation" : "شروع هوای زمستانی"
+},
+"translationKey39": {
+"stringId" : "HeadsUp.WintryMixEnding",
+"translation" : "پایان هوای زمستانی"
+},
+"translationKey40": {
+"stringId" : "HeadsUp.StormsStarting",
+"translation" : "شروع طوفان"
+},
+"translationKey41": {
+"stringId" : "HeadsUp.StormsEnding",
+"translation" : "پایان طوفان"
+},
+"translationKey42": {
+"stringId" : "HeadsUp.Storms",
+"translation" : "طوفان"
+},
+"translationKey43": {
+"stringId" : "HeadsUp.StormsLikely",
+"translation" : "احتمال طوفان"
+},
+"translationKey44": {
+"stringId" : "HeadsUp.StormsPossible",
+"translation" : "احتمال طوفان"
+},
+"translationKey45": {
+"stringId" : "HeadsUp.Precipitation",
+"translation" : "بارش"
+},
+"translationKey46": {
+"stringId" : "HeadsUp.LookAhead",
+"translation" : "نگاه به آینده"
+},
+"translationKey47": {
+"stringId" : "HeadsUp.Clear",
+"translation" : "صاف"
+},
+"translationKey48": {
+"stringId" : "Units.CM",
+"translation" : "سانتی متر"
+},
+"translationKey49": {
+"stringId" : "Units.KMH",
+"translation" : "کیلومتر در ساعت"
+},
+"translationKey50": {
+"stringId" : "Units.MPH",
+"translation" : "مايل‌ در ساعت‌"
+},
+"translationKey51": {
+"stringId" : "Units.InchMercury",
+"translation" : "در"
+},
+"translationKey52": {
+"stringId" : "Units.Inches",
+"translation" : "در"
+},
+"translationKey53": {
+"stringId" : "Units.MiliBars",
+"translation" : "میلی بار"
+},
+"translationKey54": {
+"stringId" : "Units.Feet",
+"translation" : "فوت"
+},
+"translationKey55": {
+"stringId" : "Units.Meter",
+"translation" : "M"
+},
+"translationKey56": {
+"stringId" : "Units.Miles",
+"translation" : "مایل"
+},
+"translationKey57": {
+"stringId" : "Units.KM",
+"translation" : "کیلومتر"
+},
+"translationKey58": {
+"stringId" : "DDI.Windy",
+"translation" : "وزش باد"
+},
+"translationKey59": {
+"stringId" : "DDI.Wind",
+"translation" : "باد"
+},
+"translationKey60": {
+"stringId" : "General.Weekend",
+"translation" : "آخر هفته"
+},
+"translationKey61": {
+"stringId" : "HeadsUp.SevereTStormImpactedNow",
+"translation" : "وقوع طوفان‌های تندری شدید در حال حاضر"
+},
+"translationKey62": {
+"stringId" : "HeadsUp.SevereTStormsPossible",
+"translation" : "احتمال طوفان‌های تندری شدید"
+},
+"translationKey63": {
+"stringId" : "HeadsUp.SevereTStormsLikely",
+"translation" : "احتمال طوفان‌های تندری شدید"
+},
+"translationKey64": {
+"stringId" : "HeadsUp.SevereTStormsHighRisk",
+"translation" : "احتمال زیاد وقوع طوفان‌های تندری شدید"
+},
+"translationKey65": {
+"stringId" : "HeadsUp.SevereTStormNow",
+"translation" : "الان طوفان‌های تندری شدید"
+},
+"translationKey66": {
+"stringId" : "HeadsUp.PrecipStart",
+"translation" : "شروع بارش‌ها"
+},
+"translationKey67": {
+"stringId" : "HeadsUp.PrecipEnd",
+"translation" : "پایان بارش‌ها"
+},
+"translationKey68": {
+"stringId" : "HeadsUp.WinterStormStarting",
+"translation" : "شروع طوفان زمستانی"
+},
+"translationKey69": {
+"stringId" : "HeadsUp.WinterStormEnding",
+"translation" : "پایان طوفان زمستانی"
+},
+"translationKey70": {
+"stringId" : "HeadsUp.WintryMix",
+"translation" : "هوای زمستانی"
+},
+"translationKey71": {
+"stringId" : "HeadsUp.WintryMixLikely",
+"translation" : "احتمال هوای زمستانی"
+},
+"translationKey72": {
+"stringId" : "HeadsUp.WintryMixPossible",
+"translation" : "احتمال هوای زمستانی"
+},
+"translationKey73": {
+"stringId" : "HeadsUp.Mix",
+"translation" : "MIX"
+},
+"translationKey74": {
+"stringId" : "HeadsUp.MixLikely",
+"translation" : "احتمال هوای زمستانی"
+},
+"translationKey75": {
+"stringId" : "HeadsUp.MixPossible",
+"translation" : "احتمال هوای زمستانی"
+},
+"translationKey76": {
+"stringId" : "HeadsUp.48Hrs",
+"translation" : "48 ساعت آینده"
+},
+"translationKey77": {
+"stringId" : "HeadsUp.SevereTStormSoon",
+"translation" : "نزدیکی طوفان‌های تندری شدید"
+},
+"translationKey78": {
+"stringId" : "HeadsUp.Soon",
+"translation" : "به زودی"
+},
+"translationKey79": {
+"stringId" : "HeadsUp.Forecasted",
+"translation" : "پیش بینی شده"
+},
+"translationKey80": {
+"stringId" : "HeadsUp.SevereTStorm",
+"translation" : "طوفان‌های تندری شدید"
+},
+"translationKey81": {
+"stringId" : "HeadsUp.SeeRadar",
+"translation" : "مشاهده رادار"
+},
+"translationKey82": {
+"stringId" : "HeadsUp.LightSnow",
+"translation" : "برف سبک"
+},
+"translationKey83": {
+"stringId" : "HeadsUp.LightSnowLikely",
+"translation" : "احتمال بارش برف سبک"
+},
+"translationKey84": {
+"stringId" : "HeadsUp.LightSnowPossible",
+"translation" : "احتمال بارش برف سبک"
+},
+"translationKey85": {
+"stringId" : "HeadsUp.LightSnowStarting",
+"translation" : "شروع بارش برف سبک"
+},
+"translationKey86": {
+"stringId" : "HeadsUp.LightSnowEnding",
+"translation" : "پایان بارش برف سبک"
+},
+"translationKey87": {
+"stringId" : "ProfileSettings.AlertsCTA",
+"translation" : "دریافت هشدارهای آب و هوایی به صورت لحظه‌ای"
+},
+"translationKey88": {
+"stringId" : "HeadsUp.RadarBRadarMap",
+"translation" : "نقشه رادار"
+},
+"translationKey89": {
+"stringId" : "GoRun.ExcellentRunningConditions",
+"translation" : "شرایط عالی برای دویدن"
+},
+"translationKey90": {
+"stringId" : "GoRun.GoodRunningConditions",
+"translation" : "شرایط خوب برای دویدن"
+},
+"translationKey91": {
+"stringId" : "GoRun.GoRun",
+"translation" : "GO RUN"
+}
+}

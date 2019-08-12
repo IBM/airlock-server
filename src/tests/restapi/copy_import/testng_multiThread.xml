@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+	<parameter name="url" value="http://localhost:9090/airlock/api/admin" />
+	<parameter name="analyticsUrl" value="http://localhost:9090/airlock/api/analytics" />
+	<parameter name="translationsUrl" value="http://localhost:9090/airlock/api/translations"></parameter>
+	<parameter name="configPath" value="./configFiles/unitest//"></parameter>
+	<parameter name="operationsUrl" value="http://localhost:9090/airlock/api/ops"></parameter>
+	<parameter name="excludeProductsDelete" value=""/>
+	<parameter name="deleteAll" value="true" />
+	<parameter name="notify" value="false" />
+	<parameter name="seasonVersion" value="3.0" />
+	<parameter name="userName" value=""></parameter>
+	<parameter name="userPassword" value=""></parameter>
+	<parameter name="appName" value=" "/>
+	<parameter name="sessionToken" value=""/>
+	<parameter name="productsToDeleteFile" value="./src/tests/productsToDelete2.txt" />
+
+    <test name="BeforeSuite"  enabled="true">
+		<classes>
+			<class name="tests.restapi.SuiteSetup"></class>
+		</classes>
+	</test>
+	<test name="Airlock_REST_API_validation_feature" enabled="true"  thread-count="2" parallel="classes">
+		<packages>
+			<package name="tests.restapi.copy_import.strings"/>
+			<package name="tests.restapi.copy_import.feature_with_strings"/>
+		</packages>
+	</test>
+	
+	<test name="AfterSuite"  enabled="true">
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteCleanup"></class> 
+    	</classes> 
+	</test> 
+    
+ </suite>
+
+

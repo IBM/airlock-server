@@ -1,0 +1,373 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "ΑΊΣΘ. ΘΕΡΜΟΚΡ."
+},
+"translationKey2": {
+"stringId" : "HeadsUp.WeekendForecast",
+"translation" : "ΠΡΌΓΝΩΣΗ ΣΑΒΒΑΤΟΚΎΡΙΑΚΟΥ"
+},
+"translationKey3": {
+"stringId" : "HeadsUp.Precip",
+"translation" : "ΚΑΤΑΚΡ"
+},
+"translationKey4": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "ΚΕΡΑΥΝΙΚΟ ΠΛΗΓΜΑ"
+},
+"translationKey5": {
+"stringId" : "Units.AM",
+"translation" : "ΠΜ"
+},
+"translationKey6": {
+"stringId" : "Units.PM",
+"translation" : "ΜΜ"
+},
+"translationKey7": {
+"stringId" : "DDI.RoadConditions",
+"translation" : "ΣΥΝΘΗΚΕΣ ΔΡΟΜΟΥ"
+},
+"translationKey8": {
+"stringId" : "General.Tonight",
+"translation" : "ΑΠΌΨΕ"
+},
+"translationKey9": {
+"stringId" : "General.Tomorrow",
+"translation" : "ΑΎΡΙΟ"
+},
+"translationKey10": {
+"stringId" : "General.Today",
+"translation" : "ΣΉΜΕΡΑ"
+},
+"translationKey11": {
+"stringId" : "HeadsUp.Rain",
+"translation" : "ΒΡΟΧΉ"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "ΠΙΘΑΝΉ ΒΡΟΧΉ"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "ΜΆΛΛΟΝ ΒΡΟΧΉ"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.Snow",
+"translation" : "ΧΙΌΝΙ"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "ΠΙΘΑΝΉ ΧΙΟΝΌΠΤΩΣΗ"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "ΜΆΛΛΟΝ ΧΙΟΝΌΠΤΩΣΗ"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.LightWintryMix",
+"translation" : "ΑΣΘΕΝΈΣ ΧΙΟΝΌΝΕΡΟ"
+},
+"translationKey18": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "ΑΊΣΘΗΣΗ ΘΕΡΜΟΚΡΑΣΊΑΣ"
+},
+"translationKey19": {
+"stringId" : "General.Sunrise",
+"translation" : "ΑΝΑΤΟΛΉ ΗΛΊΟΥ"
+},
+"translationKey20": {
+"stringId" : "General.Sunset",
+"translation" : "ΔΎΣΗ ΗΛΊΟΥ"
+},
+"translationKey21": {
+"stringId" : "HeadsUp.WinterStormLikely",
+"translation" : "ΕΝΔΕΧΟΜ. ΧΕΙΜΕΡΙΝΗΣ ΚΑΤΑΙΓΙΔΑΣ"
+},
+"translationKey22": {
+"stringId" : "HeadsUp.WinterStormPossible",
+"translation" : "ΠΙΘΑΝ. ΧΕΙΜΕΡΙΝΗΣ ΚΑΤΑΙΓ."
+},
+"translationKey23": {
+"stringId" : "HeadsUp.InView",
+"translation" : "ΑΝΑΜΕΝΕΤΑΙ [[[1]]]"
+},
+"translationKey24": {
+"stringId" : "HeadsUp.Next48Hours",
+"translation" : "ΕΠΟΜΕΝΕΣ 48 ΩΡΕΣ"
+},
+"translationKey25": {
+"stringId" : "DDI.Good",
+"translation" : "ΚΑΛΕΣ"
+},
+"translationKey26": {
+"stringId" : "DDI.Foggy",
+"translation" : "ΟΜΙΧΛΗ"
+},
+"translationKey27": {
+"stringId" : "DDI.Icy",
+"translation" : "ΠΑΓΟΣ"
+},
+"translationKey28": {
+"stringId" : "DDI.Ponding",
+"translation" : "ΛΙΜΝΑΣΗ"
+},
+"translationKey29": {
+"stringId" : "DDI.Snowy",
+"translation" : "ΧΙΟΝΙ"
+},
+"translationKey30": {
+"stringId" : "DDI.Wet",
+"translation" : "ΥΓΡΟ"
+},
+"translationKey31": {
+"stringId" : "HeadsUp.Accumulation",
+"translation" : "ΣΥΣΣΩΡΕΥΣΗ"
+},
+"translationKey32": {
+"stringId" : "HeadsUp.RainStarting",
+"translation" : "ΕΝΑΡΞΗ ΒΡΟΧΟΠΤΩΣΗΣ"
+},
+"translationKey33": {
+"stringId" : "HeadsUp.RainEnding",
+"translation" : "ΛΗΞΗ ΒΡΟΧΟΠΤΩΣΗΣ"
+},
+"translationKey34": {
+"stringId" : "HeadsUp.SnowStarting",
+"translation" : "ΕΝΑΡΞΗ ΧΙΟΝΟΠΤΩΣΗΣ"
+},
+"translationKey35": {
+"stringId" : "HeadsUp.SnowEnding",
+"translation" : "ΛΗΞΗ ΧΙΟΝΟΠΤΩΣΗΣ"
+},
+"translationKey36": {
+"stringId" : "HeadsUp.MixStarting",
+"translation" : "ΕΝΑΡΞΗ ΧΙΟΝΟΝΕΡΟΥ"
+},
+"translationKey37": {
+"stringId" : "HeadsUp.MixEnding",
+"translation" : "ΛΗΞΗ ΧΙΟΝΟΝΕΡΟΥ"
+},
+"translationKey38": {
+"stringId" : "HeadsUp.WintryMixStarting",
+"translation" : "ΕΝΑΡΞΗ ΧΙΟΝΟΝΕΡΟΥ"
+},
+"translationKey39": {
+"stringId" : "HeadsUp.WintryMixEnding",
+"translation" : "ΛΗΞΗ ΧΙΟΝΟΝΕΡΟΥ"
+},
+"translationKey40": {
+"stringId" : "HeadsUp.StormsStarting",
+"translation" : "ΕΝΑΡΞΗ ΚΑΤΑΙΓΙΔΩΝ"
+},
+"translationKey41": {
+"stringId" : "HeadsUp.StormsEnding",
+"translation" : "ΛΗΞΗ ΚΑΤΑΙΓΙΔΑΣ"
+},
+"translationKey42": {
+"stringId" : "HeadsUp.Storms",
+"translation" : "ΚΑΤΑΙΓΙΔΕΣ"
+},
+"translationKey43": {
+"stringId" : "HeadsUp.StormsLikely",
+"translation" : "ΕΝΔΕΧΟΜΕΝΟ ΚΑΤΑΙΓΙΔΩΝ"
+},
+"translationKey44": {
+"stringId" : "HeadsUp.StormsPossible",
+"translation" : "ΠΙΘΑΝΟΤΗΤΑ ΚΑΤΑΙΓΙΔΩΝ"
+},
+"translationKey45": {
+"stringId" : "HeadsUp.Precipitation",
+"translation" : "ΚΑΤΑΚΡΗΜΝΙΣΕΙΣ"
+},
+"translationKey46": {
+"stringId" : "HeadsUp.LookAhead",
+"translation" : "ΜΕΛΛΟΝΤΙΚΕΣ ΠΡΟΓΝΩΣΕΙΣ"
+},
+"translationKey47": {
+"stringId" : "HeadsUp.Clear",
+"translation" : "ΚΑΘΑΡΟΣ"
+},
+"translationKey48": {
+"stringId" : "Units.CM",
+"translation" : "ΕΚ"
+},
+"translationKey49": {
+"stringId" : "Units.KMH",
+"translation" : "ΧΛΜ\/ΩΡΑ"
+},
+"translationKey50": {
+"stringId" : "Units.MPH",
+"translation" : "ΜΙΛΙΑ\/ΩΡΑ"
+},
+"translationKey51": {
+"stringId" : "Units.InchMercury",
+"translation" : "ΙΝΤΣΕΣ"
+},
+"translationKey52": {
+"stringId" : "Units.Inches",
+"translation" : "ΙΝΤΣΕΣ"
+},
+"translationKey53": {
+"stringId" : "Units.MiliBars",
+"translation" : "MB"
+},
+"translationKey54": {
+"stringId" : "Units.Feet",
+"translation" : "FT"
+},
+"translationKey55": {
+"stringId" : "Units.Meter",
+"translation" : "Δ"
+},
+"translationKey56": {
+"stringId" : "Units.Miles",
+"translation" : "ΜΙΛΙΑ"
+},
+"translationKey57": {
+"stringId" : "Units.KM",
+"translation" : "ΧΛΜ"
+},
+"translationKey58": {
+"stringId" : "DDI.Windy",
+"translation" : "ΑΝΕΜΟΙ"
+},
+"translationKey59": {
+"stringId" : "DDI.Wind",
+"translation" : "ΑΝΕΜΟΣ"
+},
+"translationKey60": {
+"stringId" : "General.Weekend",
+"translation" : "ΣΑΒ\/ΚΥΡΙΑΚΟ"
+},
+"translationKey61": {
+"stringId" : "HeadsUp.SevereTStormImpactedNow",
+"translation" : "ΆΜΕΣΗ ΕΠΊΔΡΑΣΗ ΕΠΙΚΊΝΔΥΝΗΣ ΚΑΤΑΙΓΊΔΑΣ"
+},
+"translationKey62": {
+"stringId" : "HeadsUp.SevereTStormsPossible",
+"translation" : "ΠΙΘΑΝ. ΕΠΙΚΙΝΔΥΝΗΣ ΚΑΤΑΙΓΙΔΑΣ"
+},
+"translationKey63": {
+"stringId" : "HeadsUp.SevereTStormsLikely",
+"translation" : "ΜΕΓΑΛΗ ΠΙΘΑΝ. ΕΠΙΚΙΝ. ΚΑΤΑΙΓ."
+},
+"translationKey64": {
+"stringId" : "HeadsUp.SevereTStormsHighRisk",
+"translation" : "ΥΨΗΛΟΣ ΚΙΝΔYN. ΕΠΙΚΙΝ. ΚΑΤΑΙΓ."
+},
+"translationKey65": {
+"stringId" : "HeadsUp.SevereTStormNow",
+"translation" : "ΕΠΙΚΙΝΔΥΝΗ ΚΑΤΑΙΓΙΔΑ ΤΩΡΑ"
+},
+"translationKey66": {
+"stringId" : "HeadsUp.PrecipStart",
+"translation" : "ΈΝΑΡΞΗ ΚΑΤΑΚΡΗΜΝΊΣΕΩΝ"
+},
+"translationKey67": {
+"stringId" : "HeadsUp.PrecipEnd",
+"translation" : "ΛΉΞΗ ΚΑΤΑΚΡΗΜΝΊΣΕΩΝ"
+},
+"translationKey68": {
+"stringId" : "HeadsUp.WinterStormStarting",
+"translation" : "ΕΝΑΡΞΗ ΧΕΙΜΕΡΙΝΗΣ ΚΑΤΑΙΓΙΔΑΣ"
+},
+"translationKey69": {
+"stringId" : "HeadsUp.WinterStormEnding",
+"translation" : "ΛΗΞΗ ΧΕΙΜΕΡΙΝΗΣ ΚΑΤΑΙΓΙΔΑΣ"
+},
+"translationKey70": {
+"stringId" : "HeadsUp.WintryMix",
+"translation" : "ΧΙΟΝΟΝΕΡΟ"
+},
+"translationKey71": {
+"stringId" : "HeadsUp.WintryMixLikely",
+"translation" : "ΜΑΛΛΟΝ ΧΙΟΝΟΝΕΡΟ"
+},
+"translationKey72": {
+"stringId" : "HeadsUp.WintryMixPossible",
+"translation" : "ΠΙΘΝΑΝΟ ΧΙΟΝΟΝΕΡΟ"
+},
+"translationKey73": {
+"stringId" : "HeadsUp.Mix",
+"translation" : "ΧΕΙΜΕΡΙΝΟ ΜΕΙΓΜΑ"
+},
+"translationKey74": {
+"stringId" : "HeadsUp.MixLikely",
+"translation" : "ΜΕΓΑΛΗ ΠΙΘΑΝΟΤΗΤΑ ΜΕΙΓΜΑΤΟΣ"
+},
+"translationKey75": {
+"stringId" : "HeadsUp.MixPossible",
+"translation" : "ΠΙΘΑΝΟΤΗΤΑ ΜΕΙΓΜΑΤΟΣ"
+},
+"translationKey76": {
+"stringId" : "HeadsUp.48Hrs",
+"translation" : "ΕΠΟΜ.48 ΩΡ."
+},
+"translationKey77": {
+"stringId" : "HeadsUp.SevereTStormSoon",
+"translation" : "ΕΠΙΚΙΝΔΥΝΗ ΚΑΤΑΙΓΙΔΑ ΣΥΝΤΟΜΑ"
+},
+"translationKey78": {
+"stringId" : "HeadsUp.Soon",
+"translation" : "ΣΥΝΤΟΜΑ"
+},
+"translationKey79": {
+"stringId" : "HeadsUp.Forecasted",
+"translation" : "ΠΡΟΓΝΩΣΗ"
+},
+"translationKey80": {
+"stringId" : "HeadsUp.SevereTStorm",
+"translation" : "ΕΠΙΚΙΝΔΥΝΗ ΚΑΤΑΙΓΙΔΑ"
+},
+"translationKey81": {
+"stringId" : "HeadsUp.SeeRadar",
+"translation" : "ΒΛ. ΡΑΝΤΑΡ"
+},
+"translationKey82": {
+"stringId" : "HeadsUp.LightSnow",
+"translation" : "ΕΛΑΦ.ΧΙΟΝ."
+},
+"translationKey83": {
+"stringId" : "HeadsUp.LightSnowLikely",
+"translation" : "ΠΙΘΑΝΟΤ. ΕΛΑΦΡΙΑΣ ΧΙΟΝΟΠΤΩΣΗΣ"
+},
+"translationKey84": {
+"stringId" : "HeadsUp.LightSnowPossible",
+"translation" : "ΠΙΘΑΝΟΤΗΤΑ ΕΛΑΦΡΙΑΣ ΧΙΟΝΟΠΤ."
+},
+"translationKey85": {
+"stringId" : "HeadsUp.LightSnowStarting",
+"translation" : "ΕΝΑΡΞΗ ΕΛΑΦΡΙΑΣ ΧΙΟΝΟΠΤΩΣΗΣ"
+},
+"translationKey86": {
+"stringId" : "HeadsUp.LightSnowEnding",
+"translation" : "ΛΗΞΗ ΕΛΑΦΡΙΑΣ ΧΙΟΝΟΠΤΩΣΗΣ"
+},
+"translationKey87": {
+"stringId" : "ProfileSettings.AlertsCTA",
+"translation" : "ΛΉΨΗ ΕΙΔΟΠΟΙΉΣΕΩΝ ΓΙΑ ΤΟΝ ΚΑΙΡΌ ΣΕ ΠΡΑΓΜΑΤΙΚΌ ΧΡΌΝΟ"
+},
+"translationKey88": {
+"stringId" : "HeadsUp.RadarBRadarMap",
+"translation" : "ΧΆΡΤΗΣ ΡΑΝΤΆΡ"
+},
+"translationKey89": {
+"stringId" : "GoRun.ExcellentRunningConditions",
+"translation" : "ΕΞΑΙΡΕΤ. ΣΥΝΘΗΚΕΣ ΓΙΑ ΤΡΕΞΙΜΟ"
+},
+"translationKey90": {
+"stringId" : "GoRun.GoodRunningConditions",
+"translation" : "ΚΑΛΕΣ ΣΥΝΘΗΚΕΣ ΓΙΑ ΤΡΕΞΙΜΟ"
+},
+"translationKey91": {
+"stringId" : "GoRun.GoRun",
+"translation" : "ΤΡΕΞΤΕ"
+}
+}

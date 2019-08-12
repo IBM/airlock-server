@@ -1,0 +1,3539 @@
+{
+	"maxVersion": null,
+	"minVersion": "1.0",
+	"productId": "bc479db5-ff58-4138-b5e4-a8400a1f78d5",
+	"root": {
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+				],
+				"configurationSchema": null,
+				"creationDate": 1481016871576,
+				"creator": "Itai Gordon",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"enabled": true,
+				"features": [
+					{
+						"features": [
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+									{
+										"configuration": "{\r\n  \"value\": parseInt((new Date(\"2016-12-24\")-new Date(context.weatherSummary.observation.obsTime))\/1000\/60\/60\/24) + \" DAYS TO GO\"\r\n}\r\n",
+										"configurationRules": [
+										],
+										"creationDate": 1481722525345,
+										"creator": "Josemina Magdalen",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"QA",
+											"DEV"
+										],
+										"lastModified": 1481722564755,
+										"minAppVersion": "1.1.1",
+										"name": "CountDown",
+										"namespace": "headsupCountDowntoHanukkah",
+										"noCachedResults": false,
+										"owner": "Josemina Magdalen",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": ""
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "33e87ca1-b4fc-4ac2-be69-27dde86b7c63"
+									}
+								],
+								"configurationSchema": null,
+								"creationDate": 1481722422258,
+								"creator": "Josemina Magdalen",
+								"defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\"\n\t},\n\t\"descriptor\":\"HAPPY HANUKKAH\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"chanukia\"\n\t},\n\t\"analyticsTileName\":\"Hanukkah...\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481738934574,
+								"minAppVersion": "1.1.1",
+								"name": "Count Down to Hanukkah",
+								"namespace": "headsup",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.viewedLocation !== null && \r\ncontext.viewedLocation.country == \"IS\" &&\r\n((parseInt(new Date(\"2016-12-24\")-new Date(context.weatherSummary.observation.obsTime))\/1000\/60\/60\/24) < 14)"
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "bb3f6e39-dde9-4b04-91ff-0016d00f75ac"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+								],
+								"configurationSchema": {
+									"$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+									"anyOf": [
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"descriptor": {
+													"type": "string"
+												},
+												"icon": {
+													"additionalProperties": false,
+													"properties": {
+														"height": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"resourceName": {
+															"enum": [
+																"home_lightning_icon",
+																"ic_radar_light",
+																"home_rain_icon",
+																"ic_twc_severe_circle",
+																"ic_sev_generic",
+																"ic_twc_snow",
+																"home_car_icon",
+																"ic_twc_temperature",
+																"home_sunsrise_sunset_icon",
+																"home_tonight_tomorrow_icon"
+															],
+															"type": "string"
+														},
+														"width": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"resourceName"
+													],
+													"type": [
+														"object",
+														"null"
+													]
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"datapoint"
+													],
+													"type": [
+														"string"
+													]
+												},
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"tiletype",
+												"descriptor",
+												"value"
+											],
+											"type": "object"
+										},
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"video"
+													],
+													"type": "string"
+												},
+												"title": {
+													"type": [
+														"string",
+														"null"
+													]
+												}
+											},
+											"required": [
+												"tiletype"
+											],
+											"type": "object"
+										}
+									],
+									"definitions": {
+										"clickthrough": {
+											"anyOf": [
+												{
+													"type": "null"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"winter_storm",
+																"driving_condition",
+																"hourly",
+																"now",
+																"tornado_central"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"dayIndex": {
+															"maximum": 14,
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"destination": {
+															"enum": [
+																"fifteen_day"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"content_feed"
+															],
+															"type": "string"
+														},
+														"playlist": {
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"radar_map"
+															],
+															"type": "string"
+														},
+														"layer": {
+															"enum": [
+																null,
+																"twcRadarMosaic",
+																"lightning",
+																"sat",
+																"satrad",
+																"temp",
+																"feelsLike",
+																"uv",
+																"precip24hr",
+																"snow24hr",
+																"snow1hrCumulativePrecipFcst"
+															],
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												}
+											]
+										}
+									}
+								},
+								"creationDate": 1481017169921,
+								"creator": "Itai Gordon",
+								"defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"preferredTileIndex\":-1,\n\t\"analyticsTileName\":\"Breaking News Video\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481646830767,
+								"minAppVersion": "1.1.1",
+								"name": "Breaking News Video",
+								"namespace": "headsup",
+								"noCachedResults": true,
+								"owner": "Itai Gordon",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "(context.weatherSummary.contentMode.mode ==\"severe1\" || \ncontext.weatherSummary.contentMode.mode == \"severe2\") &&\n(context.device.locale == \"en_US\")  &&\n(context.viewedLocation.country == \"US\")"
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "5de8c165-d565-49d3-851e-5eb5b46863da"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+									{
+										"configuration": "{\n  \"tiletype\": \"datapoint\",\n  \"clickthrough\": {\n    \"destination\": \"radar_map\",\n    \"layer\": \"lightning\"\n  },\n  \"descriptor\":\"LIGHTNING STRIKE\",\n  \"value\": context.weatherSummary.closestLightning.distance + \" \" + context.weatherSummary.closestLightning.cardinalDirection,\n  \"icon\": {\n    \"resourceName\": \"home_lightning_icon\"\n  },\n  \"analyticsTileName\": \"lightning\"\n}\n",
+										"configurationRules": [
+										],
+										"creationDate": 1481625942864,
+										"creator": "Josemina Magdalen",
+										"description": "",
+										"enabled": false,
+										"internalUserGroups": [
+											"QA",
+											"DEV"
+										],
+										"lastModified": 1481639314574,
+										"minAppVersion": "1.1.1",
+										"name": "Basic",
+										"namespace": "headsupRealTimeLightning",
+										"noCachedResults": false,
+										"owner": "Josemina Magdalen",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": ""
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "a10d7858-c657-463f-bfc4-1ede18a4465e"
+									},
+									{
+										"configuration": "{\n  \"tiletype\": \"datapoint\",\n  \"clickthrough\": {\n    \"destination\": \"radar_map\",\n    \"layer\": \"lightning\"\n  },\n  \"descriptor\":\"LIGHTNING STRIKE CLOSE\",\n  \"value\": context.weatherSummary.closestLightning.distance + \" \" + context.weatherSummary.closestLightning.cardinalDirection,\n  \"icon\": {\n    \"resourceName\": \"home_lightning_icon\"\n  },\n  \"analyticsTileName\": \"lightning\"\n}\n",
+										"configurationRules": [
+										],
+										"creationDate": 1481640144512,
+										"creator": "Oren Paikowsky",
+										"description": "",
+										"enabled": false,
+										"internalUserGroups": [
+											"DEV"
+										],
+										"lastModified": 1481640200957,
+										"minAppVersion": "1.1.1",
+										"name": "Override",
+										"namespace": "headsupRealTimeLightning",
+										"noCachedResults": false,
+										"owner": "Oren Paikowsky",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": ""
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "197937a8-3658-4ab5-90d2-f68f6318fc34"
+									}
+								],
+								"configurationSchema": {
+									"$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+									"anyOf": [
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"descriptor": {
+													"type": "string"
+												},
+												"icon": {
+													"additionalProperties": false,
+													"properties": {
+														"height": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"resourceName": {
+															"enum": [
+																"home_lightning_icon",
+																"ic_radar_light",
+																"home_rain_icon",
+																"ic_twc_severe_circle",
+																"ic_sev_generic",
+																"ic_twc_snow",
+																"home_car_icon",
+																"ic_twc_temperature",
+																"home_sunsrise_sunset_icon",
+																"home_tonight_tomorrow_icon"
+															],
+															"type": "string"
+														},
+														"width": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"resourceName"
+													],
+													"type": [
+														"object",
+														"null"
+													]
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"datapoint"
+													],
+													"type": [
+														"string"
+													]
+												},
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"tiletype",
+												"descriptor",
+												"value"
+											],
+											"type": "object"
+										},
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"video"
+													],
+													"type": "string"
+												},
+												"title": {
+													"type": [
+														"string",
+														"null"
+													]
+												}
+											},
+											"required": [
+												"tiletype"
+											],
+											"type": "object"
+										}
+									],
+									"definitions": {
+										"clickthrough": {
+											"anyOf": [
+												{
+													"type": "null"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"winter_storm",
+																"driving_condition",
+																"hourly",
+																"now",
+																"tornado_central"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"dayIndex": {
+															"maximum": 14,
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"destination": {
+															"enum": [
+																"fifteen_day"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"content_feed"
+															],
+															"type": "string"
+														},
+														"playlist": {
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"radar_map"
+															],
+															"type": "string"
+														},
+														"layer": {
+															"enum": [
+																null,
+																"twcRadarMosaic",
+																"lightning",
+																"sat",
+																"satrad",
+																"temp",
+																"feelsLike",
+																"uv",
+																"precip24hr",
+																"snow24hr",
+																"snow1hrCumulativePrecipFcst"
+															],
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												}
+											]
+										}
+									}
+								},
+								"creationDate": 1481017204661,
+								"creator": "Itai Gordon",
+								"defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\",\n\t\t\"layer\":\"lightning\"\n\t},\n\t\"descriptor\":\"LIGHTNING STRIKE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_lightning_icon\"\n\t},\n\t\"analyticsTileName\":\"lightning\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481640144513,
+								"minAppVersion": "1.1.1",
+								"name": "Real Time Lightning",
+								"namespace": "headsup",
+								"noCachedResults": true,
+								"owner": "Itai Gordon",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary.closestLightning.distance!==null && \ncontext.weatherSummary.closestLightning.distance<InMiles(5) &&\ncontext.device.locale == \"en_US\"  &&\ncontext.viewedLocation.country == \"US\""
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "14e41660-469c-4b2c-b8ec-1d24437c5f3b"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+									{
+										"configurationRules": [
+											{
+												"configuration": "{\n    \"value\": \"TODAY\"\n}",
+												"configurationRules": [
+												],
+												"creationDate": 1481627791644,
+												"creator": "Josemina Magdalen",
+												"description": "",
+												"enabled": true,
+												"internalUserGroups": [
+													"QA",
+													"DEV"
+												],
+												"lastModified": 1481627957121,
+												"minAppVersion": "1.1.1",
+												"name": "Today",
+												"namespace": "headsupWinterStormImpactedNow",
+												"noCachedResults": false,
+												"owner": "Josemina Magdalen",
+												"rolloutPercentage": 100,
+												"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+												"rule": {
+													"force": false,
+													"ruleString": "context.weatherSummary.nearestSnowAccumulation.dayPart == \"day\""
+												},
+												"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+												"stage": "DEVELOPMENT",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "30667fac-8214-4e6e-a9c0-536121295aa5"
+											},
+											{
+												"configuration": "{\n    \"value\": \"TONIGHT\"\n\t\n}",
+												"configurationRules": [
+												],
+												"creationDate": 1481627826844,
+												"creator": "Josemina Magdalen",
+												"description": "",
+												"enabled": true,
+												"internalUserGroups": [
+													"QA",
+													"DEV"
+												],
+												"lastModified": 1481628008410,
+												"minAppVersion": "1.1.1",
+												"name": "Tonight",
+												"namespace": "headsupWinterStormImpactedNow",
+												"noCachedResults": false,
+												"owner": "Josemina Magdalen",
+												"rolloutPercentage": 100,
+												"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+												"rule": {
+													"force": false,
+													"ruleString": "context.weatherSummary.nearestSnowAccumulation.dayPart == \"night\""
+												},
+												"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+												"stage": "DEVELOPMENT",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "091379d2-5654-4bbf-a317-2b453e029d58"
+											}
+										],
+										"lastModified": 1481627847015,
+										"maxFeaturesOn": 1,
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+										"uniqueId": "b62494ca-84f8-4aa2-a685-0532235c45f8"
+									}
+								],
+								"configurationSchema": {
+									"$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+									"anyOf": [
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"descriptor": {
+													"type": "string"
+												},
+												"icon": {
+													"additionalProperties": false,
+													"properties": {
+														"height": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"resourceName": {
+															"enum": [
+																"home_lightning_icon",
+																"ic_radar_light",
+																"home_rain_icon",
+																"ic_twc_severe_circle",
+																"ic_sev_generic",
+																"ic_twc_snow",
+																"home_car_icon",
+																"ic_twc_temperature",
+																"home_sunsrise_sunset_icon",
+																"home_tonight_tomorrow_icon"
+															],
+															"type": "string"
+														},
+														"width": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"resourceName"
+													],
+													"type": [
+														"object",
+														"null"
+													]
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"datapoint"
+													],
+													"type": [
+														"string"
+													]
+												},
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"tiletype",
+												"descriptor",
+												"value"
+											],
+											"type": "object"
+										},
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"video"
+													],
+													"type": "string"
+												},
+												"title": {
+													"type": [
+														"string",
+														"null"
+													]
+												}
+											},
+											"required": [
+												"tiletype"
+											],
+											"type": "object"
+										}
+									],
+									"definitions": {
+										"clickthrough": {
+											"anyOf": [
+												{
+													"type": "null"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"winter_storm",
+																"driving_condition",
+																"hourly",
+																"now",
+																"tornado_central"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"dayIndex": {
+															"maximum": 14,
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"destination": {
+															"enum": [
+																"fifteen_day"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"content_feed"
+															],
+															"type": "string"
+														},
+														"playlist": {
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"radar_map"
+															],
+															"type": "string"
+														},
+														"layer": {
+															"enum": [
+																null,
+																"twcRadarMosaic",
+																"lightning",
+																"sat",
+																"satrad",
+																"temp",
+																"feelsLike",
+																"uv",
+																"precip24hr",
+																"snow24hr",
+																"snow1hrCumulativePrecipFcst"
+															],
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												}
+											]
+										}
+									}
+								},
+								"creationDate": 1481017253892,
+								"creator": "Itai Gordon",
+								"defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":\"pl-winter-weather\"\n\t},\n\t\"descriptor\":\"WINTER STORM LIKELY\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_severe_circle\"\n\t},\n\t\"analyticsTileName\":\"Winter Storm Now\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481635787683,
+								"minAppVersion": "1.1.1",
+								"name": "Winter Storm Impacted Now",
+								"namespace": "headsup",
+								"noCachedResults": true,
+								"owner": "Itai Gordon",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "(context.weatherSummary.nearestWinterStormAlert !== null) && \n(context.weatherSummary.nearestSnowAccumulation !== null) && \n(context.weatherSummary.nearestWinterStormAlert.significanceCode == \"W\") && \ncontext.weatherSummary.nearestSnowAccumulation.snowRange !== null &&\ncontext.weatherSummary.nearestSnowAccumulation.snowRange !== \"0\""
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "cdc3aae9-abe7-46d6-ab52-02b4c9ad7351"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+									{
+										"configurationRules": [
+											{
+												"configuration": "{\n  \"descriptor\": \"RAIN IN VIEW\"\n}\n",
+												"configurationRules": [
+												],
+												"creationDate": 1481629407473,
+												"creator": "Josemina Magdalen",
+												"description": "",
+												"enabled": true,
+												"internalUserGroups": [
+													"QA",
+													"DEV"
+												],
+												"lastModified": 1481629437741,
+												"minAppVersion": "1.1.1",
+												"name": "Rain",
+												"namespace": "headsupRadar",
+												"noCachedResults": false,
+												"owner": "Josemina Magdalen",
+												"rolloutPercentage": 100,
+												"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+												"rule": {
+													"force": false,
+													"ruleString": "context.weatherSummary.nearestStartPrecip.eventType == 1"
+												},
+												"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+												"stage": "DEVELOPMENT",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "935bdae4-a792-4f97-ad87-a16d711bea99"
+											},
+											{
+												"configuration": "{\n  \"descriptor\": \"SNOW IN VIEW\"\n}\n",
+												"configurationRules": [
+												],
+												"creationDate": 1481629501878,
+												"creator": "Josemina Magdalen",
+												"description": "",
+												"enabled": true,
+												"internalUserGroups": [
+													"QA",
+													"DEV"
+												],
+												"lastModified": 1481629539109,
+												"minAppVersion": "1.1.1",
+												"name": "Snow",
+												"namespace": "headsupRadar",
+												"noCachedResults": false,
+												"owner": "Josemina Magdalen",
+												"rolloutPercentage": 100,
+												"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+												"rule": {
+													"force": false,
+													"ruleString": "context.weatherSummary.nearestStartPrecip.eventType == 2"
+												},
+												"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+												"stage": "DEVELOPMENT",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "9883f2b8-7008-432d-bc8e-8e91b069a7a4"
+											},
+											{
+												"configuration": "{\n  \"descriptor\": \"MIX IN VIEW\"\n}\n",
+												"configurationRules": [
+												],
+												"creationDate": 1481629568831,
+												"creator": "Josemina Magdalen",
+												"description": "",
+												"enabled": true,
+												"internalUserGroups": [
+													"QA",
+													"DEV"
+												],
+												"lastModified": 1481629609810,
+												"minAppVersion": "1.1.1",
+												"name": "Mix",
+												"namespace": "headsupRadar",
+												"noCachedResults": false,
+												"owner": "Josemina Magdalen",
+												"rolloutPercentage": 100,
+												"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+												"rule": {
+													"force": false,
+													"ruleString": "context.weatherSummary.nearestStartPrecip.eventType == 3"
+												},
+												"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+												"stage": "DEVELOPMENT",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "05b0bf76-e488-44d3-972c-9aa88a9538a0"
+											},
+											{
+												"configuration": "{\n  \"descriptor\": \"STORM IN VIEW\"\n}\n",
+												"configurationRules": [
+												],
+												"creationDate": 1481629637959,
+												"creator": "Josemina Magdalen",
+												"description": "",
+												"enabled": true,
+												"internalUserGroups": [
+													"QA",
+													"DEV"
+												],
+												"lastModified": 1481629670531,
+												"minAppVersion": "1.1.1",
+												"name": "Storm",
+												"namespace": "headsupRadar",
+												"noCachedResults": false,
+												"owner": "Josemina Magdalen",
+												"rolloutPercentage": 100,
+												"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+												"rule": {
+													"force": false,
+													"ruleString": "context.weatherSummary.nearestStartPrecip.eventType == 4"
+												},
+												"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+												"stage": "DEVELOPMENT",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "0a702657-e6b4-4e3e-9173-ef224f54d930"
+											}
+										],
+										"lastModified": 1481629719239,
+										"maxFeaturesOn": 1,
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+										"uniqueId": "0d3c18bd-e7c6-4328-8e78-772adfb9247e"
+									}
+								],
+								"configurationSchema": {
+									"$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+									"anyOf": [
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"descriptor": {
+													"type": "string"
+												},
+												"icon": {
+													"additionalProperties": false,
+													"properties": {
+														"height": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"resourceName": {
+															"enum": [
+																"home_lightning_icon",
+																"ic_radar_light",
+																"home_rain_icon",
+																"ic_twc_severe_circle",
+																"ic_sev_generic",
+																"ic_twc_snow",
+																"home_car_icon",
+																"ic_twc_temperature",
+																"home_sunsrise_sunset_icon",
+																"home_tonight_tomorrow_icon"
+															],
+															"type": "string"
+														},
+														"width": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"resourceName"
+													],
+													"type": [
+														"object",
+														"null"
+													]
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"datapoint"
+													],
+													"type": [
+														"string"
+													]
+												},
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"tiletype",
+												"descriptor",
+												"value"
+											],
+											"type": "object"
+										},
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"video"
+													],
+													"type": "string"
+												},
+												"title": {
+													"type": [
+														"string",
+														"null"
+													]
+												}
+											},
+											"required": [
+												"tiletype"
+											],
+											"type": "object"
+										}
+									],
+									"definitions": {
+										"clickthrough": {
+											"anyOf": [
+												{
+													"type": "null"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"winter_storm",
+																"driving_condition",
+																"hourly",
+																"now",
+																"tornado_central"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"dayIndex": {
+															"maximum": 14,
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"destination": {
+															"enum": [
+																"fifteen_day"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"content_feed"
+															],
+															"type": "string"
+														},
+														"playlist": {
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"radar_map"
+															],
+															"type": "string"
+														},
+														"layer": {
+															"enum": [
+																null,
+																"twcRadarMosaic",
+																"lightning",
+																"sat",
+																"satrad",
+																"temp",
+																"feelsLike",
+																"uv",
+																"precip24hr",
+																"snow24hr",
+																"snow1hrCumulativePrecipFcst"
+															],
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												}
+											]
+										}
+									}
+								},
+								"creationDate": 1481017279407,
+								"creator": "Itai Gordon",
+								"defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"radar_map\"\n\t},\n\t\"descriptor\":\"PRECIPITATION\",\n\t\"value\":\"SEE RADAR\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_radar_light\"\n\t},\n\t\"analyticsTileName\":\"radar\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481718754872,
+								"minAppVersion": "1.1.1",
+								"name": "Radar",
+								"namespace": "headsup",
+								"noCachedResults": false,
+								"owner": "Itai Gordon",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "function statescodes() \n{ \n    var allRadarStates = [\"US\", \"AU\", \"DE\", \"NL\", \"LU\", \"BE\", \"GB\", \"IE\", \"CH\", \"AD\", \"MC\"];\n    \n    \n\n    return context.device !== null && \n            context.device.localeCountryCode !== null &&\n            allRadarStates.indexOf(context.device.localeCountryCode ) == -1 &&\n            (context.weatherSummary.nearestStartPrecip.eventType !== 0 ) &&\n            (new Date(context.weatherSummary.nearestStartPrecip.startTime) - \n                new Date(context.weatherSummary.observation.obsTime) <= 3*1000*60*60 )\n}\n\nstatescodes()"
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "989cf65a-66cf-425b-aa35-41881f923389"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+									{
+										"configuration": "{\n    \"value\": formatAMPM(context.weatherSummary.nearestStartPrecip.startTime)\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1481643470469,
+										"creator": "Josemina Magdalen",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"QA",
+											"DEV"
+										],
+										"lastModified": 1481718295841,
+										"minAppVersion": "1.1.1",
+										"name": "Basic",
+										"namespace": "headsupPrecipStart",
+										"noCachedResults": false,
+										"owner": "Josemina Magdalen",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": ""
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "f157afc1-dc18-4935-97f0-4e557569ba52"
+									},
+									{
+										"configuration": "{\"descriptor\":\"RAIN STARTING\",\"icon\":{\"resourceName\":\"home_rain_icon\"}}",
+										"configurationRules": [
+										],
+										"creationDate": 1481718936975,
+										"creator": "Josemina Magdalen",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"QA",
+											"DEV"
+										],
+										"lastModified": 1481719095560,
+										"minAppVersion": "1.1.1",
+										"name": "RainStarting",
+										"namespace": "headsupPrecipStart",
+										"noCachedResults": false,
+										"owner": "Josemina Magdalen",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": "context.weatherSummary.nearestStartPrecip!== null &&\ncontext.weatherSummary.nearestStartPrecip.eventType == \"1\" &&\ncontext.weatherSummary.nearestStartPrecip.imminence ==\"2\""
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "30b39dc5-a1f1-4ae6-a952-7630a7400486"
+									},
+									{
+										"configuration": "{\n  \"descriptor\": \"RAIN LIKELY\",\n  \"icon\": {\n    \"resourceName\": \"home_rain_icon\"\n  }\n}\n",
+										"configurationRules": [
+										],
+										"creationDate": 1481719119459,
+										"creator": "Josemina Magdalen",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"QA",
+											"DEV"
+										],
+										"lastModified": 1481719227179,
+										"minAppVersion": "1.1.1",
+										"name": "Rain Likely",
+										"namespace": "headsupPrecipStart",
+										"noCachedResults": false,
+										"owner": "Josemina Magdalen",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": "context.weatherSummary.nearestStartPrecip !== null &&\ncontext.weatherSummary.nearestStartPrecip.eventType == \"1\" &&\ncontext.weatherSummary.nearestStartPrecip.imminence == \"1\""
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "4da82d45-1cab-42d3-b463-c421cf5f3a54"
+									},
+									{
+										"configuration": "{\n  \"descriptor\": \"RAIN POSSIBLE\",\n  \"icon\": {\n    \"resourceName\": \"home_rain_icon\"\n  }\n}\n",
+										"configurationRules": [
+										],
+										"creationDate": 1481719277182,
+										"creator": "Josemina Magdalen",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"QA",
+											"DEV"
+										],
+										"lastModified": 1481719336347,
+										"minAppVersion": "1.1.1",
+										"name": "Rain Possible",
+										"namespace": "headsupPrecipStart",
+										"noCachedResults": false,
+										"owner": "Josemina Magdalen",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": "context.weatherSummary.nearestStartPrecip !== null &&\ncontext.weatherSummary.nearestStartPrecip.eventType == \"1\" &&\ncontext.weatherSummary.nearestStartPrecip.imminence ==\"0\""
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "3cc3634d-7ef3-4718-aad6-bf578e91fe62"
+									}
+								],
+								"configurationSchema": {
+									"$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+									"anyOf": [
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"descriptor": {
+													"type": "string"
+												},
+												"icon": {
+													"additionalProperties": false,
+													"properties": {
+														"height": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"resourceName": {
+															"enum": [
+																"home_lightning_icon",
+																"ic_radar_light",
+																"home_rain_icon",
+																"ic_twc_severe_circle",
+																"ic_sev_generic",
+																"ic_twc_snow",
+																"home_car_icon",
+																"ic_twc_temperature",
+																"home_sunsrise_sunset_icon",
+																"home_tonight_tomorrow_icon"
+															],
+															"type": "string"
+														},
+														"width": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"resourceName"
+													],
+													"type": [
+														"object",
+														"null"
+													]
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"datapoint"
+													],
+													"type": [
+														"string"
+													]
+												},
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"tiletype",
+												"descriptor",
+												"value"
+											],
+											"type": "object"
+										},
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"video"
+													],
+													"type": "string"
+												},
+												"title": {
+													"type": [
+														"string",
+														"null"
+													]
+												}
+											},
+											"required": [
+												"tiletype"
+											],
+											"type": "object"
+										}
+									],
+									"definitions": {
+										"clickthrough": {
+											"anyOf": [
+												{
+													"type": "null"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"winter_storm",
+																"driving_condition",
+																"hourly",
+																"now",
+																"tornado_central"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"dayIndex": {
+															"maximum": 14,
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"destination": {
+															"enum": [
+																"fifteen_day"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"content_feed"
+															],
+															"type": "string"
+														},
+														"playlist": {
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"radar_map"
+															],
+															"type": "string"
+														},
+														"layer": {
+															"enum": [
+																null,
+																"twcRadarMosaic",
+																"lightning",
+																"sat",
+																"satrad",
+																"temp",
+																"feelsLike",
+																"uv",
+																"precip24hr",
+																"snow24hr",
+																"snow1hrCumulativePrecipFcst"
+															],
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												}
+											]
+										}
+									}
+								},
+								"creationDate": 1481622986103,
+								"creator": "Josemina Magdalen",
+								"defaultConfiguration": "{\n  \"tiletype\": \"datapoint\",\n  \"clickthrough\": {\n    \"destination\": \"hourly\"\n  },\n  \"descriptor\": \"PRECIPITATION\",\n  \"value\": \"\",\n  \"icon\": {\n    \"resourceName\": \"home_rain_icon\"\n  },\n  \"analyticsTileName\": \"Precip Start\"\n}\n",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481719277183,
+								"minAppVersion": "1.1.1",
+								"name": "Precip Start",
+								"namespace": "headsup",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "function precip() \n{ \n    var wetPrecipCodes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 35, 37, 38, 39, 40, 41, 42, 43, 45, 46, 47];\n\n    return context.weatherSummary.nearestStartPrecip !== null && \n            context.weatherSummary.nearestStartPrecip.eventType !== 0 &&\n            wetPrecipCodes.indexOf(context.weatherSummary.observation.skyCode ) == -1\n}\n\nprecip()"
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "c640f46d-fd53-4316-b89e-7d761fccd405"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+									{
+										"configuration": "{\n\t\"value\":formatAMPM(context.weatherSummary.nearestStartPrecip.endTime)\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1481643784849,
+										"creator": "Josemina Magdalen",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"QA",
+											"DEV"
+										],
+										"lastModified": 1481643875376,
+										"minAppVersion": "1.1.1",
+										"name": "Basic",
+										"namespace": "headsupPrecipEnd",
+										"noCachedResults": false,
+										"owner": "Josemina Magdalen",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": ""
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "3fa246c9-21bf-43a7-b247-54a4b86b4d0a"
+									}
+								],
+								"configurationSchema": {
+									"$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+									"anyOf": [
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"descriptor": {
+													"type": "string"
+												},
+												"icon": {
+													"additionalProperties": false,
+													"properties": {
+														"height": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"resourceName": {
+															"enum": [
+																"home_lightning_icon",
+																"ic_radar_light",
+																"home_rain_icon",
+																"ic_twc_severe_circle",
+																"ic_sev_generic",
+																"ic_twc_snow",
+																"home_car_icon",
+																"ic_twc_temperature",
+																"home_sunsrise_sunset_icon",
+																"home_tonight_tomorrow_icon"
+															],
+															"type": "string"
+														},
+														"width": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"resourceName"
+													],
+													"type": [
+														"object",
+														"null"
+													]
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"datapoint"
+													],
+													"type": [
+														"string"
+													]
+												},
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"tiletype",
+												"descriptor",
+												"value"
+											],
+											"type": "object"
+										},
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"video"
+													],
+													"type": "string"
+												},
+												"title": {
+													"type": [
+														"string",
+														"null"
+													]
+												}
+											},
+											"required": [
+												"tiletype"
+											],
+											"type": "object"
+										}
+									],
+									"definitions": {
+										"clickthrough": {
+											"anyOf": [
+												{
+													"type": "null"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"winter_storm",
+																"driving_condition",
+																"hourly",
+																"now",
+																"tornado_central"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"dayIndex": {
+															"maximum": 14,
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"destination": {
+															"enum": [
+																"fifteen_day"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"content_feed"
+															],
+															"type": "string"
+														},
+														"playlist": {
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"radar_map"
+															],
+															"type": "string"
+														},
+														"layer": {
+															"enum": [
+																null,
+																"twcRadarMosaic",
+																"lightning",
+																"sat",
+																"satrad",
+																"temp",
+																"feelsLike",
+																"uv",
+																"precip24hr",
+																"snow24hr",
+																"snow1hrCumulativePrecipFcst"
+															],
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												}
+											]
+										}
+									}
+								},
+								"creationDate": 1481623405362,
+								"creator": "Josemina Magdalen",
+								"defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"hourly\"\n\t},\n\t\"descriptor\":\"RAIN ENDING\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_rain_icon\"\n\t},\n\t\"analyticsTileName\":\"some end rain analytics\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": false,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481643784849,
+								"minAppVersion": "1.1.1",
+								"name": "Precip End",
+								"namespace": "headsup",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary.nearestStartPrecip !== null && \r\n(new Date(context.weatherSummary.nearestStartPrecip.endTime) - \r\nnew Date(context.weatherSummary.observation.obsTime) <= 5*1000*60*60 )"
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "94416286-7a81-47b7-a306-d8c7c6c9b39f"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+								],
+								"configurationSchema": null,
+								"creationDate": 1481623463734,
+								"creator": "Josemina Magdalen",
+								"defaultConfiguration": "{\n\t\"tiletype\":\"video\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"content_feed\",\n\t\t\"playlist\":null\n\t},\n\t\"preferredTileIndex\":-1,\n\t\"analyticsTileName\":\"Breaking News Video\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481646843230,
+								"minAppVersion": "1.1.1",
+								"name": "Top Video",
+								"namespace": "headsup",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary.contentMode.mode !==\"severe1\" && \ncontext.weatherSummary.contentMode.mode !== \"severe2\" &&\ncontext.device.locale == \"en_US\"  &&\ncontext.viewedLocation.country == \"US\""
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "9f4ed5fd-5659-44a9-99a7-1f4b34301920"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+									{
+										"configuration": "{\n    \"value\":context.weatherSummary.nearestSnowAccumulation.snowRange + \"\"\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1481642392115,
+										"creator": "Denis Voloshin",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"QA",
+											"DEV"
+										],
+										"lastModified": 1481644826174,
+										"minAppVersion": "1.1.1",
+										"name": "ShowRange",
+										"namespace": "headsupForecastedSnowAccumulation",
+										"noCachedResults": false,
+										"owner": "Denis Voloshin",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": ""
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "63f2770d-69dc-40f8-93ee-b209bbe15dcb"
+									}
+								],
+								"configurationSchema": null,
+								"creationDate": 1481623599517,
+								"creator": "Josemina Magdalen",
+								"defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"winter_storm\"\n\t},\n\t\"descriptor\":\"ACCUMULATION\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_snow\"\n\t},\n\t\"analyticsTileName\":\"snow accumulation\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481642392121,
+								"minAppVersion": "1.1.1",
+								"name": "Forecasted Snow Accumulation",
+								"namespace": "headsup",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary.nearestSnowAccumulation !== null &&\ncontext.weatherSummary.nearestSnowAccumulation.snowRange !== null && \ncontext.weatherSummary.nearestSnowAccumulation.snowRange !== \"0\" && \ncontext.weatherSummary.nearestSnowAccumulation.snowRange !==\"\""
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "3b69e6d1-1998-4894-80ea-6fb6670b440f"
+							},
+							{
+								"additionalInfo": null,
+								"configurationRules": [
+								],
+								"configurationSchema": null,
+								"creationDate": 1481623669168,
+								"creator": "Josemina Magdalen",
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": false,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481623669168,
+								"minAppVersion": "1.1.1",
+								"name": "Winter Storm Forecast",
+								"namespace": "headsup",
+								"noCachedResults": false,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": ""
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "f3593ef4-8d44-413f-99ab-638e1fa847d7"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+									{
+										"configuration": "{\"value\":\"WET\"}",
+										"configurationRules": [
+										],
+										"creationDate": 1481618845901,
+										"creator": "Denis Voloshin",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"DEV"
+										],
+										"lastModified": 1481623710393,
+										"minAppVersion": "1.1.1",
+										"name": "WINDY",
+										"namespace": "headsupRoadConditions",
+										"noCachedResults": false,
+										"owner": "Denis Voloshin",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": "context.weatherSummary.lifeStyleIndices.drivingDifficultyIndex==1"
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "a9c3d836-75d0-45d5-8ee9-a0fc908b467f"
+									},
+									{
+										"configuration": "{\"value\":\"FOGGY\"}",
+										"configurationRules": [
+										],
+										"creationDate": 1481618907942,
+										"creator": "Denis Voloshin",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"DEV"
+										],
+										"lastModified": 1481623716969,
+										"minAppVersion": "1.1.1",
+										"name": "FOGGY",
+										"namespace": "headsupRoadConditions",
+										"noCachedResults": false,
+										"owner": "Denis Voloshin",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": "context.weatherSummary.lifeStyleIndices.drivingDifficultyIndex==2"
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "f500875f-ca87-4ea9-bd9f-772652d6b68b"
+									},
+									{
+										"configuration": "{\"value\":\"WET\"}",
+										"configurationRules": [
+										],
+										"creationDate": 1481550926265,
+										"creator": "Denis Voloshin",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"DEV"
+										],
+										"lastModified": 1481623723353,
+										"minAppVersion": "1.1.1",
+										"name": "WET",
+										"namespace": "headsupRoadConditions",
+										"noCachedResults": false,
+										"owner": "Denis Voloshin",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": "context.weatherSummary.lifeStyleIndices.drivingDifficultyIndex==3"
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "5e6a5949-dfc4-4f85-b7b0-ce4cfefa3fed"
+									},
+									{
+										"configuration": "{\"value\":\"PONDING\"}",
+										"configurationRules": [
+										],
+										"creationDate": 1481620868740,
+										"creator": "Denis Voloshin",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"DEV"
+										],
+										"lastModified": 1481623728180,
+										"minAppVersion": "1.1.1",
+										"name": "PONDING",
+										"namespace": "headsupRoadConditions",
+										"noCachedResults": false,
+										"owner": "Denis Voloshin",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": "context.weatherSummary.lifeStyleIndices.drivingDifficultyIndex==4"
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "1a93d8c4-f2ff-4606-a13a-83e5bceabbdf"
+									},
+									{
+										"configuration": "{\"value\":\"SNOWY\"}",
+										"configurationRules": [
+										],
+										"creationDate": 1481620909091,
+										"creator": "Denis Voloshin",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"DEV"
+										],
+										"lastModified": 1481623733748,
+										"minAppVersion": "1.1.1",
+										"name": "SNOWY",
+										"namespace": "headsupRoadConditions",
+										"noCachedResults": false,
+										"owner": "Denis Voloshin",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": "context.weatherSummary.lifeStyleIndices.drivingDifficultyIndex==5"
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "697bfa1d-b266-4e35-9bfb-d23fbf60e5f4"
+									},
+									{
+										"configuration": "{\"value\":\"ICY\"}",
+										"configurationRules": [
+										],
+										"creationDate": 1481620940132,
+										"creator": "Denis Voloshin",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"DEV"
+										],
+										"lastModified": 1481637178069,
+										"minAppVersion": "1.1.1",
+										"name": "ICY",
+										"namespace": "headsupRoadConditions",
+										"noCachedResults": false,
+										"owner": "Denis Voloshin",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": "context.weatherSummary.lifeStyleIndices.drivingDifficultyIndex==6"
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "8c9b4aca-8612-4efa-bbc8-21f469d3cca1"
+									}
+								],
+								"configurationSchema": null,
+								"creationDate": 1481550617019,
+								"creator": "Denis Voloshin",
+								"defaultConfiguration": "{\n\t\"value\":\"GOOD\",\n\t\"descriptor\":\"ROAD CONDITIONS\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"driving_condition\"\n\t},\n\t\"icon\":{\n\t\t\"height\":\"20\",\n\t\t\"resourceName\":\"home_car_icon\",\n\t\t\"width\":\"20\"\n\t}\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"DEV"
+								],
+								"lastModified": 1481723424209,
+								"minAppVersion": "1.1.1",
+								"name": "Road Conditions",
+								"namespace": "headsup",
+								"noCachedResults": false,
+								"owner": "Denis Voloshin",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary.lifeStyleIndices!==null && context.weatherSummary.lifeStyleIndices.drivingDifficultyIndex>0"
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "004013c0-4797-4f6e-827d-b663ee2c7b92"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+									{
+										"configuration": "{\n\t\"value\": context.weatherSummary.observation.feelsLikeTemperature + \" \"\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1481643276849,
+										"creator": "Josemina Magdalen",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"QA",
+											"DEV"
+										],
+										"lastModified": 1481701220652,
+										"minAppVersion": "1.1.1",
+										"name": "Basic",
+										"namespace": "headsupFeelsLikeMessage",
+										"noCachedResults": false,
+										"owner": "Josemina Magdalen",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": ""
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "601857d0-02d1-4eb6-876a-940334397237"
+									}
+								],
+								"configurationSchema": {
+									"$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+									"anyOf": [
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"descriptor": {
+													"type": "string"
+												},
+												"icon": {
+													"additionalProperties": false,
+													"properties": {
+														"height": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"resourceName": {
+															"enum": [
+																"home_lightning_icon",
+																"ic_radar_light",
+																"home_rain_icon",
+																"ic_twc_severe_circle",
+																"ic_sev_generic",
+																"ic_twc_snow",
+																"home_car_icon",
+																"ic_twc_temperature",
+																"home_sunsrise_sunset_icon",
+																"home_tonight_tomorrow_icon"
+															],
+															"type": "string"
+														},
+														"width": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"resourceName"
+													],
+													"type": [
+														"object",
+														"null"
+													]
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"datapoint"
+													],
+													"type": [
+														"string"
+													]
+												},
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"tiletype",
+												"descriptor",
+												"value"
+											],
+											"type": "object"
+										},
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"video"
+													],
+													"type": "string"
+												},
+												"title": {
+													"type": [
+														"string",
+														"null"
+													]
+												}
+											},
+											"required": [
+												"tiletype"
+											],
+											"type": "object"
+										}
+									],
+									"definitions": {
+										"clickthrough": {
+											"anyOf": [
+												{
+													"type": "null"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"winter_storm",
+																"driving_condition",
+																"hourly",
+																"now",
+																"tornado_central"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"dayIndex": {
+															"maximum": 14,
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"destination": {
+															"enum": [
+																"fifteen_day"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"content_feed"
+															],
+															"type": "string"
+														},
+														"playlist": {
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"radar_map"
+															],
+															"type": "string"
+														},
+														"layer": {
+															"enum": [
+																null,
+																"twcRadarMosaic",
+																"lightning",
+																"sat",
+																"satrad",
+																"temp",
+																"feelsLike",
+																"uv",
+																"precip24hr",
+																"snow24hr",
+																"snow1hrCumulativePrecipFcst"
+															],
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												}
+											]
+										}
+									}
+								},
+								"creationDate": 1481119488334,
+								"creator": "Itai Gordon",
+								"defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"now\"\n\t},\n\t\"descriptor\":\"FEELS LIKE\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"ic_twc_temperature\"\n\t},\n\t\"analyticsTileName\":\"Feels Like message\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481719134359,
+								"minAppVersion": "1.1.1",
+								"name": "Feels Like Message",
+								"namespace": "headsup",
+								"noCachedResults": false,
+								"owner": "Itai Gordon",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "context.weatherSummary.observation.feelsLikeTemperature - context.weatherSummary.observation.temperature > (InFahrenheit(5) -InFahrenheit(0))"
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "950f11c1-01ae-4717-96bc-12405d171a47"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+								],
+								"configurationSchema": null,
+								"creationDate": 1481624054713,
+								"creator": "Josemina Magdalen",
+								"defaultConfiguration": null,
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": false,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481663019378,
+								"minAppVersion": "1.1.1",
+								"name": "Sunrise Sunset Message",
+								"namespace": "headsup",
+								"noCachedResults": true,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": ""
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "ea841b18-8800-4532-a6a5-6006ad941ebd"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+									{
+										"configurationRules": [
+											{
+												"configuration": "{\n\t\"value\": context.weatherSummary.tomorrowForecast.day.precipType.toUpperCase() + \" \" + context.weatherSummary.tomorrowForecast.day.precipPercentage + \"%\",\n}",
+												"configurationRules": [
+												],
+												"creationDate": 1481649038932,
+												"creator": "Josemina Magdalen",
+												"description": "",
+												"enabled": true,
+												"internalUserGroups": [
+													"QA",
+													"DEV"
+												],
+												"lastModified": 1481649220302,
+												"minAppVersion": "1.1.1",
+												"name": "Precip",
+												"namespace": "headsupTomorrowForecast",
+												"noCachedResults": false,
+												"owner": "Josemina Magdalen",
+												"rolloutPercentage": 100,
+												"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+												"rule": {
+													"force": false,
+													"ruleString": "context.weatherSummary.tomorrowForecast.day.precipPercentage > 30"
+												},
+												"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+												"stage": "DEVELOPMENT",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "75a19054-3600-4370-bfa8-3b5b77757cb9"
+											},
+											{
+												"configuration": "{\n\t\"value\": \"CLEAR\"\n}",
+												"configurationRules": [
+												],
+												"creationDate": 1481649014534,
+												"creator": "Josemina Magdalen",
+												"description": "",
+												"enabled": true,
+												"internalUserGroups": [
+													"QA",
+													"DEV"
+												],
+												"lastModified": 1481649260739,
+												"minAppVersion": "1.1.1",
+												"name": "Clear",
+												"namespace": "headsupTomorrowForecast",
+												"noCachedResults": false,
+												"owner": "Josemina Magdalen",
+												"rolloutPercentage": 100,
+												"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+												"rule": {
+													"force": false,
+													"ruleString": ""
+												},
+												"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+												"stage": "DEVELOPMENT",
+												"type": "CONFIGURATION_RULE",
+												"uniqueId": "e9d1e05f-9e95-4f6a-930c-01fc11547b55"
+											}
+										],
+										"lastModified": 1481649055762,
+										"maxFeaturesOn": 1,
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+										"uniqueId": "bfb7d1f9-dfc8-4589-a12d-80b3b4e48c60"
+									}
+								],
+								"configurationSchema": {
+									"$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+									"anyOf": [
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"descriptor": {
+													"type": "string"
+												},
+												"icon": {
+													"additionalProperties": false,
+													"properties": {
+														"height": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"resourceName": {
+															"enum": [
+																"home_lightning_icon",
+																"ic_radar_light",
+																"home_rain_icon",
+																"ic_twc_severe_circle",
+																"ic_sev_generic",
+																"ic_twc_snow",
+																"home_car_icon",
+																"ic_twc_temperature",
+																"home_sunsrise_sunset_icon",
+																"home_tonight_tomorrow_icon"
+															],
+															"type": "string"
+														},
+														"width": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"resourceName"
+													],
+													"type": [
+														"object",
+														"null"
+													]
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"datapoint"
+													],
+													"type": [
+														"string"
+													]
+												},
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"tiletype",
+												"descriptor",
+												"value"
+											],
+											"type": "object"
+										},
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"video"
+													],
+													"type": "string"
+												},
+												"title": {
+													"type": [
+														"string",
+														"null"
+													]
+												}
+											},
+											"required": [
+												"tiletype"
+											],
+											"type": "object"
+										}
+									],
+									"definitions": {
+										"clickthrough": {
+											"anyOf": [
+												{
+													"type": "null"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"winter_storm",
+																"driving_condition",
+																"hourly",
+																"now",
+																"tornado_central"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"dayIndex": {
+															"maximum": 14,
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"destination": {
+															"enum": [
+																"fifteen_day"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"content_feed"
+															],
+															"type": "string"
+														},
+														"playlist": {
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"radar_map"
+															],
+															"type": "string"
+														},
+														"layer": {
+															"enum": [
+																null,
+																"twcRadarMosaic",
+																"lightning",
+																"sat",
+																"satrad",
+																"temp",
+																"feelsLike",
+																"uv",
+																"precip24hr",
+																"snow24hr",
+																"snow1hrCumulativePrecipFcst"
+															],
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												}
+											]
+										}
+									}
+								},
+								"creationDate": 1481624119490,
+								"creator": "Josemina Magdalen",
+								"defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\",\n\t\t\"dayIndex\":1\n\t},\n\t\"descriptor\":\"TOMORROW\",\n\t\"value\":\"\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_tonight_tomorrow_icon\"\n\t},\n\t\"analyticsTileName\":\"Tomorrow's Forecast\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481663013164,
+								"minAppVersion": "1.1.1",
+								"name": "Tomorrow Forecast",
+								"namespace": "headsup",
+								"noCachedResults": true,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "compareTime(context.weatherSummary.observation.obsTime, \"23:59\") == 1 && \ncompareTime(context.weatherSummary.observation.obsTime, \"18:00\") == -1"
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "dd23e814-c661-48c9-a362-fe72724d6d5e"
+							},
+							{
+								"additionalInfo": {
+								},
+								"configurationRules": [
+									{
+										"configuration": "{\n    \"clickthrough\":\n    {\n        \"dayIndex\":5 - new Date(context.weatherSummary.observation.obsTime).getDay()\n        \n    }\n}",
+										"configurationRules": [
+										],
+										"creationDate": 1481700945604,
+										"creator": "Josemina Magdalen",
+										"description": "",
+										"enabled": true,
+										"internalUserGroups": [
+											"QA",
+											"DEV"
+										],
+										"lastModified": 1481701024443,
+										"minAppVersion": "1.1.1",
+										"name": "Basic",
+										"namespace": "headsupWeekendForecast",
+										"noCachedResults": false,
+										"owner": "Josemina Magdalen",
+										"rolloutPercentage": 100,
+										"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+										"rule": {
+											"force": false,
+											"ruleString": ""
+										},
+										"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+										"stage": "DEVELOPMENT",
+										"type": "CONFIGURATION_RULE",
+										"uniqueId": "bbd69d2a-5b6d-4fd2-83d2-279ce3b49643"
+									}
+								],
+								"configurationSchema": {
+									"$schema": "http:\/\/json-schema.org\/draft-04\/schema#",
+									"anyOf": [
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"descriptor": {
+													"type": "string"
+												},
+												"icon": {
+													"additionalProperties": false,
+													"properties": {
+														"height": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"resourceName": {
+															"enum": [
+																"home_lightning_icon",
+																"ic_radar_light",
+																"home_rain_icon",
+																"ic_twc_severe_circle",
+																"ic_sev_generic",
+																"ic_twc_snow",
+																"home_car_icon",
+																"ic_twc_temperature",
+																"home_sunsrise_sunset_icon",
+																"home_tonight_tomorrow_icon"
+															],
+															"type": "string"
+														},
+														"width": {
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"resourceName"
+													],
+													"type": [
+														"object",
+														"null"
+													]
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"datapoint"
+													],
+													"type": [
+														"string"
+													]
+												},
+												"value": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"tiletype",
+												"descriptor",
+												"value"
+											],
+											"type": "object"
+										},
+										{
+											"additionalProperties": false,
+											"properties": {
+												"analyticsTileName": {
+													"type": [
+														"string",
+														"null"
+													]
+												},
+												"clickthrough": {
+													"$ref": "#\/definitions\/clickthrough"
+												},
+												"preferredTileIndex": {
+													"minimum": -1,
+													"type": [
+														"integer",
+														"null"
+													]
+												},
+												"tiletype": {
+													"enum": [
+														"video"
+													],
+													"type": "string"
+												},
+												"title": {
+													"type": [
+														"string",
+														"null"
+													]
+												}
+											},
+											"required": [
+												"tiletype"
+											],
+											"type": "object"
+										}
+									],
+									"definitions": {
+										"clickthrough": {
+											"anyOf": [
+												{
+													"type": "null"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"winter_storm",
+																"driving_condition",
+																"hourly",
+																"now",
+																"tornado_central"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"dayIndex": {
+															"maximum": 14,
+															"minimum": 0,
+															"type": [
+																"integer",
+																"null"
+															]
+														},
+														"destination": {
+															"enum": [
+																"fifteen_day"
+															],
+															"type": "string"
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"content_feed"
+															],
+															"type": "string"
+														},
+														"playlist": {
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												},
+												{
+													"additionalProperties": false,
+													"properties": {
+														"destination": {
+															"enum": [
+																"radar_map"
+															],
+															"type": "string"
+														},
+														"layer": {
+															"enum": [
+																null,
+																"twcRadarMosaic",
+																"lightning",
+																"sat",
+																"satrad",
+																"temp",
+																"feelsLike",
+																"uv",
+																"precip24hr",
+																"snow24hr",
+																"snow1hrCumulativePrecipFcst"
+															],
+															"type": [
+																"string",
+																"null"
+															]
+														}
+													},
+													"required": [
+														"destination"
+													],
+													"type": "object"
+												}
+											]
+										}
+									}
+								},
+								"creationDate": 1481624206512,
+								"creator": "Josemina Magdalen",
+								"defaultConfiguration": "{\n\t\"tiletype\":\"datapoint\",\n\t\"clickthrough\":{\n\t\t\"destination\":\"fifteen_day\",\n\t\t\"dayIndex\":0\n\t},\n\t\"descriptor\":\"LOOK AHEAD\",\n\t\"value\":\"WEEKEND\",\n\t\"icon\":{\n\t\t\"resourceName\":\"home_tonight_tomorrow_icon\"\n\t},\n\t\"analyticsTileName\":\"Weekend Forecast\"\n}",
+								"defaultIfAirlockSystemIsDown": false,
+								"description": "",
+								"enabled": true,
+								"features": [
+								],
+								"internalUserGroups": [
+									"QA",
+									"DEV"
+								],
+								"lastModified": 1481705410092,
+								"minAppVersion": "1.1.1",
+								"name": "Weekend Forecast",
+								"namespace": "headsup",
+								"noCachedResults": true,
+								"owner": "Josemina Magdalen",
+								"rolloutPercentage": 100,
+								"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+								"rule": {
+									"force": false,
+									"ruleString": "function isWeekend() \r\n{ \r\n    var weekendSet = [ 3, 4, 5];\r\n\tday = new Date(context.weatherSummary.observation.obsTime).getDay();\r\n\r\n    return  weekendSet.indexOf(day) !== -1\r\n}\r\n\r\nisWeekend()"
+								},
+								"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+								"stage": "DEVELOPMENT",
+								"type": "FEATURE",
+								"uniqueId": "304f7e15-d582-43b0-87cb-a2326df00840"
+							}
+						],
+						"lastModified": 1481722429879,
+						"maxFeaturesOn": 3,
+						"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+						"type": "MUTUAL_EXCLUSION_GROUP",
+						"uniqueId": "b3ded2b1-0488-421b-b136-4fcf1f59de53"
+					}
+				],
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"lastModified": 1481624814498,
+				"minAppVersion": "1.1.1",
+				"name": "HeadsUp",
+				"namespace": "headsup",
+				"noCachedResults": true,
+				"owner": "Itai Gordon",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": "true"
+				},
+				"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "13c721cf-89a7-4d52-a057-9cb004ddfa91"
+			},
+			{
+				"features": [
+					{
+						"additionalInfo": null,
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1481640652004,
+						"creator": "Oren Paikowsky",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "",
+						"enabled": false,
+						"features": [
+						],
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1481640652004,
+						"minAppVersion": "1.1.1",
+						"name": "Temp.V2",
+						"namespace": "ns",
+						"noCachedResults": false,
+						"owner": "Oren Paikowsky",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "8f3e191a-3e22-4b84-90bc-0ab6c5e52dbf"
+					},
+					{
+						"additionalInfo": {
+						},
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1481640595879,
+						"creator": "Oren Paikowsky",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "",
+						"enabled": true,
+						"features": [
+						],
+						"internalUserGroups": [
+							"QA"
+						],
+						"lastModified": 1481640977761,
+						"minAppVersion": "1.1.1",
+						"name": "Temp.V1",
+						"namespace": "ns",
+						"noCachedResults": false,
+						"owner": "Oren Paikowsky",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "1fd66f73-e801-47b2-98c6-46de4ec25219"
+					}
+				],
+				"lastModified": 1481640666239,
+				"maxFeaturesOn": 1,
+				"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+				"type": "MUTUAL_EXCLUSION_GROUP",
+				"uniqueId": "952c201c-39a3-4b77-a2f3-6c4369cb1297"
+			},
+			{
+				"features": [
+					{
+						"additionalInfo": null,
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1481705529360,
+						"creator": "Irit Maharian",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "",
+						"enabled": false,
+						"features": [
+						],
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1481705529360,
+						"minAppVersion": "1.1.1",
+						"name": "F2",
+						"namespace": "ns1",
+						"noCachedResults": false,
+						"owner": "Irit Maharian",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "17c18d28-dfcd-438c-95bc-98bf8992dc0f"
+					},
+					{
+						"additionalInfo": null,
+						"configurationRules": [
+						],
+						"configurationSchema": null,
+						"creationDate": 1481705513956,
+						"creator": "Irit Maharian",
+						"defaultConfiguration": null,
+						"defaultIfAirlockSystemIsDown": false,
+						"description": "",
+						"enabled": false,
+						"features": [
+						],
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1481705513956,
+						"minAppVersion": "1.1.1",
+						"name": "F1",
+						"namespace": "ns1",
+						"noCachedResults": false,
+						"owner": "Irit Maharian",
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": ""
+						},
+						"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+						"stage": "DEVELOPMENT",
+						"type": "FEATURE",
+						"uniqueId": "6a95243b-2a34-4fac-8f13-6f09359d421e"
+					}
+				],
+				"lastModified": 1481705575325,
+				"maxFeaturesOn": 1,
+				"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+				"type": "MUTUAL_EXCLUSION_GROUP",
+				"uniqueId": "8fbdc1ac-d648-4ad6-867a-92316fb53504"
+			}
+		],
+		"lastModified": 1481705575325,
+		"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+		"type": "ROOT",
+		"uniqueId": "b23cc130-7f00-486d-a059-3d4e52898da1"
+	},
+	"seasonId": "10f3ccec-a6b0-4ed1-9882-4f9bf68c709b",
+	"version": "V2"
+}

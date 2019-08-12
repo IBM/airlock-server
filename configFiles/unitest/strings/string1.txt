@@ -1,0 +1,11 @@
+{
+		"key": "app.hello",
+		"value": "Hello [[[1]]]",
+		"owner": "Mary",
+		"internationalFallback": "Hello",
+		"minAppVersion":"0.1",
+		"translationInstruction": "short",
+		"stage":"DEVELOPMENT",
+		"variant":"variant1",
+		"creator":"vicky"
+	}

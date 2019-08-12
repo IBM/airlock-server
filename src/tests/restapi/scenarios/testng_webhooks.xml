@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Airlock_REST_API_fields_validation" verbose="1">
+		<parameter name="url" value="http://localhost:8080/airlock/api/admin"></parameter>		
+		<parameter name="translationsUrl" value="http://localhost:8080/airlock/api/translations"></parameter>
+		<parameter name="analyticsUrl" value="http://localhost:8080/airlock/api/analytics"></parameter>
+		<parameter name="configPath" value="./configFiles/unitest/"></parameter>
+		<parameter name="sessionToken" value=""/>
+		<parameter name="operationsUrl" value="http://localhost:8080/airlock/api/ops"></parameter>
+		<parameter name="excludeProductsDelete" value=""/>
+		<parameter name="productsToDeleteFile" value="./src/tests/productsToDelete.txt" />
+		<parameter name="deleteAll" value="false" />
+		<parameter name="seasonVersion" value="3.0" />
+		<parameter name="userName" value=""></parameter>
+		<parameter name="userPassword" value=""></parameter>
+		<parameter name="adminUser" value=""></parameter>
+		<parameter name="adminPassword" value=""></parameter>
+		<parameter name="productLeadName" value=""></parameter>
+		<parameter name="productLeadPassword" value=""></parameter>
+		<parameter name="appNameSimple" value=" "/>
+		<parameter name="appName" value=" "/>
+		<parameter name="appName2" value=" "/>
+		<parameter name="notify" value="true" />
+		<parameter name="seasonVersion" value="3.0" />
+		<parameter name="isAuthenticated" value="false" />
+
+	<listeners>
+        <listener class-name="tests.testng.ExecOrderReporter" />
+        <listener class-name="tests.testng.ExecOrderEmailReporter" />
+    </listeners>
+    
+	<test name="BeforeSuite"  enabled="false"> 
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteSetup"></class> 
+    	</classes> 
+	</test> 
+	
+	<test name="BeforeSuite" enabled="false">
+		<classes>
+			<class name="tests.restapi.WebhookCleanup"></class>
+		</classes>
+	</test>
+	 
+		
+	<test name="Airlock_REST_API_scenarios_webhooks" enabled="true">
+    	<packages>
+      		<package name="tests.restapi.scenarios.webhooks" />
+  	 	</packages>
+	</test>
+	
+	
+	  <test name="AfterSuite"  enabled="true"> 
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteCleanup"></class> 
+    	</classes> 
+	</test> 
+</suite>

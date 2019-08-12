@@ -1,0 +1,373 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "체감온도"
+},
+"translationKey2": {
+"stringId" : "HeadsUp.WeekendForecast",
+"translation" : "주말 예보"
+},
+"translationKey3": {
+"stringId" : "HeadsUp.Precip",
+"translation" : "강수 확률"
+},
+"translationKey4": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "번개"
+},
+"translationKey5": {
+"stringId" : "Units.AM",
+"translation" : "AM"
+},
+"translationKey6": {
+"stringId" : "Units.PM",
+"translation" : "PM"
+},
+"translationKey7": {
+"stringId" : "DDI.RoadConditions",
+"translation" : "도로 상태"
+},
+"translationKey8": {
+"stringId" : "General.Tonight",
+"translation" : "오늘 밤"
+},
+"translationKey9": {
+"stringId" : "General.Tomorrow",
+"translation" : "내일"
+},
+"translationKey10": {
+"stringId" : "General.Today",
+"translation" : "오늘"
+},
+"translationKey11": {
+"stringId" : "HeadsUp.Rain",
+"translation" : "비"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "비 올 수 있음"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "비 예상됨"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.Snow",
+"translation" : "눈"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "눈 올 수 있음"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "눈 예상됨"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.LightWintryMix",
+"translation" : "약한 진눈깨비"
+},
+"translationKey18": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "체감:"
+},
+"translationKey19": {
+"stringId" : "General.Sunrise",
+"translation" : "일출"
+},
+"translationKey20": {
+"stringId" : "General.Sunset",
+"translation" : "일몰"
+},
+"translationKey21": {
+"stringId" : "HeadsUp.WinterStormLikely",
+"translation" : "겨울 폭풍 예상됨"
+},
+"translationKey22": {
+"stringId" : "HeadsUp.WinterStormPossible",
+"translation" : "겨울 폭풍 가능성 있음"
+},
+"translationKey23": {
+"stringId" : "HeadsUp.InView",
+"translation" : "[[[1]]] 보기"
+},
+"translationKey24": {
+"stringId" : "HeadsUp.Next48Hours",
+"translation" : "다음 48시간"
+},
+"translationKey25": {
+"stringId" : "DDI.Good",
+"translation" : "양호"
+},
+"translationKey26": {
+"stringId" : "DDI.Foggy",
+"translation" : "안개"
+},
+"translationKey27": {
+"stringId" : "DDI.Icy",
+"translation" : "빙판길"
+},
+"translationKey28": {
+"stringId" : "DDI.Ponding",
+"translation" : "물웅덩이"
+},
+"translationKey29": {
+"stringId" : "DDI.Snowy",
+"translation" : "눈길"
+},
+"translationKey30": {
+"stringId" : "DDI.Wet",
+"translation" : "젖음"
+},
+"translationKey31": {
+"stringId" : "HeadsUp.Accumulation",
+"translation" : "누적량"
+},
+"translationKey32": {
+"stringId" : "HeadsUp.RainStarting",
+"translation" : "비 시작"
+},
+"translationKey33": {
+"stringId" : "HeadsUp.RainEnding",
+"translation" : "비 그침"
+},
+"translationKey34": {
+"stringId" : "HeadsUp.SnowStarting",
+"translation" : "눈 시작"
+},
+"translationKey35": {
+"stringId" : "HeadsUp.SnowEnding",
+"translation" : "눈 그침"
+},
+"translationKey36": {
+"stringId" : "HeadsUp.MixStarting",
+"translation" : "진눈깨비 시작"
+},
+"translationKey37": {
+"stringId" : "HeadsUp.MixEnding",
+"translation" : "진눈깨비 그침"
+},
+"translationKey38": {
+"stringId" : "HeadsUp.WintryMixStarting",
+"translation" : "진눈깨비 시작"
+},
+"translationKey39": {
+"stringId" : "HeadsUp.WintryMixEnding",
+"translation" : "진눈깨비 그침"
+},
+"translationKey40": {
+"stringId" : "HeadsUp.StormsStarting",
+"translation" : "폭풍 시작"
+},
+"translationKey41": {
+"stringId" : "HeadsUp.StormsEnding",
+"translation" : "폭풍 멈춤"
+},
+"translationKey42": {
+"stringId" : "HeadsUp.Storms",
+"translation" : "폭풍"
+},
+"translationKey43": {
+"stringId" : "HeadsUp.StormsLikely",
+"translation" : "폭풍 예상됨"
+},
+"translationKey44": {
+"stringId" : "HeadsUp.StormsPossible",
+"translation" : "폭풍 가능성 있음"
+},
+"translationKey45": {
+"stringId" : "HeadsUp.Precipitation",
+"translation" : "강수"
+},
+"translationKey46": {
+"stringId" : "HeadsUp.LookAhead",
+"translation" : "예상 날씨"
+},
+"translationKey47": {
+"stringId" : "HeadsUp.Clear",
+"translation" : "삭제"
+},
+"translationKey48": {
+"stringId" : "Units.CM",
+"translation" : "CM"
+},
+"translationKey49": {
+"stringId" : "Units.KMH",
+"translation" : "KMH"
+},
+"translationKey50": {
+"stringId" : "Units.MPH",
+"translation" : "MPH"
+},
+"translationKey51": {
+"stringId" : "Units.InchMercury",
+"translation" : "인치"
+},
+"translationKey52": {
+"stringId" : "Units.Inches",
+"translation" : "인치"
+},
+"translationKey53": {
+"stringId" : "Units.MiliBars",
+"translation" : "MB"
+},
+"translationKey54": {
+"stringId" : "Units.Feet",
+"translation" : "피트"
+},
+"translationKey55": {
+"stringId" : "Units.Meter",
+"translation" : "월"
+},
+"translationKey56": {
+"stringId" : "Units.Miles",
+"translation" : "마일"
+},
+"translationKey57": {
+"stringId" : "Units.KM",
+"translation" : "KM"
+},
+"translationKey58": {
+"stringId" : "DDI.Windy",
+"translation" : "바람이 심함"
+},
+"translationKey59": {
+"stringId" : "DDI.Wind",
+"translation" : "바람"
+},
+"translationKey60": {
+"stringId" : "General.Weekend",
+"translation" : "주말"
+},
+"translationKey61": {
+"stringId" : "HeadsUp.SevereTStormImpactedNow",
+"translation" : "현재 심한 뇌우의 영향 중"
+},
+"translationKey62": {
+"stringId" : "HeadsUp.SevereTStormsPossible",
+"translation" : "심한 뇌우 가능성 있음"
+},
+"translationKey63": {
+"stringId" : "HeadsUp.SevereTStormsLikely",
+"translation" : "심한 뇌우가 예상됨"
+},
+"translationKey64": {
+"stringId" : "HeadsUp.SevereTStormsHighRisk",
+"translation" : "심한 뇌우가 올 위험이 높음"
+},
+"translationKey65": {
+"stringId" : "HeadsUp.SevereTStormNow",
+"translation" : "현재 심한 뇌우 중"
+},
+"translationKey66": {
+"stringId" : "HeadsUp.PrecipStart",
+"translation" : "강수 시작"
+},
+"translationKey67": {
+"stringId" : "HeadsUp.PrecipEnd",
+"translation" : "강수 멈춤"
+},
+"translationKey68": {
+"stringId" : "HeadsUp.WinterStormStarting",
+"translation" : "겨울 폭풍 시작"
+},
+"translationKey69": {
+"stringId" : "HeadsUp.WinterStormEnding",
+"translation" : "겨울 폭풍 멈춤"
+},
+"translationKey70": {
+"stringId" : "HeadsUp.WintryMix",
+"translation" : "진눈깨비"
+},
+"translationKey71": {
+"stringId" : "HeadsUp.WintryMixLikely",
+"translation" : "진눈깨비 예상됨"
+},
+"translationKey72": {
+"stringId" : "HeadsUp.WintryMixPossible",
+"translation" : "진눈깨비 올 수 있음"
+},
+"translationKey73": {
+"stringId" : "HeadsUp.Mix",
+"translation" : "혼합"
+},
+"translationKey74": {
+"stringId" : "HeadsUp.MixLikely",
+"translation" : "진눈깨비 예상됨"
+},
+"translationKey75": {
+"stringId" : "HeadsUp.MixPossible",
+"translation" : "진눈깨비 올 수 있음"
+},
+"translationKey76": {
+"stringId" : "HeadsUp.48Hrs",
+"translation" : "다음 48시간"
+},
+"translationKey77": {
+"stringId" : "HeadsUp.SevereTStormSoon",
+"translation" : "곧 심한 뇌우 예정"
+},
+"translationKey78": {
+"stringId" : "HeadsUp.Soon",
+"translation" : "곧"
+},
+"translationKey79": {
+"stringId" : "HeadsUp.Forecasted",
+"translation" : "예측됨"
+},
+"translationKey80": {
+"stringId" : "HeadsUp.SevereTStorm",
+"translation" : "심한 뇌우"
+},
+"translationKey81": {
+"stringId" : "HeadsUp.SeeRadar",
+"translation" : "레이더 보기"
+},
+"translationKey82": {
+"stringId" : "HeadsUp.LightSnow",
+"translation" : "약한 눈"
+},
+"translationKey83": {
+"stringId" : "HeadsUp.LightSnowLikely",
+"translation" : "약한 눈 가능성"
+},
+"translationKey84": {
+"stringId" : "HeadsUp.LightSnowPossible",
+"translation" : "약한 눈 가능성"
+},
+"translationKey85": {
+"stringId" : "HeadsUp.LightSnowStarting",
+"translation" : "약한 눈 시작됨"
+},
+"translationKey86": {
+"stringId" : "HeadsUp.LightSnowEnding",
+"translation" : "약한 눈 멈춤"
+},
+"translationKey87": {
+"stringId" : "ProfileSettings.AlertsCTA",
+"translation" : "실시간 날씨 경보 받기"
+},
+"translationKey88": {
+"stringId" : "HeadsUp.RadarBRadarMap",
+"translation" : "레이더 지도"
+},
+"translationKey89": {
+"stringId" : "GoRun.ExcellentRunningConditions",
+"translation" : "달리기 조건 매우 좋음"
+},
+"translationKey90": {
+"stringId" : "GoRun.GoodRunningConditions",
+"translation" : "달리기 조건 양호함"
+},
+"translationKey91": {
+"stringId" : "GoRun.GoRun",
+"translation" : "달리기 시작"
+}
+}

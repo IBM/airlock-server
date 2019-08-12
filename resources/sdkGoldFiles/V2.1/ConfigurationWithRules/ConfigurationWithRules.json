@@ -1,0 +1,409 @@
+{
+	"maxVersion": null,
+	"minVersion": "7.5",
+	"productId": "e2eaf6b5-e2e8-4662-8099-bc267327645e",
+	"root": {
+		"features": [
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": "{\"color\":\"green\",\"size\":1,\"alert\":true,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"hello world\"}",
+						"configurationRules": [
+						],
+						"creationDate": 1483898471780,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1483898471780,
+						"minAppVersion": "7.5",
+						"name": "config",
+						"namespace": "contextUserLocationRegionCWR",
+						"noCachedResults": false,
+						"owner": null,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": "context.currentLocation.region == 'NY'"
+						},
+						"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "3a29c3d5-77ba-4049-a898-1f2acd3d6e05"
+					}
+				],
+				"configurationSchema": {
+					"properties": {
+						"alert": {
+							"type": "boolean"
+						},
+						"background": {
+							"type": "string"
+						},
+						"color": {
+							"type": "string"
+						},
+						"icon": {
+							"type": "string"
+						},
+						"size": {
+							"description": "Text size",
+							"minimum": 1,
+							"type": "integer"
+						},
+						"text": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"color",
+						"text"
+					],
+					"title": "Example Schema",
+					"type": "object"
+				},
+				"creationDate": 1483898470714,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"displayName": null,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1483898471780,
+				"minAppVersion": "7.5",
+				"name": "contextUserLocationRegion",
+				"namespace": "CWR",
+				"noCachedResults": false,
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "1d3ed27d-6aef-454c-a571-8a155d06869c"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": "{\"color\":\"red\",\"size\":5,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to paradise\"}",
+						"configurationRules": [
+						],
+						"creationDate": 1483898473573,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1483898473573,
+						"minAppVersion": "7.5",
+						"name": "config",
+						"namespace": "contextWeatherLightningDistanceKmCWR",
+						"noCachedResults": false,
+						"owner": null,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": "context.weatherSummary.closestLightning.distance <= 5"
+						},
+						"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "0f3e5db3-a352-496b-8f9f-7dd5496c722d"
+					}
+				],
+				"configurationSchema": {
+					"properties": {
+						"alert": {
+							"type": "boolean"
+						},
+						"background": {
+							"type": "string"
+						},
+						"color": {
+							"type": "string"
+						},
+						"icon": {
+							"type": "string"
+						},
+						"size": {
+							"description": "Text size",
+							"minimum": 1,
+							"type": "integer"
+						},
+						"text": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"color",
+						"text"
+					],
+					"title": "Example Schema",
+					"type": "object"
+				},
+				"creationDate": 1483898472472,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": "{\"color\":\"blue\",\"size\":2,\"alert\":false,\"background\":\"red\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"displayName": null,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1483898473573,
+				"minAppVersion": "7.5",
+				"name": "contextWeatherLightningDistanceKm",
+				"namespace": "CWR",
+				"noCachedResults": false,
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "f6875771-42c2-4b1e-a4a7-312d9d748a87"
+			},
+			{
+				"additionalInfo": {
+				},
+				"configurationRules": [
+					{
+						"configuration": "{\"color\":\"green\",\"size\":2,\"alert\":false,\"background\":\"black\",\"icon\":\"b.jpg\",\"text\":\"hellow\"}",
+						"configurationRules": [
+						],
+						"creationDate": 1483898475553,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1483898475553,
+						"minAppVersion": "7.5",
+						"name": "config",
+						"namespace": "contextWeatherDsxTeaserTitleCWR",
+						"noCachedResults": false,
+						"owner": null,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": "context.testData.dsx.teaserTitle.indexOf('Tornado') != -1"
+						},
+						"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "f71940bb-0fd2-40ab-b72b-43788c22abc0"
+					},
+					{
+						"configuration": "{\"color\":\"pink\",\"size\":1,\"alert\":true,\"background\":\"brown\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+						"configurationRules": [
+						],
+						"creationDate": 1483898476513,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1483898476513,
+						"minAppVersion": "7.5",
+						"name": "config2",
+						"namespace": "contextWeatherDsxTeaserTitleCWR",
+						"noCachedResults": false,
+						"owner": null,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": "context.testData.dsx.teaserTitle.indexOf('Hurricane') != -1"
+						},
+						"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "d6bf9ef0-819d-43f8-baa3-17f6641b7631"
+					}
+				],
+				"configurationSchema": {
+					"properties": {
+						"alert": {
+							"type": "boolean"
+						},
+						"background": {
+							"type": "string"
+						},
+						"color": {
+							"type": "string"
+						},
+						"icon": {
+							"type": "string"
+						},
+						"size": {
+							"description": "Text size",
+							"minimum": 1,
+							"type": "integer"
+						},
+						"text": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"color",
+						"text"
+					],
+					"title": "Example Schema",
+					"type": "object"
+				},
+				"creationDate": 1483898474295,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": "{\"color\":\"red\",\"size\":2,\"alert\":false,\"background\":\"white\",\"icon\":\"a.jpg\",\"text\":\"welcome to hell\"}",
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"displayName": null,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1483898476514,
+				"minAppVersion": "7.5",
+				"name": "contextWeatherDsxTeaserTitle",
+				"namespace": "CWR",
+				"noCachedResults": false,
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "893e6c04-84ea-433c-8cdb-cad77219093e"
+			},
+			{
+				"additionalInfo": null,
+				"configurationRules": [
+					{
+						"configuration": "{\n\t\"color\":\"green\",\n\t\"text\":\"hellow world\"\n}",
+						"configurationRules": [
+						],
+						"creationDate": 1483898477938,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1483972334980,
+						"minAppVersion": "7.5",
+						"name": "config1",
+						"namespace": "contextWeatherPrecipitationForecastCWR",
+						"noCachedResults": false,
+						"owner": null,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": "context.testData.precipitationForecast[0].eventStartLocal && context.testData.precipitationForecast[0].eventStartLocal.startsWith('2016')"
+						},
+						"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "62ac97b0-a2b3-45fc-bd10-4de1a4789ea5"
+					},
+					{
+						"configuration": "{\"color\":\"magenta\",\"size\":3,\"background\":\"black\",\"icon\":\"a.jpg\",\"text\":\"welcome to paradise\"}",
+						"configurationRules": [
+						],
+						"creationDate": 1483898478755,
+						"creator": "Esteban Zia",
+						"description": "",
+						"enabled": true,
+						"internalUserGroups": [
+							"DEV"
+						],
+						"lastModified": 1483898478755,
+						"minAppVersion": "7.5",
+						"name": "config2",
+						"namespace": "contextWeatherPrecipitationForecastCWR",
+						"noCachedResults": false,
+						"owner": null,
+						"rolloutPercentage": 100,
+						"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+						"rule": {
+							"force": false,
+							"ruleString": "context.testData.precipitationForecast[0].eventStartLocal && context.testData.precipitationForecast[0].eventStartLocal.startsWith('2015')"
+						},
+						"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+						"stage": "DEVELOPMENT",
+						"type": "CONFIGURATION_RULE",
+						"uniqueId": "1a1d801b-6b60-451c-a04a-32f83df91c87"
+					}
+				],
+				"configurationSchema": null,
+				"creationDate": 1483898477154,
+				"creator": "Esteban Zia",
+				"defaultConfiguration": null,
+				"defaultIfAirlockSystemIsDown": false,
+				"description": "",
+				"displayName": null,
+				"enabled": true,
+				"features": [
+				],
+				"internalUserGroups": [
+					"DEV"
+				],
+				"lastModified": 1483898478755,
+				"minAppVersion": "7.5",
+				"name": "contextWeatherPrecipitationForecast",
+				"namespace": "CWR",
+				"noCachedResults": false,
+				"owner": "Esteban Zia",
+				"rolloutPercentage": 100,
+				"rolloutPercentageBitmap": "\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/Dw==",
+				"rule": {
+					"force": false,
+					"ruleString": ""
+				},
+				"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+				"stage": "DEVELOPMENT",
+				"type": "FEATURE",
+				"uniqueId": "539e7cc9-92a9-47f9-8dc4-a428f7c72559"
+			}
+		],
+		"lastModified": 1483898477154,
+		"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+		"type": "ROOT",
+		"uniqueId": "790e8cac-0882-4148-ba8d-031fd1e7e5f9"
+	},
+	"seasonId": "e38ae993-3709-457f-97ed-19576a1a5d1a",
+	"version": "V2"
+}

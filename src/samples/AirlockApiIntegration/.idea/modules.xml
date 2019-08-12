@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AirlockApiIntegration.iml" filepath="$PROJECT_DIR$/.idea/modules/AirlockApiIntegration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AirlockApiIntegration_main.iml" filepath="$PROJECT_DIR$/.idea/modules/AirlockApiIntegration_main.iml" group="AirlockApiIntegration" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AirlockApiIntegration_test.iml" filepath="$PROJECT_DIR$/.idea/modules/AirlockApiIntegration_test.iml" group="AirlockApiIntegration" />
+    </modules>
+  </component>
+</project>

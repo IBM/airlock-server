@@ -1,0 +1,51 @@
+{
+	"owner": "Norman",
+	"enabled": true,
+	"parent": null,
+	"stage": "DEVELOPMENT",
+	"additionalInfo": {
+		"aaa": "bbb"
+	},
+	"namespace": "ns1",
+	"creator": "Philip",
+	"internalUserGroups": [
+		"QA",
+		"DEV"
+	],
+	"description": "F21 desc",
+	"rule": {
+		"ruleString": ""
+	},
+	"minAppVersion": "2.3",
+	"name": "F21",
+	"seasonId": null,
+	"features": [{
+		"enabled": true,
+		"parent": null,
+		"type": "FEATURE",
+		"stage": "DEVELOPMENT",
+		"additionalInfo": {
+			"aaa": "bbb"
+		},
+		"namespace": "ns1",
+		"creator": "Philip",
+		"internalUserGroups": [
+			"QA",
+			"DEV"
+		],
+		"description": "F21 desc",
+		"rule": {
+			"ruleString": ""
+		},
+		"minAppVersion": "2.3",
+		"name": "F11",
+		"seasonId": null,
+		"features": [],
+		"owner": "Norman",
+		"defaultIfAirlockSystemIsDown": false,
+		"rolloutPercentage": 10
+	}],
+	"defaultIfAirlockSystemIsDown": false,
+	"type": "FEATURE",
+	"rolloutPercentage": 10
+}

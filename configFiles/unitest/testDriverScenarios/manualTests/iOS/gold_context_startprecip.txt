@@ -1,0 +1,1112 @@
+{
+	"root": {
+		"features": [
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"features": [
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Current Conditions",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Breaking News",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+											{
+												"featureAttributes": "{}",
+												"features": [
+													{
+														"featureAttributes": "{}",
+														"features": [
+														],
+														"isON": false,
+														"name": "modules.Right Now Video",
+														"resultTrace": "Parent feature is off",
+														"type": "FEATURE"
+													}
+												],
+												"isON": false,
+												"name": "modules.Right Now Video by Airlock",
+												"resultTrace": "Parent feature is off",
+												"type": "FEATURE"
+											}
+										],
+										"isON": false,
+										"name": "modules.Right Now",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Hourly",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Daily",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Video",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Radar Maps",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Road Conditions",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.News",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Hurricane Central",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.HealthAllergy",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Health",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "modules.Outdoor",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									}
+								],
+								"maxFeaturesOn": 12,
+								"name": "mx.7056519c-3995-42f3-8639-d209cd203a7f",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							},
+							{
+								"features": [
+								],
+								"maxFeaturesOn": 1,
+								"name": "mx.3b22f416-a737-4f1a-b0a8-187ae9d2a947",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							}
+						],
+						"isON": false,
+						"name": "modules.Airlock Control Over Modules",
+						"resultTrace": "Application version is outside of feature version range",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.e02187fd-bf06-4830-8ff2-6ae40dc25d40",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "ads.Main Feed Ads",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "ads.Main Screen Banner",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "ads.Airlock Control Over Ads",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "platform.Typeahead.Location.Search.v3",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "platform.Location.Services.v3",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "WeatherGlance.DesignUpdates",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "WeatherGlance.WeatherGlance",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Current Conditions",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Breaking News",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Right Now",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Hourly",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Daily",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Video",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Radar Maps",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Road Conditions",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.News",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.HealthAllergy",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Health",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "ads.Outdoor",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							}
+						],
+						"isON": false,
+						"name": "ads.testModules",
+						"resultTrace": "Application version is outside of feature version range",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.e0cfab0a-bc4f-43be-9ced-bea0c581ad0c",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "Maps.Distance Measurement Tool",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "Maps.WSC alert card",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "Maps.Search icon",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "Maps.Dew point",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "Maps.Wind speed",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "Maps.Temperature change",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "Maps.No layer",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "Maps.Future 48hr Precip",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							}
+						],
+						"isON": false,
+						"name": "Maps.Q1 Map Layers",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "Maps.Airlock Control Over Maps Features",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+									{
+										"features": [
+											{
+												"featureAttributes": "{}",
+												"features": [
+												],
+												"isON": false,
+												"name": "test.subsub2",
+												"resultTrace": "Parent feature is off",
+												"type": "FEATURE"
+											},
+											{
+												"featureAttributes": "{}",
+												"features": [
+												],
+												"isON": false,
+												"name": "test.subsub1",
+												"resultTrace": "Parent feature is off",
+												"type": "FEATURE"
+											}
+										],
+										"maxFeaturesOn": 1,
+										"name": "mx.7d2bf768-8dce-4c88-be50-9e48169c6942",
+										"type": "MUTUAL_EXCLUSION_GROUP"
+									}
+								],
+								"isON": false,
+								"name": "test.sub3",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "test.sub2",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "test.sub1",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 1,
+						"name": "mx.226184e6-4be0-4bf5-820f-947cb6331067",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					},
+					{
+						"features": [
+						],
+						"maxFeaturesOn": 1,
+						"name": "mx.62a9a173-a805-4ba6-ac2c-55ad7b0e1629",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					}
+				],
+				"isON": false,
+				"name": "test.test",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "lifestyle.Allergy Detail Reskin",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "lifestyle.Hide Allergy Map For International",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "Lifestyle.Cold and Flu CDC bar chart",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "lifestyle.Lifestyle Features",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "platform.LocationManager",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "Analytics.App Source Analytics DEV",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "profile.units",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "profile.Alerts CTA",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "profile.timezone",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "profile.Smart Ratings in Profile",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "profile.Segments",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "profile.Allergy Tracker Settings",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "profile.Profile Settings",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "international.JMA 10 Day Forecast Limit",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "Alerts.Notification Parsing",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "Alerts.Additional Message Options",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "Alerts.Alerts",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"features": [
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.f9434946-ad3e-4cfe-aadd-2bb8f7cdb293",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"features": [
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Table",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+											{
+												"featureAttributes": "{}",
+												"features": [
+												],
+												"isON": false,
+												"name": "HeadsUpB.Hourly Subfeature",
+												"resultTrace": "Parent feature is off",
+												"type": "FEATURE"
+											}
+										],
+										"isON": false,
+										"name": "headsup.Hourly",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Daily",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsupb.Radar",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									}
+								],
+								"maxFeaturesOn": 3,
+								"name": "mx.7df18208-c2f2-4d37-beea-0848c369767e",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							},
+							{
+								"features": [
+								],
+								"maxFeaturesOn": 1,
+								"name": "mx.a6201537-c1cd-41e4-b9ce-daa615fd01e7",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							}
+						],
+						"isON": false,
+						"name": "headsup.HeadsUpB",
+						"resultTrace": "Application version is outside of feature version range",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"features": [
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Go Run",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Editorial Calendar",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Breaking News Video",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Real Time Lightning",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.T Storm Impacted Now",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Winter Storm Impacted Now",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Radar",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+											{
+												"features": [
+													{
+														"featureAttributes": "{}",
+														"features": [
+														],
+														"isON": false,
+														"name": "topvideo.Local",
+														"resultTrace": "Parent feature is off",
+														"type": "FEATURE"
+													},
+													{
+														"featureAttributes": "{}",
+														"features": [
+														],
+														"isON": false,
+														"name": "topvideo.National",
+														"resultTrace": "Parent feature is off",
+														"type": "FEATURE"
+													}
+												],
+												"maxFeaturesOn": 1,
+												"name": "mx.e3987f02-f51f-4105-ad91-5d80ec7f83e0",
+												"type": "MUTUAL_EXCLUSION_GROUP"
+											}
+										],
+										"isON": false,
+										"name": "headsup.Top Video",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Precip Start",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Precip End",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Forecasted Snow Accumulation",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Winter Storm Forecast",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.T Storm Impact Soon",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Road Conditions",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Feels Like Message",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Tomorrow Forecast",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Weekend Forecast",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "headsup.Sunrise Sunset Message",
+										"resultTrace": "Parent feature is off",
+										"type": "FEATURE"
+									}
+								],
+								"maxFeaturesOn": 3,
+								"name": "mx.c079a187-d20d-40e1-b67c-4ebf2a8c59bb",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "headsup.AB Test demo",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							}
+						],
+						"isON": false,
+						"name": "headsup.HeadsUp",
+						"resultTrace": "Application version is outside of feature version range",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.d92fafad-a5a1-4718-9ffb-31ef5813b62d",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "platform.SevereDailyWeatherIcon",
+				"resultTrace": "Rule disabled",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "airlock.subSubFeature",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							}
+						],
+						"isON": false,
+						"name": "airlock.Rollout subfeature",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "airlock.Rollout Beacon",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "apple.Apple QA Login",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "autoplay.Breaking News Module",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "autoplay.Right Now Module",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "autoplay.Video Module",
+						"resultTrace": "Parent feature is off",
+						"type": "FEATURE"
+					}
+				],
+				"isON": false,
+				"name": "autoplay.Airlock Control Over Video AutoPlay",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "test.Josemina",
+				"resultTrace": "Rule disabled",
+				"type": "FEATURE"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "Test3.Test3",
+						"resultTrace": "Application version is outside of feature version range",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "Test2.Test 2",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							}
+						],
+						"isON": false,
+						"name": "Test1.Test1",
+						"resultTrace": "Application version is outside of feature version range",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.17229f3d-f555-4e4c-a753-c05345448bc4",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "javascript.JS Test",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "personalization.Personalized Splash Screen",
+				"resultTrace": "Application version is outside of feature version range",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

@@ -1,0 +1,251 @@
+{
+  "seasonId": "85b6c909-a502-40b6-84c9-e12dcae53a84",
+  "lastModified": 1505289863112,
+  "events": [
+    {
+      "dateTime": null,
+      "eventData": {
+        "slot": "weather.com",
+        "type": "bbg"
+      },
+      "name": "ad-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "slot": "weather.com",
+        "type": "pre"
+      },
+      "name": "ad-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "slot": "weather.com",
+        "type": "ban"
+      },
+      "name": "ad-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "slot": "weather.com",
+        "type": "stam"
+      },
+      "name": "ad-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "slot": "weather.com",
+        "type": "stam2"
+      },
+      "name": "ad-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "playlist": "ut ipsum",
+        "pos": -7185379,
+        "caption": "ea ex",
+        "id": "tempor amet proident ea Lorem",
+        "source": "labore id sit mollit",
+        "variantId": "dolore Duis irure tempor elit",
+        "thumbnailURL": "nisi cupidatat commodo culpa ad"
+      },
+      "name": "content-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "playlist": "consectetur ut occaecat",
+        "pos": 25735957,
+        "caption": "Lorem nisi enim conse",
+        "id": "eu tempor culpa dolore",
+        "source": "id velit",
+        "variantId": "in",
+        "thumbnailURL": "reprehenderit velit in"
+      },
+      "name": "content-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "playlist": "adipis",
+        "pos": 72474716,
+        "caption": "elit aliqua",
+        "id": "sunt Ut culpa tempor irure",
+        "source": "eu ad",
+        "variantId": "Duis non cillum officia dolore",
+        "thumbnailURL": "esse eiusmod"
+      },
+      "name": "content-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "playlist": "nostrud sint dolore proident",
+        "pos": 63346002,
+        "caption": "eu aute",
+        "id": "nulla cupidatat esse",
+        "source": "ipsum commodo aliquip Excepteur",
+        "variantId": "cupidatat commodo magna",
+        "thumbnailURL": "dolor enim magna voluptate"
+      },
+      "name": "content-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "playlist": "mollit dolor",
+        "pos": 69747249,
+        "caption": "consequat",
+        "id": "ex eu dolore mollit",
+        "source": "proident enim labore",
+        "variantId": "dolore ullamco quis",
+        "thumbnailURL": "tempor consequat in"
+      },
+      "name": "content-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "sub": "flu",
+        "name": "outdoor"
+      },
+      "name": "detail-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "sub": "flu",
+        "name": "ten-day"
+      },
+      "name": "detail-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "sub": "this-week",
+        "name": "hourly"
+      },
+      "name": "detail-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "sub": "flu",
+        "name": "coldfludetails"
+      },
+      "name": "detail-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "sub": "this-week",
+        "name": "hurricanespotlight"
+      },
+      "name": "detail-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "sub": "today",
+        "name": "radarmaps"
+      },
+      "name": "detail-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "sub": "flu",
+        "name": "hurricanespotlight"
+      },
+      "name": "detail-viewed"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "autoplayWatchedSecs": 57003219,
+        "adClicked": true,
+        "caption": "laboris",
+        "adSecs": -52346345,
+        "autoplayClicked": false,
+        "source": "dolore irure id proident qui",
+        "watchedSecs": 16288537,
+        "playlist": "esse ipsum quis magna officia",
+        "pos": 24236656,
+        "contentSecs": -10018429,
+        "adWatchedSecs": 15961803,
+        "playMethod": "auto",
+        "id": "et ea culpa exercitation",
+        "variantId": "ipsum dolore",
+        "thumbnailURL": "qui quis ut"
+      },
+      "name": "video-played"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "autoplayWatchedSecs": 97041888,
+        "adClicked": false,
+        "caption": "nostrud commodo in reprehenderit",
+        "adSecs": 24631444,
+        "autoplayClicked": true,
+        "source": "eiusmod",
+        "watchedSecs": -37361429,
+        "playlist": "eiusmod in elit",
+        "pos": 35252511,
+        "contentSecs": 22249638,
+        "adWatchedSecs": 19083988,
+        "playMethod": "user",
+        "id": "aliquip fugiat nostrud id",
+        "variantId": "aliqua non officia ",
+        "thumbnailURL": "in id do ad"
+      },
+      "name": "video-played"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "autoplayWatchedSecs": 67767451,
+        "adClicked": false,
+        "caption": "eu pariatur",
+        "adSecs": -53078347,
+        "autoplayClicked": false,
+        "source": "dolore pariatur consequat enim veniam",
+        "watchedSecs": -10633611,
+        "playlist": "veniam fugiat ut",
+        "pos": -34369281,
+        "contentSecs": -40711308,
+        "adWatchedSecs": -2009481,
+        "playMethod": "user",
+        "id": "aliqua ut",
+        "variantId": "exercitation fugiat laborum",
+        "thumbnailURL": "qui occaecat aute"
+      },
+      "name": "video-played"
+    },
+    {
+      "dateTime": null,
+      "eventData": {
+        "autoplayWatchedSecs": -82943905,
+        "adClicked": true,
+        "caption": "elit est aliquip reprehenderit proident",
+        "adSecs": 9424835,
+        "autoplayClicked": false,
+        "source": "dolor incididunt",
+        "watchedSecs": 94468359,
+        "playlist": "fugiat anim proident",
+        "pos": 31479466,
+        "contentSecs": -61168177,
+        "adWatchedSecs": -74856690,
+        "playMethod": "next-video-auto",
+        "id": "eiusmod pariatur",
+        "variantId": "amet",
+        "thumbnailURL": "aliqua id "
+      },
+      "name": "video-played"
+    }
+  ]
+}

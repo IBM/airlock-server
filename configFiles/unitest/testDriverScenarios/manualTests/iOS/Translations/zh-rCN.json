@@ -1,0 +1,373 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "体感温度"
+},
+"translationKey2": {
+"stringId" : "HeadsUp.WeekendForecast",
+"translation" : "周末预报"
+},
+"translationKey3": {
+"stringId" : "HeadsUp.Precip",
+"translation" : "降水量"
+},
+"translationKey4": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "雷电"
+},
+"translationKey5": {
+"stringId" : "Units.AM",
+"translation" : "上午"
+},
+"translationKey6": {
+"stringId" : "Units.PM",
+"translation" : "下午"
+},
+"translationKey7": {
+"stringId" : "DDI.RoadConditions",
+"translation" : "路况信息"
+},
+"translationKey8": {
+"stringId" : "General.Tonight",
+"translation" : "今夜"
+},
+"translationKey9": {
+"stringId" : "General.Tomorrow",
+"translation" : "明天"
+},
+"translationKey10": {
+"stringId" : "General.Today",
+"translation" : "今天"
+},
+"translationKey11": {
+"stringId" : "HeadsUp.Rain",
+"translation" : "降雨"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "可能降雨"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "很可能降雨"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.Snow",
+"translation" : "降雪"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "可能降雪"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "很可能降雪"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.LightWintryMix",
+"translation" : "小雨夹雪"
+},
+"translationKey18": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "体感温度"
+},
+"translationKey19": {
+"stringId" : "General.Sunrise",
+"translation" : "日出"
+},
+"translationKey20": {
+"stringId" : "General.Sunset",
+"translation" : "日落"
+},
+"translationKey21": {
+"stringId" : "HeadsUp.WinterStormLikely",
+"translation" : "很可能出现冬季风暴 "
+},
+"translationKey22": {
+"stringId" : "HeadsUp.WinterStormPossible",
+"translation" : "可能出现冬季风暴"
+},
+"translationKey23": {
+"stringId" : "HeadsUp.InView",
+"translation" : "预报可能有 [[[1]]]"
+},
+"translationKey24": {
+"stringId" : "HeadsUp.Next48Hours",
+"translation" : "未来 48 小时"
+},
+"translationKey25": {
+"stringId" : "DDI.Good",
+"translation" : "良好"
+},
+"translationKey26": {
+"stringId" : "DDI.Foggy",
+"translation" : "大雾"
+},
+"translationKey27": {
+"stringId" : "DDI.Icy",
+"translation" : "结冰"
+},
+"translationKey28": {
+"stringId" : "DDI.Ponding",
+"translation" : "积水"
+},
+"translationKey29": {
+"stringId" : "DDI.Snowy",
+"translation" : "有雪"
+},
+"translationKey30": {
+"stringId" : "DDI.Wet",
+"translation" : "湿"
+},
+"translationKey31": {
+"stringId" : "HeadsUp.Accumulation",
+"translation" : "累计"
+},
+"translationKey32": {
+"stringId" : "HeadsUp.RainStarting",
+"translation" : "降雨开始"
+},
+"translationKey33": {
+"stringId" : "HeadsUp.RainEnding",
+"translation" : "降雨结束"
+},
+"translationKey34": {
+"stringId" : "HeadsUp.SnowStarting",
+"translation" : "降雪开始"
+},
+"translationKey35": {
+"stringId" : "HeadsUp.SnowEnding",
+"translation" : "降雪结束"
+},
+"translationKey36": {
+"stringId" : "HeadsUp.MixStarting",
+"translation" : "雨夹雪开始"
+},
+"translationKey37": {
+"stringId" : "HeadsUp.MixEnding",
+"translation" : "雨夹雪结束"
+},
+"translationKey38": {
+"stringId" : "HeadsUp.WintryMixStarting",
+"translation" : "雨夹雪开始"
+},
+"translationKey39": {
+"stringId" : "HeadsUp.WintryMixEnding",
+"translation" : "雨夹雪结束"
+},
+"translationKey40": {
+"stringId" : "HeadsUp.StormsStarting",
+"translation" : "风暴开始"
+},
+"translationKey41": {
+"stringId" : "HeadsUp.StormsEnding",
+"translation" : "风暴结束"
+},
+"translationKey42": {
+"stringId" : "HeadsUp.Storms",
+"translation" : "风暴"
+},
+"translationKey43": {
+"stringId" : "HeadsUp.StormsLikely",
+"translation" : "很可能出现风暴 "
+},
+"translationKey44": {
+"stringId" : "HeadsUp.StormsPossible",
+"translation" : "可能出现风暴"
+},
+"translationKey45": {
+"stringId" : "HeadsUp.Precipitation",
+"translation" : "降水量"
+},
+"translationKey46": {
+"stringId" : "HeadsUp.LookAhead",
+"translation" : "展望未来"
+},
+"translationKey47": {
+"stringId" : "HeadsUp.Clear",
+"translation" : "天气晴朗"
+},
+"translationKey48": {
+"stringId" : "Units.CM",
+"translation" : "CM"
+},
+"translationKey49": {
+"stringId" : "Units.KMH",
+"translation" : "千米每小时"
+},
+"translationKey50": {
+"stringId" : "Units.MPH",
+"translation" : "英里每小时"
+},
+"translationKey51": {
+"stringId" : "Units.InchMercury",
+"translation" : "英寸"
+},
+"translationKey52": {
+"stringId" : "Units.Inches",
+"translation" : "英寸"
+},
+"translationKey53": {
+"stringId" : "Units.MiliBars",
+"translation" : "毫巴"
+},
+"translationKey54": {
+"stringId" : "Units.Feet",
+"translation" : "英尺"
+},
+"translationKey55": {
+"stringId" : "Units.Meter",
+"translation" : "星期一"
+},
+"translationKey56": {
+"stringId" : "Units.Miles",
+"translation" : "英里"
+},
+"translationKey57": {
+"stringId" : "Units.KM",
+"translation" : "KM"
+},
+"translationKey58": {
+"stringId" : "DDI.Windy",
+"translation" : "有风"
+},
+"translationKey59": {
+"stringId" : "DDI.Wind",
+"translation" : "大风"
+},
+"translationKey60": {
+"stringId" : "General.Weekend",
+"translation" : "周末"
+},
+"translationKey61": {
+"stringId" : "HeadsUp.SevereTStormImpactedNow",
+"translation" : "正在遭受强雷暴天气影响"
+},
+"translationKey62": {
+"stringId" : "HeadsUp.SevereTStormsPossible",
+"translation" : "可能出现强雷暴"
+},
+"translationKey63": {
+"stringId" : "HeadsUp.SevereTStormsLikely",
+"translation" : "很可能出现强雷暴"
+},
+"translationKey64": {
+"stringId" : "HeadsUp.SevereTStormsHighRisk",
+"translation" : "强雷暴风险高"
+},
+"translationKey65": {
+"stringId" : "HeadsUp.SevereTStormNow",
+"translation" : "目前有强雷暴"
+},
+"translationKey66": {
+"stringId" : "HeadsUp.PrecipStart",
+"translation" : "降水开始"
+},
+"translationKey67": {
+"stringId" : "HeadsUp.PrecipEnd",
+"translation" : "降水结束"
+},
+"translationKey68": {
+"stringId" : "HeadsUp.WinterStormStarting",
+"translation" : "冬季风暴开始"
+},
+"translationKey69": {
+"stringId" : "HeadsUp.WinterStormEnding",
+"translation" : "冬季风暴结束"
+},
+"translationKey70": {
+"stringId" : "HeadsUp.WintryMix",
+"translation" : "雨夹雪"
+},
+"translationKey71": {
+"stringId" : "HeadsUp.WintryMixLikely",
+"translation" : "很可能有雨夹雪"
+},
+"translationKey72": {
+"stringId" : "HeadsUp.WintryMixPossible",
+"translation" : "可能有雨夹雪"
+},
+"translationKey73": {
+"stringId" : "HeadsUp.Mix",
+"translation" : "雨夹雪"
+},
+"translationKey74": {
+"stringId" : "HeadsUp.MixLikely",
+"translation" : "很可能有雨夹雪"
+},
+"translationKey75": {
+"stringId" : "HeadsUp.MixPossible",
+"translation" : "可能有雨夹雪"
+},
+"translationKey76": {
+"stringId" : "HeadsUp.48Hrs",
+"translation" : "未来 48 小时"
+},
+"translationKey77": {
+"stringId" : "HeadsUp.SevereTStormSoon",
+"translation" : "即将出现强雷暴"
+},
+"translationKey78": {
+"stringId" : "HeadsUp.Soon",
+"translation" : "即将出现"
+},
+"translationKey79": {
+"stringId" : "HeadsUp.Forecasted",
+"translation" : "已预报"
+},
+"translationKey80": {
+"stringId" : "HeadsUp.SevereTStorm",
+"translation" : "强雷暴"
+},
+"translationKey81": {
+"stringId" : "HeadsUp.SeeRadar",
+"translation" : "查看雷达"
+},
+"translationKey82": {
+"stringId" : "HeadsUp.LightSnow",
+"translation" : "小雪"
+},
+"translationKey83": {
+"stringId" : "HeadsUp.LightSnowLikely",
+"translation" : "很可能有小雪"
+},
+"translationKey84": {
+"stringId" : "HeadsUp.LightSnowPossible",
+"translation" : "可能有小雪"
+},
+"translationKey85": {
+"stringId" : "HeadsUp.LightSnowStarting",
+"translation" : "小雪开始"
+},
+"translationKey86": {
+"stringId" : "HeadsUp.LightSnowEnding",
+"translation" : "小雪结束"
+},
+"translationKey87": {
+"stringId" : "ProfileSettings.AlertsCTA",
+"translation" : "获取实时天气提醒"
+},
+"translationKey88": {
+"stringId" : "HeadsUp.RadarBRadarMap",
+"translation" : "雷达图"
+},
+"translationKey89": {
+"stringId" : "GoRun.ExcellentRunningConditions",
+"translation" : "跑步条件等级优"
+},
+"translationKey90": {
+"stringId" : "GoRun.GoodRunningConditions",
+"translation" : "跑步条件等级良"
+},
+"translationKey91": {
+"stringId" : "GoRun.GoRun",
+"translation" : "跑起来吧"
+}
+}

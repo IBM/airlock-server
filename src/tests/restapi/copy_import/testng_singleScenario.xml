@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Airlock_REST_API_scenarios" verbose="1" >
+	<parameter name="url" value="http://localhost:9090/airlock/api/admin"></parameter>
+	<parameter name="analyticsUrl" value="http://localhost:9090/airlock/api/analytics"></parameter>
+	<parameter name="translationsUrl" value="http://localhost:9090/airlock/api/translations"></parameter>
+	<parameter name="configPath" value="./configFiles/unitest/"></parameter>
+	<parameter name="operationsUrl" value="http://localhost:9090/airlock/api/ops"></parameter>
+	<parameter name="excludeProductsDelete" value=""/>
+	<parameter name="productsToDeleteFile" value="./src/tests/productsToDelete.txt" />
+	<parameter name="deleteAll" value="false" />
+	<parameter name="notify" value="false" />
+	<parameter name="seasonVersion" value="3.0" />
+	<parameter name="userName" value=""></parameter>
+	<parameter name="userPassword" value=""></parameter>
+	<parameter name="appName" value=""/>
+	<parameter name="sessionToken" value=""/>
+	<parameter name="runOnMaster" value="true"/>
+
+	<test name="BeforeSuite"  enabled="true">
+		<classes>
+			<class name="tests.restapi.SuiteSetup"></class>
+		</classes>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_importfailed" enabled="true">
+		<parameter name="runOnMaster" value="true"/>
+		<classes>
+			<class name="tests.restapi.copy_import.import_features.ImportFeatureWithEntitlement">
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_import" enabled="false">
+		<parameter name="runOnMaster" value="false"/>
+		<classes>
+			<class name="tests.restapi.copy_import.copy.CopyFeatureDifferentSeason">
+			</class>
+		</classes>
+	</test>
+	<!--  
+	
+	<test name="Airlock_REST_API_copy_Master" enabled="false">
+	<parameter name="runOnMaster" value="true"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.copy" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_Branch" enabled="false">
+		<parameter name="runOnMaster" value="false"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.copy" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_import_Master" enabled="false">
+		<parameter name="runOnMaster" value="true"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.import_features" />
+  	 	</packages>
+	</test>
+	
+	
+	<test name="Airlock_REST_API_import_Branch" enabled="false">
+		<parameter name="runOnMaster" value="false"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.import_features" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_copyBetweenMasterAndBranch" enabled="false">
+		<packages>
+			<package name="tests.restapi.copy_import.copyBetweenMasterAndBranch" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_feature_with_strings" enabled="false">
+		<packages>
+			<package name="tests.restapi.copy_import.feature_with_strings" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_strings" enabled="false">
+		<packages>
+			<package name="tests.restapi.copy_import.strings" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_purcahses_Master" enabled="true">
+		<parameter name="runOnMaster" value="true"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.copy_purchases" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_purcahses_Branch" enabled="true">
+		<parameter name="runOnMaster" value="false"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.copy_purchases" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_import_purchases_Master" enabled="true">
+		<parameter name="runOnMaster" value="true"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.import_purchases" />
+  	 	</packages>
+	</test>
+	
+	
+	<test name="Airlock_REST_API_import_purchases_Branch" enabled="true">
+		<parameter name="runOnMaster" value="false"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.import_purchases" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_purchases_with_strings" enabled="true">
+		<packages>
+			<package name="tests.restapi.copy_import.purchases_with_strings" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_copyPurchasesBetweenMasterAndBranch" enabled="true">
+		<packages>
+			<package name="tests.restapi.copy_import.copyPurchasesBetweenMasterAndBranch" />
+		</packages>
+	</test>
+ -->
+	  <test name="AfterSuite"  enabled="true">
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteCleanup"></class> 
+    	</classes> 
+	</test> 
+
+</suite>

@@ -1,0 +1,23 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"properties": {
+		"notification": {
+		"properties": {
+			"title": {
+					"type": "string"
+				},
+				"text": {
+					"type": "string"
+				},
+				"dueDate": {
+					"type": "integer",
+					"minimum": 0
+				}
+		},
+		"required":["title", "text"],
+		"type":"object"
+		}
+	},
+	"required":["notification"],
+	"type":"object"
+}

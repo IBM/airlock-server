@@ -1,0 +1,2438 @@
+{
+	"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+	"root": {
+		"features": [{
+				"displayName": null,
+				"rule": {
+					"ruleString": ""
+				},
+				"description": "",
+				"type": "FEATURE",
+				"sendToAnalytics": true,
+				"enabled": true,
+				"defaultConfiguration": null,
+				"features": [{
+						"displayName": null,
+						"rule": {
+							"ruleString": ""
+						},
+						"description": "",
+						"type": "FEATURE",
+						"sendToAnalytics": true,
+						"enabled": true,
+						"defaultConfiguration": null,
+						"features": [],
+						"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+						"defaultIfAirlockSystemIsDown": false,
+						"additionalInfo": {},
+						"minAppVersion": "7.10",
+						"noCachedResults": false,
+						"owner": "Josemina Magdalen",
+						"configAttributesForAnalytics": [
+							"StateName",
+							"StaticText"
+						],
+						"creator": "Josemina Magdalen",
+						"internalUserGroups": [
+							"Lioz"
+						],
+						"rolloutPercentage": 100,
+						"creationDate": 1490691366420,
+						"stage": "PRODUCTION",
+						"configurationRules": [{
+								"owner": "Josemina Magdalen",
+								"creator": "Josemina Magdalen",
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"configuration": "{\n\t\t\n\t\t\n\t\"StateName\":context.viewedLocation.region\n}",
+								"rule": {
+									"ruleString": "context.viewedLocation !== null &&\ncontext.viewedLocation.region !== null"
+								},
+								"description": "",
+								"type": "CONFIGURATION_RULE",
+								"rolloutPercentage": 100,
+								"creationDate": 1490691366760,
+								"enabled": true,
+								"stage": "DEVELOPMENT",
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [],
+								"name": "StateName",
+								"namespace": "analyticsBigStates",
+								"minAppVersion": "7.10",
+								"lastModified": 1490691366760,
+								"uniqueId": "55c1c37b-ea3d-495f-98b1-debac4527bea",
+								"noCachedResults": false
+							},
+							{
+								"owner": "Josemina Magdalen",
+								"creator": "Josemina Magdalen",
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"configuration": "{\n\t\"StaticText\":\"This is a static text\"\n}",
+								"rule": {
+									"ruleString": ""
+								},
+								"description": "",
+								"type": "CONFIGURATION_RULE",
+								"rolloutPercentage": 100,
+								"creationDate": 1490691367101,
+								"sendToAnalytics": true,
+								"enabled": true,
+								"stage": "DEVELOPMENT",
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [],
+								"name": "StaticText",
+								"namespace": "analyticsBigStates",
+								"minAppVersion": "7.10",
+								"lastModified": 1490879193700,
+								"uniqueId": "e4e66c80-754c-4fa3-9b45-dc2d805a4eb0",
+								"noCachedResults": false
+							},
+							{
+								"owner": "Josemina Magdalen",
+								"creator": "Josemina Magdalen",
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"configuration": "{\t\n\t\t\n\t\"Location\" : context.viewedLocation.lat + \",\" + context.viewedLocation.lon\n}",
+								"rule": {
+									"ruleString": "context.viewedLocation !== null &&\ncontext.viewedLocation.lat != null &&\ncontext.viewedLocation.lon !== null"
+								},
+								"description": "",
+								"type": "CONFIGURATION_RULE",
+								"rolloutPercentage": 100,
+								"creationDate": 1490691367440,
+								"enabled": true,
+								"stage": "DEVELOPMENT",
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [],
+								"name": "Location",
+								"namespace": "analyticsBigStates",
+								"minAppVersion": "7.10",
+								"lastModified": 1490691367440,
+								"uniqueId": "5a2e3bfe-08ae-42a3-90b5-8bfff6c13918",
+								"noCachedResults": false
+							},
+							{
+								"owner": "Josemina Magdalen",
+								"creator": "Josemina Magdalen",
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"configuration": "{\t\n\t\t\n\t\t\n\"Temperature\" : Math.round(Unit(context.weatherSummary.observation.temperature,\"fahrenheit\"))\n}",
+								"rule": {
+									"ruleString": "context.weatherSummary !== null &&\ncontext.weatherSummary.observation !== null && \ncontext.weatherSummary.observation.temperature !== null"
+								},
+								"description": "Temperature in Fahrenheit",
+								"type": "CONFIGURATION_RULE",
+								"rolloutPercentage": 100,
+								"creationDate": 1490691367789,
+								"enabled": true,
+								"stage": "DEVELOPMENT",
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [],
+								"name": "Fahrenheit",
+								"namespace": "analyticsBigStates",
+								"minAppVersion": "7.10",
+								"lastModified": 1490691367789,
+								"uniqueId": "2086d822-328f-433f-b26d-712dfbbb6619",
+								"noCachedResults": false
+							}
+						],
+						"name": "BigStates",
+						"namespace": "analytics",
+						"configurationSchema": null,
+						"lastModified": 1490780041050,
+						"uniqueId": "f6b138f2-7e45-448a-858d-465859b9a9c4"
+					},
+					{
+						"displayName": null,
+						"rule": {
+							"ruleString": ""
+						},
+						"description": "",
+						"type": "FEATURE",
+						"enabled": true,
+						"defaultConfiguration": null,
+						"features": [],
+						"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+						"defaultIfAirlockSystemIsDown": false,
+						"additionalInfo": {},
+						"minAppVersion": "7.10",
+						"noCachedResults": false,
+						"owner": "Josemina Magdalen",
+						"configAttributesForAnalytics": [
+							"Country",
+							"DayPrecipPercentage",
+							"DayPrecipType",
+							"FeelsLikeTemperature",
+							"Location",
+							"NightPrecipPercentage",
+							"NightPrecipType",
+							"PhenomenaCode",
+							"Region",
+							"SignificanceCode",
+							"WetPrecipCode",
+							"isGPSenabled",
+							"nearestStartPrecip"
+						],
+						"creator": "Josemina Magdalen",
+						"internalUserGroups": [
+							"Lioz"
+						],
+						"rolloutPercentage": 100,
+						"creationDate": 1490691368122,
+						"stage": "PRODUCTION",
+						"configurationRules": [{
+								"owner": "Josemina Magdalen",
+								"creator": "Josemina Magdalen",
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"configuration": "{\t\n\t\t\n \"isGPSenabled\":context.weatherSummary.observation.basedGPS,\t\n\t\t\n \"WetPrecipCode\" : context.weatherSummary.observation.skyCode   \n}",
+								"rule": {
+									"ruleString": "context.weatherSummary !== null &&\ncontext.weatherSummary.observation !== null &&\ncontext.weatherSummary.observation.basedGPS !== null &&\ncontext.weatherSummary.observation.skyCode !== null"
+								},
+								"description": "",
+								"type": "CONFIGURATION_RULE",
+								"rolloutPercentage": 100,
+								"creationDate": 1490691368460,
+								"enabled": true,
+								"stage": "DEVELOPMENT",
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [],
+								"name": "AddObservationData",
+								"namespace": "analyticsWeatherData",
+								"minAppVersion": "7.10",
+								"lastModified": 1490691368460,
+								"uniqueId": "984dcc17-2dea-4258-b676-907825276d1c",
+								"noCachedResults": false
+							},
+							{
+								"owner": "Yoav BenYair",
+								"creator": "Yoav BenYair",
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"configuration": "{\n\t\t\n\t\"Location\": context.viewedLocation.lat + \", \" + context.viewedLocation.lon,\t\n\t\t\n    \"Region\":context.viewedLocation.region,\t\n\t\t\n    \"Country\": context.viewedLocation.country\n}",
+								"rule": {
+									"ruleString": "context.viewedLocation !== null &&\ncontext.viewedLocation.lat !== null  &&\ncontext.viewedLocation.lon !== null &&\ncontext.viewedLocation.region !== null &&\ncontext.viewedLocation.country !== null"
+								},
+								"description": "",
+								"type": "CONFIGURATION_RULE",
+								"rolloutPercentage": 100,
+								"creationDate": 1490691368799,
+								"sendToAnalytics": true,
+								"enabled": true,
+								"stage": "DEVELOPMENT",
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [],
+								"name": "AddViewedLocationData",
+								"namespace": "analyticsWeatherData",
+								"minAppVersion": "7.10",
+								"lastModified": 1490691368799,
+								"uniqueId": "f825ca57-af3e-4bd8-8446-230dd270a2ea",
+								"noCachedResults": false
+							},
+							{
+								"owner": "Yoav BenYair",
+								"creator": "Yoav BenYair",
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"configuration": "{\n\t\"PhenomenaCode\":context.weatherSummary.nearestWinterStormAlert.phenomenaCode,\n\t\"SignificanceCode\":context.weatherSummary.nearestWinterStormAlert.significanceCode\n}",
+								"rule": {
+									"ruleString": "context.weatherSummary !== null &&\ncontext.weatherSummary.nearestWinterStormAlert !== null &&\ncontext.weatherSummary.nearestWinterStormAlert.significanceCode !== null &&\ncontext.weatherSummary.nearestWinterStormAlert.phenomenaCode !== null"
+								},
+								"description": "",
+								"type": "CONFIGURATION_RULE",
+								"rolloutPercentage": 100,
+								"creationDate": 1490691369151,
+								"enabled": false,
+								"stage": "DEVELOPMENT",
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [],
+								"name": "AddAlertData",
+								"namespace": "analyticsWeatherData",
+								"minAppVersion": "7.10",
+								"lastModified": 1490691561502,
+								"uniqueId": "af137933-c269-4b37-84d3-0bf778160e55",
+								"noCachedResults": false
+							},
+							{
+								"owner": "Yoav BenYair",
+								"creator": "Yoav BenYair",
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"configuration": "{\t\n\t\"nearestStartPrecip\":context.weatherSummary.nearestStartPrecip.startTime\n}",
+								"rule": {
+									"ruleString": "context.weatherSummary !== null  &&\ncontext.weatherSummary.nearestStartPrecip !== null &&\ncontext.weatherSummary.nearestStartPrecip.startTime !== null"
+								},
+								"description": "",
+								"type": "CONFIGURATION_RULE",
+								"rolloutPercentage": 100,
+								"creationDate": 1490691369492,
+								"enabled": true,
+								"stage": "DEVELOPMENT",
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [],
+								"name": "AddPrecipData",
+								"namespace": "analyticsWeatherData",
+								"minAppVersion": "7.10",
+								"lastModified": 1490691369492,
+								"uniqueId": "db7332e9-6aaa-49f5-a14e-bacb33395df6",
+								"noCachedResults": false
+							},
+							{
+								"owner": "Josemina Magdalen",
+								"creator": "Josemina Magdalen",
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"configuration": "{\n\t\"NightPrecipPercentage\":context.weatherSummary.dayForecast.night.precipPercentage,\n\t\"NightPrecipType\":context.weatherSummary.dayForecast.night.precipType\n}",
+								"rule": {
+									"ruleString": "context.weatherSummary !== null &&\r\ncontext.weatherSummary.dayForecast !== null &&\r\ncontext.weatherSummary.dayForecast.night !== null &&\r\ncontext.weatherSummary.dayForecast.night.precipPercentage !== null &&\r\ncontext.weatherSummary.dayForecast.night.precipType !== null &&\r\ncontext.weatherSummary.dayForecast.night.precipPercentage > 0"
+								},
+								"description": "Add the percentage and type of the  Precipitation  during the night",
+								"type": "CONFIGURATION_RULE",
+								"rolloutPercentage": 100,
+								"creationDate": 1490691369832,
+								"enabled": false,
+								"stage": "DEVELOPMENT",
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [],
+								"name": "PrecipNight",
+								"namespace": "analyticsWeatherData",
+								"minAppVersion": "7.10",
+								"lastModified": 1490691541338,
+								"uniqueId": "42a07c4e-cf90-45e7-b2e4-3edfc68e7f97",
+								"noCachedResults": false
+							},
+							{
+								"owner": "Josemina Magdalen",
+								"creator": "Josemina Magdalen",
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"configuration": "{\n\t\t\n\t\"DayPrecipPercentage\" : context.weatherSummary.dayForecast.day.precipPercentage,\n\t\t\n\t\"DayPrecipType\" : context.weatherSummary.dayForecast.day.precipType\n}",
+								"rule": {
+									"ruleString": "context.weatherSummary !== null &&\r\ncontext.weatherSummary.dayForecast !== null &&\r\ncontext.weatherSummary.dayForecast.day !== null &&\r\ncontext.weatherSummary.dayForecast.day.precipPercentage !== null &&\r\ncontext.weatherSummary.dayForecast.day.precipType !== null &&\r\ncontext.weatherSummary.dayForecast.day.precipPercentage > 0"
+								},
+								"description": "Add the percentage and type of the  Precipitation  during the day",
+								"type": "CONFIGURATION_RULE",
+								"rolloutPercentage": 100,
+								"creationDate": 1490691370173,
+								"enabled": true,
+								"stage": "DEVELOPMENT",
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [],
+								"name": "PrecipDay",
+								"namespace": "analyticsWeatherData",
+								"minAppVersion": "7.10",
+								"lastModified": 1490691370173,
+								"uniqueId": "fb5f24e7-7869-41ad-beaf-0d17cf430a64",
+								"noCachedResults": false
+							},
+							{
+								"owner": "Josemina Magdalen",
+								"creator": "Josemina Magdalen",
+								"internalUserGroups": [
+									"Lioz"
+								],
+								"configuration": "{\n\t\t\n\t\t\n\"FeelsLikeTemperature\" :  Unit(context.weatherSummary.observation.feelsLikeTemperature,\"fahrenheit\")\n}",
+								"rule": {
+									"ruleString": "context.weatherSummary !== null &&\ncontext.weatherSummary.observation !== null &&\ncontext.weatherSummary.observation.feelsLikeTemperature !== null "
+								},
+								"description": "FeelsLike temperature in Fahrenheit",
+								"type": "CONFIGURATION_RULE",
+								"rolloutPercentage": 100,
+								"creationDate": 1490691370534,
+								"enabled": true,
+								"stage": "DEVELOPMENT",
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [],
+								"name": "FeelsLikeInFahrenheit",
+								"namespace": "analyticsWeatherData",
+								"minAppVersion": "7.10",
+								"lastModified": 1490691370534,
+								"uniqueId": "a86d7b36-3e8e-4a26-b7ce-7bf55d84efe8",
+								"noCachedResults": false
+							}
+						],
+						"name": "WeatherData",
+						"namespace": "analytics",
+						"configurationSchema": null,
+						"lastModified": 1490780071529,
+						"uniqueId": "9a0b1579-d0bc-4581-9e31-032263420546"
+					}
+				],
+				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+				"defaultIfAirlockSystemIsDown": false,
+				"additionalInfo": {},
+				"minAppVersion": "7.10",
+				"noCachedResults": false,
+				"owner": "Yoav BenYair",
+				"creator": "Yoav BenYair",
+				"internalUserGroups": [
+					"DEV",
+					"Lioz"
+				],
+				"rolloutPercentage": 100,
+				"creationDate": 1490691366064,
+				"stage": "PRODUCTION",
+				"configurationRules": [],
+				"name": "Rollout Beacon",
+				"namespace": "airlock",
+				"configurationSchema": null,
+				"lastModified": 1490774846872,
+				"uniqueId": "ae4b3704-3c41-477f-ab75-b5e8fb672145"
+			},
+			{
+				"displayName": null,
+				"rule": {
+					"ruleString": ""
+				},
+				"description": "",
+				"type": "FEATURE",
+				"sendToAnalytics": true,
+				"enabled": true,
+				"defaultConfiguration": null,
+				"features": [{
+						"displayName": null,
+						"rule": {
+							"ruleString": "false"
+						},
+						"description": "",
+						"type": "FEATURE",
+						"sendToAnalytics": true,
+						"enabled": false,
+						"defaultConfiguration": null,
+						"features": [],
+						"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+						"defaultIfAirlockSystemIsDown": false,
+						"additionalInfo": {},
+						"minAppVersion": "7.10",
+						"noCachedResults": false,
+						"owner": "Denis Voloshin",
+						"creator": "Denis Voloshin",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"rolloutPercentage": 100,
+						"creationDate": 1490699032571,
+						"stage": "DEVELOPMENT",
+						"configurationRules": [],
+						"name": "Main Feed Ads",
+						"namespace": "ads",
+						"configurationSchema": null,
+						"lastModified": 1490781790053,
+						"uniqueId": "0e5f635d-b472-4a2e-855b-9480246aa412"
+					},
+					{
+						"displayName": null,
+						"rule": {
+							"ruleString": "true"
+						},
+						"description": "",
+						"type": "FEATURE",
+						"sendToAnalytics": true,
+						"enabled": true,
+						"defaultConfiguration": null,
+						"features": [],
+						"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+						"defaultIfAirlockSystemIsDown": false,
+						"additionalInfo": {},
+						"minAppVersion": "7.10",
+						"noCachedResults": false,
+						"owner": "Denis Voloshin",
+						"creator": "Denis Voloshin",
+						"internalUserGroups": [
+							"QA",
+							"DEV"
+						],
+						"rolloutPercentage": 100,
+						"creationDate": 1490699032927,
+						"stage": "DEVELOPMENT",
+						"configurationRules": [],
+						"name": "Main Screen Banner",
+						"namespace": "ads",
+						"configurationSchema": null,
+						"lastModified": 1490780142243,
+						"uniqueId": "1d3244c2-f564-4e8f-9d9e-85374dcc023b"
+					}
+				],
+				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+				"defaultIfAirlockSystemIsDown": false,
+				"additionalInfo": {},
+				"minAppVersion": "7.10",
+				"noCachedResults": false,
+				"owner": "Denis Voloshin",
+				"creator": "Denis Voloshin",
+				"internalUserGroups": [
+					"QA",
+					"DEV"
+				],
+				"rolloutPercentage": 100,
+				"creationDate": 1490699032218,
+				"stage": "DEVELOPMENT",
+				"configurationRules": [],
+				"name": "Airlock Control Over Ads",
+				"namespace": "ads",
+				"configurationSchema": null,
+				"lastModified": 1490781392379,
+				"uniqueId": "860e2ea8-eef2-44d7-b097-df4555ec07f1"
+			},
+			{
+				"displayName": null,
+				"rule": {
+					"ruleString": ""
+				},
+				"description": "",
+				"type": "FEATURE",
+				"enabled": true,
+				"defaultConfiguration": "{\n\t\"value\":\"defaultvalue\",\n\t\"dvalue1\":\"defaultvalue\",\n\t\"dvalue2\":\"defaultvalue\",\n\t\"dvalue3\":\"defaultvalue\"\n}",
+				"features": [],
+				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+				"defaultIfAirlockSystemIsDown": false,
+				"additionalInfo": {},
+				"minAppVersion": "7.10",
+				"noCachedResults": false,
+				"owner": "Esteban Zia",
+				"configAttributesForAnalytics": [
+					"dvalue2",
+					"dvalue3",
+					"value",
+					"value10",
+					"value2",
+					"value30",
+					"value4"
+				],
+				"creator": "Esteban Zia",
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"rolloutPercentage": 100,
+				"creationDate": 1490699294592,
+				"stage": "PRODUCTION",
+				"configurationRules": [{
+					"maxFeaturesOn": 1,
+					"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+					"configurationRules": [{
+							"owner": "Esteban Zia",
+							"creator": "Esteban Zia",
+							"internalUserGroups": [
+								"AndroidDEV"
+							],
+							"configuration": "{\n\t\"value\":\"config2\"\n}",
+							"rule": {
+								"ruleString": "context.viewedLocation.country == \"FR\""
+							},
+							"description": "",
+							"type": "CONFIGURATION_RULE",
+							"rolloutPercentage": 100,
+							"creationDate": 1490699294951,
+							"enabled": true,
+							"stage": "DEVELOPMENT",
+							"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+							"configurationRules": [{
+								"maxFeaturesOn": 1,
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [{
+										"owner": "Esteban Zia",
+										"creator": "Esteban Zia",
+										"internalUserGroups": [
+											"AndroidDEV"
+										],
+										"configuration": "{\n\t\"value\":\"config2a\",\n\t\"value1\":\"value1\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+										"rule": {
+											"ruleString": "context.weatherSummary.tomorrowForecast.day.dayPart == \"day\""
+										},
+										"description": "",
+										"type": "CONFIGURATION_RULE",
+										"rolloutPercentage": 100,
+										"creationDate": 1490699295298,
+										"enabled": true,
+										"stage": "DEVELOPMENT",
+										"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+										"configurationRules": [],
+										"name": "Config2a",
+										"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+										"minAppVersion": "7.10",
+										"lastModified": 1490702264683,
+										"uniqueId": "c16821e4-b8e5-4fc3-8595-1befafeb59bb",
+										"noCachedResults": false
+									},
+									{
+										"owner": "Esteban Zia",
+										"creator": "Esteban Zia",
+										"internalUserGroups": [
+											"AndroidDEV"
+										],
+										"configuration": "{\n\t\"value\":\"config2b-day\",\n\t\"value10\" : \"value10\",\n\t\"value2\" : \"value2\",\n\t\"value30\" : \"value30\",\n\t\"value4\" : \"value4\"\n}",
+										"rule": {
+											"ruleString": ""
+										},
+										"description": "",
+										"type": "CONFIGURATION_RULE",
+										"rolloutPercentage": 100,
+										"creationDate": 1490699295640,
+										"enabled": true,
+										"stage": "DEVELOPMENT",
+										"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+										"configurationRules": [],
+										"name": "Config2b",
+										"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+										"minAppVersion": "7.10",
+										"lastModified": 1490702328736,
+										"uniqueId": "67f852d1-5aad-4b14-94bf-813e7f8cd7f6",
+										"noCachedResults": false
+									}
+								],
+								"lastModified": 1490699295640,
+								"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+								"uniqueId": "e7562903-610c-4931-8fa2-4235061eeafb"
+							}],
+							"name": "Config2",
+							"namespace": "trMTXinMTXConfigsProdDefaultOff",
+							"minAppVersion": "7.10",
+							"lastModified": 1490699294951,
+							"uniqueId": "ece9d1fe-ed60-428f-96ed-91ebb44edbe6",
+							"noCachedResults": false
+						},
+						{
+							"owner": "Esteban Zia",
+							"creator": "Esteban Zia",
+							"internalUserGroups": [
+								"AndroidDEV"
+							],
+							"configuration": "{\n\t\"value\":\"config1\"\n}",
+							"rule": {
+								"ruleString": "context.viewedLocation.country == \"US\""
+							},
+							"description": "",
+							"type": "CONFIGURATION_RULE",
+							"rolloutPercentage": 100,
+							"creationDate": 1490699295996,
+							"enabled": true,
+							"stage": "DEVELOPMENT",
+							"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+							"configurationRules": [{
+								"maxFeaturesOn": 1,
+								"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+								"configurationRules": [{
+										"owner": "Esteban Zia",
+										"creator": "Esteban Zia",
+										"internalUserGroups": [
+											"AndroidDEV"
+										],
+										"configuration": "{\n\t\"value\":\"config1a-night\",\n\t\t\"value1\":\"value1\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+										"rule": {
+											"ruleString": "context.weatherSummary.tomorrowForecast.night.dayPart == \"night\""
+										},
+										"description": "",
+										"type": "CONFIGURATION_RULE",
+										"rolloutPercentage": 100,
+										"creationDate": 1490699296340,
+										"enabled": false,
+										"stage": "DEVELOPMENT",
+										"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+										"configurationRules": [],
+										"name": "Config1a",
+										"namespace": "trMTXinMTXConfigsProdDefaultOffConfig1",
+										"minAppVersion": "7.10",
+										"lastModified": 1490702426212,
+										"uniqueId": "df612bb2-d694-443c-a650-d9e2bc4b852c",
+										"noCachedResults": false
+									},
+									{
+										"owner": "Esteban Zia",
+										"creator": "Esteban Zia",
+										"internalUserGroups": [
+											"AndroidDEV"
+										],
+										"configuration": {
+											"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+											"root": {
+												"features": [{
+														"displayName": null,
+														"rule": {
+															"ruleString": ""
+														},
+														"description": "",
+														"type": "FEATURE",
+														"sendToAnalytics": true,
+														"enabled": true,
+														"defaultConfiguration": null,
+														"features": [{
+																"displayName": null,
+																"rule": {
+																	"ruleString": ""
+																},
+																"description": "",
+																"type": "FEATURE",
+																"sendToAnalytics": true,
+																"enabled": true,
+																"defaultConfiguration": null,
+																"features": [],
+																"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																"defaultIfAirlockSystemIsDown": false,
+																"additionalInfo": {},
+																"minAppVersion": "7.10",
+																"noCachedResults": false,
+																"owner": "Josemina Magdalen",
+																"configAttributesForAnalytics": [
+																	"StateName",
+																	"StaticText"
+																],
+																"creator": "Josemina Magdalen",
+																"internalUserGroups": [
+																	"Lioz"
+																],
+																"rolloutPercentage": 100,
+																"creationDate": 1490691366420,
+																"stage": "PRODUCTION",
+																"configurationRules": [{
+																		"owner": "Josemina Magdalen",
+																		"creator": "Josemina Magdalen",
+																		"internalUserGroups": [
+																			"Lioz"
+																		],
+																		"configuration": "{\n\t\t\n\t\t\n\t\"StateName\":context.viewedLocation.region\n}",
+																		"rule": {
+																			"ruleString": "context.viewedLocation !== null &&\ncontext.viewedLocation.region !== null"
+																		},
+																		"description": "",
+																		"type": "CONFIGURATION_RULE",
+																		"rolloutPercentage": 100,
+																		"creationDate": 1490691366760,
+																		"enabled": true,
+																		"stage": "DEVELOPMENT",
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [],
+																		"name": "StateName",
+																		"namespace": "analyticsBigStates",
+																		"minAppVersion": "7.10",
+																		"lastModified": 1490691366760,
+																		"uniqueId": "55c1c37b-ea3d-495f-98b1-debac4527bea",
+																		"noCachedResults": false
+																	},
+																	{
+																		"owner": "Josemina Magdalen",
+																		"creator": "Josemina Magdalen",
+																		"internalUserGroups": [
+																			"Lioz"
+																		],
+																		"configuration": "{\n\t\"StaticText\":\"This is a static text\"\n}",
+																		"rule": {
+																			"ruleString": ""
+																		},
+																		"description": "",
+																		"type": "CONFIGURATION_RULE",
+																		"rolloutPercentage": 100,
+																		"creationDate": 1490691367101,
+																		"sendToAnalytics": true,
+																		"enabled": true,
+																		"stage": "DEVELOPMENT",
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [],
+																		"name": "StaticText",
+																		"namespace": "analyticsBigStates",
+																		"minAppVersion": "7.10",
+																		"lastModified": 1490879193700,
+																		"uniqueId": "e4e66c80-754c-4fa3-9b45-dc2d805a4eb0",
+																		"noCachedResults": false
+																	},
+																	{
+																		"owner": "Josemina Magdalen",
+																		"creator": "Josemina Magdalen",
+																		"internalUserGroups": [
+																			"Lioz"
+																		],
+																		"configuration": "{\t\n\t\t\n\t\"Location\" : context.viewedLocation.lat + \",\" + context.viewedLocation.lon\n}",
+																		"rule": {
+																			"ruleString": "context.viewedLocation !== null &&\ncontext.viewedLocation.lat != null &&\ncontext.viewedLocation.lon !== null"
+																		},
+																		"description": "",
+																		"type": "CONFIGURATION_RULE",
+																		"rolloutPercentage": 100,
+																		"creationDate": 1490691367440,
+																		"enabled": true,
+																		"stage": "DEVELOPMENT",
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [],
+																		"name": "Location",
+																		"namespace": "analyticsBigStates",
+																		"minAppVersion": "7.10",
+																		"lastModified": 1490691367440,
+																		"uniqueId": "5a2e3bfe-08ae-42a3-90b5-8bfff6c13918",
+																		"noCachedResults": false
+																	},
+																	{
+																		"owner": "Josemina Magdalen",
+																		"creator": "Josemina Magdalen",
+																		"internalUserGroups": [
+																			"Lioz"
+																		],
+																		"configuration": "{\t\n\t\t\n\t\t\n\"Temperature\" : Math.round(Unit(context.weatherSummary.observation.temperature,\"fahrenheit\"))\n}",
+																		"rule": {
+																			"ruleString": "context.weatherSummary !== null &&\ncontext.weatherSummary.observation !== null && \ncontext.weatherSummary.observation.temperature !== null"
+																		},
+																		"description": "Temperature in Fahrenheit",
+																		"type": "CONFIGURATION_RULE",
+																		"rolloutPercentage": 100,
+																		"creationDate": 1490691367789,
+																		"enabled": true,
+																		"stage": "DEVELOPMENT",
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [],
+																		"name": "Fahrenheit",
+																		"namespace": "analyticsBigStates",
+																		"minAppVersion": "7.10",
+																		"lastModified": 1490691367789,
+																		"uniqueId": "2086d822-328f-433f-b26d-712dfbbb6619",
+																		"noCachedResults": false
+																	}
+																],
+																"name": "BigStates",
+																"namespace": "analytics",
+																"configurationSchema": null,
+																"lastModified": 1490780041050,
+																"uniqueId": "f6b138f2-7e45-448a-858d-465859b9a9c4"
+															},
+															{
+																"displayName": null,
+																"rule": {
+																	"ruleString": ""
+																},
+																"description": "",
+																"type": "FEATURE",
+																"enabled": true,
+																"defaultConfiguration": null,
+																"features": [],
+																"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																"defaultIfAirlockSystemIsDown": false,
+																"additionalInfo": {},
+																"minAppVersion": "7.10",
+																"noCachedResults": false,
+																"owner": "Josemina Magdalen",
+																"configAttributesForAnalytics": [
+																	"Country",
+																	"DayPrecipPercentage",
+																	"DayPrecipType",
+																	"FeelsLikeTemperature",
+																	"Location",
+																	"NightPrecipPercentage",
+																	"NightPrecipType",
+																	"PhenomenaCode",
+																	"Region",
+																	"SignificanceCode",
+																	"WetPrecipCode",
+																	"isGPSenabled",
+																	"nearestStartPrecip"
+																],
+																"creator": "Josemina Magdalen",
+																"internalUserGroups": [
+																	"Lioz"
+																],
+																"rolloutPercentage": 100,
+																"creationDate": 1490691368122,
+																"stage": "PRODUCTION",
+																"configurationRules": [{
+																		"owner": "Josemina Magdalen",
+																		"creator": "Josemina Magdalen",
+																		"internalUserGroups": [
+																			"Lioz"
+																		],
+																		"configuration": "{\t\n\t\t\n \"isGPSenabled\":context.weatherSummary.observation.basedGPS,\t\n\t\t\n \"WetPrecipCode\" : context.weatherSummary.observation.skyCode   \n}",
+																		"rule": {
+																			"ruleString": "context.weatherSummary !== null &&\ncontext.weatherSummary.observation !== null &&\ncontext.weatherSummary.observation.basedGPS !== null &&\ncontext.weatherSummary.observation.skyCode !== null"
+																		},
+																		"description": "",
+																		"type": "CONFIGURATION_RULE",
+																		"rolloutPercentage": 100,
+																		"creationDate": 1490691368460,
+																		"enabled": true,
+																		"stage": "DEVELOPMENT",
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [],
+																		"name": "AddObservationData",
+																		"namespace": "analyticsWeatherData",
+																		"minAppVersion": "7.10",
+																		"lastModified": 1490691368460,
+																		"uniqueId": "984dcc17-2dea-4258-b676-907825276d1c",
+																		"noCachedResults": false
+																	},
+																	{
+																		"owner": "Yoav BenYair",
+																		"creator": "Yoav BenYair",
+																		"internalUserGroups": [
+																			"Lioz"
+																		],
+																		"configuration": "{\n\t\t\n\t\"Location\": context.viewedLocation.lat + \", \" + context.viewedLocation.lon,\t\n\t\t\n    \"Region\":context.viewedLocation.region,\t\n\t\t\n    \"Country\": context.viewedLocation.country\n}",
+																		"rule": {
+																			"ruleString": "context.viewedLocation !== null &&\ncontext.viewedLocation.lat !== null  &&\ncontext.viewedLocation.lon !== null &&\ncontext.viewedLocation.region !== null &&\ncontext.viewedLocation.country !== null"
+																		},
+																		"description": "",
+																		"type": "CONFIGURATION_RULE",
+																		"rolloutPercentage": 100,
+																		"creationDate": 1490691368799,
+																		"sendToAnalytics": true,
+																		"enabled": true,
+																		"stage": "DEVELOPMENT",
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [],
+																		"name": "AddViewedLocationData",
+																		"namespace": "analyticsWeatherData",
+																		"minAppVersion": "7.10",
+																		"lastModified": 1490691368799,
+																		"uniqueId": "f825ca57-af3e-4bd8-8446-230dd270a2ea",
+																		"noCachedResults": false
+																	},
+																	{
+																		"owner": "Yoav BenYair",
+																		"creator": "Yoav BenYair",
+																		"internalUserGroups": [
+																			"Lioz"
+																		],
+																		"configuration": "{\n\t\"PhenomenaCode\":context.weatherSummary.nearestWinterStormAlert.phenomenaCode,\n\t\"SignificanceCode\":context.weatherSummary.nearestWinterStormAlert.significanceCode\n}",
+																		"rule": {
+																			"ruleString": "context.weatherSummary !== null &&\ncontext.weatherSummary.nearestWinterStormAlert !== null &&\ncontext.weatherSummary.nearestWinterStormAlert.significanceCode !== null &&\ncontext.weatherSummary.nearestWinterStormAlert.phenomenaCode !== null"
+																		},
+																		"description": "",
+																		"type": "CONFIGURATION_RULE",
+																		"rolloutPercentage": 100,
+																		"creationDate": 1490691369151,
+																		"enabled": false,
+																		"stage": "DEVELOPMENT",
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [],
+																		"name": "AddAlertData",
+																		"namespace": "analyticsWeatherData",
+																		"minAppVersion": "7.10",
+																		"lastModified": 1490691561502,
+																		"uniqueId": "af137933-c269-4b37-84d3-0bf778160e55",
+																		"noCachedResults": false
+																	},
+																	{
+																		"owner": "Yoav BenYair",
+																		"creator": "Yoav BenYair",
+																		"internalUserGroups": [
+																			"Lioz"
+																		],
+																		"configuration": "{\t\n\t\"nearestStartPrecip\":context.weatherSummary.nearestStartPrecip.startTime\n}",
+																		"rule": {
+																			"ruleString": "context.weatherSummary !== null  &&\ncontext.weatherSummary.nearestStartPrecip !== null &&\ncontext.weatherSummary.nearestStartPrecip.startTime !== null"
+																		},
+																		"description": "",
+																		"type": "CONFIGURATION_RULE",
+																		"rolloutPercentage": 100,
+																		"creationDate": 1490691369492,
+																		"enabled": true,
+																		"stage": "DEVELOPMENT",
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [],
+																		"name": "AddPrecipData",
+																		"namespace": "analyticsWeatherData",
+																		"minAppVersion": "7.10",
+																		"lastModified": 1490691369492,
+																		"uniqueId": "db7332e9-6aaa-49f5-a14e-bacb33395df6",
+																		"noCachedResults": false
+																	},
+																	{
+																		"owner": "Josemina Magdalen",
+																		"creator": "Josemina Magdalen",
+																		"internalUserGroups": [
+																			"Lioz"
+																		],
+																		"configuration": "{\n\t\"NightPrecipPercentage\":context.weatherSummary.dayForecast.night.precipPercentage,\n\t\"NightPrecipType\":context.weatherSummary.dayForecast.night.precipType\n}",
+																		"rule": {
+																			"ruleString": "context.weatherSummary !== null &&\r\ncontext.weatherSummary.dayForecast !== null &&\r\ncontext.weatherSummary.dayForecast.night !== null &&\r\ncontext.weatherSummary.dayForecast.night.precipPercentage !== null &&\r\ncontext.weatherSummary.dayForecast.night.precipType !== null &&\r\ncontext.weatherSummary.dayForecast.night.precipPercentage > 0"
+																		},
+																		"description": "Add the percentage and type of the  Precipitation  during the night",
+																		"type": "CONFIGURATION_RULE",
+																		"rolloutPercentage": 100,
+																		"creationDate": 1490691369832,
+																		"enabled": false,
+																		"stage": "DEVELOPMENT",
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [],
+																		"name": "PrecipNight",
+																		"namespace": "analyticsWeatherData",
+																		"minAppVersion": "7.10",
+																		"lastModified": 1490691541338,
+																		"uniqueId": "42a07c4e-cf90-45e7-b2e4-3edfc68e7f97",
+																		"noCachedResults": false
+																	},
+																	{
+																		"owner": "Josemina Magdalen",
+																		"creator": "Josemina Magdalen",
+																		"internalUserGroups": [
+																			"Lioz"
+																		],
+																		"configuration": "{\n\t\t\n\t\"DayPrecipPercentage\" : context.weatherSummary.dayForecast.day.precipPercentage,\n\t\t\n\t\"DayPrecipType\" : context.weatherSummary.dayForecast.day.precipType\n}",
+																		"rule": {
+																			"ruleString": "context.weatherSummary !== null &&\r\ncontext.weatherSummary.dayForecast !== null &&\r\ncontext.weatherSummary.dayForecast.day !== null &&\r\ncontext.weatherSummary.dayForecast.day.precipPercentage !== null &&\r\ncontext.weatherSummary.dayForecast.day.precipType !== null &&\r\ncontext.weatherSummary.dayForecast.day.precipPercentage > 0"
+																		},
+																		"description": "Add the percentage and type of the  Precipitation  during the day",
+																		"type": "CONFIGURATION_RULE",
+																		"rolloutPercentage": 100,
+																		"creationDate": 1490691370173,
+																		"enabled": true,
+																		"stage": "DEVELOPMENT",
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [],
+																		"name": "PrecipDay",
+																		"namespace": "analyticsWeatherData",
+																		"minAppVersion": "7.10",
+																		"lastModified": 1490691370173,
+																		"uniqueId": "fb5f24e7-7869-41ad-beaf-0d17cf430a64",
+																		"noCachedResults": false
+																	},
+																	{
+																		"owner": "Josemina Magdalen",
+																		"creator": "Josemina Magdalen",
+																		"internalUserGroups": [
+																			"Lioz"
+																		],
+																		"configuration": "{\n\t\t\n\t\t\n\"FeelsLikeTemperature\" :  Unit(context.weatherSummary.observation.feelsLikeTemperature,\"fahrenheit\")\n}",
+																		"rule": {
+																			"ruleString": "context.weatherSummary !== null &&\ncontext.weatherSummary.observation !== null &&\ncontext.weatherSummary.observation.feelsLikeTemperature !== null "
+																		},
+																		"description": "FeelsLike temperature in Fahrenheit",
+																		"type": "CONFIGURATION_RULE",
+																		"rolloutPercentage": 100,
+																		"creationDate": 1490691370534,
+																		"enabled": true,
+																		"stage": "DEVELOPMENT",
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [],
+																		"name": "FeelsLikeInFahrenheit",
+																		"namespace": "analyticsWeatherData",
+																		"minAppVersion": "7.10",
+																		"lastModified": 1490691370534,
+																		"uniqueId": "a86d7b36-3e8e-4a26-b7ce-7bf55d84efe8",
+																		"noCachedResults": false
+																	}
+																],
+																"name": "WeatherData",
+																"namespace": "analytics",
+																"configurationSchema": null,
+																"lastModified": 1490780071529,
+																"uniqueId": "9a0b1579-d0bc-4581-9e31-032263420546"
+															}
+														],
+														"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+														"defaultIfAirlockSystemIsDown": false,
+														"additionalInfo": {},
+														"minAppVersion": "7.10",
+														"noCachedResults": false,
+														"owner": "Yoav BenYair",
+														"creator": "Yoav BenYair",
+														"internalUserGroups": [
+															"DEV",
+															"Lioz"
+														],
+														"rolloutPercentage": 100,
+														"creationDate": 1490691366064,
+														"stage": "PRODUCTION",
+														"configurationRules": [],
+														"name": "Rollout Beacon",
+														"namespace": "airlock",
+														"configurationSchema": null,
+														"lastModified": 1490774846872,
+														"uniqueId": "ae4b3704-3c41-477f-ab75-b5e8fb672145"
+													},
+													{
+														"displayName": null,
+														"rule": {
+															"ruleString": ""
+														},
+														"description": "",
+														"type": "FEATURE",
+														"sendToAnalytics": true,
+														"enabled": true,
+														"defaultConfiguration": null,
+														"features": [{
+																"displayName": null,
+																"rule": {
+																	"ruleString": "false"
+																},
+																"description": "",
+																"type": "FEATURE",
+																"sendToAnalytics": true,
+																"enabled": false,
+																"defaultConfiguration": null,
+																"features": [],
+																"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																"defaultIfAirlockSystemIsDown": false,
+																"additionalInfo": {},
+																"minAppVersion": "7.10",
+																"noCachedResults": false,
+																"owner": "Denis Voloshin",
+																"creator": "Denis Voloshin",
+																"internalUserGroups": [
+																	"QA",
+																	"DEV"
+																],
+																"rolloutPercentage": 100,
+																"creationDate": 1490699032571,
+																"stage": "DEVELOPMENT",
+																"configurationRules": [],
+																"name": "Main Feed Ads",
+																"namespace": "ads",
+																"configurationSchema": null,
+																"lastModified": 1490781790053,
+																"uniqueId": "0e5f635d-b472-4a2e-855b-9480246aa412"
+															},
+															{
+																"displayName": null,
+																"rule": {
+																	"ruleString": "true"
+																},
+																"description": "",
+																"type": "FEATURE",
+																"sendToAnalytics": true,
+																"enabled": true,
+																"defaultConfiguration": null,
+																"features": [],
+																"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																"defaultIfAirlockSystemIsDown": false,
+																"additionalInfo": {},
+																"minAppVersion": "7.10",
+																"noCachedResults": false,
+																"owner": "Denis Voloshin",
+																"creator": "Denis Voloshin",
+																"internalUserGroups": [
+																	"QA",
+																	"DEV"
+																],
+																"rolloutPercentage": 100,
+																"creationDate": 1490699032927,
+																"stage": "DEVELOPMENT",
+																"configurationRules": [],
+																"name": "Main Screen Banner",
+																"namespace": "ads",
+																"configurationSchema": null,
+																"lastModified": 1490780142243,
+																"uniqueId": "1d3244c2-f564-4e8f-9d9e-85374dcc023b"
+															}
+														],
+														"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+														"defaultIfAirlockSystemIsDown": false,
+														"additionalInfo": {},
+														"minAppVersion": "7.10",
+														"noCachedResults": false,
+														"owner": "Denis Voloshin",
+														"creator": "Denis Voloshin",
+														"internalUserGroups": [
+															"QA",
+															"DEV"
+														],
+														"rolloutPercentage": 100,
+														"creationDate": 1490699032218,
+														"stage": "DEVELOPMENT",
+														"configurationRules": [],
+														"name": "Airlock Control Over Ads",
+														"namespace": "ads",
+														"configurationSchema": null,
+														"lastModified": 1490781392379,
+														"uniqueId": "860e2ea8-eef2-44d7-b097-df4555ec07f1"
+													},
+													{
+														"displayName": null,
+														"rule": {
+															"ruleString": ""
+														},
+														"description": "",
+														"type": "FEATURE",
+														"enabled": true,
+														"defaultConfiguration": "{\n\t\"value\":\"defaultvalue\",\n\t\"dvalue1\":\"defaultvalue\",\n\t\"dvalue2\":\"defaultvalue\",\n\t\"dvalue3\":\"defaultvalue\"\n}",
+														"features": [],
+														"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+														"defaultIfAirlockSystemIsDown": false,
+														"additionalInfo": {},
+														"minAppVersion": "7.10",
+														"noCachedResults": false,
+														"owner": "Esteban Zia",
+														"configAttributesForAnalytics": [
+															"dvalue2",
+															"dvalue3",
+															"value",
+															"value10",
+															"value2",
+															"value30",
+															"value4"
+														],
+														"creator": "Esteban Zia",
+														"internalUserGroups": [
+															"AndroidDEV"
+														],
+														"rolloutPercentage": 100,
+														"creationDate": 1490699294592,
+														"stage": "PRODUCTION",
+														"configurationRules": [{
+															"maxFeaturesOn": 1,
+															"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+															"configurationRules": [{
+																	"owner": "Esteban Zia",
+																	"creator": "Esteban Zia",
+																	"internalUserGroups": [
+																		"AndroidDEV"
+																	],
+																	"configuration": "{\n\t\"value\":\"config2\"\n}",
+																	"rule": {
+																		"ruleString": "context.viewedLocation.country == \"FR\""
+																	},
+																	"description": "",
+																	"type": "CONFIGURATION_RULE",
+																	"rolloutPercentage": 100,
+																	"creationDate": 1490699294951,
+																	"sendToAnalytics": true,
+																	"enabled": true,
+																	"stage": "PRODUCTION",
+																	"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																	"configurationRules": [{
+																		"maxFeaturesOn": 1,
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [{
+																				"owner": "Esteban Zia",
+																				"creator": "Esteban Zia",
+																				"internalUserGroups": [
+																					"AndroidDEV"
+																				],
+																				"configuration": "{\n\t\"value\":\"config2a\",\n\t\"value1\":\"value1\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+																				"rule": {
+																					"ruleString": "context.weatherSummary.tomorrowForecast.day.dayPart == \"day\""
+																				},
+																				"description": "",
+																				"type": "CONFIGURATION_RULE",
+																				"rolloutPercentage": 100,
+																				"creationDate": 1490699295298,
+																				"enabled": true,
+																				"stage": "PRODUCTION",
+																				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																				"configurationRules": [],
+																				"name": "Config2a",
+																				"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+																				"minAppVersion": "7.10",
+																				"lastModified": 1491137280267,
+																				"uniqueId": "c16821e4-b8e5-4fc3-8595-1befafeb59bb",
+																				"noCachedResults": false
+																			},
+																			{
+																				"owner": "Esteban Zia",
+																				"creator": "Esteban Zia",
+																				"internalUserGroups": [
+																					"AndroidDEV"
+																				],
+																				"configuration": "{\n\t\"value\":\"config2b-day\",\n\t\"value10\":\"value10\",\n\t\"value2\":\"value2\",\n\t\"value30\":\"value30\",\n\t\"value4\":\"value4\"\n}",
+																				"rule": {
+																					"ruleString": ""
+																				},
+																				"description": "",
+																				"type": "CONFIGURATION_RULE",
+																				"rolloutPercentage": 100,
+																				"creationDate": 1490699295640,
+																				"enabled": true,
+																				"stage": "PRODUCTION",
+																				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																				"configurationRules": [],
+																				"name": "Config2b",
+																				"namespace": "trMTXinMTXConfigsProdDefaultOffConfig2",
+																				"minAppVersion": "7.10",
+																				"lastModified": 1491137288447,
+																				"uniqueId": "67f852d1-5aad-4b14-94bf-813e7f8cd7f6",
+																				"noCachedResults": false
+																			}
+																		],
+																		"lastModified": 1490699295640,
+																		"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+																		"uniqueId": "e7562903-610c-4931-8fa2-4235061eeafb"
+																	}],
+																	"name": "Config2",
+																	"namespace": "trMTXinMTXConfigsProdDefaultOff",
+																	"minAppVersion": "7.10",
+																	"lastModified": 1491137271579,
+																	"uniqueId": "ece9d1fe-ed60-428f-96ed-91ebb44edbe6",
+																	"noCachedResults": false
+																},
+																{
+																	"owner": "Esteban Zia",
+																	"creator": "Esteban Zia",
+																	"internalUserGroups": [
+																		"AndroidDEV"
+																	],
+																	"configuration": "{\n\t\"value\":\"config1\"\n}",
+																	"rule": {
+																		"ruleString": "context.viewedLocation.country == \"US\""
+																	},
+																	"description": "",
+																	"type": "CONFIGURATION_RULE",
+																	"rolloutPercentage": 100,
+																	"creationDate": 1490699295996,
+																	"enabled": true,
+																	"stage": "DEVELOPMENT",
+																	"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																	"configurationRules": [{
+																		"maxFeaturesOn": 1,
+																		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																		"configurationRules": [{
+																				"owner": "Esteban Zia",
+																				"creator": "Esteban Zia",
+																				"internalUserGroups": [
+																					"AndroidDEV"
+																				],
+																				"configuration": "{\n\t\"value\":\"config1a-night\",\n\t\t\"value1\":\"value1\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+																				"rule": {
+																					"ruleString": "context.weatherSummary.tomorrowForecast.night.dayPart == \"night\""
+																				},
+																				"description": "",
+																				"type": "CONFIGURATION_RULE",
+																				"rolloutPercentage": 100,
+																				"creationDate": 1490699296340,
+																				"enabled": false,
+																				"stage": "DEVELOPMENT",
+																				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																				"configurationRules": [],
+																				"name": "Config1a",
+																				"namespace": "trMTXinMTXConfigsProdDefaultOffConfig1",
+																				"minAppVersion": "7.10",
+																				"lastModified": 1490702426212,
+																				"uniqueId": "df612bb2-d694-443c-a650-d9e2bc4b852c",
+																				"noCachedResults": false
+																			},
+																			{
+																				"owner": "Esteban Zia",
+																				"creator": "Esteban Zia",
+																				"internalUserGroups": [
+																					"AndroidDEV"
+																				],
+																				"configuration": "{\n\t\"value\":\"config1b-night\",\n\t\"value1\":\"value1\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+																				"rule": {
+																					"ruleString": ""
+																				},
+																				"description": "",
+																				"type": "CONFIGURATION_RULE",
+																				"rolloutPercentage": 100,
+																				"creationDate": 1490699296684,
+																				"enabled": false,
+																				"stage": "DEVELOPMENT",
+																				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																				"configurationRules": [],
+																				"name": "Config1b",
+																				"namespace": "trMTXinMTXConfigsProdDefaultOffConfig1",
+																				"minAppVersion": "7.10",
+																				"lastModified": 1491137248863,
+																				"uniqueId": "b9c1f241-b51a-41ec-8be2-62d69bd28896",
+																				"noCachedResults": false
+																			}
+																		],
+																		"lastModified": 1490699296700,
+																		"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+																		"uniqueId": "31119dc5-c9b5-4830-9093-cc1a55695aeb"
+																	}],
+																	"name": "Config1",
+																	"namespace": "trMTXinMTXConfigsProdDefaultOff",
+																	"minAppVersion": "7.10",
+																	"lastModified": 1490699295996,
+																	"uniqueId": "a58d65da-8cdd-41c7-994f-518b03cdb9f0",
+																	"noCachedResults": false
+																}
+															],
+															"lastModified": 1490699295996,
+															"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+															"uniqueId": "c507ccf7-441a-4c9b-bd13-2eb84cfa873b"
+														}],
+														"name": "MTXinMTXConfigsProdDefaultOff",
+														"namespace": "tr",
+														"configurationSchema": {
+															"value": {
+																"type": "string"
+															}
+														},
+														"lastModified": 1490702368383,
+														"uniqueId": "fd7654a3-eac4-4f7f-9ef9-5c2d3341110f"
+													},
+													{
+														"displayName": null,
+														"rule": {
+															"ruleString": ""
+														},
+														"description": "",
+														"type": "FEATURE",
+														"enabled": true,
+														"defaultConfiguration": null,
+														"features": [],
+														"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+														"defaultIfAirlockSystemIsDown": false,
+														"additionalInfo": null,
+														"minAppVersion": "7.10",
+														"noCachedResults": false,
+														"owner": "Esteban Zia",
+														"configAttributesForAnalytics": [
+															"value",
+															"value1",
+															"value2",
+															"value3"
+														],
+														"creator": "Esteban Zia",
+														"internalUserGroups": [
+															"AndroidDEV"
+														],
+														"rolloutPercentage": 100,
+														"creationDate": 1490702487805,
+														"stage": "PRODUCTION",
+														"configurationRules": [{
+															"maxFeaturesOn": 1,
+															"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+															"configurationRules": [{
+																	"owner": "Esteban Zia",
+																	"creator": "Esteban Zia",
+																	"internalUserGroups": [
+																		"AndroidDEV"
+																	],
+																	"configuration": "{\n\t\"value\":\"config2a\",\n\t\"value1\":\"value1\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+																	"rule": {
+																		"ruleString": "context.viewedLocation.country==\"US\""
+																	},
+																	"description": "",
+																	"type": "CONFIGURATION_RULE",
+																	"rolloutPercentage": 100,
+																	"creationDate": 1490702488110,
+																	"sendToAnalytics": true,
+																	"enabled": true,
+																	"stage": "PRODUCTION",
+																	"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																	"configurationRules": [],
+																	"name": "FeatureProdMTXConfigProd15a",
+																	"namespace": "group1feature1",
+																	"minAppVersion": "7.10",
+																	"lastModified": 1490773367433,
+																	"uniqueId": "cee56ce9-020b-494d-9d18-298d330dc867",
+																	"noCachedResults": false
+																},
+																{
+																	"owner": "Esteban Zia",
+																	"creator": "Esteban Zia",
+																	"internalUserGroups": [
+																		"AndroidDEV"
+																	],
+																	"configuration": "{\n\t\"value\":\"config2a\",\n\t\"value1\":\"value1\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+																	"rule": {
+																		"ruleString": "context.viewedLocation.country==\"FR\""
+																	},
+																	"description": "",
+																	"type": "CONFIGURATION_RULE",
+																	"rolloutPercentage": 100,
+																	"creationDate": 1490702488417,
+																	"enabled": true,
+																	"stage": "DEVELOPMENT",
+																	"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																	"configurationRules": [],
+																	"name": "FeatureProdMTXConfigDev15b",
+																	"namespace": "group1feature1",
+																	"minAppVersion": "7.10",
+																	"lastModified": 1490773424780,
+																	"uniqueId": "d8f4c682-89d4-494b-be27-9c52824be333",
+																	"noCachedResults": false
+																}
+															],
+															"lastModified": 1490702488418,
+															"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+															"uniqueId": "84d1f354-4950-4851-b796-1cdcad09b62e"
+														}],
+														"name": "FeatureProdMTXConfigProdDev15",
+														"namespace": "group1",
+														"configurationSchema": null,
+														"lastModified": 1490702504445,
+														"uniqueId": "61b861cc-fbf3-4166-b50f-e955e660aeaf"
+													},
+													{
+														"displayName": null,
+														"rule": {
+															"ruleString": ""
+														},
+														"description": "",
+														"type": "FEATURE",
+														"sendToAnalytics": true,
+														"enabled": true,
+														"defaultConfiguration": null,
+														"features": [{
+															"features": [{
+																	"displayName": null,
+																	"rule": {
+																		"ruleString": ""
+																	},
+																	"description": "",
+																	"type": "FEATURE",
+																	"sendToAnalytics": true,
+																	"enabled": true,
+																	"defaultConfiguration": null,
+																	"features": [],
+																	"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																	"defaultIfAirlockSystemIsDown": false,
+																	"additionalInfo": null,
+																	"minAppVersion": "7.10",
+																	"noCachedResults": false,
+																	"owner": "Esteban Zia",
+																	"creator": "Esteban Zia",
+																	"internalUserGroups": [
+																		"AndroidDEV"
+																	],
+																	"rolloutPercentage": 100,
+																	"creationDate": 1490702619681,
+																	"stage": "DEVELOPMENT",
+																	"configurationRules": [],
+																	"name": "FeatureProdMTXDev12b",
+																	"namespace": "tr",
+																	"configurationSchema": null,
+																	"lastModified": 1490702619681,
+																	"uniqueId": "ac3915d1-365c-4da5-803d-cf5e926a93c7"
+																},
+																{
+																	"owner": "Esteban Zia",
+																	"creator": "Esteban Zia",
+																	"internalUserGroups": [
+																		"AndroidDEV"
+																	],
+																	"displayName": null,
+																	"rule": {
+																		"ruleString": ""
+																	},
+																	"description": "",
+																	"type": "FEATURE",
+																	"rolloutPercentage": 100,
+																	"creationDate": 1490702619979,
+																	"enabled": true,
+																	"defaultConfiguration": null,
+																	"features": [],
+																	"stage": "DEVELOPMENT",
+																	"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																	"configurationRules": [],
+																	"defaultIfAirlockSystemIsDown": false,
+																	"name": "FeatureProdMTXProd12a",
+																	"namespace": "tr",
+																	"configurationSchema": null,
+																	"additionalInfo": null,
+																	"minAppVersion": "7.10",
+																	"lastModified": 1490702619979,
+																	"uniqueId": "89b4a058-7667-4e44-9134-1a1f638df62e",
+																	"noCachedResults": false
+																}
+															],
+															"maxFeaturesOn": 1,
+															"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+															"lastModified": 1490702619979,
+															"type": "MUTUAL_EXCLUSION_GROUP",
+															"uniqueId": "27074fd9-599f-4c5b-9c60-9aed16634f6e"
+														}],
+														"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+														"defaultIfAirlockSystemIsDown": false,
+														"additionalInfo": null,
+														"minAppVersion": "7.10",
+														"noCachedResults": false,
+														"owner": "Esteban Zia",
+														"creator": "Esteban Zia",
+														"internalUserGroups": [
+															"AndroidDEV"
+														],
+														"rolloutPercentage": 100,
+														"creationDate": 1490702619380,
+														"stage": "DEVELOPMENT",
+														"configurationRules": [],
+														"name": "FeatureProdMTXDevProd12",
+														"namespace": "tr",
+														"configurationSchema": null,
+														"lastModified": 1490702619382,
+														"uniqueId": "34dfe5bf-c0e4-4be8-a741-811e4cabfb91"
+													},
+													{
+														"owner": "Esteban Zia",
+														"creator": "Esteban Zia",
+														"internalUserGroups": [
+															"AndroidDEV"
+														],
+														"displayName": null,
+														"rule": {
+															"ruleString": ""
+														},
+														"description": "",
+														"type": "FEATURE",
+														"rolloutPercentage": 100,
+														"creationDate": 1490702742647,
+														"enabled": true,
+														"defaultConfiguration": null,
+														"features": [{
+															"features": [{
+																	"owner": "Esteban Zia",
+																	"creator": "Esteban Zia",
+																	"internalUserGroups": [
+																		"AndroidDEV"
+																	],
+																	"displayName": null,
+																	"rule": {
+																		"ruleString": "true;"
+																	},
+																	"description": "",
+																	"type": "FEATURE",
+																	"rolloutPercentage": 100,
+																	"creationDate": 1490702742964,
+																	"enabled": true,
+																	"defaultConfiguration": null,
+																	"features": [],
+																	"stage": "PRODUCTION",
+																	"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																	"configurationRules": [],
+																	"defaultIfAirlockSystemIsDown": false,
+																	"name": "FeatureProdMTXProd11a",
+																	"namespace": "tr",
+																	"configurationSchema": null,
+																	"additionalInfo": {},
+																	"minAppVersion": "7.10",
+																	"lastModified": 1490773269773,
+																	"uniqueId": "3676af31-3321-4eaa-bd20-1a0ded662cae",
+																	"noCachedResults": false
+																},
+																{
+																	"displayName": null,
+																	"rule": {
+																		"ruleString": "false;"
+																	},
+																	"description": "",
+																	"type": "FEATURE",
+																	"sendToAnalytics": true,
+																	"enabled": true,
+																	"defaultConfiguration": null,
+																	"features": [],
+																	"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																	"defaultIfAirlockSystemIsDown": false,
+																	"additionalInfo": {},
+																	"minAppVersion": "7.10",
+																	"noCachedResults": false,
+																	"owner": "Esteban Zia",
+																	"creator": "Esteban Zia",
+																	"internalUserGroups": [
+																		"AndroidDEV"
+																	],
+																	"rolloutPercentage": 100,
+																	"creationDate": 1490702743302,
+																	"stage": "PRODUCTION",
+																	"configurationRules": [],
+																	"name": "FeatureProdMTXDev11b",
+																	"namespace": "tr",
+																	"configurationSchema": null,
+																	"lastModified": 1490773282135,
+																	"uniqueId": "43b05687-0574-4fcb-b805-2b83d2329cdf"
+																}
+															],
+															"maxFeaturesOn": 1,
+															"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+															"lastModified": 1490702743303,
+															"type": "MUTUAL_EXCLUSION_GROUP",
+															"uniqueId": "ac175901-212a-4b0c-aea3-6c5e62feacb0"
+														}],
+														"stage": "PRODUCTION",
+														"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+														"configurationRules": [],
+														"defaultIfAirlockSystemIsDown": false,
+														"name": "FeatureProdMTXProdDev11",
+														"namespace": "tr",
+														"configurationSchema": null,
+														"additionalInfo": null,
+														"minAppVersion": "7.10",
+														"lastModified": 1490773238644,
+														"uniqueId": "ead24272-2c88-476e-a4b4-42be4ebc453d",
+														"noCachedResults": false
+													},
+													{
+														"owner": "Esteban Zia",
+														"creator": "Esteban Zia",
+														"internalUserGroups": [
+															"AndroidDEV"
+														],
+														"displayName": null,
+														"rule": {
+															"ruleString": ""
+														},
+														"description": "",
+														"type": "FEATURE",
+														"rolloutPercentage": 100,
+														"creationDate": 1490773511994,
+														"enabled": true,
+														"defaultConfiguration": "{\n\t\"colors\":[\"red\", \"green\", \"blue\", \"white\"]\n}",
+														"features": [],
+														"stage": "PRODUCTION",
+														"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+														"configurationRules": [],
+														"defaultIfAirlockSystemIsDown": false,
+														"name": "Arrays",
+														"namespace": "ns",
+														"configurationSchema": null,
+														"additionalInfo": {},
+														"minAppVersion": "7.8",
+														"lastModified": 1490773583788,
+														"uniqueId": "b89cdc4c-7595-4e6f-b2fb-d013903d77df",
+														"noCachedResults": false
+													},
+													{
+														"displayName": null,
+														"rule": {
+															"ruleString": ""
+														},
+														"description": "",
+														"type": "FEATURE",
+														"enabled": true,
+														"defaultConfiguration": null,
+														"features": [],
+														"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+														"defaultIfAirlockSystemIsDown": false,
+														"additionalInfo": null,
+														"minAppVersion": "7.5",
+														"noCachedResults": false,
+														"owner": "Esteban Zia",
+														"configAttributesForAnalytics": [
+															"moreArrays[0].color",
+															"moreArrays[1].color",
+															"moreArrays[2].color",
+															"myArray[2]"
+														],
+														"creator": "Esteban Zia",
+														"internalUserGroups": [
+															"DEV"
+														],
+														"rolloutPercentage": 100,
+														"creationDate": 1490800548998,
+														"stage": "DEVELOPMENT",
+														"configurationRules": [{
+															"owner": "Esteban Zia",
+															"creator": "Esteban Zia",
+															"internalUserGroups": [
+																"DEV"
+															],
+															"configuration": "{\n\t\"myArray\":[\"item1\",\n\t\"item2\",\n\t\"item3\",\n\t\"item4\"],\n\t\n\t\"moreArrays\" : [ {\"color\" : \"blue\"}, {\"color\" : \"red\"}, {\"color\" : \"white\"}]\n}",
+															"rule": {
+																"ruleString": ""
+															},
+															"description": "",
+															"type": "CONFIGURATION_RULE",
+															"rolloutPercentage": 100,
+															"creationDate": 1490800649504,
+															"enabled": true,
+															"stage": "DEVELOPMENT",
+															"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+															"configurationRules": [],
+															"name": "AddArray",
+															"namespace": "nsCustomArray",
+															"minAppVersion": "7.5",
+															"lastModified": 1490800877176,
+															"uniqueId": "e1981a84-1be2-4915-b8f9-0aceb0389873",
+															"noCachedResults": false
+														}],
+														"name": "CustomArray",
+														"namespace": "ns",
+														"configurationSchema": null,
+														"lastModified": 1490800649504,
+														"uniqueId": "cbabc757-746c-4b0e-be6f-6d227ac84e68"
+													},
+													{
+														"owner": "Esteban Zia",
+														"creator": "Esteban Zia",
+														"internalUserGroups": [
+															"QA"
+														],
+														"displayName": null,
+														"rule": {
+															"ruleString": ""
+														},
+														"description": "",
+														"type": "FEATURE",
+														"rolloutPercentage": 100,
+														"creationDate": 1491137713571,
+														"enabled": true,
+														"defaultConfiguration": null,
+														"features": [],
+														"stage": "DEVELOPMENT",
+														"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+														"configurationRules": [{
+																"owner": "Esteban Zia",
+																"creator": "Esteban Zia",
+																"internalUserGroups": [
+																	"QA"
+																],
+																"configuration": "{\n\t\"arrayAtt\":[\"value1\",\n\t\"value2\",\n\t\"value3\"],\n\t\"complexObject\":{\n\t\t\"compAtt1\":\"hello\",\n\t\t\"compAtt2\":5,\n\t\t\"compAtt3\":3.2\n\t},\n\t\"arrayOfObjects\":[{\n\t\t\"att1\":\"a0att1\",\n\t\t\"att2\":\"a0att2\"\n\t},\n\t{\n\t\t\"att1\":\"a1att1\",\n\t\t\"att2\":\"a1att2\"\n\t},\n\t{\n\t\t\"att1\":\"a2att1\",\n\t\t\"att2\":\"a2att2\"\n\t}]\n}",
+																"rule": {
+																	"ruleString": ""
+																},
+																"description": "",
+																"type": "CONFIGURATION_RULE",
+																"rolloutPercentage": 100,
+																"creationDate": 1491137713876,
+																"enabled": true,
+																"stage": "DEVELOPMENT",
+																"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																"configurationRules": [],
+																"name": "CF1",
+																"namespace": "elikElik",
+																"minAppVersion": "7.8",
+																"lastModified": 1491137713876,
+																"uniqueId": "9fa6f140-0d40-45f7-b2d5-81839b1b9645",
+																"noCachedResults": false
+															},
+															{
+																"owner": "Esteban Zia",
+																"creator": "Esteban Zia",
+																"internalUserGroups": [
+																	"QA"
+																],
+																"configuration": "{\n\t\"ArrayOfArrayOfObject\":[[{\n\t\t\"key0\":\"val0\",\n\t\t\"key1\":\"val1\"\n\t},\n\t{\n\t\t\"key0\":\"val01\",\n\t\t\"key1\":\"val11\"\n\t}],\n\t[{\n\t\t\"key0\":\"val0\",\n\t\t\"key1\":\"val1\"\n\t},\n\t{\n\t\t\"key0\":\"val01\",\n\t\t\"key1\":\"val11\"\n\t}],\n\t[{\n\t\t\"key0\":\"val0\",\n\t\t\"key1\":\"val1\"\n\t},\n\t{\n\t\t\"key0\":\"val01\",\n\t\t\"key1\":\"val11\"\n\t}]]\n}",
+																"rule": {
+																	"ruleString": ""
+																},
+																"description": "",
+																"type": "CONFIGURATION_RULE",
+																"rolloutPercentage": 100,
+																"creationDate": 1491137714197,
+																"enabled": true,
+																"stage": "DEVELOPMENT",
+																"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+																"configurationRules": [],
+																"name": "CF2",
+																"namespace": "elikElik",
+																"minAppVersion": "7.8",
+																"lastModified": 1491137714197,
+																"uniqueId": "f773cce9-20f8-452a-bfaa-ead012d2a4d4",
+																"noCachedResults": false
+															}
+														],
+														"defaultIfAirlockSystemIsDown": false,
+														"name": "Array2",
+														"namespace": "elik",
+														"configurationSchema": null,
+														"additionalInfo": {},
+														"minAppVersion": "7.8",
+														"lastModified": 1491138246685,
+														"uniqueId": "5278ddb6-59a6-42bf-a6ca-6718a57a6e55",
+														"noCachedResults": false
+													},
+													{
+														"displayName": null,
+														"rule": {
+															"ruleString": ""
+														},
+														"description": "",
+														"type": "FEATURE",
+														"enabled": true,
+														"defaultConfiguration": "{\r\n\t\"launchesUntilShow\":12,\r\n\t\"noOfDaysAfterYesPromptAgain\":60,\r\n\t\"noOfDaysAfterNoPromptAgain\":90,\r\n\t\"appStoreLink\":\"market://details?id=com.weather.Weather\",\r\n\t\"initialMessage\":\"\",\r\n\t\"initialTitle\":\"AreyouenjoyingtheTheWeatherChannelApp?\",\r\n\t\"initalYesButton\":\"YES\",\r\n\t\"initialNoButton\":\"NOTREALLY\",\r\n\t\"negativeAnswerTitle\":\"That'snotgood\",\r\n\t\"negativeAnswerMessage\":\"Pleasesendusfeedbacksowecanimprove\",\r\n\t\"feedbackButton\":\"SENDFEEDBACK\",\r\n\t\"noFeedbackButon\":\"NOTHANKS\",\r\n\t\"positiveAnswerTitle\":\"Gladtohearit!\",\r\n\t\"positiveAnswerMessage\":\"WillyousharetheloveintheGooglePlayStore?\",\r\n\t\"rateUsButton\":\"RATEUS\",\r\n\t\"noRatingButton\":\"NOTHANKS\",\r\n\t\"feedbackEmail\":\"feedback@weather.com\",\r\n\t\"emailSubject\":\"AndroidApp\"\r\n}",
+														"features": [],
+														"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+														"defaultIfAirlockSystemIsDown": false,
+														"additionalInfo": {},
+														"minAppVersion": "7.10",
+														"noCachedResults": false,
+														"owner": "Esteban Zia",
+														"configAttributesForAnalytics": [
+															"appStoreLink",
+															"customObjFromArray.a",
+															"customValObj.a",
+															"customValObj2.b",
+															"customValStr",
+															"feedbackButton",
+															"feedbackEmail",
+															"myArrayOfNormalObjects[0].a",
+															"myArrayOfNormalObjects[1].a",
+															"myArrayOfNormalObjects[2].a",
+															"myArrayOfObjects[0].a.aa",
+															"myArrayOfObjects[1].a.aa",
+															"myArrayOfObjects[2].a.aa",
+															"myArrayOfObjects[0].b",
+															"myArrayOfObjects[1].b",
+															"myArrayOfObjects[2].b",
+															"myArrayOfObjects[0].c",
+															"myArrayOfObjects[1].c",
+															"myArrayOfObjects[2].c",
+															"myArrayOfObjects[0].d",
+															"myArrayOfObjects[1].d",
+															"myArrayOfObjects[2].d",
+															"myArrayOfObjects[0].e",
+															"myArrayOfObjects[1].e",
+															"myArrayOfObjects[2].e",
+															"myArray[0]",
+															"myArray[1]",
+															"myArray[2]"
+														],
+														"creator": "Esteban Zia",
+														"internalUserGroups": [
+															"AndroidDEV"
+														],
+														"rolloutPercentage": 100,
+														"creationDate": 1491138265759,
+														"stage": "PRODUCTION",
+														"configurationRules": [{
+															"owner": "Esteban Zia",
+															"creator": "Esteban Zia",
+															"internalUserGroups": [
+																"AndroidDEV"
+															],
+															"configuration": "{\n\"name\":\"AmichaiMeirCopy\",\n\t\"myArray\":[\"1\",\n\t\"2\"],\n\t\"myArrayOfObjects\":[{\n\t\t\"a\":{\n\t\t\t\"aa\":1\n\t\t}\n\t},\n\t{\n\t\t\"b\":2\n\t},\n\t{\n\t\t\"c\":3\n\t},\n\t{\n\t\t\"d\":4\n\t},\n\t{\n\t\t\"e\":5\n\t}],\n\t\"myArrayOfNormalObjects\":[{\n\t\t\"a\":1\n\t},\n\t{\n\t\t\"a\":2\n\t},\n\t{\n\t\t\"a\":3\n\t},\n\t{\n\t\t\"a\":4\n\t},\n\t{\n\t\t\"a\":5\n\t}],\n\t\"customValObj\":getObj(),\n\t\"customValStr\":getObj().a,\n\t\"customValObj2\":getObj2(),\n\t\"customObjFromArray\":getArrayOfObjects()[0]\t\n}",
+															"rule": {
+																"ruleString": ""
+															},
+															"description": "",
+															"type": "CONFIGURATION_RULE",
+															"rolloutPercentage": 100,
+															"creationDate": 1491138535431,
+															"enabled": true,
+															"stage": "PRODUCTION",
+															"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+															"configurationRules": [],
+															"name": "CR1",
+															"namespace": "nsArray3",
+															"minAppVersion": "7.10",
+															"lastModified": 1491138597067,
+															"uniqueId": "a242da1c-c05e-4cec-b06d-ae9195a9488a",
+															"noCachedResults": false
+														}],
+														"name": "Array3",
+														"namespace": "ns",
+														"configurationSchema": {
+															"$schema": "http://json-schema.org/draft-04/schema#",
+															"type": "object",
+															"properties": {
+																"initialTitle": {
+																	"type": "string"
+																},
+																"positiveAnswerTitle": {
+																	"type": "string"
+																},
+																"initialNoButton": {
+																	"type": "string"
+																},
+																"feedbackButton": {
+																	"type": "string"
+																},
+																"noOfDaysAfterYesPromptAgain": {
+																	"type": "integer"
+																},
+																"emailSubject": {
+																	"type": "string"
+																},
+																"negativeAnswerMessage": {
+																	"type": "string"
+																},
+																"feedbackEmail": {
+																	"type": "string"
+																},
+																"initialMessage": {
+																	"type": "string"
+																},
+																"rateUsButton": {
+																	"type": "string"
+																},
+																"noFeedbackButon": {
+																	"type": "string"
+																},
+																"positiveAnswerMessage": {
+																	"type": "string"
+																},
+																"noOfDaysAfterNoPromptAgain": {
+																	"type": "integer"
+																},
+																"negativeAnswerTitle": {
+																	"type": "string"
+																},
+																"appStoreLink": {
+																	"type": "string"
+																},
+																"initalYesButton": {
+																	"type": "string"
+																},
+																"noRatingButton": {
+																	"type": "string"
+																},
+																"launchesUntilShow": {
+																	"type": "integer"
+																}
+															}
+														},
+														"lastModified": 1491138586716,
+														"uniqueId": "878047be-e53f-402d-8b56-5a59686f7150"
+													}
+												],
+												"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+												"lastModified": 1491138265759,
+												"type": "ROOT",
+												"uniqueId": "e22134df-d0bf-44bc-b31c-f0bc62c3b655"
+											}
+										},
+										"rule": {
+											"ruleString": ""
+										},
+										"description": "",
+										"type": "CONFIGURATION_RULE",
+										"rolloutPercentage": 100,
+										"creationDate": 1490699296684,
+										"enabled": false,
+										"stage": "DEVELOPMENT",
+										"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+										"configurationRules": [],
+										"name": "Config1b",
+										"namespace": "trMTXinMTXConfigsProdDefaultOffConfig1",
+										"minAppVersion": "7.10",
+										"lastModified": 1490702437641,
+										"uniqueId": "b9c1f241-b51a-41ec-8be2-62d69bd28896",
+										"noCachedResults": false
+									}
+								],
+								"lastModified": 1490699296700,
+								"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+								"uniqueId": "31119dc5-c9b5-4830-9093-cc1a55695aeb"
+							}],
+							"name": "Config1",
+							"namespace": "trMTXinMTXConfigsProdDefaultOff",
+							"minAppVersion": "7.10",
+							"lastModified": 1490699295996,
+							"uniqueId": "a58d65da-8cdd-41c7-994f-518b03cdb9f0",
+							"noCachedResults": false
+						}
+					],
+					"lastModified": 1490699295996,
+					"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "c507ccf7-441a-4c9b-bd13-2eb84cfa873b"
+				}],
+				"name": "MTXinMTXConfigsProdDefaultOff",
+				"namespace": "tr",
+				"configurationSchema": {
+					"value": {
+						"type": "string"
+					}
+				},
+				"lastModified": 1490702368383,
+				"uniqueId": "fd7654a3-eac4-4f7f-9ef9-5c2d3341110f"
+			},
+			{
+				"displayName": null,
+				"rule": {
+					"ruleString": ""
+				},
+				"description": "",
+				"type": "FEATURE",
+				"enabled": true,
+				"defaultConfiguration": null,
+				"features": [],
+				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+				"defaultIfAirlockSystemIsDown": false,
+				"additionalInfo": null,
+				"minAppVersion": "7.10",
+				"noCachedResults": false,
+				"owner": "Esteban Zia",
+				"configAttributesForAnalytics": [
+					"value",
+					"value1",
+					"value2",
+					"value3"
+				],
+				"creator": "Esteban Zia",
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"rolloutPercentage": 100,
+				"creationDate": 1490702487805,
+				"stage": "PRODUCTION",
+				"configurationRules": [{
+					"maxFeaturesOn": 1,
+					"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+					"configurationRules": [{
+							"owner": "Esteban Zia",
+							"creator": "Esteban Zia",
+							"internalUserGroups": [
+								"AndroidDEV"
+							],
+							"configuration": "{\n\t\"value\":\"config2a\",\n\t\"value1\":\"value1\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+							"rule": {
+								"ruleString": "context.viewedLocation.country==\"US\""
+							},
+							"description": "",
+							"type": "CONFIGURATION_RULE",
+							"rolloutPercentage": 100,
+							"creationDate": 1490702488110,
+							"sendToAnalytics": true,
+							"enabled": true,
+							"stage": "PRODUCTION",
+							"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+							"configurationRules": [],
+							"name": "FeatureProdMTXConfigProd15a",
+							"namespace": "group1feature1",
+							"minAppVersion": "7.10",
+							"lastModified": 1490773367433,
+							"uniqueId": "cee56ce9-020b-494d-9d18-298d330dc867",
+							"noCachedResults": false
+						},
+						{
+							"owner": "Esteban Zia",
+							"creator": "Esteban Zia",
+							"internalUserGroups": [
+								"AndroidDEV"
+							],
+							"configuration": "{\n\t\"value\":\"config2a\",\n\t\"value1\":\"value1\",\n\t\"value2\":\"value2\",\n\t\"value3\":\"value3\"\n}",
+							"rule": {
+								"ruleString": "context.viewedLocation.country==\"FR\""
+							},
+							"description": "",
+							"type": "CONFIGURATION_RULE",
+							"rolloutPercentage": 100,
+							"creationDate": 1490702488417,
+							"enabled": true,
+							"stage": "DEVELOPMENT",
+							"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+							"configurationRules": [],
+							"name": "FeatureProdMTXConfigDev15b",
+							"namespace": "group1feature1",
+							"minAppVersion": "7.10",
+							"lastModified": 1490773424780,
+							"uniqueId": "d8f4c682-89d4-494b-be27-9c52824be333",
+							"noCachedResults": false
+						}
+					],
+					"lastModified": 1490702488418,
+					"type": "CONFIG_MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "84d1f354-4950-4851-b796-1cdcad09b62e"
+				}],
+				"name": "FeatureProdMTXConfigProdDev15",
+				"namespace": "group1",
+				"configurationSchema": null,
+				"lastModified": 1490702504445,
+				"uniqueId": "61b861cc-fbf3-4166-b50f-e955e660aeaf"
+			},
+			{
+				"displayName": null,
+				"rule": {
+					"ruleString": ""
+				},
+				"description": "",
+				"type": "FEATURE",
+				"sendToAnalytics": true,
+				"enabled": true,
+				"defaultConfiguration": null,
+				"features": [{
+					"features": [{
+							"displayName": null,
+							"rule": {
+								"ruleString": ""
+							},
+							"description": "",
+							"type": "FEATURE",
+							"sendToAnalytics": true,
+							"enabled": true,
+							"defaultConfiguration": null,
+							"features": [],
+							"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+							"defaultIfAirlockSystemIsDown": false,
+							"additionalInfo": null,
+							"minAppVersion": "7.10",
+							"noCachedResults": false,
+							"owner": "Esteban Zia",
+							"creator": "Esteban Zia",
+							"internalUserGroups": [
+								"AndroidDEV"
+							],
+							"rolloutPercentage": 100,
+							"creationDate": 1490702619681,
+							"stage": "DEVELOPMENT",
+							"configurationRules": [],
+							"name": "FeatureProdMTXDev12b",
+							"namespace": "tr",
+							"configurationSchema": null,
+							"lastModified": 1490702619681,
+							"uniqueId": "ac3915d1-365c-4da5-803d-cf5e926a93c7"
+						},
+						{
+							"owner": "Esteban Zia",
+							"creator": "Esteban Zia",
+							"internalUserGroups": [
+								"AndroidDEV"
+							],
+							"displayName": null,
+							"rule": {
+								"ruleString": ""
+							},
+							"description": "",
+							"type": "FEATURE",
+							"rolloutPercentage": 100,
+							"creationDate": 1490702619979,
+							"enabled": true,
+							"defaultConfiguration": null,
+							"features": [],
+							"stage": "DEVELOPMENT",
+							"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+							"configurationRules": [],
+							"defaultIfAirlockSystemIsDown": false,
+							"name": "FeatureProdMTXProd12a",
+							"namespace": "tr",
+							"configurationSchema": null,
+							"additionalInfo": null,
+							"minAppVersion": "7.10",
+							"lastModified": 1490702619979,
+							"uniqueId": "89b4a058-7667-4e44-9134-1a1f638df62e",
+							"noCachedResults": false
+						}
+					],
+					"maxFeaturesOn": 1,
+					"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+					"lastModified": 1490702619979,
+					"type": "MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "27074fd9-599f-4c5b-9c60-9aed16634f6e"
+				}],
+				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+				"defaultIfAirlockSystemIsDown": false,
+				"additionalInfo": null,
+				"minAppVersion": "7.10",
+				"noCachedResults": false,
+				"owner": "Esteban Zia",
+				"creator": "Esteban Zia",
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"rolloutPercentage": 100,
+				"creationDate": 1490702619380,
+				"stage": "DEVELOPMENT",
+				"configurationRules": [],
+				"name": "FeatureProdMTXDevProd12",
+				"namespace": "tr",
+				"configurationSchema": null,
+				"lastModified": 1490702619382,
+				"uniqueId": "34dfe5bf-c0e4-4be8-a741-811e4cabfb91"
+			},
+			{
+				"owner": "Esteban Zia",
+				"creator": "Esteban Zia",
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"displayName": null,
+				"rule": {
+					"ruleString": ""
+				},
+				"description": "",
+				"type": "FEATURE",
+				"rolloutPercentage": 100,
+				"creationDate": 1490702742647,
+				"enabled": true,
+				"defaultConfiguration": null,
+				"features": [{
+					"features": [{
+							"owner": "Esteban Zia",
+							"creator": "Esteban Zia",
+							"internalUserGroups": [
+								"AndroidDEV"
+							],
+							"displayName": null,
+							"rule": {
+								"ruleString": "true;"
+							},
+							"description": "",
+							"type": "FEATURE",
+							"rolloutPercentage": 100,
+							"creationDate": 1490702742964,
+							"enabled": true,
+							"defaultConfiguration": null,
+							"features": [],
+							"stage": "PRODUCTION",
+							"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+							"configurationRules": [],
+							"defaultIfAirlockSystemIsDown": false,
+							"name": "FeatureProdMTXProd11a",
+							"namespace": "tr",
+							"configurationSchema": null,
+							"additionalInfo": {},
+							"minAppVersion": "7.10",
+							"lastModified": 1490773269773,
+							"uniqueId": "3676af31-3321-4eaa-bd20-1a0ded662cae",
+							"noCachedResults": false
+						},
+						{
+							"displayName": null,
+							"rule": {
+								"ruleString": "false;"
+							},
+							"description": "",
+							"type": "FEATURE",
+							"sendToAnalytics": true,
+							"enabled": true,
+							"defaultConfiguration": null,
+							"features": [],
+							"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+							"defaultIfAirlockSystemIsDown": false,
+							"additionalInfo": {},
+							"minAppVersion": "7.10",
+							"noCachedResults": false,
+							"owner": "Esteban Zia",
+							"creator": "Esteban Zia",
+							"internalUserGroups": [
+								"AndroidDEV"
+							],
+							"rolloutPercentage": 100,
+							"creationDate": 1490702743302,
+							"stage": "PRODUCTION",
+							"configurationRules": [],
+							"name": "FeatureProdMTXDev11b",
+							"namespace": "tr",
+							"configurationSchema": null,
+							"lastModified": 1490773282135,
+							"uniqueId": "43b05687-0574-4fcb-b805-2b83d2329cdf"
+						}
+					],
+					"maxFeaturesOn": 1,
+					"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+					"lastModified": 1490702743303,
+					"type": "MUTUAL_EXCLUSION_GROUP",
+					"uniqueId": "ac175901-212a-4b0c-aea3-6c5e62feacb0"
+				}],
+				"stage": "PRODUCTION",
+				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+				"configurationRules": [],
+				"defaultIfAirlockSystemIsDown": false,
+				"name": "FeatureProdMTXProdDev11",
+				"namespace": "tr",
+				"configurationSchema": null,
+				"additionalInfo": null,
+				"minAppVersion": "7.10",
+				"lastModified": 1490773238644,
+				"uniqueId": "ead24272-2c88-476e-a4b4-42be4ebc453d",
+				"noCachedResults": false
+			},
+			{
+				"displayName": null,
+				"rule": {
+					"ruleString": ""
+				},
+				"description": "",
+				"type": "FEATURE",
+				"enabled": true,
+				"defaultConfiguration": "{\n\t\"colors\":[\"red\", \"green\", \"blue\", \"white\"]\n}",
+				"features": [],
+				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+				"defaultIfAirlockSystemIsDown": false,
+				"additionalInfo": {},
+				"minAppVersion": "7.8",
+				"noCachedResults": false,
+				"owner": "Esteban Zia",
+				"configAttributesForAnalytics": [
+					"colors[0]",
+					"colors[1]",
+					"colors[2]"
+				],
+				"creator": "Esteban Zia",
+				"internalUserGroups": [
+					"AndroidDEV"
+				],
+				"rolloutPercentage": 100,
+				"creationDate": 1490773511994,
+				"stage": "PRODUCTION",
+				"configurationRules": [],
+				"name": "Arrays",
+				"namespace": "ns",
+				"configurationSchema": null,
+				"lastModified": 1490773583788,
+				"uniqueId": "b89cdc4c-7595-4e6f-b2fb-d013903d77df"
+			},
+			{
+				"displayName": null,
+				"rule": {
+					"ruleString": ""
+				},
+				"description": "",
+				"type": "FEATURE",
+				"enabled": true,
+				"defaultConfiguration": null,
+				"features": [],
+				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+				"defaultIfAirlockSystemIsDown": false,
+				"additionalInfo": null,
+				"minAppVersion": "7.5",
+				"noCachedResults": false,
+				"owner": "Esteban Zia",
+				"configAttributesForAnalytics": [
+					"moreArrays[0].color",
+					"moreArrays[1].color",
+					"moreArrays[2].color",
+					"myArray[2]"
+				],
+				"creator": "Esteban Zia",
+				"internalUserGroups": [
+					"DEV"
+				],
+				"rolloutPercentage": 100,
+				"creationDate": 1490800548998,
+				"stage": "DEVELOPMENT",
+				"configurationRules": [{
+					"owner": "Esteban Zia",
+					"creator": "Esteban Zia",
+					"internalUserGroups": [
+						"DEV"
+					],
+					"configuration": "{\n\t\"myArray\":[\"item1\",\n\t\"item2\",\n\t\"item3\",\n\t\"item4\"],\n\t\n\t\"moreArrays\" : [ {\"color\" : \"blue\"}, {\"color\" : \"red\"}, {\"color\" : \"white\"}]\n}",
+					"rule": {
+						"ruleString": ""
+					},
+					"description": "",
+					"type": "CONFIGURATION_RULE",
+					"rolloutPercentage": 100,
+					"creationDate": 1490800649504,
+					"enabled": true,
+					"stage": "DEVELOPMENT",
+					"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+					"configurationRules": [],
+					"name": "AddArray",
+					"namespace": "nsCustomArray",
+					"minAppVersion": "7.5",
+					"lastModified": 1490800877176,
+					"uniqueId": "e1981a84-1be2-4915-b8f9-0aceb0389873",
+					"noCachedResults": false
+				}],
+				"name": "CustomArray",
+				"namespace": "ns",
+				"configurationSchema": null,
+				"lastModified": 1490800649504,
+				"uniqueId": "cbabc757-746c-4b0e-be6f-6d227ac84e68"
+			},
+			{
+				"owner": "Esteban Zia",
+				"creator": "Esteban Zia",
+				"internalUserGroups": [
+					"DEV"
+				],
+				"displayName": null,
+				"rule": {
+					"ruleString": ""
+				},
+				"description": "",
+				"type": "FEATURE",
+				"rolloutPercentage": 100,
+				"creationDate": 1490800614731,
+				"enabled": false,
+				"defaultConfiguration": null,
+				"features": [],
+				"stage": "DEVELOPMENT",
+				"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+				"configurationRules": [],
+				"defaultIfAirlockSystemIsDown": false,
+				"name": "a",
+				"namespace": "a",
+				"configurationSchema": null,
+				"additionalInfo": null,
+				"minAppVersion": "7.5",
+				"lastModified": 1490800614731,
+				"uniqueId": "2020a9bf-521c-45e0-86c1-311370bebcc9",
+				"noCachedResults": false
+			}
+		],
+		"seasonId": "b5720247-d487-4c69-a618-af451778a47e",
+		"lastModified": 1490800614732,
+		"type": "ROOT",
+		"uniqueId": "e22134df-d0bf-44bc-b31c-f0bc62c3b655"
+	}
+}

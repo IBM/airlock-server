@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Airlock Authentication Tests" verbose="1">
+	
+		<parameter name="url" value="http://localhost:9090/airlock/api/admin"></parameter>
+		<parameter name="translationsUrl" value="http://localhost:9090/airlock/api/translations"></parameter>
+		<parameter name="analyticsUrl" value="http://localhost:9090/airlock/api/analytics"></parameter>
+		<parameter name="testServicesUrl" value="http://localhost:9090/airlock/api/test"></parameter>
+		<parameter name="configPath" value="./configFiles/unitest/"></parameter>
+		<parameter name="operationsUrl" value="http://localhost:9090/airlock/api/ops"></parameter>
+		<parameter name="analyticsServerUrl" value="http://localhost:9090/airlockanalytics/api"></parameter>
+		<parameter name="admin" value=""></parameter>
+		<parameter name="adminPass" value=""></parameter>
+		<parameter name="userName" value=""></parameter>
+		<parameter name="userPassword" value=""></parameter>		
+		<parameter name="productLead" value=""></parameter>
+		<parameter name="productLeadPass" value=""></parameter>
+		<parameter name="editor" value=""></parameter>
+		<parameter name="editorPass" value=""></parameter>
+		<parameter name="translator" value=""></parameter>
+		<parameter name="translatorPass" value=""></parameter>
+		<parameter name="viewer" value=""></parameter>
+		<parameter name="viewerPass" value=""></parameter>
+		<parameter name="roleAdmin" value=""></parameter>
+		<parameter name="roleAdminPass" value=""></parameter>
+		<parameter name="analyticsEditor" value=""></parameter>
+		<parameter name="analyticsEditorPass" value=""></parameter>		
+		<parameter name="productsToDeleteFile" value="./src/tests/productsToDelete.txt" />
+		<parameter name="appName" value=""/>
+		<!--<parameter name="ssoConfigPath" value="C:/Develop/airlock-backend-Q12017/airlock-api-backend/src/tests/restapi/testdriver/ConnectToSso.properties"/>-->
+		<parameter name="stage" value="DEVELOPMENT"/>
+		<parameter name="expectedServerVersion" value="4.0"/>
+		<parameter name="seasonVersion" value="3.0" />
+		<parameter name="runRoles" value="viewer" />	<!-- all, admin, productLead, editor, translator, viewer, roleAdmin -->
+		<parameter name="excludeProductsDelete" value=""/>
+
+		
+	
+	<test name="BeforeSuite"  enabled="true">
+		<classes>
+			<class name="tests.restapi.SuiteSetup"></class>
+		</classes>
+	</test>
+	
+	<test name="Airlock Authentication Tests"   enabled="true">
+		<classes >
+			<class name="tests.restapi.authentication.TestAllRoles"></class>
+		</classes>
+
+	</test>
+	
+		  <test name="AfterSuite"  enabled="true">
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteCleanup"></class> 
+    	</classes> 
+	</test> 
+				
+</suite>
+
+
