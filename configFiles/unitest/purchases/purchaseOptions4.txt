@@ -1,0 +1,37 @@
+{
+  "enabled": true,
+  "type": "PURCHASE_OPTIONS",
+  "stage": "DEVELOPMENT",
+  "additionalInfo": {
+    "aaa": "bbb",
+    "length":190
+  },
+  "namespace": "ns1",
+  "creator": "Mary",
+  "internalUserGroups": [
+    "QA",
+    "DEV"
+  ],
+  "description": "purchase options 4 desc",
+  "rule": {
+    "ruleString": ""
+  },
+  "minAppVersion": "0.1",
+  "name": "purchaseOptions4",
+  "seasonId": null,
+  "features": [],
+  "owner": "Mark",
+  "defaultIfAirlockSystemIsDown": false,
+  "rolloutPercentage": 11,
+  "noCachedResults": false,
+  "storeProductIds": [{
+		"storeType": "Google Play Store",
+		"productId": "123"
+	}, {
+		"storeType": "Apple App Store",
+		"productId": "456"
+	}]
+}
+
+
+ 

@@ -1,0 +1,90 @@
+ [
+		{
+			"creator": "auto converet",
+			"identifier": "*@weather.com",
+			"isGroupRepresentation": true,
+			"lastModified": 1526986622649,
+			"roles": [
+				"Viewer"
+			],
+			"uniqueId": "706869c0-f6e2-47db-9e62-33eca6a0d51d"
+		},
+		{
+			"creator": "auto converet",
+			"identifier": "user3@weather.com",
+			"isGroupRepresentation": false,
+			"lastModified": 1526986622649,
+			"roles": [
+				"Editor"
+			],
+			"uniqueId": "80619635-9aee-48b0-a934-27426913b6ad"
+		},
+		{
+			"creator": "auto converet",
+			"identifier": "user2@weather.com",
+			"isGroupRepresentation": false,
+			"lastModified": 1526986622649,
+			"roles": [
+				"Administrator",
+				"ProductLead",
+				"AnalyticsViewer",
+				"AnalyticsEditor",
+				"Editor"
+			],
+			"uniqueId": "099b3194-e8d6-49bd-9ca1-89a021883f41"
+		},
+		{
+			"creator": "auto converet",
+			"identifier": "user7@weather.com",
+			"isGroupRepresentation": false,
+			"lastModified": 1526986622649,
+			"roles": [
+				"AnalyticsViewer",
+				"AnalyticsEditor"
+			],
+			"uniqueId": "75acd20b-d525-4423-b574-410dc2df2bfb"
+		},
+		{
+			"creator": "auto converet",
+			"identifier": "user5@weather.com",
+			"isGroupRepresentation": false,
+			"lastModified": 1526986622649,
+			"roles": [
+				"ProductLead",
+				"AnalyticsViewer",
+				"AnalyticsEditor",
+				"Editor"
+			],
+			"uniqueId": "b6745afb-e893-4535-8aa5-a60a68497d55"
+		},
+		{
+			"creator": "auto converet",
+			"identifier": "*.ibm.com",
+			"isGroupRepresentation": true,
+			"lastModified": 1526986622649,
+			"roles": [
+				"Viewer"
+			],
+			"uniqueId": "82833b36-ef03-40a4-b98a-267d40ba67ed"
+		},
+		{
+			"creator": "auto converet",
+			"identifier": "user6@weather.com",
+			"isGroupRepresentation": false,
+			"lastModified": 1526986622649,
+			"roles": [
+				"AnalyticsViewer"
+			],
+			"uniqueId": "2e6190ab-0434-44eb-b3cd-9dc88281ffa7"
+		},
+		{
+			"creator": "auto converet",
+			"identifier": "user8@weather.com",
+			"isGroupRepresentation": false,
+			"lastModified": 1526986622649,
+			"roles": [
+				"TranslationSpecialist"
+			],
+			"uniqueId": "9466f44f-cea4-4a8d-b225-5a8224435fd5"
+		}
+	]

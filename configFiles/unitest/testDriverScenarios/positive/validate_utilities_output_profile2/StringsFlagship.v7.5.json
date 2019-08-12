@@ -1,0 +1,214 @@
+{
+  "strings": [
+    {
+      "key": "Units.KM",
+	  "value": "KM",     
+	  "internationalFallback": "KM",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5"      
+    },
+    {
+      "key": "Units.CM",
+	  "value": "CM",     
+	  "internationalFallback": "CM",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "Units.KMH",
+	  "value": "KMH",     
+	  "internationalFallback": "KMH",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "Units.MPH",
+	  "value": "MPH",     
+	  "internationalFallback": "MPH",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "Units.MiliBars",
+	  "value": "MB",     
+	  "internationalFallback": "MB",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "Units.Feet",
+	  "value": "FT",     
+	  "internationalFallback": "FT",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "Units.Meter",
+	  "value": "M",     
+	  "internationalFallback": "M",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "Units.Miles",
+	  "value": "MI",     
+	  "internationalFallback": "MI",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "Units.AM",
+	  "value": "AM",     
+	  "internationalFallback": "AM",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "Units.PM",
+	  "value": "PM",     
+	  "internationalFallback": "PM",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "Units.InchMercury",
+	  "value": "IN",     
+	  "internationalFallback": "IN",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+	{
+      "key": "Units.Inches",
+	  "value": "IN",     
+	  "internationalFallback": "IN",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "General.TODAY", 
+	  "value": "TODAY",     
+	  "internationalFallback": "TODAY",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "General.TONIGHT", 
+	  "value": "TONIGHT",     
+	  "internationalFallback": "TONIGHT",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+	{
+      "key": "HeadsUp.InView", 
+	  "value": "[[[1]]] IN VIEW",     
+	  "internationalFallback": null,
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+	{
+      "key": "HeadsUp.RAIN", 
+	  "value": "RAIN",     
+	  "internationalFallback": "RAIN",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "HeadsUp.SNOW", 
+	  "value": "SNOW",     
+	  "internationalFallback": "SNOW",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "HeadsUp.MIX", 
+	  "value": "MIX",     
+	  "internationalFallback": "MIX",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "HeadsUp.STORMS", 
+	  "value": "STORMS",     
+	  "internationalFallback": "STORMS",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+	{
+      "key": "HeadsUp.PRECIPITATION", 
+	  "value": "PRECIPITATION",     
+	  "internationalFallback": "PRECIPITATION",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+	{
+      "key": "HeadsUp.ACCUMULATION", 
+	  "value": "ACCUMULATION",     
+	  "internationalFallback": "ACCUMULATION",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+	{
+      "key": "HeadsUp.SeeRadar", 
+	  "value": "SEE RADAR",     
+	  "internationalFallback": "SEE RADAR",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },	
+    {
+      "key": "HeadsUp.WinterStormLikely", 
+	  "value": "WINTER STORM LIKELY",     
+	  "internationalFallback": null,
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+	{
+      "key": "HeadsUp.WinterStormPossible", 
+	  "value": "WINTER STORM POSSIBLE",     
+	  "internationalFallback": null,
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+	{
+      "key": "HeadsUp.LightningStrike", 
+	  "value": "LIGHTNING STRIKE",     
+	  "internationalFallback": null,
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+	{
+      "key": "General.Sunrise", 
+	  "value": "SUNRISE",     
+	  "internationalFallback": "SUNRISE",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+    {
+      "key": "General.Sunset", 
+	  "value": "SUNSET",     
+	  "internationalFallback": "SUNSET",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+	{
+      "key": "HeadsUp.WeekendForecast", 
+	  "value": "WEEKEND FORECAST",     
+	  "internationalFallback": "WEEKEND FORECAST",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+	{
+      "key": "HeadsUp.LookAhead", 
+	  "value": "LOOK AHEAD",     
+	  "internationalFallback": "LOOK AHEAD",
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    },
+	{
+      "key": "DDI.RoadConditions", 
+	  "value": "ROAD CONDITIONS",     
+	  "internationalFallback": null,
+	  "stage": "PRODUCTION",      
+      "minAppVersion": "7.5" 
+    }
+  ]
+}

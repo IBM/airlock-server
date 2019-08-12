@@ -1,0 +1,6 @@
+{
+      "description": "The Android Flagship application",
+      "name": "Product1",
+      "codeIdentifier": "Vicky123",
+      "uniqueId": null
+    }

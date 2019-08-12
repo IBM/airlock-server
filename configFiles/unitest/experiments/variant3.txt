@@ -1,0 +1,12 @@
+{
+	"rule": {
+		"ruleString": "true"
+	},
+	"rolloutPercentage": 100.0,
+	"name": "variant3",
+	"stage": "DEVELOPMENT",
+	"description": "variant desc",
+	"enabled":true,
+	"branchName":"branch3",
+	"creator":"irit"
+}

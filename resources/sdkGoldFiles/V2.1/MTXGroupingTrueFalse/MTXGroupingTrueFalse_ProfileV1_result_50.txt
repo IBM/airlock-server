@@ -1,0 +1,290 @@
+{
+	"root": {
+		"features": [
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "group1.A",
+						"resultTrace": "Rule returned false",
+						"type": "FEATURE"
+					},
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group1.B",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group1.C",
+								"resultTrace": "Rule returned false",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group1.D",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"name": "mx.a6b48c2f-8ff2-4735-962c-231ab728d9e8",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "group1.E",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 3,
+				"name": "mx.61049d58-8fee-4649-96e5-07281253760f",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"features": [
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group2.B",
+								"resultTrace": "Rule returned false",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group2.C",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group2.E",
+								"resultTrace": "Rule returned false",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"name": "mx.a41be75d-4e32-45fa-9fe1-8828708c581a",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "group2.A",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "group2.D",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 3,
+				"name": "mx.8f866914-f1c5-45e0-80f7-6157597d3375",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "group3.A",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "group3.E",
+						"resultTrace": "Rule returned false",
+						"type": "FEATURE"
+					},
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group3.B",
+								"resultTrace": "Rule returned false",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group3.C",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group3.D",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"name": "mx.98086f94-49c3-47bd-8c32-5252d84c68ce",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					}
+				],
+				"maxFeaturesOn": 3,
+				"name": "mx.6262bec5-fee9-4e85-8c41-9abd8af5c298",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "group4.A",
+						"resultTrace": "Rule returned false",
+						"type": "FEATURE"
+					},
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group4.B",
+								"resultTrace": "Rule returned false",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group4.C",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"name": "mx.36ef80f0-e591-440a-b82b-b1747f4920db",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.e0082c15-9049-40b9-b8ba-e6ac591bbc7d",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "group5.A",
+						"resultTrace": "Rule returned false",
+						"type": "FEATURE"
+					},
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group5.E",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"features": [
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "group5.B",
+										"resultTrace": "Rule returned false",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": true,
+										"name": "group5.C",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									}
+								],
+								"maxFeaturesOn": 1,
+								"name": "mx.f5eee0b2-b211-4c84-a3bc-d7d0a04f7da0",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group5.D",
+								"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"name": "mx.b2b4ee5f-2f90-4e78-be2a-d80b778b1f82",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					}
+				],
+				"maxFeaturesOn": 4,
+				"name": "mx.b251f5c7-d8c7-41bb-b114-ba0952e00120",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			}
+		]
+	}
+}

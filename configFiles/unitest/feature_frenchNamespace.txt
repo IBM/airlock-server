@@ -1,0 +1,29 @@
+{
+  "enabled": true,
+  "parent": null,
+  "type": "FEATURE",
+  "stage": "DEVELOPMENT",
+  "additionalInfo": {
+    "aaa": "bbb"
+  },
+  "namespace": "fran�aise �nergie",
+  "creator": "Philip",
+  "internalUserGroups": [
+    "QA",
+    "DEV"
+  ],
+  "description": "F21 desc",
+  "rule": {
+    "ruleString": ""
+  },
+  "minAppVersion": "2.3",
+  "name": "french namespace",
+  "seasonId": null,
+  "features": [],
+  "owner": "Norman",
+  "defaultIfAirlockSystemIsDown": false,
+  rolloutPercentage: 10
+}
+
+
+ 

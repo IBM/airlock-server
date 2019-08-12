@@ -1,0 +1,14 @@
+{
+	"lastModofied": 1472976534624,
+	"capabilities": [
+		"STREAMS",
+		"FEATURES",
+		"NOTIFICATIONS",
+		"TRANSLATIONS",
+		"ANALYTICS",
+		"EXPERIMENTS",
+		"BRANCHES",
+		"EXPORT_IMPORT",
+		"API_KEY_MANAGEMENT"
+	]
+}

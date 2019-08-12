@@ -1,0 +1,10 @@
+	{
+      "owner": null,
+      "internationalFallback": "CLEAR",
+      "stage": "DEVELOPMENT",
+      "variant": "",
+      "value": "CLEAR",
+      "key": "HeadsUp.Clear",
+      "minAppVersion":"0.1",
+      "translationInstruction": "short"
+    }

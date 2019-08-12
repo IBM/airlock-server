@@ -1,0 +1,20 @@
+{
+            "enabled": true,
+            "type": "CONFIGURATION_RULE",
+            "stage": "DEVELOPMENT",
+            "creator": "Joe",
+            "namespace": "ns1",
+            "internalUserGroups": [
+              "QA",
+              "DEV"
+            ],
+            "description": "",
+            "name": "CRProtected",
+            "minAppVersion": "1.1.1",
+            "rule": {
+              "ruleString": "(context.testData && context.testData.dsx && context.testData.dsx.teaserTitle) === true; context.testData.dsx.teaserTitle == context.testData.dsx.teaserTitle;"
+            },
+            "features": [],
+            "rolloutPercentage": 10,
+            "configuration": "{ \"title\": context.testData.dsx.teaserTitle}"
+}

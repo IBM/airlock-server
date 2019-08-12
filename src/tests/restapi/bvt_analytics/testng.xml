@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Airlock Authentication Tests" verbose="1">
+	
+		<parameter name="url" value="http://localhost:9090/airlock/api/admin"></parameter>
+		<parameter name="translationsUrl" value="http://localhost:9090/airlock/api/translations"></parameter>
+		<parameter name="analyticsUrl" value="http://localhost:9090/airlock/api/analytics"></parameter>
+		<parameter name="testServicesUrl" value="http://localhost:9090/airlock/api/test"></parameter>
+		<parameter name="configPath" value="./configFiles/unitest/"></parameter>
+		<parameter name="operationsUrl" value="http://localhost:9090/airlock/api/ops"></parameter>
+		<parameter name="analyticsServerUrl" value="http://localhost:9090/airlockanalytics/api"></parameter>
+		<parameter name="userName" value=""></parameter>
+		<parameter name="userPassword" value=""></parameter>		
+		<parameter name="productsToDeleteFile" value="./src/tests/productsToDelete.txt" />
+		<parameter name="appName" value=""/>
+		<parameter name="seasonVersion" value="3.0" />
+		<parameter name="sessionToken" value="" />
+		<parameter name="excludeProductsDelete" value=""/>
+	
+	<test name="BeforeSuite"  enabled="true">
+		<classes>
+			<class name="tests.restapi.SuiteSetup"></class>
+		</classes>
+	</test>
+	
+	<test name="Airlock Authentication Tests"   enabled="true">
+		<classes >
+			<class name="tests.restapi.bvt_analytics.BVTAnalytics"></class>
+		</classes>
+
+	</test>
+	
+		  <test name="AfterSuite"  enabled="true">
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteCleanup"></class> 
+    	</classes> 
+	</test> 
+				
+</suite>
+
+

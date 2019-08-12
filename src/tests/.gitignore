@@ -1,0 +1,8 @@
+/build/
+/output/
+.gradle
+/bin/
+/.settings/
+.factorypath
+/test-output/
+/.apt_generated/

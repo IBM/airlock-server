@@ -1,0 +1,5 @@
+{
+	"orderingRules": [],
+	"maxFeaturesOn": 2,
+	"type": "ORDERING_RULE_MUTUAL_EXCLUSION_GROUP"
+}

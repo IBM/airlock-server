@@ -1,0 +1,53 @@
+
+##########################################################################
+the following parameters are used by both InsertOrdering and InsertPmml programs.
+
+url = http://airlock-dev4-adminapi.eu-west-1.elasticbeanstalk.com/airlock/api/
+stage = DEVELOPMENT
+seasonVersion = 3.0
+branch = MASTER
+productId = ba3dc2ad-da2c-403d-89f1-b47faf3d6e8a
+seasonId = 4c3f3346-b857-4e89-81a1-bbafebdfe227
+sessionToken=
+
+#sessionToken can be generated automatically from okta if you supply oktaUrl/oktaApp/user/password
+#oktaUrl = https://weather.oktapreview.com/api/v1/authn
+#oktaApp = backend_dev
+#oktaApp = backend_aws
+#user = guess
+##password = guess
+
+# sessionToken can be generated automatically from single-sign-on BlueId if you supply ssoProperties/user/password
+#ssoProperties = ./ConnectToSso.properties
+#user = guess
+##password = guess
+
+#############################################################################
+#the following parameters are only used by the InsertOrdering program
+#path to folder with function/rule/config files
+dataFolder = C:/client/insert
+
+#path to JSON with insertion data
+insertsFile = C:/client/insert/insertion.json
+
+
+#############################################################################
+#the following parameters are only used by the InsertPmml program.
+
+minAppVersion = 8.0
+
+# (for debugging) optional location for JS function foundInContext. If missing, foundInContext is taken from the server
+functionPath = C:/client/insert/functions.txt
+
+# input pmml to be converted to JavaScript rule
+#pmml = C:/client/insert/new.pmml
+pmml = C:/client/insert/testPmml.xml
+
+#output JavaScript rule
+rulePath = C:/client/insert/newrule.txt
+
+#output file used for generating the Airlock configuration
+configurationPath = C:/client/insert/newconf.txt
+
+#optional JSON containing a mapping from pmml variables to airlock context variables
+#fieldMapPath = C:/client/insert/fieldMapping.json

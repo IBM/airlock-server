@@ -1,0 +1,69 @@
+{
+	"type": "MUTUAL_EXCLUSION_GROUP",
+	"name": "mutual_exclusion_group",
+	"despcription": "mutual exclusion"
+	"features": [{
+		"uniqueId": "",
+		"enabled": true,
+		"type": "FEATURE",
+		"stage": "DEVELOPMENT",
+		"additionalInfo": {},
+		"namespace": "ns1",
+		"creator": "Philip",
+		"internalUserGroups": [
+			"QA",
+			"DEV"
+		],
+		"description": "Video v1",
+		"rule": {
+			"ruleString": "true"
+		},
+		"minAppVersion": "2.3",
+		"name": "Video",
+		"features": [{
+			"uniqueId": "",
+			"enabled": true,
+			"type": "FEATURE",
+			"stage": "DEVELOPMENT",
+			"additionalInfo": {},
+			"namespace": "ns1",
+			"creator": "Philip",
+			"internalUserGroups": [
+				"QA",
+				"DEV"
+			],
+			"description": "Video high resolution for v1",
+			"rule": {
+				"ruleString": "true"
+			},
+			"minAppVersion": "2.3",
+			"name": "Video HighRes",
+			"features": [],
+			"owner": "Norman",
+			"defaultIfAirlockSystemIsDown": false
+		}],
+		"owner": "Norman",
+		"defaultIfAirlockSystemIsDown": false
+	}, {
+		"uniqueId": "",
+		"enabled": true,
+		"type": "FEATURE",
+		"stage": "DEVELOPMENT",
+		"additionalInfo": {},
+		"namespace": "ns1",
+		"creator": "Philip",
+		"internalUserGroups": [
+			"QA",
+			"DEV"
+		],
+		"description": "Video v2, then next generation of the Video feature with high resolution",
+		"rule": {
+			"ruleString": "true"
+		},
+		"minAppVersion": "2.3",
+		"name": "Video NextGen",
+		"features": [],
+		"owner": "Norman",
+		"defaultIfAirlockSystemIsDown": false
+	}]
+}

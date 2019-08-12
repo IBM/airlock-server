@@ -1,0 +1,31 @@
+{
+  "enabled": true,
+  "type": "PURCHASE_OPTIONS",
+  "stage": "PRODUCTION",
+  "additionalInfo": {
+    "aaa": "bbb",
+    "length":1
+  },
+  "namespace": "ns1",
+  "creator": "Mary",
+  "internalUserGroups": [
+    "QA",
+    "DEV"
+  ],
+  "description": "purchase options prod desc",
+  "rule": {
+    "ruleString": ""
+  },
+  "minAppVersion": "0.1",
+  "name": "purchaseOptions production",
+  "seasonId": null,
+  "features": [],
+  "owner": "Mark",
+  "defaultIfAirlockSystemIsDown": false,
+  "rolloutPercentage": 11,
+  "noCachedResults": false,
+  "storeProductIds":[]
+}
+
+
+ 

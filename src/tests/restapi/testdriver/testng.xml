@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Airlock_REST_API_scenarios" verbose="1">
+		<parameter name="url" value="https://api-stage.airlock.twcmobile.weather.com/airlock/api/admin"></parameter>
+		<parameter name="negativeScenarios" value=""></parameter>
+		<parameter name="configPath" value="./configFiles/unitest/"></parameter>
+		<parameter name="sessionToken" value=""/>
+		<parameter name="excludeProductsDelete" value=""/>
+		<parameter name="deleteAll"  value="false"	/>
+		<parameter name="productsToDeleteFile" value="./src/tests/productsToDelete.txt" />
+		<parameter name="seasonVersion" value="3.0" />
+		<parameter name="positiveScenarios" value="./configFiles/unitest/testDriverScenarios/positive/ini"></parameter>
+
+	<listeners>
+        <listener class-name="tests.testng.ExecOrderReporter" />
+        <listener class-name="tests.testng.ExecOrderEmailReporter" />
+    </listeners>
+    
+	<test name="BeforeSuite"  enabled="true"> 
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteSetup"></class> 
+    	</classes> 
+	</test> 
+	<test name="Airlock REST API testdriver" enabled="true">
+		<classes>
+			<class name="tests.restapi.testdriver.TestDriverLauncher">
+			</class>
+		</classes>
+	</test>
+
+	  <test name="AfterSuite"  enabled="true"> 
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteCleanup"></class> 
+    	</classes> 
+	</test> 
+</suite>

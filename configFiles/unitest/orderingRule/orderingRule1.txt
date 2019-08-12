@@ -1,0 +1,22 @@
+ {
+      "orderingRules": [],
+      "enabled": true,
+      "noCachedResults": false,
+      "type": "ORDERING_RULE",
+      "stage": "DEVELOPMENT",
+      "creator": "Joe",
+      "namespace": "OR1",
+      "internalUserGroups": [
+        "QA",
+        "DEV"
+      ],
+      "description": "",
+      "rule": {
+        "ruleString": null
+      },
+      "name": "OR1",
+      "minAppVersion": "2.0",
+      "owner": null,
+      "rolloutPercentage": 100,
+      "configuration": {}
+    }

@@ -1,0 +1,290 @@
+{
+	"root": {
+		"features": [
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "group1.A",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group1.B",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group1.C",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group1.D",
+								"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"name": "mx.0adad969-586d-4dcd-af9f-ac843611e582",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "group1.E",
+						"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 3,
+				"name": "mx.c8ab2c09-f9ff-4f3b-b2e7-5fe9f55ae212",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"features": [
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group2.B",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group2.C",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group2.E",
+								"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"name": "mx.a30f4c20-d328-46a0-8aee-5a897ef00174",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "group2.A",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": false,
+						"name": "group2.D",
+						"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+						"type": "FEATURE"
+					}
+				],
+				"maxFeaturesOn": 3,
+				"name": "mx.7841d264-c375-4915-b3b3-b152fc4cd61a",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "group3.A",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "group3.E",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group3.B",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group3.C",
+								"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group3.D",
+								"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"name": "mx.d47ad13f-cf99-4969-8991-808977165b84",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					}
+				],
+				"maxFeaturesOn": 3,
+				"name": "mx.04b24b19-231d-44b2-8213-582054cbe907",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "group4.A",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group4.B",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group4.C",
+								"resultTrace": "Parent feature is off",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"name": "mx.ded448a7-9290-491d-99d9-13268356c6d6",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					}
+				],
+				"maxFeaturesOn": 1,
+				"name": "mx.3a6a93e6-ccd4-42e2-9fb4-11c2fa79fd28",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			},
+			{
+				"features": [
+					{
+						"featureAttributes": "{}",
+						"features": [
+						],
+						"isON": true,
+						"name": "group5.A",
+						"resultTrace": "Configurations: [defaultConfiguration]",
+						"type": "FEATURE"
+					},
+					{
+						"features": [
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": true,
+								"name": "group5.E",
+								"resultTrace": "Configurations: [defaultConfiguration]",
+								"type": "FEATURE"
+							},
+							{
+								"features": [
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": true,
+										"name": "group5.B",
+										"resultTrace": "Configurations: [defaultConfiguration]",
+										"type": "FEATURE"
+									},
+									{
+										"featureAttributes": "{}",
+										"features": [
+										],
+										"isON": false,
+										"name": "group5.C",
+										"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+										"type": "FEATURE"
+									}
+								],
+								"maxFeaturesOn": 1,
+								"name": "mx.0d918316-f0c6-4879-8368-c99e64f922aa",
+								"type": "MUTUAL_EXCLUSION_GROUP"
+							},
+							{
+								"featureAttributes": "{}",
+								"features": [
+								],
+								"isON": false,
+								"name": "group5.D",
+								"resultTrace": "Feature is off because another feature in its mutual exclusion group is on",
+								"type": "FEATURE"
+							}
+						],
+						"maxFeaturesOn": 2,
+						"name": "mx.9aa75519-6986-416d-97b0-024fc4867c6b",
+						"type": "MUTUAL_EXCLUSION_GROUP"
+					}
+				],
+				"maxFeaturesOn": 4,
+				"name": "mx.2a125a2f-3d0a-4e2f-a91e-52f705a6153b",
+				"type": "MUTUAL_EXCLUSION_GROUP"
+			}
+		]
+	}
+}

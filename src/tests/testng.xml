@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Airlock_REST_API_Tests" verbose="1">
+
+    <!--<parameter name="fsPathPrefix" value="/Users/amichaim/airlock_files"></parameter>-->
+	<!-- parameter name="url" value="http://airlock-test4-adminapi.eu-west-1.elasticbeanstalk.com/airlock/api/admin"></parameter-->
+	<parameter name="url" value="http://airlock-test4-adminapi.eu-west-1.elasticbeanstalk.com/airlock/api/admin"></parameter>
+	<parameter name="analyticsUrl" value="http://airlock-test4-adminapi.eu-west-1.elasticbeanstalk.com/airlock/api/analytics"></parameter>
+	<parameter name="translationsUrl" value="http://airlock-test4-adminapi.eu-west-1.elasticbeanstalk.com/airlock/api/translations"></parameter>
+	<parameter name="configPath" value="/Users/iritma/Documents/develop/workspaces/airlock-backend-develop/configFiles/unitest/"></parameter>
+	<parameter name="operationsUrl" value="http://airlock-test4-adminapi.eu-west-1.elasticbeanstalk.com/airlock/api/ops"></parameter>
+	<parameter name="sessionToken" value=""/>
+	<parameter name="excludeProductsDelete" value="iOS Flagship Phone,Android Flagship Phone,iOS TWC Storm Radar,Android TWC Storm Radar,Floor Elevation POC,QA.DiffBranchedProduct,ExperimentDisabledInProdWithVariantDisabled,ExperimentInProdWithProdDev,ConfigurationNoRules,NoRulePercentage,OverallProductBackwardCompatibility,MTXGroupingAllTrue,NoRuleGroups,MTXGroupingTrueFalse,ExperimentInDevWithDevDev,ExperimentInDevWithDevDev,AnalyticsWithBranch, NoRule100,ConfigurationNoRules2Configs,ConfigurationsWithSubConfig,ConfigurationWithRules,MTXGroupingConfiguration,TestAdina,MTXGroupingConfiguration, UtilityInRule,SDKStringsTranslations,A console testing product,Elik,denisProd,CheckAutoTranslation,TestProdAndroid,ConsoleTesting,LiozTest,SDKBranchesSubfeatures,ExperimentInProdWithDevProd,Andrei6,Andrei7,AnalyticsProductV25,DevProdWithRulesTest,NoRulePercentageFinegrain,ExperimentInProdWithProdProd, OverallProductWithBranches,ExperimentInProdWithDevDev,ConfigurationMutualExclusion,ConfigurationFeatureOn, ProfilesSimpleCondition,ProfilesComplexCondition,OverallProduct,testBitmap,CheckBitmapWithStructure,ChangeFeaturesWithBitmap,AnalyticsProduct,ChangeFeaturesWithBitmap,Android1Q17Backup1,iOS1Q17Backup1,ProductForDebugging,CheckStrings,ConfigurationNoRules,ConfigurationNoRules2Configs,ConfigurationsWithSubConfig,ConfigurationWithRules,ConfigurationMutualExclusion,ConfigurationFeatureOn,NoRulePercentage,NoRuleGroups,NoRule100,NoRulePercentageUpgraded,NoRulePercentageFinegrain,MTXGroupingAllTrue,MTXGroupingTrueFalse,MTXGroupingConfiguration,MTXGrouping,QA.Android.WhiteList,QA.Android.ProdDevSeparation,QA.SimpleProduct,QA.FeatureUsageTest,QA.JSFileTest,QA.Product,EmptyProduct,QA.RulesTrace,QA.TreeProduct,QA.WhiteList,QA.MaxVersionProduct,QA.DebugModeTest,Vlad.E2ETest1,AndroidBugHuntTranslations,AndroidBugHuntReorderingRules,AndroidBugHuntNotifications,iOSBugHuntTranslations,iOSBugHuntReorderingRules,iOSBugHuntNotifications"/>
+	<parameter name="deleteAll"  value="false"	/>
+	<parameter name="productsToDeleteFile" value="./src/tests/productsToDelete.txt" />
+	<parameter name="notify" value="false" />
+	<parameter name="seasonVersion" value="3.0" />
+	<parameter name="runOnMaster" value="false"/>
+	<parameter name="positiveScenarios" value="/Users/iritma/Documents/develop/workspaces/airlock-backend-daimler/airlock-api-backend/configFiles/unitest/testDriverScenarios/positive/ini"></parameter>
+	<parameter name="negativeScenarios" value=""></parameter>
+	<parameter name="userName" value=""></parameter>
+	<parameter name="userPassword" value=""></parameter>
+	<parameter name="adminUser" value=""></parameter>
+	<parameter name="adminPassword" value=""></parameter>
+	<parameter name="productLeadName" value=""></parameter>
+	<parameter name="productLeadPassword" value=""></parameter>	
+	<parameter name="appName" value=""/>
+	<parameter name="isAuthenticated" value="false" />
+	<parameter name="appNameSimple" value=" "/>
+	<parameter name="appName" value=" "/>
+	<parameter name="appName2" value=" "/>			
+
+	<listeners>
+		<listener class-name="tests.testng.ExecOrderReporter" />
+		<listener class-name="tests.testng.ExecOrderEmailReporter" />
+	</listeners>
+ 
+	<test name="BeforeSuite"  enabled="true">
+		<classes>
+			<class name="tests.restapi.SuiteSetup"></class>
+		</classes>
+	</test>
+	<!-- 
+  	<test name="Airlock_REST_API_analytics_Master" enabled="true">
+   		<parameter name="branchType" value="Master"/>
+    	<packages>
+      		<package name="tests.restapi.analytics" />
+  	 	</packages>
+	</test>
+
+ -->
+ 
+	<test name="Airlock_REST_API_analytics_StandAlone" enabled="true">
+   		<parameter name="branchType" value="StandAlone"/>
+    	<packages>
+      		<package name="tests.restapi.analytics" />
+  	 	</packages>
+	</test>
+
+	<test name="Airlock_REST_API_analytics_DevExp" enabled="true">
+   		<parameter name="branchType" value="DevExp"/>
+    	<packages>
+      		<package name="tests.restapi.analytics" />
+  	 	</packages>
+	</test>
+	
+
+	<test name="Airlock_REST_API_analytics_ProdExp" enabled="true">
+   		<parameter name="branchType" value="ProdExp"/>
+    	<packages>
+      		<package name="tests.restapi.analytics" />
+  	 	</packages>
+	</test>
+	 
+	 <test name="Airlock_REST_API_Tests_Analytics_In_branch"  enabled="true">
+    	<packages>
+      		<package name="tests.restapi.analytics_in_branch" />
+  	 	</packages>
+   </test>
+
+   	 <test name="Airlock_REST_API_Tests_Analytics_In_experiments"  enabled="true">
+    	<packages>
+      		<package name="tests.restapi.analytics_in_experiments" />
+  	 	</packages>
+   </test>
+
+
+	<test name="Airlock_REST_API_Tests_BVT"  enabled="true">
+		<packages>
+			<package name="tests.restapi.bvt" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_Integration"  enabled="true">
+		<packages>
+			<package name="tests.restapi.integration" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Multiusers"  enabled="true">
+		<packages>
+			<package name="tests.restapi.multiusers" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Unitest"  enabled="true">
+		<packages>
+			<package name="tests.restapi.unitest" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Scenarios_proddevsplit" enabled="true">
+		<packages>
+			<package name="tests.restapi.proddevsplit"/>
+
+		</packages>
+	</test>
+	   
+	
+	<test name="Airlock_REST_API_Tests_Scenarios_airlock_notification"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.airlock_notification" />
+		</packages>
+	</test>
+	
+	 
+	<test name="Airlock_REST_API_scenarios_orderingRules" enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.orderingRules"/>
+
+		</packages>
+	</test>
+	
+	
+	<test name="Airlock_REST_API_Tests_Scenarios_encryption"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.encryption" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_Scenarios_constants"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.constants" />
+		</packages>
+	</test>
+	<test name="Airlock_REST_API_Tests_Scenarios_experiment_and_branch_validation"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.experiment_and_branch_validation" />
+		</packages>
+	</test>	
+	 
+	<test name="Airlock_REST_API_Tests_Scenarios_experiments"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.experiments" />
+		</packages>
+	</test>
+	
+	 	
+	<test name="Airlock_REST_API_Tests_Scenarios_feature"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.feature" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Scenarios_feature_with_configuration"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.feature_with_configuration" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Scenarios_inputSample"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.inputSample" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Scenarios_inputSchema"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.inputSchema" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Scenarios_multiServer"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.multiServer" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_scenarios_mutual_exclusion_features" enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.mutual_exclusion_features"/>
+
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_scenarios_mutual_exclusion_configuration" enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.mutual_exclusion_configuration"/>
+
+		</packages>
+	</test>
+	
+		<test name="Airlock_REST_API_scenarios_notificationMail" enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.notificationMail"/>
+
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Scenarios_operations"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.operations" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Scenarios_orderingRules"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.orderingRules" />
+		</packages>
+	</test>
+	
+ 
+	<test name="Airlock_REST_API_Tests_Scenarios_product"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.product" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_Scenarios_prod_under_dev"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.prod_under_dev" />
+		</packages>
+	</test>
+
+
+	<test name="Airlock_REST_API_Tests_Scenarios_rules" enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.rules"/>
+
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Scenarios_season"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.season" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_Scenarios_streams"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.streams" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_Scenarios_stream_utilities"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.stream_utilities" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Scenarios_strings"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.strings" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Scenarios_translation"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.translation" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Scenarios_usergroups"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.usergroups" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Scenarios_utilities"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.utilities" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Scenarios_validations"  enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.validations" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_Validations_experiments"  enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.experiments" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Validations_feature"  enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.feature" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_validations_configuration" enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.configuration" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_validations_inputschema" enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.inputschema" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_Tests_Validations_product"  enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.product" />
+		</packages>
+	</test>
+ 
+	<test name="Airlock_REST_API_Tests_Validations_season"  enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.season" />
+		</packages>
+	</test>
+  
+	<test name="Airlock_REST_API_Tests_Validations_streams"  enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.streams" />
+		</packages>
+	</test>
+   
+	<test name="Airlock_REST_API_validations_strings" enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.strings" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_validations_utilities" enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.utilities" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_validations_userRoleSet" enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.UserRoleSet" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_validations_webhooks" enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.webhooks" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_validations_inAppPurchase" enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.inAppPurchase" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_validations_purchaseOptions" enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.purchaseOptions" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_Validations_airlock_notification"  enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.airlock_notification" />
+		</packages>
+	</test>
+   
+   <test name="Airlock_REST_API_Tests_Validations_orderingRules"  enabled="true">
+		<packages>
+			<package name="tests.restapi.validations.orderingRules" />
+		</packages>
+	</test>
+   
+	<test name="Airlock_REST_API_copy_Master" enabled="true">
+		<parameter name="runOnMaster" value="true"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.copy" />
+  	 	</packages>
+	</test>
+
+	<test name="Airlock_REST_API_copy_purchases_Master" enabled="true">
+		<parameter name="runOnMaster" value="true"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.copy_purchases" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_import_Master" enabled="true">
+		<parameter name="runOnMaster" value="true"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.import_features" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_import_purchases_Master" enabled="true">
+		<parameter name="runOnMaster" value="true"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.import_purchases" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_Branch" enabled="true">
+		<parameter name="runOnMaster" value="false"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.copy" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_purchases_Branch" enabled="true">
+		<parameter name="runOnMaster" value="false"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.copy_purchases" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_import_Branch" enabled="true">
+		<parameter name="runOnMaster" value="false"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.import_features" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_import_purchases_Branch" enabled="true">
+		<parameter name="runOnMaster" value="false"/>
+    	<packages>
+      		<package name="tests.restapi.copy_import.import_purchases" />
+  	 	</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_copyBetweenMasterAndBranch" enabled="true">
+		<packages>
+			<package name="tests.restapi.copy_import.copyBetweenMasterAndBranch" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_copyPurchasesBetweenMasterAndBranch" enabled="true">
+		<packages>
+			<package name="tests.restapi.copy_import.copyPurchasesBetweenMasterAndBranch" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_feature_with_strings" enabled="true">
+		<packages>
+			<package name="tests.restapi.copy_import.feature_with_strings" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_purchases_with_strings" enabled="true">
+		<packages>
+			<package name="tests.restapi.copy_import.purchases_with_strings" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_copy_strings" enabled="true">
+		<packages>
+			<package name="tests.restapi.copy_import.strings" />
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_scenarios_capabilities" enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.capabilities"/>
+
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_scenarios_userRoles" enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.userRoleSet"/>
+
+		</packages>
+	</test>
+
+	<test name="Airlock_REST_API_scenarios_webhooks" enabled="true">
+		<packages>
+			<package name="tests.restapi.scenarios.webhooks"/>
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_in_app_purchases"  enabled="true">
+		<packages>
+			<package name="tests.restapi.in_app_purchases" />
+		</packages>
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_analytics_in_purchases_Master"  enabled="true">
+		<parameter name="branchType" value="Master"/>
+		<packages>
+			<package name="tests.restapi.analytics_in_purchases" />
+		</packages>
+	</test>
+ 
+ 	<test name="Airlock_REST_API_Tests_analytics_in_purchases_standAlone"  enabled="true">
+		<parameter name="branchType" value="StandAlone"/>
+		<packages>
+			<package name="tests.restapi.analytics_in_purchases" />
+		</packages>
+	</test>
+ 
+ 	<test name="Airlock_REST_API_Tests_analytics_in_purchases_devExp"  enabled="true">
+		<parameter name="branchType" value="DevExp"/>
+		<packages>
+			<package name="tests.restapi.analytics_in_purchases" />
+		</packages>
+	</test>
+ 
+	 <test name="Airlock_REST_API_Tests_analytics_in_purchases_prodExp"  enabled="true">
+		<parameter name="branchType" value="ProdExp"/>
+		<packages>
+			<package name="tests.restapi.analytics_in_purchases" />
+		</packages>
+	</test>
+ 
+	<test name="AfterSuite"  enabled="true">
+		<classes>
+			<class name="tests.restapi.SuiteCleanup"></class>
+		</classes>
+	</test>
+</suite>
+

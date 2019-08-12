@@ -1,0 +1,15 @@
+{
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{\"display\":\"Aujourd\\\\'hui\"}",
+				"features": [
+				],
+				"isON": true,
+				"name": "tr.Distance",
+				"resultTrace": "Configurations: [defaultConfiguration, trDistance.Today]",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

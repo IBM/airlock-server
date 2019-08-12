@@ -1,0 +1,28 @@
+	{
+		"title": "Example Schema",
+		"type": "object",
+		"properties": {
+			"color": {
+				"type": "string"
+			},
+			"text": {
+				"type": "string"
+			},
+			"icon": {
+				"type": "string"
+			},
+			"size": {
+				"type": "integer",
+				"description": "Text size",
+				"minimum": 1
+			},
+			"background": {
+				"type": "string"
+			},
+			"alert": {
+				"type": "boolean"
+			}
+		},
+		"required": ["color", "text"],
+		"additionalProperties":false
+	}	

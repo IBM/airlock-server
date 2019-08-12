@@ -1,0 +1,9 @@
+{
+		"key": "app.newhello",
+		"value": "NewHello",
+		"owner": "Mary",
+		"internationalFallback": "NewsHello",
+		"minAppVersion":"0.1",
+		"stage":"DEVELOPMENT",
+		"creator":"vicky"
+	}

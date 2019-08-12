@@ -1,0 +1,9 @@
+{
+
+	"color": "red",
+	"text" : "welcome to hell",
+	"icon" : "a.jpg",
+	"size"	: 2,
+	"background" : "white",
+	"alert"	: false
+}

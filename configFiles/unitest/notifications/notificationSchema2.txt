@@ -1,0 +1,25 @@
+
+{
+    "properties": {
+      "text": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "image": {
+        "type": "string"
+      },
+      "dueDate": {
+        "minimum": 0,
+        "type": "integer"
+      }
+    },
+    "required": [
+      "title",
+      "text",
+      "image"
+    ],
+    "type": "object"
+  }
+}

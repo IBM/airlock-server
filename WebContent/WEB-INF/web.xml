@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+	<display-name>Air Lock Back End</display-name>
+	<servlet>
+	    <description>JAX-RS Tools Generated - Do not modify</description>
+		<servlet-name>JAX-RS Servlet</servlet-name>
+		<!--servlet-class>com.ibm.websphere.jaxrs.server.IBMRestServlet</servlet-class-->			
+		 <servlet-class>org.apache.wink.server.internal.servlet.RestServlet</servlet-class> 
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>com.ibm.airlock.AirLockApplication</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>DefaultJaxrsConfig</servlet-name>
+		<servlet-class>com.wordnik.swagger.jaxrs.config.DefaultJaxrsConfig</servlet-class>
+		<init-param>
+			<param-name>api.version</param-name>
+			<param-value>1.0.0</param-value>
+		</init-param>
+	    <init-param>
+	      <param-name>swagger.api.basepath</param-name>
+	      <param-value>/airlock/api</param-value>
+	    </init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JAX-RS Servlet</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>		
+	<listener>
+    	<listener-class>com.ibm.airlock.AirLockContextListener</listener-class>
+  	</listener>
+  	<context-param>
+    	<param-name>DATA_SERIALIZER_TYPE</param-name>
+    	<param-value>S3</param-value> <!-- S3 or local -->
+  	</context-param>
+  	
+
+	<filter>
+  		<filter-name>CorsFilter</filter-name>
+  		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+  		<init-param>
+    		<param-name>cors.allowed.origins</param-name>
+    		<param-value>*</param-value>
+  		</init-param>
+  		<init-param>
+    		<param-name>cors.allowed.methods</param-name>
+    		<param-value>GET,POST,HEAD,OPTIONS,PUT,DELETE</param-value>
+  		</init-param>
+	  	<init-param>
+	    	<param-name>cors.allowed.headers</param-name>
+	    	<param-value>Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers,sessionToken</param-value>
+	  	</init-param>
+	  	<init-param>
+	    	<param-name>cors.exposed.headers</param-name>
+	    	<param-value>Access-Control-Allow-Origin</param-value>
+	  	</init-param>
+	  	<init-param>
+	    	<param-name>cors.preflight.maxage</param-name>
+	    	<param-value>10000</param-value>
+	  	</init-param>
+	</filter>
+	
+	<filter-mapping>
+  		<filter-name>CorsFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+	<!--  Authorizing filer replaced with SecurityFilter
+  	<filter>
+	<filter-name>AuthorizingFilter</filter-name>
+	<filter-class>
+		com.ibm.airlock.AuthorizingFilter
+	</filter-class>
+
+	// all GETs are ignored by the Authorizing Filter 
+	<init-param>
+	    <param-name>permitGet</param-name>
+        <param-value>/;</param-value>
+    </init-param>
+
+   // admin/authentication POSTs are ignored by the Authorizing Filter 
+    <init-param>
+        <param-name>permitOther</param-name>
+        <param-value>/airlock/api/admin/authentication;</param-value>
+	</init-param>
+	</filter>
+
+    //anything not in the permit lists is processed by the Authorizing Filter 
+	<filter-mapping>
+	<filter-name>AuthorizingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping-->
+
+	<filter>
+		<filter-name>StateVerificationFilter</filter-name>
+		<filter-class>
+			com.ibm.airlock.filters.StateVerificationFilter
+		</filter-class>
+	</filter>
+	
+	
+	<filter-mapping>
+  		<filter-name>StateVerificationFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+  	
+</web-app>

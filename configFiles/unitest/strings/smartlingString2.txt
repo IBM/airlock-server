@@ -1,0 +1,10 @@
+	{
+      "owner": null,
+      "internationalFallback": "CLEAR",
+      "stage": "DEVELOPMENT",
+      "variant": "",
+      "value": "Hello Haifa. It's a test",
+      "key": "test.hello.haifa",
+      "minAppVersion":"0.1",
+      "translationInstruction": "short"
+    }

@@ -1,0 +1,85 @@
+{
+	"stage": "DEVELOPMENT",
+	"name": "video played",
+	"description": "stream description",
+	"enabled": true,
+	"creator": "vicky",
+	"internalUserGroups": ["QA", "DEV"],
+	"rolloutPercentage": 100.0,
+	"minAppVersion": "5.0",
+	"filter": "event.name === \"video-played\"",
+	"processor": "function streamFunc(){results.count = 1}",
+	"cacheSizeKB": 1024,
+	"queueSizeKB": 1024,
+	"maxQueuedEvents": 2,
+	"owner": "vicky",
+	"resultsSchema": {
+			"properties": {
+				"maps": {
+					"properties": {
+						"lastSession": {
+							"properties": {
+								"count": {
+									"type": "integer"
+								},
+								"maxHour": {
+									"type": "integer"
+								},
+								"minHour": {
+									"type": "integer"
+								}
+							},
+							"type": ["object"]
+						},
+						"fiveSessions": {
+							"properties": {
+								"count": {
+									"type": "integer"
+								},
+								"countSession": {
+									"type": "integer"
+								},
+								"share": {
+									"type": "integer"
+								},
+								"maxHour": {
+									"type": "integer"
+								},
+								"minHour": {
+									"type": "integer"
+								}
+							},
+							"type": ["object"]
+						},
+						"days": {
+							"properties": {
+								"count": {
+									"type": "integer"
+								},
+								"countSession": {
+									"type": "integer"
+								},
+								"share": {
+									"type": "integer"
+								},
+								"maxHour": {
+									"type": "integer"
+								},
+								"minHour": {
+									"type": "integer"
+								}
+							},
+							"type": ["object"]
+						}
+					},
+					"type": "object"
+				}
+
+			},
+			"type": "object"
+
+
+		}
+	
+
+}

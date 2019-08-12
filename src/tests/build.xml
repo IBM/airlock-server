@@ -1,0 +1,57 @@
+<!-- Compile and run ICMCloud tests -->
+<project name="AirLockRestApiTests" default="create-jar-file" basedir=".">
+	
+	<property name="src" location="restapi"/>
+	<property name="bin" location="bin"/>
+	<property name="lib" location="../../lib"/>
+	<property name="output" location="../../output"/>
+
+	<target name="clean-bin">
+		<delete dir="${bin}"/>
+		<!-- <delete dir="${output}"/> --> 
+	</target>
+	
+	
+	<target name="compile" depends="clean-bin">
+		<echo message="Compiling the test code into the bin folder"/>
+		<mkdir dir="${bin}"/>
+		<!-- Compile the java code from ${src} into ${bin} -->
+	
+		<!--<jvmarg value="-Dfile.encoding=UTF-8"/>-->
+		<javac srcdir="${src}" destdir="${bin}"  encoding="utf-8">
+			<classpath>
+				<pathelement location="${lib}/commons-lang3-3.4.jar" />
+				<pathelement location="${lib}/testng.jar" />
+				<pathelement location="${lib}/qa_utils.jar" />
+				<pathelement location="${lib}/wink-1.4.jar" />
+				<pathelement location="${lib}/utils.jar" />
+				<pathelement location="${lib}/commons-lang-2.4.jar" />
+				<pathelement location="${output}/airlockRuleTester.jar" />
+			</classpath>
+		</javac>
+	</target>	
+	
+	<target name="create-jar-file" depends="compile">
+		<echo message="Create a jar file of the compiled test code"/>
+		<jar jarfile="${output}/airlockrestapi_tests.jar" basedir="${bin}"></jar>
+	</target>
+	
+	<!-- ==================== Package Target ================================== -->
+	<target name="package" depends="create-jar-file" description="Package.">
+		
+		<copy todir="${output}/lib">
+			<fileset dir="${lib}" includes="*.jar"/>
+		</copy>
+		
+		<copy todir="${output}/configFiles">
+			<fileset dir="../../configFiles" />
+		</copy>
+		<copy file="runme.bat" todir="${output}"/>
+		<copy file="runme.sh" todir="${output}"/>
+		<copy file="testng.xml" todir="${output}"/>
+		
+		<zip destfile="${output}/testNG.zip"
+             basedir="${output}"
+        />
+	</target>
+</project>

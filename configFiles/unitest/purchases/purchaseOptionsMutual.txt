@@ -1,0 +1,6 @@
+{
+
+	"type": "PURCHASE_OPTIONS_MUTUAL_EXCLUSION_GROUP",
+	"purchasesOptions": [],
+	"maxFeaturesOn": 2
+}

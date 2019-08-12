@@ -1,0 +1,15 @@
+{
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{}",
+				"features": [
+				],
+				"isON": false,
+				"name": "tr.Distance",
+				"resultTrace": "Rule disabled",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

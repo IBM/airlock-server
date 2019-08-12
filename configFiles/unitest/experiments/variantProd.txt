@@ -1,0 +1,16 @@
+{
+	"rule": {
+		"ruleString": "true"
+	},
+	"rolloutPercentage": 100.0,
+	"name": "variantProd",
+	"stage": "PRODUCTION",
+	"description": "variant desc",
+	"enabled":true,
+	"branchName":"branch2",
+	"creator":"irit",
+	 "internalUserGroups": [
+   	 	"QA",
+    	"DEV"
+  	]
+}

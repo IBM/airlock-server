@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Airlock_REST_API_Tests" verbose="1">
+
+		<parameter name="url" value="http://airlock-test4-adminapi.eu-west-1.elasticbeanstalk.com/airlock/api/admin"></parameter>
+		<parameter name="translationsUrl" value="http://airlock-test4-adminapi.eu-west-1.elasticbeanstalk.com/airlock/api/translations"></parameter>
+		<parameter name="analyticsUrl" value="http://airlock-test4-adminapi.eu-west-1.elasticbeanstalk.com/airlock/api/analytics"></parameter>
+		<parameter name="configPath" value="../../configFiles/unitest/"></parameter>
+		<parameter name="operationsUrl" value="http://airlock-test4-adminapi.eu-west-1.elasticbeanstalk.com/airlock/api/ops"></parameter>
+		<parameter name="positiveScenarios" value="../../configFiles/unitest/testDriverScenarios/positive/"></parameter>
+		<parameter name="negativeScenarios" value="C:\\Develop\\airlock-backend-Q12017\\airlock-api-backend\\configFiles\\unitest\\testDriverScenarios\\negative\\"></parameter>		
+		<parameter name="sessionToken" value="123"/>
+		<parameter name="excludeProductsDelete" value="iOS Flagship Phone,Android Flagship Phone,iOS TWC Storm Radar,Android TWC Storm Radar,Floor Elevation POC,QA.DiffBranchedProduct,ExperimentDisabledInProdWithVariantDisabled,ExperimentInProdWithProdDev,ConfigurationNoRules,NoRulePercentage,OverallProductBackwardCompatibility,MTXGroupingAllTrue,NoRuleGroups,MTXGroupingTrueFalse,ExperimentInDevWithDevDev,ExperimentInDevWithDevDev,AnalyticsWithBranch, NoRule100,ConfigurationNoRules2Configs,ConfigurationsWithSubConfig,ConfigurationWithRules,MTXGroupingConfiguration,TestAdina,MTXGroupingConfiguration, UtilityInRule,SDKStringsTranslations,A console testing product,Elik,denisProd,CheckAutoTranslation,TestProdAndroid,ConsoleTesting,LiozTest,SDKBranchesSubfeatures,ExperimentInProdWithDevProd,Andrei6,Andrei7,AnalyticsProductV25,DevProdWithRulesTest,NoRulePercentageFinegrain,ExperimentInProdWithProdProd, OverallProductWithBranches,ExperimentInProdWithDevDev,ConfigurationMutualExclusion,ConfigurationFeatureOn, ProfilesSimpleCondition,ProfilesComplexCondition,OverallProduct,testBitmap,CheckBitmapWithStructure,ChangeFeaturesWithBitmap,AnalyticsProduct,ChangeFeaturesWithBitmap,Android1Q17Backup1,iOS1Q17Backup1,ProductForDebugging,CheckStrings,ConfigurationNoRules,ConfigurationNoRules2Configs,ConfigurationsWithSubConfig,ConfigurationWithRules,ConfigurationMutualExclusion,ConfigurationFeatureOn,NoRulePercentage,NoRuleGroups,NoRule100,NoRulePercentageUpgraded,NoRulePercentageFinegrain,MTXGroupingAllTrue,MTXGroupingTrueFalse,MTXGroupingConfiguration,MTXGrouping,QA.Android.WhiteList,QA.Android.ProdDevSeparation,QA.SimpleProduct,QA.FeatureUsageTest,QA.JSFileTest,QA.Product,EmptyProduct,QA.RulesTrace,QA.TreeProduct,QA.WhiteList,QA.MaxVersionProduct,QA.DebugModeTest,Vlad.E2ETest1,AndroidBugHuntTranslations,AndroidBugHuntReorderingRules,AndroidBugHuntNotifications,iOSBugHuntTranslations,iOSBugHuntReorderingRules,iOSBugHuntNotifications"/>
+		<parameter name="deleteAll"  value="false"	/>
+		<parameter name="productsToDeleteFile" value="productsToDelete.txt" />
+		<parameter name="notify" value="false" />
+		<parameter name="seasonVersion" value="3.0" />
+		<parameter name="userName" value=""></parameter>
+		<parameter name="userPassword" value=""></parameter>
+		<parameter name="appName" value=" "/>
+		<parameter name="runOnMaster" value="true"/>
+		<parameter name="adminUser" value=""></parameter>
+		<parameter name="adminPassword" value=""></parameter>
+		<parameter name="appName" value=" "/>
+		
+	<listeners>
+        <listener class-name="tests.testng.ExecOrderReporter" />
+        <listener class-name="tests.testng.ExecOrderEmailReporter" />
+    </listeners>
+	
+	<test name="BeforeSuite"  enabled="true"> 
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteSetup"></class> 
+    	</classes> 
+	</test>
+	
+	<test name="Airlock_REST_API_Tests_BVT"  enabled="false">		
+    	<packages>
+    		<package name="tests.restapi.bvt" />
+  	 	</packages>
+   </test>
+
+   		<test name="AfterSuite"  enabled="true"> 
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteCleanup"></class> 
+    	</classes> 
+	</test> 
+	
+		
+   	
+</suite>
+

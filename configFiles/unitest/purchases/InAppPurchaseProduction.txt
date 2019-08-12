@@ -1,0 +1,31 @@
+{
+  "owner": "Norman",
+  "enabled": true,
+  "parent": null,
+  "stage": "PRODUCTION",
+  "additionalInfo": {
+    "ccc": "ddd",
+    "size":2
+  },
+  "namespace": "ns1",
+  "creator": "Philip",
+  "internalUserGroups": [
+    "QA",
+    "DEV"
+  ],
+  "description": "InAppPurchase desc",
+  "rule": {
+    "ruleString": ""
+  },
+  "minAppVersion": "0.1",
+  "name": "InAppPurchase in production",
+  "seasonId": null,
+  "features": [],
+  "defaultIfAirlockSystemIsDown": false,
+   "type": "ENTITLEMENT",
+   "rolloutPercentage": 30,
+   "includedEntitlements":[]
+}
+
+
+ 

@@ -1,0 +1,29 @@
+{
+	"enabled": true,
+	"type": "FEATURE",
+	"stage": "DEVELOPMENT",
+	"additionalInfo": {
+		"aaa": "bbb"
+	},
+	"namespace": "ns1",
+	"creator": "Philip",
+	"internalUserGroups": [
+		"QA",
+		"DEV"
+	],
+	"description": "F21 desc",
+	"rule": {
+		"ruleString": "",
+		"force": false
+	},
+	"minAppVersion": "0.1",
+	"name": "FCR1",
+	"seasonId": null,
+	"features": [],
+	"owner": "Norman",
+	"noCachedResults": false,
+	"defaultIfAirlockSystemIsDown": false,
+	"rolloutPercentage": 10,
+	"configurationSchema": {},
+	"defaultConfiguration": "{\"text\":context.viewedLocation.country}"
+}

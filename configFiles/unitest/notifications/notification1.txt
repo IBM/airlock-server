@@ -1,0 +1,24 @@
+{
+	"enabled": true,
+	"name": "notif1",
+	"description": "notification desc",
+	"displayName": "notif1",
+	"internalUserGroups" :  [
+    	"QA",
+    	"DEV"
+ 	 ],
+ 	"owner" : "irit",	 
+	"rolloutPercentage": 100,
+	"creator": "irit",
+	"minAppVersion": "8.6",
+	"stage": "DEVELOPMENT",
+	"cancellationRule":{
+		"ruleString": "false"
+	},
+	"registrationRule":{
+		"ruleString": "false"
+	},
+	"configuration":"{\"notification\":{'title':'sss'}}",
+	"maxNotifications" : 2,
+	"minInterval" : 10
+}

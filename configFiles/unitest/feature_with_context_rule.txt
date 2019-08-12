@@ -1,0 +1,30 @@
+{
+  "enabled": true,
+  "type": "FEATURE",
+  "stage": "DEVELOPMENT",
+  "additionalInfo": {
+    "aaa": "bbb"
+  },
+  "namespace": "ns1",
+  "creator": "Philip",
+  "internalUserGroups": [
+    "QA",
+    "DEV"
+  ],
+  "description": "F21 desc",
+  "rule": {
+  	"force": false,
+    "ruleString": "context.viewedLocation !== null && \r\ncontext.viewedLocation.country == \"IS\" &&\r\n((parseInt(new Date(\"2016-12-24\")-new Date(context.weatherSummary.observation.obsTime))\/1000\/60\/60\/24) < 14)"
+  },
+  "minAppVersion": "0.1",
+  "name": "FeatureWithContextRule",
+  "seasonId": null,
+  "features": [],
+  "owner": "Norman",
+  "defaultIfAirlockSystemIsDown": false,
+  "rolloutPercentage": 100,
+  "noCachedResults": false
+}
+
+
+ 

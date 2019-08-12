@@ -1,0 +1,20 @@
+{
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{\"display unit KM\":3.106863683249034,\"display unit CM\":3.937007874015748,\"display unit MPH\":10,\"display unit C\":50,\"display unit I\":10,\"display unit KMH\":6.213727366498068,\"display unit F\":50,\"display unit M\":5}",
+				"featureIsReported": false,
+				"features": [
+				],
+				"isON": true,
+				"name": "tr.Distance",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, trDistance.getLengthUnit, trDistance.getVelocityUnit, trDistance.getTempratureUnit, trDistance.getPressureUnit, trDistance.getDistanceShortUnit, trDistance.getDistanceUnit, trDistance.isMetric, trDistance.isCelsius]",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

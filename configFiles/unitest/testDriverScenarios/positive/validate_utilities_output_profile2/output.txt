@@ -1,0 +1,20 @@
+{
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{\"display compareTime: 2. later\":1,\"display inMiles\":5,\"display\":\"MI\",\"display compareTime: 3. equal\":0,\"display isMetric\":false,\"display inInches\":10,\"getTemperatureUnit\":\"F\",\"display isCelsius\":false,\"display compareTime: 1. earlier\":-1,\"display getTimeStr\":\"12:28\",\"display inMPH\":10,\"display getMinutes\":28,\"display daysFromToday: \":357,\"display isKMH\":false,\"display formatAMPM\":\"12:28\",\"display toDate\":\"2017-01-12T11:45:22.640Z\",\"display getHours\":12,\"display inFahrenheit\":0}",
+				"featureIsReported": false,
+				"features": [
+				],
+				"isON": true,
+				"name": "tr.Distance",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, trDistance.getLengthUnit, trDistance.getVelocityUnit, trDistance.getTempratureUnit, trDistance.getPressureUnit, trDistance.getDistanceShortUnit, trDistance.getDistanceUnit, trDistance.isMetric, trDistance.isCelsius, trDistance.isKMH, trDistance.inMiles, trDistance.inFahrenheit, trDistance.inMPH, trDistance.inInches, trDistance.toDate, trDistance.getHours, trDistance.getMinutes, trDistance.getTimeStr, trDistance.formatAMPM, trDistance.compareTimeEarlier, trDistance.compareTimeLater, trDistance.compareTimeEqual, trDistance.daysFromToday]",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

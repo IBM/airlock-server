@@ -1,0 +1,7 @@
+	
+        {
+          "minVersion": "1.4",
+          "productId": null,
+          "uniqueId": null
+        }
+ 

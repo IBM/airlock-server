@@ -1,0 +1,109 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["* /translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "General.FeelsLike",
+"translation" : "Temp. ressentie"
+},
+"translationKey2": {
+"stringId" : "HeadsUp.LightningStrike",
+"translation" : "Coup de foudre"
+},
+"translationKey3": {
+"stringId" : "Units.PM",
+"translation" : "AM"
+},
+"translationKey4": {
+"stringId" : "Units.AM",
+"translation" : "PM"
+},
+"translationKey5": {
+"stringId" : "General.TONIGHT",
+"translation" : "La nuit"
+},
+"translationKey6": {
+"stringId" : "General.Tomorrow",
+"translation" : "Demain"
+},
+"translationKey7": {
+"stringId" : "General.TODAY",
+"translation" : "Aujourd\\'hui"
+},
+"translationKey8": {
+"stringId" : "HeadsUp.RAIN",
+"translation" : "Pluie"
+},
+"translationKey9": {
+"stringId" : "HeadsUp.RainPossible",
+"translation" : "Pluie possible"
+},
+"translationKey10": {
+"stringId" : "HeadsUp.RainLikely",
+"translation" : "Pluie probable"
+},
+"translationKey11": {
+"stringId" : "HeadsUp.SNOW",
+"translation" : "Neige"
+},
+"translationKey12": {
+"stringId" : "HeadsUp.SnowPossible",
+"translation" : "Neige possible"
+},
+"translationKey13": {
+"stringId" : "HeadsUp.SnowLikely",
+"translation" : "Risque de neige"
+},
+"translationKey14": {
+"stringId" : "HeadsUp.LightSnow",
+"translation" : "Neige légère"
+},
+"translationKey15": {
+"stringId" : "HeadsUp.LightSnowPossible",
+"translation" : "Neige légère possibl"
+},
+"translationKey16": {
+"stringId" : "HeadsUp.MIX",
+"translation" : "Temps hivernal"
+},
+"translationKey17": {
+"stringId" : "HeadsUp.MixPossible",
+"translation" : "Temps hiver possible"
+},
+"translationKey18": {
+"stringId" : "HeadsUp.MixLikely",
+"translation" : "Risque temps hiver"
+},
+"translationKey19": {
+"stringId" : "General.FeelsLikePlus",
+"translation" : "T. ressentie"
+},
+"translationKey20": {
+"stringId" : "General.Sunrise",
+"translation" : "Lever soleil"
+},
+"translationKey21": {
+"stringId" : "General.Sunset",
+"translation" : "Couch. sol."
+},
+"translationKey22": {
+"stringId" : "HeadsUp.WinterStormLikely",
+"translation" : "Tempête Hivernale Prob"
+},
+"translationKey23": {
+"stringId" : "HeadsUp.WinterStormPossible",
+"translation" : "Tempête Hivernale Possble"
+},
+"translationKey24": {
+"stringId" : "HeadsUp.SeeRadar",
+"translation" : "VOIR RADAR "
+},
+"translationKey25": {
+"stringId" : "HeadsUp.InView",
+"translation" : "[[[1]]] EN VUE"
+}
+}

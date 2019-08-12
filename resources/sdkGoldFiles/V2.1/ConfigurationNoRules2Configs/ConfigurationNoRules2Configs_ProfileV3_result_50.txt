@@ -1,0 +1,33 @@
+{
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{\"icon\":\"c.jpg\",\"text\":\"welcome to paradise\",\"color\":\"yellow\",\"alert\":true,\"background\":\"magenta\",\"size\":3}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CNR2C.ConfigCompleteOverwrite",
+				"resultTrace": "Configurations: [defaultConfiguration, ConfigCompleteOverwriteCNR2C.CompleteOverwrite1, ConfigCompleteOverwriteCNR2C.CompleteOverwrite2]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"icon\":\"a.jpg\",\"text\":\"welcome to hell\",\"color\":\"yellow\",\"alert\":false,\"background\":\"white\",\"size\":2}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CNR2C.ConfigOverwrite1Param",
+				"resultTrace": "Configurations: [defaultConfiguration, ConfigOverwrite1ParamCNR2C.Overwrite1Param1, ConfigOverwrite1ParamCNR2C.Overwrite1Param2, ConfigOverwrite1ParamCNR2C.Overwrite1Param]",
+				"type": "FEATURE"
+			},
+			{
+				"featureAttributes": "{\"icon\":\"a.jpg\",\"text\":\"welcome to hell\",\"color\":\"green\",\"alert\":false,\"background\":\"white\",\"size\":3}",
+				"features": [
+				],
+				"isON": true,
+				"name": "CNR2C.ConfigOverwriteDifferentParam",
+				"resultTrace": "Configurations: [defaultConfiguration, ConfigOverwriteDifferentParamCNR2C.OverwriteDifferentParam, ConfigOverwriteDifferentParamCNR2C.OverwriteDifferentParam2]",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

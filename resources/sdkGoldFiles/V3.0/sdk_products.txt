@@ -1,0 +1,23 @@
+product: ExperimentDisabledInProdWithVariantDisabled	 productId: 52853b18-6e6c-4813-9345-4a7388b5e08b	 seasonId: 4e7164b6-9665-427e-971b-f53319b12316
+product: ExperimentInProdWithDevDev	 productId: 99510a95-2e98-40f5-a32d-62a0314d9ddb	 seasonId: cad502d0-c1ef-400e-b999-ad4ad84d247a
+product: ExperimentInProdWithProdDev	 productId: cf8a2a5e-6219-48ff-8338-90dc72584d94	 seasonId: 4799793c-2d51-4587-b15f-ff0e9852d161
+product: ExperimentInProdWithDevProd	 productId: 024fc7d1-0910-4f01-9d5a-706829190442	 seasonId: 00b44ac3-cc51-4637-8213-15494a878241
+product: ExperimentInProdWithProdProd	 productId: 4abfc574-36fd-48ed-bd73-de4c26f866dc	 seasonId: b1f4d858-6b54-4436-a100-991279089aaf
+product: ExperimentInDevWithDevDev	 productId: da859974-2c79-4e47-8e68-b75d76ef4118	 seasonId: b1ede346-6c24-4873-b639-fed931d7b1dc
+product: UtilityInRule	productId:568ddbeb-7d0c-442c-9b65-dec2d9504862	seasonId: 90b0d000-30c9-4df0-942e-155653ca7dd5
+product: OverallProductWithBranches    productId: 9fe124e9-17c9-4ba3-be7d-6c6587c17092 seasonId: 7e10045a-921b-4d31-9dbf-2d16b5ff35c2 
+product: AnalyticsInBranches    productId: b2c04456-3969-467d-b6c0-5949b5361a4c seasonId: f595a0bb-556b-44d9-819d-871fbafb3f87
+ConfigurationFeatureOn  	 ProdId: 1a768855-1d5d-4413-b60a-ca8c868625cd  SeasonId 2.5: f5e9ea10-0eb4-4c36-8a19-2b4f1fc9e398 SeasonId 3: b4ec34e9-91a1-4f74-ae23-c7c415a8734b
+MTXGroupingAllTrue			 ProdId: 6c776a19-db00-47e4-bd97-39d768686d12  SeasonId 2.5: f76d9b6b-6d46-45cf-bc98-6c230aa4266e SeasonId 3: d0bbe3a9-39bc-42c9-b700-af09dd35e0ef
+ConfigurationsWithSubConfig  ProdId: 6f733d14-2d05-4120-a779-c5f1e5e43e55  SeasonId 2.5: 850a18a3-e43b-40e9-a3e0-ee388b00aa3d SeasonId 3: f372f5fe-3236-4fa9-9ec0-77e7b672e77c
+ConfigurationWithRules       ProdId: e2eaf6b5-e2e8-4662-8099-bc267327645e  SeasonId 2.5: 4906c873-8201-4983-a98f-0dc79b1f2537 SeasonId 3: 9c8f0452-64ac-43bd-856d-32ed53e70be0
+ConfigurationMutualExclusion ProdId: 0084e302-e7aa-4300-ad8d-9f3d88ba8531  SeasonId 2.5: 11468087-86a8-47ad-a5c9-1e15b2d0ac28 SeasonId 3: ab8a052e-8a7d-4da7-a5ba-4d1dc62df006
+ConfigurationNoRules2Configs ProdId: cc5ef7a6-d2b7-4ede-8609-9f1c75c29e2a  SeasonId 2.5: f0ecb6ee-3cf9-49a9-a6b2-88704832fbaa SeasonId 3: 4519b125-c998-48f7-b329-265c62715a74
+MTXGroupingConfiguration     ProdId: 2749cb61-1436-45d2-afdf-d866015b7971 SeasonId 2.5: f9012058-c904-4bfa-ab54-ce3d8f2be710 SeasonId 3: ec7b5e0d-1024-4053-87cb-5681210937c2
+MTXGroupingTrueFalse         ProdId: 6aed7bf1-2ff7-4f71-b8ed-8b491c8fb0db SeasonId 2.5: 79b13cbe-a68e-408a-95a0-e4bd5513c50d SeasonId 3: b44fd43b-bb8d-48ee-acbd-f5ea96043cf3
+NoRulePercentageFinegrain    ProdId: c195ec2d-5744-442c-9d6a-e1465b1f34be SeasonId 2.5: b8f603e9-62e7-4199-925c-b7d980858624 SeasonId 3: 0c14da82-349a-4a92-a9ec-5e3f0a432e3e
+AnalyticsProductV25			 ProdId: 02c6e33b-585c-4d8c-adf8-33af677b0814  SeasonId 2.5: 11d79035-539a-4fca-9afc-7f62763b6aed SeasonId 3: eb067c7d-8194-416a-a87a-6d82c1cf9eb1
+DevProdWithRulesTest 		 ProdId: c09eb7b7-b0c3-4934-8ae9-c80f8ec11979  SeasonId 2.5: N/A SeasonId 3: e73fe6cf-253f-4f9b-a063-6ec26d4403ca
+SDKBranchesSubfeatures 	     ProdId: b7b794c4-eca9-457d-bed8-80b4a03852a4  SeasonId 2.5: N/A SeasonId 3: 284b3e9a-a2bc-498a-b515-c40584ae9741
+OverallProductBackwardCompatibility    ProdId: 9fe124e9-17c9-4ba3-be7d-53b00ff1-7fd0-4240-b19f-28f32c4b7134 SeasonId 2.5: b47d460a-7442-4db8-bac9-821877952738 SeasonId 3: 95948355-6781-482a-847b-52668c32ac6a
+SDKStringsTranslations  	 ProdId: 5566fa88-e775-4a3d-a454-d0fd172ea86f SeasonId 2.5: N/A SeasonId 3: a4ccf3ab-51ea-46dd-ae0e-d4f8e1093aea

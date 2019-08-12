@@ -1,0 +1,24 @@
+{
+"smartling" : {
+"translate_mode" : "custom",
+"translate_paths": ["*/translation"],
+"source_key_paths": ["{*}/translation"],
+"placeholder_format_custom": ["\\[\\[\\[(\\d+)\\]\\]\\]"],
+"variants_enabled": true
+},
+"translationKey1": {
+"stringId" : "app.hello",
+"instruction" : "short",
+"variant" : "variant1",
+"translation" : "Hello [[[1]]]"
+},
+"translationKey2": {
+"stringId" : "app.hi",
+"translation" : "Hi [[[1]]] [[[2]]]"
+},
+"translationKey3": {
+"stringId" : "app.helloProd",
+"instruction" : "long",
+"translation" : "Hello"
+}
+}

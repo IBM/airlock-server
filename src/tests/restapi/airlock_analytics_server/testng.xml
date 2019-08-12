@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Airlock_REST_API_scenarios" verbose="1">
+	<parameter name="url" value="http://localhost:9090/airlock/api/admin"></parameter>
+	<parameter name="analyticsUrl" value="http://localhost:9090/airlock/api/analytics"></parameter>
+	<parameter name="analyticsServerUrl" value="http://localhost:9090/airlockanalytics/api"></parameter>
+	<parameter name="configPath" value=""></parameter>
+	<parameter name="excludeProductsDelete" value=""/>
+	<parameter name="productsToDeleteFile" value="./src/tests/productsToDelete.txt" />
+	<parameter name="deleteAll" value="false" />
+	<parameter name="seasonVersion" value="3.0" />
+	<parameter name="userName" value=""></parameter>
+	<parameter name="userPassword" value=""></parameter>
+	<parameter name="appName" value=""/>
+	
+
+
+	<test name="BeforeSuite"  enabled="true">
+		<classes>
+			<class name="tests.restapi.SuiteSetup"></class>
+		</classes>
+	</test>
+
+	<test name="Airlock_REST_API_aas" enabled="true">
+		<classes>
+			<class name="tests.restapi.airlock_analytics_server.S3ObserverUpdate">
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Airlock_REST_API_aas_package" enabled="false">
+		<packages>
+			<package name="tests.restapi.airlock_analytics_server">
+			</package>
+		</packages>
+	</test>
+	
+	  <test name="AfterSuite"  enabled="true">
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteCleanup"></class> 
+    	</classes> 
+	</test> 
+
+</suite>

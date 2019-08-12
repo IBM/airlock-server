@@ -1,0 +1,6 @@
+
+      "description": "The Android Flagship application",
+      "name": "Product1",
+      "codeIdentifier": "A123",
+      "uniqueId": null
+    }

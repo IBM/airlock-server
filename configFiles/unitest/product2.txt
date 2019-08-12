@@ -1,0 +1,6 @@
+{
+      "description": "iOS demo feature",
+      "name": "Product2",
+      "codeIdentifier": "B123",
+      "uniqueId": null
+    }

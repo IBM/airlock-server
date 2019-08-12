@@ -1,0 +1,20 @@
+{
+	"root": {
+		"features": [
+			{
+				"featureAttributes": "{\"display getVelocityUnit\":\"\\u0645\\u064a\\u0644\\\/\\u0633\\u0627\\u0639\\u0629\",\"display getTemperatureUnit\":\"C\",\"display inMiles\":10,\"display getDistanceUnit\":\"\\u0645\\u064a\\u0644\",\"display inInches\":12.7,\"display isMetric\":false,\"display isCelsius\":true,\"display getDistanceShortUnit\":\"\\u0645\\u062a\\u0631\",\"display getPressureUnit\":\"\\u0645\\u0644 \\u0628\\u0627\\u0631\",\"display getTimeStr\":\"12:28\",\"display inMPH\":30,\"display getMinutes\":33,\"display isKMH\":false,\"display formatAMPM\":\"\\u06f2:\\u06f2\\u06f8 \\u0645\\u0633\\u0627\\u0621\\u064b\",\"display getHours\":8,\"display toDate\":\"2017-01-13T00:38:10.640Z\",\"display getLengthUnit\":\"\\u0633\\u0645\",\"display inFahrenheit\":-3.888888888888889}",
+				"featureIsReported": false,
+				"features": [
+				],
+				"isON": true,
+				"name": "tr.Distance",
+				"reportedConfigurationNames": {
+				},
+				"reportedConfigurationValues": {
+				},
+				"resultTrace": "Configurations: [defaultConfiguration, trDistance.getLengthUnit, trDistance.getVelocityUnit, trDistance.getTemperatureUnit, trDistance.getPressureUnit, trDistance.getDistanceShortUnit, trDistance.getDistanceUnit, trDistance.isMetric, trDistance.isCelsius, trDistance.isKMH, trDistance.inMiles, trDistance.inFahrenheit, trDistance.inMPH, trDistance.inInches, trDistance.toDate, trDistance.getHours, trDistance.getMinutes, trDistance.getTimeStr, trDistance.formatAMPM]",
+				"type": "FEATURE"
+			}
+		]
+	}
+}

@@ -1,0 +1,19 @@
+{
+            "enabled": true,
+            "type": "CONFIGURATION_RULE",
+            "stage": "PRODUCTION",
+            "creator": "Joe",
+            "namespace": "ns1",
+            "internalUserGroups": [
+              "QA",
+              "DEV"
+            ],
+            "description": "",
+            "name": "CR3Prod",
+            "minAppVersion": "1.1.1",
+            "rule": {
+             },
+            "features": [],
+            "rolloutPercentage": 10,
+            "configuration": "{ \"firstName\" : \"The Title is\" + translate(\"app.fallback\")}"
+}

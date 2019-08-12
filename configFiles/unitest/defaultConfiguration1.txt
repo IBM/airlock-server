@@ -1,0 +1,6 @@
+{
+
+	"color": "red",
+	"text" : "this is a comment",
+	"icon" : "a.jpg"
+}

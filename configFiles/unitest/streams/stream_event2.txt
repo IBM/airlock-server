@@ -1,0 +1,27 @@
+{
+	"events": [{
+			"name": "video-played",
+			"eventData": {
+				"fieldA": "video",
+				"fieldB": "audio"
+			}	
+		},
+		{
+			"name": "ad-played",
+			"eventData": {
+				"video": "video",
+				"audio": "audio",
+				"fieldC": "valueC",
+				"fieldD": "valueD"
+			}	
+		},
+		{
+			"name": "audio-played",
+			"eventData": {
+				"audioA": "audio"
+			}	
+		}
+		
+		
+	]
+}

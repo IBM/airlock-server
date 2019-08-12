@@ -1,0 +1,11 @@
+{
+		"creator": "Jhon Green",
+		"firstName": "xxx",
+		"identifier": "XXXYYY@il.ibm.com",
+		"isGroupRepresentation": false,
+		"lastName": "yyy",
+		"roles": [
+			"Viewer",
+			"Editor"
+		]
+}

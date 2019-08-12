@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"properties": {
+		"notification": {
+		"properties": {
+		"title": {
+					"type": "string"
+				},
+				"text": {
+					"type": "string"
+				},
+				"sound": {
+					"type": "string"
+				},
+				"thumbnail": {
+					"type": "string"
+				},
+				"dueDate": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"additionalInfo": {
+					"type": "object"
+				},
+				"actions": {
+					"type": "array"
+				}
+		},
+		"required":["title"],
+		"type":"object"
+		}
+	},
+	"required":["notification"],
+	"type":"object"
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="BVT test" verbose="1">
+
+	<parameter name="url" value="http://airlockbackend.azurewebsites.net/airlock/api/admin"></parameter>
+	<parameter name="analyticsUrl" value="http://airlockbackend.azurewebsites.net/airlock/api/analytics"></parameter>
+	<parameter name="translationsUrl" value="http://airlockbackend.azurewebsites.net/api/translations"></parameter>
+	<parameter name="configPath" value="/Users/iritma/Documents/develop/workspaces/airlock-backend-daimler/airlock-api-backend/configFiles/unitest/"></parameter>
+	<parameter name="operationsUrl" value="http://airlockbackend.azurewebsites.net/airlock/api/ops"></parameter>
+	<parameter name="excludeProductsDelete" value="iOS Flagship Phone,Android Flagship Phone,iOS TWC Storm Radar,Android TWC Storm Radar,Floor Elevation POC,QA.DiffBranchedProduct,ExperimentDisabledInProdWithVariantDisabled,ExperimentInProdWithProdDev,ConfigurationNoRules,NoRulePercentage,OverallProductBackwardCompatibility,MTXGroupingAllTrue,NoRuleGroups,MTXGroupingTrueFalse,ExperimentInDevWithDevDev,ExperimentInDevWithDevDev,AnalyticsWithBranch, NoRule100,ConfigurationNoRules2Configs,ConfigurationsWithSubConfig,ConfigurationWithRules,MTXGroupingConfiguration,TestAdina,MTXGroupingConfiguration, UtilityInRule,SDKStringsTranslations,A console testing product,Elik,denisProd,CheckAutoTranslation,TestProdAndroid,ConsoleTesting,LiozTest,SDKBranchesSubfeatures,ExperimentInProdWithDevProd,Andrei6,Andrei7,AnalyticsProductV25,DevProdWithRulesTest,NoRulePercentageFinegrain,ExperimentInProdWithProdProd, OverallProductWithBranches,ExperimentInProdWithDevDev,ConfigurationMutualExclusion,ConfigurationFeatureOn, ProfilesSimpleCondition,ProfilesComplexCondition,OverallProduct,testBitmap,CheckBitmapWithStructure,ChangeFeaturesWithBitmap,AnalyticsProduct,ChangeFeaturesWithBitmap,Android1Q17Backup1,iOS1Q17Backup1,ProductForDebugging,CheckStrings,ConfigurationNoRules,ConfigurationNoRules2Configs,ConfigurationsWithSubConfig,ConfigurationWithRules,ConfigurationMutualExclusion,ConfigurationFeatureOn,NoRulePercentage,NoRuleGroups,NoRule100,NoRulePercentageUpgraded,NoRulePercentageFinegrain,MTXGroupingAllTrue,MTXGroupingTrueFalse,MTXGroupingConfiguration,MTXGrouping,QA.Android.WhiteList,QA.Android.ProdDevSeparation,QA.SimpleProduct,QA.FeatureUsageTest,QA.JSFileTest,QA.Product,EmptyProduct,QA.RulesTrace,QA.TreeProduct,QA.WhiteList,QA.MaxVersionProduct,QA.DebugModeTest,Vlad.E2ETest1,AndroidBugHuntTranslations,AndroidBugHuntReorderingRules,AndroidBugHuntNotifications,iOSBugHuntTranslations,iOSBugHuntReorderingRules,iOSBugHuntNotifications"/>
+	<parameter name="productsToDeleteFile" value="./src/tests/productsToDelete.txt" />
+	<parameter name="deleteAll" value="false" />
+	<parameter name="notify" value="false" />
+	<parameter name="seasonVersion" value="3.0" />
+	<parameter name="userName" value=""></parameter>
+	<parameter name="userPassword" value=""></parameter>
+	<parameter name="adminUser" value=""></parameter>
+	<parameter name="adminPassword" value=""></parameter>
+	<parameter name="appName" value=" "/>
+	<parameter name="sessionToken" value=""/>
+
+
+	<listeners>
+        <listener class-name="tests.testng.ExecOrderReporter" />
+        <listener class-name="tests.testng.ExecOrderEmailReporter" />
+    </listeners>
+    
+	<test name="BeforeSuite"  enabled="true"> 
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteSetup"></class> 
+    	</classes> 
+	</test> 
+	    		
+	<test name="BVT test"   enabled="true">
+    	<packages>
+      		<package name="tests.restapi.bvt" />
+  	 	</packages>
+   </test>	
+   
+   	<test name="BVT test"   enabled="false">
+		<classes>
+			<class name="tests.restapi.bvt.EndToEndBasicTest">
+			</class>
+		</classes>
+   </test>
+   
+      <test name="AfterSuite"  enabled="true"> 
+   	 	<classes> 
+       		 <class name="tests.restapi.SuiteCleanup"></class> 
+    	</classes> 
+	</test>
+ 				
+</suite>
+
+

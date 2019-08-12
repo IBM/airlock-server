@@ -1,0 +1,22 @@
+{
+	"lastModified": 1479797461540,
+	"strings": [{
+		"key": "hello.world",
+		"value": "Hello World!",
+		"lastModified": 1479797461540,
+		"owner": "John",
+		"internationalFallback": "Hello",
+		"minAppVersion":"0.1",
+		"stage":"DEVELOPMENT"
+	}, {
+		"key": "app.title",
+		"value": "The Weather Company",
+		"lastModified": 1479797461540,
+		"owner": "Mary",
+		"internationalFallback": "Weather",
+		"minAppVersion":"0.1",
+		"stage":"DEVELOPMENT"
+	}]
+
+
+}

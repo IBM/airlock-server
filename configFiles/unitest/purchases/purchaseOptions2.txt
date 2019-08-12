@@ -1,0 +1,33 @@
+{
+  "enabled": true,
+  "type": "PURCHASE_OPTIONS",
+  "stage": "DEVELOPMENT",
+  "additionalInfo": {
+    "aaa": "bbb"
+  },
+  "namespace": "ns1",
+  "creator": "Jonathan",
+  "internalUserGroups": [
+    "QA",
+    "DEV"
+  ],
+  "description": "purchase options desc",
+  "rule": {
+    "ruleString": ""
+  },
+  "minAppVersion": "0.1",
+  "name": "purchaseOptions2",
+  "seasonId": null,
+  "features": [],
+  "owner": "Sara",
+  "defaultIfAirlockSystemIsDown": false,
+  "rolloutPercentage": 10,
+  "noCachedResults": false,
+  "storeProductIds": [{
+		"storeType": "Google Play Store",
+		"productId": "123"
+	}]
+}
+
+
+ 
