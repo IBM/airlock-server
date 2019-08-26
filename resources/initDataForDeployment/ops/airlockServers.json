@@ -2,8 +2,8 @@
   "servers": [
     {
       "displayName": "Production",
-      "url": "https://s3.amazonaws.com/airlockprod/PROD1/",
-      "cdnOverride": "https://s.w-x.co/airlock/PROD1/"
+      "url": "https://XXX/airlockprod/PROD1/",
+      "cdnOverride": "https://YYY/airlock/PROD1/"
     }
   ],
   "defaultServer": "Production",
