@@ -46,7 +46,6 @@
 		"displayName": "Viewer",
 		"role": "Viewer",
 		"users": [
-			"*.aaa.com"
 		]
 	}
   ],
