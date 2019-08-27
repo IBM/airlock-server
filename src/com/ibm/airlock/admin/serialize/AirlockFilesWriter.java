@@ -2419,35 +2419,6 @@ public class AirlockFilesWriter {
 	}
 	
 	//return error string upon error. null upon success
-	public static LinkedList<AirlockChangeContent> writeAirlockServers(JSONObject alServers, ServletContext context) throws IOException {
-		LinkedList<AirlockChangeContent> changesArr = new LinkedList<AirlockChangeContent>();
-		DataSerializer ds = (DataSerializer)context.getAttribute(Constants.DATA_SERIALIZER_PARAM_NAME);
-		
-		try {			
-			ds.writeData(Constants.AIRLOCK_SERVERS_FILE_NAME, alServers.write(true));
-			changesArr.add(AirlockChangeContent.getAdminChange(alServers, Constants.AIRLOCK_SERVERS_FILE_NAME, Stage.PRODUCTION));
-		} catch (IOException ioe) {
-			//failed writing roles 3 times to s3.
-			//All subsequent requests will be denied by stateVerificationFilter till fixed and restarted
-			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);			
-			String error = Strings.failedWritingServer + ioe.getMessage();
-			logger.severe(error);
-			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_IO_ERROR.");			
-			throw new IOException(error);
-		}
-		catch (JSONException je) {
-			//failed writing roles 3 times to s3.
-			//All subsequent requests will be denied by stateVerificationFilter till fixed and restarted
-			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_DATA_CONSISTENCY_ERROR);			
-			String error = Strings.failedWritingServer + je.getMessage();
-			logger.severe(error);
-			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_DATA_CONSISTENCY_ERROR.");			
-			throw new IOException(error);
-		}
-		return changesArr;
-	}	
-	
-	//return error string upon error. null upon success
 	public static LinkedList<AirlockChangeContent> writeRoles(JSONObject roles, ServletContext context) throws IOException {			
 		DataSerializer ds = (DataSerializer)context.getAttribute(Constants.DATA_SERIALIZER_PARAM_NAME);
 		LinkedList<AirlockChangeContent> changesArr = new LinkedList<AirlockChangeContent>();

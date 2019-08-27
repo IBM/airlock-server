@@ -17,7 +17,6 @@ public class Constants {
 	
 	public static final String WEBHOOKS_PARAM_NAME = "webhooks";
 	public static final String ROLES_PARAM_NAME = "roles";
-	public static final String AIRLOCK_SERVERS_PARAM_NAME = "airlockServers";
 	public static final String DATA_SERIALIZER_PARAM_NAME = "dataSerializer";
 	public static final String INIT_FEATURES_DB_FILE_NAME = "initFeaturesDb.txt";
 	public static final String INIT_PRODUCTS_DB_FILE_NAME = "initProductsDb.txt";
@@ -210,7 +209,6 @@ public class Constants {
 	public static final String USER_GROUPS_RUNTIME_FILE_NAME = "AirlockUserGroupsRuntime.json";
 	public static final String ROLES_FILE_NAME = "ops/roles.json";
 	public static final String WEBHOOKS_FILE_NAME = "ops/webhooks.json";
-	public static final String AIRLOCK_SERVERS_FILE_NAME = "ops/airlockServers.json";
 	public static final String AIRLOCK_USERS_FILE_NAME = "airlockUsers.json";
 	public static final String SEASONS_FOLDER_NAME = "seasons";
 	public static final String OKTA_CONFIGS_FOLDER_NAME = "oktaConfigurations";

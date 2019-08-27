@@ -455,13 +455,9 @@ public class ChangeUserRolesScenarios {
 	}
 
 	private void testAdminRole(String sessionJwt, boolean expectedFailure) throws Exception {
-		String serversStr = operApi.getAirlockServers(sessionToken);
-
-		String response = operApi.setAirlockServers(serversStr, sessionJwt);
+		String response = operApi.getWebhooks(sessionToken);
 		Assert.assertEquals(response.contains("error") || response.contains("SecurityPolicyException"), expectedFailure, "testAdminRole failed: " + response);
-
 	}
-
 
 	private void testProductLeadRole(String sessionJwt, boolean expectedFailure) throws IOException, JSONException {
 		String feature = FileUtils.fileToString(config + "feature1.txt", "UTF-8", false);

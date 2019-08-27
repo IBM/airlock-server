@@ -414,11 +414,6 @@ public class Utilities
 		webhooks.fromJSON(webhooksJSON);	
 	}
 
-	public static void initFromAirlockServersJSON(JSONObject alServersJSON, ServletContext context) throws JSONException {
-		AirlockServers alServers = (AirlockServers)context.getAttribute(Constants.AIRLOCK_SERVERS_PARAM_NAME);		
-		alServers.fromJSON(alServersJSON);
-	}
-
 	public static void initFromAirlockUsersJSON(JSONObject airlockUsersJSON, ServletContext context, Product prod) throws JSONException {
 		@SuppressWarnings("unchecked")
 		Map<String, UserRoleSet> usersDB = (Map<String, UserRoleSet>)context.getAttribute(Constants.AIRLOCK_USERS_DB_PARAM_NAME);
@@ -2713,15 +2708,6 @@ public class Utilities
 		return consoleString;
 	}
 
-	public static String getServerName(ServletContext context){
-		AirlockServers allServers = (AirlockServers)context.getAttribute(Constants.AIRLOCK_SERVERS_PARAM_NAME);
-		String serverName = allServers.getDefaultServer();
-		if(serverName.equals(Constants.SERVER_DEFAULT_DISPLAY_NAME)){
-			serverName = getEnv(Constants.ENV_SERVER_NAME);
-		}
-		return serverName;
-	}
-
 	public static void sendEmails(ServletContext context,String rootCause,UUID apiCallID,List<ChangeDetails> changeDetailsList,UserInfo userInfo,Map<String, BaseAirlockItem> airlockItemsDB,Environment env){
 		for (int i = 0; i<changeDetailsList.size();++i){
 			ChangeDetails change = changeDetailsList.get(i);
@@ -2731,6 +2717,10 @@ public class Utilities
 		}
 	}
 
+	public static String getServerName(){
+		return getEnv(Constants.ENV_SERVER_NAME);
+	}
+	
 	public static void sendEmailForProduct(ServletContext context, UserInfo userInfo,Product product){
 		@SuppressWarnings("unchecked")
 		Map<String, ArrayList<String>> productsFollowersDB = (Map<String, ArrayList<String>>)context.getAttribute(Constants.FOLLOWERS_PRODUCTS_DB_PARAM_NAME);
@@ -2740,7 +2730,7 @@ public class Utilities
 			return;
 		}
 
-		String serverName = getServerName(context);
+		String serverName = getServerName();
 		String subject = "[Airlock]" + separator +" Product " + product.getName() + " was deleted"+ separator + "("+ serverName+ ")";
 
 		String userId ="Unknow";
@@ -2811,7 +2801,7 @@ public class Utilities
 		else {
 			versionRange.append(" and up");
 		}
-		String serverName = getServerName(context);
+		String serverName = getServerName();
 
 		String subject = "[Airlock]"+ separator  +" Version Range " + versionRange + " " + action + " in product "+ product.getName()+ separator + "("+ serverName+ ")";
 
@@ -2886,7 +2876,7 @@ public class Utilities
 		String userId ="Unknow";
 		if(userInfo != null)
 			userId = userInfo.getId();
-		String serverName = getServerName(context);
+		String serverName = getServerName();
 		if(details == null){
 			details = "The experiment was "+action;
 		}
@@ -2950,7 +2940,7 @@ public class Utilities
 		String userId ="Unknow";
 		if(userInfo != null)
 			userId = userInfo.getId();
-		String serverName = getServerName(context);
+		String serverName = getServerName();
 		if ((Boolean) context.getAttribute(Constants.IS_TEST_MODE)) {
 			try {
 				JSONObject email = new JSONObject();
@@ -3019,7 +3009,7 @@ public class Utilities
 		String userId ="Unknow";
 		if(userInfo != null)
 			userId = userInfo.getId();
-		String serverName = getServerName(context);
+		String serverName = getServerName();
 		@SuppressWarnings("unchecked")
 		Map<String, Experiment> experimentsDB = (Map<String, Experiment>)context.getAttribute(Constants.EXPERIMENTS_DB_PARAM_NAME);
 		Experiment experiment = experimentsDB.get(variant.getExperimentId().toString());
@@ -3130,7 +3120,7 @@ public class Utilities
 		String userId ="Unknow";
 		if(userInfo != null)
 			userId = userInfo.getId();
-		String serverName = getServerName(context);
+		String serverName = getServerName();
 		if ((Boolean) context.getAttribute(Constants.IS_TEST_MODE)) {
 			try {
 				JSONObject email = new JSONObject();

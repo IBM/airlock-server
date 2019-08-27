@@ -14,8 +14,6 @@ import javax.servlet.annotation.WebListener;
 
 import com.amazonaws.regions.Regions;
 import com.ibm.airlock.admin.Product;
-import com.ibm.airlock.admin.AirlockServers;
-import com.ibm.airlock.admin.AirlockServers.AirlockServer;
 import com.ibm.airlock.admin.AirlockUtility;
 import com.ibm.airlock.admin.BaseAirlockItem;
 import com.ibm.airlock.admin.Branch;
@@ -73,7 +71,6 @@ public class AirLockContextListener implements ServletContextListener {
 		context.setAttribute(Constants.BRANCHES_DB_PARAM_NAME, new ConcurrentHashMap<String, Branch>());
 		context.setAttribute(Constants.VARIANTS_DB_PARAM_NAME, new ConcurrentHashMap<String, Variant>());
 		context.setAttribute(Constants.ROLES_PARAM_NAME, new Roles());
-		context.setAttribute(Constants.AIRLOCK_SERVERS_PARAM_NAME, new AirlockServers());
 		context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.INITIALIZING);
 		context.setAttribute(Constants.GLOBAL_LOCK_PARAM_NAME, new ReentrantReadWriteLock());
 		context.setAttribute(Constants.API_KEYS_PARAM_NAME, new AirlockAPIKeys());
@@ -345,42 +342,8 @@ public class AirLockContextListener implements ServletContextListener {
 			logger.severe(errMsg);		
 			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_DATA_CONSISTENCY_ERROR.");
 			throw new RuntimeException(errMsg);					
-		}	
-
-		//init airlockServers from S3 file
-		try {
-			logger.info ("Initalizing airlock servers from: " + Constants.AIRLOCK_SERVERS_FILE_NAME);
-			if (ds.isFileExists(Constants.AIRLOCK_SERVERS_FILE_NAME)) {
-				JSONObject alServersJSON = ds.readDataToJSON(Constants.AIRLOCK_SERVERS_FILE_NAME);			
-				Utilities.initFromAirlockServersJSON(alServersJSON, context);
-			} else {
-				AirlockServers alServers = (AirlockServers)context.getAttribute(Constants.AIRLOCK_SERVERS_PARAM_NAME);		
-				AirlockServer alServer = alServers.new AirlockServer();
-				
-				alServer.setCdnOverride(runtimeFullPath);
-				alServer.setUrl(storagePublicPath + ds.getPathPrefix());
-				alServer.setDisplayName(serverDisplayName);
-				
-				alServers.getServers().add(alServer);
-				alServers.setLastModified(new Date());
-				alServers.setDefaultServer(serverDisplayName);
-				
-				ds.writeData(Constants.AIRLOCK_SERVERS_FILE_NAME, alServers.toJson(true).write(true));
-			}
-			logger.info ("Airlock servers initialization done.");
-		} catch (IOException e) {
-			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
-			String errMsg = String.format(Strings.failedInitializationReadingFile,Constants.AIRLOCK_SERVERS_FILE_NAME) + e.getMessage();
-			logger.severe(errMsg);
-			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_IO_ERROR.");
-			throw new RuntimeException(errMsg);			
-		} catch (JSONException e) {
-			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_DATA_CONSISTENCY_ERROR);
-			String errMsg = String.format(Strings.failedInitializationInvalidJson,Constants.AIRLOCK_SERVERS_FILE_NAME) + e.getMessage();
-			logger.severe(errMsg);		
-			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_DATA_CONSISTENCY_ERROR.");
-			throw new RuntimeException(errMsg);								
 		}
+
 		//load javascriptUtilities
 		try {
 			logger.info ("Initalizing javascriptUtilities from: " + Constants.JAVASCRIPT_UTILITIES_FILE_NAME);

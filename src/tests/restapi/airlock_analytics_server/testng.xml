@@ -14,8 +14,6 @@
 	<parameter name="userPassword" value=""></parameter>
 	<parameter name="appName" value=""/>
 	
-
-
 	<test name="BeforeSuite"  enabled="true">
 		<classes>
 			<class name="tests.restapi.SuiteSetup"></class>

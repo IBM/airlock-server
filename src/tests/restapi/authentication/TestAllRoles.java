@@ -553,8 +553,6 @@ public class TestAllRoles {
 		setAirlockUserPerProduct(false);
 		getAirlockUsersPerProduct(false);
 		getUserRolesPerProduct(false);
-		getAirlockServers(false);
-		setAirlockServers(false);
 		getUserGroups(false);
 		getUserGroupsUsage(false);
 		setUserGroups(false);
@@ -792,8 +790,6 @@ public class TestAllRoles {
 		setAirlockUserPerProduct(true);
 		getAirlockUsersPerProduct(false);
 		getUserRolesPerProduct(false);
-		getAirlockServers(false);
-		setAirlockServers(true);
 		getUserGroups(false);
 		getUserGroupsUsage(false);
 		setUserGroups(false);
@@ -1021,11 +1017,9 @@ public class TestAllRoles {
 		getUserRoleSets(false);
 		updateAirlockUser(true);
 		deleteAirlockUser(true);
-		getAirlockServers(false);
 		setAirlockUserPerProduct(true);
 		getAirlockUsersPerProduct(false);
 		getUserRolesPerProduct(false);
-		setAirlockServers(true);
 		getUserGroups(false);
 		getUserGroupsUsage(false);
 		setUserGroups(false);
@@ -1259,8 +1253,6 @@ public class TestAllRoles {
 		setAirlockUserPerProduct(true);
 		getAirlockUsersPerProduct(false);
 		getUserRolesPerProduct(false);
-		getAirlockServers(false);
-		setAirlockServers(true);
 		getUserGroups(false);
 		getUserGroupsUsage(false);
 		setUserGroups(true);
@@ -1493,8 +1485,6 @@ public class TestAllRoles {
 		setAirlockUserPerProduct(true);
 		getAirlockUsersPerProduct(false);
 		getUserRolesPerProduct(false);
-		getAirlockServers(false);
-		setAirlockServers(true);
 		getUserGroups(false);
 		getUserGroupsUsage(false);
 		setUserGroups(true);
@@ -2920,32 +2910,6 @@ public class TestAllRoles {
 		} catch (Exception e) {
 			if (expectedFailure == false) {
 				softAssert.fail("setProductAirlockUsers failed with exception:\n" +e.getLocalizedMessage());
-			}
-		}
-	}
-
-
-	public void getAirlockServers(boolean expectedFailure) {
-		System.out.println("Running getAirlockServers");
-		try {
-			String response = operationApi.getAirlockServers(sessionToken);
-			Assert.assertEquals(isSecurityError(response), expectedFailure, "getAirlockServers failed: " + response);
-		} catch (Exception e) {
-			if (expectedFailure == false) {
-				Assert.fail("getAirlockServers failed with exception:\n" +e.getLocalizedMessage());
-			}
-		}
-	}
-
-	public void setAirlockServers(boolean expectedFailure) {
-		System.out.println("Running setAirlockServers");
-		try {
-			String response = operationApi.getAirlockServers(sessionToken);
-			response = operationApi.setAirlockServers(response,sessionToken);
-			softAssert.assertEquals(isSecurityError(response), expectedFailure, "getAirlockServers failed: " + response);
-		} catch (Exception e) {
-			if (expectedFailure == false) {
-				softAssert.fail("getAirlockServers failed with exception:\n" +e.getLocalizedMessage());
 			}
 		}
 	}

@@ -103,25 +103,7 @@ public class OperationRestApi {
 		RestClientUtils.RestCallResults res = RestClientUtils.sendPut(m_url+ "/userrolesets/" + userId, body, sessionToken);
 		return res.message;
 	}
-	/*public String setAirlockUsers(String body ,String sessionToken) throws IOException {
-		RestClientUtils.RestCallResults res = RestClientUtils.sendPut(m_url+"/airlockusers", body,sessionToken);
-		return res.message;
-	}
-	public String setProductAirlockUsers(String productId, String body ,String sessionToken) throws IOException {
-		RestClientUtils.RestCallResults res = RestClientUtils.sendPut(m_url+"/products/" + productId +"/airlockusers", body,sessionToken);
-		return res.message;
-	}*/
 
-	public String getAirlockServers(String sessionToken) throws Exception {
-		RestClientUtils.RestCallResults res = RestClientUtils.sendGet(m_url+"/airlockservers",sessionToken);
-		return res.message;
-	}
-
-	public String setAirlockServers(String body ,String sessionToken) throws IOException {
-		RestClientUtils.RestCallResults res = RestClientUtils.sendPut(m_url+"/airlockservers", body,sessionToken);
-		return res.message;
-	}
-	
 	//GET /ops/healthcheck
 	public int healthcheck(String sessionToken) throws Exception {
 		RestClientUtils.RestCallResults res = RestClientUtils.sendGet(m_url+"/healthcheck", sessionToken);
@@ -142,7 +124,6 @@ public class OperationRestApi {
 		RestClientUtils.RestCallResults res = RestClientUtils.sendPost(m_url+"/airlockkeys", content, sessionToken);
 		return res.message;
 	}
-	
 	
 	//GET /ops/airlockkeys
 	public String getAllKeys(String owner, String sessionToken) throws Exception{

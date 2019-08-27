@@ -45,7 +45,6 @@ import com.wordnik.swagger.annotations.ApiResponse;
 import com.ibm.airlock.Constants.APIKeyOutputMode;
 import com.ibm.airlock.Constants.AirlockCapability;
 import com.ibm.airlock.Constants.RoleType;
-import com.ibm.airlock.admin.AirlockServers;
 import com.ibm.airlock.admin.Utilities;
 import com.ibm.airlock.admin.ValidationResults;
 import com.ibm.airlock.admin.operations.Webhook;
@@ -672,36 +671,7 @@ public class OperationsServices {
 			readWriteLock.readLock().unlock();
 		}
 	}			
-	///
-	@GET
-	@Path("/airlockservers")
-	@ApiOperation(value = "Returns all Airlock servers", response = String.class)
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK"),
-			@ApiResponse(code = 401, message = "Unauthorized"),
-			@ApiResponse(code = 500, message = "Internal error") })
-	public Response getAirlockServers(@HeaderParam(Constants.AUTHENTICATION_HEADER) String assertion) throws JSONException {
-		if (logger.isLoggable(Level.FINEST)) {
-			logger.finest("getAirlockServers request");
-		}
 
-		// use userInfo for more stringent checks. null if authorization is off
-		UserInfo userInfo = UserInfo.validate("OperationsServices.getAirlockServers", context, assertion, null);
-		if (userInfo != null && userInfo.getErrorJson() != null)
-			return sendInfoError(Status.UNAUTHORIZED, userInfo);
-
-		ReentrantReadWriteLock readWriteLock = (ReentrantReadWriteLock)context.getAttribute(Constants.GLOBAL_LOCK_PARAM_NAME);
-		readWriteLock.readLock().lock(); 
-		try {
-			AirlockServers alServers = (AirlockServers)context.getAttribute(Constants.AIRLOCK_SERVERS_PARAM_NAME);		
-	
-			JSONObject res = alServers.toJson(true);
-			
-			return (Response.ok(res.toString())).build();	
-		} finally {
-			readWriteLock.readLock().unlock();
-		}
-	}		
-	
 	@PUT
 	@Path("/roles")
 	@ApiOperation(value = "Updates all roles", response = String.class)
@@ -753,59 +723,6 @@ public class OperationsServices {
 			readWriteLock.writeLock().unlock();
 		}
 	}
-
-	@PUT
-	@Path("/airlockservers")
-	@ApiOperation(value = "Updates all Airlock servers", response = String.class)
-	@Produces(value="text/plain")
-	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK"),
-			@ApiResponse(code = 400, message = "Bad request"),
-			@ApiResponse(code = 500, message = "Internal error") })
-	public Response setAirlockServers(String airlockServers, @HeaderParam(Constants.AUTHENTICATION_HEADER) String assertion) throws JSONException {
-
-		if (logger.isLoggable(Level.FINEST)) {
-			logger.finest("setAirlockServers request, airlockServers = " + airlockServers);
-		}
-		AirlockChange change = new AirlockChange();
-
-		UserInfo userInfo = UserInfo.validate("OperationsServices.setAirlockServers", context, assertion, null);
-		if (userInfo != null && userInfo.getErrorJson() != null)
-			return sendInfoError(Status.UNAUTHORIZED, userInfo);
-
-		ReentrantReadWriteLock readWriteLock = (ReentrantReadWriteLock)context.getAttribute(Constants.GLOBAL_LOCK_PARAM_NAME);
-		readWriteLock.writeLock().lock();
-		try {
-			AirlockServers alServersObj = (AirlockServers)context.getAttribute(Constants.AIRLOCK_SERVERS_PARAM_NAME);		
-			
-			//validate that is a legal JSON
-			JSONObject alServersJSON = null;
-			try {
-				alServersJSON = new JSONObject(airlockServers);
-			} catch (JSONException je) {
-				return Response.status(Status.BAD_REQUEST).entity(Strings.illegalInputJSON + je.getMessage()).build();
-			}
-
-			ValidationResults validationRes = alServersObj.validateAirlockServersJSON(alServersJSON);
-			if (validationRes!=null)
-				return Response.status(validationRes.status).entity(validationRes.error).build();
-
-			alServersObj.fromJSON(alServersJSON);
-			alServersObj.setLastModified(new Date());
-			//AirLockContextListener.refreshSecurit yFilter(context);
-			
-			//writing updated servers to S3
-			try {
-				change.getFiles().addAll(AirlockFilesWriter.writeAirlockServers(alServersJSON, context));				
-			} catch (IOException e) {
-				return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
-			}
-			Webhooks.get(context).notifyChanges(change, context);
-			return Response.ok().build();
-		} finally {
-			readWriteLock.writeLock().unlock();
-		}
-	}	
-
 
 	@GET
 	@Path("/healthcheck")

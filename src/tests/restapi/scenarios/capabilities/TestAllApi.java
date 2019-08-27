@@ -1385,15 +1385,6 @@ public class TestAllApi {
 			return operationApi.setAirlockUsers(input,sessionToken);
 	}*/
 
-
-	public String getAirlockServers(String sessionToken) throws Exception {
-		return operationApi.getAirlockServers(sessionToken);
-	}
-
-	public String setAirlockServers(String input, String sessionToken) throws IOException {
-		return operationApi.setAirlockServers(input,sessionToken);
-	}
-
 	public String getUserGroups(String productID, String sessionToken) throws Exception{
 		return userGroupsApi.getUserGroups(productID, sessionToken);
 	}
