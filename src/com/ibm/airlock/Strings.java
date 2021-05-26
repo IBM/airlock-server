@@ -18,9 +18,14 @@ public class Strings
     public static String illegalParentUUID = "Illegal parent GUID: ";
     public static String illegalBranchUUID = "Illegal branch GUID: ";
     public static String illegalExperimentUUID = "Illegal experiment-id GUID: ";
+    public static String illegalCohortUUID = "Illegal cohort-id GUID: ";
+    public static String illegalDataImportUUID = "Illegal job-id GUID: ";
     public static String illegalVariantUUID = "Illegal variant-id GUID: ";
     public static String illegalDestinationUUID = "Illegal dest-id GUID:";
     public static String illegalUserUUID = "Illegal user-id GUID: ";
+    public static String illegalAttributeUUID = "Illegal attribut-id GUID: ";
+    public static String illegalAttributeTypeUUID = "Illegal attribut-type-id GUID: ";
+    public static String illegalEntityUUID = "Illegal entity-id GUID: ";
     
     public static String illegalInputFieldJSONArray = "Illegal input fields JSON Array: ";
     public static String illegalInputJSON = "Illegal input JSON: ";
@@ -53,6 +58,9 @@ public class Strings
     public static String parentNotFound = "Parent item not found.";
     public static String branchNotFound = "Branch not found.";
     public static String experimentNotFound = "Experiment not found.";
+    public static String dataImportNotFound = "Data import job not found.";
+    public static String cohortNotFound = "Cohort not found.";
+    public static String cohortEnabled = "Cohort is enabled and cannot be deleted.";
     public static String variantNotFound = "Variant not found.";
     public static String stringNotFound = "String not found.";
     public static String destinationNotFound = "Destination not found.";
@@ -88,7 +96,7 @@ public class Strings
     public static String streamNoValidationError = "Only a user with the Administrator role can create a stream without validating it.";
     public static String prodCheckoutError = "Unable to check out. Only a user with the Administrator or Product Lead role can check out a feature in the production stage to branches that are included in a production experiment.";
     public static String prodCancelCheckoutError = "Unable to cancel checkout. Only a user with the Administrator or Product Lead role can cancel the checkout of a feature in the production stage from branches that are included in a production experiment";
-    public static String cancelCheckoutErrorNewSubItemsExist = "Unable to cancel checkout. The item has NEW sub-items in the branch."; 
+    public static String cancelCheckoutErrorNewSubItemsExist = "Unable to cancel checkout. The item has NEW sub-items in the branch."; //TODO: review
     public static String featureNotVisibleInBranch = "Unable to checkout. The feature is not visible in the branch.";
     public static String prodFeatureAnalyticsError = "Unable to send the feature to analytics. Only a user with the Administrator or Product Lead role can send a feature in the production stage to analytics.";
     public static String prodFeatureStopAnalyticsError = "Unable to stop sending the feature to analytics. Only a user with the Administrator or Product Lead role can stop sending a feature the production stage to analytics.";
@@ -132,6 +140,8 @@ public class Strings
     public static String seasonWithId = "Cannot add a season that has a unique id.";
     public static String featureWithId = "Cannot add a feature that has a unique id.";
     public static String streamWithId = "Cannot add a stream that has a unique id.";
+    public static String audienceWithId = "Cannot add a cohort that has a unique id.";
+    public static String dataImportWithId = "Cannot add a data import job that has a unique id.";
     public static String notificationWithId = "Cannot add a notification that has a unique id.";
     public static String utilityWithId = "Cannot add an utility that has a unique id.";
     public static String branchWithId = "Cannot add a branch that has a unique id.";
@@ -141,10 +151,15 @@ public class Strings
     public static String apiKeyWithId = "Cannot add a api key that has a unique id.";
     public static String airlockUserWithId = "Cannot add a Airlock user that has a unique id.";
     public static String webhookWithId = "Cannot add Webhook that has a unique id.";
+    public static String entityWithId = "Cannot add an entity that has a unique id.";
+    public static String attributeWithId = "Cannot add an attribute that has a unique id.";
+    public static String attributeTypeWithId = "Cannot add an attribute type that has a unique id.";
 
     public static String featureWithDifferentId = "The feature-id in the path is not the same as the uniqueId in the JSON.";
     public static String productWithDifferentId = "The product-id in the path is not the same as the uniqueId in the product JSON.";
     public static String experimentWithDifferentId = "The experiment-id in path is not the same as the uniqueId in experiment JSON.";
+    public static String dataImportWithDifferentId = "The job-id in path is not the same as the uniqueId in data import JSON.";
+    public static String cohortWithDifferentId = "The cohort-id in path is not the same as the uniqueId in cohort JSON.";
     public static String experimentProductWithDifferentId = "The product-id in the path is not the same as the productId in the experiment JSON.";
     public static String seasonWithDifferentId = "The season-id in the path is not the same as the uniqueId in season JSON.";
     public static String seasonProductWithDifferentId = "The product-id in the path is not the same as the productId in the season JSON.";
@@ -153,6 +168,8 @@ public class Strings
     public static String inputSchemaSeasonWithDifferentId = "The season-id in path is not the same as the seasonId in input schema JSON.";
     public static String branchSeasonWithDifferentId = "The season-id in the path is not the same as the seasonId in the branch JSON.";
     public static String streamSeasonWithDifferentId = "The season-id in the path is not the same as the seasonId in the stream JSON.";
+    public static String audienceProductWithDifferentId = "The product-id in the path is not the same as the productId in the cohort JSON.";
+    public static String dataImportProductWithDifferentId = "The product-id in the path is not the same as the productId in the data import job JSON.";
     public static String notificationSeasonWithDifferentId = "The season-id in the path is not the same as the seasonId in the notification JSON.";
     public static String airlockFeatureSeasonWithDifferentId = "The season-id in the path is not the same as the seasonId in the AirlockFeatures JSON";
     public static String collectionSeasonWithDifferentId = "The season-id in path is not the same as the seasonId in global data collection JSON.";
@@ -169,6 +186,9 @@ public class Strings
     public static String stringWithDifferentId = "The string-id in path is not the same as the uniqueId in string JSON.";
     public static String userProductWithDifferentId = "The product-id in the path is not the same as the product Id in the Airlock user JSON.";
     public static String userWithDifferentId = "The user-id in path is not the same as the uniqueId in Airlock user JSON.";
+    public static String entityWithDifferentId = "The entity-id in path is not the same as the uniqueId in entity JSON.";
+    public static String attributeWithDifferentId = "The attribute-id in path is not the same as the uniqueId in attribute JSON.";
+    public static String attributeTypeWithDifferentId = "The attributetype-id in path is not the same as the uniqueId in attribute type JSON.";
     
     public static String productWithFeatureProd = "The product cannot be deleted. One or more of the items in the product's version range are in the production stage."; 
     public static String productWithStreamProd = "The product cannot be deleted. One or more of the streams in the product's version range are in the production stage.";
@@ -219,6 +239,10 @@ public class Strings
     public static String failDeletingExperiment = "Failed to delete the experiment from the analytics server: ";
     public static String failUpdatingExperiment = "Failed to update the experiment on the analytics server: ";
     public static String failUpdateAnalytics = "Fail to update analytics: ";
+    public static String failCohortExecute = "Failed to execute cohort in air-cohorts server ";
+    public static String failQueryValidateExecute = "Failed to validate query in air-cohorts server ";
+    public static String failDataImportExecute = "Failed to import s3 file in data-import server ";
+    public static String failDataImportGetTables = "Failed to get target tables from data-import server ";
     public static String missingSeparator = "The request body does not contain the separator to distinguish between the utility and the ";
     public static String userNotLoggedIn = "User must be logged in to an authenticated server.";
     public static String cannotBeFollowed = " cannot be followed";
@@ -270,8 +294,8 @@ public class Strings
 	
 	public static String authNotConfigured = "Authentication is not configured on this server";
 	//capabilities
-	public static String productDoesNotEnableCapability = "%s is not included in product %s.";
-	public static String capabilityNotEnabled = "%s is not included.";
+	public static String productDoesNotEnableCapability = "%s capability is not included in product %s.";
+	public static String capabilityNotEnabled = "%s capability is not included.";
 		
 	// engine
 	public static String RuleFail = "Rule returned false";
@@ -290,6 +314,16 @@ public class Strings
 	
 	public static String changeAirlockSerevrStateTo = "Changing Airlock service state to ";
 	public static String fieldIsMissing = "The %s field is missing.";
+    public static String fieldQueryConditionIsMissing = "The queryCondition field is required to export the cohort.";
+    public static String fieldFrequency = "unknown frequency type %s";
+    public static String fieldStatus = "unknown status type %s";
+    public static String fieldCalculationStatus = "unknown calculationsStatus type %s";
+    public static String fieldValueType = "unknown valueType value %s";
+    public static String fieldInvalidValueType = "valueType cannot be %s for export type %s";
+    public static String fieldUsersNumber = "usersNumber must be long";
+    public static String fieldRetriesNumber = "retriesNumber must be integer";
+    public static String fieldSuccessfulImports = "successfulImports must be long";
+    public static String fieldLastExportTime = "lastExportTime should not be changed";
 	public static String nonBooleanField = "The %s field should be boolean (true/false).";
 	public static String malformedUrl = "Malformed URL: %s";
 	public static String lastModifiedIsMissing = "The lastModified field is missing. This field must be specified during update.";
@@ -309,6 +343,7 @@ public class Strings
 	public static String notGlobalUser = "Fail to add user %s to product because the user does not exist in the global users list.";
 	public static String userInProducts = "Fail to delete user because the user has permissions in the following products: %s";
 
+	//TODO: review
 	public static String illegalRuntimeEncryption = "The version range cannot be configured to encrypt runtime files while the product does not include the RUNTIME_ENCRYPTION capability.";
 	public static String failReduceRuntimeEncryptionCapability = "Cannot remove the RUNTIME_ENCRYPTION capability while some version ranges are configured to encrypt runtime files. The following products have version ranges that are configured to encrypt runtime files: %s";
 	public static String failReduceRuntimeEncryptionCapabilityFromProduct = "Cannot remove the RUNTIME_ENCRYPTION capability while some version ranges are configured to encrypt runtime files.";
@@ -376,7 +411,72 @@ public class Strings
 	public static String noPermissionToUpdatePurchaseOptions = "Unable to update the purchase options. Only a user with an Administrator or Product Lead role can change a subitem that is in the production stage.";
 	public static String illegalPurchaseOptionsJson = "Illegal purchase options mutual exclusion JSON: ";
     public static String entitlementForNonPremiumFeature = "An entitlement cannot be specified for a non premium feature.";
+
+    public static String cannotCopyStringWithinTheSameSeason = "Cannot copy strings within the same version range. Use import/export instead.";
+	public static String historyRangeStartExceedEnd = "Start historical events range exceeds end of the range.";
 	
     
-    public static String cannotCopyStringWithinTheSameSeason = "Cannot copy strings within the same version range. Use import/export instead.";
+    public static final String CannotConfigStreamHistoryRangeAndDaysNumber = "Cannot configure both stream history range and stream history number of days.";
+
+    public static final String duplicateDeletedAttributeColumnNameValue = "The deletedAttributeColumnName value '%s' appears more than once.";
+    public static final String notUniqueEntityName = "An entity with the specified name already exists.";
+    public static final String notUniqueAttributeNameWithinEntity = "An attribute with the specified name already exists for the specified entity.";
+    public static final String notUniqueAttributeTypeNameWithinEntity = "An attribute type with the specified name already exists for the specified entity.";
+    
+    public static final String attributeTypeInOtherEntity = "The attribute type does not belong to the same entity as the attribute.";
+    public static final String IllegalPiState = "Illegal piState '%s'";
+    public static final String IllegalDataType = "Illegal dataType '%s'";
+    public static final String attributesSpeciedForEntity = "Entity attributes should not be specified during entity creation and update. Attributes must be created and updated one by one.";
+    public static final String attributeTypesSpeciedForEntity = "Entity attribute types should not be specified during entity creation and update. Attribute types must be created and updated one by one.";
+    public static final String deletedAttributesDataSpeciedForEntity = "DeletedAttributesData should not be specified during entity creation and update.";
+    public static final String nonExistingAttributeType = "AttributeType does not exist.";
+    public static final String entityNotFound = "Entity not found.";
+    public static final String attributeNotFound = "Attribute not found.";
+    public static final String attributeTypeNotFound = "Attribute type not found.";
+    public static final String entityProductWithDifferentId = "The product-id in the path is not the same as the productId in the entity JSON.";
+    public static final String attributeEntityWithDifferentId = "The entity-id in the path is not the same as the entityId in the attribute JSON.";
+    public static final String attributeTypeEntityWithDifferentId = "The entity-id in the path is not the same as the entityId in the attribute type JSON.";
+    public static final String failDeleteEntity = "Unable to remove entity %s: The specified entity does not exist in this product.";
+    public static final String failDeleteAttribute = "Unable to remove attribute %s: The specified attribute does not exist in this entity.";
+    public static final String failDeleteAttributeType = "Unable to remove attribute type %s: The specified attribute type does not exist in this entity.";
+    public static final String attributeTypeInUse = "Unable to remove attribute type %s: The specified attribute type is being used by attribute %s";
+    public static final String cannotUpdateProductId = "Cannot update entity. Product id cannot be changed.";
+    public static final String cannotUpdateEntityIdAtt = "Cannot update attribute. Entity id cannot be changed.";
+    public static final String cannotUpdateEntityIdAttType = "Cannot update attribute type. Entity id cannot be changed.";
+    public static final String noDbTable = "The table '%s' does not exist in the database under schema '%s'";
+    public static final String noAthenaTable = "The table '%s' does not exist in Athena under database '%s'";
+    public static final String noAthenaDatabase = "The database '%s' does not exist in Athena.'";
+    public static final String noDbSchema = "The schema '%s' does not exist in the database.";
+    public static final String cannotUpdateDbSchemaToNull = "Cannot update dbSchema to null after value was set.";
+    public static final String cannotUpdateDbSchema = "Cannot update dbSchema.";
+    public static final String cannotUpdateDbDevSchema = "Cannot update dbDevSchema.";
+    public static final String cannotUpdateDbArchiveSchema = "Cannot update dbArchiveSchema.";
+    public static final String entitiesSpeciedDuringUpdate = "Entities list should not be specified during entities update. Please add/remove/update entities one by one";
+    public static final String cannotAddEntityWhenNoSchemaSpecified ="Cannot add entity when db schema is not specified for the product";
+    public static final String cannotAddAttTypeWhenNoSchemaSpecified ="Cannot add attribute type when db schema is not specified for the product";
+    public static final String wrongDefaultValueType = "The default value is not of the specified data type: '%s' is not %s";
+    public static final String cannotUpdateDataType = "Cannot update attribute. Data type cannot be changed.";
+    public static final String cannotUpdateIsArray = "Cannot update attribute. isArray cannot be changed.";
+    public static final String cannotUpdateNullable = "Cannot update attribute. Nullable cannot be changed.";
+    public static final String cannotUpdateAttributeType = "Cannot update attribute. Attribut type cannot be changed.";
+    public static final String cannotUpdateDbTableAtt = "Cannot update attribute type. Db table cannot be changed.";
+    public static final String cannotUpdateAthenaTableAtt = "Cannot update attribute type. Athena table cannot be changed.";
+    public static final String cannotUpdateAthenaDatabaseAtt = "Cannot update entity. Athena database cannot be changed.";
+    public static final String cannotUpdateAthenaDevDatabaseAtt = "Cannot update entity. Athena dev database cannot be changed.";
+    public static final String columnAllreadyInDBTable = "Column '%s' already exists in database table '%s' in schema '%s'" ;
+    public static final String columnAllreadyInAthenaTable = "Column '%s' already exists in Athena table '%s' in Athena database '%s'" ;
+    public static final String cannotSpecifyDefVal = "Default value should not be specified when withDefaultValue is false. ";
+    public static final String cannotCreateDeprecatedAttribute = "Cannot create deprecated attribute.";
+    public static final String CannotDeleteNonDeprecatedAtt = "Cannot delete a non deprecated attribute";
+    public static final String CannotUpdateDeprecatedAtt = "Cannot update a deprecated attribute";
+    public static final String AttributeTypeDoesNotExist = "The attribute type of the specified attribute does not exist";
+    public static final String columnWasDeletedFromTableWithOtherDataType = "Column '%s' was deleted from table '%s' in schema '%s'. It exists in entity '%s' in product '%s'. The previous column data type was '%s' therefore cannot create the same column with data type '%s'" ;
+    public static final String columnWasDeletedFromTableWithOtherNullable = "Column '%s' was deleted from table '%s' in schema '%s'. It exists in entity '%s' in product '%s'. The previous column nullable setting was '%s' therefore cannot create the same column with nullable = '%s'" ;
+    public static final String cannotDeleteEntityWithAttributes = "Cannot delete an entity with Attributes. Please delete the attributes one by one and then delete the entity.";
+    public static final String missingPermission = "%s attribute permission is missing from 'attributesPermission' filed.";
+    public static final String roleTypeDoesNotExist = "The specified role type '%s' does not exist";
+	public static final String NotSufficientAttributePermission = "User does not have required role '%s' for attribute permmision '%s' as defined in the attribute type.";
+	public static final String cannotSetDefaultValueForArrayType = "Cannot set default value for array type.";
+	public static final String cannotSetDefaultValueForTimestamp = "Cannot set default value for timestamp type.";
+	public static final String cannotSetDefaultValueForJson = "Cannot set default value for JSON type.";
 }

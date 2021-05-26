@@ -9,6 +9,9 @@ import java.util.logging.Logger;
 import javax.servlet.ServletContext;
 
 import com.ibm.airlock.Strings;
+import com.ibm.airlock.admin.cohorts.AirlockCohorts;
+import com.ibm.airlock.admin.dataimport.AirlyticsDataImport;
+import com.ibm.airlock.admin.db.DbHandler;
 import com.ibm.airlock.admin.serialize.AirlockFilesWriter;
 import com.ibm.airlock.admin.serialize.DataSerializer;
 import org.apache.wink.json4j.JSONException;
@@ -16,8 +19,11 @@ import org.apache.wink.json4j.JSONObject;
 
 import com.ibm.airlock.AirLockContextListener;
 import com.ibm.airlock.Constants;
+import com.ibm.airlock.Constants.AirlockCapability;
 import com.ibm.airlock.Constants.OutputJSONMode;
 import com.ibm.airlock.ProductServices;
+import com.ibm.airlock.admin.airlytics.athena.AthenaHandler;
+import com.ibm.airlock.admin.airlytics.entities.AirlyticsEntities;
 import com.ibm.airlock.admin.analytics.ExperimentsMutualExclusionGroup;
 import com.ibm.airlock.admin.operations.AirlockCapabilities;
 import com.ibm.airlock.admin.serialize.S3DataSerializer;
@@ -27,6 +33,7 @@ import com.ibm.airlock.admin.translations.SmartlingClient;
 import com.ibm.airlock.admin.translations.SmartlingLocales;
 import com.ibm.airlock.admin.translations.BackgroundTranslator;
 import com.ibm.airlock.admin.translations.TranslationUtilities;
+import com.ibm.airlock.admin.utilities.SecretManager;
 import com.ibm.airlock.engine.Environment;
 
 public class InitializationThread extends Thread {
@@ -65,7 +72,13 @@ public class InitializationThread extends Thread {
 			logger.severe(errMsg);		
 			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_DATA_CONSISTENCY_ERROR.");
 			throw new RuntimeException(errMsg);						
-		}					
+		}
+
+		//init dbHandler if ENTITIES capability is enabled
+		if (((AirlockCapabilities)(context.getAttribute(Constants.CAPABILITIES_PARAM_NAME))).getCapabilities().contains(AirlockCapability.ENTITIES)) {
+			initializeDBHandler();
+			initializeAthenaHandler();
+		}
 				
 		//init products from S3 file		
 		try {
@@ -561,6 +574,36 @@ public class InitializationThread extends Thread {
 		}
 
 		try {
+			initializeProductsCohorts(context);
+		} catch (IOException e) {
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			String errMsg = Strings.failedInitialization + e.getMessage();
+			logger.severe(errMsg);
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_IO_ERROR.");
+			throw new RuntimeException(errMsg);
+		}
+
+		try {
+			initializeProductsEntities(context);
+		} catch (IOException e) {
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			String errMsg = Strings.failedInitialization + e.getMessage();
+			logger.severe(errMsg);
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_IO_ERROR.");
+			throw new RuntimeException(errMsg);
+		}
+
+		try {
+			initializeProductsDataImports(context);
+		} catch (IOException e) {
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			String errMsg = Strings.failedInitialization + e.getMessage();
+			logger.severe(errMsg);
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_IO_ERROR.");
+			throw new RuntimeException(errMsg);
+		}
+
+		try {
 			initializeProductsAirlockUsersAutherization(context);
 			//if (!(Boolean)context.getAttribute(Constants.SKIP_AUTHENTICATION_PARAM_NAME)) {
 			//load users roles even if the server is not authenticated
@@ -614,6 +657,161 @@ public class InitializationThread extends Thread {
 		
 		logger.info (Strings.changeAirlockSerevrStateTo + "RUNNING.");
 		context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.RUNNING);
+	}
+
+	private void initializeDBHandler() {
+		String dbSecretName = AirLockContextListener.getEnv(Constants.ENV_DB_SECRET_NAME);
+		if (dbSecretName == null || dbSecretName.isEmpty()) {
+			String err = "Failed initializing the Airlock service. " + Constants.ENV_DB_SECRET_NAME + " environment parameter is missing while ENTITIES capability is enabled.";
+			logger.severe(err);
+			throw new RuntimeException(err);
+		}
+		
+		String secretMgrRegion = AirLockContextListener.getEnv(Constants.ENV_SECRET_MANAGER_REGION);
+		if (secretMgrRegion == null || secretMgrRegion.isEmpty()) {
+			String err = "Failed initializing the Airlock service. " + Constants.ENV_SECRET_MANAGER_REGION + " environment parameter is missing while ENTITIES capability is enabled.";
+			logger.severe(err);
+			throw new RuntimeException(err);
+		}
+		
+		try {
+			JSONObject secretJSON = SecretManager.getCredsJSON(dbSecretName, secretMgrRegion);
+			//DbHandler dbHandler = new DbHandler(dbUrl, userName, password);
+			DbHandler dbHandler = new DbHandler(secretJSON);
+			dbHandler.checkConnectivity();
+			context.setAttribute(Constants.DB_HANDLER_PARAM_NAME, dbHandler);
+		} catch (Exception e) {
+			String err = "Failed initializing the Airlock service. Cannot connect to database: " + e.getMessage();
+			logger.severe(err);
+			throw new RuntimeException(err);
+		}
+	}
+
+	private void initializeAthenaHandler() {
+		String athenaOutputBucket = AirLockContextListener.getEnv(Constants.ENV_ATHENA_OUTPUT_BUCKET);
+		if (athenaOutputBucket == null || athenaOutputBucket.isEmpty()) {
+			String err = "Failed initializing the Airlock service. " + Constants.ENV_ATHENA_OUTPUT_BUCKET + " environment parameter is missing while ENTITIES capability is enabled.";
+			logger.severe(err);
+			throw new RuntimeException(err);
+		}
+
+		String athenaRegion = AirLockContextListener.getEnv(Constants.ENV_ATHENA_REGION);
+		if (athenaRegion == null || athenaRegion.isEmpty()) {
+			String err = "Failed initializing the Airlock service. " + Constants.ENV_ATHENA_REGION + " environment parameter is missing while ENTITIES capability is enabled.";
+			logger.severe(err);
+			throw new RuntimeException(err);
+		}
+
+		String athenaCatalog = AirLockContextListener.getEnv(Constants.ENV_ATHENA_CATALOG);
+		if (athenaCatalog == null || athenaCatalog.isEmpty()) {
+			String err = "Failed initializing the Airlock service. " + Constants.ENV_ATHENA_CATALOG + " environment parameter is missing while ENTITIES capability is enabled.";
+			logger.severe(err);
+			throw new RuntimeException(err);
+		}
+		try {
+			AthenaHandler athenaHandler = new AthenaHandler(athenaRegion, athenaOutputBucket, athenaCatalog);
+			context.setAttribute(Constants.ATHENA_HANDLER_PARAM_NAME, athenaHandler);
+		} catch (Exception e) {
+			String err = "Failed initializing the Airlock service. Cannot connect to athena: " + e.getMessage();
+			logger.severe(err);
+			throw new RuntimeException(err);
+		}
+	}
+
+	private void initializeProductsCohorts(ServletContext context) throws IOException {
+		@SuppressWarnings("unchecked")
+		Map<String, Product> productsDB = (Map<String, Product>)context.getAttribute(Constants.PRODUCTS_DB_PARAM_NAME);
+		Set<String> products = productsDB.keySet();
+
+		for (String prodId:products) {
+			Product prod = productsDB.get(prodId);
+
+			String separator = ds.getSeparator();
+			try {
+				String filePath = Constants.SEASONS_FOLDER_NAME+separator + prod.getUniqueId().toString() +
+						separator+Constants.AIRLOCK_COHORTS_FILE_NAME;
+
+				prod.setCohorts(new AirlockCohorts(prod.getUniqueId()));
+
+				if (!ds.isFileExists(filePath)) {
+					System.out.println("filePath = " + filePath + " does not exist and is not mandatory - skipping");
+					continue;
+				}
+
+				System.out.println("filePath = " + filePath);
+
+				JSONObject json = ds.readDataToJSON(filePath);
+
+				prod.getCohorts().fromJSON(json, context);
+			} catch (IOException ioe) {
+				throw new IOException("IOException while reading the cohorts file of product " + prod.getUniqueId().toString() + ", '" + prod.getName() + "': " + ioe.getMessage());
+			} catch (JSONException je) {
+				throw new IOException("JSONException while reading the cohorts file of product " + prod.getUniqueId().toString() + ", '" + prod.getName() + "': " + je.getMessage());
+			}
+		}
+	}
+	private void initializeProductsDataImports(ServletContext context) throws IOException {
+		@SuppressWarnings("unchecked")
+		Map<String, Product> productsDB = (Map<String, Product>)context.getAttribute(Constants.PRODUCTS_DB_PARAM_NAME);
+		Set<String> products = productsDB.keySet();
+
+		for (String prodId:products) {
+			Product prod = productsDB.get(prodId);
+
+			String separator = ds.getSeparator();
+			try {
+				String filePath = Constants.SEASONS_FOLDER_NAME+separator + prod.getUniqueId().toString() +
+						separator+Constants.AIRLYTICS_DATA_IMPORT_FILE_NAME;
+
+				prod.setDataImports(new AirlyticsDataImport(prod.getUniqueId()));
+
+				if (!ds.isFileExists(filePath)) {
+					System.out.println("filePath = " + filePath + " does not exist and is not mandatory - skipping");
+					continue;
+				}
+
+				System.out.println("filePath = " + filePath);
+
+				JSONObject json = ds.readDataToJSON(filePath);
+
+				prod.getDataImports().fromJSON(json, context);
+			} catch (IOException ioe) {
+				throw new IOException("IOException while reading the data imports file of product " + prod.getUniqueId().toString() + ", '" + prod.getName() + "': " + ioe.getMessage());
+			} catch (JSONException je) {
+				throw new IOException("JSONException while reading the data imports file of product " + prod.getUniqueId().toString() + ", '" + prod.getName() + "': " + je.getMessage());
+			}
+		}
+	}
+
+	private void initializeProductsEntities(ServletContext context) throws IOException {
+		@SuppressWarnings("unchecked")
+		Map<String, Product> productsDB = (Map<String, Product>)context.getAttribute(Constants.PRODUCTS_DB_PARAM_NAME);
+		Set<String> products = productsDB.keySet();
+
+		for (String prodId:products) {
+			Product prod = productsDB.get(prodId);
+
+			String separator = ds.getSeparator();
+			try {
+				String filePath = Constants.SEASONS_FOLDER_NAME+separator + prod.getUniqueId().toString() +
+						separator+Constants.AIRLYTICS_ENTITIES_FILE_NAME;
+
+				prod.setEntities(new AirlyticsEntities(prod.getUniqueId()));
+
+				if (!ds.isFileExists(filePath)) {
+					System.out.println("filePath = " + filePath + " does not exist and is not mandatory - skipping");
+					continue;
+				}
+
+				System.out.println("filePath = " + filePath);
+				JSONObject json = ds.readDataToJSON(filePath);
+				prod.getEntities().fromJSON(json, context);
+			} catch (IOException ioe) {
+				throw new IOException("IOException while reading the entities file of product " + prod.getUniqueId().toString() + ", '" + prod.getName() + "': " + ioe.getMessage());
+			} catch (JSONException je) {
+				throw new IOException("JSONException while reading the entities file of product " + prod.getUniqueId().toString() + ", '" + prod.getName() + "': " + je.getMessage());
+			}
+		}
 	}
 
 	private void initializeProductsExperiments(ServletContext context) throws IOException, JSONException {

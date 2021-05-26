@@ -204,7 +204,7 @@ public class TestServices {
 			prodJson.put(Constants.JSON_FIELD_NAME, prodName);
 			prodJson.put(Constants.JSON_PRODUCT_FIELD_CODE_IDENTIFIER, prodName);
 			
-			ProductServices.doAddProduct(prodJson.toString(), userInfo, UUID.fromString(prodId), context, assertion);
+			ProductServices.doAddProduct(prodJson.toString(), userInfo, UUID.fromString(prodId), context, assertion, true);
 		} catch( JSONException je) {
 			return new ValidationResults(je.getMessage(), Status.BAD_REQUEST);
 		}

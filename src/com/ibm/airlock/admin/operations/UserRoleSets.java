@@ -468,4 +468,77 @@ public class UserRoleSets {
 		}
 		return res;
 	}
+	
+	//clone only users with the specified role  
+	public UserRoleSets cloneByRole(Map<String, UserRoleSet> usersDb, UUID newProductId, UserInfo productCreatorUserInfo, RoleType role ) {
+		UserRoleSets res = new UserRoleSets();
+		for (Map.Entry<String, UserRoleSet> entry : airlockUsers.entrySet()) {
+			UserRoleSet user = entry.getValue();
+			
+			boolean containsRole = false;
+			for (RoleType rt:user.getUserRoles()) {
+				if (rt.equals(role)) {
+					containsRole = true;
+					break;
+				}
+			}
+			
+			if (containsRole) {
+				UserRoleSet newUser = user.clone(newProductId, productCreatorUserInfo);
+				res.addUser(newUser);
+				//add new users to db
+				if (usersDb!=null) {
+					usersDb.put(newUser.getUniqueId().toString(), newUser);
+				}
+			}
+		}
+		return res;
+	}
+	
+	//add user to roleSets
+	public void addUserRole(Map<String, UserRoleSet> usersDb, String userIdentifier, UUID productId, RoleType role) throws JSONException {
+		if (!airlockUsers.containsKey(userIdentifier)) { //TODO:check case sensitivity
+			UserRoleSet newRoleSet = new UserRoleSet();
+			newRoleSet.setUniqueId(UUID.randomUUID());
+			newRoleSet.setLastModified(new Date(System.currentTimeMillis()));
+			newRoleSet.setUserIdentifier(userIdentifier);
+			newRoleSet.setGroupRepresentation(false);			
+			newRoleSet.setCreationDate(new Date(System.currentTimeMillis()));
+			newRoleSet.setCreator(userIdentifier);
+			newRoleSet.setProductId(productId);
+			LinkedList<RoleType> userRoles = new LinkedList<>();
+			userRoles.add(role);
+			newRoleSet.setUserRoles(userRoles);
+			
+			//complete missing roles
+			JSONObject newRoleSetObj = newRoleSet.toJSON();
+			newRoleSet.setRolesListByHigherPermission(newRoleSetObj);
+			newRoleSet.fromJSON(newRoleSetObj);
+			
+			airlockUsers.put(userIdentifier, newRoleSet);
+			if (usersDb!=null) {
+				usersDb.put(newRoleSet.getUniqueId().toString(), newRoleSet);
+			}	
+		}
+		else {
+			//user is product - verify role existence
+			UserRoleSet userRoles = airlockUsers.get(userIdentifier);
+			boolean found = false;
+			for (RoleType rt : userRoles.getUserRoles()) {
+				if (rt.equals(role)) {
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+				userRoles.getUserRoles().add(role);
+				//complete missing roles
+				JSONObject userRolesObj = userRoles.toJSON();
+				userRoles.setRolesListByHigherPermission(userRolesObj);
+				userRoles.fromJSON(userRolesObj);
+				
+				userRoles.setRolesListByHigherPermission(userRoles.toJSON());
+			}			
+		}
+	}
 }

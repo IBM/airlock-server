@@ -523,6 +523,11 @@ public class OrderingRuleItem extends ConfigurationRuleItem {
 				res = toDeltaJson(res, context, mode, env);
 				return res;
 			}
+			else {
+				//in case the item is checked out. Dev in master and prod in branch. Write the whole item (not only delta) and set its 
+				//branchStatus to NEW in runtime files
+				res.put("branchStatus", "NEW");
+			}
 		}
 				
 		if (mode.equals(OutputJSONMode.RUNTIME_DEVELOPMENT) || mode.equals(OutputJSONMode.RUNTIME_PRODUCTION)) {

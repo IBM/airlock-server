@@ -438,9 +438,9 @@ public class PurchaseOptionsItem extends FeatureItem {
 		return false;
 	}
 
-	public ValidationResults validateProductionDontChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env) throws JSONException {
+	public ValidationResults validateProductionDontChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env, boolean ignoreUserGroups) throws JSONException {
 
-		ValidationResults superRes = super.validateProductionDontChanged(updatedFeatureData, airlockItemsDB, branch, context, considerProdUnderDevAsDev, env);
+		ValidationResults superRes = super.validateProductionDontChanged(updatedFeatureData, airlockItemsDB, branch, context, considerProdUnderDevAsDev, env, ignoreUserGroups);
 
 		if (superRes!=null && !superRes.status.equals(Status.OK))
 			return superRes;

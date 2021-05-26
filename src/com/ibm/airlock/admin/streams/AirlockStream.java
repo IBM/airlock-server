@@ -54,6 +54,12 @@ public class AirlockStream {
 	private String owner = null; //like desc (not in runtime)
 	private String resultsSchema = null; //c+u cannot be empty string (not in runtime)
 	
+	//history fields
+	private Boolean operateOnHistoricalEvents = false; //c+u
+	private Long limitByStartDate = null; //c+u null means unlimited
+	private Long limitByEndDate = null; //c+u null means unlimited
+	private Integer processEventsOfLastNumberOfDays = null; //c+u null is possible when operateOnHistoricalEvents=false or start&end are configured
+	
 	public String getName() {
 		return name;
 	}
@@ -176,6 +182,30 @@ public class AirlockStream {
 		this.queueSizeKB = queueSizeKB;
 	}	
 	
+	public Boolean getOperateOnHistoricalEvents() {
+		return operateOnHistoricalEvents;
+	}
+	public void setOperateOnHistoricalEvents(Boolean operateOnHistoricalEvents) {
+		this.operateOnHistoricalEvents = operateOnHistoricalEvents;
+	}
+	public Long getLimitByStartDate() {
+		return limitByStartDate;
+	}
+	public void setLimitByStartDate(Long limitByStartDate) {
+		this.limitByStartDate = limitByStartDate;
+	}
+	public Long getLimitByEndDate() {
+		return limitByEndDate;
+	}
+	public void setLimitByEndDate(Long limitByEndDate) {
+		this.limitByEndDate = limitByEndDate;
+	}
+	public Integer getProcessEventsOfLastNumberOfDays() {
+		return processEventsOfLastNumberOfDays;
+	}
+	public void setProcessEventsOfLastNumberOfDayss(Integer processEventsOfLastNumberOfDays) {
+		this.processEventsOfLastNumberOfDays = processEventsOfLastNumberOfDays;
+	}
 	public void fromJSON(JSONObject input) throws JSONException {
 		if (input.containsKey(Constants.JSON_FIELD_UNIQUE_ID) && input.get(Constants.JSON_FIELD_UNIQUE_ID) != null) {
 			String sStr = input.getString(Constants.JSON_FIELD_UNIQUE_ID);			
@@ -247,7 +277,20 @@ public class AirlockStream {
 		if (input.containsKey(Constants.JSON_FEATURE_FIELD_SEASON_ID) && input.get(Constants.JSON_FEATURE_FIELD_SEASON_ID) != null) {
 			String sStr = input.getString(Constants.JSON_FEATURE_FIELD_SEASON_ID);			
 			seasonId = UUID.fromString(sStr);			
-		}		
+		}
+		
+		if (input.containsKey(Constants.JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS) && input.get(Constants.JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS)!=null) 
+			operateOnHistoricalEvents = input.getBoolean(Constants.JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS);
+		
+		//null is legal value
+		if (input.containsKey(Constants.JSON_FIELD_LIMIT_BY_START_DATE) && input.get(Constants.JSON_FIELD_LIMIT_BY_START_DATE)!=null) 
+			limitByStartDate = input.getLong(Constants.JSON_FIELD_LIMIT_BY_START_DATE);
+		
+		if (input.containsKey(Constants.JSON_FIELD_LIMIT_BY_END_DATE) && input.get(Constants.JSON_FIELD_LIMIT_BY_END_DATE)!=null) 
+			limitByEndDate = input.getLong(Constants.JSON_FIELD_LIMIT_BY_END_DATE);
+		
+		if (input.containsKey(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS) && input.get(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS)!=null) 
+			processEventsOfLastNumberOfDays = input.getInt(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS);		
 	}
 	
 	public JSONObject toJson (OutputJSONMode mode) throws JSONException {
@@ -264,6 +307,12 @@ public class AirlockStream {
 		res.put(Constants.JSON_FEATURE_FIELD_MIN_APP_VER, minAppVersion);		
 		res.put(Constants.JSON_FEATURE_FIELD_STAGE, stage.toString());
 		res.put(Constants.JSON_FEATURE_FIELD_SEASON_ID, seasonId==null?null:seasonId.toString());
+		
+		res.put(Constants.JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS, operateOnHistoricalEvents);
+		res.put(Constants.JSON_FIELD_LIMIT_BY_START_DATE, limitByStartDate);
+		res.put(Constants.JSON_FIELD_LIMIT_BY_END_DATE, limitByEndDate);
+		res.put(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS, processEventsOfLastNumberOfDays);
+		
 		
 		if (mode.equals(OutputJSONMode.ADMIN) || mode.equals(OutputJSONMode.DISPLAY)) {
 			res.put(Constants.JSON_FIELD_DESCRIPTION, description);
@@ -465,6 +514,75 @@ public class AirlockStream {
 			}
 		}
 
+		//for now history properties are optional until implemented in the console
+		if (updatedStreamJSON.containsKey(Constants.JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS)) {
+			//operateOnHistoricalEvents
+			boolean updatedPperateOnHistoricalEvents = updatedStreamJSON.getBoolean(Constants.JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS);
+			if (operateOnHistoricalEvents  != updatedPperateOnHistoricalEvents) {
+				updateDetails.append(" 'operateOnHistoricalEvents' changed from " + operateOnHistoricalEvents + " to " + updatedPperateOnHistoricalEvents + "\n");
+				operateOnHistoricalEvents = updatedPperateOnHistoricalEvents;		
+				wasChanged = true;
+			}
+			
+			
+			//limitByStartDate - null is a legal value
+			if (updatedStreamJSON.containsKey(Constants.JSON_FIELD_LIMIT_BY_START_DATE)) {
+				if (updatedStreamJSON.get(Constants.JSON_FIELD_LIMIT_BY_START_DATE) == null) {
+					if (limitByStartDate!=null) {
+						updateDetails.append(" 'limitByStartDate' changed from " + limitByStartDate + " to null\n");
+						limitByStartDate = null;
+						wasChanged = true;
+					}				
+				}
+				else {
+					Long updatedLimitByStartDate = updatedStreamJSON.getLong(Constants.JSON_FIELD_LIMIT_BY_START_DATE);
+					if (!updatedLimitByStartDate.equals(limitByStartDate)) {
+						updateDetails.append(" 'limitByStartDate' changed from " + limitByStartDate + " to " + updatedLimitByStartDate + "\n");
+						limitByStartDate = updatedLimitByStartDate;
+						wasChanged = true;
+					}
+				}
+			}
+			
+			//limitByEndDate - null is a legal value
+			if (updatedStreamJSON.containsKey(Constants.JSON_FIELD_LIMIT_BY_END_DATE)) {
+				if (updatedStreamJSON.get(Constants.JSON_FIELD_LIMIT_BY_END_DATE) == null) {
+					if (limitByEndDate!=null) {
+						updateDetails.append(" 'limitByEndDate' changed from " + limitByEndDate + " to null\n");
+						limitByEndDate = null;
+						wasChanged = true;
+					}				
+				}
+				else {
+					Long updatedLimitByEndDate = updatedStreamJSON.getLong(Constants.JSON_FIELD_LIMIT_BY_END_DATE);
+					if (!updatedLimitByEndDate.equals(limitByEndDate)) {
+						updateDetails.append(" 'limitByEndDate' changed from " + limitByEndDate + " to " + updatedLimitByEndDate + "\n");
+						limitByEndDate = updatedLimitByEndDate;
+						wasChanged = true;
+					}
+				}
+			}
+			
+			//processEventsOfLastNumberOfDays - null is a legal value
+			if (updatedStreamJSON.containsKey(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS)) {
+				if (updatedStreamJSON.get(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS) == null) {
+					if (processEventsOfLastNumberOfDays!=null) {
+						updateDetails.append(" 'processEventsOfLastNumberOfDays' changed from " + processEventsOfLastNumberOfDays + " to null\n");
+						processEventsOfLastNumberOfDays = null;
+						wasChanged = true;
+					}				
+				}
+				else {
+					Integer updatedProcessEventsOfLastNumberOfDays = updatedStreamJSON.getInt(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS);
+					if (!updatedProcessEventsOfLastNumberOfDays.equals(processEventsOfLastNumberOfDays)) {
+						updateDetails.append(" 'processEventsOfLastNumberOfDays' changed from " + processEventsOfLastNumberOfDays + " to " + updatedProcessEventsOfLastNumberOfDays + "\n");
+						processEventsOfLastNumberOfDays = updatedProcessEventsOfLastNumberOfDays;
+						wasChanged = true;
+					}
+				}
+			}
+		}
+		
 		if (updateMergeSchema) {
 
 			try {
@@ -494,7 +612,6 @@ public class AirlockStream {
 				//if JSON contains uniqueId - update an existing feature otherwise create a new feature
 				action = Action.UPDATE;
 			}
-			
 			
 			Stage stageObj = null;
 
@@ -666,6 +783,64 @@ public class AirlockStream {
 				int mqe = streamObj.getInt(Constants.JSON_FIELD_MAX_QUEUED_EVENTS);
 				if (mqe<=0) { //TODO:
 					return new ValidationResults("The maxQueuedEvents value is illegal. Should be a positive integer.", Status.BAD_REQUEST);
+				}
+			}
+			
+			//operateOnHistoricalEvents - for now history properties are optional until implemented in theh console
+			if (streamObj.containsKey(Constants.JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS)) {
+				if (!streamObj.containsKey(Constants.JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS) || streamObj.get(Constants.JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS) == null) {
+					return new ValidationResults(String.format(Strings.fieldIsMissing, Constants.JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS), Status.BAD_REQUEST);
+				}
+				
+				Boolean his = streamObj.getBoolean(Constants.JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS); //validate that is legal boolean
+				if (his) {
+					//verify that the streams global enableHistoricalEvents is on
+					if (!season.getStreams().isEnableHistoricalEvents()) {
+						return new ValidationResults("Cannot turn operation on historical events on. The global setting that enable historical events saving is off.", Status.BAD_REQUEST);
+					}	
+				}
+				
+				//limitByStartDate - null is legal value
+				if (!streamObj.containsKey(Constants.JSON_FIELD_LIMIT_BY_START_DATE)) {
+					return new ValidationResults(String.format(Strings.fieldIsMissing, Constants.JSON_FIELD_LIMIT_BY_START_DATE), Status.BAD_REQUEST);
+				}
+				
+				Long limByStart = null;
+				if (streamObj.get(Constants.JSON_FIELD_LIMIT_BY_START_DATE) != null) {
+					limByStart = streamObj.getLong(Constants.JSON_FIELD_LIMIT_BY_START_DATE); 
+				}
+				
+				//limitByEndDate - null is legal value
+				if (!streamObj.containsKey(Constants.JSON_FIELD_LIMIT_BY_END_DATE)) {
+					return new ValidationResults(String.format(Strings.fieldIsMissing, Constants.JSON_FIELD_LIMIT_BY_END_DATE), Status.BAD_REQUEST);
+				}
+				
+				Long limByEnd = null;
+				if (streamObj.get(Constants.JSON_FIELD_LIMIT_BY_END_DATE) != null) {
+					limByEnd = streamObj.getLong(Constants.JSON_FIELD_LIMIT_BY_END_DATE); 
+				}
+				
+				//processEventsOfLastNumberOfDays - null is legal value
+				if (!streamObj.containsKey(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS)) {
+					return new ValidationResults(String.format(Strings.fieldIsMissing, Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS), Status.BAD_REQUEST);
+				}
+				
+				Integer processHisNumDays = null;
+				if (streamObj.get(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS) != null) {
+					processHisNumDays = streamObj.getInt(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS); 
+					
+					//verify that the streams global keepHistoryOfLastNumberOfDays is greater
+					if (season.getStreams().getKeepHistoryOfLastNumberOfDays()!=null && season.getStreams().getKeepHistoryOfLastNumberOfDays() < processHisNumDays) {
+						return new ValidationResults("Cannot set " + Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS + " value to " + processHisNumDays + ". It exceeds the global " + Constants.JSON_FIELD_KEEP_HISTORY_OF_LAST_NUM_DAYS, Status.BAD_REQUEST);
+					}
+				}
+				
+				if (limByStart!=null && limByEnd!=null && limByStart>limByEnd) {
+					return new ValidationResults(Strings.historyRangeStartExceedEnd, Status.BAD_REQUEST);
+				}
+						
+				if ((limByStart!=null || limByEnd!=null) && processHisNumDays!=null) {
+					return new ValidationResults(Strings.CannotConfigStreamHistoryRangeAndDaysNumber, Status.BAD_REQUEST);
 				}
 			}
 			
@@ -866,6 +1041,49 @@ public class AirlockStream {
 				return new ValidationResults(err, Status.UNAUTHORIZED);													
 			}
 			
+			Boolean updatedOperateOnHistoricalEvents = updatedAnalyticsItemJSON.getBoolean(Constants.JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS);
+			if (operateOnHistoricalEvents != updatedOperateOnHistoricalEvents) 
+				return new ValidationResults(err, Status.UNAUTHORIZED);		
+			
+			//limitByStartDate - null is legal value
+			if (updatedAnalyticsItemJSON.containsKey(Constants.JSON_FIELD_LIMIT_BY_START_DATE)) {
+				if (updatedAnalyticsItemJSON.get(Constants.JSON_FIELD_LIMIT_BY_START_DATE) == null) {
+					if (limitByStartDate!=null)				
+						return new ValidationResults(err, Status.UNAUTHORIZED);
+				}
+				else {
+					Long updatedLimitByStartDate = updatedAnalyticsItemJSON.getLong(Constants.JSON_FIELD_LIMIT_BY_START_DATE);
+					if (!updatedLimitByStartDate.equals(limitByStartDate)) 
+						return new ValidationResults(err, Status.UNAUTHORIZED);
+				}
+			}
+			
+			//limitByEndDate - null is legal value
+			if (updatedAnalyticsItemJSON.containsKey(Constants.JSON_FIELD_LIMIT_BY_END_DATE)) {
+				if (updatedAnalyticsItemJSON.get(Constants.JSON_FIELD_LIMIT_BY_END_DATE) == null) {
+					if (limitByEndDate!=null)				
+						return new ValidationResults(err, Status.UNAUTHORIZED);
+				}
+				else {
+					Long updatedLimitByEndDate = updatedAnalyticsItemJSON.getLong(Constants.JSON_FIELD_LIMIT_BY_END_DATE);
+					if (!updatedLimitByEndDate.equals(limitByEndDate)) 
+						return new ValidationResults(err, Status.UNAUTHORIZED);
+				}
+			}
+			
+			//processEventsOfLastNumberOfDays - null is legal value
+			if (updatedAnalyticsItemJSON.containsKey(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS)) {
+				if (updatedAnalyticsItemJSON.get(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS) == null) {
+					if (processEventsOfLastNumberOfDays!=null)				
+						return new ValidationResults(err, Status.UNAUTHORIZED);
+				}
+				else {
+					Integer updatedProcessEventsOfLastNumberOfDays = updatedAnalyticsItemJSON.getInt(Constants.JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS);
+					if (!updatedProcessEventsOfLastNumberOfDays.equals(processEventsOfLastNumberOfDays)) 
+						return new ValidationResults(err, Status.UNAUTHORIZED);
+				}
+			}
+			
 			//optional fields
 			//description
 			if (updatedAnalyticsItemJSON.containsKey(Constants.JSON_FIELD_DESCRIPTION) &&  updatedAnalyticsItemJSON.get(Constants.JSON_FIELD_DESCRIPTION)!=null) {
@@ -962,7 +1180,10 @@ public class AirlockStream {
 		res.setMaxQueuedEvents(maxQueuedEvents);		
 		res.setOwner(owner);
 		res.setResultsSchema(resultsSchema);
-		
+		res.setOperateOnHistoricalEvents(operateOnHistoricalEvents);
+		res.setLimitByEndDate(limitByEndDate);
+		res.setLimitByStartDate(limitByStartDate);
+		res.setProcessEventsOfLastNumberOfDayss(processEventsOfLastNumberOfDays);
 		return res;
 	}
 	

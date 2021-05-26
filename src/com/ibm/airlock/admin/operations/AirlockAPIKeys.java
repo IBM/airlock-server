@@ -250,6 +250,7 @@ public class AirlockAPIKeys {
 				apiKey.removeRolesForProduct(product);
 				if (apiKey.getRolesPerPropduct().isEmpty() && apiKey.getRoles().isEmpty()) {
 					removeAPIKey(apiKey); //if the product's roles were the only roles in this key - delete the key
+					//TODO: verify that the password is removed too
 				}
 			}
 		}

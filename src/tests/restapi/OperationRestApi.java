@@ -103,7 +103,25 @@ public class OperationRestApi {
 		RestClientUtils.RestCallResults res = RestClientUtils.sendPut(m_url+ "/userrolesets/" + userId, body, sessionToken);
 		return res.message;
 	}
+	/*public String setAirlockUsers(String body ,String sessionToken) throws IOException {
+		RestClientUtils.RestCallResults res = RestClientUtils.sendPut(m_url+"/airlockusers", body,sessionToken);
+		return res.message;
+	}
+	public String setProductAirlockUsers(String productId, String body ,String sessionToken) throws IOException {
+		RestClientUtils.RestCallResults res = RestClientUtils.sendPut(m_url+"/products/" + productId +"/airlockusers", body,sessionToken);
+		return res.message;
+	}*/
 
+	public String getAirlockServers(String sessionToken) throws Exception {
+		RestClientUtils.RestCallResults res = RestClientUtils.sendGet(m_url+"/airlockservers",sessionToken);
+		return res.message;
+	}
+
+	public String setAirlockServers(String body ,String sessionToken) throws IOException {
+		RestClientUtils.RestCallResults res = RestClientUtils.sendPut(m_url+"/airlockservers", body,sessionToken);
+		return res.message;
+	}
+	
 	//GET /ops/healthcheck
 	public int healthcheck(String sessionToken) throws Exception {
 		RestClientUtils.RestCallResults res = RestClientUtils.sendGet(m_url+"/healthcheck", sessionToken);
@@ -124,6 +142,7 @@ public class OperationRestApi {
 		RestClientUtils.RestCallResults res = RestClientUtils.sendPost(m_url+"/airlockkeys", content, sessionToken);
 		return res.message;
 	}
+	
 	
 	//GET /ops/airlockkeys
 	public String getAllKeys(String owner, String sessionToken) throws Exception{
@@ -422,10 +441,35 @@ public class OperationRestApi {
 				userExistingRoles.add(role);
 				user.put("roles", userExistingRoles);
 				String resp = updateAirlockUser(user.getString("uniqueId"), user.toString(), token);
-				Assert.assertFalse(resp.contains("error"), "Can't update user roles: " + resp);
+				Assert.assertFalse(resp.contains("error"), "Can't add user role: " + resp);
 			}
 		} 
 
+	}
+	
+	public void updateUserProductRole (String role, String userIdentifier, String token, String productID, String config) throws Exception{
+		String response = getProductAirlockUsers(token, productID);
+		JSONObject allUsers = new JSONObject(response);
+		JSONArray users = allUsers.getJSONArray("users");
+		boolean found = false;
+		JSONArray userNewRoles = new JSONArray();
+		userNewRoles.add(role);
+		for (int i=0; i< users.size(); i++){
+			JSONObject user = users.getJSONObject(i);
+			if (user.getString("identifier").equals(userIdentifier)){
+				found = true;
+				user.put("roles", userNewRoles);
+				String resp = updateAirlockUser(user.getString("uniqueId"), user.toString(), token);
+				Assert.assertFalse(resp.contains("error"), "Can't update user roles: " + resp);
+			}
+		} 
+		if (!found) {
+			String user = FileUtils.fileToString(config + "airlockUser.txt", "UTF-8", false);
+			JSONObject userObj = new JSONObject(user);
+			userObj.put("identifier", userIdentifier);
+			userObj.put("roles", userNewRoles);
+			addProductAirlockUser(userObj.toString(), productID, token);
+		}
 	}
 	
 	

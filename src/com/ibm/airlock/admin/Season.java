@@ -547,6 +547,7 @@ public class Season {
 	
 	public void generateEmptyStreams() {
 		streams = new AirlockStreamsCollection(uniqueId);
+		streams.setLastModified(new Date());
 		streamsEvents = new StreamsEvents(uniqueId);
 	}
 	
@@ -1144,7 +1145,7 @@ public class Season {
 	
 	public void duplicateStreams(Season lastSeason, Map<String, AirlockStream> streamsDB, ServletContext context) {
 		generateEmptyStreams();
-		streams.setStreamsList(lastSeason.getStreams().duplicateForNewSeason(minVersion, uniqueId, streamsDB));
+		streams = lastSeason.getStreams().duplicateForNewSeason(minVersion, uniqueId, streamsDB);
 		streamsEvents = lastSeason.getStreamsEvents().duplicateForNewSeason(uniqueId);
 	}
 	

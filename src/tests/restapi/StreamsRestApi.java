@@ -41,6 +41,11 @@ public class StreamsRestApi {
 		return parseId(res.message);
 	}
 	
+	public String updateGlobalStreamSettings(String seasonId, String globalStreamsSettings, String sessionToken) throws IOException{
+		RestClientUtils.RestCallResults res = RestClientUtils.sendPut(m_url+"/products/seasons/" + seasonId + "/streams/", globalStreamsSettings, sessionToken);
+		return res.message;
+	}
+	
 	public int deleteStream(String streamId, String sessionToken) throws Exception{
 
 		RestClientUtils.RestCallResults res = RestClientUtils.sendDelete(m_url+"/products/seasons/streams/" + streamId, sessionToken);

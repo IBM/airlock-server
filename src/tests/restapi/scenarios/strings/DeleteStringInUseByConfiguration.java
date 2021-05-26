@@ -51,14 +51,14 @@ public class DeleteStringInUseByConfiguration {
 
 	
 	@Test (description = "Add string in production stage")
-	public void addString() throws Exception{
+	public void addString1() throws Exception{
 		
 		str = FileUtils.fileToString(filePath + "strings/string1.txt", "UTF-8", false);
 		stringID = t.addString(seasonID, str, sessionToken);
 	}
 	
-	@Test (dependsOnMethods="addString",  description = "Add feature with configuration")
-	public void addFeature() throws Exception{
+	@Test (dependsOnMethods="addString1",  description = "Add feature with configuration")
+	public void addFeature1() throws Exception{
 		String feature = FileUtils.fileToString(filePath + "feature1.txt", "UTF-8", false);
 		String featureID = f.addFeature(seasonID, feature, "ROOT", sessionToken );
 		String configRule = FileUtils.fileToString(filePath + "configuration_rule1.txt", "UTF-8", false);
@@ -69,10 +69,36 @@ public class DeleteStringInUseByConfiguration {
 		Assert.assertFalse(response.contains("error"), "Test should pass, but instead failed: " + response );
 	}
 	
-	@Test (dependsOnMethods="addFeature",  description = "Delete string in use by configuration")
-	public void deleteString() throws Exception{
+	@Test (dependsOnMethods="addFeature1",  description = "Delete string in use by configuration")
+	public void deleteString1() throws Exception{
 		int responseCode = t.deleteString(stringID, sessionToken);
-		Assert.assertNotEquals(responseCode, 200, "String in production stage was deleted");
+		Assert.assertNotEquals(responseCode, 200, "String in use by configuration was deleted");
+	}
+	
+	@Test (dependsOnMethods="deleteString1", description = "Add string in production stage")
+	public void addString2() throws Exception{
+		str = FileUtils.fileToString(filePath + "strings/string2.txt", "UTF-8", false);
+		stringID = t.addString(seasonID, str, sessionToken);
+	}
+	
+	@Test (dependsOnMethods="addString2",  description = "Add feature with configuration")
+	public void addFeature2() throws Exception{
+		String feature = FileUtils.fileToString(filePath + "feature2.txt", "UTF-8", false);
+		String featureID = f.addFeature(seasonID, feature, "ROOT", sessionToken );
+		String configRule = FileUtils.fileToString(filePath + "configuration_rule2.txt", "UTF-8", false);
+		JSONObject crJson = new JSONObject(configRule);
+		String ruleString =  "  translate(\"app.hi\", \"testing string1\", \"testing string2\");  true;	" ;
+		JSONObject ruleObj = new JSONObject();
+		ruleObj.put("ruleString", ruleString);
+		crJson.put("rule", ruleObj);
+		String response = f.addFeature(seasonID, crJson.toString(), featureID, sessionToken );
+		Assert.assertFalse(response.contains("error"), "Test should pass, but instead failed: " + response );
+	}
+	
+	@Test (dependsOnMethods="addFeature2",  description = "Delete string in use by configuration rule")
+	public void deleteString2() throws Exception{
+		int responseCode = t.deleteString(stringID, sessionToken);
+		Assert.assertNotEquals(responseCode, 200, "String in use by configuration was deleted");
 	}
 	
 

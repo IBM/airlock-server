@@ -163,22 +163,25 @@ public class StreamsScriptInvoker extends ScriptInvoker
 	// the processor is assumed to changed the content of the 'results' object
 	public JSONObject evaluateProcessor(String processor, String eventObject) throws InvokerException
 	{
-    	if (processor == null || processor.isEmpty())
+		 String str=null;
+		 if (processor == null || processor.isEmpty())
       		return new JSONObject();
 
         try {
 			String overrideEvents = "var result = {}; var cache = {}; var events = " + eventObject + ";";
 			String exec = overrideEvents + processor + "; JSON.stringify(result); ";
-        	Object result = globalRhino.evaluateString(sharedScope, exec, "JavaScript", 1, null);
+			Object result = globalRhino.evaluateString(sharedScope, exec, "JavaScript", 1, null);
 
-            String str = Context.toString(result);
+            str = Context.toString(result);
             return new JSONObject(str);
         }
         catch (ScriptExecutionTimeoutException e){
-        	throw new InvokerException("Javascript timeout: " + e.getMessage());
+        		throw new InvokerException("Javascript timeout: " + e.getMessage());
         }
         catch (Throwable e){
-        	throw new InvokerException("Javascript error: " + e.getMessage());
+        		e.printStackTrace();
+        		System.out.println("str ="  + str);
+        		throw new InvokerException("Javascript error: " + e.getMessage());
         }
         finally {
          //   Context.exit();

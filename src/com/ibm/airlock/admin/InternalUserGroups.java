@@ -457,8 +457,6 @@ public class InternalUserGroups {
 				for (Branch branch:season.getBranches().getBranchesList()) {
 					JSONObject branchObj = new JSONObject();
 					String branchId = branch.getUniqueId().toString();
-					branchObj.put(Constants.JSON_FIELD_UNIQUE_ID, branchId);
-					branchObj.put(Constants.JSON_FIELD_NAME, branch.getName());
 					TreeMap <String, ArrayList<String>> usageInBranch = usageInBranches.get(branchId);
 					JSONArray branchItemsArray = new JSONArray();
 					if (usageInBranch!=null) {
@@ -476,9 +474,12 @@ public class InternalUserGroups {
 							}
 						}
 					}
-					branchObj.put(Constants.JSON_FEATURE_FIELD_FEATURES, branchItemsArray);
-					
-					branchesArr.add(branchObj);
+					if (branchItemsArray.size() > 0) { //add branch only if is contains features using the userGroup
+						branchObj.put(Constants.JSON_FIELD_UNIQUE_ID, branchId);
+						branchObj.put(Constants.JSON_FIELD_NAME, branch.getName());
+						branchObj.put(Constants.JSON_FEATURE_FIELD_FEATURES, branchItemsArray);
+						branchesArr.add(branchObj);
+					}
 				}
 				
 				seasonObj.put(Constants.JSON_FIELD_BRANCHES, branchesArr);

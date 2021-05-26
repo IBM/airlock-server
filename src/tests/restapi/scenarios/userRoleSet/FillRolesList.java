@@ -33,7 +33,7 @@ public class FillRolesList {
 	private String sessionToken = "";
 	private LinkedList<String> usersIds = new LinkedList<String>();
 	
-	String[] AdminRoles = new String[] {"Administrator", "ProductLead", "Editor", "Viewer"};
+	String[] AdminRoles = new String[] {"Administrator","ProductLead","Editor","Viewer","AnalyticsViewer","AnalyticsEditor","AnalyticsPowerUser"};
 	String[] ProductLeadRoles = new String[] {"ProductLead", "Editor", "Viewer"};
 	String[] EditorRoles = new String[] {"Editor", "Viewer"};
 	String[] AnalyticsEditorRoles = new String[] {"AnalyticsEditor", "Viewer"};

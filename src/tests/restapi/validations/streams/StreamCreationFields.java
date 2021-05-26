@@ -49,7 +49,6 @@ public class StreamCreationFields {
 		streamApi = new StreamsRestApi();
 		streamApi.setURL(url);
 		stream = FileUtils.fileToString(filePath + "streams/stream1.txt", "UTF-8", false);
-		
 	}
 	
 	@Test

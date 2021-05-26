@@ -1323,6 +1323,7 @@ public abstract class DataAirlockItem extends BaseAirlockItem{
 				if (uniqueId.toString().equals(updatedSubFeatureId)) {
 					return new ValidationResults("A subfeature cannot be the same as its parent.", Status.BAD_REQUEST);
 				}
+
 				//cannot move an item under an unchecked out item (NONE). The root is an exception - a new feature can be added/moved
 				//under the root.
 				if (!env.isInMaster() && branchStatus.equals(BranchStatus.NONE)) {
@@ -1546,7 +1547,7 @@ public abstract class DataAirlockItem extends BaseAirlockItem{
 		return false;
 	}
 	
-	private boolean isChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, boolean allowStageChange) throws JSONException {
+	private boolean isChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, boolean allowStageChange, boolean ignoreUserGroups) throws JSONException {
 		Stage updatedStage = Utilities.strToStage(updatedFeatureData.getString(Constants.JSON_FEATURE_FIELD_STAGE));		
 		if (!allowStageChange && !updatedStage.equals(stage))
 			return true;
@@ -1597,12 +1598,14 @@ public abstract class DataAirlockItem extends BaseAirlockItem{
 		}
 								
 
-		if (updatedFeatureData.containsKey(Constants.JSON_FIELD_INTERNAL_USER_GROUPS) && updatedFeatureData.get(Constants.JSON_FIELD_INTERNAL_USER_GROUPS)!=null) {
-			JSONArray updatedInternalUserGroups = updatedFeatureData.getJSONArray(Constants.JSON_FIELD_INTERNAL_USER_GROUPS);
-			if (!Utilities.stringArrayCompareIgnoreOrder(updatedInternalUserGroups,internalUserGroups)) {
-				return true;				
+		if (!ignoreUserGroups) {
+			if (updatedFeatureData.containsKey(Constants.JSON_FIELD_INTERNAL_USER_GROUPS) && updatedFeatureData.get(Constants.JSON_FIELD_INTERNAL_USER_GROUPS)!=null) {
+				JSONArray updatedInternalUserGroups = updatedFeatureData.getJSONArray(Constants.JSON_FIELD_INTERNAL_USER_GROUPS);
+				if (!Utilities.stringArrayCompareIgnoreOrder(updatedInternalUserGroups,internalUserGroups)) {
+					return true;				
+				}
 			}
-		}	
+		}
 		
 		if (updatedFeatureData.containsKey(Constants.JSON_FEATURE_FIELD_NO_CACHED_RES) && updatedFeatureData.get(Constants.JSON_FEATURE_FIELD_NO_CACHED_RES)!=null) {				
 			Boolean updatedNoCachedResults = updatedFeatureData.getBoolean(Constants.JSON_FEATURE_FIELD_NO_CACHED_RES);
@@ -1624,7 +1627,7 @@ public abstract class DataAirlockItem extends BaseAirlockItem{
 		
 		String err = "You cannot update an item that is not checked out. First check out the item. To update a configuration, check out its parent feature.";
 
-		if (isChanged(updatedFeatureData, airlockItemsDB, false))
+		if (isChanged(updatedFeatureData, airlockItemsDB, false, false))
 			return new ValidationResults(err, Status.BAD_REQUEST);				
 		
 		return null;
@@ -1636,7 +1639,7 @@ public abstract class DataAirlockItem extends BaseAirlockItem{
 	
 	//considerProdUnderDev: for prod runtime file - we should consider prod under dev as dev
 	//                      for user permissions - we should consider prod under dev as prod 
-	public ValidationResults validateProductionDontChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env) throws JSONException {
+	public ValidationResults validateProductionDontChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env, boolean ignoreUserGroups) throws JSONException {
 		//Creator, creation date, seasonId and type should not be updated
 
 		//At this stage we can be sure that all mandatory fields exist and legal types exist in the json since validate was previously called.		
@@ -1687,12 +1690,12 @@ public abstract class DataAirlockItem extends BaseAirlockItem{
 		String err = "Unable to update the " + getObjTypeStrByType() + ". Only a user with the Administrator or Product Lead role can change a subitem that is in the production stage.";		
 		
 		if (consideredProd) {
-			if (isChanged(updatedFeatureData, airlockItemsDB, true)) {
+			if (isChanged(updatedFeatureData, airlockItemsDB, true, ignoreUserGroups)) {
 				return new ValidationResults(err, Status.UNAUTHORIZED);
 			}
 		}
 		
-		ValidationResults superRes = super.validateProductionDontChanged(updatedFeatureData, airlockItemsDB, branch, context, considerProdUnderDevAsDev, env);
+		ValidationResults superRes = super.validateProductionDontChanged(updatedFeatureData, airlockItemsDB, branch, context, considerProdUnderDevAsDev, env, ignoreUserGroups);
 		if (superRes!=null)
 			return superRes;
 				
@@ -1712,8 +1715,17 @@ public abstract class DataAirlockItem extends BaseAirlockItem{
 				return true;
 			}
 		}
+		
+		if (this.rule!=null && this.rule.getRuleString()!=null && !this.rule.getRuleString().isEmpty()) {
+			Set<String> foundIds = VerifyRule.findAllTranslationIds(stringIds, this.rule.getRuleString(), false);
+			if(foundIds.contains(stringId)){
+				return true;
+			}
+		}
+		
 		return false;
 	}
+	
 	public JSONObject getStringsInUseByItem(Set<String> stringIds, Season season) throws JSONException {
 		Set<String> stringsInUseByConfigList = new HashSet<String>();
 		Set<String> stringsInUseByUtilList = new HashSet<String>();

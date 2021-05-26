@@ -410,7 +410,7 @@ import java.util.Properties;
 
          purchaseID1 = purchasesApi.addPurchaseItem(seasonID1, pJson.toString(), "ROOT", sessionToken);
          Assert.assertNotNull(purchaseID1);
-         Assert.assertFalse(purchaseID1.contains("error"), "Purchase item was not added: " + featureID1);
+         Assert.assertFalse(purchaseID1.contains("error"), "Purchase item was not added: " + purchaseID1);
 
          JSONArray purchases = purchasesApi.getPurchasesBySeason(seasonID1, sessionToken);
          Assert.assertEquals(purchases.size(), 1, "The number of purchases is incorrect. " + purchases.size());
@@ -488,7 +488,7 @@ import java.util.Properties;
          Assert.assertTrue(pi.contains("color") && pi.contains("green"), "Purchase doesn't contain configuration color:green " + pi);
 
      }
-
+     
      @Test(dependsOnMethods = "addConfigurationToPurchaseOptions", description = "Add branch")
      public void addBranch() throws IOException{
 	    	 String branch = FileUtils.fileToString(config + "experiments/branch1.txt", "UTF-8", false);

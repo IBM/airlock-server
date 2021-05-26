@@ -84,9 +84,13 @@ public class StringUsage {
 		
 		String configuration =  "{ \"text\" :  translate(\"app.hello\", \"testing string\")	}" ;
 		String rule =  "{ \"ruleString\" : \"translate('app.hello', 'param') =='hi'\"}" ;
+		JSONObject ruleObj = new JSONObject(rule);
+		ruleObj.put("ruleString", "translate(\"app.hello\", \"param\") =='hi'");
 		
 		String feature1 = FileUtils.fileToString(filePath + "feature1.txt", "UTF-8", false);
-		String featureID1 = f.addFeature(seasonID, feature1, "ROOT", sessionToken);
+		JSONObject fObj1 = new JSONObject(feature1);
+		fObj1.put("rule",  ruleObj);
+		String featureID1 = f.addFeature(seasonID, fObj1.toString(), "ROOT", sessionToken);
 		Assert.assertFalse(featureID1.contains("error"), "Feature was not added to the season");
 		
 		String featureMix = FileUtils.fileToString(filePath + "feature-mutual.txt", "UTF-8", false);
@@ -98,7 +102,9 @@ public class StringUsage {
 		Assert.assertFalse(featureID2.contains("error"), "Feature was not added to the season");
 
 		String feature3 = FileUtils.fileToString(filePath + "feature3.txt", "UTF-8", false);
-		String featureID3 = f.addFeature(seasonID, feature3, mixID1, sessionToken);
+		JSONObject fObj3 = new JSONObject(feature3);
+		fObj3.put("rule",  ruleObj);
+		String featureID3 = f.addFeature(seasonID, fObj3.toString(), mixID1, sessionToken);
 		Assert.assertFalse(featureID3.contains("error"), "Feature was not added to the season");
 
 		String configurationMix = FileUtils.fileToString(filePath + "configuration_feature-mutual.txt", "UTF-8", false);
@@ -132,6 +138,12 @@ public class StringUsage {
 		
 		JSONObject respJson = new JSONObject(response);
 		Assert.assertEquals(respJson.getJSONArray("UsedByUtilities").getString(0), utilityID, "Utility not found in string usage");
+		Assert.assertTrue(respJson.getJSONArray("UsedByFeatures").size() == 2,"Feature not found in string usage");
+		Assert.assertTrue(respJson.getJSONArray("UsedByFeatures").getJSONObject(0).getString("featureName").contains("Feature1")  || respJson.getJSONArray("UsedByFeatures").getJSONObject(0).getString("featureName").contains("Feature3")
+				, "Utility not found in string usage");
+		Assert.assertTrue(respJson.getJSONArray("UsedByFeatures").getJSONObject(1).getString("featureName").contains("Feature3")  || respJson.getJSONArray("UsedByFeatures").getJSONObject(1).getString("featureName").contains("Feature1")
+				, "Utility not found in string usage");
+		
 		
 		ArrayList<String> ids = getConfigurations(respJson);
 		Assert.assertEquals(ids.size(), 4, "Incorrect number of configurations in usage");

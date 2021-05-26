@@ -219,6 +219,11 @@ public class FeatureItem extends DataAirlockItem {
 				res = toDeltaJson(res, context, mode, env);
 				return res;
 			}
+			else {
+				//in case the item is checked out. Dev in master and prod in branch. Write the whole item (not only delta) and set its 
+				//branchStatus to NEW in runtime files
+				res.put("branchStatus", "NEW");
+			}
 		}
 		
 		res.put(Constants.JSON_FEATURE_FIELD_DEFAULT_CONFIG, defaultConfiguration);	
@@ -371,10 +376,13 @@ public class FeatureItem extends DataAirlockItem {
 
 		if (platform.equals(Platform.Android)) {
 			sb.append("		public static final String " + normalizedName.toUpperCase() + "=\"" + namespace + "." + name + "\";\n");
-		}			
+		}	
+		else if (platform.equals(Platform.c_sharp)) {
+			sb.append("			let " + normalizedName.toUpperCase() + "=\"" + namespace + "." + name + "\"\n");
+		}
 		else {
-			//iOs
-			sb.append("		let " + normalizedName.toUpperCase() + "=\"" + namespace + "." + name + "\"\n");
+			//iOs (swift)
+			sb.append("		@objc let " + normalizedName.toUpperCase() + "=\"" + namespace + "." + name + "\"\n");
 		}		
 	}
 
@@ -1008,9 +1016,9 @@ public class FeatureItem extends DataAirlockItem {
 	//considerProdUnderDev: for prod runtime file - we should consider prod under dev as dev
 	//                      for user permissions - we should consider prod under dev as prod 
 
-	public ValidationResults validateProductionDontChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env) throws JSONException {
+	public ValidationResults validateProductionDontChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env, boolean ignoreUserGroups) throws JSONException {
 
-		ValidationResults superRes = super.validateProductionDontChanged(updatedFeatureData, airlockItemsDB, branch, context, considerProdUnderDevAsDev, env);
+		ValidationResults superRes = super.validateProductionDontChanged(updatedFeatureData, airlockItemsDB, branch, context, considerProdUnderDevAsDev, env, ignoreUserGroups);
 
 		if (superRes!=null && !superRes.status.equals(Status.OK))
 			return superRes;

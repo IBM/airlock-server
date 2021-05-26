@@ -68,6 +68,11 @@ public class ConfigurationRuleItem extends DataAirlockItem {
 				res = toDeltaJson(res, context, mode);
 				return res;
 			}
+			else {
+				//in case the item is checked out. Dev in master and prod in branch. Write the whole item (not only delta) and set its 
+				//branchStatus to NEW in runtime files
+				res.put("branchStatus", "NEW");
+			}
 		}
 
 		res.put(Constants.JSON_FEATURE_FIELD_CONFIGURATION, configuration);				
@@ -382,9 +387,9 @@ public class ConfigurationRuleItem extends DataAirlockItem {
 	//                      for user permissions - we should consider prod under dev as prod 
 
 
-	public ValidationResults validateProductionDontChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env) throws JSONException {
+	public ValidationResults validateProductionDontChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env, boolean ignoreUserGroups) throws JSONException {
 
-		ValidationResults superRes = super.validateProductionDontChanged(updatedFeatureData, airlockItemsDB, branch, context, considerProdUnderDevAsDev, env);
+		ValidationResults superRes = super.validateProductionDontChanged(updatedFeatureData, airlockItemsDB, branch, context, considerProdUnderDevAsDev, env, ignoreUserGroups);
 
 		if (superRes!=null && !superRes.status.equals(Status.OK))
 			return superRes;

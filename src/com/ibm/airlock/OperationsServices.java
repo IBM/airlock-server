@@ -45,6 +45,7 @@ import com.wordnik.swagger.annotations.ApiResponse;
 import com.ibm.airlock.Constants.APIKeyOutputMode;
 import com.ibm.airlock.Constants.AirlockCapability;
 import com.ibm.airlock.Constants.RoleType;
+import com.ibm.airlock.admin.AirlockServers;
 import com.ibm.airlock.admin.Utilities;
 import com.ibm.airlock.admin.ValidationResults;
 import com.ibm.airlock.admin.operations.Webhook;
@@ -671,7 +672,36 @@ public class OperationsServices {
 			readWriteLock.readLock().unlock();
 		}
 	}			
+	///
+	@GET
+	@Path("/airlockservers")
+	@ApiOperation(value = "Returns all Airlock servers", response = String.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK"),
+			@ApiResponse(code = 401, message = "Unauthorized"),
+			@ApiResponse(code = 500, message = "Internal error") })
+	public Response getAirlockServers(@HeaderParam(Constants.AUTHENTICATION_HEADER) String assertion) throws JSONException {
+		if (logger.isLoggable(Level.FINEST)) {
+			logger.finest("getAirlockServers request");
+		}
 
+		// use userInfo for more stringent checks. null if authorization is off
+		UserInfo userInfo = UserInfo.validate("OperationsServices.getAirlockServers", context, assertion, null);
+		if (userInfo != null && userInfo.getErrorJson() != null)
+			return sendInfoError(Status.UNAUTHORIZED, userInfo);
+
+		ReentrantReadWriteLock readWriteLock = (ReentrantReadWriteLock)context.getAttribute(Constants.GLOBAL_LOCK_PARAM_NAME);
+		readWriteLock.readLock().lock(); 
+		try {
+			AirlockServers alServers = (AirlockServers)context.getAttribute(Constants.AIRLOCK_SERVERS_PARAM_NAME);		
+	
+			JSONObject res = alServers.toJson(true);
+			
+			return (Response.ok(res.toString())).build();	
+		} finally {
+			readWriteLock.readLock().unlock();
+		}
+	}		
+	
 	@PUT
 	@Path("/roles")
 	@ApiOperation(value = "Updates all roles", response = String.class)
@@ -724,6 +754,59 @@ public class OperationsServices {
 		}
 	}
 
+	@PUT
+	@Path("/airlockservers")
+	@ApiOperation(value = "Updates all Airlock servers", response = String.class)
+	@Produces(value="text/plain")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK"),
+			@ApiResponse(code = 400, message = "Bad request"),
+			@ApiResponse(code = 500, message = "Internal error") })
+	public Response setAirlockServers(String airlockServers, @HeaderParam(Constants.AUTHENTICATION_HEADER) String assertion) throws JSONException {
+
+		if (logger.isLoggable(Level.FINEST)) {
+			logger.finest("setAirlockServers request, airlockServers = " + airlockServers);
+		}
+		AirlockChange change = new AirlockChange();
+
+		UserInfo userInfo = UserInfo.validate("OperationsServices.setAirlockServers", context, assertion, null);
+		if (userInfo != null && userInfo.getErrorJson() != null)
+			return sendInfoError(Status.UNAUTHORIZED, userInfo);
+
+		ReentrantReadWriteLock readWriteLock = (ReentrantReadWriteLock)context.getAttribute(Constants.GLOBAL_LOCK_PARAM_NAME);
+		readWriteLock.writeLock().lock();
+		try {
+			AirlockServers alServersObj = (AirlockServers)context.getAttribute(Constants.AIRLOCK_SERVERS_PARAM_NAME);		
+			
+			//validate that is a legal JSON
+			JSONObject alServersJSON = null;
+			try {
+				alServersJSON = new JSONObject(airlockServers);
+			} catch (JSONException je) {
+				return Response.status(Status.BAD_REQUEST).entity(Strings.illegalInputJSON + je.getMessage()).build();
+			}
+
+			ValidationResults validationRes = alServersObj.validateAirlockServersJSON(alServersJSON);
+			if (validationRes!=null)
+				return Response.status(validationRes.status).entity(validationRes.error).build();
+
+			alServersObj.fromJSON(alServersJSON);
+			alServersObj.setLastModified(new Date());
+			//AirLockContextListener.refreshSecurit yFilter(context);
+			
+			//writing updated servers to S3
+			try {
+				change.getFiles().addAll(AirlockFilesWriter.writeAirlockServers(alServersJSON, context));				
+			} catch (IOException e) {
+				return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+			}
+			Webhooks.get(context).notifyChanges(change, context);
+			return Response.ok().build();
+		} finally {
+			readWriteLock.writeLock().unlock();
+		}
+	}	
+
+
 	@GET
 	@Path("/healthcheck")
 	@Produces(value="text/plain")
@@ -764,6 +847,8 @@ public class OperationsServices {
 	        String buildNum = attributes.getValue(Constants.MANIFEST_ATT_BUILD_NUM);
 	        String buildDate = attributes.getValue(Constants.MANIFEST_ATT_BUILD_DATE);
 	        String prodName = attributes.getValue(Constants.MANIFEST_ATT_PRODUCT_NAME);
+	        String airlockVer = getEnv("AIRLOCK_MAIN_VERSION");
+	        String buildNumm = getEnv("BUILD_NUMBER");
 				      
 			JSONObject res = new JSONObject();
 			res.put(Constants.JSON_FIELD_BUILD_NUM, buildNum);
@@ -776,7 +861,19 @@ public class OperationsServices {
 		} finally {
 			readWriteLock.readLock().unlock();
 		}
-	}		
+	}
+
+	public static String getEnv(String key)
+	{
+		String value = System.getenv(key);
+		if (value == null) {
+			value = System.getProperty(key);
+			if (value == null) {
+				value = "";
+			}
+		}
+		return value;
+	}
 	
 	@POST
 	@Path("/airlockkeys")
@@ -1257,11 +1354,12 @@ public class OperationsServices {
 			logger.finest("addUserRoleSetToProduct request: product_id = " + product_id + ", newUser = " + newUser);
 		}
 
+		AirlockChange change = new AirlockChange();
 		String err = Utilities.validateLegalUUID(product_id);
 		if (err!=null) 
 			return logReply(Status.BAD_REQUEST, Strings.illegalProductUUID + err);
 
-		AirlockChange change = new AirlockChange();
+		
 		//find relevant product
 		ProductErrorPair prodErrPair = Utilities.getProduct(context, product_id);
 		if (prodErrPair.error != null) {			
@@ -1274,6 +1372,11 @@ public class OperationsServices {
 		if (userInfo != null && userInfo.getErrorJson() != null)
 			return sendInfoError(Status.UNAUTHORIZED, userInfo);
 						
+		return doAddUserRoleSetToProduct(newUser, product_id, userInfo, change, currentProduct);
+		
+	}
+
+	private Response doAddUserRoleSetToProduct(String newUser, String product_id, UserInfo userInfo, AirlockChange change, Product currentProduct) throws JSONException {
 		//validate that is a legal JSON
 		JSONObject newUserJSON = null;
 		try {
@@ -1764,6 +1867,44 @@ public class OperationsServices {
 		}
 	}
 
+	@POST
+	@Path ("/products/{product-id}/userrolesetsbyadmin")
+	//@ApiOperation(value = "Create an user role set for the specified product by global administrator", response = String.class)
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "OK"),
+			@ApiResponse(code = 401, message = "Unauthorized"),
+			@ApiResponse(code = 404, message = "Product not found"),
+			@ApiResponse(code = 400, message = "Bad request"),
+			@ApiResponse(code = 500, message = "Internal error") })
+	public Response addUserRoleSetToProductByGlobalAdmin(@PathParam("product-id")String product_id, 
+			String newUser,			
+			@HeaderParam(Constants.AUTHENTICATION_HEADER) String assertion) throws JSONException {
+		if (logger.isLoggable(Level.FINEST)) {
+			logger.finest("addUserRoleSetToProductByGlobalAdmin request: product_id = " + product_id + ", newUser = " + newUser);
+		}
+
+		AirlockChange change = new AirlockChange();
+		String err = Utilities.validateLegalUUID(product_id);
+		if (err!=null) 
+			return logReply(Status.BAD_REQUEST, Strings.illegalProductUUID + err);
+
+		
+		//find relevant product
+		ProductErrorPair prodErrPair = Utilities.getProduct(context, product_id);
+		if (prodErrPair.error != null) {			
+			return Response.status(Status.BAD_REQUEST).entity(Utilities.errorMsgToErrorJSON(prodErrPair.error)).build();
+		}
+		Product currentProduct = prodErrPair.product;
+		change.setProduct(currentProduct);
+		//check user authorization			
+		UserInfo userInfo = UserInfo.validate("OperationsServices.addUserRoleSetToProductByGlobalAdmin", context, assertion, null); //check for global admin
+		if (userInfo != null && userInfo.getErrorJson() != null)
+			return sendInfoError(Status.UNAUTHORIZED, userInfo);
+						
+		return doAddUserRoleSetToProduct(newUser, product_id, userInfo, change, currentProduct);
+		
+	}
+	
 	Response logReply(Status status, String errMsg)
 	{
 		logger.severe(errMsg);

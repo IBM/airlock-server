@@ -129,6 +129,17 @@ public class AirlockUtils {
 		return productID;
 	}
 	
+	public String createProductCopyGlobalAdmins() throws IOException{
+		ProductsRestApi p = new ProductsRestApi();
+		p.setURL(m_url);
+		String product = FileUtils.fileToString(m_configPath + "product1.txt", "UTF-8", false);
+		product = JSONUtils.generateUniqueString(product, 5, "codeIdentifier");
+		product = JSONUtils.generateUniqueString(product, 8, "name");
+		productID = p.addProductCopyGlobalAdmins(product, sessionToken);
+			
+		return productID;
+	}
+	
 	public String createProductWithSpecifiedName(String name) throws IOException, JSONException{
 		ProductsRestApi p = new ProductsRestApi();
 		p.setURL(m_url);
@@ -476,7 +487,7 @@ public class AirlockUtils {
 		reqBodyParams.put("grant_type", "password");
 		reqBodyParams.put("client_id", azureClientId);
 		reqBodyParams.put("resource", azureClientId);
-		reqBodyParams.put("username", "iritma@il.ibm.com");
+		reqBodyParams.put("username", userName); 
 		reqBodyParams.put("password", "");
 		reqBodyParams.put("scope", "openid");
 		

@@ -3254,7 +3254,8 @@ public class AnalyticsServices {
 			return sendAndLogError(Status.BAD_REQUEST, Strings.illegalExperimentUUID + err);
 
 		if (!isAnalyticsServerConfigured()) {
-			return sendAndLogError(Status.BAD_REQUEST, Strings.analyticsServerNotConfigured);
+			//return sendAndLogError(Status.BAD_REQUEST, Strings.analyticsServerNotConfigured);
+			return Response.ok("{}").build(); //return empty  json if analytics server is not configured
 		}
 
 		//find relevant product

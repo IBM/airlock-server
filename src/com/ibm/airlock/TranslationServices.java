@@ -1704,7 +1704,7 @@ public class TranslationServices {
 			Season season = seasonsDB.get(seasonId);
 			JSONObject res = new JSONObject();
 			JSONArray configIds = new JSONArray();
-			//JSONArray featuresIds = new JSONArray();
+			JSONArray featuresIds = new JSONArray();
 			JSONArray utilitiesIds = new JSONArray();
 
 			Set<String> stringKeySet = new HashSet<>();
@@ -1715,8 +1715,11 @@ public class TranslationServices {
 				String branchId = allBranches.get(i).getUniqueId().toString();
 				String branchName =  allBranches.get(i).getName();
 				configIds.addAll(getConfigsUsingString(branchId,branchName,oriKey,stringKeySet,seasonId));
+				featuresIds.addAll(getFeaturesUsingString(branchId,branchName,oriKey,stringKeySet,seasonId));
 			}
 			configIds.addAll(getConfigsUsingString(Constants.MASTER_BRANCH_NAME,Constants.MASTER_BRANCH_NAME,oriKey,stringKeySet,seasonId));
+			featuresIds.addAll(getFeaturesUsingString(Constants.MASTER_BRANCH_NAME,Constants.MASTER_BRANCH_NAME,oriKey,stringKeySet,seasonId));
+			
 			Season.Utilities utils = season.getUtilities();
 			List<String> utilsIds = utils.utilitiesIdsUsingString(oriKey);
 			for(int i = 0; i<utilsIds.size();++i){
@@ -1724,7 +1727,7 @@ public class TranslationServices {
 			}
 
 			res.put("UsedByConfigurations",configIds);
-			//res.put("UsedByFeatures",featuresIds);
+			res.put("UsedByFeatures",featuresIds);
 			res.put("UsedByUtilities",utilitiesIds);
 			return (Response.ok()).entity(res.toString()).build();
 		} catch (MergeBranch.MergeException e) {
@@ -1782,10 +1785,10 @@ public class TranslationServices {
 			}
 			
 			
-			Set<String> stringsInUseByConfigList = new HashSet<String>();
+			Set<String> stringsInUseByAirlockItemsList = new HashSet<String>();
 			Set<String> stringsInUseByUtilList = new HashSet<String>();
 			
-			season.getRoot().doGetStringsInUseByItem(season.getOriginalStrings().getAllStringKeys(), season.getRoot(), stringsInUseByConfigList, stringsInUseByUtilList, season, true, false);
+			season.getRoot().doGetStringsInUseByItem(season.getOriginalStrings().getAllStringKeys(), season.getRoot(), stringsInUseByAirlockItemsList, stringsInUseByUtilList, season, true, false);
 			String javascriptFunctions = season.getUtilities().generateUtilityCodeSectionForStageAndType(Stage.DEVELOPMENT, null, null, null, UtilityType.MAIN_UTILITY);
 			stringsInUseByUtilList.addAll(VerifyRule.findAllTranslationIds(season.getOriginalStrings().getAllStringKeys(), javascriptFunctions, false));
 			javascriptFunctions = season.getUtilities().generateUtilityCodeSectionForStageAndType(Stage.DEVELOPMENT, null, null, null, UtilityType.STREAMS_UTILITY);
@@ -1796,12 +1799,12 @@ public class TranslationServices {
 				for (Map.Entry<String, BaseAirlockItem> entry : branchAirlockItemsBD.entrySet()) {
 					BaseAirlockItem item = entry.getValue();
 					if (item instanceof ConfigurationRuleItem) {
-						item.doGetStringsInUseByItem(season.getOriginalStrings().getAllStringKeys(), item, stringsInUseByConfigList, stringsInUseByUtilList, season, false, false);
+						item.doGetStringsInUseByItem(season.getOriginalStrings().getAllStringKeys(), item, stringsInUseByAirlockItemsList, stringsInUseByUtilList, season, false, false);
 					}
 				}
 			}
 			Set<String> stringsInUse = new HashSet<String>();
-			stringsInUse.addAll(stringsInUseByConfigList);
+			stringsInUse.addAll(stringsInUseByAirlockItemsList);
 			stringsInUse.addAll(stringsInUseByUtilList);
 			
 			JSONArray unusedStrings = new JSONArray();
@@ -1825,12 +1828,7 @@ public class TranslationServices {
 		}
 	}
 	
-	//TODO: if no fall back declared dont use the value .
-	//deletion of internationalFallback will couse deletion of this string from all locales if wasn't translated? 
-	//how do i know that is wasn't translated? if equals internationalFallback?
-	//handle in string addition/deletion and update
-	//handle in add/update translations as well
-
+	
 	private JSONArray getConfigsUsingString(String branchId,String branchName, String oriKey,Set<String> stringKeySet,String seasonId) throws MergeBranch.MergeException,JSONException{
 		JSONArray configIds = new JSONArray();
 		Map<String, BaseAirlockItem> airlockItemsDB = Utilities.getAirlockItemsDB(branchId, context);
@@ -1853,6 +1851,26 @@ public class TranslationServices {
 			}
 		}
 		return configIds;
+	}
+	
+	private JSONArray getFeaturesUsingString(String branchId,String branchName, String oriKey,Set<String> stringKeySet,String seasonId) throws MergeBranch.MergeException,JSONException{
+		JSONArray featureIds = new JSONArray();
+		Map<String, BaseAirlockItem> airlockItemsDB = Utilities.getAirlockItemsDB(branchId, context);
+		Collection<BaseAirlockItem> items = airlockItemsDB.values();
+		Iterator<BaseAirlockItem> iterator = items.iterator();
+		while (iterator.hasNext()) {
+			BaseAirlockItem item = iterator.next();
+			if (item.getType().equals(BaseAirlockItem.Type.FEATURE) && item.getSeasonId().toString().equals(seasonId) && (branchName == Constants.MASTER_BRANCH_NAME || item.getBranchStatus() != Constants.BranchStatus.NONE )) {
+				if (((DataAirlockItem) item).isStringUsed(oriKey, stringKeySet)) {
+					JSONObject feature = new JSONObject();
+					feature.put("featureID", item.getUniqueId().toString());
+					feature.put("featureName", item.getNameSpaceDotName());
+					feature.put("branchName", branchName);
+					featureIds.add(feature);
+				}
+			}
+		}
+		return featureIds;
 	}
 
 	private static ValidationResults validatePre21SeasonsIsUpgraded(Season season) {
@@ -2015,7 +2033,8 @@ public class TranslationServices {
 
 			if (productionUnauthorized(origStrToUpdate, userInfo)) {
 				return sendAndLogError(Status.BAD_REQUEST, Strings.prodOverrideError);					
-			} 		 
+			} 
+						 
 			origStrToUpdate.overrideTranslation (locale, overrideValue, season.getOriginalStrings().getSupportedLanguages());
 
 			//need to write the original strings file since some statuses may be changed

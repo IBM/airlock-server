@@ -2198,11 +2198,20 @@ public class Branch {
 			String prevId = newItem.getUniqueId().toString();
 			newItem.setUniqueId(UUID.randomUUID());
 			String newId = newItem.getUniqueId().toString();
-			branchOldToDuplicatedFeaturesId.put(prevId, newId);
+			branchOldToDuplicatedFeaturesId.put(prevId, newId);		
 			branchAirlockItemsBD.put(newId, newItem);
+			//replace parent id in sub features
+			Set<String> curBranchFeatureIds = branchAirlockItemsBD.keySet();
+			for (String curBranchFeatureId:curBranchFeatureIds) {
+				BaseAirlockItem curItem = branchAirlockItemsBD.get(curBranchFeatureId);
+				if (curItem.getParent()!=null && curItem.getParent().toString().equals(prevId)) {
+					curItem.setParent(UUID.fromString(newId));
+				}
+			}
+			
 			if (newItem instanceof BaseMutualExclusionGroupItem) {
 				String prevBranchName = "mx." + prevId;
-				Set<String> curBranchFeatureIds = branchAirlockItemsBD.keySet();
+				//Set<String> curBranchFeatureIds = branchAirlockItemsBD.keySet();
 				for (String curBranchFeatureId:curBranchFeatureIds) {
 					BaseAirlockItem curItem = branchAirlockItemsBD.get(curBranchFeatureId);
 					if (curItem.getBranchFeaturesItems()!=null) {
@@ -2402,4 +2411,18 @@ public class Branch {
 		return false;			
 	}
 
+	//return the latest date that the branch or one of its features where modified
+	public Date getBranchlatestModificationDate() {
+		Date lastBranchModificationDate = lastModified;
+		
+		Set<String> alItemIds = branchAirlockItemsBD.keySet();
+		for (String alItemId:alItemIds) {
+			BaseAirlockItem alItem = branchAirlockItemsBD.get(alItemId);
+			if (lastBranchModificationDate.before(alItem.getLastModified())) {
+				lastBranchModificationDate = alItem.getLastModified();
+			}
+		}
+		
+		return lastBranchModificationDate;
+	}
 }

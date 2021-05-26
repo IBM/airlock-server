@@ -26,7 +26,6 @@ public class StringVsFeatureInDevStage {
 	protected String stringID;
 	protected String filePath;
 	protected String featureID;
-	protected String configID;
 	protected String str;
 	protected StringsRestApi t;
 	protected ProductsRestApi p;
@@ -55,13 +54,9 @@ public class StringVsFeatureInDevStage {
 		baseUtils.printProductToFile(productID);
 		seasonID = baseUtils.createSeason(productID);
 	}
-
-
-
 	
 	@Test (description = "Add string value in dev stage")
 	public void addString() throws Exception{
-		
 		str = FileUtils.fileToString(filePath + "/strings/string1.txt", "UTF-8", false);
 		stringID = t.addString(seasonID, str, sessionToken);
 	}
@@ -70,13 +65,14 @@ public class StringVsFeatureInDevStage {
 	@Test (dependsOnMethods="addString",  description = "Add feature with configuration in dev stage")
 	public void addFeature() throws Exception{
 		String feature = FileUtils.fileToString(filePath + "feature1.txt", "UTF-8", false);
-		featureID = f.addFeature(seasonID, feature, "ROOT", sessionToken );
-		String configRule = FileUtils.fileToString(filePath + "configuration_rule1.txt", "UTF-8", false);
-		JSONObject crJson = new JSONObject(configRule);
-		String configuration =  "{ \"text\" :  translate(\"app.hello\", \"testing string\")	}" ;		
-		crJson.put("configuration", configuration);
-		configID = f.addFeature(seasonID, crJson.toString(), featureID, sessionToken );
-		Assert.assertFalse(configID.contains("error"), "Test should pass, but instead failed: " + configID );
+		JSONObject fObj = new JSONObject(feature);
+		String ruleString =  "  translate(\"app.hello\", \"testing string\");  true;	" ;
+		JSONObject ruleObj = new JSONObject();
+		ruleObj.put("ruleString", ruleString);
+		fObj.put("rule", ruleObj);
+		
+		featureID = f.addFeature(seasonID, fObj.toString(), "ROOT", sessionToken );
+		Assert.assertFalse(featureID.contains("error"), "Test should pass, but instead failed: " + featureID );
 	}
 	
 	@Test (dependsOnMethods="addFeature",  description = "Move configuration to production stage")
@@ -84,15 +80,9 @@ public class StringVsFeatureInDevStage {
 		String feature = f.getFeature(featureID, sessionToken);
 		JSONObject json = new JSONObject(feature);
 		json.put("stage", "PRODUCTION");
-		f.updateFeature(seasonID, featureID, json.toString(), sessionToken);
-		
-		String config = f.getFeature(configID, sessionToken);
-		JSONObject crJson = new JSONObject(config);
-		crJson.put("stage", "PRODUCTION");
-		String response = f.updateFeature(seasonID, configID, crJson.toString(), sessionToken);
+		String response = f.updateFeature(seasonID, featureID, json.toString(), sessionToken);
 		Assert.assertTrue(response.contains("error"), "Test should fail, but instead passed: " + response );
-		Assert.assertTrue(response.contains("either missing or in the wrong stage"), "Incorrect error message: " + response );
-		
+		Assert.assertTrue(response.contains("either missing or in the wrong stage"), "Incorrect error message: " + response );		
 	}
 	
 	@Test (dependsOnMethods="updateFeature",  description = "Update string stage to production")
@@ -109,16 +99,9 @@ public class StringVsFeatureInDevStage {
 		String feature = f.getFeature(featureID, sessionToken);
 		JSONObject json = new JSONObject(feature);
 		json.put("stage", "PRODUCTION");
-		f.updateFeature(seasonID, featureID, json.toString(), sessionToken);
-	
-		String configuration = f.getFeature(configID, sessionToken);
-		JSONObject crJson = new JSONObject(configuration);
-		crJson.put("stage", "PRODUCTION");
-		String response = f.updateFeature(seasonID, configID, crJson.toString(), sessionToken);
+		String response = f.updateFeature(seasonID, featureID, json.toString(), sessionToken);
 		Assert.assertFalse(response.contains("error"), "Test should pass, but instead failed: " + response );
 	}
-	
-
 	
 	@AfterTest
 	private void reset(){

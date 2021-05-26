@@ -117,7 +117,7 @@ public class ProductServices{
 			return logReply(Status.BAD_REQUEST, err);			
 		}
 
-		Pair<ValidationResults, LinkedList<AirlockChangeContent>> writeRes = doAddProduct (newProduct, userInfo, UUID.fromString(product_id), context, assertion);
+		Pair<ValidationResults, LinkedList<AirlockChangeContent>> writeRes = doAddProduct (newProduct, userInfo, UUID.fromString(product_id), context, assertion, false);
 		ValidationResults validationRes =  writeRes.getKey();
 
 		if (validationRes.status!=null) {	
@@ -138,6 +138,7 @@ public class ProductServices{
 			@ApiResponse(code = 401, message = "Unauthorized"),
 			@ApiResponse(code = 500, message = "Internal error") })
 	public Response addProduct(String newProduct, 
+			@QueryParam("addGlobalAdministrators")Boolean addGlobalAdministrators,
 			@HeaderParam(Constants.AUTHENTICATION_HEADER) String assertion) throws JSONException {
 
 		if (logger.isLoggable(Level.FINEST)) {
@@ -145,12 +146,15 @@ public class ProductServices{
 		}
 		AirlockChange change = new AirlockChange();
 
+		if (addGlobalAdministrators == null) 
+			addGlobalAdministrators = false; //default value for addGlobalAdministrators is false 
+		
 		// use userInfo for more stringent checks. null if authorization is off
 		UserInfo userInfo = UserInfo.validate("ProductServices.addProduct", context, assertion, null);
 		if (userInfo != null && userInfo.getErrorJson() != null)
 			return sendInfoError(Status.UNAUTHORIZED, userInfo);
 
-		Pair<ValidationResults, LinkedList<AirlockChangeContent>> writeRes = doAddProduct (newProduct, userInfo, null, context, assertion);
+		Pair<ValidationResults, LinkedList<AirlockChangeContent>> writeRes = doAddProduct (newProduct, userInfo, null, context, assertion, addGlobalAdministrators);
 		ValidationResults validationRes =  writeRes.getKey();
 		if (validationRes.status!=null) {
 			//failure
@@ -168,7 +172,7 @@ public class ProductServices{
 		return new Pair<ValidationResults, LinkedList<AirlockChangeContent>>(key, value);
 	}
 	//validation results is returned with error code upon failure and with null error code upon success
-	public static Pair<ValidationResults, LinkedList<AirlockChangeContent>> doAddProduct(String newProduct, UserInfo userInfo, UUID specifiedUniqueId, ServletContext context, String assertion) throws JSONException {
+	public static Pair<ValidationResults, LinkedList<AirlockChangeContent>> doAddProduct(String newProduct, UserInfo userInfo, UUID specifiedUniqueId, ServletContext context, String assertion, Boolean addGlobalAdministrators) throws JSONException {
 		ReentrantReadWriteLock readWriteLock = (ReentrantReadWriteLock)context.getAttribute(Constants.GLOBAL_LOCK_PARAM_NAME);
 		LinkedList<AirlockChangeContent> changesArr = new LinkedList<AirlockChangeContent>();
 		readWriteLock.writeLock().lock();
@@ -214,9 +218,17 @@ public class ProductServices{
 			productsDB.put(prod.getUniqueId().toString(), prod);
 			
 			//product users authorization
-			UserRoleSets airlockUsers = (UserRoleSets)context.getAttribute(Constants.AIRLOCK_GLOBAL_USERS_PARAM_NAME);
 			Roles roles = (Roles) context.getAttribute(Constants.ROLES_PARAM_NAME);			
-			UserRoleSets prodUsers = airlockUsers.clone(usersDB, prod.getUniqueId(), userInfo);
+			UserRoleSets prodUsers = new UserRoleSets();
+			if (addGlobalAdministrators) {
+				UserRoleSets airlockUsers = (UserRoleSets)context.getAttribute(Constants.AIRLOCK_GLOBAL_USERS_PARAM_NAME);
+				prodUsers = airlockUsers.cloneByRole(usersDB, prod.getUniqueId(), userInfo, RoleType.Administrator);
+			}
+			
+			//add the product creator as admin to the  product
+			if (userInfo!=null) {
+				prodUsers.addUserRole(usersDB, userInfo.getId(), prod.getUniqueId(), RoleType.Administrator);
+			}
 			prod.setProductUsers(prodUsers);
 			
 			@SuppressWarnings("unchecked")
@@ -228,7 +240,8 @@ public class ProductServices{
 			@SuppressWarnings("unchecked")
 			Map<String,InternalUserGroups> groupsPerProductMap = (Map<String,InternalUserGroups>) context.getAttribute(Constants.USER_GROUPS_PER_PRODUCT_PARAM_NAME);
 			groupsPerProductMap.put(prod.getUniqueId().toString(), prodGroups);
-		
+			
+			//if product was created using an  Api Key - add the product to the key products 
 			AirlockAPIKey apiKey = null;
 			try {
 				apiKey = JwtData.getApiKeyFromJWT(assertion, context);
@@ -2395,7 +2408,7 @@ public class ProductServices{
 			JSONObject featureJson = f.toJson(OutputJSONMode.DISPLAY, context, env,userInfo);
 			if(includeStrings && f instanceof DataAirlockItem){
 				JSONArray stringArray = new JSONArray();
-				List<OriginalString> copiedStrings = FeatureServices.getStringInUseByConfig(context, f,false);
+				List<OriginalString> copiedStrings = FeatureServices.getStringInUseByAirlockItem(context, f,false);
 				for (int i = 0; i<copiedStrings.size();++i){
 					OriginalString currString = copiedStrings.get(i);
 					stringArray.add(currString.toJson(Constants.StringsOutputMode.INCLUDE_TRANSLATIONS,seasonsDB.get(currString.getSeasonId().toString())));
@@ -3664,7 +3677,7 @@ public class ProductServices{
 			//If feature is root or mutual exclusion group, verify that one of its sub-features is not in production and 
 			//is changed if you are not permitted (i.e you are not admin or productLead).
 			//consider prod under dev as prod
-			ValidationResults validateProdDontChangeRes = featureToUpdate.validateProductionDontChanged(updatedFeatureJSON, airlockItemsDB, curBranch, context, false, env);
+			ValidationResults validateProdDontChangeRes = featureToUpdate.validateProductionDontChanged(updatedFeatureJSON, airlockItemsDB, curBranch, context, false, env, false);
 			Boolean isProdChange = (validateProdDontChangeRes != null);
 			//only productLead or Administrator can update feature in production
 			if (!validRole(userInfo)) {
@@ -3698,6 +3711,12 @@ public class ProductServices{
 				return (Response.ok(res.toString())).build();				
 			}
 
+			//If feature is root or mutual exclusion group, verify that one of its sub-features is not in production and 
+			//is changed if you are not permitted (i.e you are not admin or productLead).
+			//consider prod under dev as dev
+			ValidationResults validateProdDontChangeForRuntimeFilesRes = featureToUpdate.validateProductionDontChanged(updatedFeatureJSON, airlockItemsDB, curBranch, context, true, env, true);
+			Boolean writeProduction = (validateProdDontChangeForRuntimeFilesRes != null);
+			
 			//Branch curBranch = null;
 			if (!inMaster) {
 				if (curBranch.getBranchAirlockItemsBD().containsKey(feature_id)) { 
@@ -3710,12 +3729,6 @@ public class ProductServices{
 			else {
 				env.setAnalytics(season.getAnalytics());
 			}
-			
-			//If feature is root or mutual exclusion group, verify that one of its sub-features is not in production and 
-			//is changed if you are not permitted (i.e you are not admin or productLead).
-			//consider prod under dev as dev
-			ValidationResults validateProdDontChangeForRuntimeFilesRes = featureToUpdate.validateProductionDontChanged(updatedFeatureJSON, airlockItemsDB, curBranch, context, true, env);
-			Boolean writeProduction = (validateProdDontChangeForRuntimeFilesRes != null);
 			
 			validated = new Date().getTime();
 			//finally - actually update the feature.
@@ -3751,9 +3764,8 @@ public class ProductServices{
 
 						for (String updatedBranchId:updatedBranches) {
 							Branch branch = branchesDB.get(updatedBranchId);							
-
 							change.getFiles().addAll(AirlockFilesWriter.writeBranchFeatures(branch, season, context, env, updatedBranchesMap.get(updatedBranchId)));																	
-							change.getFiles().addAll(AirlockFilesWriter.writeBranchAndMasterRuntimeFiles(season, branch, context, env, updatedBranchesMap.get(updatedBranchId).equals(Stage.PRODUCTION)));
+							change.getFiles().addAll(AirlockFilesWriter.writeBranchRuntime(branch, season, context, env, updatedBranchesMap.get(updatedBranchId).equals(Stage.PRODUCTION)));
 						}
 
 						//if (isProdChange) { //not only on prod change because with ordering rules even moving ordering rule from parent to parent can change analytics counters 
@@ -8333,7 +8345,7 @@ public class ProductServices{
 			JSONObject purchaseItemJson = pi.toJson(OutputJSONMode.DISPLAY, context, env,userInfo);
 			if(includeStrings && pi instanceof DataAirlockItem){
 				JSONArray stringArray = new JSONArray();
-				List<OriginalString> copiedStrings = FeatureServices.getStringInUseByConfig(context, pi, false);
+				List<OriginalString> copiedStrings = FeatureServices.getStringInUseByAirlockItem(context, pi, false);
 				for (int i = 0; i<copiedStrings.size();++i){
 					OriginalString currString = copiedStrings.get(i);
 					stringArray.add(currString.toJson(Constants.StringsOutputMode.INCLUDE_TRANSLATIONS,seasonsDB.get(currString.getSeasonId().toString())));
@@ -8484,7 +8496,7 @@ public class ProductServices{
 			//If purchaseItem is root or mutual exclusion group, verify that one of its sub-features is not in production and 
 			//is changed if you are not permitted (i.e you are not admin or productLead).
 			//consider prod under dev as prod
-			ValidationResults validateProdDontChangeRes = purchaseItemToUpdate.validateProductionDontChanged(updatedPurchaseItemJSON, airlockItemsDB, curBranch, context, false, env);
+			ValidationResults validateProdDontChangeRes = purchaseItemToUpdate.validateProductionDontChanged(updatedPurchaseItemJSON, airlockItemsDB, curBranch, context, false, env, false);
 			Boolean isProdChange = (validateProdDontChangeRes != null);
 			//only productLead or Administrator can update purchase in production
 			if (!ProductServices.validRole(userInfo)) {
@@ -8532,7 +8544,7 @@ public class ProductServices{
 			//If purchase item is root or mutual exclusion group, verify that one of its sub-items is not in production and 
 			//is changed if you are not permitted (i.e you are not admin or productLead).
 			//consider prod under dev as dev
-			ValidationResults validateProdDontChangeForRuntimeFilesRes = purchaseItemToUpdate.validateProductionDontChanged(updatedPurchaseItemJSON, airlockItemsDB, curBranch, context, true, env);
+			ValidationResults validateProdDontChangeForRuntimeFilesRes = purchaseItemToUpdate.validateProductionDontChanged(updatedPurchaseItemJSON, airlockItemsDB, curBranch, context, true, env, true);
 			Boolean writeProduction = (validateProdDontChangeForRuntimeFilesRes != null);
 
 			validated = new Date().getTime();
@@ -9014,6 +9026,173 @@ public class ProductServices{
 		}		
 	}
 
+	@PUT
+	@Path("/seasons/{season-id}/streams")
+	@ApiOperation(value = "Updates global streams settings for the specified season", response = String.class)
+	@Produces(value="text/plain")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK"),
+			@ApiResponse(code = 400, message = "Bad request"),
+			@ApiResponse(code = 401, message = "Unauthorized"),
+			@ApiResponse(code = 500, message = "Internal error") })
+	public Response updateGlobalStreamsSettings(@PathParam("season-id")String season_id, String globalStreamsSettings, 
+			@HeaderParam(Constants.AUTHENTICATION_HEADER) String assertion) throws JSONException {
+		if (logger.isLoggable(Level.FINEST)) {
+			logger.finest("updateGlobalStreamsSettings request: season_id = " + season_id + ", globalStreamsSettings = " + globalStreamsSettings);
+		}
+		AirlockChange change = new AirlockChange();
+		String err = Utilities.validateLegalUUID(season_id);
+		if (err!=null) 
+			return logReply(Status.BAD_REQUEST, Strings.illegalSeasonUUID + err);
+		
+		//find relevant product
+		ProductErrorPair productErrorPair = Utilities.getProductOfBranchOrSeason(context, null, season_id);
+		if (productErrorPair.error != null) {
+			return Response.status(Status.NOT_FOUND).entity(Utilities.errorMsgToErrorJSON(productErrorPair.error)).build();
+		}
+		Product currentProduct = productErrorPair.product;
+		change.setProduct(currentProduct);
+		
+		//check user authorization
+		UserInfo userInfo = UserInfo.validate("ProductServices.updateGlobalStreamsSettings", context, assertion, currentProduct);
+		if (userInfo != null && userInfo.getErrorJson() != null)
+			return sendInfoError(Status.UNAUTHORIZED, userInfo);		
+
+		//capability verification
+		ValidationResults capabilityValidationRes = Utilities.validateCapability (currentProduct, new AirlockCapability[]{AirlockCapability.STREAMS});
+		if (capabilityValidationRes!=null) 
+			return Response.status(capabilityValidationRes.status).entity(Utilities.errorMsgToErrorJSON(capabilityValidationRes.error)).build();	
+				
+		//validate that is a legal JSON
+		JSONObject newGlobalStremSettingsJSON = null;
+		try {
+			newGlobalStremSettingsJSON = new JSONObject(globalStreamsSettings);  
+		} catch (JSONException je) {
+			return logReply(Status.BAD_REQUEST, Strings.illegalSeasonUUID + Strings.illegalInputJSON + je.getMessage());				
+		}
+
+		//verify that JSON does not contain different season-id then the path parameter
+		if (newGlobalStremSettingsJSON.containsKey(Constants.JSON_FEATURE_FIELD_SEASON_ID) && newGlobalStremSettingsJSON.get(Constants.JSON_FEATURE_FIELD_SEASON_ID) !=null) {
+			if (!season_id.equals(newGlobalStremSettingsJSON.getString(Constants.JSON_FEATURE_FIELD_SEASON_ID))) {
+				return logReply(Status.BAD_REQUEST, Strings.streamSeasonWithDifferentId);
+			}
+		}
+		else {		
+			newGlobalStremSettingsJSON.put(Constants.JSON_FEATURE_FIELD_SEASON_ID, season_id);
+		}
+		
+		ReentrantReadWriteLock readWriteLock = currentProduct.getProductLock();				
+		readWriteLock.writeLock().lock();
+		try {	
+			@SuppressWarnings("unchecked")
+			Map<String, Season> seasonsDB = (Map<String, Season>)context.getAttribute(Constants.SEASONS_DB_PARAM_NAME);
+
+			//Validate season existence
+			Season season = seasonsDB.get(season_id);
+			change.setSeason(season);
+			
+			if (season == null) {
+				return logReply(Status.BAD_REQUEST, Strings.seasonNotFound);
+			}			
+
+			Environment env = new Environment();
+			env.setServerVersion(season.getServerVersion());
+
+			ValidationResults validationRes = validateStreamsSupport(env);
+			if (validationRes!=null) {
+				return logReply(validationRes.status, validationRes.error);
+			}
+
+			validationRes = season.getStreams().validateGlobalStreamsSettingsJSON (newGlobalStremSettingsJSON, context, season_id);
+			if (validationRes!=null) {
+				return logReply(validationRes.status, validationRes.error);
+			}
+
+			//finally - actually update the global streams settings.
+			String updateDetails = season.getStreams().updateGlobalStreamsSettings(newGlobalStremSettingsJSON, season);
+			
+			if (!updateDetails.isEmpty()) { //if some fields were changed
+
+				try {
+					change.getFiles().addAll(AirlockFilesWriter.writeSeasonStreams(season, true, context));	//production change				
+					Webhooks.get(context).notifyChanges(change, context);
+				} catch (IOException e) {
+					return Response.status(Status.INTERNAL_SERVER_ERROR).entity(Utilities.errorMsgToErrorJSON(e.getMessage())).build();
+				}
+
+				AuditLogWriter auditLogWriter = (AuditLogWriter)context.getAttribute(Constants.AUDIT_LOG_WRITER_PARAM_NAME);
+				auditLogWriter.log("Update global streams settings for season: " + season_id + ",   " + updateDetails, userInfo);
+			}
+			
+			if (logger.isLoggable(Level.FINE)) {
+				logger.fine("Update global streams settings for season: " + season_id + ",   " + updateDetails);
+			}
+
+			JSONObject res = season.getStreams().toJson(OutputJSONMode.DISPLAY);
+			return (Response.ok()).entity(res.toString(true)).build();
+			//return (Response.ok(res.toString(true))).build();
+		} catch (Throwable e) {
+			logger.log(Level.SEVERE, "Error setting streams events of season: " + season_id + ": ", e);
+			return sendAndLogError(Status.INTERNAL_SERVER_ERROR, "Error setting streams events: " + e.getMessage());
+		} finally {
+			readWriteLock.writeLock().unlock();
+		}
+	}
+	
+	@GET
+	@Path ("/seasons/{season-id}/branchesusage")
+	@ApiOperation(value = "Returns the branches usages details for the specified season", response = String.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "OK"),
+			@ApiResponse(code = 401, message = "Unauthorized"),
+			@ApiResponse(code = 404, message = "Season not found"),
+			@ApiResponse(code = 500, message = "Internal error") })
+	public Response getBranchesUsage(@PathParam("season-id")String season_id,
+			@HeaderParam(Constants.AUTHENTICATION_HEADER) String assertion) throws JSONException {
+		if (logger.isLoggable(Level.FINEST)) {
+			logger.finest("getBranchesUsage request");
+		}
+
+		String err = Utilities.validateLegalUUID(season_id);
+		if (err!=null) 
+			return sendAndLogError(Status.BAD_REQUEST, Strings.illegalSeasonUUID + err);
+
+		//find relevant product
+		ProductErrorPair productErrorPair = Utilities.getProductOfBranchOrSeason(context, null, season_id);
+		if (productErrorPair.error != null) {
+			return Response.status(Status.NOT_FOUND).entity(Utilities.errorMsgToErrorJSON(productErrorPair.error)).build();
+		}
+		Product currentProduct = productErrorPair.product;
+		
+		//check user authorization		
+		UserInfo userInfo = UserInfo.validate("ProductServices.getBranches", context, assertion, currentProduct);
+		if (userInfo != null && userInfo.getErrorJson() != null)
+			return sendInfoError(Status.UNAUTHORIZED, userInfo);
+
+		//capability verification
+		ValidationResults capabilityValidationRes = Utilities.validateCapability (currentProduct, new AirlockCapability[]{AirlockCapability.BRANCHES});
+		if (capabilityValidationRes!=null) 
+			return Response.status(capabilityValidationRes.status).entity(Utilities.errorMsgToErrorJSON(capabilityValidationRes.error)).build();		
+		
+		ReentrantReadWriteLock readWriteLock = currentProduct.getProductLock();
+		readWriteLock.readLock().lock();
+		try {
+
+			@SuppressWarnings("unchecked")
+			Map<String, Season> seasonsDB = (Map<String, Season>)context.getAttribute(Constants.SEASONS_DB_PARAM_NAME);			
+			Season season = seasonsDB.get(season_id);
+			if (season == null) {
+				return logReply(Status.NOT_FOUND, Strings.seasonNotFound);					
+			}
+
+			JSONObject res = season.getBranches().toBranchesUsageJson(context);
+			return (Response.ok()).entity(res.toString()).build();
+		} catch (Throwable e) {
+			logger.log(Level.SEVERE, "Error getting branches usage of season " + season_id + ": ", e);
+			return sendAndLogError(Status.INTERNAL_SERVER_ERROR, "Error getting branches usage: " + e.getMessage());
+		} finally {
+			readWriteLock.readLock().unlock();
+		}
+	}
+	
 	private ValidationResults validatePurchasesSupport (Environment env) {
 		if (isPurchasesSupported(env))  //only seasons from 5.5 and up supports purchases
 			return null;

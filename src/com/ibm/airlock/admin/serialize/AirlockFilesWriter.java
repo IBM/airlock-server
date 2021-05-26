@@ -3,15 +3,7 @@ package com.ibm.airlock.admin.serialize;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletContext;
@@ -41,6 +33,7 @@ import com.ibm.airlock.admin.Season;
 import com.ibm.airlock.admin.Utilities;
 import com.ibm.airlock.admin.MergeBranch.MergeException;
 import com.ibm.airlock.admin.analytics.AirlockAnalytics;
+import com.ibm.airlock.admin.authentication.UserInfo;
 import com.ibm.airlock.admin.notifications.AirlockNotificationsCollection;
 import com.ibm.airlock.admin.operations.AirlockAPIKeys;
 import com.ibm.airlock.admin.operations.AirlockChangeContent;
@@ -1681,11 +1674,24 @@ public class AirlockFilesWriter {
 	public static LinkedList<AirlockChangeContent> writeBranchAndMasterRuntimeFiles(Season season, Branch branch, ServletContext context, Environment env, boolean writeProduction) throws IOException, JSONException {
 		LinkedList<AirlockChangeContent> changesArr = new LinkedList<AirlockChangeContent>();
 		changesArr.addAll(AirlockFilesWriter.writeBranchRuntime(branch, season, context, env, writeProduction));
+		  
 		Stage varianStage = ProductServices.isBranchInExp(branch, season, context); //return null if not in exp. If in exp return the max variant stage
-		if (varianStage!=null) {			
+		if (varianStage!=null) {		
+			Map<String, BaseAirlockItem> origItemsDB = env.getAirlockItemsDB();
+			try {
+				//change to master items DB for writing features runtime files 
+				env.setAirlockItemsDB(Utilities.getAirlockItemsDB(Constants.MASTER_BRANCH_NAME, context));
+			} catch (MergeException e) {
+				//will never happen
+			}
+			
 			changesArr.addAll(AirlockFilesWriter.doWriteFeatures(season, OutputJSONMode.RUNTIME_DEVELOPMENT, context, Stage.DEVELOPMENT, env));
-			if (varianStage.equals(Stage.PRODUCTION) && writeProduction)
-				changesArr.addAll(AirlockFilesWriter.doWriteFeatures(season, OutputJSONMode.RUNTIME_PRODUCTION, context, Stage.PRODUCTION, env));			
+			if (varianStage.equals(Stage.PRODUCTION) && writeProduction) {
+				changesArr.addAll(AirlockFilesWriter.doWriteFeatures(season, OutputJSONMode.RUNTIME_PRODUCTION, context, Stage.PRODUCTION, env));
+			}
+			
+			//rollback to original items db
+			env.setAirlockItemsDB(origItemsDB); //writeBranchRuntime can change the AirlockItemsDB so writing the feature runtime files require rolling this change back
 		}
 		return changesArr;
 	}
@@ -1777,7 +1783,7 @@ public class AirlockFilesWriter {
 		//validate the data consistency of the object that is going to be written to s3
 		try { 
 			AirlockStreamsCollection tmp = new AirlockStreamsCollection(season.getUniqueId());
-			tmp.fromJSON(streamsOutput.getJSONArray(Constants.JSON_FIELD_STREAMS), null);
+			tmp.fromJSON(streamsOutput, null);
 		} catch (JSONException e) {
 			String errMsg = "Failed writing the streams to S3. Illegal JSON format during data validation: " + e.getMessage();
 			error = error + "\n" + errMsg;
@@ -2419,6 +2425,35 @@ public class AirlockFilesWriter {
 	}
 	
 	//return error string upon error. null upon success
+	public static LinkedList<AirlockChangeContent> writeAirlockServers(JSONObject alServers, ServletContext context) throws IOException {
+		LinkedList<AirlockChangeContent> changesArr = new LinkedList<AirlockChangeContent>();
+		DataSerializer ds = (DataSerializer)context.getAttribute(Constants.DATA_SERIALIZER_PARAM_NAME);
+		
+		try {			
+			ds.writeData(Constants.AIRLOCK_SERVERS_FILE_NAME, alServers.write(true));
+			changesArr.add(AirlockChangeContent.getAdminChange(alServers, Constants.AIRLOCK_SERVERS_FILE_NAME, Stage.PRODUCTION));
+		} catch (IOException ioe) {
+			//failed writing roles 3 times to s3.
+			//All subsequent requests will be denied by stateVerificationFilter till fixed and restarted
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);			
+			String error = Strings.failedWritingServer + ioe.getMessage();
+			logger.severe(error);
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_IO_ERROR.");			
+			throw new IOException(error);
+		}
+		catch (JSONException je) {
+			//failed writing roles 3 times to s3.
+			//All subsequent requests will be denied by stateVerificationFilter till fixed and restarted
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_DATA_CONSISTENCY_ERROR);			
+			String error = Strings.failedWritingServer + je.getMessage();
+			logger.severe(error);
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_DATA_CONSISTENCY_ERROR.");			
+			throw new IOException(error);
+		}
+		return changesArr;
+	}	
+	
+	//return error string upon error. null upon success
 	public static LinkedList<AirlockChangeContent> writeRoles(JSONObject roles, ServletContext context) throws IOException {			
 		DataSerializer ds = (DataSerializer)context.getAttribute(Constants.DATA_SERIALIZER_PARAM_NAME);
 		LinkedList<AirlockChangeContent> changesArr = new LinkedList<AirlockChangeContent>();
@@ -2907,5 +2942,136 @@ public class AirlockFilesWriter {
 			throw new IOException(error);			
 		}				
 	}
+    public static LinkedList<AirlockChangeContent> writeCohorts(Product product, ServletContext context) throws IOException {
+		LinkedList<AirlockChangeContent> changesArr = new LinkedList<AirlockChangeContent>();
+		String error = null;
+		DataSerializer ds = (DataSerializer)context.getAttribute(Constants.DATA_SERIALIZER_PARAM_NAME);
+		String separator = ds.getSeparator();
+		String productCohortFileName = Constants.SEASONS_FOLDER_NAME +
+				separator + product.getUniqueId().toString() + separator
+				+Constants.AIRLOCK_COHORTS_FILE_NAME;
 
+		JSONObject airlockCohortsJson = null;
+		try {
+			airlockCohortsJson = product.getCohorts().toJson();
+		} catch (JSONException je) {
+			//should never happen - creating JSON object from memory should always succeed but just in-case ...
+			//reload from s3 and return error
+			logger.severe("Failed writing product " +  product.getName() + ", " + product.getUniqueId().toString() + " cohorts  to S3. Illegal JSON format: " + je.getMessage());
+			throw new IOException(error);
+		}
+
+		try {
+			ds.writeData(productCohortFileName, airlockCohortsJson.write(true));
+			changesArr.add(AirlockChangeContent.getAdminChange(airlockCohortsJson, productCohortFileName, Stage.PRODUCTION));
+		} catch (IOException ioe) {
+			//failed writing 3 times to s3. Set server state to ERROR.
+			//All subsequent requests will be denied by stateVerificationFilter till fixed and restarted
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			error = "Failed writing product " +  product.getName() + ", " + product.getUniqueId().toString() + " cohorts to S3: " + ioe.getMessage();
+			logger.severe(error);
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_IO_ERROR.");
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			throw new IOException(error);
+		}
+		catch (JSONException je) {
+			//All subsequent requests will be denied by stateVerificationFilter till fixed and restarted
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			error = "Failed writing product " +  product.getName() + ", " + product.getUniqueId().toString() + " cohorts to S3: " + je.getMessage();
+			logger.severe(error);
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_DATA_CONSISTENCY_ERROR.");
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_DATA_CONSISTENCY_ERROR);
+			throw new IOException(error);
+		}
+		return changesArr;
+	}
+
+
+    public static LinkedList<AirlockChangeContent> writeProductEntities(Product product, ServletContext context, UserInfo userInfo) throws IOException {
+		LinkedList<AirlockChangeContent> changesArr = new LinkedList<AirlockChangeContent>();
+		String error = null;
+		DataSerializer ds = (DataSerializer)context.getAttribute(Constants.DATA_SERIALIZER_PARAM_NAME);
+		String separator = ds.getSeparator();
+		String productEntitiesFileName = Constants.SEASONS_FOLDER_NAME +
+				separator + product.getUniqueId().toString() + separator
+				+Constants.AIRLYTICS_ENTITIES_FILE_NAME;
+
+		JSONObject airlockEntitiesJson = null;
+		try {
+			airlockEntitiesJson = product.getEntities().toJSON(true, userInfo, context, OutputJSONMode.ADMIN); //include entities
+		} catch (JSONException je) {
+			//should never happen - creating JSON object from memory should always succeed but just in-case ...
+			//reload from s3 and return error
+			logger.severe("Failed writing product " +  product.getName() + ", " + product.getUniqueId().toString() + " entities  to S3. Illegal JSON format: " + je.getMessage());
+			throw new IOException(error);
+		}
+
+		try {
+			ds.writeData(productEntitiesFileName, airlockEntitiesJson.write(true));
+			changesArr.add(AirlockChangeContent.getAdminChange(airlockEntitiesJson, productEntitiesFileName, Stage.PRODUCTION));
+		} catch (IOException ioe) {
+			//failed writing 3 times to s3. Set server state to ERROR.
+			//All subsequent requests will be denied by stateVerificationFilter till fixed and restarted
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			error = "Failed writing product " +  product.getName() + ", " + product.getUniqueId().toString() + " entities to S3: " + ioe.getMessage();
+			logger.severe(error);
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_IO_ERROR.");
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			throw new IOException(error);
+		}
+		catch (JSONException je) {
+			//All subsequent requests will be denied by stateVerificationFilter till fixed and restarted
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			error = "Failed writing product " +  product.getName() + ", " + product.getUniqueId().toString() + " entities to S3: " + je.getMessage();
+			logger.severe(error);
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_DATA_CONSISTENCY_ERROR.");
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_DATA_CONSISTENCY_ERROR);
+			throw new IOException(error);
+		}
+		return changesArr;
+	}
+
+	public static LinkedList<AirlockChangeContent> writeDataImportJobs(Product product, ServletContext context) throws IOException {
+		LinkedList<AirlockChangeContent> changesArr = new LinkedList<AirlockChangeContent>();
+		String error = null;
+		DataSerializer ds = (DataSerializer)context.getAttribute(Constants.DATA_SERIALIZER_PARAM_NAME);
+		String separator = ds.getSeparator();
+		String productJobsFileName = Constants.SEASONS_FOLDER_NAME +
+				separator + product.getUniqueId().toString() + separator
+				+Constants.AIRLYTICS_DATA_IMPORT_FILE_NAME;
+
+		JSONObject airlyticsJobsJson = null;
+		try {
+			airlyticsJobsJson = product.getDataImports().toJson();
+		} catch (JSONException je) {
+			//should never happen - creating JSON object from memory should always succeed but just in-case ...
+			//reload from s3 and return error
+			logger.severe("Failed writing product " +  product.getName() + ", " + product.getUniqueId().toString() + " data import jobs to S3. Illegal JSON format: " + je.getMessage());
+			throw new IOException(error);
+		}
+
+		try {
+			ds.writeData(productJobsFileName, airlyticsJobsJson.write(true));
+			changesArr.add(AirlockChangeContent.getAdminChange(airlyticsJobsJson, productJobsFileName, Stage.PRODUCTION));
+		} catch (IOException ioe) {
+			//failed writing 3 times to s3. Set server state to ERROR.
+			//All subsequent requests will be denied by stateVerificationFilter till fixed and restarted
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			error = "Failed writing product " +  product.getName() + ", " + product.getUniqueId().toString() + " data import jobs to S3: " + ioe.getMessage();
+			logger.severe(error);
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_IO_ERROR.");
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			throw new IOException(error);
+		}
+		catch (JSONException je) {
+			//All subsequent requests will be denied by stateVerificationFilter till fixed and restarted
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			error = "Failed writing product " +  product.getName() + ", " + product.getUniqueId().toString() + " data import jobs to S3: " + je.getMessage();
+			logger.severe(error);
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_DATA_CONSISTENCY_ERROR.");
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_DATA_CONSISTENCY_ERROR);
+			throw new IOException(error);
+		}
+		return changesArr;
+	}
 }

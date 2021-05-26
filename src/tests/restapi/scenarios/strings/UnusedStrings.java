@@ -462,6 +462,75 @@ public class UnusedStrings {
 		Assert.assertEquals(respCode, 200, "Parent feature was not deleted");
 	}
 
+	/*
+	 * 	 F1 -> MIX->F2 ->CR1+ CR2 -> CR3
+	 */
+	@Test (dependsOnMethods="scenario4", description = "Add utility and hierarchy of features. add string2 to feature1")
+	public void scenario5() throws Exception{
+		String response = stringsApi.getUnusageStrings(seasonID, sessionToken);
+		JSONObject respJson = new JSONObject(response);
+		
+		JSONArray unusedStrings = respJson.getJSONArray("unusedStrings");
+		Assert.assertTrue(unusedStrings.size() == 4, "wrong unusedStrings size");
+		Assert.assertTrue(unusedStrings.getJSONObject(0).getString("uniqueId").equals(stringID1), "wrong id in unusedStrings list");
+		Assert.assertTrue(unusedStrings.getJSONObject(1).getString("uniqueId").equals(stringID2), "wrong id in unusedStrings list");
+		Assert.assertTrue(unusedStrings.getJSONObject(2).getString("uniqueId").equals(stringID3), "wrong id in unusedStrings list");
+		Assert.assertTrue(unusedStrings.getJSONObject(3).getString("uniqueId").equals(stringID4), "wrong id in unusedStrings list");
+		
+		String feature1 = FileUtils.fileToString(filePath + "feature1.txt", "UTF-8", false);
+		String featureID1 = f.addFeature(seasonID, feature1, "ROOT", sessionToken);
+		Assert.assertFalse(featureID1.contains("error"), "Feature was not added to the season: " + featureID1);
+
+		String featureMix = FileUtils.fileToString(filePath + "feature-mutual.txt", "UTF-8", false);
+		String mixID1 = f.addFeature(seasonID, featureMix, featureID1, sessionToken);
+		Assert.assertFalse(mixID1.contains("error"), "Feature was not added to the season: " + mixID1);
+
+		String feature2 = FileUtils.fileToString(filePath + "feature2.txt", "UTF-8", false);
+		JSONObject fObj2 = new JSONObject(feature2);
+		String ruleString =  "  translate(\"app.hello\", \"testing string\");  true;	" ;
+		JSONObject ruleObj = new JSONObject();
+		ruleObj.put("ruleString", ruleString);
+		fObj2.put("rule", ruleObj);
+		String featureID2 = f.addFeature(seasonID, fObj2.toString(), mixID1, sessionToken);
+		Assert.assertFalse(featureID2.contains("error"), "Feature was not added to the season: " + featureID2);
+
+
+		String configuration = FileUtils.fileToString(filePath + "configuration_rule1.txt", "UTF-8", false);
+		JSONObject jsonCR = new JSONObject(configuration);
+		jsonCR.put("name", "CR1");
+		String configID1 = f.addFeature(seasonID, jsonCR.toString(), featureID2, sessionToken);
+		Assert.assertFalse(configID1.contains("error"), "Feature was not added to the season: " + configID1);
+
+		jsonCR.put("name", "CR2");
+		String configID2 = f.addFeature(seasonID, jsonCR.toString(), featureID2, sessionToken);
+		Assert.assertFalse(configID2.contains("error"), "Feature was not added to the season: " + configID2);
+
+		response = stringsApi.getUnusageStrings(seasonID, sessionToken);
+		respJson = new JSONObject(response);
+		
+		unusedStrings = respJson.getJSONArray("unusedStrings");
+		Assert.assertTrue(unusedStrings.size() == 3, "wrong unusedStrings size");
+		Assert.assertTrue(unusedStrings.getJSONObject(0).getString("uniqueId").equals(stringID2), "wrong id in unusedStrings list");
+		Assert.assertTrue(unusedStrings.getJSONObject(1).getString("uniqueId").equals(stringID3), "wrong id in unusedStrings list");
+		Assert.assertTrue(unusedStrings.getJSONObject(2).getString("uniqueId").equals(stringID4), "wrong id in unusedStrings list");
+		
+		jsonCR.put("name", "CR3");
+		ruleString =  "  translate(\"app.hi\", \"testing string1\",  \"testing string2\");  true;	" ;
+		ruleObj = new JSONObject();
+		ruleObj.put("ruleString", ruleString);
+		jsonCR.put("rule", ruleObj);
+		String configID3 = f.addFeature(seasonID, jsonCR.toString(),configID2, sessionToken);
+		Assert.assertFalse(configID3.contains("error"), "Feature was not added to the season: " + configID3);
+
+		response = stringsApi.getUnusageStrings(seasonID, sessionToken);
+		respJson = new JSONObject(response);
+		
+		unusedStrings = respJson.getJSONArray("unusedStrings");
+		Assert.assertTrue(unusedStrings.size() == 2, "wrong unusedStrings size");
+		Assert.assertTrue(unusedStrings.getJSONObject(0).getString("uniqueId").equals(stringID3), "wrong id in unusedStrings list");
+		Assert.assertTrue(unusedStrings.getJSONObject(1).getString("uniqueId").equals(stringID4), "wrong id in unusedStrings list");
+	}
+	
 	//@SuppressWarnings({ "rawtypes", "unchecked" })
 	private ArrayList<String> getConfigurations(JSONObject json) throws JSONException{
 		ArrayList<String> allIds = new ArrayList<String>();

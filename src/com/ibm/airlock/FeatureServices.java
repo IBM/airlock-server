@@ -302,7 +302,7 @@ public class FeatureServices {
 			List<OriginalString> copiedStrings = new ArrayList<>();
 			JSONArray stringsInConflict = new JSONArray();
 			JSONArray addedStrings = new JSONArray();
-			copiedStrings = getStringInUseByConfig(context, featureToCopy,true);
+			copiedStrings = getStringInUseByAirlockItem(context, featureToCopy,true);
 			if(copiedStrings.size() != 0) {// don't check if there are no strings
 				List<OriginalString> newStrings = new ArrayList<>();
 				List<TranslationServices.ConflictingStrings> conflictingStrings = new ArrayList<>();
@@ -500,7 +500,7 @@ public class FeatureServices {
 		}
 	}
 
-	public static List<OriginalString> getStringInUseByConfig(ServletContext context, BaseAirlockItem feature,Boolean recursive)throws JSONException{
+	public static List<OriginalString> getStringInUseByAirlockItem(ServletContext context, BaseAirlockItem feature,Boolean recursive)throws JSONException{
 		@SuppressWarnings("unchecked")
 		Map<String, Season> seasonsDB = (Map<String, Season>)context.getAttribute(Constants.SEASONS_DB_PARAM_NAME);
 		Season copiedSeason = seasonsDB.get(feature.getSeasonId().toString());

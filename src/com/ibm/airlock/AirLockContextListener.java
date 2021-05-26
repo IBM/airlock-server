@@ -4,7 +4,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletContext;
@@ -14,6 +18,8 @@ import javax.servlet.annotation.WebListener;
 
 import com.amazonaws.regions.Regions;
 import com.ibm.airlock.admin.Product;
+import com.ibm.airlock.admin.AirlockServers;
+import com.ibm.airlock.admin.AirlockServers.AirlockServer;
 import com.ibm.airlock.admin.AirlockUtility;
 import com.ibm.airlock.admin.BaseAirlockItem;
 import com.ibm.airlock.admin.Branch;
@@ -21,44 +27,43 @@ import com.ibm.airlock.admin.InitializationThread;
 import com.ibm.airlock.admin.InternalUserGroups;
 import com.ibm.airlock.admin.Season;
 import com.ibm.airlock.admin.Utilities;
+import com.ibm.airlock.admin.airlytics.entities.Attribute;
+import com.ibm.airlock.admin.airlytics.entities.AttributeType;
+import com.ibm.airlock.admin.airlytics.entities.Entity;
 import com.ibm.airlock.admin.analytics.Experiment;
 import com.ibm.airlock.admin.analytics.Variant;
+import com.ibm.airlock.admin.cohorts.CohortItem;
 import com.ibm.airlock.admin.authentication.AzurAD;
 import com.ibm.airlock.admin.authentication.BlueId;
 import com.ibm.airlock.admin.authentication.JwtData;
 import com.ibm.airlock.admin.authentication.Okta;
 import com.ibm.airlock.admin.authentication.Providers;
 import com.ibm.airlock.admin.authentication.UserRoles;
+import com.ibm.airlock.admin.dataimport.DataImportItem;
 import com.ibm.airlock.admin.notifications.AirlockNotification;
-import com.ibm.airlock.admin.operations.AirlockAPIKeys;
-import com.ibm.airlock.admin.operations.AirlockCapabilities;
-//import com.ibm.airlock.admin.operations.AirlockUsers;
-import com.ibm.airlock.admin.operations.UserRoleSets;
+import com.ibm.airlock.admin.operations.*;
 import com.ibm.airlock.admin.operations.UserRoleSets.UserRoleSet;
-import com.ibm.airlock.admin.operations.Webhooks;
-import com.ibm.airlock.admin.operations.Roles;
 import com.ibm.airlock.admin.serialize.*;
 import com.ibm.airlock.admin.streams.AirlockStream;
 import com.ibm.airlock.admin.translations.OriginalString;
 import com.ibm.airlock.admin.translations.BackgroundTranslator;
-
 import org.apache.wink.json4j.JSONException;
 import org.apache.wink.json4j.JSONObject;
-
-
 
 
 @WebListener
 public class AirLockContextListener implements ServletContextListener {
 
 	public static final Logger logger = Logger.getLogger(AirLockContextListener.class.getName());
+	private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+	private PruneImportJobsRunner pruneRunner = null;
+	private CohortsPeriodicalPersistRunner cohortsPersistRunner = null;
 
 	public void contextInitialized(ServletContextEvent servletContextEvent)
 	{
 		ServletContext context = servletContextEvent.getServletContext();
 
-		context.setAttribute(Constants.FEATURES_DB_PARAM_NAME,  new ConcurrentHashMap<String, BaseAirlockItem>());
-		//context.setAttribute(Constants.PURCHASES_DB_PARAM_NAME, new ConcurrentHashMap<String, BaseAirlockItem>());	
+		context.setAttribute(Constants.FEATURES_DB_PARAM_NAME,  new ConcurrentHashMap<String, BaseAirlockItem>());	
 		context.setAttribute(Constants.PRODUCTS_DB_PARAM_NAME, new ConcurrentHashMap<String, Product>());		
 		context.setAttribute(Constants.FOLLOWERS_PRODUCTS_DB_PARAM_NAME, new ConcurrentHashMap<String, ArrayList<String>>());
 		context.setAttribute(Constants.FOLLOWERS_FEATURES_DB_PARAM_NAME, new ConcurrentHashMap<String, ArrayList<String>>());
@@ -68,9 +73,12 @@ public class AirLockContextListener implements ServletContextListener {
 		context.setAttribute(Constants.NOTIFICATIONS_DB_PARAM_NAME, new ConcurrentHashMap<String, AirlockNotification>());
 		context.setAttribute(Constants.ORIG_STRINGS_DB_PARAM_NAME, new ConcurrentHashMap<String, OriginalString>());
 		context.setAttribute(Constants.EXPERIMENTS_DB_PARAM_NAME, new ConcurrentHashMap<String, Experiment>());
+		context.setAttribute(Constants.COHORTS_DB_PARAM_NAME, new ConcurrentHashMap<String, CohortItem>());
+		context.setAttribute(Constants.DATA_IMPORT_DB_PARAM_NAME, new ConcurrentHashMap<String, DataImportItem>());
 		context.setAttribute(Constants.BRANCHES_DB_PARAM_NAME, new ConcurrentHashMap<String, Branch>());
 		context.setAttribute(Constants.VARIANTS_DB_PARAM_NAME, new ConcurrentHashMap<String, Variant>());
 		context.setAttribute(Constants.ROLES_PARAM_NAME, new Roles());
+		context.setAttribute(Constants.AIRLOCK_SERVERS_PARAM_NAME, new AirlockServers());
 		context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.INITIALIZING);
 		context.setAttribute(Constants.GLOBAL_LOCK_PARAM_NAME, new ReentrantReadWriteLock());
 		context.setAttribute(Constants.API_KEYS_PARAM_NAME, new AirlockAPIKeys());
@@ -86,6 +94,9 @@ public class AirLockContextListener implements ServletContextListener {
 		//global users collection
 		context.setAttribute(Constants.AIRLOCK_GLOBAL_USERS_PARAM_NAME, new UserRoleSets());
 		
+		context.setAttribute(Constants.ENTITIES_DB_PARAM_NAME, new ConcurrentHashMap<String, Entity>());
+		context.setAttribute(Constants.ATTRIBUTES_DB_PARAM_NAME, new ConcurrentHashMap<String, Attribute>());
+		context.setAttribute(Constants.ATTRIBUTE_TYPES_DB_PARAM_NAME, new ConcurrentHashMap<String, AttributeType>());
 		
 		//logsFolderPath
 		String logsFolderPath = getEnv(Constants.ENV_LOGS_FOLDER_PATH);	
@@ -115,7 +126,6 @@ public class AirLockContextListener implements ServletContextListener {
 			throw new RuntimeException(err);
 		}
 		dataSerializer = buildDataSerializerFromStorageParams(envStorgeParams);
-
 
 		context.setAttribute(Constants.DATA_SERIALIZER_PARAM_NAME, dataSerializer);
 
@@ -158,7 +168,19 @@ public class AirLockContextListener implements ServletContextListener {
 		
 		logger.info(Constants.ANALYTICS_SERVER_URL_PARAM_NAME + " = " + analyticsServerUrl);		
 		context.setAttribute(Constants.ANALYTICS_SERVER_URL_PARAM_NAME, analyticsServerUrl);
-		
+
+		//airCohorts server
+		String cohortsServerUrls = getEnv(Constants.ENV_COHORTS_SERVER_URL);
+		logger.info(Constants.COHORTS_SERVER_URL_PARAM_NAME + " = " + cohortsServerUrls);
+		Map<String, String> cohortsUrls = buildProductUrlsMap(cohortsServerUrls);
+		context.setAttribute(Constants.COHORTS_SERVER_URL_PARAM_NAME, cohortsUrls);
+
+		//dataImport server
+		String dataImportServerUrls = getEnv(Constants.ENV_DATA_IMPORT_SERVER_URL);
+		logger.info(Constants.DATA_IMPORT_SERVER_URL_PARAM_NAME + " = " + dataImportServerUrls);
+		Map<String, String> dataImportUrls = buildProductUrlsMap(dataImportServerUrls);
+		context.setAttribute(Constants.DATA_IMPORT_SERVER_URL_PARAM_NAME, dataImportUrls);
+
 		//airlockChangesMailAddress
 		String airlockChangesMailAddress = getEnv(Constants.ENV_AIRLOCK_CHANGES_MAIL_ADDRESS);	
 		
@@ -342,8 +364,42 @@ public class AirLockContextListener implements ServletContextListener {
 			logger.severe(errMsg);		
 			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_DATA_CONSISTENCY_ERROR.");
 			throw new RuntimeException(errMsg);					
-		}
+		}	
 
+		//init airlockServers from S3 file
+		try {
+			logger.info ("Initalizing airlock servers from: " + Constants.AIRLOCK_SERVERS_FILE_NAME);
+			if (ds.isFileExists(Constants.AIRLOCK_SERVERS_FILE_NAME)) {
+				JSONObject alServersJSON = ds.readDataToJSON(Constants.AIRLOCK_SERVERS_FILE_NAME);			
+				Utilities.initFromAirlockServersJSON(alServersJSON, context);
+			} else {
+				AirlockServers alServers = (AirlockServers)context.getAttribute(Constants.AIRLOCK_SERVERS_PARAM_NAME);		
+				AirlockServer alServer = alServers.new AirlockServer();
+				
+				alServer.setCdnOverride(runtimeFullPath);
+				alServer.setUrl(storagePublicPath + ds.getPathPrefix());
+				alServer.setDisplayName(serverDisplayName);
+				
+				alServers.getServers().add(alServer);
+				alServers.setLastModified(new Date());
+				alServers.setDefaultServer(serverDisplayName);
+				
+				ds.writeData(Constants.AIRLOCK_SERVERS_FILE_NAME, alServers.toJson(true).write(true));
+			}
+			logger.info ("Airlock servers initialization done.");
+		} catch (IOException e) {
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_IO_ERROR);
+			String errMsg = String.format(Strings.failedInitializationReadingFile,Constants.AIRLOCK_SERVERS_FILE_NAME) + e.getMessage();
+			logger.severe(errMsg);
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_IO_ERROR.");
+			throw new RuntimeException(errMsg);			
+		} catch (JSONException e) {
+			context.setAttribute(Constants.SERVICE_STATE_PARAM_NAME, Constants.ServiceState.S3_DATA_CONSISTENCY_ERROR);
+			String errMsg = String.format(Strings.failedInitializationInvalidJson,Constants.AIRLOCK_SERVERS_FILE_NAME) + e.getMessage();
+			logger.severe(errMsg);		
+			logger.severe(Strings.changeAirlockSerevrStateTo + "S3_DATA_CONSISTENCY_ERROR.");
+			throw new RuntimeException(errMsg);								
+		}
 		//load javascriptUtilities
 		try {
 			logger.info ("Initalizing javascriptUtilities from: " + Constants.JAVASCRIPT_UTILITIES_FILE_NAME);
@@ -490,9 +546,32 @@ public class AirLockContextListener implements ServletContextListener {
 		initThread.start();
 
 		logger.info("The Airlock service initialized successfully.");
+		//do your thing
+		this.pruneRunner = new PruneImportJobsRunner(context);
+		scheduler.scheduleAtFixedRate(this.pruneRunner, 24, 24, TimeUnit.HOURS);
+
+		this.cohortsPersistRunner = new CohortsPeriodicalPersistRunner(context);
+		scheduler.scheduleAtFixedRate(this.cohortsPersistRunner, 40*60, 10, TimeUnit.SECONDS);
 	}
 
 
+	private Map<String, String> buildProductUrlsMap(String param) {
+
+		Map<String, String> toRet = new HashMap<>();
+		try {
+			JSONObject productsJSON = new JSONObject(param);
+			for (Object keyObj : productsJSON.keySet()) {
+				String key = (String)keyObj;
+				String url = productsJSON.getString(key);
+				toRet.put(key,url);
+			}
+			return toRet;
+		} catch (JSONException e) {
+			String err = "Failed initializing the Airlock service. Error when initialize URLs map from storage params: " + e.getMessage();
+			logger.severe(err);
+			throw new RuntimeException(err);
+		}
+	}
 	private DataSerializer buildDataSerializerFromStorageParams(String envStorgeParams) {
 		DataSerializer ds = null;
 		try {
@@ -679,6 +758,87 @@ public class AirLockContextListener implements ServletContextListener {
 			String err = "Failed to initialize the Airlock service. Can't find file " + fileName;
 			logger.severe(err);
 			throw new RuntimeException(err);
+		}
+	}
+
+	class PruneImportJobsRunner implements Runnable {
+		ServletContext context;
+		public PruneImportJobsRunner(ServletContext context) {
+			this.context = context;
+		}
+		@Override
+		public void run() {
+			pruneDataImportJobs(context);
+		}
+	}
+	private void pruneDataImportJobs(ServletContext context) {
+		@SuppressWarnings("unchecked")
+		Map<String, Product> productsDB = (Map<String, Product>)context.getAttribute(Constants.PRODUCTS_DB_PARAM_NAME);
+		Set<String> products = productsDB.keySet();
+
+		for (String prodId:products) {
+			Product prod = productsDB.get(prodId);
+			ReentrantReadWriteLock readWriteLock = prod.getDataImportProductLock();
+			readWriteLock.writeLock().lock();
+			try {
+				boolean didPrune = prod.pruneJobs();
+				if (didPrune) {
+					AirlockChange change = new AirlockChange();
+					change.setProduct(prod);
+					change.getFiles().addAll(AirlockFilesWriter.writeDataImportJobs(prod, context));
+					Webhooks.get(context).notifyChanges(change, context);
+				}
+			} catch (IOException e) {
+				logger.severe("failed writing data import prune for product:"+prodId);
+				e.printStackTrace();
+			} finally {
+				readWriteLock.writeLock().unlock();
+			}
+		}
+	}
+
+	class CohortsPeriodicalPersistRunner implements Runnable {
+		ServletContext context;
+		public CohortsPeriodicalPersistRunner(ServletContext context) {
+			this.context = context;
+		}
+		@Override
+		public void run() {
+			persistCohortsStatuses(context);
+		}
+	}
+	private void persistCohortsStatuses(ServletContext context) {
+		Map<String, Product> productsDB = (Map<String, Product>)context.getAttribute(Constants.PRODUCTS_DB_PARAM_NAME);
+		Set<String> products = productsDB.keySet();
+		for (String prodId:products) {
+			Product prod = productsDB.get(prodId);
+
+			ReentrantReadWriteLock readWriteLock = prod.getCohortsProductLock();
+			printLockStats(readWriteLock, "persistCohortsStatuses");
+			readWriteLock.writeLock().lock();
+			try {
+				if (prod.isCohortsWriteNeeded()) {
+					logger.info("writing cohorts from persistCohortsStatuses for product:"+prodId);
+					AirlockChange change = new AirlockChange();
+					change.setProduct(prod);
+					change.getFiles().addAll(AirlockFilesWriter.writeCohorts(prod, context));
+					Webhooks.get(context).notifyChanges(change, context);
+					prod.setCohortsWriteNeeded(false);
+				}
+			} catch (IOException e) {
+				logger.severe("failed writing persisting cohorts statuses for product:"+prodId+":"+e.getMessage());
+				e.printStackTrace();
+			} finally {
+				readWriteLock.writeLock().unlock();
+			}
+		}
+	}
+
+	private void printLockStats(ReentrantReadWriteLock readWriteLock, String prefix) {
+		if (logger.isLoggable(Level.FINEST)) {
+			logger.finest(prefix+" lock stats. WriteHoldCount:"+readWriteLock.getWriteHoldCount()+". getReadHoldCount:"+readWriteLock.getReadHoldCount()+
+					". getReadLockCount:"+readWriteLock.getReadLockCount()+". isWriteLocked:"+readWriteLock.isWriteLocked()+". getQueueLength:"+readWriteLock.getQueueLength()+
+					". hasQueuedThreads:"+readWriteLock.hasQueuedThreads());
 		}
 	}
 }

@@ -221,13 +221,8 @@ public class InternalUserGroupsUsage {
 		JSONObject season2Obj = userGruop1.getJSONArray("seasons").getJSONObject(1);
 		Assert.assertTrue(season2Obj.getString("seasonId").equals(seasonID2), "wrong season id");		
 		Assert.assertTrue(season2Obj.getJSONArray("features").size() == 0, "wrong number of branches");
-		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
-		
-		JSONObject branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
-		Assert.assertTrue(branchObj.getString("name").equals("branch1"), "wrong branch name");
-		Assert.assertTrue(branchObj.getString("uniqueId").equals(branchID), "wrong branch id");
-		Assert.assertTrue(branchObj.getJSONArray("features").size() == 0, "wrong branch features");
-		
+		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 0, "wrong number of branches");
+
 		season1Obj = userGruop2.getJSONArray("seasons").getJSONObject(0);
 		Assert.assertTrue(season1Obj.getString("seasonId").equals(seasonID1), "wrong season id");
 		Assert.assertTrue(season1Obj.getJSONArray("branches").size() == 0, "wrong number of branches");
@@ -238,7 +233,7 @@ public class InternalUserGroupsUsage {
 		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
 		Assert.assertTrue(season2Obj.getJSONArray("features").size() == 0, "wrong number of branches");
 		
-		branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
+		JSONObject branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
 		Assert.assertTrue(branchObj.getString("name").equals("branch1"), "wrong branch name");
 		Assert.assertTrue(branchObj.getString("uniqueId").equals(branchID), "wrong branch id");
 		Assert.assertTrue(branchObj.getJSONArray("features").size() == 1, "wrong branch features");
@@ -256,14 +251,8 @@ public class InternalUserGroupsUsage {
 		
 		season2Obj = userGruop3.getJSONArray("seasons").getJSONObject(1);
 		Assert.assertTrue(season2Obj.getString("seasonId").equals(seasonID2), "wrong season id");		
-		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
+		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 0, "wrong number of branches");
 		Assert.assertTrue(season2Obj.getJSONArray("features").size() == 0, "wrong number of branches");
-		
-		branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
-		Assert.assertTrue(branchObj.getString("name").equals("branch1"), "wrong branch name");
-		Assert.assertTrue(branchObj.getString("uniqueId").equals(branchID), "wrong branch id");
-		Assert.assertTrue(branchObj.getJSONArray("features").size() == 0, "wrong branch features");
-		
 	}
 	
 	@Test (dependsOnMethods = "addFeatureToBranch", description = "Add experiment new usergroup to branch")
@@ -354,12 +343,7 @@ public class InternalUserGroupsUsage {
 		JSONObject season2Obj = userGruop1.getJSONArray("seasons").getJSONObject(1);
 		Assert.assertTrue(season2Obj.getString("seasonId").equals(seasonID2), "wrong season id");		
 		Assert.assertTrue(season2Obj.getJSONArray("features").size() == 0, "wrong number of branches");
-		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
-		
-		JSONObject branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
-		Assert.assertTrue(branchObj.getString("name").equals("branch1"), "wrong branch name");
-		Assert.assertTrue(branchObj.getString("uniqueId").equals(branchID), "wrong branch id");
-		Assert.assertTrue(branchObj.getJSONArray("features").size() == 0, "wrong branch features");
+		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 0, "wrong number of branches");
 		
 		season1Obj = userGruop2.getJSONArray("seasons").getJSONObject(0);
 		Assert.assertTrue(season1Obj.getString("seasonId").equals(seasonID1), "wrong season id");
@@ -371,7 +355,7 @@ public class InternalUserGroupsUsage {
 		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
 		Assert.assertTrue(season2Obj.getJSONArray("features").size() == 0, "wrong number of branches");
 		
-		branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
+		JSONObject branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
 		Assert.assertTrue(branchObj.getString("name").equals("branch1"), "wrong branch name");
 		Assert.assertTrue(branchObj.getString("uniqueId").equals(branchID), "wrong branch id");
 		Assert.assertTrue(branchObj.getJSONArray("features").size() == 1, "wrong branch features");
@@ -389,14 +373,9 @@ public class InternalUserGroupsUsage {
 		
 		season2Obj = userGruop3.getJSONArray("seasons").getJSONObject(1);
 		Assert.assertTrue(season2Obj.getString("seasonId").equals(seasonID2), "wrong season id");		
-		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
+		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 0, "wrong number of branches");
 		Assert.assertTrue(season2Obj.getJSONArray("features").size() == 0, "wrong number of branches");
 		
-		branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
-		Assert.assertTrue(branchObj.getString("name").equals("branch1"), "wrong branch name");
-		Assert.assertTrue(branchObj.getString("uniqueId").equals(branchID), "wrong branch id");
-		Assert.assertTrue(branchObj.getJSONArray("features").size() == 0, "wrong branch features");
-	
 		//experiments section
 		/*
 		  exp1(ug_c)
@@ -495,12 +474,7 @@ public class InternalUserGroupsUsage {
 		JSONObject season2Obj = userGruop1.getJSONArray("seasons").getJSONObject(1);
 		Assert.assertTrue(season2Obj.getString("seasonId").equals(seasonID2), "wrong season id");		
 		Assert.assertTrue(season2Obj.getJSONArray("features").size() == 0, "wrong number of branches");
-		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
-		
-		JSONObject branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
-		Assert.assertTrue(branchObj.getString("name").equals("branch1"), "wrong branch name");
-		Assert.assertTrue(branchObj.getString("uniqueId").equals(branchID), "wrong branch id");
-		Assert.assertTrue(branchObj.getJSONArray("features").size() == 0, "wrong branch features");
+		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 0, "wrong number of branches");
 		
 		season1Obj = userGruop2.getJSONArray("seasons").getJSONObject(0);
 		Assert.assertTrue(season1Obj.getString("seasonId").equals(seasonID1), "wrong season id");
@@ -518,7 +492,7 @@ public class InternalUserGroupsUsage {
 		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
 		Assert.assertTrue(season2Obj.getJSONArray("features").size() == 0, "wrong number of branches");
 		
-		branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
+		JSONObject branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
 		Assert.assertTrue(branchObj.getString("name").equals("branch1"), "wrong branch name");
 		Assert.assertTrue(branchObj.getString("uniqueId").equals(branchID), "wrong branch id");
 		Assert.assertTrue(branchObj.getJSONArray("features").size() == 1, "wrong branch features");
@@ -539,13 +513,9 @@ public class InternalUserGroupsUsage {
 
 		season2Obj = userGruop3.getJSONArray("seasons").getJSONObject(1);
 		Assert.assertTrue(season2Obj.getString("seasonId").equals(seasonID2), "wrong season id");		
-		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
+		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 0, "wrong number of branches");
 		Assert.assertTrue(season2Obj.getJSONArray("features").size() == 0, "wrong number of branches");
 		
-		branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
-		Assert.assertTrue(branchObj.getString("name").equals("branch1"), "wrong branch name");
-		Assert.assertTrue(branchObj.getString("uniqueId").equals(branchID), "wrong branch id");
-		Assert.assertTrue(branchObj.getJSONArray("features").size() == 0, "wrong branch features");	
 	}
 	
 	@Test (dependsOnMethods = "addConfigurationAndOrderingRules", description = "Add items with null usergroup")
@@ -657,8 +627,8 @@ public class InternalUserGroupsUsage {
 		
 		JSONObject season1Obj = userGruop1.getJSONArray("seasons").getJSONObject(0);
 		Assert.assertTrue(season1Obj.getString("seasonId").equals(seasonID1), "wrong season id");
-		Assert.assertTrue(season1Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
-		Assert.assertTrue(season1Obj.getJSONArray("branches").getJSONObject(0).getJSONArray("features").size() == 0, "wrong number of features in branche");
+		Assert.assertTrue(season1Obj.getJSONArray("branches").size() == 0, "wrong number of branches");
+		//Assert.assertTrue(season1Obj.getJSONArray("branches").getJSONObject(0).getJSONArray("features").size() == 0, "wrong number of features in branche");
 		Assert.assertTrue(season1Obj.getJSONArray("features").size() == 1, "wrong number of branches");
 		JSONObject featureObj = season1Obj.getJSONArray("features").getJSONObject(0);
 		Assert.assertTrue(featureObj.getString("name").equals("Feature1"), "wrong feature name");
@@ -669,22 +639,13 @@ public class InternalUserGroupsUsage {
 		JSONObject season2Obj = userGruop1.getJSONArray("seasons").getJSONObject(1);
 		Assert.assertTrue(season2Obj.getString("seasonId").equals(seasonID2), "wrong season id");		
 		Assert.assertTrue(season2Obj.getJSONArray("features").size() == 0, "wrong number of branches");
-		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 2, "wrong number of branches");
-		
-		JSONObject branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
-		Assert.assertTrue(branchObj.getString("name").equals("branch1"), "wrong branch name");
-		Assert.assertTrue(branchObj.getString("uniqueId").equals(branchID), "wrong branch id");
-		Assert.assertTrue(branchObj.getJSONArray("features").size() == 0, "wrong branch features");
-		
-		Assert.assertTrue(season2Obj.getJSONArray("branches").getJSONObject(1).getJSONArray("features").size() == 0, "wrong number of features in branche");
+		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 0, "wrong number of branches");
 
 		season1Obj = userGruop2.getJSONArray("seasons").getJSONObject(0);
 		Assert.assertTrue(season1Obj.getString("seasonId").equals(seasonID1), "wrong season id");
-		Assert.assertTrue(season1Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
+		Assert.assertTrue(season1Obj.getJSONArray("branches").size() == 0, "wrong number of branches");
 		Assert.assertTrue(season1Obj.getJSONArray("features").size() == 2, "wrong number of branches");
 		
-		Assert.assertTrue(season1Obj.getJSONArray("branches").getJSONObject(0).getJSONArray("features").size() == 0, "wrong number of features in branche");
-
 		Assert.assertTrue(season1Obj.getJSONArray("features").getJSONObject(0).getString("uniqueId").equals(configIDInMaster), "wrong config rule id");
 		Assert.assertTrue(season1Obj.getJSONArray("features").getJSONObject(0).getString("type").equals("CONFIGURATION_RULE"), "wrong config rule type");
 
@@ -693,10 +654,10 @@ public class InternalUserGroupsUsage {
 
 		season2Obj = userGruop2.getJSONArray("seasons").getJSONObject(1);
 		Assert.assertTrue(season2Obj.getString("seasonId").equals(seasonID2), "wrong season id");		
-		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 2, "wrong number of branches");
+		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
 		Assert.assertTrue(season2Obj.getJSONArray("features").size() == 0, "wrong number of branches");
 		
-		branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
+		JSONObject branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
 		Assert.assertTrue(branchObj.getString("name").equals("branch1"), "wrong branch name");
 		Assert.assertTrue(branchObj.getString("uniqueId").equals(branchID), "wrong branch id");
 		Assert.assertTrue(branchObj.getJSONArray("features").size() == 1, "wrong branch features");
@@ -706,31 +667,19 @@ public class InternalUserGroupsUsage {
 		Assert.assertTrue(branchFeatureObj.getString("type").equals("FEATURE"), "wrong feature type");
 		Assert.assertTrue(branchFeatureObj.getString("uniqueId").equals(featureInBranchID), "wrong feature id");
 		
-		Assert.assertTrue(season2Obj.getJSONArray("branches").getJSONObject(1).getJSONArray("features").size() == 0, "wrong number of features in branche");
-
-		
 		season1Obj = userGruop3.getJSONArray("seasons").getJSONObject(0);
 		Assert.assertTrue(season1Obj.getString("seasonId").equals(seasonID1), "wrong season id");
-		Assert.assertTrue(season1Obj.getJSONArray("branches").size() == 1, "wrong number of branches");
+		Assert.assertTrue(season1Obj.getJSONArray("branches").size() == 0, "wrong number of branches");
 		Assert.assertTrue(season1Obj.getJSONArray("features").size() == 2, "wrong number of branches");
 		
-		Assert.assertTrue(season1Obj.getJSONArray("branches").getJSONObject(0).getJSONArray("features").size() == 0, "wrong number of features in branche");
-
 		Assert.assertTrue(season1Obj.getJSONArray("features").getJSONObject(0).getString("uniqueId").equals(configIDInMaster), "wrong config rule id");
 		Assert.assertTrue(season1Obj.getJSONArray("features").getJSONObject(0).getString("type").equals("CONFIGURATION_RULE"), "wrong config rule type");
 
 		season2Obj = userGruop3.getJSONArray("seasons").getJSONObject(1);
 		Assert.assertTrue(season2Obj.getString("seasonId").equals(seasonID2), "wrong season id");		
-		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 2, "wrong number of branches");
+		Assert.assertTrue(season2Obj.getJSONArray("branches").size() == 0, "wrong number of branches");
 		Assert.assertTrue(season2Obj.getJSONArray("features").size() == 0, "wrong number of branches");
-		
-		branchObj = season2Obj.getJSONArray("branches").getJSONObject(0);
-		Assert.assertTrue(branchObj.getString("name").equals("branch1"), "wrong branch name");
-		Assert.assertTrue(branchObj.getString("uniqueId").equals(branchID), "wrong branch id");
-		Assert.assertTrue(branchObj.getJSONArray("features").size() == 0, "wrong branch features");	
-		
-		Assert.assertTrue(season2Obj.getJSONArray("branches").getJSONObject(1).getJSONArray("features").size() == 0, "wrong number of features in branche");
-
+	
 		Assert.assertTrue(userGruop1.getJSONArray("experiments").size()==2, "wrong number of experiments");
 		Assert.assertTrue(userGruop2.getJSONArray("experiments").size()==1, "wrong number of experiments");
 		Assert.assertTrue(userGruop3.getJSONArray("experiments").size()==2, "wrong number of experiments");

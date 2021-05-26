@@ -514,7 +514,7 @@ public abstract class BaseAirlockItem {
 	//considerProdUnderDev: for prod runtime file - we should consider prod under dev as dev
 	//                      for user permissions - we should consider prod under dev as prod 
 
-	private ValidationResults validateProductionDontChangedForList(LinkedList<BaseAirlockItem> currentSubItemslist, JSONArray updatedSubItemsArray, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env) throws JSONException {
+	private ValidationResults validateProductionDontChangedForList(LinkedList<BaseAirlockItem> currentSubItemslist, JSONArray updatedSubItemsArray, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env, boolean ignoreUserGroups) throws JSONException {
 		String err = "Unable to update the feature. Only a user with the Administrator or Product Lead role can change a subitem that is in the production stage.";
 		ValidationResults res = null;
 
@@ -560,7 +560,7 @@ public abstract class BaseAirlockItem {
 			String subFeatureId = subFeatureJSONObj.getString(Constants.JSON_FIELD_UNIQUE_ID);
 			BaseAirlockItem feature = airlockItemsDB.get(subFeatureId); //i know that exists since validate succeeded
 			//for each sub-feature call to validateProductionDontChanged
-			res = feature.validateProductionDontChanged(subFeatureJSONObj, airlockItemsDB, branch, context, considerProdUnderDevAsDev, env);
+			res = feature.validateProductionDontChanged(subFeatureJSONObj, airlockItemsDB, branch, context, considerProdUnderDevAsDev, env, ignoreUserGroups);
 			if (res!=null)
 				return res;
 		}				
@@ -570,38 +570,38 @@ public abstract class BaseAirlockItem {
 
 	//considerProdUnderDev: for prod runtime file - we should consider prod under dev as dev
 	//                      for user permissions - we should consider prod under dev as prod 
-	public ValidationResults validateProductionDontChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env) throws JSONException {
+	public ValidationResults validateProductionDontChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env, boolean ignoreUserGroups) throws JSONException {
 
 		if (featuresItems!=null && env.getRequestType().equals(REQUEST_ITEM_TYPE.FEATURES)) {
-			ValidationResults res = validateProductionDontChangedForList (featuresItems, updatedFeatureData.getJSONArray(Constants.JSON_FEATURE_FIELD_FEATURES), airlockItemsDB, branch, context, considerProdUnderDevAsDev, env);
+			ValidationResults res = validateProductionDontChangedForList (featuresItems, updatedFeatureData.getJSONArray(Constants.JSON_FEATURE_FIELD_FEATURES), airlockItemsDB, branch, context, considerProdUnderDevAsDev, env, ignoreUserGroups);
 			if (res != null) 
 				return res;
 
 		}
 
 		if (configurationRuleItems!=null) {
-			ValidationResults res = validateProductionDontChangedForList (configurationRuleItems, updatedFeatureData.getJSONArray(Constants.JSON_FEATURE_FIELD_CONFIGURATION_RULES), airlockItemsDB, branch, context, considerProdUnderDevAsDev, env);
+			ValidationResults res = validateProductionDontChangedForList (configurationRuleItems, updatedFeatureData.getJSONArray(Constants.JSON_FEATURE_FIELD_CONFIGURATION_RULES), airlockItemsDB, branch, context, considerProdUnderDevAsDev, env, ignoreUserGroups);
 			if (res != null) 
 				return res;
 
 		}
 		
 		if (orderingRuleItems!=null && updatedFeatureData.containsKey(Constants.JSON_FEATURE_FIELD_ORDERING_RULES) && updatedFeatureData.get(Constants.JSON_FEATURE_FIELD_ORDERING_RULES) != null) {
-			ValidationResults res = validateProductionDontChangedForList (orderingRuleItems, updatedFeatureData.getJSONArray(Constants.JSON_FEATURE_FIELD_ORDERING_RULES), airlockItemsDB, branch, context, considerProdUnderDevAsDev, env);
+			ValidationResults res = validateProductionDontChangedForList (orderingRuleItems, updatedFeatureData.getJSONArray(Constants.JSON_FEATURE_FIELD_ORDERING_RULES), airlockItemsDB, branch, context, considerProdUnderDevAsDev, env, ignoreUserGroups);
 			if (res != null) 
 				return res;
 
 		}
 
 		if (entitlementItems!=null && updatedFeatureData.containsKey(Constants.JSON_FEATURE_FIELD_ENTITLEMENTS) && updatedFeatureData.get(Constants.JSON_FEATURE_FIELD_ENTITLEMENTS) != null) {
-			ValidationResults res = validateProductionDontChangedForList (entitlementItems, updatedFeatureData.getJSONArray(Constants.JSON_FEATURE_FIELD_ENTITLEMENTS), airlockItemsDB, branch, context, considerProdUnderDevAsDev, env);
+			ValidationResults res = validateProductionDontChangedForList (entitlementItems, updatedFeatureData.getJSONArray(Constants.JSON_FEATURE_FIELD_ENTITLEMENTS), airlockItemsDB, branch, context, considerProdUnderDevAsDev, env, ignoreUserGroups);
 			if (res != null) 
 				return res;
 
 		}
 
 		if (purchaseOptionsItems!=null && updatedFeatureData.containsKey(Constants.JSON_FEATURE_FIELD_PURCHASE_OPTIONS) && updatedFeatureData.get(Constants.JSON_FEATURE_FIELD_PURCHASE_OPTIONS) != null) {
-			ValidationResults res = validateProductionDontChangedForList (purchaseOptionsItems, updatedFeatureData.getJSONArray(Constants.JSON_FEATURE_FIELD_PURCHASE_OPTIONS), airlockItemsDB, branch, context, considerProdUnderDevAsDev, env);
+			ValidationResults res = validateProductionDontChangedForList (purchaseOptionsItems, updatedFeatureData.getJSONArray(Constants.JSON_FEATURE_FIELD_PURCHASE_OPTIONS), airlockItemsDB, branch, context, considerProdUnderDevAsDev, env, ignoreUserGroups);
 			if (res != null) 
 				return res;
 		}
@@ -1216,7 +1216,9 @@ public abstract class BaseAirlockItem {
 				//in runtime production - if a checked-out feature is in production and has sub features in dev they wont be in the tree and 
 				//shouldn't be in the branch features items list
 				List<String> withoutDevChildren = Utilities.cloneStringsList(branchFeaturesItems);
-				for (BaseAirlockItem subFeature:featuresItems) {
+				LinkedList<BaseAirlockItem> fullFeaturesItems = env.getAirlockItemsDB().get(uniqueId.toString()).getFeaturesItems();
+				
+				for (BaseAirlockItem subFeature:fullFeaturesItems) {
 					if (!isProductionFeature(subFeature, env.getAirlockItemsDB())) {
 						removeSubFeatureFromList(withoutDevChildren, Branch.getItemBranchName(subFeature));
 					}
@@ -1235,7 +1237,9 @@ public abstract class BaseAirlockItem {
 				//in runtime production - if a chceked-out feature is in production and has sub features in dev they wont be in the tree and 
 				//shouldn't be in the branch faetures items list
 				List<String> withoutDevChildren = Utilities.cloneStringsList(branchConfigurationRuleItems);
-				for (BaseAirlockItem subConfig:configurationRuleItems) {
+				LinkedList<BaseAirlockItem> fullConfigurationRuleItems = env.getAirlockItemsDB().get(uniqueId.toString()).getConfigurationRuleItems();
+				
+				for (BaseAirlockItem subConfig:fullConfigurationRuleItems) {
 					if (!isProductionFeature(subConfig, env.getAirlockItemsDB())) {
 						removeSubFeatureFromList(withoutDevChildren, Branch.getItemBranchName(subConfig));
 					}
@@ -1254,7 +1258,9 @@ public abstract class BaseAirlockItem {
 				//in runtime production - if a chceked-out feature is in production and has sub features in dev they wont be in the tree and 
 				//shouldn't be in the branch faetures items list
 				List<String> withoutDevChildren = Utilities.cloneStringsList(branchOrderingRuleItems);
-				for (BaseAirlockItem subConfig:orderingRuleItems) {
+				LinkedList<BaseAirlockItem> fullOrderingRuleItems = env.getAirlockItemsDB().get(uniqueId.toString()).getOrderingRuleItems();
+				
+				for (BaseAirlockItem subConfig:fullOrderingRuleItems) {
 					if (!isProductionFeature(subConfig, env.getAirlockItemsDB())) {
 						removeSubFeatureFromList(withoutDevChildren, Branch.getItemBranchName(subConfig));
 					}
@@ -1273,7 +1279,9 @@ public abstract class BaseAirlockItem {
 				//in runtime production - if a chceked-out feature is in production and has sub features in dev they wont be in the tree and 
 				//shouldn't be in the branch faetures items list
 				List<String> withoutDevChildren = Utilities.cloneStringsList(branchEntitlementItems);
-				for (BaseAirlockItem subConfig:entitlementItems) {
+				LinkedList<BaseAirlockItem> fullEntitlementItems = env.getAirlockItemsDB().get(uniqueId.toString()).getEntitlementItems();
+				
+				for (BaseAirlockItem subConfig:fullEntitlementItems) {
 					if (!isProductionFeature(subConfig, env.getAirlockItemsDB())) {
 						removeSubFeatureFromList(withoutDevChildren, Branch.getItemBranchName(subConfig));
 					}
@@ -1291,8 +1299,12 @@ public abstract class BaseAirlockItem {
 					branchStatus.equals(BranchStatus.CHECKED_OUT) && isProductionFeature(this, env.getAirlockItemsDB())) {
 				//in runtime production - if a chceked-out feature is in production and has sub features in dev they wont be in the tree and 
 				//shouldn't be in the branch faetures items list
-				List<String> withoutDevChildren = Utilities.cloneStringsList(branchEntitlementItems);
-				for (BaseAirlockItem subConfig:purchaseOptionsItems) {
+				List<String> withoutDevChildren = Utilities.cloneStringsList(branchPurchaseOptionsItems);
+				
+				//get the full (merged) purchase options list and not only the one listed in the branch
+				LinkedList<BaseAirlockItem> fullPurchaseOptionsItems = env.getAirlockItemsDB().get(uniqueId.toString()).getPurchaseOptionsItems();
+				
+				for (BaseAirlockItem subConfig:fullPurchaseOptionsItems) {
 					if (!isProductionFeature(subConfig, env.getAirlockItemsDB())) {
 						removeSubFeatureFromList(withoutDevChildren, Branch.getItemBranchName(subConfig));
 					}
@@ -1901,7 +1913,7 @@ public abstract class BaseAirlockItem {
 			case PURCHASE_OPTIONS_MUTUAL_EXCLUSION_GROUP:
 				return new PurchaseOptionsMutualExclusionGroupItem();
 				
-			default: return null;
+			default: return null;				
 		}
 	}
 
@@ -2129,7 +2141,7 @@ public abstract class BaseAirlockItem {
 				while (orderingRuleParent.getType() != Type.FEATURE && orderingRuleParent.getType() != Type.ROOT ) {
 					orderingRuleParent = airlockItemsDB.get(orderingRuleParent.getParent().toString());
 				}
-				if (orderingRuleParent.getType() == Type.FEATURE) {
+				if (orderingRuleParent.getType() == Type.FEATURE) { 
 					featureToNotify = (FeatureItem)orderingRuleParent;
 					ArrayList<String> followersList = followersFeaturesDB.get(featureToNotify.getUniqueId().toString());
 					followers = followersList;
@@ -2143,34 +2155,50 @@ public abstract class BaseAirlockItem {
 		airlockItemsDB.remove(uniqueId.toString());
 	}
 
-	public void doGetStringsInUseByItem(Set<String> stringIds, BaseAirlockItem alItem, Set<String> stringsInUseByConfigList, Set<String> stringsInUseByUtilList, Season season,Boolean recursive, boolean includeUtilities) {
+	public void doGetStringsInUseByItem(Set<String> stringIds, BaseAirlockItem alItem, Set<String> stringsInUseByAirlockItemsList, Set<String> stringsInUseByUtilList, Season season,Boolean recursive, boolean includeUtilities) {
 		if (alItem.getType() == Type.CONFIGURATION_RULE) {
 			ConfigurationRuleItem crItem = (ConfigurationRuleItem)alItem;
-			stringsInUseByConfigList.addAll(VerifyRule.findAllTranslationIds(stringIds, crItem.getConfiguration(), false));
+			stringsInUseByAirlockItemsList.addAll(VerifyRule.findAllTranslationIds(stringIds, crItem.getConfiguration(), false));
 			if (includeUtilities) {
 				String javascriptFunctions = season.getUtilities().generateUtilityCodeSectionForStageAndType(crItem.getStage(), null, null, null, UtilityType.MAIN_UTILITY);
 				stringsInUseByUtilList.addAll(VerifyRule.findAllTranslationIds(stringIds, javascriptFunctions, false));
 			}
 		}
+		
+		if (alItem instanceof DataAirlockItem) {
+			DataAirlockItem dItem = (DataAirlockItem)alItem;
+			Rule rule = dItem.getRule();
+			if (rule!=null) {
+				String ruleStr = rule.getRuleString();
+				if (ruleStr!=null && !ruleStr.isEmpty()) {
+					stringsInUseByAirlockItemsList.addAll(VerifyRule.findAllTranslationIds(stringIds, ruleStr, false));
+					if (includeUtilities) {
+						String javascriptFunctions = season.getUtilities().generateUtilityCodeSectionForStageAndType(dItem.getStage(), null, null, null, UtilityType.MAIN_UTILITY);
+						stringsInUseByUtilList.addAll(VerifyRule.findAllTranslationIds(stringIds, javascriptFunctions, false));
+					}
+				}
+			}
+			
+		}
 
 		if (alItem.getConfigurationRuleItems()!=null) {
 			for (int i=0; i<alItem.getConfigurationRuleItems().size(); i++) {
-				doGetStringsInUseByItem(stringIds, alItem.getConfigurationRuleItems().get(i), stringsInUseByConfigList, stringsInUseByUtilList, season, recursive, includeUtilities);
+				doGetStringsInUseByItem(stringIds, alItem.getConfigurationRuleItems().get(i), stringsInUseByAirlockItemsList, stringsInUseByUtilList, season, recursive, includeUtilities);
 			}
 		}
 		if(recursive && alItem.getFeaturesItems() != null){
 			for (int i=0; i<alItem.getFeaturesItems().size(); i++) {
-				doGetStringsInUseByItem(stringIds, alItem.getFeaturesItems().get(i), stringsInUseByConfigList, stringsInUseByUtilList, season, recursive, includeUtilities);
+				doGetStringsInUseByItem(stringIds, alItem.getFeaturesItems().get(i), stringsInUseByAirlockItemsList, stringsInUseByUtilList, season, recursive, includeUtilities);
 			}
 		}
 		if(recursive && alItem.getEntitlementItems() != null){
 			for (int i=0; i<alItem.getEntitlementItems().size(); i++) {
-				doGetStringsInUseByItem(stringIds, alItem.getEntitlementItems().get(i), stringsInUseByConfigList, stringsInUseByUtilList, season, recursive, includeUtilities);
+				doGetStringsInUseByItem(stringIds, alItem.getEntitlementItems().get(i), stringsInUseByAirlockItemsList, stringsInUseByUtilList, season, recursive, includeUtilities);
 			}
 		}
 		if(recursive && alItem.getPurchaseOptionsItems() != null){
 			for (int i=0; i<alItem.getPurchaseOptionsItems().size(); i++) {
-				doGetStringsInUseByItem(stringIds, alItem.getPurchaseOptionsItems().get(i), stringsInUseByConfigList, stringsInUseByUtilList, season, recursive, includeUtilities);
+				doGetStringsInUseByItem(stringIds, alItem.getPurchaseOptionsItems().get(i), stringsInUseByAirlockItemsList, stringsInUseByUtilList, season, recursive, includeUtilities);
 			}
 		}
 	}

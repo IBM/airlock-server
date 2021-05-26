@@ -26,11 +26,14 @@ import com.ibm.airlock.Constants.StringsOutputMode;
 import com.ibm.airlock.Constants.TranslationStatus;
 import com.ibm.airlock.admin.BaseAirlockItem;
 import com.ibm.airlock.admin.ConfigurationRuleItem;
+import com.ibm.airlock.admin.DataAirlockItem;
+import com.ibm.airlock.admin.FeatureItem;
 import com.ibm.airlock.admin.GenerationException;
 import com.ibm.airlock.admin.Season;
 import com.ibm.airlock.admin.Utilities;
 import com.ibm.airlock.admin.ValidationCache;
 import com.ibm.airlock.admin.ValidationException;
+import com.ibm.airlock.admin.ValidationResults;
 import com.ibm.airlock.admin.notifications.AirlockNotification;
 import com.ibm.airlock.admin.operations.AirlockChangeContent;
 import com.ibm.airlock.admin.serialize.AirlockFilesWriter;
@@ -41,6 +44,7 @@ import com.ibm.airlock.admin.Branch;
 import com.ibm.airlock.engine.VerifyRule;
 import com.ibm.airlock.utilities.ConvertTranslations;
 import com.ibm.airlock.utilities.ConvertTranslations.SmartlingData;
+import com.ibm.airlock.admin.Rule;
 
 public class OriginalStrings {
 
@@ -428,6 +432,18 @@ public class OriginalStrings {
 
 	private String validateDeletedStringIsNotInUse(ValidationCache tester, OriginalString stringToDel, BaseAirlockItem root, ServletContext context, String branchName) throws JSONException, GenerationException
 	{
+		if (root instanceof FeatureItem) {
+			FeatureItem fi = (FeatureItem)root;
+			if (stringToDel.getStage() == Stage.PRODUCTION || fi.getStage() == Stage.DEVELOPMENT) {
+				if (fi.getRule()!=null && fi.getRule().getRuleString()!=null && !fi.getRule().getRuleString().isEmpty()) {
+					//strings can be used in rules as well
+					ValidationResults vres = fi.getRule().validateRule(fi.getStage(), fi.getMinAppVersion(), season, context, tester, null);
+					if (vres!=null)
+						return "Cannot delete string key '" + stringToDel.getKey() + "'. The rule in feature '" + fi.getNameSpaceDotName() + "' in branch '" + branchName + "' is invalid:" + vres.error;
+				}
+			}
+		}
+		
 		//String are only used in configuration field in ConfigurationRule items
 		//take into account the string stage and minAppVersion
 		if (root.getFeaturesItems()!=null) {
@@ -505,6 +521,9 @@ public class OriginalStrings {
 
 				if (crItem.getConfiguration()!=null) {
 					try {
+						if (crItem.getName().equals("Three Days Before Holiday")) {
+							int y=0;
+						}
 						ValidationCache.Info info = tester.getInfo(context, season, crItem.getStage(), crItem.getMinAppVersion());
 						VerifyRule.fullConfigurationEvaluation(crItem.getRule().getRuleString(), crItem.getConfiguration(), info.minimalInvoker, info.maximalInvoker);
 
@@ -515,11 +534,23 @@ public class OriginalStrings {
 			}
 		}
 		
-		//String are only used in configuration field in ConfigurationRule items
+		if (root instanceof FeatureItem) {
+			DataAirlockItem dataItem = (DataAirlockItem)root;
+			if (newStage == Stage.DEVELOPMENT && dataItem.getStage() == Stage.PRODUCTION) {
+				Rule rule = dataItem.getRule();
+				if (rule!=null && rule.getRuleString()!=null && !rule.getRuleString().isEmpty()) {
+					ValidationResults res = rule.validateRule(Stage.PRODUCTION, dataItem.getMinAppVersion(), season, context, tester, null);
+					if (res!=null) {
+						return "Unable to update the string '" + stringKey + "'. Either the minimum version of the string is higher than the minimum version of the item's '" + dataItem.getNameSpaceDotName() + "' rule that is using it, or the stage of the string is development while the stage of the item is production."; 
+					}
+				}
+			}
+		}
+		
+		//String are only used in configuration field in ConfigurationRule items or in rule string in features and configurationItems
 		//take into account the string stage and minAppVersion
 		if (root.getFeaturesItems()!=null) {
 			for (int i=0; i<root.getFeaturesItems().size(); i++) {								
-				//String res = validateProdConfigNotUsingString(stringKey, newStage, root.getFeaturesItems().get(i), context, maximalInputSamplesMap, minimalInputSamplesMap, enStringsMap, javascriptUtilitiesMap);
 				String res = validateProdConfigNotUsingString(stringKey, newStage, root.getFeaturesItems().get(i), context, tester);
 				if (res!=null)
 					return res;
@@ -527,7 +558,6 @@ public class OriginalStrings {
 		}
 		if (root.getConfigurationRuleItems() != null) {
 			for (int i=0; i<root.getConfigurationRuleItems().size(); i++) {
-				//String res = validateProdConfigNotUsingString(stringKey, newStage, root.getConfigurationRuleItems().get(i), context, maximalInputSamplesMap, minimalInputSamplesMap, enStringsMap, javascriptUtilitiesMap);
 				String res = validateProdConfigNotUsingString(stringKey, newStage, root.getConfigurationRuleItems().get(i), context, tester);
 				if (res!=null)
 					return res;

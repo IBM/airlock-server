@@ -17,6 +17,7 @@ public class AirLockApplication extends Application {
 		classes.add(FeatureServices.class);
 		classes.add(ProductServices.class);
 		classes.add(InternalUserGroupServices.class);
+		classes.add(AirlyticsServices.class);
 		classes.add(AuthenticationServices.class);
 		classes.add(OperationsServices.class);
 		classes.add(TranslationServices.class);

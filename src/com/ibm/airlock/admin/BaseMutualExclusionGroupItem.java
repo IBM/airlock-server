@@ -153,14 +153,14 @@ public abstract class BaseMutualExclusionGroupItem extends BaseAirlockItem {
 	//considerProdUnderDev: for prod runtime file - we should consider prod under dev as dev
 	//                      for user permissions - we should consider prod under dev as prod 
 
-	public ValidationResults validateProductionDontChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env) throws JSONException {
+	public ValidationResults validateProductionDontChanged(JSONObject updatedFeatureData, Map<String, BaseAirlockItem> airlockItemsDB, Branch branch, ServletContext context, boolean considerProdUnderDevAsDev, Environment env, boolean ignoreUserGroups) throws JSONException {
 		//At this stage we can be sure that all mandatory fields exist and legal types exist in the json since validate was previously called.		
 		String err = "Unable to update the MUTUAL_EXCLUSION_GROUP. Only a user with the Administrator or Product Lead role can change a subitem that is in the production stage.";			
 		
 		if (isProductionFeature(this, airlockItemsDB) &&isChanged(updatedFeatureData, airlockItemsDB))
 			return new ValidationResults(err, Status.BAD_REQUEST);
 	
-		ValidationResults superRes = super.validateProductionDontChanged(updatedFeatureData, airlockItemsDB, branch, context, considerProdUnderDevAsDev, env);
+		ValidationResults superRes = super.validateProductionDontChanged(updatedFeatureData, airlockItemsDB, branch, context, considerProdUnderDevAsDev, env, ignoreUserGroups);
 		if (superRes!=null)
 			return superRes;
 		

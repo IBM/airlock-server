@@ -12,11 +12,14 @@
 		"OperationsServices.upgradeServer","ProductServices.resetEncryptionKey","ProductServices.addSeasonWithId", "ProductServices.addProductWithId",
 		"OperationsServices.setProductAirlockUsers", "OperationsServices.addUserRoleSet", "OperationsServices.addUserRoleSetToProduct",
 		"OperationsServices.deleteUserRoleSet", "OperationsServices.updateUserRoleSet",
-		"OperationsServices.addWebhook", "OperationsServices.getWebhooks", "OperationsServices.updateWebhook", "OperationsServices.deleteWebhook"]
+		"OperationsServices.addWebhook", "OperationsServices.getWebhooks", "OperationsServices.updateWebhook", "OperationsServices.deleteWebhook",
+		"AirlyticsServices.deleteAttribute", "AirlyticsServices.createEntity", "AirlyticsServices.deleteEntity", "AirlyticsServices.updateEntity",
+		"AirlyticsServices.getDBSchemas", "AirlyticsServices.getDBTables", "OperationsServices.addUserRoleSetToProductByGlobalAdmin"]
 	}, {
 		"role": "ProductLead",
 		"actions": ["ProductServices.addSeason", "ProductServices.updateInputSchema",
-					"ProductServices.updateProduct", "ProductServices.updateSeason", "ProductServices.deleteSeason"]
+					"ProductServices.updateProduct", "ProductServices.updateSeason", "ProductServices.deleteSeason", 
+					"ProductServices.updateGlobalStreamsSettings"]
 	}, {
 		"role": "TranslationSpecialist",
 		"actions": ["TranslationServices.updateString", "TranslationServices.addString",
@@ -28,15 +31,24 @@
 		"OperationsServices.generateAirlockKey", "TranslationServices.importStringsWithFormat"]
 	}, {
 		"role": "AnalyticsViewer",
-		"actions": [ "AuthenticationServices.viewAnalytics" ]
+		"actions": [ "AuthenticationServices.viewAnalytics", "AirlyticsServices.getCohorts","AirlyticsServices.getCohort", "AirlyticsServices.validateCohort",
+					"AirlyticsServices.getDataImportJobs", "AirlyticsServices.getDataImportJob", "AirlyticsServices.getAttribute", "AirlyticsServices.getAttributes",
+					"AirlyticsServices.getAttributeType", "AirlyticsServices.getAttributeTypes", 
+					"AirlyticsServices.getEntities", "AirlyticsServices.getEntity"]
 	 }, {
 		"role": "AnalyticsEditor",
-		"actions": [ "AuthenticationServices.editAnalytics" ]
+		"actions": [ "AuthenticationServices.editAnalytics", "AirlyticsServices.createCohort","AirlyticsServices.updateCohort","AirlyticsServices.deleteCohort","AirlyticsServices.updateCohortsData",
+					"AirlyticsServices.createDataImportJob", "AirlyticsServices.updateDataImportData", "AirlyticsServices.updateDataImportJob", 
+					"AirlyticsServices.deleteDataImportItem", "AirlyticsServices.createAttribute", "AirlyticsServices.createAttributeType",
+					"AirlyticsServices.updateAttribute", "AirlyticsServices.updateAttributeType", "AirlyticsServices.deleteAttributeType"]
+	 }, {
+		"role": "AnalyticsPowerUser",
+		"actions": []
 	 }, {
 		"role": "Editor",
 		"actions": ["ProductServices.addProduct", "ProductServices.addFeature",
 		"ProductServices.deleteFeature", "ProductServices.updateFeature",
-		"InternalUserGroupServices.setInternalUserGroups", "ProductServices.deleteUtility", 
+		"InternalUserGroupServices.setInternalUserGroups", "ProductServices.deleteUtility",
 		"ProductServices.addUtility", "ProductServices.updateUtility", "TranslationServices.updateString", "TranslationServices.addString",
 		"TranslationServices.deleteString", "FeatureServices.copy", "FeatureServices.importFeatures","AnalyticsServices.updateGlobalDataCollection",
 		"AnalyticsServices.addFeatureToAnalytics", "AnalyticsServices.removeFeatureFromAnalytics",
@@ -54,7 +66,7 @@
 		"OperationsServices.generateAirlockKey", "OperationsServices.deleteAirlockAPIKey", "TranslationServices.importStringsWithFormat",
 		"ProductServices.getEncryptionKey", "ProductServices.deleteEntitlement", "ProductServices.addEntitlement", 
 		"ProductServices.updateEntitlement", "AnalyticsServices.addItemToAnalytics", "AnalyticsServices.removeItemFromAnalytics",
-		"AnalyticsServices.updateItemAttributesForAnalytics"]
+		"AnalyticsServices.updateItemAttributesForAnalytics","ProductServices.getBranchesUsage"]
 	}, {
 		"role": "Viewer",
 		"actions": ["AuthenticationServices.inspectAssertion",

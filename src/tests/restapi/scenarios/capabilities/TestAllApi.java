@@ -35,6 +35,7 @@ public class TestAllApi {
 	protected BranchesRestApi branchesRestApi;
 	protected StreamsRestApi streamsApi;
 	protected InAppPurchasesRestApi purchasesApi;
+	protected EntitiesRestApi entitiesApi;
 	protected AirlocklNotificationRestApi notificationApi;
 	protected UserGroupsRestApi userGroupsApi;
 	protected AirlockUtils baseUtils;
@@ -70,7 +71,7 @@ public class TestAllApi {
 		notificationApi = new AirlocklNotificationRestApi();
 		userGroupsApi = new UserGroupsRestApi();
 		purchasesApi = new InAppPurchasesRestApi();
-
+		entitiesApi = new EntitiesRestApi();
 
 		productApi.setURL(m_url);
 		seasonApi.setURL(m_url);
@@ -87,7 +88,7 @@ public class TestAllApi {
 		notificationApi.setUrl(m_url);
 		userGroupsApi.setURL(m_url);
 		purchasesApi.setURL(m_url);
-
+		entitiesApi.setURL(m_url);
 	}
 
 	//*********** auxiliary test methods ********************//
@@ -314,6 +315,14 @@ public class TestAllApi {
 
 	public String getEncryptionKey(String seasonID, String sessionToken) {
 		return seasonApi.getEncryptionKey(seasonID, sessionToken);
+	}
+	
+	public JSONArray getSeasonsPerProduct(String productID, String sessionToken) throws Exception {
+		return seasonApi.getSeasonsPerProduct(productID, sessionToken);
+	}
+	
+	public String getBranchesUsage(String seasonID, String sessionToken) throws Exception {
+		return seasonApi.getBranchesUsage(seasonID, sessionToken);
 	}
 	//************** SCHEMA FUNCTIONS **************//
 
@@ -576,6 +585,11 @@ public class TestAllApi {
 		JSONObject json = new JSONObject(feature);
 		json.put("description", "new description");
 		return featureApi.updateFeatureInBranch(seasonID, branchID, featureID, json.toString(), sessionToken);
+
+	}
+	
+	public String updateFeatureInBranch(String seasonID, String branchID, String featureID, String feature, String sessionToken) throws JSONException, IOException{
+		return featureApi.updateFeatureInBranch(seasonID, branchID, featureID, feature, sessionToken);
 
 	}
 
@@ -1090,6 +1104,11 @@ public class TestAllApi {
 		return experimentsRestApi.updateExperiments(productID, experiment, sessionToken);
 	}
 
+	public String updateExperiment(String experimentID, String experiment, String sessionToken) throws IOException{
+
+		return experimentsRestApi.updateExperiment(experimentID, experiment, sessionToken);
+	}
+	
 
 	public int deleteExperiment(String experimentID, String sessionToken) throws Exception{
 		return experimentsRestApi.deleteExperiment(experimentID, sessionToken);
@@ -1141,6 +1160,10 @@ public class TestAllApi {
 		JSONObject json = new JSONObject(variant);
 		json.put("description", "new description");
 		return experimentsRestApi.updateVariant(variantID,json.toString(),sessionToken);
+	}
+	
+	public String updateVariant(String variantID, String variant, String sessionToken) throws Exception {
+		return experimentsRestApi.updateVariant(variantID, variant, sessionToken);
 	}
 
 	public String getVariant(String variantID, String sessionToken) throws Exception{
@@ -1385,12 +1408,25 @@ public class TestAllApi {
 			return operationApi.setAirlockUsers(input,sessionToken);
 	}*/
 
+
+	public String getAirlockServers(String sessionToken) throws Exception {
+		return operationApi.getAirlockServers(sessionToken);
+	}
+
+	public String setAirlockServers(String input, String sessionToken) throws IOException {
+		return operationApi.setAirlockServers(input,sessionToken);
+	}
+
 	public String getUserGroups(String productID, String sessionToken) throws Exception{
 		return userGroupsApi.getUserGroups(productID, sessionToken);
 	}
 
 	public String setUserGroups(String productID, String input, String sessionToken) throws Exception {
 		return userGroupsApi.setUserGroups(productID, input, sessionToken);
+	}
+	
+	public String getUserGroupsUsage(String productID, String sessionToken) throws Exception {
+		return userGroupsApi.getUserGroupsUsage(productID, sessionToken);
 	}
 
 	public int healthcheck(String sessionToken) throws Exception {
@@ -1515,5 +1551,78 @@ public class TestAllApi {
 
 	public String getPurcahse(String purchaseID, String sessionToken){
 		return purchasesApi.getPurchaseItem(purchaseID, sessionToken);
+	}
+	
+	public String addEntity(String productID, String filePath, String sessionToken) throws Exception{
+		String entity = FileUtils.fileToString(config + filePath, "UTF-8", false);
+		return entitiesApi.createEntity(productID, entity, sessionToken);
+	}
+	
+	public String addAttributeType(String entityID, String filePath, String sessionToken) throws Exception{
+		String at = FileUtils.fileToString(config + filePath, "UTF-8", false);
+		return entitiesApi.createAttributeType(entityID, at, sessionToken);
+	}
+	
+	public String addAttribute(String entityID, String filePath, String attributeTypeID, String sessionToken) throws Exception{
+		String at = FileUtils.fileToString(config + filePath, "UTF-8", false);
+		JSONObject attObj = new JSONObject(at);
+		attObj.put("attributeTypeId", attributeTypeID);
+		return entitiesApi.createAttribute(entityID, attObj.toString(), sessionToken);
+	}
+	
+	public String getAttribute(String attributeID, String sessionToken) throws Exception{
+		return entitiesApi.getAttribute(attributeID, sessionToken);
+	}
+	
+	public String getAttributeType(String attributeTypeID, String sessionToken) throws Exception{
+		return entitiesApi.getAttributeType(attributeTypeID, sessionToken);
+	}
+	
+	public String getEntity(String entityID, String sessionToken) throws Exception{
+		return entitiesApi.getEntity(entityID, sessionToken);
+	}
+	
+	public String getProductEntities(String productID, String sessionToken) throws Exception{
+		return entitiesApi.getProductEntities(productID, sessionToken);
+	}
+	
+	public String getAttributes(String entityID, String sessionToken) throws Exception{
+		return entitiesApi.getAttributes(entityID, sessionToken);
+	}
+	
+	public String getAttributeTypes(String entityID, String sessionToken) throws Exception{
+		return entitiesApi.getAttributeTypes(entityID, sessionToken);
+	}
+	
+	public String getDbSchemas(String sessionToken) throws Exception{
+		return entitiesApi.getDbSchemas(sessionToken);
+	}
+	
+	public String getDbTablesInSchema(String dbSchema, String sessionToken) throws Exception{
+		return entitiesApi.getDbTablesInSchema(dbSchema, sessionToken);
+	}
+	
+	public String updateEntity(String entityID, String entity, String sessionToken) throws Exception{
+		return entitiesApi.updateEntity(entityID, entity, sessionToken);
+	}
+	
+	public String updateAttribute(String attributeID, String attribute, String sessionToken) throws Exception{
+		return entitiesApi.updateAttribute(attributeID, attribute, sessionToken);
+	}
+	
+	public String updateAttributeType(String attributeTypeID, String attributeType, String sessionToken) throws Exception{
+		return entitiesApi.updateAttributeType(attributeTypeID, attributeType, sessionToken);
+	}
+	
+	public int deleteAttribute(String attributeID, String sessionToken) throws Exception{
+		return entitiesApi.deleteAttribute(attributeID, sessionToken);
+	}
+	
+	public int deleteAttributeType(String attributeTypeID, String sessionToken) throws Exception{
+		return entitiesApi.deleteAttributeType(attributeTypeID, sessionToken);
+	}
+	
+	public int deleteEntity(String entityID, String sessionToken) throws Exception{
+		return entitiesApi.deleteEntity(entityID, sessionToken);
 	}
 }

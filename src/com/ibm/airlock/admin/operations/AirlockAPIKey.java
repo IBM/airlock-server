@@ -30,6 +30,7 @@ import com.ibm.airlock.admin.ValidationResults;
 import com.ibm.airlock.admin.authentication.UserInfo;
 import com.ibm.airlock.admin.authentication.UserRoles;
 
+//TODO: validation during product roles change
 public class AirlockAPIKey {
 	private class ProductRolesPair {
 		private UUID productId;

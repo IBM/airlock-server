@@ -1,8 +1,13 @@
 package com.ibm.airlock.admin;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 import javax.servlet.ServletContext;
 
@@ -16,6 +21,7 @@ import com.ibm.airlock.Constants.OutputJSONMode;
 import com.ibm.airlock.engine.Environment;
 
 public class BranchesCollection {
+	
 	private Season season = null;
 	
 	//map between the branch name and the branch itself 
@@ -77,6 +83,42 @@ public class BranchesCollection {
 		res.put(Constants.JSON_FIELD_BRANCHES, branchesArr);
 
 		return res; 
+	}
+	
+	//for each branch return creator, creationDat and the last date a feature in this branch was modified.
+	//the returned list is sorted by modification date
+	public JSONObject toBranchesUsageJson(ServletContext context) throws JSONException {
+		JSONObject res = new JSONObject();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+		TreeMap<Date,JSONObject> sortedByModificationDate = new TreeMap<>();
+		JSONArray branchesData = new JSONArray();
+		for (Branch branch : branchesList) {
+			JSONObject branchObj = new JSONObject();
+			branchObj.put(Constants.JSON_FIELD_NAME, branch.getName());
+			branchObj.put(Constants.JSON_FIELD_UNIQUE_ID, branch.getUniqueId().toString());
+			branchObj.put(Constants.JSON_FIELD_NAME, branch.getName());
+			branchObj.put(Constants.JSON_FEATURE_FIELD_CREATOR, branch.getCreator());
+			branchObj.put(Constants.JSON_FEATURE_FIELD_CREATION_DATE, formatter.format(branch.getCreationDate()));
+			
+			Date lastBranchModificationDate = branch.getBranchlatestModificationDate();
+			branchObj.put(Constants.JSON_FIELD_BRANCH_MODIFICATION_DATE, formatter.format(lastBranchModificationDate));
+			
+			String exp = branch.isPartOfExperiment(context);
+			branchObj.put(Constants.JSON_FIELD_IS_PART_OF_EXPERIMENT, exp!=null);
+			if (exp!=null) {
+				branchObj.put(Constants.JSON_FIELD_EXPERIMENT, exp);
+			}
+			sortedByModificationDate.put(lastBranchModificationDate, branchObj);
+			
+		}
+		
+		Set<Date> keys = sortedByModificationDate.keySet();
+		for (Date key:keys) {
+			branchesData.add(sortedByModificationDate.get(key));
+		}
+		
+		res.put(Constants.JSON_FIELD_BRANCHES, branchesData);
+		return res;
 	}
 	
 	public int size() {

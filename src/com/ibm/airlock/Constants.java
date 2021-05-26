@@ -14,9 +14,15 @@ public class Constants {
 	public static final String STREAMS_DB_PARAM_NAME = "streamsDB";
 	public static final String NOTIFICATIONS_DB_PARAM_NAME = "notificationsDB";
 	public static final String BRANCHES_DB_PARAM_NAME = "branchesDB";
-	
+	public static final String COHORTS_DB_PARAM_NAME = "cohortsDB";
+	public static final String DATA_IMPORT_DB_PARAM_NAME = "dataImportDB";
+	public static final String ENTITIES_DB_PARAM_NAME = "entitiesDB";
+	public static final String ATTRIBUTES_DB_PARAM_NAME = "attributesDB";
+	public static final String ATTRIBUTE_TYPES_DB_PARAM_NAME = "attributeTypesDB";
+
 	public static final String WEBHOOKS_PARAM_NAME = "webhooks";
 	public static final String ROLES_PARAM_NAME = "roles";
+	public static final String AIRLOCK_SERVERS_PARAM_NAME = "airlockServers";
 	public static final String DATA_SERIALIZER_PARAM_NAME = "dataSerializer";
 	public static final String INIT_FEATURES_DB_FILE_NAME = "initFeaturesDb.txt";
 	public static final String INIT_PRODUCTS_DB_FILE_NAME = "initProductsDb.txt";
@@ -24,6 +30,8 @@ public class Constants {
 	public static final String SKIP_AUTHENTICATION_PARAM_NAME = "skipAuth";
 	public static final String RUNTIME_PUBLIC_FULL_PATH_PARAM_NAME = "runtimePublicFullPath";
 	public static final String ANALYTICS_SERVER_URL_PARAM_NAME = "analyticsServerUrl";
+	public static final String COHORTS_SERVER_URL_PARAM_NAME = "cohortsServerUrl";
+	public static final String DATA_IMPORT_SERVER_URL_PARAM_NAME = "dataImportServerUrl";
 	public static final String STORAGE_PUBLIC_PATH_PARAM_NAME = "storagePublicPath";
 	public static final String API_KEYS_PARAM_NAME = "apiKeys";
 	public static final String CAPABILITIES_PARAM_NAME = "capabilities";
@@ -36,6 +44,8 @@ public class Constants {
 	public static final String AIRLOCK_CAPABILITIES_FILE_NAME = "AirlockCapabilities.json";
 	public static final String AIRLOCK_USERS_DB_PARAM_NAME = "usersDB";
 	public static final String AIRLOCK_GLOBAL_USERS_PARAM_NAME = "globalAirlockUsers";
+	public static final String DB_HANDLER_PARAM_NAME = "dbHandler";
+	public static final String ATHENA_HANDLER_PARAM_NAME = "athenaHandler";
 	
 	//public static final String RESET_ELASTIC_SCRIPT_FILE_NAME = "ops/resetElasticScript.json";
 	
@@ -65,10 +75,12 @@ public class Constants {
 	//public static final String JSON_FIELD_SEASON_NAME = "seasonName";
 	public static final String JSON_FIELD_PRODUCT_NAME = "productName";
 	public static final String JSON_FIELD_PRODUCTS = "products";
+	public static final String JSON_FIELD_COHORTS = "cohorts";
+	public static final String JSON_FIELD_COHORTS_DB_APP_NAME = "dbApplicationName";
 	public static final String JSON_FIELD_INTERNAL_USER_GROUPS = "internalUserGroups";
 	public static final String JSON_FIELD_INTERNAL_USER_GROUP = "internalUserGroup";	
-	public static final String JSON_FIELD_STORAGE_PUBLIC_PATH = "s3Path";//todo change value together with sdk
-	public static final String JSON_FIELD_DEV_STORAGE_PUBLIC_PATH = "devS3Path";//todo change value together with sdk
+	public static final String JSON_FIELD_STORAGE_PUBLIC_PATH = "s3Path";
+	public static final String JSON_FIELD_DEV_STORAGE_PUBLIC_PATH = "devS3Path";
 	public static final String JSON_FIELD_AIRLOCK_SERVERS = "airlockServers";
 	public static final String JSON_FIELD_DEV_SERVER = "devServer";
 	public static final String JSON_FIELD_STAGE_SERVER = "stageServer";
@@ -81,7 +93,11 @@ public class Constants {
 	public static final String JSON_FIELD_VALIDATION_MODE = "_validation_mode_";
 	public static final String JSON_FIELD_STRING_IDS = "stringIds";
 	public static final String JSON_FIELD_ENTITLEMENTS_ROOT = "entitlementsRoot";
-	
+
+	//data import
+	public static final String JSON_FIELD_JOBS = "jobs";
+	public static final String JSON_FIELD_DATA_IMPORT_PRUNE_THRESHOLD = "pruneThreshold";
+
 	
 	//feature JSON fields
 	public static final String JSON_FEATURE_FIELD_NAMESPACE = "namespace";
@@ -141,6 +157,8 @@ public class Constants {
 	public static final String JSON_FIELD_SEASON = "season";
 	public static final String JSON_FIELD_PLATRORMS = "platforms";
 	public static final String JSON_FIELD_RUNTIME_ENCRYPTION = "runtimeEncryption";
+	public static final String JSON_FIELD_IS_PART_OF_EXPERIMENT = "isPartOfExperiment";
+	public static final String JSON_FIELD_BRANCH_MODIFICATION_DATE = "branchModificationDate";
 	
 	//followers
 	public static final String JSON_FIELD_FOLLOWERS = "allFollowers";
@@ -195,7 +213,54 @@ public class Constants {
 	//airlock user
 	public static final String JSON_FIELD_IDENTIFIER = "identifier";
 	public static final String JSON_FIELD_ROLE_SETS = "userRoleSets";
-	
+
+	//cohorts
+
+	public static final String COHORT_EXPORT_TYPE_LOCALYTICS = "Localytics";
+	public static final String COHORT_EXPORT_TYPE_DB_ONLY = "DB Only";
+	public static final String JSON_FIELD_COHORT_QUERY = "queryCondition";
+	public static final String JSON_FIELD_JOINED_TABLES = "joinedTables";
+	public static final String JSON_FIELD_EXPORT_TYPE = "exportType";
+	public static final String JSON_FIELD_COHORT_FREQUENCY = "updateFrequency";
+	public static final String JSON_FIELD_COHORT_EXPORT = "export";
+	public static final String JSON_FIELD_COHORT_EXPORT_KEY= "exportKey";
+	public static final String JSON_FIELD_COHORT_EXPORTS = "exports";
+	public static final String JSON_FIELD_COHORT_EXPORT_STATUSES = "statuses";
+	public static final String JSON_FIELD_COHORT_STATUS = "status";
+	public static final String JSON_FIELD_COHORT_RETRIES_NUMBER = "retriesNumber";
+	public static final String JSON_FIELD_COHORT_CALCULATION_STATUS = "calculationStatus";
+	public static final String JSON_FIELD_COHORT_CALCULATION_STATUS_MESSAGE = "calculationStatusMessage";
+	public static final String JSON_FIELD_COHORT_VALUE_TYPE = "valueType";
+	public static final String JSON_FIELD_COHORT_EXPORT_STATUS = "exportStatus";
+	public static final String JSON_FIELD_COHORT_EXPORT_STATUS_DETAILS = "exportStatusDetails";
+	public static final String JSON_FIELD_COHORT_EXPORT_STATUS_MESSAGE = "exportStatusMessage";
+
+	public static final String JSON_FIELD_COHORT_STATUS_MESSAGE = "statusMessage";
+	public static final String JSON_FIELD_COHORT_STATUS_DETAILS = "statusDetails";
+	public static final String JSON_FIELD_COHORT_AIRLYTICS_STATUS_DETAILS = "airlyticsStatusDetails";
+	public static final String JSON_FIELD_COHORT_THIRD_PARTY_STATUS_DETAILS = "thirdPartyStatusDetails";
+	public static final String JSON_FIELD_COHORT_LAST_EXPORT_TIME = "lastExportTime";
+	public static final String JSON_FIELD_COHORT_EXPORT_NAME = "exportName";
+	public static final String JSON_FIELD_COHORT_USERS_NUMBER = "usersNumber";
+	public static final String JSON_FIELD_COHORT_QUERY_ADDITIONAL_VALUE = "queryAdditionalValue";
+	//cohorts status details
+	public static final String JSON_FIELD_COHORT_STATUS_ACTIVITY_ID = "activityId";
+	public static final String JSON_FIELD_COHORT_STATUS_DETAILED_MESSAGE = "detailedMessage";
+	public static final String JSON_FIELD_COHORT_STATUS_FAILED_IMPORTS = "failedImports";
+	public static final String JSON_FIELD_COHORT_STATUS_PARSED_IMPORTS = "parsedImports";
+	public static final String JSON_FIELD_COHORT_STATUS_SUCCESFUL_IMPORTS = "successfulImports";
+	public static final String JSON_FIELD_COHORT_STATUS_TOTAL_IMPORTS = "totalImports";
+
+	//data import
+	public static final String JSON_FIELD_DATA_IMPORT_S3_FILE = "s3File";
+	public static final String JSON_FIELD_DATA_IMPORT_OVERWRITE = "overwrite";
+	public static final String JSON_FIELD_DATA_IMPORT_TARGET_TABLE = "targetTable";
+	public static final String JSON_FIELD_DATA_IMPORT_STATUS = "status";
+	public static final String JSON_FIELD_DATA_IMPORT_STATUS_MESSAGE = "statusMessage";
+	public static final String JSON_FIELD_DATA_IMPORT_STATUS_DETAILS = "detailedMessage";
+	public static final String JSON_FIELD_DATA_IMPORT_STATUS_SUCCESFUL_IMPORTS = "successfulImports";
+	public static final String JSON_FIELD_DATA_IMPORT_STATUS_AFFECTED_COLUMNS = "affectedColumns";
+
 	//manifest attributes
 	public static final String MANIFEST_ATT_BUILD_NUM = "Build-Number";
 	public static final String MANIFEST_ATT_BUILD_DATE = "Build-Date";
@@ -209,6 +274,7 @@ public class Constants {
 	public static final String USER_GROUPS_RUNTIME_FILE_NAME = "AirlockUserGroupsRuntime.json";
 	public static final String ROLES_FILE_NAME = "ops/roles.json";
 	public static final String WEBHOOKS_FILE_NAME = "ops/webhooks.json";
+	public static final String AIRLOCK_SERVERS_FILE_NAME = "ops/airlockServers.json";
 	public static final String AIRLOCK_USERS_FILE_NAME = "airlockUsers.json";
 	public static final String SEASONS_FOLDER_NAME = "seasons";
 	public static final String OKTA_CONFIGS_FOLDER_NAME = "oktaConfigurations";
@@ -246,6 +312,9 @@ public class Constants {
 	public static final String AIRLOCK_INPUT_SCHEMA_FILE_NAME = "AirlockInputShema.json";
 	public static final String AIRLOCK_ANALYTICS_FILE_NAME = "AirlockAnalytics.json";
 	public static final String AIRLOCK_EXPERIMENTS_FILE_NAME = "AirlockExperiments.json";
+
+	public static final String AIRLOCK_COHORTS_FILE_NAME = "AirlockCohorts.json";
+	public static final String AIRLYTICS_DATA_IMPORT_FILE_NAME = "AirlyticsDataImport.json";
 	
 	public static final String AIRLOCK_UTILITIES_DEVELOPMENT_FILE_NAME = "AirlockUtilitiesDEVELOPMENT.txt";
 	public static final String AIRLOCK_STREAMS_UTILITIES_DEVELOPMENT_FILE_NAME = "AirlockStreamsUtilitiesDEVELOPMENT.txt";
@@ -287,8 +356,13 @@ public class Constants {
 	public static final String ENV_AZURE_CLIENT_SECRET = "AZURE_CLIENT_SECRET";
 	public static final String ENV_AUTHENTICATION_PROVIDER_TYPE = "AUTHENTICATION_PROVIDER_TYPE";
 	public static final String ENV_EMAIL_PROVIDER_TYPE = "EMAIL_PROVIDER_TYPE";
-	//public static final String ENV_RUNTIME_ENCRYPTION = "RUNTIME_ENCRYPTION";
 	public static final String ENV_LOGS_FOLDER_PATH = "LOGS_FOLDER_PATH";
+	public static final String ENV_ATHENA_REGION = "ATHENA_REGION";
+	public static final String ENV_ATHENA_OUTPUT_BUCKET = "ATHENA_OUTPUT_BUCKET";
+	public static final String ENV_ATHENA_CATALOG = "ATHENA_CATALOG";
+	public static final String ENV_DB_SECRET_NAME = "DB_SECRET_NAME";
+	public static final String ENV_SECRET_MANAGER_REGION = "SECRET_MANAGER_REGION";
+	
 	
 	
 	public static final String ENV_TRANSLATOR_MODE = "TRANSLATOR_MODE"; // OFF/SMARTLING
@@ -298,14 +372,20 @@ public class Constants {
 	public static final String ENV_TRANSLATOR_NEW_STRING_PAUSE = "TRANSLATOR_NEW_STRING_PAUSE";
 	public static final int    TRANSLATOR_NEW_STRING_DEFAULT = 30; 
 	public static final String ENV_TRANSLATION_PAUSE = "TRANSLATION_PAUSE";
-	public static final int    ENV_TRANSLATION_PAUSE_DEFAULT = 60;
+	public static final int    ENV_TRANSLATION_PAUSE_DEFAULT = 60; 
 	public static final String ENV_RETRANSLATION_PAUSE = "RETRANSLATION_PAUSE";
 	public static final int    ENV_RETRANSLATION_PAUSE_DEFAULT = 24 * 60 * 60; // (1 day)
 	public static final int    TRANSLATOR_WAIT_AFTER_NEW_STRING = 30;
 
 	//Analytics server
 	public static final String ENV_ANALYTICS_SERVER_URL = "ANALYTICS_SERVER_URL";
-		
+
+	//AirCohorts server
+	public static final String ENV_COHORTS_SERVER_URL = "COHORTS_SERVER_URL";
+
+	//DataImport server
+	public static final String ENV_DATA_IMPORT_SERVER_URL = "DATA_IMPORT_SERVER_URL";
+
 	public static final String SERVER_DEFAULT_DISPLAY_NAME = "MAIN_SERVER";
 
 	//AWS_ACCESS_KEY_ID
@@ -455,6 +535,16 @@ public class Constants {
 	public static final String JSON_FIELD_MAX_QUEUED_EVENTS = "maxQueuedEvents";
 	public static final String JSON_FIELD_EVENTS = "events";
 	public static final String JSON_FIELD_EVENT_DATA = "eventData";
+	public static final String JSON_FIELD_ENABLE_HISTORICAL_EVENTS = "enableHistoricalEvents";
+	public static final String JSON_FIELD_MAX_HISTORY_SIZE_KB = "maxHistoryTotalSizeKB";
+	public static final String JSON_FIELD_BULK_SIZE = "bulkSize";
+	public static final String JSON_FIELD_FILE_SIZE_KB = "historyFileMaxSizeKB";
+	public static final String JSON_FIELD_KEEP_HISTORY_OF_LAST_NUM_DAYS = "keepHistoryOfLastNumberOfDays";
+	public static final String JSON_FIELD_HISTORY_BUFFER_SIZE = "historyBufferSize";
+	public static final String JSON_FIELD_OPERATE_ON_HISTORICAL_EVENTS = "operateOnHistoricalEvents";
+	public static final String JSON_FIELD_LIMIT_BY_START_DATE = "limitByStartDate";
+	public static final String JSON_FIELD_LIMIT_BY_END_DATE = "limitByEndDate";
+	public static final String JSON_FIELD_PROCESS_EVENTS_OF_LAST_NUMBER_OF_DAYS = "processEventsOfLastNumberOfDays";
 	
 	//Key management
 	public static final String JSON_FIELD_AIRLOCK_KEY_PASSWORD = "keyPassword";
@@ -513,8 +603,9 @@ public class Constants {
 	
 	//production change file name
 	public static final String PRODUCTION_CHANGED_FILE_NAME = "productionChanged.txt";
-	
-	public static enum ServiceState {
+    public static final String AIR_COHORTS_FIELD_USERS_NUMBER = "usersNumber";
+
+    public static enum ServiceState {
 		RUNNING,
 		INITIALIZING,
 		S3_IO_ERROR,
@@ -700,16 +791,17 @@ public class Constants {
 		Administrator, 
 		TranslationSpecialist, 
 		AnalyticsViewer,  
-		AnalyticsEditor;
+		AnalyticsEditor,
+		AnalyticsPowerUser;
 		
 		public static String returnValues() {
 			return Viewer.toString()+", "+Editor.toString() +", "+
 				   ProductLead.toString() +", "+Administrator.toString() +", "+
 				   TranslationSpecialist.toString() +", "+AnalyticsViewer.toString() +", "+
-				   AnalyticsEditor.toString(); 
+				   AnalyticsEditor.toString() +", "+ AnalyticsPowerUser.toString(); 
 		}
 	}
-	
+	//capabilities
 	public enum AirlockCapability { 
 		STREAMS, 
 		FEATURES, 
@@ -721,15 +813,18 @@ public class Constants {
 		EXPORT_IMPORT,
 		API_KEY_MANAGEMENT,
 		RUNTIME_ENCRYPTION,
-		ENTITLEMENTS;
-		
+		COHORTS,
+		DATA_IMPORT,
+		ENTITLEMENTS,
+		ENTITIES;
+
 		public static String returnValues() {
 			return STREAMS.toString()+", "+FEATURES.toString() +", "+
 					NOTIFICATIONS.toString()+", "+TRANSLATIONS.toString() +", "+
 					ANALYTICS.toString()+", "+EXPERIMENTS.toString() +", "+
 				   BRANCHES.toString()+", "+EXPORT_IMPORT.toString() + ", " + 
-				   API_KEY_MANAGEMENT.toString() + ", " + RUNTIME_ENCRYPTION.toString() + ", " + 
-				   ENTITLEMENTS.toString(); 
+				   API_KEY_MANAGEMENT.toString() + ", " + RUNTIME_ENCRYPTION.toString() + ", " +
+					COHORTS.toString() + ", " + ENTITLEMENTS.toString()+ ", " + ENTITIES.toString();
 		}
 	}
 	
@@ -790,4 +885,46 @@ public class Constants {
 	public static final String BASIC_UTILITY_NAME = "basicUtility";
 	
 	public static final String ROOT_FEATURE = "ROOT";
+	
+	//Airlytics entities
+	public static final String JSON_FIELD_ENTITY_ID = "entityId";
+	public static final String JSON_FIELD_ENTITIES = "entities";
+	public static final String JSON_FIELD_ATTRIBUTE_TYPE_ID = "attributeTypeId";
+	public static final String JSON_FIELD_DATA_TYPE = "dataType";
+	public static final String JSON_FIELD_RETURNED_BY_DSR = "returnedByDSR";
+	public static final String JSON_FIELD_NULLBLE = "nullable";
+	public static final String JSON_FIELD_DB_COLUMN = "dbColumn";
+	public static final String JSON_FIELD_ATHENA_COLUMN = "athenaColumn";
+	public static final String AIRLYTICS_ENTITIES_FILE_NAME = "AirlyticsEntities.json";
+	public static final String JSON_FIELD_ATTRIBUTE_TYPES = "attributeTypes";
+	public static final String JSON_FIELD_DELETED_ATTRIBUTES_DATA = "deletedAttributesData";
+	public static final String JSON_FIELD_PI_STATE = "piState";
+	public static final String JSON_FIELD_DB_TABLE = "dbTable";
+	public static final String JSON_FIELD_ATHENA_DB = "athenaDatabase";
+	public static final String JSON_FIELD_ATHENA_DEV_DB = "athenaDevDatabase";
+	public static final String JSON_FIELD_ATHENA_TABLE = "athenaTable";
+	public static final String JSON_FIELD_DB_TABLES = "dbTables";
+	public static final String JSON_FIELD_DB_SCHEMA = "dbSchema";
+	public static final String JSON_FIELD_DB_DEV_SCHEMA = "dbDevSchema";
+	public static final String JSON_FIELD_DB_ARCHIVE_SCHEMA = "dbArchiveSchema";
+	public static final String JSON_FIELD_DB_SCHEMAS = "dbSchemas";
+	public static final String JSON_FIELD_DEFAULT_VALUE = "defaultValue";
+	public static final String JSON_FIELD_WITH_DEFAULT_VALUE = "withDefaultValue";
+	public static final String JSON_FIELD_DEPRECATED = "deprecated";
+	public static final String JSON_FIELD_IS_ARRAY = "isArray";
+	public static final String JSON_FIELD_ENTITY = "entity";
+	public static final String JSON_FIELD_ATTRIBUTE = "attribute";
+	public static final String JSON_FIELD_ATTRIBUTES_PERMISSION = "attributesPermission";
+	
+	public static enum DATA_TYPE {
+		STRING,
+		INTEGER,
+		LONG,
+		BOOLEAN,
+		DOUBLE,
+		TIMESTAMP,
+		JSON
+	}
+	
+	
 }

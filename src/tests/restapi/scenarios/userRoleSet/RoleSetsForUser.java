@@ -42,7 +42,7 @@ public class RoleSetsForUser {
 		baseUtils = new AirlockUtils(url, analyticsUrl, translationsUrl, configPath, sToken, userName, userPassword, appName, productsToDeleteFile);
 		sessionToken = baseUtils.sessionToken;
 		
-		productID1 = baseUtils.createProduct();
+		productID1 = baseUtils.createProductCopyGlobalAdmins();
 		baseUtils.printProductToFile(productID1);		
 		baseUtils.createSeason(productID1);
 
@@ -57,7 +57,7 @@ public class RoleSetsForUser {
 	private void addGlobalUser() throws Exception{
 		JSONObject json = new JSONObject(userStr);
 		JSONArray roles = new JSONArray();
-		roles.add("Viewer");
+		roles.add("Administrator");
 		userID1 = addGlobalUser(json, roles, userIdentifier);
 		
 		String response = operApi.getUserRoleSets(sessionToken, userIdentifier);
@@ -68,8 +68,8 @@ public class RoleSetsForUser {
 		
 		Assert.assertTrue(userRoleSets.getJSONObject(0).getString("uniqueId").equals(userID1), "wrong uniqueId in user role sets");
 		//Assert.assertTrue(userRoleSets.getJSONObject(0).getString("productId") == null, "wrong productId in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(0).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(0).getJSONArray("roles").getString(0).equals("Viewer"), "wrong roles in user role sets");
+		//Assert.assertTrue(userRoleSets.getJSONObject(0).getJSONArray("roles").size() == 7, "wrong number of roles in user role sets");
+		Assert.assertTrue(userRoleSets.getJSONObject(0).getJSONArray("roles").getString(0).equals("Administrator"), "wrong roles in user role sets");
 	}
 	
 	@Test (dependsOnMethods = "addGlobalUser", description = "Add user to product1")
@@ -89,8 +89,8 @@ public class RoleSetsForUser {
 		
 		int globalUserIndex = getIndexById(userRoleSets, userID1);
 		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getString("uniqueId").equals(userID1), "wrong uniqueId in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(0).equals("Viewer"), "wrong roles in user role sets");
+		//Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
+		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(0).equals("Administrator"), "wrong roles in user role sets");
 		
 		int productUserIndex = getIndexById(userRoleSets, userID2);
 		Assert.assertTrue(userRoleSets.getJSONObject(productUserIndex).getString("uniqueId").equals(userID2), "wrong uniqueId in user role sets");
@@ -110,7 +110,7 @@ public class RoleSetsForUser {
 
 	@Test (dependsOnMethods = "addUserToProduct1", description = "craete product2 and look for user")
 	private void createProduct2() throws Exception{
-		productID2 = baseUtils.createProduct();
+		productID2 = baseUtils.createProductCopyGlobalAdmins();
 		baseUtils.printProductToFile(productID2);
 		baseUtils.createSeason(productID2);
 		
@@ -122,8 +122,8 @@ public class RoleSetsForUser {
 		
 		int globalUserIndex = getIndexById(userRoleSets, userID1);		
 		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getString("uniqueId").equals(userID1), "wrong uniqueId in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(0).equals("Viewer"), "wrong roles in user role sets");
+		//Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
+		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(0).equals("Administrator"), "wrong roles in user role sets");
 		
 		int product1UserIndex = getIndexById(userRoleSets, userID2);
 		Assert.assertTrue(userRoleSets.getJSONObject(product1UserIndex).getString("uniqueId").equals(userID2), "wrong uniqueId in user role sets");
@@ -143,8 +143,8 @@ public class RoleSetsForUser {
 		userID3 = userRoleSets.getJSONObject(product2Index).getString("uniqueId");
 		Assert.assertTrue(!userID3.equals(userID2) && !userID3.equals(userID1), "wrong uniqueId in user role sets");
 		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getString("productId").equals(productID2), "wrong productId in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getJSONArray("roles").getString(0).equals("Viewer"), "wrong roles in user role sets");
+		//Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
+		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getJSONArray("roles").getString(0).equals("Administrator"), "wrong roles in user role sets");
 	}
 	
 	@Test (dependsOnMethods = "createProduct2", description = "delete product1 and look for user role sets")
@@ -159,14 +159,14 @@ public class RoleSetsForUser {
 		
 		int globalUserIndex = getIndexById(userRoleSets, userID1);		
 		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getString("uniqueId").equals(userID1), "wrong uniqueId in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(0).equals("Viewer"), "wrong roles in user role sets");
+		//Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
+		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(0).equals("Administrator"), "wrong roles in user role sets");
 		
 		int product2Index = getIndexById(userRoleSets, userID3);
 		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getString("uniqueId").equals(userID3), "wrong uniqueId in user role sets");
 		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getString("productId").equals(productID2), "wrong productId in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getJSONArray("roles").getString(0).equals("Viewer"), "wrong roles in user role sets");
+		//Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
+		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getJSONArray("roles").getString(0).equals("Administrator"), "wrong roles in user role sets");
 	}
 	
 	
@@ -175,8 +175,6 @@ public class RoleSetsForUser {
 		JSONObject json = getUser(userID1);
 		JSONArray roles = new JSONArray();
 		roles.add("Viewer");
-		roles.add("Editor");
-		roles.add("Administrator");
 		json.put("roles", roles);
 		String response = operApi.updateAirlockUser(userID1, json.toString(), sessionToken);
 		Assert.assertFalse(response.contains("error"), "fail to update user role set:" + response);
@@ -190,17 +188,17 @@ public class RoleSetsForUser {
 		
 		int globalUserIndex = getIndexById(userRoleSets, userID1);		
 		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getString("uniqueId").equals(userID1), "wrong uniqueId in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").size() == 4, "wrong number of roles in user role sets");
+		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
 		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(0).equals("Viewer"), "wrong roles in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(1).equals("Editor"), "wrong roles in user role sets");
+		/*Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(1).equals("Editor"), "wrong roles in user role sets");
 		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(2).equals("Administrator"), "wrong roles in user role sets");
 		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(3).equals("ProductLead"), "wrong roles in user role sets");
-		
+		*/
 		int product2Index = getIndexById(userRoleSets, userID3);
 		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getString("uniqueId").equals(userID3), "wrong uniqueId in user role sets");
 		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getString("productId").equals(productID2), "wrong productId in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getJSONArray("roles").getString(0).equals("Viewer"), "wrong roles in user role sets");
+		//Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
+		Assert.assertTrue(userRoleSets.getJSONObject(product2Index).getJSONArray("roles").getString(0).equals("Administrator"), "wrong roles in user role sets");
 	}
 	
 	
@@ -238,12 +236,12 @@ public class RoleSetsForUser {
 		
 		int globalUserIndex = getIndexById(userRoleSets, userID1);		
 		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getString("uniqueId").equals(userID1), "wrong uniqueId in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").size() == 4, "wrong number of roles in user role sets");
+		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").size() == 1, "wrong number of roles in user role sets");
 		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(0).equals("Viewer"), "wrong roles in user role sets");
-		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(1).equals("Editor"), "wrong roles in user role sets");
+		/*Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(1).equals("Editor"), "wrong roles in user role sets");
 		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(2).equals("Administrator"), "wrong roles in user role sets");
 		Assert.assertTrue(userRoleSets.getJSONObject(globalUserIndex).getJSONArray("roles").getString(3).equals("ProductLead"), "wrong roles in user role sets");
-		
+		*/
 	}
 	
 	@Test (dependsOnMethods = "deleteUserFromProduct2", description = "delete global user role sets")

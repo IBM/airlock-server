@@ -34,7 +34,9 @@ import com.amazonaws.services.simpleemail.model.*;
 import com.ibm.airlock.Strings;
 import com.ibm.airlock.admin.analytics.Experiment;
 import com.ibm.airlock.admin.analytics.Variant;
+import com.ibm.airlock.admin.cohorts.CohortItem;
 import com.ibm.airlock.admin.authentication.UserInfo;
+import com.ibm.airlock.admin.dataimport.DataImportItem;
 import com.ibm.airlock.admin.notifications.AirlockNotification;
 import com.ibm.airlock.admin.serialize.AirlockFilesWriter;
 import com.ibm.airlock.admin.serialize.AuditLogWriter;
@@ -69,6 +71,8 @@ import com.ibm.airlock.Constants.TranslationStatus;
 import com.ibm.airlock.Constants.UtilityType;
 import com.ibm.airlock.admin.BaseAirlockItem.Type;
 import com.ibm.airlock.admin.MergeBranch.MergeException;
+import com.ibm.airlock.admin.airlytics.entities.Attribute;
+import com.ibm.airlock.admin.airlytics.entities.Entity;
 import com.ibm.airlock.admin.analytics.AirlockAnalytics;
 import com.ibm.airlock.admin.analytics.AnalyticsDataCollection;
 import com.ibm.airlock.admin.analytics.AnalyticsDataCollection.FeatureAttributesPair;
@@ -116,21 +120,6 @@ public class Utilities
 		con.setConnectTimeout(100);
 
 		con.setDoOutput(true);
-		//        JSONObject obj = new JSONObject();
-		//        try {
-		//			obj.append("helllo", "json");
-		//		} catch (JSONException e) {
-		//			// TODO Auto-generated catch block
-		//			e.printStackTrace();
-		//			return null;
-		//		}
-		//        try {
-		//			obj.write(con.getOutputStream());
-		//		} catch (JSONException e) {
-		//			// TODO Auto-generated catch block
-		//			e.printStackTrace();
-		//			return null;
-		//		}
 
 		con.getOutputStream().write(parameters.getBytes("UTF-8"));
 		return buildResult(con);
@@ -147,11 +136,9 @@ public class Utilities
 		try {
 			parameters.write(con.getOutputStream());
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
-		//        con.getOutputStream().write(parameters.getBytes("UTF-8"));
 		return buildResult(con);
 	}
 
@@ -328,6 +315,20 @@ public class Utilities
 	}
 
 	//if valid return null, else return the error in output String
+	public static String validateExportName (String name) {
+		if (name == null || name.isEmpty())
+			return "The exportName field cannot be null or empty.";
+
+		if (!Utilities.isEnglishLetter(name.charAt(0))) {
+			return "The exportName field must start with a letter.";
+		}
+		if (!name.startsWith("air")) {
+			return "the exportName must start with the prefix 'air'";
+		}
+
+		return null;
+	}
+	//if valid return null, else return the error in output String
 	public static String validateName (String name) {
 		if (name == null || name.isEmpty())
 			return "The name field cannot be null or empty.";
@@ -414,6 +415,11 @@ public class Utilities
 		webhooks.fromJSON(webhooksJSON);	
 	}
 
+	public static void initFromAirlockServersJSON(JSONObject alServersJSON, ServletContext context) throws JSONException {
+		AirlockServers alServers = (AirlockServers)context.getAttribute(Constants.AIRLOCK_SERVERS_PARAM_NAME);		
+		alServers.fromJSON(alServersJSON);
+	}
+
 	public static void initFromAirlockUsersJSON(JSONObject airlockUsersJSON, ServletContext context, Product prod) throws JSONException {
 		@SuppressWarnings("unchecked")
 		Map<String, UserRoleSet> usersDB = (Map<String, UserRoleSet>)context.getAttribute(Constants.AIRLOCK_USERS_DB_PARAM_NAME);
@@ -462,9 +468,9 @@ public class Utilities
 		if(platformStr.equalsIgnoreCase(Platform.c_sharp.toString())) 
 			return Platform.c_sharp;		
 
-		return null;
+		return null; 
 	}
-
+	
 	static public LinkedList<String> stringJsonArrayToStringsList(JSONArray stringsArray) throws JSONException {
 		if (stringsArray==null)
 			return null;
@@ -645,8 +651,8 @@ public class Utilities
 			}
 
 			//for now no validation is done - error will cause JSONError.
-			JSONArray streamsArr = streamsJSON.getJSONArray(Constants.JSON_FIELD_STREAMS);			
-			season.getStreams().fromJSON(streamsArr, streamsDB);
+			//JSONArray streamsArr = streamsJSON.getJSONArray(Constants.JSON_FIELD_STREAMS);			
+			season.getStreams().fromJSON(streamsJSON, streamsDB);
 
 			return seasonId;
 		} catch (JSONException jsne) {
@@ -1027,7 +1033,6 @@ public class Utilities
 		boolean singleLine = false;
 		char inQuotes = 0; // for 'singleQuotes', "doubleQuotes" and /RegularExpression/
 
-		// TODO:  /RegularExpression/ isn't processed, since a lexer is needed to distinguish it from a division operator.
 		// temporary workaround: use RegExp("aaa") instead of /aaa/
 
 		StringBuilder b = new StringBuilder();
@@ -2708,6 +2713,15 @@ public class Utilities
 		return consoleString;
 	}
 
+	public static String getServerName(ServletContext context){
+		AirlockServers allServers = (AirlockServers)context.getAttribute(Constants.AIRLOCK_SERVERS_PARAM_NAME);
+		String serverName = allServers.getDefaultServer();
+		if(serverName.equals(Constants.SERVER_DEFAULT_DISPLAY_NAME)){
+			serverName = getEnv(Constants.ENV_SERVER_NAME);
+		}
+		return serverName;
+	}
+
 	public static void sendEmails(ServletContext context,String rootCause,UUID apiCallID,List<ChangeDetails> changeDetailsList,UserInfo userInfo,Map<String, BaseAirlockItem> airlockItemsDB,Environment env){
 		for (int i = 0; i<changeDetailsList.size();++i){
 			ChangeDetails change = changeDetailsList.get(i);
@@ -2717,10 +2731,6 @@ public class Utilities
 		}
 	}
 
-	public static String getServerName(){
-		return getEnv(Constants.ENV_SERVER_NAME);
-	}
-	
 	public static void sendEmailForProduct(ServletContext context, UserInfo userInfo,Product product){
 		@SuppressWarnings("unchecked")
 		Map<String, ArrayList<String>> productsFollowersDB = (Map<String, ArrayList<String>>)context.getAttribute(Constants.FOLLOWERS_PRODUCTS_DB_PARAM_NAME);
@@ -2730,7 +2740,7 @@ public class Utilities
 			return;
 		}
 
-		String serverName = getServerName();
+		String serverName = getServerName(context);
 		String subject = "[Airlock]" + separator +" Product " + product.getName() + " was deleted"+ separator + "("+ serverName+ ")";
 
 		String userId ="Unknow";
@@ -2801,7 +2811,7 @@ public class Utilities
 		else {
 			versionRange.append(" and up");
 		}
-		String serverName = getServerName();
+		String serverName = getServerName(context);
 
 		String subject = "[Airlock]"+ separator  +" Version Range " + versionRange + " " + action + " in product "+ product.getName()+ separator + "("+ serverName+ ")";
 
@@ -2876,7 +2886,7 @@ public class Utilities
 		String userId ="Unknow";
 		if(userInfo != null)
 			userId = userInfo.getId();
-		String serverName = getServerName();
+		String serverName = getServerName(context);
 		if(details == null){
 			details = "The experiment was "+action;
 		}
@@ -2940,7 +2950,7 @@ public class Utilities
 		String userId ="Unknow";
 		if(userInfo != null)
 			userId = userInfo.getId();
-		String serverName = getServerName();
+		String serverName = getServerName(context);
 		if ((Boolean) context.getAttribute(Constants.IS_TEST_MODE)) {
 			try {
 				JSONObject email = new JSONObject();
@@ -3009,7 +3019,7 @@ public class Utilities
 		String userId ="Unknow";
 		if(userInfo != null)
 			userId = userInfo.getId();
-		String serverName = getServerName();
+		String serverName = getServerName(context);
 		@SuppressWarnings("unchecked")
 		Map<String, Experiment> experimentsDB = (Map<String, Experiment>)context.getAttribute(Constants.EXPERIMENTS_DB_PARAM_NAME);
 		Experiment experiment = experimentsDB.get(variant.getExperimentId().toString());
@@ -3120,7 +3130,7 @@ public class Utilities
 		String userId ="Unknow";
 		if(userInfo != null)
 			userId = userInfo.getId();
-		String serverName = getServerName();
+		String serverName = getServerName(context);
 		if ((Boolean) context.getAttribute(Constants.IS_TEST_MODE)) {
 			try {
 				JSONObject email = new JSONObject();
@@ -3262,7 +3272,7 @@ public class Utilities
 	public static void sendEmailFromAWS(ServletContext context,ArrayList<String> followers,String subject,String body) {
 		String[] addresses = followers.toArray(new String[followers.size()]);
 
-		String from = (String)context.getAttribute(Constants.AIRLOCK_CHANGES_MAIL_ADDRESS_PARAM_NAME);
+		String from = (String)context.getAttribute(Constants.AIRLOCK_CHANGES_MAIL_ADDRESS_PARAM_NAME);//"AirlockChanges@weather.com";
 		// Construct an object to contain the recipient address.
 		Destination destination = new Destination().withToAddresses(addresses);
 
@@ -3873,7 +3883,6 @@ public class Utilities
 		JSONObject res = new JSONObject();
 		JSONArray featuresArr = new JSONArray();
 
-		//TODO: only features or configurationRules as well?
 		addFeatureToList(season.getRoot(), featuresArr, false);
 
 		for (Branch branch:season.getBranches().getBranchesList()) {
@@ -4304,6 +4313,174 @@ public class Utilities
 		return productErrorPair;				
 	}
 
+	public static ProductErrorPair getProductOfCohort (ServletContext context, String cohortId) {
+		@SuppressWarnings("unchecked")
+		Map<String, CohortItem> cohortsDB = (Map<String, CohortItem>)context.getAttribute(Constants.COHORTS_DB_PARAM_NAME);
+
+		@SuppressWarnings("unchecked")
+		Map<String, Product> productsDB = (Map<String, Product>)context.getAttribute(Constants.PRODUCTS_DB_PARAM_NAME);
+
+		ProductErrorPair productErrorPair = new ProductErrorPair();
+
+		if (!cohortsDB.containsKey(cohortId)) {
+			productErrorPair.error = Strings.cohortNotFound;
+			logger.severe(productErrorPair.error);
+			return productErrorPair;
+		}
+
+		CohortItem cohort = cohortsDB.get(cohortId);
+		String productId =  cohort.getProductId().toString();
+
+		if (!productsDB.containsKey(productId)) {
+			productErrorPair.error = Strings.productNotFound;
+			logger.severe(productErrorPair.error);
+			return productErrorPair;
+		}
+
+		Product product = productsDB.get(productId);
+
+		productErrorPair.product = product;
+
+		return productErrorPair;
+	}
+	public static ProductErrorPair getProductOfDataImport (ServletContext context, String jobId) {
+		@SuppressWarnings("unchecked")
+		Map<String, DataImportItem> jobsDB = (Map<String, DataImportItem>)context.getAttribute(Constants.DATA_IMPORT_DB_PARAM_NAME);
+
+		@SuppressWarnings("unchecked")
+		Map<String, Product> productsDB = (Map<String, Product>)context.getAttribute(Constants.PRODUCTS_DB_PARAM_NAME);
+
+		ProductErrorPair productErrorPair = new ProductErrorPair();
+
+		if (!jobsDB.containsKey(jobId)) {
+			productErrorPair.error = Strings.dataImportNotFound;
+			logger.severe(productErrorPair.error);
+			return productErrorPair;
+		}
+
+		DataImportItem dataImportItem = jobsDB.get(jobId);
+		String productId =  dataImportItem.getProductId().toString();
+
+		if (!productsDB.containsKey(productId)) {
+			productErrorPair.error = Strings.productNotFound;
+			logger.severe(productErrorPair.error);
+			return productErrorPair;
+		}
+
+		Product product = productsDB.get(productId);
+
+		productErrorPair.product = product;
+
+		return productErrorPair;
+	}
+	public static ProductErrorPair getProductOfEntity (ServletContext context, String entityId) {
+		@SuppressWarnings("unchecked")
+		Map<String, Entity> entitiesDB = (Map<String, Entity>)context.getAttribute(Constants.ENTITIES_DB_PARAM_NAME);
+
+		@SuppressWarnings("unchecked")
+		Map<String, Product> productsDB = (Map<String, Product>)context.getAttribute(Constants.PRODUCTS_DB_PARAM_NAME);
+
+		ProductErrorPair productErrorPair = new ProductErrorPair();
+
+		if (!entitiesDB.containsKey(entityId)) {
+			productErrorPair.error = Strings.entityNotFound;
+			logger.severe(productErrorPair.error);
+			return productErrorPair;
+		}
+
+		Entity entity = entitiesDB.get(entityId);
+		String productId =  entity.getProductId().toString();
+
+		if (!productsDB.containsKey(productId)) {
+			productErrorPair.error = Strings.productNotFound;
+			logger.severe(productErrorPair.error);
+			return productErrorPair;
+		}
+
+		Product product = productsDB.get(productId);
+		productErrorPair.product = product;
+		return productErrorPair;
+	}
+	public static ProductErrorPair getProductOfEntityAttribute (ServletContext context, String attributeId) {
+		@SuppressWarnings("unchecked")
+		Map<String, Attribute> attributesDB = (Map<String, Attribute>)context.getAttribute(Constants.ATTRIBUTES_DB_PARAM_NAME);
+
+		@SuppressWarnings("unchecked")
+		Map<String, Entity> entitiesDB = (Map<String, Entity>)context.getAttribute(Constants.ENTITIES_DB_PARAM_NAME);
+
+		@SuppressWarnings("unchecked")
+		Map<String, Product> productsDB = (Map<String, Product>)context.getAttribute(Constants.PRODUCTS_DB_PARAM_NAME);
+
+		ProductErrorPair prodErrorPair = new ProductErrorPair();
+
+		if (!attributesDB.containsKey(attributeId)) {
+			prodErrorPair.error = Strings.attributeNotFound;
+			logger.severe(prodErrorPair.error);
+			return prodErrorPair;
+		}
+
+		Attribute attribute = attributesDB.get(attributeId);
+		String entityId =  attribute.getEntityId().toString();
+
+		if (!entitiesDB.containsKey(entityId)) {
+			prodErrorPair.error = Strings.entityNotFound;
+			logger.severe(prodErrorPair.error);
+			return prodErrorPair;
+		}
+
+		Entity entity = entitiesDB.get(entityId);
+		String productId =  entity.getProductId().toString();
+
+		if (!productsDB.containsKey(productId)) {
+			prodErrorPair.error = Strings.productNotFound;
+			logger.severe(prodErrorPair.error);
+			return prodErrorPair;
+		}
+
+		Product product = productsDB.get(productId);
+		prodErrorPair.product = product;
+		return prodErrorPair;
+	}
+	public static ProductErrorPair getProductOfEntityAttributeType (ServletContext context, String attributeTypeId) {
+		@SuppressWarnings("unchecked")
+		Map<String, com.ibm.airlock.admin.airlytics.entities.AttributeType> attributeTypesDB = (Map<String, com.ibm.airlock.admin.airlytics.entities.AttributeType>)context.getAttribute(Constants.ATTRIBUTE_TYPES_DB_PARAM_NAME);
+
+		@SuppressWarnings("unchecked")
+		Map<String, Entity> entitiesDB = (Map<String, Entity>)context.getAttribute(Constants.ENTITIES_DB_PARAM_NAME);
+
+		@SuppressWarnings("unchecked")
+		Map<String, Product> productsDB = (Map<String, Product>)context.getAttribute(Constants.PRODUCTS_DB_PARAM_NAME);
+
+		ProductErrorPair prodErrorPair = new ProductErrorPair();
+
+		if (!attributeTypesDB.containsKey(attributeTypeId)) {
+			prodErrorPair.error = Strings.attributeTypeNotFound;
+			logger.severe(prodErrorPair.error);
+			return prodErrorPair;
+		}
+
+		com.ibm.airlock.admin.airlytics.entities.AttributeType attributeType = attributeTypesDB.get(attributeTypeId);
+		String entityId =  attributeType.getEntityId().toString();
+
+		if (!entitiesDB.containsKey(entityId)) {
+			prodErrorPair.error = Strings.entityNotFound;
+			logger.severe(prodErrorPair.error);
+			return prodErrorPair;
+		}
+
+		Entity entity = entitiesDB.get(entityId);
+		String productId =  entity.getProductId().toString();
+
+		if (!productsDB.containsKey(productId)) {
+			prodErrorPair.error = Strings.productNotFound;
+			logger.severe(prodErrorPair.error);
+			return prodErrorPair;
+		}
+
+		Product product = productsDB.get(productId);
+		prodErrorPair.product = product;
+		return prodErrorPair;
+	}
 	public static ProductErrorPair getProductOfExperiment (ServletContext context, String experimentId) {
 		@SuppressWarnings("unchecked")
 		Map<String, Experiment> experimentsDB = (Map<String, Experiment>)context.getAttribute(Constants.EXPERIMENTS_DB_PARAM_NAME);
@@ -4334,6 +4511,7 @@ public class Utilities
 
 		return productErrorPair;			
 	}
+
 
 	public static ProductErrorPair getProductOfVariant (ServletContext context, String variantId) {
 		@SuppressWarnings("unchecked")
@@ -4863,7 +5041,7 @@ public class Utilities
 		copyRuntimeFileStringContent(ds, Constants.AIRLOCK_STREAMS_DEVELOPMENT_FILE_NAME, sourceFolderPath, season, context);
 		copyRuntimeFileStringContent(ds, Constants.AIRLOCK_NOTIFICATIONS_DEVELOPMENT_FILE_NAME, sourceFolderPath, season, context);
 		copyRuntimeFileStringContent(ds, Constants.AIRLOCK_STREAMS_UTILITIES_DEVELOPMENT_FILE_NAME, sourceFolderPath, season, context);
-		//TODO: add translations
+		
 		if (locales == null) {
 			// copy all locals
 			List<String> existingLocales = TranslationUtilities.getLocalesByStringsFiles(season.getProductId().toString(), season.getUniqueId().toString(), ds, logger);
@@ -4939,7 +5117,6 @@ public class Utilities
 
 	}
 
-	//TODO: taken from ImportExportUtilities - can move all to utilities 
 	public static void zip(String zipFilePath,String sourceFolder) throws Exception{
 		byte[] buffer = new byte[1024];
 		String source = new File(sourceFolder).getName();
@@ -5031,12 +5208,13 @@ public class Utilities
 	}
 
 
-	//An Administrator is also a ProductLead, Editor and Viewer
+	//An Administrator is also a ProductLead, Editor, Viewer, AnalyticsViewer, AnalyticsEditor and AnalyticsPowerUser
 	//A ProductLead is also Editor and Viewer
 	//An Editor is also a viewer
 	//A TranslationSpecialist is also a viewer
 	//An AnalyticsViewer is also a viewer
-	//An AnalyticsEditor is also a viewer
+	//An AnalyticsEditor is also a viewer and AnalyticsViewer
+	//An AnalyticsPowerUser is also a viewer, AnalyticsViewer and AnalyticsEditor
 	public static LinkedHashSet<String> setRolesListByHigherPermission(JSONArray existingRolesArray) throws JSONException {
 		//this function is called after validate so we know that the roles list is valid (no duplications, existing roles)
 		LinkedHashSet<String> newRolesSet = new LinkedHashSet<String>();
@@ -5048,6 +5226,9 @@ public class Utilities
 				newRolesSet.add(RoleType.ProductLead.toString());
 				newRolesSet.add(RoleType.Editor.toString());
 				newRolesSet.add(RoleType.Viewer.toString());
+				newRolesSet.add(RoleType.AnalyticsViewer.toString());
+				newRolesSet.add(RoleType.AnalyticsEditor.toString());
+				newRolesSet.add(RoleType.AnalyticsPowerUser.toString());
 				break;
 			case ProductLead:
 				newRolesSet.add(RoleType.ProductLead.toString());						
@@ -5068,6 +5249,13 @@ public class Utilities
 				break;
 			case AnalyticsEditor:
 				newRolesSet.add(RoleType.AnalyticsEditor.toString());
+				newRolesSet.add(RoleType.AnalyticsViewer.toString());
+				newRolesSet.add(RoleType.Viewer.toString());
+				break;
+			case AnalyticsPowerUser:
+				newRolesSet.add(RoleType.AnalyticsPowerUser.toString());
+				newRolesSet.add(RoleType.AnalyticsEditor.toString());
+				newRolesSet.add(RoleType.AnalyticsViewer.toString());
 				newRolesSet.add(RoleType.Viewer.toString());
 				break;
 			case Viewer:
@@ -5223,7 +5411,7 @@ public class Utilities
 		return null;
 	}
 
-	//TODO: handle in branches
+	
 	public static String deletedPurchaseIsIncludedInOtherPurcahse(BaseAirlockItem purchaseItem, Season season, String branchId, ServletContext context) {
 		if (!purchaseItem.getType().equals(Type.ENTITLEMENT)) {
 			return null; //only ENTITLEMENT items are referred from features  
@@ -5371,5 +5559,15 @@ public class Utilities
 
 	}
 
+	public static boolean isStringInList (List<String> list, String str) {
+		for (String s:list) {
+			if (str.equals(s)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
 	
 }

@@ -6,8 +6,14 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletContext;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import com.ibm.airlock.admin.airlytics.JobStatus;
+import com.ibm.airlock.admin.cohorts.AirlockCohorts;
+import com.ibm.airlock.admin.cohorts.CohortItem;
+import com.ibm.airlock.admin.dataimport.AirlyticsDataImport;
+import com.ibm.airlock.admin.dataimport.DataImportItem;
 import org.apache.wink.json4j.JSONArray;
 import org.apache.wink.json4j.JSONException;
 import org.apache.wink.json4j.JSONObject;
@@ -18,9 +24,12 @@ import com.ibm.airlock.Constants.Action;
 import com.ibm.airlock.Constants.AirlockCapability;
 import com.ibm.airlock.Constants.OutputJSONMode;
 import com.ibm.airlock.Constants.Stage;
-import com.ibm.airlock.ProductServices;
 import com.ibm.airlock.Strings;
 import com.ibm.airlock.admin.MergeBranch.MergeException;
+import com.ibm.airlock.admin.airlytics.entities.AirlyticsEntities;
+import com.ibm.airlock.admin.airlytics.entities.Attribute;
+import com.ibm.airlock.admin.airlytics.entities.AttributeType;
+import com.ibm.airlock.admin.airlytics.entities.Entity;
 import com.ibm.airlock.admin.analytics.Experiment;
 import com.ibm.airlock.admin.analytics.ExperimentsMutualExclusionGroup;
 import com.ibm.airlock.admin.analytics.Variant;
@@ -41,11 +50,18 @@ public class Product {
 	private String codeIdentifier = null;
 	private Date lastModified = null; 
 	private LinkedList<Season> seasons = new LinkedList<Season>();
-	private ExperimentsMutualExclusionGroup  experimentsMutualExclusionGroup = null;	
+	private ExperimentsMutualExclusionGroup  experimentsMutualExclusionGroup = null;
+	private AirlockCohorts cohorts = null;
+	private AirlyticsEntities entities = null;
+
+	private AirlyticsDataImport dataImports = null;
 	private String smartlingProjectId  = null; //optional
 	private ReentrantReadWriteLock productLock = new ReentrantReadWriteLock();
+	private ReentrantReadWriteLock cohortsProductLock = new ReentrantReadWriteLock();
+	private ReentrantReadWriteLock dataImportProductLock = new ReentrantReadWriteLock();
 	private Set<AirlockCapability> capabilities = null;//new TreeSet<AirlockCapability>();//optional
-	private UserRoleSets productUsers = new UserRoleSets();		
+	private UserRoleSets productUsers = new UserRoleSets();
+	private boolean cohortsWriteNeeded = false;
 	
 	public ReentrantReadWriteLock getProductLock() {
 		return productLock;
@@ -69,6 +85,9 @@ public class Product {
 	public void setUniqueId(UUID uniqueId) {
 		this.uniqueId = uniqueId;
 		experimentsMutualExclusionGroup = new ExperimentsMutualExclusionGroup(uniqueId);
+		cohorts = new AirlockCohorts(uniqueId);
+		entities = new AirlyticsEntities(uniqueId);
+		dataImports = new AirlyticsDataImport(uniqueId);
 	}
 	public String getCodeIdentifier() {
 		return codeIdentifier;
@@ -156,7 +175,23 @@ public class Product {
 	//return null if OK, error staring on error
 	public String removeExperiment(UUID experimentId) {
 		return this.experimentsMutualExclusionGroup.removeExperiment(experimentId);			
-	}	
+	}
+
+	public void addCohort(CohortItem cohort) {
+		this.cohorts.addCohort(cohort);
+	}
+
+	public String removeCohort(UUID cohortId) {
+		return this.cohorts.removeCohort(cohortId);
+	}
+
+	public String removeEntity(UUID entityId) {
+		return this.entities.removeEntity(entityId);
+	}
+
+	public void addEntity(Entity entity) {
+		this.entities.addEntity(entity);
+	}
 
 	public JSONObject toJson(boolean withSeasons, boolean verbose, boolean withExperiments) throws JSONException {
 		return toJson(withSeasons,null,null,verbose, withExperiments);
@@ -217,7 +252,7 @@ public class Product {
 		
 		if (input.containsKey(Constants.JSON_FIELD_UNIQUE_ID) && input.get(Constants.JSON_FIELD_UNIQUE_ID) != null) {
 			String sStr = (String)input.get(Constants.JSON_FIELD_UNIQUE_ID);			
-			uniqueId = UUID.fromString(sStr);		
+			uniqueId = UUID.fromString(sStr);
 		}
 		
 		if (input.containsKey(Constants.JSON_FIELD_DESCRIPTION)) 
@@ -253,6 +288,7 @@ public class Product {
 			experimentsMutualExclusionGroup = new ExperimentsMutualExclusionGroup(uniqueId);
 			experimentsMutualExclusionGroup.fromJSON(experimentsMEGJson, context);						
 		}
+
 					
 		if (input.containsKey(Constants.JSON_FIELD_CAPABILITIES) && input.get(Constants.JSON_FIELD_CAPABILITIES)!=null) {
 			capabilities = new TreeSet<AirlockCapability>();
@@ -370,6 +406,7 @@ public class Product {
 		removeProdExperimentsAndVariantsFromDB(context);
 		removeProdSeasonsAssetsDBs(context, userInfo);
 		removeProdUserRolesFromBD(context);
+		removeProdEntitiesFromDB(context);
 		
 		@SuppressWarnings("unchecked")
 		Map<String, Product> productsDB = (Map<String, Product>)context.getAttribute(Constants.PRODUCTS_DB_PARAM_NAME);
@@ -399,6 +436,27 @@ public class Product {
 					variantsDB.remove(var.getUniqueId().toString());
 				}
 				experimentsDB.remove(exp.getUniqueId().toString());
+			}
+		}
+	}
+	
+	private void removeProdEntitiesFromDB(ServletContext context) {
+		@SuppressWarnings("unchecked")
+		Map<String, Entity> entitiesDB = (Map<String, Entity>)context.getAttribute(Constants.ENTITIES_DB_PARAM_NAME);
+		@SuppressWarnings("unchecked")
+		Map<String, Attribute> attributesDB = (Map<String, Attribute>)context.getAttribute(Constants.ATTRIBUTES_DB_PARAM_NAME);
+		@SuppressWarnings("unchecked")
+		Map<String, AttributeType> attributeTypesDB = (Map<String, AttributeType>)context.getAttribute(Constants.ATTRIBUTE_TYPES_DB_PARAM_NAME);
+
+		if (entities!=null) {
+			for (Entity entity:entities.getEntities()) {
+				for (Attribute attribute:entity.getAttributes()) {
+					attributesDB.remove(attribute.getUniqueId().toString());
+				}
+				for (AttributeType attributeType:entity.getAttributeTypes()) {
+					attributeTypesDB.remove(attributeType.getUniqueId().toString());
+				}
+				entitiesDB.remove(entity.getUniqueId().toString());
 			}
 		}
 	}
@@ -649,5 +707,96 @@ public class Product {
 			}
 		}	
 		return false;
+	}
+
+	public AirlockCohorts getCohorts() {
+		return cohorts;
+	}
+
+	public void setCohorts(AirlockCohorts cohorts) {
+		this.cohorts = cohorts;
+	}
+
+	public AirlyticsEntities getEntities() {
+		return entities;
+	}
+
+	public void setEntities(AirlyticsEntities entities) {
+		this.entities = entities;
+	}
+
+	public String updateAirlockCohorts(JSONObject newCohortsDataJSON) throws JSONException {
+		return this.cohorts.updateFromJSON(newCohortsDataJSON);
+	}
+
+
+
+	public AirlyticsDataImport getDataImports() {
+		return dataImports;
+	}
+
+	public void setDataImports(AirlyticsDataImport dataImports) {
+		this.dataImports = dataImports;
+	}
+
+	public String updateDataInports(JSONObject newDataImportJSON) throws JSONException {
+		return this.dataImports.updateFromJSON(newDataImportJSON);
+	}
+
+	public void addDataImport(DataImportItem job) {
+		this.dataImports.addJob(job);
+	}
+
+	public String removeDataImport(UUID jobId) {
+		return this.dataImports.removeJob(jobId);
+	}
+
+	public boolean pruneJobs() {
+		//if we don't have data import on it, return false
+		ValidationResults capabilityValidationRes = Utilities.validateCapability (this, new Constants.AirlockCapability[]{Constants.AirlockCapability.DATA_IMPORT});
+		if (capabilityValidationRes!=null)
+			return false;
+		//if pruneThreshold is not set, return false
+		AirlyticsDataImport dataImportData = this.getDataImports();
+		if (dataImportData.getPruneThreshold() == null || dataImportData.getPruneThreshold() <= 0) {
+			return false;
+		}
+		Long threshold = dataImportData.getPruneThreshold();
+		Date now = new Date();
+		boolean didPrune = false;
+		List<UUID> foundIds = new ArrayList<>();
+		for (DataImportItem item :dataImportData.getJobs()) {
+			if (item.getStatus() != JobStatus.RUNNING) {
+				Date lastModified = item.getLastModified() != null ? item.getCreationDate() : item.getLastModified();
+				long elapsedTime = now.getTime()-lastModified.getTime();
+				double elapsedTimeMinutes = (elapsedTime/1000.0)/60.0;
+				if (elapsedTimeMinutes > threshold) {
+					logger.info("PRUNNING data import job with id "+item.getUniqueId()+", "+item.getName());
+					foundIds.add(item.getUniqueId());
+					didPrune = true;
+				}
+			}
+		}
+
+		for (UUID uId : foundIds) {
+			this.removeDataImport(uId);
+		}
+		return didPrune;
+	}
+
+	public ReentrantReadWriteLock getCohortsProductLock() {
+		return cohortsProductLock;
+	}
+
+	public ReentrantReadWriteLock getDataImportProductLock() {
+		return dataImportProductLock;
+	}
+
+	public boolean isCohortsWriteNeeded() {
+		return cohortsWriteNeeded;
+	}
+
+	public void setCohortsWriteNeeded(boolean cohortsWriteNeeded) {
+		this.cohortsWriteNeeded = cohortsWriteNeeded;
 	}
 }

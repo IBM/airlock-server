@@ -152,7 +152,7 @@ public class CheckoutMTXOrderingRuleInBranchRuntime {
 
 		json = new JSONObject(branchesRuntimeProd.message).getJSONArray("features").getJSONObject(0).getJSONArray("orderingRules").getJSONObject(0).getJSONArray("orderingRules").getJSONObject(0); 
 		Assert.assertTrue(json.getString("stage").equals("PRODUCTION"), "Incorrect ordering rule stage in branch production file");
-		Assert.assertTrue(json.getString("branchStatus").equals("CHECKED_OUT"), "Incorrect ordering rule status in branch production file");
+		Assert.assertTrue(json.getString("branchStatus").equals("NEW"), "Incorrect ordering rule status in branch production file");
 		
 		//uncheck parent feature F0
 		dateFormat = f.setDateFormat();

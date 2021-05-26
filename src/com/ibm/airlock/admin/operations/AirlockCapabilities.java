@@ -230,7 +230,10 @@ public class AirlockCapabilities {
 		if (someProdUpdated) {
 			return sb.toString();
 		}
-		
 		return null;
+	}
+	
+	public boolean contains(AirlockCapability capability) {
+		return capabilities.contains(capability);
 	}
 }

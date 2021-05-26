@@ -28,6 +28,7 @@ import tests.restapi.AirlockUtils;
 import tests.restapi.AirlocklNotificationRestApi;
 import tests.restapi.AnalyticsRestApi;
 import tests.restapi.BranchesRestApi;
+import tests.restapi.EntitiesRestApi;
 import tests.restapi.ExperimentsRestApi;
 import tests.restapi.FeaturesRestApi;
 import tests.restapi.InAppPurchasesRestApi;
@@ -73,6 +74,9 @@ public class TestAllRoles {
 	protected String streamIDProd;
 	protected String streamID4TestProd;
 	protected String notificationID;
+	protected String entityID;
+	protected String attributeID;
+	protected String attributeTypeID;
 	protected String notificationID4TestProd;
 	protected String branchID;
 	protected String branchIDDevInProd;
@@ -98,6 +102,7 @@ public class TestAllRoles {
 	protected StreamsRestApi streamsApi;
 	protected AirlocklNotificationRestApi notificationApi;
 	protected InAppPurchasesRestApi purchasesApi;
+	private EntitiesRestApi entitiesApi;
 
 	protected AirlockUtils baseUtils;
 	protected String sessionToken;
@@ -175,7 +180,9 @@ public class TestAllRoles {
 		streamsApi.setURL(m_url);
 		notificationApi.setUrl(m_url);
 		purchasesApi.setURL(m_url);
-
+		entitiesApi = new EntitiesRestApi();
+		entitiesApi.setURL(url);
+		
 		baseUtils = new AirlockUtils(m_url, a_url, t_url, configPath, "", adminUser, adminPassword, m_appName, productsToDeleteFile);
 		if(appName != null) {
 			m_appName = appName;
@@ -553,6 +560,8 @@ public class TestAllRoles {
 		setAirlockUserPerProduct(false);
 		getAirlockUsersPerProduct(false);
 		getUserRolesPerProduct(false);
+		getAirlockServers(false);
+		setAirlockServers(false);
 		getUserGroups(false);
 		getUserGroupsUsage(false);
 		setUserGroups(false);
@@ -601,10 +610,25 @@ public class TestAllRoles {
 		deletePurchaseOptionsInProduction(true);
 		deleteInAppPurchase(false);
 		deleteInAppPurchaseInProduction(true);
-
+		
+		//updateEntities(false);
+		addEntity(false);
+		addAttribute(false);
+		addAttributeType(false);
+		getEntity(false);
+		getProductEntities(false);
+		getAttribute(false);
+		getAttributes(false);
+		getAttributeType(false);
+		getAttributeTypes(false);
+		updateEntity(false);
+		updateAttribute(false);
+		updateAttributeType(false);
+		deleteEntity(false);
+		deleteAttribute(false);
+		deleteAttributeType(false);
+		
 		deleteProduct(false); //Should be last - from product cannot create but can delete - this causes asymmetric state in the test.  
-
-
 	}
 
 	public void testProductLead(boolean fromProduct){
@@ -790,6 +814,8 @@ public class TestAllRoles {
 		setAirlockUserPerProduct(true);
 		getAirlockUsersPerProduct(false);
 		getUserRolesPerProduct(false);
+		getAirlockServers(false);
+		setAirlockServers(true);
 		getUserGroups(false);
 		getUserGroupsUsage(false);
 		setUserGroups(false);
@@ -835,6 +861,23 @@ public class TestAllRoles {
 		deletePurchaseOptions(false);
 		deleteInAppPurchase(false);
 		deleteInAppPurchaseInProduction(true);
+		
+		addEntity(true);
+		addAttribute(true);
+		addAttributeType(true);
+		getEntity(true);
+		getProductEntities(true);
+		getAttribute(true);
+		getAttributeType(true);
+		getAttributes(true);
+		getAttributeTypes(true);
+		updateEntity(true);
+		updateAttribute(true);
+		updateAttributeType(true);
+		//updateEntities(true);
+		deleteEntity(true);
+		deleteAttribute(true);
+		deleteAttributeType(true);
 	}
 
 	public void testEditor(boolean fromProduct){
@@ -1017,9 +1060,11 @@ public class TestAllRoles {
 		getUserRoleSets(false);
 		updateAirlockUser(true);
 		deleteAirlockUser(true);
+		getAirlockServers(false);
 		setAirlockUserPerProduct(true);
 		getAirlockUsersPerProduct(false);
 		getUserRolesPerProduct(false);
+		setAirlockServers(true);
 		getUserGroups(false);
 		getUserGroupsUsage(false);
 		setUserGroups(false);
@@ -1066,6 +1111,23 @@ public class TestAllRoles {
 		deletePurchaseOptions(false);
 		deleteInAppPurchase(false);
 		deleteInAppPurchaseInProduction(true);
+		
+		addEntity(true);
+		addAttribute(true);
+		addAttributeType(true);
+		getEntity(true);
+		getProductEntities(true);
+		getAttribute(true);
+		getAttributes(true);
+		getAttributeType(true);
+		getAttributeTypes(true);
+		updateEntity(true);
+		updateAttribute(true);
+		updateAttributeType(true);
+		//updateEntities(true);
+		deleteEntity(true);
+		deleteAttribute(true);
+		deleteAttributeType(true);
 	}
 
 	public void testTranslator(boolean fromProduct){
@@ -1253,6 +1315,8 @@ public class TestAllRoles {
 		setAirlockUserPerProduct(true);
 		getAirlockUsersPerProduct(false);
 		getUserRolesPerProduct(false);
+		getAirlockServers(false);
+		setAirlockServers(true);
 		getUserGroups(false);
 		getUserGroupsUsage(false);
 		setUserGroups(true);
@@ -1485,6 +1549,8 @@ public class TestAllRoles {
 		setAirlockUserPerProduct(true);
 		getAirlockUsersPerProduct(false);
 		getUserRolesPerProduct(false);
+		getAirlockServers(false);
+		setAirlockServers(true);
 		getUserGroups(false);
 		getUserGroupsUsage(false);
 		setUserGroups(true);
@@ -1530,6 +1596,22 @@ public class TestAllRoles {
 		deleteInAppPurchase(true);
 		deleteInAppPurchaseInProduction(true);
 
+		addEntity(true);
+		addAttribute(true);
+		addAttributeType(true);
+		getEntity(true);
+		getProductEntities(true);
+		getAttribute(true);
+		getAttributeType(true);
+		getAttributes(true);
+		getAttributeTypes(true);
+		updateEntity(true);
+		updateAttribute(true);
+		updateAttributeType(true);
+		//updateEntities(true);
+		deleteEntity(true);
+		deleteAttribute(true);
+		deleteAttributeType(true);
 	}
 
 
@@ -2910,6 +2992,32 @@ public class TestAllRoles {
 		} catch (Exception e) {
 			if (expectedFailure == false) {
 				softAssert.fail("setProductAirlockUsers failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+
+
+	public void getAirlockServers(boolean expectedFailure) {
+		System.out.println("Running getAirlockServers");
+		try {
+			String response = operationApi.getAirlockServers(sessionToken);
+			Assert.assertEquals(isSecurityError(response), expectedFailure, "getAirlockServers failed: " + response);
+		} catch (Exception e) {
+			if (expectedFailure == false) {
+				Assert.fail("getAirlockServers failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+
+	public void setAirlockServers(boolean expectedFailure) {
+		System.out.println("Running setAirlockServers");
+		try {
+			String response = operationApi.getAirlockServers(sessionToken);
+			response = operationApi.setAirlockServers(response,sessionToken);
+			softAssert.assertEquals(isSecurityError(response), expectedFailure, "getAirlockServers failed: " + response);
+		} catch (Exception e) {
+			if (expectedFailure == false) {
+				softAssert.fail("getAirlockServers failed with exception:\n" +e.getLocalizedMessage());
 			}
 		}
 	}
@@ -4754,6 +4862,221 @@ public class TestAllRoles {
 		}catch (Exception e){
 			if(expectedFailure == false){
 				softAssert.fail("updatePurchaseOptionsToProd failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	//entities
+	public void getEntity(boolean expectedFailure){
+		System.out.println("Running getEntity");
+		try {
+			String response = entitiesApi.getEntity(entityID, sessionToken);
+			softAssert.assertEquals(isSecurityError(response), expectedFailure, "getEntity failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("getEntity failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	public void getAttribute(boolean expectedFailure){
+		System.out.println("Running getAttribute");
+		try {
+			String response = entitiesApi.getAttribute(attributeID, sessionToken);
+			softAssert.assertEquals(isSecurityError(response), expectedFailure, "getAttribute failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("getAttribute failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	public void getAttributes(boolean expectedFailure){
+		System.out.println("Running getAttributes");
+		try {
+			String response = entitiesApi.getAttributes(entityID, sessionToken);
+			softAssert.assertEquals(isSecurityError(response), expectedFailure, "getAttributes failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("getAttributes failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	public void getAttributeType(boolean expectedFailure){
+		System.out.println("Running getAttributeType");
+		try {
+			String response = entitiesApi.getAttribute(attributeTypeID, sessionToken);
+			softAssert.assertEquals(isSecurityError(response), expectedFailure, "getAttributeType failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("getAttributeType failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	public void getAttributeTypes(boolean expectedFailure){
+		System.out.println("Running getAttributeTypes");
+		try {
+			String response = entitiesApi.getAttributes(entityID, sessionToken);
+			softAssert.assertEquals(isSecurityError(response), expectedFailure, "getAttributeTypes failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("getAttributeTypes failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	public void getProductEntities(boolean expectedFailure){
+		System.out.println("Running getProductEntities");
+		try {
+			String response = entitiesApi.getProductEntities(productID, sessionToken);
+			softAssert.assertEquals(isSecurityError(response), expectedFailure, "getEntity failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("getProductEntities failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	public void deleteEntity(boolean expectedFailure){
+		System.out.println("Running deleteEntity");
+		try {
+			int response = entitiesApi.deleteEntity(entityID, sessionToken);
+			softAssert.assertEquals(response, 200, "deleteEntity failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("deleteEntity failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	public void deleteAttribute(boolean expectedFailure){
+		System.out.println("Running deleteAttribute");
+		try {
+			int response = entitiesApi.deleteAttribute(attributeID, sessionToken);
+			softAssert.assertEquals(response, 200, "deleteAttribute failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("deleteAttribute failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	public void deleteAttributeType(boolean expectedFailure){
+		System.out.println("Running deleteAttribute");
+		try {
+			int response = entitiesApi.deleteAttributeType(attributeTypeID, sessionToken);
+			softAssert.assertEquals(response, 200, "deleteAttributeType failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("deleteAttributeType failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	public void addEntity(boolean expectedFailure){
+		System.out.println("Running addEntity");
+		try {
+			String entity = FileUtils.fileToString(config + "airlytics/entities/entity1.txt", "UTF-8", false);
+			JSONObject json = new JSONObject(entity);
+			json.put("name", RandomStringUtils.randomAlphabetic(5));
+			entityID = entitiesApi.createEntity(productID, json.toString(), sessionToken);
+			softAssert.assertEquals(isSecurityError(entityID), expectedFailure, "addEntity failed: "+ entityID);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("addEntity failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+
+	public void addAttributeType(boolean expectedFailure){
+		System.out.println("Running addAttributeType");
+		try {
+			String attType = FileUtils.fileToString(config + "airlytics/entities/attributeType1.txt", "UTF-8", false);
+			JSONObject json = new JSONObject(attType);
+			json.put("name", RandomStringUtils.randomAlphabetic(5));
+			attributeTypeID = entitiesApi.createAttributeType(entityID, json.toString(), sessionToken);
+			softAssert.assertEquals(isSecurityError(attributeTypeID), expectedFailure, "addAttributeType failed: "+ attributeTypeID);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("addAttributeType failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	public void addAttribute(boolean expectedFailure){
+		System.out.println("Running addAttribute");
+		try {
+			String att = FileUtils.fileToString(config + "airlytics/entities/attribute1.txt", "UTF-8", false);
+			JSONObject json = new JSONObject(att);
+			json.put("name", RandomStringUtils.randomAlphabetic(5));
+			json.put("attributeTypeID", attributeTypeID);
+			attributeID = entitiesApi.createAttribute(entityID, json.toString(), sessionToken);
+			softAssert.assertEquals(isSecurityError(attributeID), expectedFailure, "addAttribute failed: "+ attributeID);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("addAttribute failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	public void updateEntity(boolean expectedFailure){
+		System.out.println("Running updateEntity");
+		try {
+			String entity = entitiesApi.getEntity(entityID, sessionToken);
+			JSONObject json = new JSONObject(entity);
+			json.put("description", "new descr");
+			String response = entitiesApi.updateEntity(entityID, json.toString(), sessionToken);
+			softAssert.assertEquals(isSecurityError(response), expectedFailure, "updateEntity failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("updateEntity failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	/*
+	public void updateEntities(boolean expectedFailure){
+		System.out.println("Running updateEntities");
+		try {
+			String entity = entitiesApi.getProductEntities(productID, sessionToken);
+			JSONObject json = new JSONObject(entity);
+			json.put("dbSchema", "airlock_test");
+			String response = entitiesApi.updateEntities(productID, json.toString(), sessionToken);
+			softAssert.assertEquals(isSecurityError(response), expectedFailure, "updateEntities failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("updateEntities failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	*/
+	public void updateAttribute(boolean expectedFailure){
+		System.out.println("Running updateAttribute");
+		try {
+			String att = entitiesApi.getAttribute(attributeID, sessionToken);
+			JSONObject json = new JSONObject(att);
+			json.put("description", "new descr");
+			String response = entitiesApi.updateAttribute(attributeID, json.toString(), sessionToken);
+			softAssert.assertEquals(isSecurityError(response), expectedFailure, "updateAttribute failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("updateAttribute failed with exception:\n" +e.getLocalizedMessage());
+			}
+		}
+	}
+	
+	public void updateAttributeType(boolean expectedFailure){
+		System.out.println("Running updateAttributeType");
+		try {
+			String attType = entitiesApi.getAttributeType(attributeTypeID, sessionToken);
+			JSONObject json = new JSONObject(attType);
+			json.put("description", "new descr");
+			String response = entitiesApi.updateAttributeType(attributeTypeID, json.toString(), sessionToken);
+			softAssert.assertEquals(isSecurityError(response), expectedFailure, "updateAttributeType failed: "+ response);
+		}catch(Exception e){
+			if (expectedFailure == false) {
+				softAssert.fail("updateAttributeType failed with exception:\n" +e.getLocalizedMessage());
 			}
 		}
 	}

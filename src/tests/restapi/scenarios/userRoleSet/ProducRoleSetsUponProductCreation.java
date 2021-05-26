@@ -76,6 +76,23 @@ public class ProducRoleSetsUponProductCreation {
 		JSONObject globalUserRoleSets = new JSONObject(response);
 		verifyRoleSetExistance(globalUserRoleSets, userIdentifier1, true);
 		
+		userIdentifier3 = RandomStringUtils.randomAlphabetic(5) + "@il.ibm.com";
+		json = new JSONObject(userStr);
+		roles = new JSONArray();
+		roles.add("Administrator");
+		userID3 = addGlobalUser(json, roles, userIdentifier3);
+		usersIds.add(userID3);
+		response = operApi.getProductAirlockUsers(sessionToken, productID1);
+		Assert.assertFalse(response.contains("error"), "Fail retrieving product user role sets " + response);	
+		
+		prodUserRoleSets = new JSONObject(response);
+		verifyRoleSetExistance(prodUserRoleSets, userIdentifier3, false);
+		
+		response = operApi.getAirlockUsers(sessionToken);
+		Assert.assertFalse(response.contains("error"), "Fail retrieving global user role sets " + response);	
+		
+		globalUserRoleSets = new JSONObject(response);
+		verifyRoleSetExistance(globalUserRoleSets, userIdentifier3, true);
 	}
 	
 	@Test (dependsOnMethods = "addGlobalUser", description = "Add product user")
@@ -112,35 +129,55 @@ public class ProducRoleSetsUponProductCreation {
 		Assert.assertFalse(response.contains("error"), "Fail retrieving product2 user role sets " + response);	
 		
 		JSONObject prodUserRoleSets = new JSONObject(response);
-		verifyRoleSetExistance(prodUserRoleSets, userIdentifier1, true);
+		verifyRoleSetExistance(prodUserRoleSets, userIdentifier1, false);
 		verifyRoleSetExistance(prodUserRoleSets, userIdentifier2, false);
-		
+		verifyRoleSetExistance(prodUserRoleSets, userIdentifier3, false);
+		/*
 		JSONObject userRoleSet = findRoleSetForUser(prodUserRoleSets, userIdentifier1);
 		Assert.assertFalse(userRoleSet.getString("uniqueId").equals(userID1), "uniqueId in duplication wasnt changed");
-		Assert.assertTrue(userRoleSet.getString("productId").equals(productID2), "wrong product id");
+		Assert.assertTrue(userRoleSet.getString("productId").equals(productID2), "wrong product id");*/
 	}
 	
-	@Test (dependsOnMethods = "createProduct2", description = "delete global user")
+	@Test (dependsOnMethods = "createProduct2", description = "create product 3")
+	private void createProduct3() throws Exception{
+		productID3 = baseUtils.createProductCopyGlobalAdmins();
+		baseUtils.printProductToFile(productID3);
+		baseUtils.createSeason(productID3);
+		
+		String response = operApi.getProductAirlockUsers(sessionToken, productID3);
+		Assert.assertFalse(response.contains("error"), "Fail retrieving product3 user role sets " + response);	
+		
+		JSONObject prodUserRoleSets = new JSONObject(response);
+		verifyRoleSetExistance(prodUserRoleSets, userIdentifier1, false);
+		verifyRoleSetExistance(prodUserRoleSets, userIdentifier2, false);
+		verifyRoleSetExistance(prodUserRoleSets, userIdentifier3, true);
+		
+		JSONObject userRoleSet = findRoleSetForUser(prodUserRoleSets, userIdentifier3);
+		Assert.assertFalse(userRoleSet.getString("uniqueId").equals(userID3), "uniqueId in duplication wasnt changed");
+		Assert.assertTrue(userRoleSet.getString("productId").equals(productID3), "wrong product id");
+	}
+	
+	@Test (dependsOnMethods = "createProduct3", description = "delete global user")
 	private void deleteGlobalUser() throws Exception{
-		int code = operApi.deleteAirlockUser(userID1, sessionToken);
+		int code = operApi.deleteAirlockUser(userID3, sessionToken);
 		Assert.assertFalse(code == 200, "can dselete global roleset even though user exists in products");
 		
-		String response = operApi.getProductAirlockUsers(sessionToken, productID2);
+		String response = operApi.getProductAirlockUsers(sessionToken, productID3);
 		Assert.assertFalse(response.contains("error"), "Fail retrieving product2 user role sets " + response);	
 		
 		JSONObject prodUserRoleSets = new JSONObject(response);
-		verifyRoleSetExistance(prodUserRoleSets, userIdentifier1, true);
+		verifyRoleSetExistance(prodUserRoleSets, userIdentifier3, true);
 	
 		response = operApi.getAirlockUsers(sessionToken);
 		Assert.assertFalse(response.contains("error"), "Fail retrieving global user role sets " + response);	
 		
 		JSONObject globalUserRoleSets = new JSONObject(response);
-		verifyRoleSetExistance(globalUserRoleSets, userIdentifier1, true);
+		verifyRoleSetExistance(globalUserRoleSets, userIdentifier3, true);
 		
-		JSONObject res = getUser(userID1);
+		JSONObject res = getUser(userID3);
 		Assert.assertFalse(res.containsKey("error"), "user role was not deleted");
 		
-		JSONObject userRoleSet = findRoleSetForUser(prodUserRoleSets, userIdentifier1);
+		JSONObject userRoleSet = findRoleSetForUser(prodUserRoleSets, userIdentifier3);
 		res = getUser(userRoleSet.getString("uniqueId"));
 		Assert.assertFalse(res.containsKey("error"), "user role was deleted");
 		

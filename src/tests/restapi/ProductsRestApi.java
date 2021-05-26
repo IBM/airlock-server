@@ -49,6 +49,38 @@ public class ProductsRestApi {
 		
 	}
 	
+	public String addProductCopyGlobalAdmins(String productJson, String sessionToken) throws IOException{
+		String productID = "";
+		RestClientUtils.RestCallResults res = RestClientUtils.sendPost(m_url+"/products?addGlobalAdministrators=true", productJson, sessionToken);
+		String product = res.message;
+		productID = parseProductId(product);
+		
+		if (productID.contains("error"))
+			return productID;
+		
+		//add QA and DEV user groups
+		UserGroupsRestApi ug = new UserGroupsRestApi();
+		ug.setURL(m_url);
+	
+		try {
+			String response = ug.getUserGroups(productID, sessionToken);
+			JSONObject json = new JSONObject(response);
+			JSONArray groups = json.getJSONArray("internalUserGroups");
+			groups.put("QA");	
+			groups.put("DEV");	
+			json.put("internalUserGroups", groups);
+			response = ug.setUserGroups(productID, json.toString(), sessionToken);
+			if(response.contains("error"))
+				return response;
+		}
+		catch (Exception e) {
+			throw new IOException(e);
+		}
+	
+		return productID;
+		
+	}
+	
 	public String addProductWithoutAddingUserGroups(String productJson, String sessionToken) throws IOException{
 		String productID = "";
 		RestClientUtils.RestCallResults res = RestClientUtils.sendPost(m_url+"/products", productJson, sessionToken);

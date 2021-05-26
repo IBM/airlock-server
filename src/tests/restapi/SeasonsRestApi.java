@@ -336,10 +336,15 @@ public class SeasonsRestApi {
 
 	}
 	
-	public String getDocumentLinks(String seasonID, String sessionToken) throws Exception{
+	public String getDocumentLinks(String seasonID, String sessionToken) throws Exception {
 		RestClientUtils.RestCallResults res = RestClientUtils.sendGet(m_url + "/products/seasons/" + seasonID + "/documentlinks", sessionToken);
 		return res.message;
 
+	}
+
+	public String getBranchesUsage(String seasonID, String sessionToken) throws Exception {
+		RestClientUtils.RestCallResults res = RestClientUtils.sendGet(m_url + "/products/seasons/" + seasonID + "/branchesusage", sessionToken);
+		return res.message;
 	}
 	
 	

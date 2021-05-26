@@ -132,8 +132,11 @@ public class TestExperimentsCapabilities {
 		validateNegativeTestResult(response, "getBranchesInExperiment");
 		
 		response = allApis.getExperimentIndexingInfo(experimentID, sessionToken);
-		validateNegativeTestResult(response, "getExperimentIndexingInfo");
-		
+//		validateNegativeTestResult(response, "getExperimentIndexingInfo");
+		if (!response.equals("{}")) {
+			results.add("getExperimentIndexingInfo");
+		}
+
 		response = allApis.getExperimentGlobalDataCollection(experimentID, sessionToken);
 		validateNegativeTestResult(response, "getExperimentGlobalDataCollection");
 
